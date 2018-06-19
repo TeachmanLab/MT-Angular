@@ -1,0 +1,25 @@
+<div class="letter_options">
+  <div class="letters"
+       fxLayout="row"
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <div class="letter foldout" *ngFor="let tile of letters" [ngClass]="tile.status">{{tile.letter}}</div>
+  </div>
+
+  <h2 class="foldout">SELECT A TILE:</h2>
+
+  <div class="options"
+       fxLayout="row"
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <button mat-button class="letter foldout" *ngFor="let o of options"
+            (click)="selectLetter(o)"
+            [ngClass]="isIncorrectChoice(o) ? 'incorrect' : ''">{{o}}</button>
+  </div>
+
+  <div *ngIf="state === 'correct'" class="correct-message">Correct!</div>
+  <div *ngIf="state === 'incorrect'" class="incorrect-message">Hum.  That doesn't look right! Please try again.</div>
+
+</div>

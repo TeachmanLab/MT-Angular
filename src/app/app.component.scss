@@ -1,0 +1,24 @@
+
+.main {
+  margin: 0px;
+  min-height: 800px;
+}
+
+
+
+mat-toolbar {
+  height: 135px;
+  background: url("../assets/header-logo.png") no-repeat left top, linear-gradient(#191C4A, #2C336A);
+  border-bottom: 5px solid #33BEF2;
+}
+
+mat-toolbar-row {
+  max-width: 982px;
+  margin: auto;
+}
+
+.menu {
+  align:right;
+  margin-right: 20px;
+}
+

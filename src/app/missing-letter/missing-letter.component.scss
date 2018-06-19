@@ -1,0 +1,48 @@
+.letter {
+  border: 1px solid darkslategray;
+  padding: 10px;
+  border-radius: 8px;
+  width: 15px;
+  box-shadow: 2px 2px #888;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #F6EDD0;
+}
+
+h2 {
+  text-align: center;
+}
+
+div.missing {
+  background-color: #fff;
+  box-shadow: -1px -1px #888;
+}
+
+div.correct {
+  background-color: #AAD2B8;
+  border: 1px solid #009650;
+  box-shadow: -1px -1px #888;
+}
+
+div.incorrect, button.incorrect {
+  background-color: #D7A99D;
+  border: 1px solid #9F202C;
+  box-shadow: -1px -1px #888;
+}
+
+div.correct-message, div.incorrect-message {
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.2rem;
+}
+div.correct-message {
+  color: #009650;
+}
+div.incorrect-message {
+  color: #9F202C;
+}
+
+button.letter {
+  font-size: 1.3rem;
+}
