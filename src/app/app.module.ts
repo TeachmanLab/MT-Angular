@@ -10,6 +10,11 @@ import { MissingLetterComponent } from './missing-letter/missing-letter.componen
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { StatementComponent } from './statement/statement.component';
 import { QuestionComponent } from './question/question.component';
+import { SessionComponent } from './session/session.component';
+import {ApiService} from './api.service';
+import {HttpClientModule} from '@angular/common/http';
+import { SectionComponent } from './section/section.component';
+import { EducationComponent } from './education/education.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,10 @@ import { QuestionComponent } from './question/question.component';
     ScenarioComponent,
     MissingLetterComponent,
     StatementComponent,
-    QuestionComponent
+    QuestionComponent,
+    SessionComponent,
+    SectionComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +35,12 @@ import { QuestionComponent } from './question/question.component';
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

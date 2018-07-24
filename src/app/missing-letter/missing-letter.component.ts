@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {LetterTile} from '../letter-tile';
 import {animate, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {interval} from 'rxjs';
+import {MissingLetter} from '../interfaces';
 
 @Component({
   selector: 'app-missing-letter',
@@ -11,7 +12,8 @@ import {interval} from 'rxjs';
 export class MissingLetterComponent implements OnInit {
 
   @Input()
-  word: string;
+  missingLetter: MissingLetter;
+  word: String;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -29,6 +31,7 @@ export class MissingLetterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.word = this.missingLetter.word;
     const missing_index = Math.floor(Math.random() * this.word.length) ;
     this.letters = [];
     let letter = '';

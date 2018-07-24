@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Scenario} from '../scenario';
+import {Question} from '../interfaces';
 import {interval} from 'rxjs';
 
 @Component({
@@ -10,7 +10,7 @@ import {interval} from 'rxjs';
 export class QuestionComponent implements OnInit {
 
   @Input()
-  scenario: Scenario;
+  question: Question;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -23,7 +23,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {}
 
   selected(option: string) {
-      if (option === this.scenario.answer) {
+      if (option === this.question.answer) {
         this.state = 'correct';
         this.waitAndEmit();
       } else {
