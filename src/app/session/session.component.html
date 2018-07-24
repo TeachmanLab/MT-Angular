@@ -1,0 +1,5 @@
+<h1>{{session.title}}</h1>
+<mat-card-header>
+  Section {{section_index + 1}} of 4
+</mat-card-header>
+<app-section [section]="current_section" (done)="allDone()"></app-section>
