@@ -1,5 +1,22 @@
-<h1>{{session.title}}</h1>
-<mat-card-header>
-  Section {{section_index + 1}} of 4
-</mat-card-header>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Material Portfolio Template Demo</title>
+  <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com."/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+
+</head>
+
+<mat-card class="scenario">
+  <div class="mdl-card__title section--center">
+    <h1 class="mdl-card__title-text section--center ">{{session.sections[0].education.title}}</h1>
+
+  </div>
+  <!--<app-edu-session [education]="current_section"></app-edu-session>-->
+
+
 <app-section [section]="current_section" (done)="allDone()"></app-section>
+</mat-card>

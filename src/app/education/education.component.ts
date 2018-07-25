@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Education, Scenario} from '../interfaces';
+import {Education, EducationSession, Intro} from '../interfaces';
 
 @Component({
   selector: 'app-education',

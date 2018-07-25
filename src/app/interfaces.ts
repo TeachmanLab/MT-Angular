@@ -10,10 +10,12 @@ export interface Section {
 }
 
 export interface Education {
-  title: String;
+  title: string;
   markdown: String;
   image: String;
-  questions: Question[];
+  questions?: Question[];
+  intro: Intro;
+  eduSession: EducationSession;
 }
 
 export interface Scenario {
@@ -34,3 +36,26 @@ export interface Question {
   answer: string;
 }
 
+export interface Intro {
+  title: String;
+  divs: string[];
+  questions: Question[];
+}
+
+export interface Step {
+  title: string;
+  stepIndicator: string;
+  stepBody: string;
+  questions: Question[];
+}
+
+export interface EducationSession {
+  title: string;
+  eduSessionInd: EducationSessionIndicator;
+  sessionContent: string;
+  step: Step[];
+}
+
+export interface EducationSessionIndicator {
+  sessionIndicator: string;
+}

@@ -1,0 +1,88 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Material Portfolio Template Demo</title>
+  <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com."/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+
+</head>
+<body id="top">
+
+<mat-card class="scenario">
+  <mat-card-content>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+
+      <main class="mdl-layout__content">
+        <div class="site-content">
+          <div class="container">
+
+
+            <!--IntroPage-->
+            <section class="section--center mdl-grid site-max-width">
+              <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--7-col-phone  mdl-shadow--4dp">
+                <div class="mdl-card__title mdl-card--border">
+                  <h2 class="mdl-card__title-text ">{{education.intro.title}}</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  {{education.intro.divs[0]}}
+                </div>
+
+                <div class="mdl-card__title mdl-card--border">
+                  <h2 class="mdl-card__title-text">{{education.intro.divs[1]}}</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  {{education.intro.divs[2]}}
+                </div>
+                <!--<app-session></app-session>-->
+
+                <div class="mdl-card__supporting-text">
+                  {{education.intro.divs[3]}}
+
+                </div>
+
+                <div class="mdl-card__supporting-text">
+
+                  {{education.intro.divs[4]}}
+                </div>
+
+
+                <li class="mdl-list__item mdl-list__item-line">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">help-outline</i>
+                <span>{{education.intro.questions[0].question}}</span>
+                </span>
+                </li>
+
+                <li class="mdl-list__item mdl-list__item-line">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">help-outline</i>
+                <span>{{education.intro.questions[1].question}}</span>
+                </span>
+                </li>
+
+                <li class="mdl-list__item mdl-list__item-line">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">help-outline</i>
+                <span>{{education.intro.questions[2].question}}</span>
+                </span>
+                </li>
+
+
+
+
+
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+
+      </main>
+    </div>
+  </mat-card-content>
+</mat-card>

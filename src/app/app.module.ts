@@ -15,6 +15,10 @@ import {ApiService} from './api.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SectionComponent } from './section/section.component';
 import { EducationComponent } from './education/education.component';
+import { IntroComponent } from './intro/intro.component';
+import { EduSessionComponent } from './edu-session/edu-session.component';
+import { StepComponent } from './step/step.component';
+import { EducationSessionIndicatorComponent } from './education-session-indicator/education-session-indicator.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { EducationComponent } from './education/education.component';
     QuestionComponent,
     SessionComponent,
     SectionComponent,
-    EducationComponent
+    EducationComponent,
+    IntroComponent,
+    EduSessionComponent,
+    StepComponent,
+    EducationSessionIndicatorComponent
   ],
   imports: [
     BrowserModule,

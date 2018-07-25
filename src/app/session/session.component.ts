@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Section, Session} from '../interfaces';
+import {Education, EducationSession, Section, Session} from '../interfaces';
 
 @Component({
   selector: 'app-session',
