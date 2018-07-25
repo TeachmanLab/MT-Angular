@@ -11,7 +11,7 @@ export interface Section {
 
 export interface Education {
   title: String;
-  markdown: String;
+  markdown: string[];
   image: String;
   questions: Question[];
 }

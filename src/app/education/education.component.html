@@ -2,10 +2,11 @@
   <mat-card-content>
     <div class="title">{{education.title}}</div>
     <div class="display-area">
-      {{education.markdown}}
+      <div *ngFor= "let div of education.markdown">{{div}}</div>
       <img [src]="education.image"/>
       <app-question *ngFor="let q of education.questions" [question]="q"></app-question>
     </div>
-    <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="allDone()">Continue</button>
+    <!-- Need to change the button so it only appears if there are more sections to go to -->
+    <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="allDone()">Next section</button>
   </mat-card-content>
 </mat-card>

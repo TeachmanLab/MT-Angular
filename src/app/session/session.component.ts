@@ -20,18 +20,18 @@ export class SessionComponent implements OnInit {
 
   ngOnInit() {
     this.section_index = -1;
-    this.nextSession();
+    this.nextSection();
   }
 
-  nextSession() {
+  nextSection() {
     this.section_index++;
-    if (this.section_index < this.session.sections.length - 1) {
+    if (this.section_index < this.session.sections.length) {
       this.current_section = this.session.sections[this.section_index];
     }
   }
 
   allDone() {
-    this.nextSession();
+    this.nextSection();
   }
 
 }

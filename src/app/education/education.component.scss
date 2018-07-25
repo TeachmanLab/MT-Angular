@@ -1,5 +1,9 @@
 @import '~@angular/material/theming';
 
+div {
+  padding-bottom:15px;
+}
+
 mat-card {
   margin: 20px auto;
   min-height: 600px;

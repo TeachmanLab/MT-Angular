@@ -1,12 +1,15 @@
 {
   "title": "Example Session, with mixed Scenarios and Training",
-  "icon" : "exmple.svg",
+  "icon": "exmple.svg",
   "sections": [
     {
       "education": {
         "title": "What is Anxiety? (Education)",
-        "markdown": "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel stressed out; worried about finances, health, or family; scared in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think. Anxious feelings usually come with a variety of changes in one’s thoughts, bodily reactions, and behavior, such as these:",
-        "image" : "anxiety.png",
+        "markdown": [
+          "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel stressed out; worried about finances, health, or family; scared in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think. Anxious feelings usually come with a variety of changes in one’s thoughts, bodily reactions, and behavior, such as these:",
+          "Does this work with more than one?"
+        ],
+        "image": "anxiety.png",
         "questions": [
           {
             "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
@@ -37,7 +40,6 @@
         }
       }
     },
-
     {
       "scenario": {
         "title": "Out Shopping",
@@ -46,7 +48,7 @@
         "missingLetter": {
           "word": "tolerable"
         },
-        "question" : {
+        "question": {
           "question": "Is it OK for people to look at you and your friend while out shopping?",
           "options": [
             "Yes",
