@@ -15,6 +15,7 @@ import {ApiService} from './api.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SectionComponent } from './section/section.component';
 import { EducationComponent } from './education/education.component';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EducationComponent } from './education/education.component';
     QuestionComponent,
     SessionComponent,
     SectionComponent,
-    EducationComponent
+    EducationComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,

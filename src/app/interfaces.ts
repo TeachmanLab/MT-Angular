@@ -1,3 +1,9 @@
+export interface Intro {
+  title: String;
+  markdown: string[];
+  questions: Question[];
+}
+
 export interface Session {
   title: string;
   icon: string;

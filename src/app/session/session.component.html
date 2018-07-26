@@ -3,3 +3,4 @@
   Section {{section_index + 1}} of {{session.sections.length}}
 </mat-card-header>
 <app-section [section]="current_section" (done)="allDone()"></app-section>
+<button class="continue" *ngIf="nextSessionButtonVisible()" mat-raised-button (click)="allDone()">Next Session</button>

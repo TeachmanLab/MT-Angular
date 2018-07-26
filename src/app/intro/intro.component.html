@@ -1,0 +1,10 @@
+<mat-card class="scenario">
+  <mat-card-content>
+    <div><h1>{{intro.title}}</h1></div>
+    <div class="display-area">
+      <div *ngFor= "let div of intro.markdown">{{div}}</div>
+      <app-question *ngFor="let q of intro.questions" [question]="q"></app-question>
+    </div>
+    <button class="continue" mat-raised-button (click)="allDone()">Get Started</button>
+  </mat-card-content>
+</mat-card>

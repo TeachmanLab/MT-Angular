@@ -4,4 +4,11 @@
     <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-around center" class="logo">
     </mat-toolbar-row>
   </mat-toolbar>
-<app-session *ngIf="current_session" [session]="current_session" ></app-session>
+<div *ngIf="onIntro">
+  <app-intro *ngIf="intro" [intro]="intro" (done)="allDone()"></app-intro>
+</div>
+<div *ngIf="!onIntro">
+  <app-session *ngIf="session" [session]="session" (done)="allDone()"></app-session>
+</div>
+
+

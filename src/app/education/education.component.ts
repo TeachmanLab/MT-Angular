@@ -16,13 +16,13 @@ export class EducationComponent implements OnInit {
 
   constructor() { }
 
-  continueButtonVisible() {
-    return true;
-  }
-
   ngOnInit() {
   }
 
+  continueButtonVisible() {
+    return true;
+  }
+  
   allDone() {
     this.done.emit();
   }

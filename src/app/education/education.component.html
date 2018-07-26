@@ -6,7 +6,6 @@
       <img [src]="education.image"/>
       <app-question *ngFor="let q of education.questions" [question]="q"></app-question>
     </div>
-    <!-- Need to change the button so it only appears if there are more sections to go to -->
-    <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="allDone()">Next section</button>
+    <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="allDone()">Continue</button>
   </mat-card-content>
 </mat-card>

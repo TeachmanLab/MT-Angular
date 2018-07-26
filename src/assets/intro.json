@@ -1,28 +1,19 @@
 {
-    "title": "Introduction",
-    "icon": "",
-    "sections": [
+    "title": "About Mindtrails",
+    "markdown": [
+        "The CalmThinking program includes five sessions. You will complete one session each week, and each session takes about 15 minutes or fewer to complete. You will also complete some assessments as part of our research study so we can evaluate how well the program works.",
+        "You will receive feedback after completing the study about how your thinking has changed over the course of the program. You can do the sessions anywhere; all you need is a quiet place and a device with Internet. This program is free and can be completed without ever leaving your desk.",
+        "##How Does CalmThinking Work?",
+        "We are attempting to change your understanding of anxiety to alter your anxious thinking. In each session, you will be asked to read brief information and complete questions by filling in whether statements are true or false. The task is not meant to be tricky or too difficult."
+    ],
+    "questions": [
         {
-            "education": {
-                "title": "About Mindtrails",
-                "markdown": [
-                    "The CalmThinking program includes five sessions. You will complete one session each week, and each session takes about 15 minutes or fewer to complete. You will also complete some assessments as part of our research study so we can evaluate how well the program works.",
-                    "You will receive feedback after completing the study about how your thinking has changed over the course of the program. You can do the sessions anywhere; all you need is a quiet place and a device with Internet. This program is free and can be completed without ever leaving your desk.",
-                    "##How Does CalmThinking Work?",
-                    "We are attempting to change your understanding of anxiety to alter your anxious thinking. In each session, you will be asked to read brief information and complete questions by filling in whether statements are true or false. The task is not meant to be tricky or too difficult."
-                ],
-                "image": "",
-                "questions": [
-                    {
-                        "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-                        "options": [
-                            "True",
-                            "False"
-                        ],
-                        "answer": "True"
-                    }
-                ]
-            }
+            "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+            "options": [
+                "True",
+                "False"
+            ],
+            "answer": "True"
         }
     ]
 }
