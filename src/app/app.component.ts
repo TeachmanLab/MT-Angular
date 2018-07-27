@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
 import { Intro, Session } from './interfaces';
-import { SessionButtonService } from './session-button.service';
 
 @Component({
   selector: 'app-root',

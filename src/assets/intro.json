@@ -8,7 +8,23 @@
     ],
     "questions": [
         {
-            "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+            "question": "How important is reducing your anxiety to you right now?",
+            "options": [
+                "True",
+                "False"
+            ],
+            "answer": "True"
+        },
+        {
+            "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
+            "options": [
+                "True",
+                "False"
+            ],
+            "answer": "True"
+        },
+        {
+            "question": "confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
             "options": [
                 "True",
                 "False"
