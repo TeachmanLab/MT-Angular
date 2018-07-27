@@ -1,10 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { Intro, Question } from '../interfaces';
+
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.scss']
+  styleUrls: [
+    './intro.component.scss',
+  ],
 })
 export class IntroComponent implements OnInit {
 

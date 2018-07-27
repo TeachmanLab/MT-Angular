@@ -19,6 +19,30 @@
             ],
             "answer": "True"
           }
+        ],
+        "eduSession": [
+          {
+            "title": "Session 1",
+            "eduSessionInd": "It must be a picture",
+            "sessionContent": "SomeText",
+            "steps": [
+              {
+                "title": "step1",
+                "stepIndicator": "stepIndicator1-S1.png",
+                "stepBody": "",
+                "questions": [
+                  {
+                    "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "True"
+                  }
+                ]
+              }
+            ]
+          }
         ]
       }
     },
