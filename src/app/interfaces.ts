@@ -1,3 +1,9 @@
+export interface Intro {
+  title: String;
+  markdown: string[];
+  questions: Question[];
+}
+
 export interface Session {
   title: string;
   icon: string;
@@ -10,12 +16,11 @@ export interface Section {
 }
 
 export interface Education {
-  title: string;
-  markdown: String;
+  title: String;
+  markdown: string[];
   image: String;
   questions?: Question[];
-  intro: Intro;
-  eduSession: EducationSession;
+  eduSession: EducationSession[];
 }
 
 export interface Scenario {
@@ -45,15 +50,16 @@ export interface Intro {
 export interface Step {
   title: string;
   stepIndicator: string;
-  stepBody: string;
+  stepBody: string[];
   questions: Question[];
 }
 
 export interface EducationSession {
   title: string;
+  stepsIndicator: string;
   eduSessionInd: EducationSessionIndicator;
-  sessionContent: string;
-  step: Step[];
+  sessionContent: string[];
+  steps: Step[];
 }
 
 export interface EducationSessionIndicator {

@@ -11,16 +11,19 @@ export class QuestionComponent implements OnInit {
 
   @Input()
   question: Question;
+  state: string;
+  waitPercent: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  state = 'asking';
-  waitPercent = 0;
-
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.state = 'asking';
+    console.log(this.state);
+    this.waitPercent = 0;
+  }
 
   selected(option: string) {
       if (option === this.question.answer) {
@@ -35,6 +38,7 @@ export class QuestionComponent implements OnInit {
   waitAndEmit() {
     const secondsCounter = interval(1000);
     const subscription = secondsCounter.subscribe( n => {
+      this.state = 'asking';
       this.done.emit();
       subscription.unsubscribe();
     });
@@ -52,5 +56,10 @@ export class QuestionComponent implements OnInit {
         subscription.unsubscribe();
       }
     });
+  }
+
+  allDone() {
+
+    this.done.emit();
   }
 }

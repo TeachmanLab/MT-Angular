@@ -4,6 +4,16 @@
     <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-around center" class="logo">
     </mat-toolbar-row>
   </mat-toolbar>
+<div *ngIf="onIntro">
+  <app-intro *ngIf="intro" [intro]="intro" (done)="allDone()"></app-intro>
+</div>
 
-<app-session *ngIf="session" [session]="session"></app-session>
+<div *ngIf="!onIntro">
+  <app-education *ngIf="education" [education]="education" (done)="allDone()"></app-education>
+</div>
+
+<!--<div *ngIf="!onIntro">-->
+  <!--<app-session *ngIf="session" [session]="session" (done)="allDone()"></app-session>-->
+<!--</div>-->
+
 </div>

@@ -20,8 +20,18 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getContent(): Observable<any> {
-    return this.httpClient.get<Session>('./assets/example_session.json')
+  public getIntro(): Observable<any> {
+    return this.httpClient.get<Session>('./assets/intro.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getEducation(): Observable<any> {
+    return this.httpClient.get<Session>('./assets/education.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getSession(session_name: string): Observable<any> {
+    return this.httpClient.get<Session>('./assets/'+ session_name + '.json')
       .pipe((catchError(this.handleError)));
   }
 

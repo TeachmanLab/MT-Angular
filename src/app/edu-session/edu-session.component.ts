@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Education, EducationSession, Section} from '../interfaces';
+import {EducationSession, Step} from '../interfaces';
 
 @Component({
   selector: 'app-edu-session',
@@ -9,13 +9,33 @@ import {Education, EducationSession, Section} from '../interfaces';
 export class EduSessionComponent implements OnInit {
 
   @Input()
-  educationSession: EducationSession;
-
+  current_edu_session: EducationSession;
+  current_steps: Step[];
+  onStep: boolean;
 
   constructor() { }
 
+  @Output()
+  done: EventEmitter<any> = new EventEmitter();
+
   ngOnInit() {
-    console.log(this.educationSession);
+    debugger;
+    console.log(this.current_edu_session);
+    console.log(this.current_steps);
+    this.onStep = false;
+  }
+
+  nextStep() {
+    this.current_steps = this.current_edu_session.steps;
+  }
+
+  continueButtonVisible() {
+    return true;
+  }
+
+  allDone() {
+    this.onStep = true;
+    this.current_steps = this.current_edu_session.steps;
   }
 
 }

@@ -1,25 +1,20 @@
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Material Portfolio Template Demo</title>
-      <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com."/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
-
-    </head>
-    <body id="top">
-    <app-education-session-indicator [educationSession]="education.eduSession[0]"></app-education-session-indicator>
-    <mat-card class="scenario">
-      <mat-card-content>
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <a id="contact-button" *ngIf="continueButtonVisible()" (click)="allDone()" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
-            <i class="material-icons">navigate_next</i>
-          </a>
-
-          <app-intro [education]="education"></app-intro>
-
+<!--<app-edu-session  [educationSession]="current_edu_session"></app-edu-session>-->
+<mat-card class="scenario">
+  <mat-card-content>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <main class="mdl-layout__content">
+        <div class="site-content">
+          <div class="container">
+            <div class="mdl-card__supporting-text">
+            Session {{edu_session_index + 1}} of {{education.eduSession.length}}
+            </div>
+            <app-edu-session [current_edu_session]="current_edu_session"></app-edu-session>
+          </div>
         </div>
+      </main>
+    </div>
+    <a id="contact-button" (click)="allDone()" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
+      <i class="material-icons">navigate_next</i>
+    </a>
   </mat-card-content>
 </mat-card>
