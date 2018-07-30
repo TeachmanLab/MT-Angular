@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Section, Session} from '../interfaces';
+import {Education, EducationSession, Section, Session} from '../interfaces';
 import { SessionButtonService } from '../session-button.service';
 
 @Component({
@@ -24,6 +24,8 @@ export class SessionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log("Sonia");
+    console.log(this.session)
     this.section_index = -1;
     this.num_sections = this.session.sections.length;
     this.on_last_section = false;

@@ -23,7 +23,17 @@
                 <div class="mdl-card__supporting-text">
                   {{intro.markdown[3]}}
                 </div>
-                <app-question *ngIf="question" [question]="question" (done)="nextQuestion()"></app-question>
+                <div class="mdl-card__supporting-text">
+                  <img  class="card-img-top" src="./assets/sessionBar.png" alt="Card image cap"/>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  {{intro.markdown[6]}}
+                </div>
+                <div class="mdl-card__supporting-text">
+                  {{intro.markdown[7]}}
+                </div>
+
+                <!--<app-question *ngIf="question" [question]="question" (done)="nextQuestion()"></app-question>-->
 
               </div>
             </section>

@@ -22,4 +22,9 @@ export class SectionComponent implements OnInit {
   allDone() {
     this.done.emit();
   }
+
+
+  continueButtonVisible() {
+    return true;
+  }
 }

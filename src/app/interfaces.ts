@@ -20,7 +20,7 @@ export interface Education {
   markdown: string[];
   image: String;
   questions?: Question[];
-  eduSession: EducationSession;
+  eduSession: EducationSession[];
 }
 
 export interface Scenario {
@@ -50,15 +50,16 @@ export interface Intro {
 export interface Step {
   title: string;
   stepIndicator: string;
-  stepBody: string;
+  stepBody: string[];
   questions: Question[];
 }
 
 export interface EducationSession {
   title: string;
+  stepsIndicator: string;
   eduSessionInd: EducationSessionIndicator;
-  sessionContent: string;
-  step: Step[];
+  sessionContent: string[];
+  steps: Step[];
 }
 
 export interface EducationSessionIndicator {

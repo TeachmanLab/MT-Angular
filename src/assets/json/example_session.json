@@ -13,6 +13,7 @@
         "questions": [
           {
             "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+            "type": "single",
             "options": [
               "True",
               "False"
@@ -22,12 +23,9 @@
         ],
         "eduSession": [
           {
-            "title": "Session 1: Introduction to Anxiety",
+            "title": "Session 1",
             "eduSessionInd": "It must be a picture",
-            "sessionContent": [
-              ["In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.","For each page:"],
-              ["Read the information carefully.","There will be a Continue button at the end of each paragraph.","When you finish reading the information you will be asked questions about it.","The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."]
-            ],
+            "sessionContent": "SomeText",
             "steps": [
               {
                 "title": "step1",
@@ -36,6 +34,7 @@
                 "questions": [
                   {
                     "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -59,6 +58,7 @@
         },
         "question": {
           "question": "Are you in New York?",
+          "type": "single",
           "options": [
             "Yes",
             "No"
@@ -77,6 +77,7 @@
         },
         "question": {
           "question": "Is it OK for people to look at you and your friend while out shopping?",
+          "type": "single",
           "options": [
             "Yes",
             "No"
@@ -94,10 +95,11 @@
           "word": "enjoyable"
         },
         "question": {
-          "question": "",
+          "question": "Will you ask them on a date?",
+          "type": "any",
           "options": [
-            "Say yes if you ask them on a date.",
-            "Say no if you ask them on a date."
+            "Yes",
+            "No"
           ],
           "answer": "Say yes if you ask them on a date."
         }

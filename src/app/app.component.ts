@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
-import { Intro, Session } from './interfaces';
+import {Education, Intro, Session} from './interfaces';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ import { Intro, Session } from './interfaces';
 export class AppComponent {
   title = 'app';
   intro: Intro;
+  education: Education;
   session: Session;
   session_index: number;
   session_names: string[];
@@ -21,9 +22,10 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.session_names = ['example_session'];
+    this.session_names = ['education'];
     this.session_index = -1;
     this.getIntro();
+    this.getEducation();
   }
 
   getIntro() {
@@ -42,12 +44,19 @@ export class AppComponent {
       this.api.getSession(this.session_names[this.session_index]).subscribe(session => {
         this.session = session;
         console.log('Loaded session from JSON');
-        console.log('Session contains ' + this.session.sections.length + ' sections.')
+
       });
     }
   }
 
   allDone() {
     this.nextSession();
+  }
+
+  private getEducation() {
+    this.api.getEducation().subscribe(education => {
+      this.education = education;
+      console.log('Loaded Education from JSON');
+    });
   }
 }
