@@ -11,14 +11,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { StatementComponent } from './statement/statement.component';
 import { QuestionComponent } from './question/question.component';
 import { SessionComponent } from './session/session.component';
-import {ApiService} from './api.service';
-import {HttpClientModule} from '@angular/common/http';
+import { ApiService} from './api.service';
+import { HttpClientModule} from '@angular/common/http';
 import { SectionComponent } from './section/section.component';
 import { EducationComponent } from './education/education.component';
 import { IntroComponent } from './intro/intro.component';
 import { EduSessionComponent } from './edu-session/edu-session.component';
 import { StepComponent } from './step/step.component';
 import { EducationSessionIndicatorComponent } from './education-session-indicator/education-session-indicator.component';
+import { QuestionService } from './question.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EducationSessionIndicatorComponent } from './education-session-indicato
     HttpClientModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })

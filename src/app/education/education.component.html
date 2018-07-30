@@ -4,7 +4,7 @@
     <div class="display-area">
       <div *ngFor= "let div of education.markdown">{{div}}</div>
       <img [src]="education.image"/>
-      <app-question *ngFor="let q of education.questions" [question]="q"></app-question>
+      <app-question *ngIf="question" [question]="question" (done)="nextQuestion()"></app-question>
     </div>
     <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="allDone()">Continue</button>
   </mat-card-content>

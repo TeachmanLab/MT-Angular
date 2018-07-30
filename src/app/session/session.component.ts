@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Section, Session} from '../interfaces';
 import { SessionButtonService } from '../session-button.service';
 
@@ -11,40 +11,32 @@ export class SessionComponent implements OnInit {
 
   @Input()
   session: Session;
-  section_index: number;
-  current_section: Section;
-  num_sections: number;
-  on_last_section: boolean;
+  sectionIndex: number;
+  currentSection: Section;
+  numSections: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor(
-    private sessionButtonService: SessionButtonService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.section_index = -1;
-    this.num_sections = this.session.sections.length;
-    this.on_last_section = false;
+    this.sectionIndex = -1;
+    this.numSections = this.session.sections.length;
     this.nextSection();
   }
 
   nextSection() {
-    this.section_index++;
-    if (this.section_index < this.num_sections) {
-      this.current_section = this.session.sections[this.section_index];
+    this.sectionIndex++;
+    if (this.sectionIndex < this.numSections) {
+      this.currentSection = this.session.sections[this.sectionIndex];
     } else {
-      this.on_last_section = true;
+      this.allDone();
     }
   }
 
-  nextSessionButtonVisible() {
-    return this.on_last_section;
-  }
-
   allDone() {
-    this.nextSection();
+    this.done.emit()
   }
 
 }

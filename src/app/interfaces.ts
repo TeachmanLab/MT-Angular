@@ -1,6 +1,11 @@
+export interface HTMLSection {
+  header: string;
+  text: string[];
+}
+
 export interface Intro {
-  title: String;
-  markdown: string[];
+  title: string;
+  markdown: HTMLSection[];
   questions: Question[];
 }
 
@@ -37,14 +42,9 @@ export interface MissingLetter {
 
 export interface Question {
   question: string;
+  type: string;
   options: string[];
-  answer: string;
-}
-
-export interface Intro {
-  title: String;
-  divs: string[];
-  questions: Question[];
+  answer?: string;
 }
 
 export interface Step {

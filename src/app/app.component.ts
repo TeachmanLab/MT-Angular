@@ -11,9 +11,10 @@ export class AppComponent {
   title = 'app';
   intro: Intro;
   session: Session;
-  session_index: number;
-  session_names: string[];
-  onIntro: boolean;
+  sessionIndex: number;
+  sessionNames: string[];
+  introComplete: boolean;
+  sessionComplete: boolean;
 
   // Read in the Json file.
   constructor(
@@ -21,8 +22,10 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.session_names = ['example_session'];
-    this.session_index = -1;
+    this.sessionNames = ['example_session'];
+    this.sessionIndex = -1;
+    this.introComplete = false;
+    this.sessionComplete = false;
     this.getIntro();
   }
 
@@ -31,15 +34,20 @@ export class AppComponent {
       this.intro = intro;
       console.log('Loaded intro from JSON');
     });
-    this.onIntro = true;
+  }
+
+  nextSessionButtonVisible() {
+    return this.sessionComplete;
   }
 
   nextSession() {
-    this.session_index++;
-    this.onIntro = false;
-    if (this.session_index < this.session_names.length) {
-      console.log('Moving on to session ' + this.session_index);
-      this.api.getSession(this.session_names[this.session_index]).subscribe(session => {
+    this.sessionIndex++;
+    this.introComplete = true;
+    this.sessionComplete = false;
+    if (this.sessionIndex < this.sessionNames.length) {
+      console.log('Moving on to session ' + this.sessionIndex);
+      this.sessionComplete = false;
+      this.api.getSession(this.sessionNames[this.sessionIndex]).subscribe(session => {
         this.session = session;
         console.log('Loaded session from JSON');
         console.log('Session contains ' + this.session.sections.length + ' sections.')
@@ -47,7 +55,4 @@ export class AppComponent {
     }
   }
 
-  allDone() {
-    this.nextSession();
-  }
 }
