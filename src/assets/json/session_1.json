@@ -2,14 +2,12 @@
   "title": "Session 1: Introduction to Anxiety",
   "sessionIndicator": "./assets/session1.png",
   "description": [
-    [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page:",
       "Read the information carefully.",
       "There will be a Continue button at the end of each paragraph.",
       "When you finish reading the information you will be asked questions about it.",
       "The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
-    ]
   ],
   "steps": [
     {
