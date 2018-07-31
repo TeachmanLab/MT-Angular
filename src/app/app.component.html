@@ -12,4 +12,6 @@
   <app-session *ngIf="session" [session]="session" (done)="sessionComplete=true"></app-session>
 </div>
 
-<button class="continue" *ngIf="nextSessionButtonVisible()" mat-raised-button (click)="nextSession()">Begin Session {{ sessionIndex + 1 }}</button>
+<button id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Begin Session {{ sessionIndex + 1 }}
+  </button>

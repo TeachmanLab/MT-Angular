@@ -21,17 +21,17 @@ export class ApiService {
   }
 
   public getIntro(): Observable<any> {
-    return this.httpClient.get<Session>('./assets/intro.json')
+    return this.httpClient.get<Session>('./assets/json/intro.json')
       .pipe((catchError(this.handleError)));
   }
 
   public getEducation(): Observable<any> {
-    return this.httpClient.get<Session>('./assets/education.json')
+    return this.httpClient.get<Session>('./assets/json/education.json')
       .pipe((catchError(this.handleError)));
   }
 
   public getSession(session_name: string): Observable<any> {
-    return this.httpClient.get<Session>('./assets/'+ session_name + '.json')
+    return this.httpClient.get<Session>('./assets/json/'+ session_name + '.json')
       .pipe((catchError(this.handleError)));
   }
 

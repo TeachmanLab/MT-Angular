@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { Intro, Question, HTMLSection } from '../interfaces';
+import { Intro, Div} from '../interfaces';
 import { QuestionService } from '../question.service';
 
 
@@ -14,32 +14,31 @@ export class IntroComponent implements OnInit {
 
   @Input()
   intro: Intro;
-  question: Question;
-  questionIndex: number;
-  questionsComplete: boolean;
-  numQuestions: number;
+  div: Div;
+  divIndex: number;
+  numDivs: number;
+  divsComplete: boolean;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor( 
-    private questionService: QuestionService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.questionsComplete = false;
-    this.questionIndex = -1;
-    this.numQuestions = this.intro.questions.length;
-    this.questionService.setLastQuestion(this.intro.questions[this.numQuestions - 1])
-    this.nextQuestion();
+    this.divIndex = -1;
+    this.numDivs = this.intro.introBody.length;
+    this.divsComplete = false;
+    this.nextDiv();
   }
 
-  nextQuestion() {
-    this.questionIndex++;
-    if (this.questionIndex < this.numQuestions) {
-      this.question = this.intro.questions[this.questionIndex];
+  nextDiv() {
+    this.divIndex++;
+    if (this.divIndex < this.numDivs) {
+      this.div = this.intro.introBody[this.divIndex];
+      console.log(this.div);
     } else {
-      this.questionsComplete = true;
+      this.divsComplete = true;
+      this.allDone();
     }
   }
 

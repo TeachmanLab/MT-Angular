@@ -1,15 +1,10 @@
+<div *ngIf="div.header" class="mdl-card__title mdl-card--border">
+  <h1 class="mdl-card__title-text">{{div.header}}</h1>
+</div>
 <div *ngIf="div.text">
-  <div *ngFor="let string in div.text">
+  <div *ngFor="let string of div.text" class="mdl-card__supporting-text">
     {{ string }}
   </div>
 </div>
-<div *ngIf="div.questions">
-  <div *ngFor="let question of div.questions">
-      <app-question [question]="question"></app-question>
-  </div>
-</div>
-<div *ngIf="div.scenarios">
-    <div *ngFor="let scenario of div.scenarios">
-        <app-scenario [scenario]="scenario"></app-scenario>
-    </div> 
-</div>
+<app-question *ngIf="question" [question]="question" (done)="nextQuestion()"></app-question>
+<app-scenario *ngIf="scenario" [scenario]="scenario" (done)="nextScenario()"></app-scenario>

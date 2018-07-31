@@ -23,7 +23,7 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.sessionNames = ['example_session'];
+    this.sessionNames = ['session_1'];
     this.sessionIndex = -1;
     this.introComplete = false;
     this.sessionComplete = false;
