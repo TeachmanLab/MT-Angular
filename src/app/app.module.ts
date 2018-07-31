@@ -19,6 +19,7 @@ import { IntroComponent } from './intro/intro.component';
 import { EduSessionComponent } from './edu-session/edu-session.component';
 import { StepComponent } from './step/step.component';
 import { EducationSessionIndicatorComponent } from './education-session-indicator/education-session-indicator.component';
+import { DivComponent } from './div/div.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EducationSessionIndicatorComponent } from './education-session-indicato
     IntroComponent,
     EduSessionComponent,
     StepComponent,
-    EducationSessionIndicatorComponent
+    EducationSessionIndicatorComponent,
+    DivComponent
   ],
   imports: [
     BrowserModule,

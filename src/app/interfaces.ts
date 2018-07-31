@@ -6,21 +6,27 @@ export interface Intro {
 
 export interface Session {
   title: string;
-  icon: string;
-  sections: Section[];
+  sessionIndicator: string;
+  description: string[];
+  steps: Step[];
 }
 
-export interface Section {
-  scenario?: Scenario;
-  education?: Education;
+export interface Step {
+  title: string;
+  stepIndicator: string;
+  stepBody: Div[]
 }
 
-export interface Education {
-  title: String;
-  markdown: string[];
-  image: String;
-  questions?: Question[];
-  eduSession: EducationSession[];
+export interface Div {
+  text?: string[];
+  question?: Question[];
+  scenarios?: Scenario[];
+}
+
+export interface Question {
+  question: string;
+  options: string[];
+  answer: string;
 }
 
 export interface Scenario {
@@ -35,33 +41,10 @@ export interface MissingLetter {
   word: string;
 }
 
-export interface Question {
-  question: string;
-  options: string[];
-  answer: string;
-}
 
-export interface Intro {
-  title: String;
-  divs: string[];
-  questions: Question[];
-}
 
-export interface Step {
-  title: string;
-  stepIndicator: string;
-  stepBody: string[];
-  questions: Question[];
-}
 
-export interface EducationSession {
-  title: string;
-  stepsIndicator: string;
-  eduSessionInd: EducationSessionIndicator;
-  sessionContent: string[];
-  steps: Step[];
-}
 
-export interface EducationSessionIndicator {
-  sessionIndicator: string;
-}
+
+
+

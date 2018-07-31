@@ -1,0 +1,15 @@
+<div *ngIf="div.text">
+  <div *ngFor="let string in div.text">
+    {{ string }}
+  </div>
+</div>
+<div *ngIf="div.questions">
+  <div *ngFor="let question of div.questions">
+      <app-question [question]="question"></app-question>
+  </div>
+</div>
+<div *ngIf="div.scenarios">
+    <div *ngFor="let scenario of div.scenarios">
+        <app-scenario [scenario]="scenario"></app-scenario>
+    </div> 
+</div>

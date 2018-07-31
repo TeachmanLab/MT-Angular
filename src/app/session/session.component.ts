@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Education, EducationSession, Section, Session} from '../interfaces';
+import {Step, Session} from '../interfaces';
 import { SessionButtonService } from '../session-button.service';
 
 @Component({
@@ -11,42 +11,38 @@ export class SessionComponent implements OnInit {
 
   @Input()
   session: Session;
-  section_index: number;
-  current_section: Section;
-  num_sections: number;
-  on_last_section: boolean;
+  stepIndex: number;
+  currentStep: Step;
+  numSteps: number;
+  onLastStep: boolean;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor(
-    private sessionButtonService: SessionButtonService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    console.log("Sonia");
-    console.log(this.session)
-    this.section_index = -1;
-    this.num_sections = this.session.sections.length;
-    this.on_last_section = false;
-    this.nextSection();
+    this.stepIndex = -1;
+    this.numSteps = this.session.steps.length;
+    this.onLastStep = false;
+    this.nextstep();
   }
 
-  nextSection() {
-    this.section_index++;
-    if (this.section_index < this.num_sections) {
-      this.current_section = this.session.sections[this.section_index];
+  nextstep() {
+    this.stepIndex++;
+    if (this.stepIndex < this.numSteps) {
+      this.currentStep = this.session.steps[this.stepIndex];
     } else {
-      this.on_last_section = true;
+      this.onLastStep = true;
     }
   }
 
-  nextSessionButtonVisible() {
-    return this.on_last_section;
+  nextStepButtonVisible() {
+    return !this.onLastStep;
   }
 
   allDone() {
-    this.nextSection();
+    this.done.emit();
   }
 
 }

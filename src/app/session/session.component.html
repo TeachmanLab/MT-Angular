@@ -1,45 +1,16 @@
-<<<<<<< HEAD
-<h1>{{session.title}}</h1>
-<mat-card-header>
-  Section {{section_index + 1}} of {{session.sections.length}}
-</mat-card-header>
-<app-section [section]="current_section" (done)="allDone()"></app-section>
-<button class="continue" *ngIf="nextSessionButtonVisible()" mat-raised-button (click)="allDone()">Next Session</button>
-=======
-<!--<h1>{{session.title}}</h1>-->
-<!--<mat-card-header>-->
-  <!--Section {{section_index + 1}} of {{session.sections.length}}-->
-<!--</mat-card-header>-->
-<!--<app-section [section]="current_section" (done)="allDone()"></app-section>-->
-<!--<button class="continue" *ngIf="nextSessionButtonVisible()" mat-raised-button (click)="allDone()">Next Session</button>-->
-
-
 <mat-card class="scenario">
   <mat-card-content>
     <div class="mdl-card__title mdl-card--border">
-                  <h2 class="mdl-card__title-text ">{{session.sections[0].education.title}}</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                  <!--<nav>-->
-                    <!--<div class="nav-wrapper">-->
-                      <!--<div class="col s12">-->
-                        <!--<a href="#!" class="breadcrumb">First</a>-->
-                        <!--<a href="#!" class="breadcrumb">Second</a>-->
-                        <!--<a href="#!" class="breadcrumb">Third</a>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</nav>-->
-                  Section {{section_index + 1}} of {{session.sections.length}}
-                  <img  class="card-img-top" src="./assets/sessionBar.png" alt="Card image cap"/>
-                </div>
-                <app-section [section]="current_section" (done)="allDone()"></app-section>
-
-                <!--<app-question *ngIf="question" [question]="question" (done)="nextQuestion()"></app-question>-->
-
-<!--
-    <a id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="allDone()" class="mdl-button mdl-button&#45;&#45;fab mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-color&#45;&#45;accent mdl-color-text&#45;&#45;accent-contrast mdl-shadow&#45;&#45;4dp">
-      <i class="material-icons">navigate_next</i>
-    </a>-->
+      <h2 class="mdl-card__title-text ">{{session.title}}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{ session.description }}  
+    </div>
+    <div class="mdl-card__supporting-text">
+      Step {{stepIndex + 1}} of {{session.steps.length}}
+      <img class="card-img-top" src="./assets/sessionBar.png" alt="Card image cap" />
+    </div>
+    <app-step [step]="currentStep" (done)="nextStep()"></app-step>
+  
   </mat-card-content>
 </mat-card>
->>>>>>> Sonia
