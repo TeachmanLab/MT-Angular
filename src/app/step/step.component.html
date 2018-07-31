@@ -9,12 +9,9 @@
       <h2 class="mdl-card__title-text ">{{ step.title }}</h2>
     </div>
    
-    
     <div class="mdl-card__supporting-text" *ngFor= "let div of step.stepBody">
       <app-div [div]="div"></app-div>
     </div>
-
-    <button *ngIf="!on_last_step" (click)="allDone()" class="mdl-button">Step {{step_index}}</button>
   </div>
 
 </section>
