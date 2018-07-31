@@ -27,8 +27,8 @@ export interface Scenario {
   title: String;
   image: string;
   statement: string;
-  missingLetter: MissingLetter;
-  question: Question;
+  missingLetter?: MissingLetter;
+  question?: Question;
 }
 
 export interface MissingLetter {

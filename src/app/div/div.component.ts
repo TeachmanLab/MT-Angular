@@ -48,6 +48,7 @@ export class DivComponent implements OnInit {
       this.questionIndex++;
       if (this.questionIndex < this.numQuestions) {
         this.question = this.div.questions[this.questionIndex];
+        console.log(this.question);
       } else {
         this.questionsComplete = true;
         console.log('Emitting done after' + (this.questionIndex - 1) + 'questions');
@@ -57,6 +58,7 @@ export class DivComponent implements OnInit {
       this.scenarioIndex++;
       if (this.scenarioIndex < this.numScenarios) {
         this.scenario = this.div.scenarios[this.scenarioIndex];
+        console.log(this.scenario);
       } else {
         this.scenariosComplete = true;
         this.allDone();

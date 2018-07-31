@@ -52,7 +52,7 @@ export class ScenarioComponent implements OnInit {
 
   @Input()
   scenario: Scenario;
-  states = ['intro', 'statements', 'input', 'question'];
+  states = ['intro', 'statements']
   state_index = 0;
   state = this.states[0];
 
@@ -61,7 +61,14 @@ export class ScenarioComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.scenario.missingLetter) {
+      this.states[this.states.length] = 'input';
+    }
+    if (this.scenario.question) {
+      this.states[this.states.length] = 'question';
+    }
+  }
 
   continueButtonVisible() {
     return this.state === 'intro';
@@ -78,8 +85,6 @@ export class ScenarioComponent implements OnInit {
       console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
     } else {
       console.log('The scenario is complete.' + this.state_index + '.  The state is ' + this.state);
-      this.state_index = 0;
-      this.state = this.states[this.state_index];
       this.done.emit();
     }
   }
