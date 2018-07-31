@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Question} from '../interfaces';
 import {interval} from 'rxjs';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'app-question',
@@ -17,7 +18,9 @@ export class QuestionComponent implements OnInit {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private questionService: QuestionService
+  ) { }
 
   ngOnInit() {
     this.state = 'asking';
@@ -26,18 +29,25 @@ export class QuestionComponent implements OnInit {
   }
 
   selected(option: string) {
-      if (option === this.question.answer) {
-        this.state = 'correct';
+      if (this.question.type === 'single') { 
+        if (option === this.question.answer) {
+          this.state = 'correct';
+          this.waitAndEmit();
+        } else {
+          this.state = 'incorrect';
+          this.makeThemWait();
+        }
+      }
+      else {
+        this.state = 'answered'
         this.waitAndEmit();
-      } else {
-        this.state = 'incorrect';
-        this.makeThemWait();
       }
   }
 
   waitAndEmit() {
     const secondsCounter = interval(1000);
     const subscription = secondsCounter.subscribe( n => {
+      // next line lets choices show up again, for questions in multiple succession
       this.state = 'asking';
       this.done.emit();
       subscription.unsubscribe();
@@ -58,8 +68,11 @@ export class QuestionComponent implements OnInit {
     });
   }
 
-  allDone() {
+  isLastQuestion() {
+    return this.question === this.questionService.getLastQuestion();
+  }
 
+  allDone() {
     this.done.emit();
   }
 }

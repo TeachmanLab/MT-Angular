@@ -13,6 +13,7 @@
         "questions": [
           {
             "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+            "type": "single",
             "options": [
               "True",
               "False"
@@ -36,6 +37,7 @@
                 "questions": [
                   {
                     "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -59,6 +61,7 @@
         },
         "question": {
           "question": "Are you in New York?",
+          "type": "single",
           "options": [
             "Yes",
             "No"
@@ -77,6 +80,7 @@
         },
         "question": {
           "question": "Is it OK for people to look at you and your friend while out shopping?",
+          "type": "single",
           "options": [
             "Yes",
             "No"
@@ -94,10 +98,11 @@
           "word": "enjoyable"
         },
         "question": {
-          "question": "",
+          "question": "Will you ask them on a date?",
+          "type": "any",
           "options": [
-            "Say yes if you ask them on a date.",
-            "Say no if you ask them on a date."
+            "Yes",
+            "No"
           ],
           "answer": "Say yes if you ask them on a date."
         }

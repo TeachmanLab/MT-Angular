@@ -4,11 +4,12 @@
     <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-around center" class="logo">
     </mat-toolbar-row>
   </mat-toolbar>
-  <div *ngIf="onIntro">
-    <app-intro *ngIf="intro" [intro]="intro" (done)="allDone()"></app-intro>
-  </div>
 
-  <div *ngIf="!onIntro">
-    <app-session *ngIf="session" [session]="session" (done)="allDone()"></app-education>
-  </div>
+<div *ngIf="!introComplete">
+  <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
 </div>
+<div *ngIf="introComplete">
+  <app-session *ngIf="session" [session]="session" (done)="sessionComplete=true"></app-session>
+</div>
+
+<button class="continue" *ngIf="nextSessionButtonVisible()" mat-raised-button (click)="nextSession()">Begin Session {{ sessionIndex + 1 }}</button>

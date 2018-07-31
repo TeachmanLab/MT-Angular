@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
-import {Education, Intro, Session} from './interfaces';
+import { Intro, Session} from './interfaces';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,12 @@ import {Education, Intro, Session} from './interfaces';
 export class AppComponent {
   title = 'app';
   intro: Intro;
-  education: Education;
   session: Session;
-  session_index: number;
-  session_names: string[];
-  onIntro: boolean;
+  sessionIndex: number;
+  sessionNames: string[];
+  introComplete: boolean;
+  sessionComplete: boolean;
+  onLastSession: boolean;
 
   // Read in the Json file.
   constructor(
@@ -22,10 +23,12 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.session_names = ['education'];
-    this.session_index = -1;
+    this.sessionNames = ['example_session'];
+    this.sessionIndex = -1;
+    this.introComplete = false;
+    this.sessionComplete = false;
+    this.onLastSession = false;
     this.getIntro();
-    this.getEducation();
   }
 
   getIntro() {
@@ -33,30 +36,24 @@ export class AppComponent {
       this.intro = intro;
       console.log('Loaded intro from JSON');
     });
-    this.onIntro = true;
+  }
+
+  nextSessionButtonVisible() {
+    return this.sessionComplete && !this.onLastSession;
   }
 
   nextSession() {
-    this.session_index++;
-    this.onIntro = false;
-    if (this.session_index < this.session_names.length) {
-      console.log('Moving on to session ' + this.session_index);
-      this.api.getSession(this.session_names[this.session_index]).subscribe(session => {
+    this.sessionIndex++;
+    this.introComplete = true;
+    this.sessionComplete = false;
+    if (this.sessionIndex < this.sessionNames.length) {
+      console.log('Moving on to session ' + this.sessionIndex);
+      this.sessionComplete = false;
+      this.api.getSession(this.sessionNames[this.sessionIndex]).subscribe(session => {
         this.session = session;
         console.log('Loaded session from JSON');
 
       });
     }
-  }
-
-  allDone() {
-    this.nextSession();
-  }
-
-  private getEducation() {
-    this.api.getEducation().subscribe(education => {
-      this.education = education;
-      console.log('Loaded Education from JSON');
-    });
   }
 }

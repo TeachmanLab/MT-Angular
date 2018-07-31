@@ -12,6 +12,7 @@ export class SessionComponent implements OnInit {
   @Input()
   session: Session;
   stepIndex: number;
+  stepComplete: boolean;
   currentStep: Step;
   numSteps: number;
   onLastStep: boolean;
@@ -25,6 +26,7 @@ export class SessionComponent implements OnInit {
     this.stepIndex = -1;
     this.numSteps = this.session.steps.length;
     this.onLastStep = false;
+    this.stepComplete = false;
     this.nextstep();
   }
 
@@ -34,11 +36,12 @@ export class SessionComponent implements OnInit {
       this.currentStep = this.session.steps[this.stepIndex];
     } else {
       this.onLastStep = true;
+      this.allDone()
     }
   }
 
   nextStepButtonVisible() {
-    return !this.onLastStep;
+    return this.stepComplete && !this.onLastStep;
   }
 
   allDone() {

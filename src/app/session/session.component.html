@@ -8,9 +8,9 @@
     </div>
     <div class="mdl-card__supporting-text">
       Step {{stepIndex + 1}} of {{session.steps.length}}
-      <img class="card-img-top" src="./assets/sessionBar.png" alt="Card image cap" />
+      <img class="card-img-top" src="{{ session.sessionIndicator }} " alt="Card image cap" />
     </div>
-    <app-step [step]="currentStep" (done)="nextStep()"></app-step>
-  
+    <app-step [step]="currentStep" (done)="stepComplete=true"></app-step>
+    <button class="continue" *ngIf="nextStepButtonVisible()" mat-raised-button (click)="nextStep()">Next Step</button>
   </mat-card-content>
 </mat-card>

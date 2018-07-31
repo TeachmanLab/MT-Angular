@@ -1,6 +1,6 @@
 {
     "title": "About Mindtrails",
-    "markdown": [
+    "introBody": [
         {
             "text": [
                 "The CalmThinking program includes five sessions. You will complete one session each week, and each session takes about 15 minutes or fewer to complete. You will also complete some assessments as part of our research study so we can evaluate how well the program works.",
@@ -9,44 +9,45 @@
         },
         {
             "header": "How Does CalmThinking Work?",
-            "text":  [
+            "text": [
                 "We are attempting to change your understanding of anxiety to alter your anxious thinking. In each session, you will be asked to read brief information and complete questions by filling in whether statements are true or false. The task is not meant to be tricky or too difficult."
             ]
-        }
-       
-    ],
-    "questions": [
-        {
-            "question": "How important is reducing your anxiety to you right now?",
-            "type": "any",
-            "options": [
-                "Not Important",
-                "Slightly Important",
-                "Moderately Important",
-                "Very Important",
-                "Extremely Important"
-            ]
         },
         {
-            "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
-            "type": "any",
-            "options": [
-                "Not Confident",
-                "Slightly Confident",
-                "Moderately Confident",
-                "Very Confident",
-                "Extremely Confident"
-            ]
-        },
-        {
-            "question": "How confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
-            "type": "any",
-            "options": [
-                "Not Confident",
-                "Slightly Confident",
-                "Moderately Confident",
-                "Very Confident",
-                "Extremely Confident"
+            "questions": [
+                {
+                    "question": "How important is reducing your anxiety to you right now?",
+                    "type": "any",
+                    "options": [
+                        "Not Important",
+                        "Slightly Important",
+                        "Moderately Important",
+                        "Very Important",
+                        "Extremely Important"
+                    ]
+                },
+                {
+                    "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
+                    "type": "any",
+                    "options": [
+                        "Not Confident",
+                        "Slightly Confident",
+                        "Moderately Confident",
+                        "Very Confident",
+                        "Extremely Confident"
+                    ]
+                },
+                {
+                    "question": "How confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
+                    "type": "any",
+                    "options": [
+                        "Not Confident",
+                        "Slightly Confident",
+                        "Moderately Confident",
+                        "Very Confident",
+                        "Extremely Confident"
+                    ]
+                }
             ]
         }
     ]

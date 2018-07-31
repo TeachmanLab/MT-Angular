@@ -1,7 +1,13 @@
+export interface Div {
+  header?: string;
+  text?: string[];
+  questions?: Question[];
+  scenarios?: Scenario[];
+}
+
 export interface Intro {
-  title: String;
-  markdown: string[];
-  questions: Question[];
+  title: string;
+  introBody: Div[];
 }
 
 export interface Session {
@@ -17,18 +23,6 @@ export interface Step {
   stepBody: Div[]
 }
 
-export interface Div {
-  text?: string[];
-  question?: Question[];
-  scenarios?: Scenario[];
-}
-
-export interface Question {
-  question: string;
-  options: string[];
-  answer: string;
-}
-
 export interface Scenario {
   title: String;
   image: string;
@@ -41,7 +35,12 @@ export interface MissingLetter {
   word: string;
 }
 
-
+export interface Question {
+  question: string;
+  type: string;
+  options: string[];
+  answer?: string;
+}
 
 
 
