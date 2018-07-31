@@ -3,8 +3,8 @@
 </div>
 <div *ngIf="div.text">
   <div *ngFor="let string of div.text" class="mdl-card__supporting-text">
-    {{ string }}
+    {{ string }} 
   </div>
 </div>
-<app-question *ngIf="question" [question]="question" (done)="nextQuestion()"></app-question>
-<app-scenario *ngIf="scenario" [scenario]="scenario" (done)="nextScenario()"></app-scenario>
+<app-question *ngIf="question" [question]="question" (done)="next('question')"></app-question>
+<app-scenario *ngIf="scenario" [scenario]="scenario" (done)="next('scenario')"></app-scenario> 

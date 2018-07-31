@@ -14,6 +14,7 @@ export class AppComponent {
   sessionIndex: number;
   sessionNames: string[];
   introComplete: boolean;
+  startedSessions: boolean;
   sessionComplete: boolean;
   onLastSession: boolean;
 
@@ -26,6 +27,7 @@ export class AppComponent {
     this.sessionNames = ['session_1'];
     this.sessionIndex = -1;
     this.introComplete = false;
+    this.startedSessions = false;
     this.sessionComplete = false;
     this.onLastSession = false;
     this.getIntro();
@@ -38,13 +40,22 @@ export class AppComponent {
     });
   }
 
+  introVisible() {
+    return !this.startedSessions;
+  }
+
+  sessionVisible() {
+    return this.startedSessions;
+  }
+  
   nextSessionButtonVisible() {
-    return this.sessionComplete && !this.onLastSession;
+    return (this.introComplete && !this.startedSessions) || (this.sessionComplete && !this.onLastSession);
   }
 
   nextSession() {
     this.sessionIndex++;
     this.introComplete = true;
+    this.startedSessions = true;
     this.sessionComplete = false;
     if (this.sessionIndex < this.sessionNames.length) {
       console.log('Moving on to session ' + this.sessionIndex);

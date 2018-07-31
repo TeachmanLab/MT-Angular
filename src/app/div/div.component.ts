@@ -32,39 +32,42 @@ export class DivComponent implements OnInit {
       this.questionsComplete = false;
       this.questionIndex = -1;
       this.numQuestions = this.div.questions.length;
-      this.nextQuestion();
+      this.next('question');
     } else if (this.div.scenarios) {
       this.scenariosComplete = false;
       this.scenarioIndex = -1;
       this.numScenarios = this.div.scenarios.length;
-      this.nextScenario();
+      this.next('scenario');
     } else {
-      this.allDone();
-    }
-    
-  }
-
-  nextQuestion() {
-    this.questionIndex++;
-    if (this.questionIndex < this.numQuestions) {
-      this.question = this.div.questions[this.questionIndex];
-    } else {
-      this.questionsComplete = true;
-      this.allDone();
+      this.allDone()
     }
   }
 
-  nextScenario() {
-    this.scenarioIndex++;
-    if (this.scenarioIndex < this.numScenarios) {
-      this.scenario = this.div.scenarios[this.scenarioIndex];
+  next(type: string) {
+    if (type === 'question') {
+      this.questionIndex++;
+      if (this.questionIndex < this.numQuestions) {
+        this.question = this.div.questions[this.questionIndex];
+      } else {
+        this.questionsComplete = true;
+        console.log('Emitting done after' + (this.questionIndex - 1) + 'questions');
+        this.allDone();
+      }
+    } else if (type === "scenario") {
+      this.scenarioIndex++;
+      if (this.scenarioIndex < this.numScenarios) {
+        this.scenario = this.div.scenarios[this.scenarioIndex];
+      } else {
+        this.scenariosComplete = true;
+        this.allDone();
+      }
     } else {
-      this.scenariosComplete = true;
-      this.allDone();
+      console.log('Error: Unknown type for function next()');
     }
   }
 
   allDone() {
+    console.log('Done');
     this.done.emit();
   }
 

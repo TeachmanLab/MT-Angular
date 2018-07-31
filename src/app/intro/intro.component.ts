@@ -25,22 +25,30 @@ export class IntroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.divIndex = -1;
+    this.divIndex = 0;
     this.numDivs = this.intro.introBody.length;
     this.divsComplete = false;
-    this.nextDiv();
+    // this.nextDiv();
+
   }
 
-  nextDiv() {
-    this.divIndex++;
-    if (this.divIndex < this.numDivs) {
-      this.div = this.intro.introBody[this.divIndex];
-      console.log(this.div);
-    } else {
-      this.divsComplete = true;
+  updateDivIndex() {
+    this.divIndex += 1;
+    if (this.divIndex == this.numDivs) {
       this.allDone();
     }
   }
+
+  // nextDiv() {
+  //   this.divIndex++;
+  //   if (this.divIndex < this.numDivs) {
+  //     this.div = this.intro.introBody[this.divIndex];
+  //     console.log(this.div);
+  //   } else {
+  //     this.divsComplete = true;
+  //     this.allDone();
+  //   }
+  // }
 
   allDone() {
     this.done.emit();
