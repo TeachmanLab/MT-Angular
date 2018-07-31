@@ -30,8 +30,8 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
-  public getSession(session_name: string): Observable<any> {
-    return this.httpClient.get<Session>('./assets/json/'+ session_name + '.json')
+  public getSessions(): Observable<any> {
+    return this.httpClient.get<Session[]>('./assets/json/sessions.json')
       .pipe((catchError(this.handleError)));
   }
 

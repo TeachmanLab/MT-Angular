@@ -10,9 +10,9 @@ import { Intro, Session} from './interfaces';
 export class AppComponent {
   title = 'app';
   intro: Intro;
+  sessions: Session[]
   session: Session;
   sessionIndex: number;
-  sessionNames: string[];
   introComplete: boolean;
   startedSessions: boolean;
   sessionComplete: boolean;
@@ -24,19 +24,29 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.sessionNames = ['session_1'];
-    this.sessionIndex = -1;
     this.introComplete = false;
+    this.getIntro();
+
+    this.sessions = [];
+    this.sessionIndex = -1;
     this.startedSessions = false;
     this.sessionComplete = false;
     this.onLastSession = false;
-    this.getIntro();
+    this.getSessions();
   }
 
   getIntro() {
     this.api.getIntro().subscribe(intro => {
       this.intro = intro;
       console.log('Loaded intro from JSON');
+    });
+  }
+
+  getSessions() {
+    this.api.getSessions().subscribe(sessions => {
+      this.sessions = sessions;
+      console.log(this.sessions);
+      console.log('Loaded session from JSON');
     });
   }
 
@@ -54,17 +64,16 @@ export class AppComponent {
 
   nextSession() {
     this.sessionIndex++;
+    console.log(this.sessionIndex)
+    console.log(this.sessions);
+    console.log(this.sessions.length)
     this.introComplete = true;
     this.startedSessions = true;
     this.sessionComplete = false;
-    if (this.sessionIndex < this.sessionNames.length) {
+    if (this.sessionIndex < this.sessions.length) {
       console.log('Moving on to session ' + this.sessionIndex);
+      this.session = this.sessions[this.sessionIndex];
       this.sessionComplete = false;
-      this.api.getSession(this.sessionNames[this.sessionIndex]).subscribe(session => {
-        this.session = session;
-        console.log('Loaded session from JSON');
-
-      });
     }
   }
 }

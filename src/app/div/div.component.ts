@@ -67,7 +67,6 @@ export class DivComponent implements OnInit {
   }
 
   allDone() {
-    console.log('Done');
     this.done.emit();
   }
 
