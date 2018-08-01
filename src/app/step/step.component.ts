@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Step} from '../interfaces';
+import {Step, Page} from '../interfaces';
 
 @Component({
   selector: 'app-step',
@@ -10,6 +10,11 @@ export class StepComponent implements OnInit {
 
   @Input()
   step: Step;
+  page: Page;
+  pageIndex: number;
+  numPages: number;
+  pageComplete: boolean;
+  onLastPage: boolean;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -17,6 +22,25 @@ export class StepComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.pageIndex = -1;
+    this.numPages = this.step.pages.length
+    this.pageComplete = false;
+    this.onLastPage = false;
+    this.nextPage();
+  }
+
+  nextPageButtonVisible() {
+    return this.pageComplete && !this.onLastPage;
+  }
+
+  nextPage() {
+    this.pageIndex++;
+    if (this.pageIndex < this.numPages) {
+      this.page = this.step.pages[this.pageIndex];
+    } else {
+      this.onLastPage = true;
+      this.allDone()
+    }
   }
 
   allDone() {

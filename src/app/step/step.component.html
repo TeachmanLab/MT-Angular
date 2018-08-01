@@ -9,10 +9,12 @@
       <h2 class="mdl-card__title-text ">{{ step.title }}</h2>
     </div>
    
-    <div class="mdl-card__supporting-text" *ngFor= "let div of step.stepBody">
-      <app-div [div]="div"></app-div>
-    </div>
-    {{ allDone() }}
+    <app-page *ngIf="page" [page]="page" (done)="pageComplete === true"></app-page>
+    <!-- button should go here -->
+   
+    <a id="contact-button" *ngIf="nextPageButtonVisible" (click)="nextPage()" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
+      <i class="material-icons">navigate_next</i>
+    </a>
   </div>
 
 </section>

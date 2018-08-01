@@ -16,6 +16,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { IntroComponent } from './intro/intro.component';
 import { StepComponent } from './step/step.component';
 import { DivComponent } from './div/div.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DivComponent } from './div/div.component';
     SessionComponent,
     IntroComponent,
     StepComponent,
-    DivComponent
+    DivComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

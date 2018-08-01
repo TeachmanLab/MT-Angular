@@ -10,10 +10,7 @@
         <div class="mdl-card__supporting-text"> {{ string }}</div>
       </div>
     </div>
-
-    <div *ngIf="currentStep">
-      <app-step [step]="currentStep" (done)="stepComplete=true"></app-step>
-    </div>
+    <app-step *ngIf="step" [step]="step" (done)="stepComplete=true"></app-step>
     <button class="continue" *ngIf="nextStepButtonVisible()" mat-raised-button (click)="nextStep()">
       Begin Step {{ stepIndex + 1}} </button>
   </mat-card-content>

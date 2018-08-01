@@ -17,7 +17,7 @@ export class SessionComponent implements OnInit {
 
   stepIndex: number;
   stepComplete: boolean;
-  currentStep: Step;
+  step: Step;
   numSteps: number;
   onLastStep: boolean;
 
@@ -57,7 +57,7 @@ export class SessionComponent implements OnInit {
     }
 
     if (this.stepIndex < this.numSteps) {
-      this.currentStep = this.session.steps[this.stepIndex];
+      this.step = this.session.steps[this.stepIndex];
     } else {
       this.onLastStep = true;
       this.allDone()

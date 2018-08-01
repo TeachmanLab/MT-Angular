@@ -1,9 +1,3 @@
-export interface Div {
-  header?: string;
-  text?: string[];
-  questions?: Question[];
-  scenarios?: Scenario[];
-}
 
 export interface Intro {
   title: string;
@@ -20,7 +14,18 @@ export interface Session {
 export interface Step {
   title: string;
   stepIndicator: string;
-  stepBody: Div[]
+  pages: Page[]
+}
+
+export interface Page{
+  divs: Div[]
+}
+
+export interface Div {
+  header?: string;
+  text?: string[];
+  questions?: Question[];
+  scenarios?: Scenario[];
 }
 
 export interface Scenario {
