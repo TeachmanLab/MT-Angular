@@ -15,6 +15,7 @@ export class SessionComponent implements OnInit {
   states: string[];
   state_index: number;
 
+  firsTime: boolean;
   stepIndex: number;
   stepComplete: boolean;
   currentStep: Step;
@@ -24,25 +25,31 @@ export class SessionComponent implements OnInit {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    debugger;
     this.states = ['intro', 'steps'];
     this.state_index = -1;
-    this.progressState()
-
+    this.progressState();
+    console.log("test for the session");
+    console.log(this.session);
     this.stepIndex = -1;
     this.numSteps = this.session.steps.length;
     this.onLastStep = false;
     this.stepComplete = false;
+    this.firsTime = false;
   }
 
   // Need to factor out progressState into a service, probably
   progressState() {
-    this.state_index++;
-    if (this.state_index < this.states.length) {
-      this.state = this.states[this.state_index];
-      console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
+    debugger;
+    if (!this.firsTime) {
+      this.state_index++;
+      if (this.state_index < this.states.length) {
+        this.state = this.states[this.state_index];
+        console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
+      }
     }
   }
 
@@ -53,14 +60,15 @@ export class SessionComponent implements OnInit {
     // This will hide the intro
     // Not the best for performance purposes but it's the best I can do
     if (this.stepIndex == 0) {
-      this.progressState()
+      this.progressState();
     }
 
     if (this.stepIndex < this.numSteps) {
       this.currentStep = this.session.steps[this.stepIndex];
     } else {
       this.onLastStep = true;
-      this.allDone()
+      this.stepComplete = true;
+      this.allDone();
     }
   }
 

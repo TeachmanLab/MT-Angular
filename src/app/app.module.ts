@@ -41,7 +41,8 @@ import { DivComponent } from './div/div.component';
     HttpClientModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    SessionComponent
   ],
   bootstrap: [AppComponent]
 })

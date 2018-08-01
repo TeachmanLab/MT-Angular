@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
+import {SessionComponent} from './session/session.component';
 import { Intro, Session} from './interfaces';
 
 @Component({
@@ -21,6 +22,7 @@ export class AppComponent {
   // Read in the Json file.
   constructor(
     private api: ApiService,
+    private sessionCom: SessionComponent
   ) { }
 
   ngOnInit() {
@@ -57,23 +59,27 @@ export class AppComponent {
   sessionVisible() {
     return this.startedSessions;
   }
-  
+
   nextSessionButtonVisible() {
     return (this.introComplete && !this.startedSessions) || (this.sessionComplete && !this.onLastSession);
   }
 
   nextSession() {
+    debugger;
     this.sessionIndex++;
     console.log(this.sessionIndex)
-    console.log(this.sessions);
     console.log(this.sessions.length)
     this.introComplete = true;
     this.startedSessions = true;
     this.sessionComplete = false;
     if (this.sessionIndex < this.sessions.length) {
       console.log('Moving on to session ' + this.sessionIndex);
+      debugger;
       this.session = this.sessions[this.sessionIndex];
       this.sessionComplete = false;
+    } else {
+      this.sessionComplete = true;
     }
+    console.log(this.session);
   }
 }
