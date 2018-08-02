@@ -9,8 +9,8 @@
   <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
 </div>
 
-<div *ngIf="sessionVisible()">
-    <app-session [session]="sessions" (done)="sessionComplete=true"></app-session>
+<div *ngIf="sessionsVisible()">
+    <app-session [sessions]="sessions" (done)="sessionComplete=true"></app-session>
 </div>
 
 <button id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

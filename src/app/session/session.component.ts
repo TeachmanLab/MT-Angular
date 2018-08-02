@@ -10,7 +10,7 @@ import { SessionButtonService } from '../session-button.service';
 export class SessionComponent implements OnInit {
 
   @Input()
-  session: Session[];
+  sessions: Session[];
   currentSession: Session;
   state: string;
   states: string[];
@@ -40,7 +40,7 @@ export class SessionComponent implements OnInit {
     this.progressState()
     this.session_index = 0;
     this.sessionComplete = false;
-    this.currentSession = this.session[0];
+    this.currentSession = this.sessions[0];
     this.stepIndex = -1;
     this.numSteps = this.currentSession.steps.length;
     this.onLastStep = false;
@@ -83,13 +83,13 @@ export class SessionComponent implements OnInit {
   }
 
   nextSession() {
-    console.log(this.session);
+    console.log(this.sessions);
     this.session_index++
-    if (this.session_index < this.session.length) {
+    if (this.session_index < this.sessions.length) {
       this.stepComplete = false;
       this.onLastStep = false;
       this.state = "intro";
-      this.currentSession = this.session[this.session_index];
+      this.currentSession = this.sessions[this.session_index];
       this.stepIndex = -1
       this.nextStep();
     } else {

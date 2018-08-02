@@ -56,7 +56,7 @@ export class AppComponent {
     return !this.startedSessions;
   }
 
-  sessionVisible() {
+  sessionsVisible() {
     return this.startedSessions;
   }
 
