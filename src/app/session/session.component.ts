@@ -10,10 +10,13 @@ import { SessionButtonService } from '../session-button.service';
 export class SessionComponent implements OnInit {
 
   @Input()
-  session: Session;
+  session: Session[];
+  currentSession: Session;
   state: string;
   states: string[];
   state_index: number;
+  session_index: number;
+  sessionComplete: boolean;
 
   firsTime: boolean;
   stepIndex: number;
@@ -21,6 +24,7 @@ export class SessionComponent implements OnInit {
   currentStep: Step;
   numSteps: number;
   onLastStep: boolean;
+
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -31,11 +35,14 @@ export class SessionComponent implements OnInit {
     debugger;
     this.states = ['intro', 'steps'];
     this.state_index = -1;
-    this.progressState();
-    console.log("test for the session");
-    console.log(this.session);
+    debugger;
+    console.log("soniaaaaa")
+    this.progressState()
+    this.session_index = 0;
+    this.sessionComplete = false;
+    this.currentSession = this.session[0];
     this.stepIndex = -1;
-    this.numSteps = this.session.steps.length;
+    this.numSteps = this.currentSession.steps.length;
     this.onLastStep = false;
     this.stepComplete = false;
     this.firsTime = false;
@@ -64,11 +71,32 @@ export class SessionComponent implements OnInit {
     }
 
     if (this.stepIndex < this.numSteps) {
-      this.currentStep = this.session.steps[this.stepIndex];
+      this.currentStep = this.currentSession.steps[this.stepIndex];
     } else {
       this.onLastStep = true;
+      this.allDone();
+    }
+  }
+
+  nextSessionVisible() {
+    return this.onLastStep && !this.sessionComplete;
+  }
+
+  nextSession() {
+    console.log(this.session);
+    this.session_index++
+    if (this.session_index < this.session.length) {
+      this.stepComplete = false;
+      this.onLastStep = false;
+      this.state = "intro";
+      this.currentSession = this.session[this.session_index];
+      this.stepIndex = -1
+      this.nextStep();
+    } else {
+      this.sessionComplete = true;
       this.stepComplete = true;
       this.allDone();
+
     }
   }
 

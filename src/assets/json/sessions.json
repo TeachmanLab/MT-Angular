@@ -9,13 +9,13 @@
     "steps": [
       {
         "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/stepInd1.png",
+        "stepIndicator": "./assets/step1.png",
         "stepBody": [
           {
             "text": [
               "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think.",
               "Anxious responses usually consist of a variety of changes in one’s thoughts, bodily reactions, feelings, and behavior, such as these:",
-              "somePict.png"
+              "./assets/step1session1.png"
             ]
           },
           {
@@ -98,86 +98,41 @@
         "When you finish reading the information you will be asked questions about it.",
         "The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."]
       ],
+
     "steps": [
       {
-        "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/stepInd1.png",
+        "title": "Anxiety Symptoms",
+        "stepIndicator": "./assets/stepInd2.png",
         "stepBody": [
           {
             "text": [
-              "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think.",
-              "Anxious responses usually consist of a variety of changes in one’s thoughts, bodily reactions, feelings, and behavior, such as these:",
-              "somePict.png"
+              "As we have seen, anxiety is common, useful, and appropriate in situations that threaten one’s health or well-being or the health and well-being of people one cares about. But when has an anxious response in the absence of a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As stated in session 1, the emotion anxiety consists of changes in thoughts, bodily reactions, feelings, and behaviors. The same types of changes can cause anxiety problems. These problems are called symptoms by mental health professionals. Symptoms can vary in how much they affect a person and how long they last.",
+              "Problems with anxiety can look different for different people. Below are some of the symptoms of various kinds of anxiety problems. Note that this list is incomplete and that many symptoms cut across several of the categories in the diagram. People with anxiety problems usually have some but not all of these symptoms, and some of the symptoms may relate to other emotional or behavioral problems that may include symptoms very different from these. Always speak with a mental health professional to better understand your symptoms.",
+              "some pic",
+              "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms.1 If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
             ]
           },
           {
-            "questions": [
-              {
-                "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-                "options": [
-                  "True",
-                  "False"
-                ],
-                "answer": "True"
-              }
-            ]
+            "questions": {
+              "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": "True"
+            }
           }
         ]
       },
       {
-        "title": "When Is Anxiety Functional?",
-        "stepIndicator": "stepIndicator1-S1.png",
+        "title": "Anxiety Disorders",
+        "stepIndicator": "./assets/stepInd2.png",
         "stepBody": [
           {
             "text": [
-              "Anxiety is a useful emotion, especially from an evolutionary point of view. Shaped by natural selection, anxiety helps us survive dangerous situations. For example, if a Neanderthal man is attacked by a saber-toothed tiger, he may be most likely to survive by fleeing and avoiding the tiger in fear. By increasing one’s ability to detect danger and preparing one’s body for fight or flight, anxiety helps people manage threats to the lives, health, or well-being of themselves or others. A moderate level of anxiety increases attention, concentration, and performance."
-            ]
-          },
-          {
-            "scenarios": [
-              {
-                "scenario": {
-                  "title": "Avoiding an Accident",
-                  "image": "chicago",
-                  "statement": "Driving home from work, Malik suddenly sees a child dart into the street in front of his car. Malik slams on the brakes and swerves, just missing the child. As he pulls over, Malik’s heart is beating furiously, and he is breathless, sweating, and shaking. He could have killed that child. Only after several long minutes is he able to continue his drive home.",
-                  "missingLetter": {
-                    "word": "anxiety"
-                  },
-                  "question": {
-                    "question": "Is Malik OK?",
-                    "type": "single",
-                    "options": [
-                      "Yes",
-                      "No"
-                    ],
-                    "answer": "Yes"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "text": [
-              "Of course, today it is unlikely that we will be confronted by saber-toothed tigers on the street, but there are other situations in which anxiety is still reasonable. For example, in the scenario above, Malik nearly had an accident and could have injured himself and a child. His anxious reaction to this situation is reasonable in that it helped keep both him and the child alive. As we can see in this example, the dangerous situation changed, but the usefulness of anxiety remained."
-            ]
-          },
-          {
-            "header": "When is Anxiety Impairing?",
-            "text": [
-              "Although anxiety is useful in many situations, it ceases to be useful when it arises in the absence of a real threat or when it becomes excessive. When anxiety dominates people’s daily lives and interferes with their abilities to fulfill work, school, or family responsibilities, anxiety might not be adaptive anymore. In these cases, it may be difficult to control the occurrence and duration of anxiety, even if one knows there is no real danger; such anxiety may be considered impairing."
-            ]
-          }
-        ]
-      },
-      {
-        "title": "When Is Anxiety Impairing?",
-        "stepIndicator": "stepIndicator1-S1.png",
-        "stepBody": [
-          {
-            "text": [
-              "Although anxiety is useful in many situations, it ceases to be useful when it arises in the absence of a real threat or when it becomes excessive.",
-              "When anxiety dominates people’s daily lives and interferes with their abilities to fulfill work, school, or family responsibilities, anxiety might not be adaptive anymore.",
-              "In these cases, it may be difficult to control the occurrence and duration of anxiety, even if one knows there is no real danger; such anxiety may be considered impairing."
+              "Anxiety symptoms can be combined in various ways. Mental health professionals refer to certain clusters of symptoms that impair people’s lives as anxiety disorders. Some of these disorders are described below. Many of the symptoms of anxiety are common to several disorders.",
+              "Panic Disorder",
+              "some pic"
             ]
           },
           {

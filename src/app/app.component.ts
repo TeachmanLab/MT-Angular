@@ -26,9 +26,9 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.introComplete = false;
+    this.introComplete = true;
     this.getIntro();
-
+    debugger;
     this.sessions = [];
     this.sessionIndex = -1;
     this.startedSessions = false;
@@ -61,7 +61,8 @@ export class AppComponent {
   }
 
   nextSessionButtonVisible() {
-    return (this.introComplete && !this.startedSessions) || (this.sessionComplete && !this.onLastSession);
+    return (this.introComplete && !this.startedSessions);
+    // || (this.sessionComplete && !this.onLastSession);
   }
 
   nextSession() {
@@ -81,5 +82,6 @@ export class AppComponent {
       this.sessionComplete = true;
     }
     console.log(this.session);
+
   }
 }

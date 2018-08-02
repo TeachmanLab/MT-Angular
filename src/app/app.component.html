@@ -10,11 +10,11 @@
 </div>
 
 <div *ngIf="sessionVisible()">
-    <app-session *ngIf="session" [session]="session" (done)="sessionComplete=true"></app-session>
+    <app-session [session]="sessions" (done)="sessionComplete=true"></app-session>
 </div>
 
 <button id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-    Begin Session {{ sessionIndex + 1 }}
+    Start session {{ sessionIndex + 1 }}
 </button>
 
 </div>

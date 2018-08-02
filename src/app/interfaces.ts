@@ -20,7 +20,7 @@ export interface Session {
 export interface Step {
   title: string;
   stepIndicator: string;
-  stepBody: Div[]
+  stepBody: Div[];
 }
 
 export interface Scenario {
