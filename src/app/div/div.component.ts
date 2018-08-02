@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Question, Scenario, Div } from '../interfaces'
+import { DivService } from '../div.service';
+
 @Component({
   selector: 'app-div',
   templateUrl: './div.component.html',
@@ -24,10 +26,9 @@ export class DivComponent implements OnInit {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-
     if (this.div.questions) {
       this.questionsComplete = false;
       this.questionIndex = -1;
@@ -43,6 +44,22 @@ export class DivComponent implements OnInit {
     }
   }
 
+  // public initDiv() {
+  //   if (this.div.questions) {
+  //     this.questionsComplete = false;
+  //     this.questionIndex = -1;
+  //     this.numQuestions = this.div.questions.length;
+  //     this.next('question');
+  //   } else if (this.div.scenarios) {
+  //     this.scenariosComplete = false;
+  //     this.scenarioIndex = -1;
+  //     this.numScenarios = this.div.scenarios.length;
+  //     this.next('scenario');
+  //   } else {
+  //     this.allDone()
+  //   }
+  // }
+
   next(type: string) {
     if (type === 'question') {
       this.questionIndex++;
@@ -51,7 +68,6 @@ export class DivComponent implements OnInit {
         console.log(this.question);
       } else {
         this.questionsComplete = true;
-        console.log('Emitting done after' + (this.questionIndex - 1) + 'questions');
         this.allDone();
       }
     } else if (type === "scenario") {
@@ -69,6 +85,7 @@ export class DivComponent implements OnInit {
   }
 
   allDone() {
+    console.log('completed div')
     this.done.emit();
   }
 

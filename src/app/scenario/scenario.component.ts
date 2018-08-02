@@ -84,6 +84,8 @@ export class ScenarioComponent implements OnInit {
       this.state = this.states[this.state_index];
       console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
     } else {
+      this.state_index = 0;
+      this.state = this.states[this.state_index];
       console.log('The scenario is complete.' + this.state_index + '.  The state is ' + this.state);
       this.done.emit();
     }

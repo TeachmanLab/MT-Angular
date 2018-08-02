@@ -24,7 +24,6 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     this.state = 'asking';
-    console.log(this.state);
     this.waitPercent = 0;
   }
 
@@ -49,7 +48,7 @@ export class QuestionComponent implements OnInit {
     const subscription = secondsCounter.subscribe( n => {
       // next line lets choices show up again, for questions in multiple succession
       this.state = 'asking';
-      this.done.emit();
+      this.allDone();
       subscription.unsubscribe();
     });
   }
@@ -73,6 +72,7 @@ export class QuestionComponent implements OnInit {
   }
 
   allDone() {
+    console.log('completed question');
     this.done.emit();
   }
 }

@@ -13,7 +13,7 @@ export class SessionComponent implements OnInit {
   session: Session;
   state: string;
   states: string[];
-  state_index: number;
+  stateIndex: number;
 
   stepIndex: number;
   stepComplete: boolean;
@@ -28,7 +28,7 @@ export class SessionComponent implements OnInit {
 
   ngOnInit() {
     this.states = ['intro', 'steps'];
-    this.state_index = -1;
+    this.stateIndex = -1;
     this.progressState()
 
     this.stepIndex = -1;
@@ -39,10 +39,10 @@ export class SessionComponent implements OnInit {
 
   // Need to factor out progressState into a service, probably
   progressState() {
-    this.state_index++;
-    if (this.state_index < this.states.length) {
-      this.state = this.states[this.state_index];
-      console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
+    this.stateIndex++;
+    if (this.stateIndex < this.states.length) {
+      this.state = this.states[this.stateIndex];
+      console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
     }
   }
 
@@ -58,8 +58,10 @@ export class SessionComponent implements OnInit {
 
     if (this.stepIndex < this.numSteps) {
       this.step = this.session.steps[this.stepIndex];
+      if (this.stepIndex == this.numSteps - 1) {
+        this.onLastStep = true;
+      }
     } else {
-      this.onLastStep = true;
       this.allDone()
     }
   }
@@ -69,6 +71,7 @@ export class SessionComponent implements OnInit {
   }
 
   allDone() {
+    console.log()
     this.done.emit();
   }
 

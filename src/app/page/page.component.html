@@ -1,4 +1,8 @@
-<div class="mdl-card__supporting-text" *ngFor= "let div of page.divs">
-  <app-div [div]="div"></app-div>
+<!-- <div class="mdl-card__supporting-text" *ngFor= "let div of page.divs">
+  <app-div [div]="div" (done)="divCompleted()"></app-div>
+</div> -->
+
+<!-- Hacky solution for now, until we figure out how to reinit app-divs in an ngfor loop -->
+<div class="mdl-card__supporting-text">
+  <app-div [div]="getDiv()" (done)="divCompleted()"></app-div>
 </div>
-{{ allDone() }}

@@ -30,20 +30,35 @@ export class StepComponent implements OnInit {
   }
 
   nextPageButtonVisible() {
-    return this.pageComplete && !this.onLastPage;
+    return this.pageIndex == 0 || (this.pageComplete && !this.onLastPage);
+  }
+
+  pageCompleted() {
+    this.pageComplete = true;
+    if (this.onLastPage) {
+      this.allDone();
+    }
   }
 
   nextPage() {
     this.pageIndex++;
+
     if (this.pageIndex < this.numPages) {
       this.page = this.step.pages[this.pageIndex];
+      this.pageComplete = false;
+      
+      if (this.pageIndex == this.numPages - 1) {
+        this.onLastPage = true;
+      }
     } else {
-      this.onLastPage = true;
+      this.pageIndex = 0;
+      this.page = this.step.pages[this.pageIndex]
       this.allDone()
     }
   }
 
   allDone() {
+    console.log("Completed step")
     this.done.emit();
   }
 }
