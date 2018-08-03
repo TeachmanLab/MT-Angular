@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {Scenario} from '../interfaces';
 import {interval} from 'rxjs';
@@ -68,6 +68,18 @@ export class ScenarioComponent implements OnInit {
     if (this.scenario.question) {
       this.states[this.states.length] = 'question';
     }
+
+    this.init()
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.scenario = changes.scenario.currentValue;
+    this.init();
+  }
+
+  init() {
+    this.state_index = 0;
+    this.state = this.states[0];
   }
 
   continueButtonVisible() {
@@ -79,8 +91,8 @@ export class ScenarioComponent implements OnInit {
   }
 
   progressState() {
+    this.state_index++;
     if (this.state_index < this.states.length - 1) {
-      this.state_index++;
       this.state = this.states[this.state_index];
       console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
     } else {

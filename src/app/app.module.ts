@@ -12,10 +12,12 @@ import { StatementComponent } from './statement/statement.component';
 import { QuestionComponent } from './question/question.component';
 import { SessionComponent } from './session/session.component';
 import { ApiService} from './api.service';
+import { LastService} from './last.service';
 import { HttpClientModule} from '@angular/common/http';
 import { IntroComponent } from './intro/intro.component';
 import { StepComponent } from './step/step.component';
 import { DivComponent } from './div/div.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { DivComponent } from './div/div.component';
     SessionComponent,
     IntroComponent,
     StepComponent,
-    DivComponent
+    DivComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { DivComponent } from './div/div.component';
   ],
   providers: [
     ApiService,
+    LastService,
     SessionComponent
   ],
   bootstrap: [AppComponent]

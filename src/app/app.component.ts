@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
-import {SessionComponent} from './session/session.component';
-import { Intro, Session} from './interfaces';
+import { Intro, Session } from './interfaces';
+import { SessionComponent } from './session/session.component';
 
 @Component({
   selector: 'app-root',
@@ -11,30 +11,22 @@ import { Intro, Session} from './interfaces';
 export class AppComponent {
   title = 'app';
   intro: Intro;
-  sessions: Session[]
-  session: Session;
-  sessionIndex: number;
-  introComplete: boolean;
+
+  sessions: Session[];
   startedSessions: boolean;
-  sessionComplete: boolean;
-  onLastSession: boolean;
 
   // Read in the Json file.
   constructor(
     private api: ApiService,
-    private sessionCom: SessionComponent
+    private sessionComponent: SessionComponent
   ) { }
 
   ngOnInit() {
-    this.introComplete = true;
-    this.getIntro();
-    debugger;
-    this.sessions = [];
-    this.sessionIndex = -1;
     this.startedSessions = false;
-    this.sessionComplete = false;
-    this.onLastSession = false;
-    this.getSessions();
+    this.getIntro();
+
+    console.log(this.sessions);
+    
   }
 
   getIntro() {
@@ -47,8 +39,11 @@ export class AppComponent {
   getSessions() {
     this.api.getSessions().subscribe(sessions => {
       this.sessions = sessions;
-      console.log(this.sessions);
-      console.log('Loaded session from JSON');
+      console.log(this.sessions)
+      console.log(this.sessions.length)
+      this.startedSessions = true;
+      console.log('Loaded sessions from JSON');
+
     });
   }
 
@@ -61,27 +56,8 @@ export class AppComponent {
   }
 
   nextSessionButtonVisible() {
-    return (this.introComplete && !this.startedSessions);
-    // || (this.sessionComplete && !this.onLastSession);
+    // return this.onLastStep && !this.onLastSession;
+    return true;
   }
 
-  nextSession() {
-    debugger;
-    this.sessionIndex++;
-    console.log(this.sessionIndex)
-    console.log(this.sessions.length)
-    this.introComplete = true;
-    this.startedSessions = true;
-    this.sessionComplete = false;
-    if (this.sessionIndex < this.sessions.length) {
-      console.log('Moving on to session ' + this.sessionIndex);
-      debugger;
-      this.session = this.sessions[this.sessionIndex];
-      this.sessionComplete = false;
-    } else {
-      this.sessionComplete = true;
-    }
-    console.log(this.session);
-
-  }
 }

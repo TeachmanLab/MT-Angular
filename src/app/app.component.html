@@ -5,16 +5,13 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-<div *ngIf="introVisible()">
-  <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
-</div>
-
-<div *ngIf="sessionsVisible()">
-    <app-session [sessions]="sessions" (done)="sessionComplete=true"></app-session>
-</div>
-
-<button id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-    Start session {{ sessionIndex + 1 }}
-</button>
-
+  <div *ngIf="introVisible()">
+    <app-intro *ngIf="intro" [intro]="intro" (done)="startedSessions = true"></app-intro>
+  </div>
+  <button id="contact-button" *ngIf="introVisible()" (click)="getSessions()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Get Started
+  </button>
+  <div *ngIf="sessionsVisible()">
+    <app-session *ngIf="sessions" [sessions]="sessions"></app-session>
+  </div>
 </div>

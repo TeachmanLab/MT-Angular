@@ -1,12 +1,13 @@
 import {Injectable } from '@angular/core';
-import {Question } from './interfaces';
+import {Question, Scenario } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionService {
+export class LastService {
 
   lastQuestion: Question;
+  lastScenario: Scenario;
 
   constructor(
   ) { }
@@ -18,5 +19,14 @@ export class QuestionService {
   getLastQuestion() {
     return this.lastQuestion;
   }
+
+  setLastScenario(lastScenario: Scenario) {
+    this.lastScenario = lastScenario;
+  }
+
+  getLastScenario() {
+    return this.lastScenario;
+  }
+
 
 }

@@ -27,14 +27,13 @@ export class IntroComponent implements OnInit {
   ngOnInit() {
     this.divIndex = 0;
     this.numDivs = this.intro.introBody.length;
-    this.divsComplete = false;
     // this.nextDiv();
 
   }
 
   updateDivIndex() {
-    this.divIndex += 1;
-    if (this.divIndex == this.numDivs) {
+    this.divIndex++;
+    if (this.divIndex == this.numDivs - 1) {
       this.allDone();
     }
   }

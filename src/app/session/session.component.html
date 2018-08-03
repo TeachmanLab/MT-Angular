@@ -4,9 +4,9 @@
       <main class="mdl-layout__content">
         <div class="site-content">
           <div class="container">
-            <div class="mdl-card__supporting-text">
+            <!-- <div class="mdl-card__supporting-text">
               Session {{session_index + 1}} of {{sessions.length}}
-            </div>
+            </div> -->
             <section class="section--center mdl-grid site-max-width">
               <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--7-col-phone  mdl-shadow--4dp">
                 <div class="mdl-card__title mdl-card--border">
@@ -16,18 +16,15 @@
                   <img [src]="currentSession.sessionIndicator" alt="Card image cap"/>
                 </div>
                 <div>
-                  <div *ngFor="let string of currentSession.description[0]">
+                  <div *ngFor="let string of currentSession.description">
                     <div class="mdl-card__supporting-text"> {{ string }}</div>
                   </div>
-                  <ul class="mdc-list" aria-orientation="vertical">
-                    <li class="mdc-list-item" *ngFor= "let div of currentSession.description[1]">{{div}}</li>
-                  </ul>
                 </div>
-                <div *ngIf="currentStep">
-                  <app-step [step]="currentStep" (done)="stepComplete=true"></app-step>
+                <div *ngIf="stepsVisible()">
+                  <app-step *ngIf="currentStep" [step]="currentStep" (done)="stepComplete=true"></app-step>
                 </div>
-                <button class="continue" *ngIf="!onLastStep" mat-raised-button (click)="nextStep()">
-                  Step {{ stepIndex + 1}} </button>
+                <button class="continue" *ngIf="nextStepButtonVisible()" mat-raised-button (click)="nextStep()">
+                  Begin Step {{ stepIndex + 1}} </button>
 
               </div>
             </section>
@@ -36,8 +33,8 @@
       </main>
     </div>
 
-    <button id="contact-button" *ngIf="nextSessionVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-     Next Session
+    <button id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      Next Session
     </button>
 
   </mat-card-content>

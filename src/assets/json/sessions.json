@@ -3,30 +3,38 @@
     "title": "Session 1: Introduction to Anxiety",
     "sessionIndicator": "./assets/session1.png",
     "description": [
-      ["In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.","For each page:"],
-      ["Read the information carefully.","There will be a Continue button at the end of each paragraph.","When you finish reading the information you will be asked questions about it.","The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."]
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
+      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
     ],
     "steps": [
       {
         "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/step1.png",
-        "stepBody": [
+        "stepIndicator": "./assets/stepInd1.png",
+        "pages": [
           {
-            "text": [
-              "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think.",
-              "Anxious responses usually consist of a variety of changes in one’s thoughts, bodily reactions, feelings, and behavior, such as these:",
-              "./assets/step1session1.png"
+            "divs": [
+              {
+                "text": [
+                  "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think.",
+                  "Anxious responses usually consist of a variety of changes in one’s thoughts, bodily reactions, feelings, and behavior, such as these:"
+                ],
+                "image": ""
+              }
             ]
           },
           {
-            "questions": [
+            "divs": [
               {
-                "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-                "options": [
-                  "True",
-                  "False"
-                ],
-                "answer": "True"
+                "questions": [
+                  {
+                    "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "True"
+                  }
+                ]
               }
             ]
           }
@@ -35,30 +43,36 @@
       {
         "title": "When Is Anxiety Functional?",
         "stepIndicator": "stepIndicator1-S1.png",
-        "stepBody": [
+        "pages": [
           {
-            "text": [
-              "Anxiety is a useful emotion, especially from an evolutionary point of view. Shaped by natural selection, anxiety helps us survive dangerous situations. For example, if a Neanderthal man is attacked by a saber-toothed tiger, he may be most likely to survive by fleeing and avoiding the tiger in fear. By increasing one’s ability to detect danger and preparing one’s body for fight or flight, anxiety helps people manage threats to the lives, health, or well-being of themselves or others. A moderate level of anxiety increases attention, concentration, and performance."
-            ]
-          },
-          {
-            "scenarios": [
+            "divs": [
               {
-                "title": "Avoiding an Accident",
-                "image": "chicago",
-                "statement": "Driving home from work, Malik suddenly sees a child dart into the street in front of his car. Malik slams on the brakes and swerves, just missing the child. As he pulls over, Malik’s heart is beating furiously, and he is breathless, sweating, and shaking. He could have killed that child. Only after several long minutes is he able to continue his drive home."
+                "text": [
+                  "Anxiety is a useful emotion, especially from an evolutionary point of view. Shaped by natural selection, anxiety helps us survive dangerous situations. For example, if a Neanderthal man is attacked by a saber-toothed tiger, he may be most likely to survive by fleeing and avoiding the tiger in fear. By increasing one’s ability to detect danger and preparing one’s body for fight or flight, anxiety helps people manage threats to the lives, health, or well-being of themselves or others. A moderate level of anxiety increases attention, concentration, and performance."
+                ]
               }
             ]
           },
           {
-            "text": [
-              "Of course, today it is unlikely that we will be confronted by saber-toothed tigers on the street, but there are other situations in which anxiety is still reasonable. For example, in the scenario above, Malik nearly had an accident and could have injured himself and a child. His anxious reaction to this situation is reasonable in that it helped keep both him and the child alive. As we can see in this example, the dangerous situation changed, but the usefulness of anxiety remained."
+            "divs": [
+              {
+                "scenarios": [
+                  {
+                    "title": "Avoiding an Accident",
+                    "image": "chicago",
+                    "statement": "Driving home from work, Malik suddenly sees a child dart into the street in front of his car. Malik slams on the brakes and swerves, just missing the child. As he pulls over, Malik’s heart is beating furiously, and he is breathless, sweating, and shaking. He could have killed that child. Only after several long minutes is he able to continue his drive home."
+                  }
+                ]
+              }
             ]
           },
           {
-            "header": "When is Anxiety Impairing?",
-            "text": [
-              "Although anxiety is useful in many situations, it ceases to be useful when it arises in the absence of a real threat or when it becomes excessive. When anxiety dominates people’s daily lives and interferes with their abilities to fulfill work, school, or family responsibilities, anxiety might not be adaptive anymore. In these cases, it may be difficult to control the occurrence and duration of anxiety, even if one knows there is no real danger; such anxiety may be considered impairing."
+            "divs": [
+              {
+                "text": [
+                  "Of course, today it is unlikely that we will be confronted by saber-toothed tigers on the street, but there are other situations in which anxiety is still reasonable. For example, in the scenario above, Malik nearly had an accident and could have injured himself and a child. His anxious reaction to this situation is reasonable in that it helped keep both him and the child alive. As we can see in this example, the dangerous situation changed, but the usefulness of anxiety remained."
+                ]
+              }
             ]
           }
         ]
@@ -66,23 +80,39 @@
       {
         "title": "When Is Anxiety Impairing?",
         "stepIndicator": "stepIndicator1-S1.png",
-        "stepBody": [
+        "pages": [
           {
-            "text": [
-              "Although anxiety is useful in many situations, it ceases to be useful when it arises in the absence of a real threat or when it becomes excessive.",
-              "When anxiety dominates people’s daily lives and interferes with their abilities to fulfill work, school, or family responsibilities, anxiety might not be adaptive anymore.",
-              "In these cases, it may be difficult to control the occurrence and duration of anxiety, even if one knows there is no real danger; such anxiety may be considered impairing."
+            "divs": [
+              {
+                "text": [
+                  "Although anxiety is useful in many situations, it ceases to be useful when it arises in the absence of a real threat or when it becomes excessive. When anxiety dominates people’s daily lives and interferes with their abilities to fulfill work, school, or family responsibilities, anxiety might not be adaptive anymore. In these cases, it may be difficult to control the occurrence and duration of anxiety, even if one knows there is no real danger; such anxiety may be considered impairing."
+                ]
+              }
             ]
           },
           {
-            "questions": {
-              "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-              "options": [
-                "True",
-                "False"
-              ],
-              "answer": "True"
-            }
+            "divs": [
+              {
+                "questions": [
+                  {
+                    "question": "Although anxiety helped early humans survive dangerous situations, it is not a useful emotion to people in modern society.",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "False"
+                  },
+                  {
+                    "question": "Anxiety can become so strong that it can make it difficult for people to go to work or to take care of their families",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "True"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -92,58 +122,224 @@
     "title": "Session 2: Symptoms and Disorders",
     "sessionIndicator": "./assets/session2.png",
     "description": [
-      ["In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.","For each page:"],
-      [  "Read the information carefully.",
-        "There will be a Continue button at the end of each paragraph.",
-        "When you finish reading the information you will be asked questions about it.",
-        "The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."]
-      ],
-
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
+      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+    ],
     "steps": [
       {
         "title": "Anxiety Symptoms",
-        "stepIndicator": "./assets/stepInd2.png",
-        "stepBody": [
+        "stepIndicator": "./assets/stepInd1.png",
+        "pages": [
           {
-            "text": [
-              "As we have seen, anxiety is common, useful, and appropriate in situations that threaten one’s health or well-being or the health and well-being of people one cares about. But when has an anxious response in the absence of a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As stated in session 1, the emotion anxiety consists of changes in thoughts, bodily reactions, feelings, and behaviors. The same types of changes can cause anxiety problems. These problems are called symptoms by mental health professionals. Symptoms can vary in how much they affect a person and how long they last.",
-              "Problems with anxiety can look different for different people. Below are some of the symptoms of various kinds of anxiety problems. Note that this list is incomplete and that many symptoms cut across several of the categories in the diagram. People with anxiety problems usually have some but not all of these symptoms, and some of the symptoms may relate to other emotional or behavioral problems that may include symptoms very different from these. Always speak with a mental health professional to better understand your symptoms.",
-              "some pic",
-              "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms.1 If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
+            "divs": [
+              {
+                "text": [
+                  "As we have seen, anxiety is common, useful, and appropriate in situations that threaten one’s health or well-being or the health and well-being of people one cares about. But when has an anxious response in the absence of a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As stated in session 1, the emotion anxiety consists of changes in thoughts, bodily reactions, feelings, and behaviors. The same types of changes can cause anxiety problems. These problems are called symptoms by mental health professionals. Symptoms can vary in how much they affect a person and how long they last.",
+                  "Problems with anxiety can look different for different people. Below are some of the symptoms of various kinds of anxiety problems. Note that this list is incomplete and that many symptoms cut across several of the categories in the diagram. People with anxiety problems usually have some but not all of these symptoms, and some of the symptoms may relate to other emotional or behavioral problems that may include symptoms very different from these. *Always speak with a mental health professional to better understand your symptoms.*"
+                ],
+                "image": ""
+              },
+              {
+                "text": [
+                  "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms.1 If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
+                ]
+              },
+              {
+                "text": [
+                  "1Hofmann, S. G., Asnaani, A., Vonk, I. J. J., Sawyer, A. T., & Fang, A. (2012). The efficacy of cognitive behavioral therapy: A review of meta-analyses. Cognitive Therapy and Research, 36(5), 427-440. http://dx.doi.org/10.1007/s10608-012-9476-1"
+                ]
+              }
             ]
           },
           {
-            "questions": {
-              "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-              "options": [
-                "True",
-                "False"
-              ],
-              "answer": "True"
-            }
+            "divs": [
+              {
+                "questions": [
+                  {
+                    "question": "Everyone with anxiety problems has the same number and kind of symptoms.",
+                    "type": "single",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "False"
+                  },
+                  {
+                    "question": "Researchers have found that treatment by a mental health professional can alleviate many anxiety symptoms.",
+                    "type": "single",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "True"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
         "title": "Anxiety Disorders",
-        "stepIndicator": "./assets/stepInd2.png",
-        "stepBody": [
+        "stepIndicator": "stepIndicator1-S1.png",
+        "pages": [
           {
-            "text": [
-              "Anxiety symptoms can be combined in various ways. Mental health professionals refer to certain clusters of symptoms that impair people’s lives as anxiety disorders. Some of these disorders are described below. Many of the symptoms of anxiety are common to several disorders.",
-              "Panic Disorder",
-              "some pic"
+            "divs": [
+              {
+                "text": [
+                  "Anxiety symptoms can be combined in various ways. Mental health professionals refer to certain clusters of symptoms that impair people’s lives as anxiety disorders. Some of these disorders are described below. Many of the symptoms of anxiety are common to several disorders."
+                ],
+                "scenarios": [
+                  {
+                    "title": "Zoe's Panic Attack",
+                    "image": "",
+                    "statement": "Zoe suffers from attacks of dizziness, blurred vision, and heart palpitations. Her first panic attack came unexpectedly while she was watching television at home. She was absolutely convinced that she was having a heart attack and about to die. Since then, she has felt tense and anxious most of the time because she worries about having another panic attack.",
+                    "followup": [
+                      "Our nervous systems are equipped with an alarm system that alerts us to danger and protects us from harm. When the alarm system activates, it can bring about panic attacks, which represent a variety of bodily reactions such as racing heart, rapid breathing, tingling or numbness, hot or cold flashes, sweating, and trembling. Panic attacks are useful when the alarm system alerts one to real danger, such as when Malik’s alarm system alerted him to the danger of nearly having a car accident in the previous section. But when the alarm system triggers in the absence of real danger, such as when Zoe is watching television at home, panic attacks can be impairing.",
+                      "People who experience panic attacks can develop a fear of these sensations and often attribute the attacks to major medical problems, such as a heart attack or stroke. When no physical cause of the sensations is identified, people begin to fear losing control or think they are going crazy. The more they fear these sensations, the more aware of the sensations they become. A fear of panic attacks ultimately can cause the attacks to be become more intense and frequent."
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {
-            "questions": {
-              "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-              "options": [
-                "True",
-                "False"
-              ],
-              "answer": "True"
-            }
+            "divs": [
+              {
+                "questions": [
+                  {
+                    "question": "The bodily reactions of panic attacks such as racing heart, rapid breathing, and sweating are never useful.",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "True"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "divs": [
+              {
+                "header": "Agoraphobia",
+                "scenarios": [
+                  {
+                    "title": "Tony's Fear of Being Alone",
+                    "image": "",
+                    "statement": "When Tony leaves the house without company, he becomes very anxious. He imagines that he might have a heart attack and that no one would be around to help. Therefore, he has begun to avoid being alone whenever possible. He has also started avoiding places and situations, such as shopping malls, stores, crowds, theaters, and waiting in lines, where he fears being trapped if something happens.",
+                    "followup": [
+                      "People with agoraphobia fear almost any open space, thereby making tasks such as grocery shopping or even seeing a therapist anxiety provoking. Agoraphobia often occurs with panic disorder; many people who experience panic disorder start to avoid open spaces at some point. They often fear that they might be trapped or embarrassed if they have panic attacks in public."
+                    ]
+                  }
+                ]
+              },
+              {
+                "header": "Social Phobia",
+                "scenarios": [
+                  {
+                    "title": "Michelle's First Day",
+                    "image": "",
+                    "statement": "Michelle knows that on the first day of college, some professors will instruct her and her peers to go around the room and introduce themselves. She feels nauseous just thinking about sitting there, waiting to introduce herself to a roomful of strangers looking at her. Her voice might shake, and she might appear scared. She feels the anxiety is too much to bear, and she skips the first day of class to avoid the possibility of introducing herself.",
+                    "followup": [
+                      "Speaking in front of a group, walking into a room full of strangers, or meeting with one’s boss can make anyone feel somewhat anxious, but some people experience intense fear and even panic attacks in these situations. People with social phobia fear being negatively evaluated and worry excessively about embarrassing themselves, often leading them to avoid social situations."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "divs": [
+              {
+                "header": "Generalized Anxiety Disorder",
+                "scenarios": [
+                  {
+                    "title": "Shawn's Constant Worrying",
+                    "image": "",
+                    "statement": "Shawn is always feeling stressed and constantly worries about anything and everything. When he worries, his heart races and he finds it difficult to breathe. He also feels tension in his shoulders, stomach, and legs. Shawn has been getting poor sleep due to worrying and frequent wakening throughout the night.",
+                    "followup": [
+                      "Everyone worries from time to time about finances, work, health, or family, but for people with generalized anxiety disorder (GAD) these worries can be excessive, unrealistic, and difficult to control. People with GAD experience a range of physical symptoms, such as muscle aches, tension, sleeplessness, irritability, restlessness, and concentration difficulties. When these symptoms persist for months, the person can feel even more helpless and anxious."
+                    ]
+                  }
+                ]
+              },
+              {
+                "header": "Specific Phobia",
+                "scenarios": [
+                  {
+                    "title": "Jasmin's Fear of Moths",
+                    "image": "",
+                    "statement": "Jasmin has an intense fear of moths. She is so afraid of moths that she has difficulty sitting on her friends’ porches in the evening because moths fly around the porch lights. Before she visits her friends, she calls them and asks them to turn their porch lights off. Her fear and her need to have the lights turned off bring ridicule from even her best friends.",
+                    "followup": [
+                      "Dogs, spiders, injections, small rooms, thunderstorms, blood, elevators, crowds, driving, heights, and deep water can make most people feel a certain degree of unease. Most people can think of a particular object or situation that they would prefer to avoid. For people with specific phobia, the fear is persistent or their avoiding the cause of the fear is impairing. People with specific phobia recognize that their fear is excessive, but they are unable to control the fear and may have a panic attack when encountering the feared object or situation."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "divs": [
+              {
+                "questions": [
+                  {
+                    "question": "People who fear open spaces (as in agoraphobia), negative evaluation (as in social phobia), or a particular object or situation (as in specific phobia) often avoid the things they fear.",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "True"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "divs": [
+              {
+                "header": "Obsessive-Compulsive Disorder",
+                "scenarios": [
+                  {
+                    "title": "Travis' Repeated Hand Washing",
+                    "image": "",
+                    "statement": "For years Travis has had particular concerns about bodily waste or secretions, fearing that he will contract a disease or spread a virus to others. His daily rituals include washing his hands excessively, taking prolonged showers, and extensive wiping and cleaning after he uses the toilet. The possibility that he might contract a disease or spread a virus to other people dominates his waking hours.",
+                    "followup": [
+                      "Most people have times when they wonder whether they locked a door or feel that something terrible is about to happen. Many people also have simple routines they follow in the morning or evening. For people with obsessive-compulsive disorder (OCD), these thoughts and routines occur repeatedly, feel difficult to stop, and consume a large amount of time. Their obsessions can involve fears of contamination or poisoning, religious themes, doubts, and thoughts of sex. Compulsions are often desperate attempts to neutralize the obsession and anxiety, and involve behaviors such as repeatedly washing, checking, counting, or touching things."
+                    ]
+                  }
+                ]
+              },
+              {
+                "header": "Posttraumatic Stress Disorder",
+                "scenarios": [
+                  {
+                    "title": "Sophie's Combat Experience",
+                    "image": "",
+                    "statement": "Sophie witnessed active combat during her time in the military. Some particular incidents have never left her mind, such as the horrifying sight of Ben, a close friend, being shot to death. She has returned to civilian life, but images from battle run repeatedly through her mind and disrupt her focus. Smelling gasoline at a gas station brings back memories that sometimes feel so real she feels she is back in combat. Sophie also jumps at any loud noise, as if she were preparing herself for battle.",
+                    "followup": [
+                      "Terrible events can cause extreme feelings of helplessness, horror, and fear. These events might include physical or sexual assault, car accidents, natural disasters, robbery, and war. People with posttraumatic stress disorder (PTSD) develop anxiety and intrusive thoughts about the event and may feel at times as though the event were happening again. They often are easy to startle and experience nightmares, anger outbursts, feelings of detachment, and hopelessness. PTSD can occur within one month of the event, or it may be delayed for many years after the trauma."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "divs": [
+              {
+                "questions": [
+                  {
+                    "question": "Anyone who follows a routine in the morning or evening has obsessive-compulsive disorder (OCD).",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "False"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

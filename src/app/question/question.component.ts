@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Question} from '../interfaces';
 import {interval} from 'rxjs';
-import { QuestionService } from '../question.service';
+import { LastService } from '../last.service';
 
 @Component({
   selector: 'app-question',
@@ -19,12 +19,11 @@ export class QuestionComponent implements OnInit {
   done: EventEmitter<any> = new EventEmitter();
 
   constructor(
-    private questionService: QuestionService
+    private lastService: LastService
   ) { }
 
   ngOnInit() {
     this.state = 'asking';
-    console.log(this.state);
     this.waitPercent = 0;
   }
 
@@ -49,7 +48,7 @@ export class QuestionComponent implements OnInit {
     const subscription = secondsCounter.subscribe( n => {
       // next line lets choices show up again, for questions in multiple succession
       this.state = 'asking';
-      this.done.emit();
+      this.allDone();
       subscription.unsubscribe();
     });
   }
@@ -69,10 +68,11 @@ export class QuestionComponent implements OnInit {
   }
 
   isLastQuestion() {
-    return this.question === this.questionService.getLastQuestion();
+    return this.question === this.lastService.getLastQuestion();
   }
 
   allDone() {
+    console.log('completed question');
     this.done.emit();
   }
 }
