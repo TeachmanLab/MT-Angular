@@ -73,6 +73,7 @@ export class ScenarioComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log("New scenario!");
     this.scenario = changes.scenario.currentValue;
     this.init();
   }
@@ -92,7 +93,7 @@ export class ScenarioComponent implements OnInit {
 
   progressState() {
     this.state_index++;
-    if (this.state_index < this.states.length - 1) {
+    if (this.state_index < this.states.length) {
       this.state = this.states[this.state_index];
       console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
     } else {

@@ -26,7 +26,7 @@ export class StepComponent implements OnInit {
   }
 
   ngOnChanges(changes:SimpleChanges) {
-    console.log('Hey, the step changed!');
+    console.log('New step');
     this.step = changes.step.currentValue;
     this.init();
   }
@@ -40,12 +40,11 @@ export class StepComponent implements OnInit {
   }
 
   nextPageButtonVisible() {
-    return true;
-    // return this.pageComplete && !this.onLastPage;
+    return this.pageComplete && !this.onLastPage;
   }
 
   pageCompleted() {
-    console.log('The page just told me it changed')
+    ("Hello I actually completed this page!")
     this.pageComplete = true;
     if (this.onLastPage) {
       this.allDone();
@@ -55,7 +54,7 @@ export class StepComponent implements OnInit {
   nextPage() {
     console.log("beginning new page");
     this.pageIndex++;
-    if (this.pageIndex <= this.numPages - 1) {
+    if (this.pageIndex < this.numPages) {
       this.currentPage = this.step.pages[this.pageIndex];
       this.pageComplete = false;
       

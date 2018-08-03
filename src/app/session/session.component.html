@@ -15,15 +15,15 @@
                 <div class="mdl-card__supporting-text">
                   <img [src]="currentSession.sessionIndicator" alt="Card image cap"/>
                 </div>
-                <div>
+                <div [hidden]="!descriptionVisible()">
                   <div *ngFor="let string of currentSession.description">
                     <div class="mdl-card__supporting-text"> {{ string }}</div>
                   </div>
                 </div>
-                <div *ngIf="stepsVisible()">
+                <div [hidden]="!stepsVisible()">
                   <app-step *ngIf="currentStep" [step]="currentStep" (done)="stepComplete=true"></app-step>
                 </div>
-                <button class="continue" *ngIf="nextStepButtonVisible()" mat-raised-button (click)="nextStep()">
+                <button class="continue" [hidden]="!nextStepButtonVisible()" mat-raised-button (click)="nextStep()">
                   Begin Step {{ stepIndex + 1}} </button>
 
               </div>
@@ -33,7 +33,7 @@
       </main>
     </div>
 
-    <button id="contact-button" *ngIf="nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    <button id="contact-button" [hidden]="!nextSessionButtonVisible()" (click)="nextSession()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
       Next Session
     </button>
 

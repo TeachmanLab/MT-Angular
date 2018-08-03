@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, SimpleChanges } from '@angular/core';
 import { Page, Div } from '../interfaces';
-import { DivComponent } from '../div/div.component';
 
 @Component({
   selector: 'app-page',
@@ -17,17 +16,13 @@ export class PageComponent implements OnInit {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  // @ViewChild('child')
-  // private div: DivComponent;
-
   constructor() { }
 
   ngOnInit() {
-    this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('Hey, the page changed!');
+    console.log('New page');
     this.page = changes.page.currentValue;
     this.init();
   }
@@ -35,13 +30,13 @@ export class PageComponent implements OnInit {
   init() {
     this.divIndex = 0;
     this.numDivs = this.page.divs.length;
+
   }
 
   divCompleted() {
-    console.log('Div ' + this.divIndex + ' of ' + this.numDivs)
-    if (this.divIndex < this.numDivs) {
-      this.divIndex++;
-    } else {
+    console.log('Completed div ' + this.divIndex + ' of ' + this.numDivs);
+    this.divIndex++;
+    if (this.divIndex == this.numDivs) {
       this.allDone();
     }
   }

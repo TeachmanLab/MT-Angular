@@ -6,5 +6,5 @@
     {{ string }} 
   </div>
 </div>
-<app-question *ngIf="question" [question]="currentQuestion" (done)="next('question')"></app-question>
-<app-scenario *ngIf="scenario" [scenario]="currentScenario" (done)="next('scenario')"></app-scenario>
+<app-question *ngIf="currentQuestion" [question]="currentQuestion" (done)="next('question')"></app-question>
+<app-scenario *ngIf="currentScenario" [scenario]="currentScenario" (done)="next('scenario')"></app-scenario>

@@ -11,6 +11,7 @@ import { SessionComponent } from './session/session.component';
 export class AppComponent {
   title = 'app';
   intro: Intro;
+  introComplete: boolean;
 
   sessions: Session[];
   startedSessions: boolean;
@@ -22,28 +23,26 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.startedSessions = false;
     this.getIntro();
-
-    console.log(this.sessions);
-    
+    console.log(this.introComplete);
   }
 
   getIntro() {
+    this.startedSessions = false;
+    this.introComplete = false;
     this.api.getIntro().subscribe(intro => {
       this.intro = intro;
       console.log('Loaded intro from JSON');
     });
+    console.log('INTRO COMPLETE: ' + this.introComplete);
   }
 
   getSessions() {
+    console.log('INTRO COMPLETE: ' + this.introComplete);
+    this.startedSessions = true;
     this.api.getSessions().subscribe(sessions => {
       this.sessions = sessions;
-      console.log(this.sessions)
-      console.log(this.sessions.length)
-      this.startedSessions = true;
       console.log('Loaded sessions from JSON');
-
     });
   }
 
@@ -55,9 +54,8 @@ export class AppComponent {
     return this.startedSessions;
   }
 
-  nextSessionButtonVisible() {
-    // return this.onLastStep && !this.onLastSession;
-    return true;
+  beginButtonVisible() {
+    return this.introComplete;
   }
 
 }

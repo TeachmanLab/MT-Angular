@@ -37,8 +37,11 @@ export class DivComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.div = changes.div.currentValue;
-    this.init();
+    console.log('New div');
+    if (!changes.div.isFirstChange()) {
+      this.div = changes.div.currentValue;
+      this.init();
+    }
   }
 
   init() {
@@ -88,7 +91,7 @@ export class DivComponent implements OnInit {
   }
 
   allDone() {
-    console.log('completed div')
+    console.log('Completed div');
     this.done.emit();
   }
 

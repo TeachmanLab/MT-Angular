@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Question} from '../interfaces';
 import {interval} from 'rxjs';
 import { LastService } from '../last.service';
@@ -23,6 +23,16 @@ export class QuestionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('New question!');
+    this.question = changes.question.currentValue;
+    this.init();
+  }
+
+  init() {
     this.state = 'asking';
     this.waitPercent = 0;
   }
@@ -72,7 +82,7 @@ export class QuestionComponent implements OnInit {
   }
 
   allDone() {
-    console.log('completed question');
+    console.log('Completed question');
     this.done.emit();
   }
 }

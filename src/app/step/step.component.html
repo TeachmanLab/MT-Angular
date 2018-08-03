@@ -11,7 +11,7 @@
    
     <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted()"></app-page>
     
-    <a id="contact-button" *ngIf="nextPageButtonVisible()" (click)="nextPage()" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
+    <a id="contact-button" [hidden]="!nextPageButtonVisible()" (click)="nextPage()" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
       <i class="material-icons">navigate_next</i>
     </a>
   </div>

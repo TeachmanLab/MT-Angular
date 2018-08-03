@@ -42,7 +42,7 @@
       },
       {
         "title": "When Is Anxiety Functional?",
-        "stepIndicator": "stepIndicator1-S1.png",
+        "stepIndicator": "./assets/stepIndicator1-S1.png",
         "pages": [
           {
             "divs": [

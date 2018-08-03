@@ -11,7 +11,7 @@ export class SessionComponent implements OnInit {
   @Input()
   sessions: Session[];
   numSessions: number;
-  startedSessions: boolean;
+  startedSession: boolean;
   sessionIndex: number;
   currentSession: Session;
   sessionComplete: boolean;
@@ -22,10 +22,6 @@ export class SessionComponent implements OnInit {
   currentStep: Step;
   numSteps: number;
   onLastStep: boolean;
-  
-  state: string;
-  states: string[];
-  stateIndex: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -33,21 +29,15 @@ export class SessionComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.states = ['intro', 'steps'];
-    this.stateIndex = 0;
-    this.state = this.states[0];
-
-    this.startedSessions = false;
+    this.startedSession = false;
     this.sessionIndex = 0;
-
     this.onLastSession = false;
     this.numSessions = this.sessions.length;
 
-      console.log(this.sessions)
-      console.log(this.sessions.length)
+    console.log(this.sessions)
+    console.log(this.sessions.length)
 
     this.initSession();
-   
   }
 
   initSession() {
@@ -64,33 +54,26 @@ export class SessionComponent implements OnInit {
     console.log('Now on step ' + this.stepIndex + ' of ' + this.numSteps);
   }
 
-  // Need to factor out progressState into a service, probably
-  progressState() {
-      this.stateIndex++;
-      if (this.stateIndex < this.states.length) {
-        this.state = this.states[this.stateIndex];
-        console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
-      }
-
+  descriptionVisible() {
+    return !this.startedSession;
   }
 
   stepsVisible() {
-    return !(this.state === 'intro');
+    return this.startedSession;
   }
 
   nextStepButtonVisible() {
-    return this.state === 'intro' || (this.stepComplete && !this.onLastStep);
+    return (!this.startedSession || this.stepComplete && !this.onLastStep);
+  }
+
+  nextSessionButtonVisible() {
+    return this.onLastStep && !this.onLastSession;
   }
 
   nextStep() {
-    
-    if (this.stepIndex == 0) {
-      this.progressState();
-    }
-
     this.stepIndex++;
-
-    if (this.stepIndex <= this.numSteps - 1) {
+    this.startedSession = true;
+    if (this.stepIndex < this.numSteps) {
       this.initStep();
       if (this.stepIndex == this.numSteps - 1) {
         this.onLastStep = true;
@@ -100,16 +83,10 @@ export class SessionComponent implements OnInit {
     }
   }
 
-  nextSessionButtonVisible() {
-    // return this.onLastStep && !this.onLastSession;
-    return true;
-  }
-
   nextSession() {
 
     this.sessionIndex++;
-
-    if (this.sessionIndex <= this.numSessions) {
+    if (this.sessionIndex < this.numSessions) {
       this.initSession();
 
       if (this.sessionIndex == this.sessions.length - 1) {
