@@ -10,7 +10,7 @@
                 <div class="mdl-card__title mdl-card--border">
                   <h1 class="mdl-card__title-text">{{intro.title}}</h1>
                 </div>
-                <app-div *ngFor="let div of intro.introBody" [div]="div" (done)="updateDivIndex()"></app-div>
+                <app-page *ngIf="page" [page]="page" (done)="allDone()"></app-page>
               </div>
             </section>
           </div>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { Intro, Div} from '../interfaces';
+import { Intro, Div, Page} from '../interfaces';
 
 @Component({
   selector: 'app-intro',
@@ -12,10 +12,7 @@ export class IntroComponent implements OnInit {
 
   @Input()
   intro: Intro;
-  div: Div;
-  divIndex: number;
-  numDivs: number;
-  divsComplete: boolean;
+  page: Page;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -23,29 +20,8 @@ export class IntroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.divIndex = 0;
-    this.numDivs = this.intro.introBody.length;
-
+    this.page = this.intro.page;
   }
-
-  updateDivIndex() {
-    console.log('Completed div ' + this.divIndex + ' of ' + this.numDivs);
-    this.divIndex++;
-    if (this.divIndex == this.numDivs) {
-      this.allDone();
-    }
-  }
-
-  // nextDiv() {
-  //   this.divIndex++;
-  //   if (this.divIndex < this.numDivs) {
-  //     this.div = this.intro.introBody[this.divIndex];
-  //     console.log(this.div);
-  //   } else {
-  //     this.divsComplete = true;
-  //     this.allDone();
-  //   }
-  // }
 
   allDone() {
     console.log('Completed Intro')

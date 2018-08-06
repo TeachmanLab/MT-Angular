@@ -19,12 +19,16 @@ export class PageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('New page');
-    this.page = changes.page.currentValue;
-    this.init();
+
+    if (!changes.page.isFirstChange()) {
+      console.log('New page');
+      this.page = changes.page.currentValue;
+      this.init();
+    }
   }
 
   init() {
@@ -34,7 +38,7 @@ export class PageComponent implements OnInit {
   }
 
   divCompleted() {
-    console.log('Completed div ' + this.divIndex + ' of ' + this.numDivs);
+    console.log('Completed div ' + (this.divIndex + 1) + ' of ' + this.numDivs);
     this.divIndex++;
     if (this.divIndex == this.numDivs) {
       this.allDone();
@@ -42,7 +46,7 @@ export class PageComponent implements OnInit {
   }
 
   allDone() {
-    console.log("Completed page")
+    console.log("Completed page");
     this.done.emit();
   }
 
