@@ -48,8 +48,8 @@ export class QuestionComponent implements OnInit {
         this.state = 'incorrect';
         this.makeThemWait();
       }
-    }else {
-      this.state = 'answered'
+    } else {
+      this.state = 'answered';
       this.waitAndEmit();
     }
   }
@@ -58,7 +58,9 @@ export class QuestionComponent implements OnInit {
     const secondsCounter = interval(1000);
     const subscription = secondsCounter.subscribe(n => {
       // next line lets choices show up again, for questions in multiple succession
-      this.state = 'asking';
+      if (!this.isLastQuestion()){
+        this.state = 'asking';
+      }
       this.allDone();
       subscription.unsubscribe();
     });

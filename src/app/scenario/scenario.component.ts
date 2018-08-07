@@ -52,7 +52,7 @@ export class ScenarioComponent implements OnInit {
 
   @Input()
   scenario: Scenario;
-  states = ['intro', 'statements']
+  states = ['intro', 'statements'];
   stateIndex = 0;
   state = this.states[0];
 
