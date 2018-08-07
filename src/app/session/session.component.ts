@@ -41,10 +41,11 @@ export class SessionComponent implements OnInit {
   }
 
   initSession() {
+    debugger;
     this.currentSession = this.sessions[this.sessionIndex];
     this.numSteps = this.currentSession.steps.length;
     this.sessionComplete = false;
-    this.stepIndex = 0;
+    this.stepIndex = -1;
     this.initStep();
   }
 
@@ -71,6 +72,7 @@ export class SessionComponent implements OnInit {
   }
 
   nextStep() {
+    debugger;
     this.stepIndex++;
     this.startedSession = true;
     if (this.stepIndex < this.numSteps) {
@@ -84,11 +86,10 @@ export class SessionComponent implements OnInit {
   }
 
   nextSession() {
-
     this.sessionIndex++;
+    this.startedSession = false;
     if (this.sessionIndex < this.numSessions) {
       this.initSession();
-
       if (this.sessionIndex == this.sessions.length - 1) {
         this.onLastSession = true;
       }

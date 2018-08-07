@@ -189,7 +189,10 @@ img.article-image {
   height: 192px;
 }
 
-
+img.indicator{
+  width: 100%;
+  height: auto;
+}
 
 .demo-card-image > .mdl-card__actions {
   height: 52px;

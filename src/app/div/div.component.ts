@@ -47,21 +47,17 @@ export class DivComponent implements OnInit {
   init() {
 
     if (this.div.questions) {
-      
       this.questionIndex = 0;
       this.currentQuestion = this.div.questions[0];
       this.numQuestions = this.div.questions.length;
       this.lastService.setLastQuestion(this.div.questions[-1])
-      
     } else if (this.div.scenarios) {
-
       this.scenarioIndex = 0;
       this.currentScenario = this.div.scenarios[0];
       this.numScenarios = this.div.scenarios.length;
       this.lastService.setLastScenario(this.div.scenarios[-1])
-      
     } else {
-      this.allDone()
+      this.allDone();
     }
   }
 

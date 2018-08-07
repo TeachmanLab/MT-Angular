@@ -38,7 +38,8 @@ export class QuestionComponent implements OnInit {
   }
 
   selected(option: string) {
-      if (this.question.type === 'single') { 
+    debugger;
+      if (this.question.type === 'single') {
         if (option === this.question.answer) {
           this.state = 'correct';
           this.waitAndEmit();
@@ -46,9 +47,8 @@ export class QuestionComponent implements OnInit {
           this.state = 'incorrect';
           this.makeThemWait();
         }
-      }
-      else {
-        this.state = 'answered'
+      } else {
+        this.state = 'answered';
         this.waitAndEmit();
       }
   }
