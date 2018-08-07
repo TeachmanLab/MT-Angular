@@ -25,10 +25,12 @@ export class StepComponent implements OnInit {
     this.init()
   }
 
-  ngOnChanges(changes:SimpleChanges) {
-    console.log('New step');
-    this.step = changes.step.currentValue;
-    this.init();
+  ngOnChanges(changes: SimpleChanges) {
+    if (!changes.step.isFirstChange()) {
+      console.log('New step');
+      this.step = changes.step.currentValue;
+      this.init();
+    }
   }
 
   init() {

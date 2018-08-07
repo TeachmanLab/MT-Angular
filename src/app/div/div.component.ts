@@ -37,8 +37,8 @@ export class DivComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('New div');
     if (!changes.div.isFirstChange()) {
+      console.log('New div');
       this.div = changes.div.currentValue;
       this.init();
     }
@@ -50,12 +50,12 @@ export class DivComponent implements OnInit {
       this.questionIndex = 0;
       this.currentQuestion = this.div.questions[0];
       this.numQuestions = this.div.questions.length;
-      this.lastService.setLastQuestion(this.div.questions[-1])
+      this.lastService.setLastQuestion(this.div.questions[this.numQuestions - 1]);
     } else if (this.div.scenarios) {
       this.scenarioIndex = 0;
       this.currentScenario = this.div.scenarios[0];
       this.numScenarios = this.div.scenarios.length;
-      this.lastService.setLastScenario(this.div.scenarios[-1])
+      this.lastService.setLastScenario(this.div.scenarios[this.numScenarios - 1]);
     } else {
       this.allDone();
     }
@@ -73,7 +73,7 @@ export class DivComponent implements OnInit {
         }
         break;
       }
-      case "scenario": {
+      case 'scenario': {
         this.scenarioIndex++;
         if (this.scenarioIndex < this.numScenarios) {
           this.currentScenario = this.div.scenarios[this.scenarioIndex];

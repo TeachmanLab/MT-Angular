@@ -1,7 +1,7 @@
 
 export interface Intro {
   title: string;
-  introBody: Div[];
+  page: Page;
 }
 
 export interface Session {
@@ -27,6 +27,9 @@ export interface Div {
   text?: string[];
   image?: string[];
   footer?: string[];
+  references?: string[],
+  highlights: Highlight[]
+  thoughtBubbles?: ThoughtBubble[];
   questions?: Question[];
   scenarios?: Scenario[];
 }
@@ -48,6 +51,21 @@ export interface Question {
   type: string;
   options: string[];
   answer?: string;
+  explanation?: string;
+}
+
+export interface ThoughtBubble {
+  color: string;
+  header: string;
+  thought: string;
+  followup: string;
+}
+
+export interface Highlight {
+  color: string;
+  header: string;
+  highlight: string;
+  icon: string;
 }
 
 

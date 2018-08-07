@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
-import {Question} from '../interfaces';
-import {interval} from 'rxjs';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Question } from '../interfaces';
+import { interval } from 'rxjs';
 import { LastService } from '../last.service';
 
 @Component({
@@ -27,9 +27,11 @@ export class QuestionComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('New question!');
-    this.question = changes.question.currentValue;
-    this.init();
+    if (!changes.question.isFirstChange()) {
+      console.log('New question!');
+      this.question = changes.question.currentValue;
+      this.init();
+    }
   }
 
   init() {
@@ -38,24 +40,23 @@ export class QuestionComponent implements OnInit {
   }
 
   selected(option: string) {
-    debugger;
-      if (this.question.type === 'single') {
-        if (option === this.question.answer) {
-          this.state = 'correct';
-          this.waitAndEmit();
-        } else {
-          this.state = 'incorrect';
-          this.makeThemWait();
-        }
-      } else {
-        this.state = 'answered';
+    if (this.question.type === 'single') {
+      if (option === this.question.answer) {
+        this.state = 'correct';
         this.waitAndEmit();
+      } else {
+        this.state = 'incorrect';
+        this.makeThemWait();
       }
+    }else {
+      this.state = 'answered'
+      this.waitAndEmit();
+    }
   }
 
   waitAndEmit() {
     const secondsCounter = interval(1000);
-    const subscription = secondsCounter.subscribe( n => {
+    const subscription = secondsCounter.subscribe(n => {
       // next line lets choices show up again, for questions in multiple succession
       this.state = 'asking';
       this.allDone();
@@ -67,8 +68,8 @@ export class QuestionComponent implements OnInit {
     const secondsCounter = interval(1000);
     this.waitPercent = 0;
     let counter = 0;
-    const subscription = secondsCounter.subscribe( n => {
-      counter ++;
+    const subscription = secondsCounter.subscribe(n => {
+      counter++;
       this.waitPercent += 10;
       if (counter > 10) {
         this.state = 'asking';

@@ -53,7 +53,7 @@ export class ScenarioComponent implements OnInit {
   @Input()
   scenario: Scenario;
   states = ['intro', 'statements']
-  state_index = 0;
+  stateIndex = 0;
   state = this.states[0];
 
   @Output()
@@ -73,13 +73,15 @@ export class ScenarioComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log("New scenario!");
-    this.scenario = changes.scenario.currentValue;
-    this.init();
+    if (!changes.scenario.isFirstChange()) {
+      console.log("New scenario!");
+      this.scenario = changes.scenario.currentValue;
+      this.init();
+    }
   }
 
   init() {
-    this.state_index = 0;
+    this.stateIndex = 0;
     this.state = this.states[0];
   }
 
@@ -92,12 +94,12 @@ export class ScenarioComponent implements OnInit {
   }
 
   progressState() {
-    this.state_index++;
-    if (this.state_index < this.states.length) {
-      this.state = this.states[this.state_index];
-      console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
+    this.stateIndex++;
+    if (this.stateIndex < this.states.length) {
+      this.state = this.states[this.stateIndex];
+      console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
     } else {
-      console.log('The scenario is complete.' + this.state_index + '.  The state is ' + this.state);
+      console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
       this.done.emit();
     }
   }
