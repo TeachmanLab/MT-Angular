@@ -18,6 +18,8 @@ import { IntroComponent } from './intro/intro.component';
 import { StepComponent } from './step/step.component';
 import { DivComponent } from './div/div.component';
 import { PageComponent } from './page/page.component';
+import { ControlConditionComponent } from './control-condition/control-condition.component';
+import { TrainingConditionComponent } from './training-condition/training-condition.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PageComponent } from './page/page.component';
     IntroComponent,
     StepComponent,
     DivComponent,
-    PageComponent
+    PageComponent,
+    ControlConditionComponent,
+    TrainingConditionComponent
   ],
   imports: [
     BrowserModule,

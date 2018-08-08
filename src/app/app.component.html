@@ -2,17 +2,13 @@
 <div class="main">
   <mat-toolbar class="mat-toolbar">
     <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-around center" class="logo">
+      <span class="spacer"></span>
+      <button mat-button color="accent" (click)="setType('training')">Training Scenerios</button>
+      <button mat-button color="accent" (click)="setType('control')">Control Condition</button>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div [hidden]="!introVisible()">
-    <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
-    <button class="btn red" [hidden]="!beginButtonVisible()" (click)="getSessions()">
-      <span>Get Started Sessions</span>
-    </button>
-  </div>
-  
-  <div [hidden]="!sessionsVisible()">
-    <app-session *ngIf="sessions" [sessions]="sessions"></app-session>
-  </div>
+  <app-control-condition *ngIf="sessionType === 'control'"></app-control-condition>
+  <app-training-condition *ngIf="sessionType === 'training'"></app-training-condition>
+
 </div>
