@@ -20,7 +20,7 @@ export class StatementComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.statement);
-    const secondsCounter = interval(50);
+    const secondsCounter = interval(45);
     const letters = this.statement.split('');
     let pauseCount = 0;
     let index = 0;
@@ -28,7 +28,7 @@ export class StatementComponent implements OnInit {
       if (pauseCount === 0) {
         if (index < letters.length) {
           if (letters[index] === '.') {
-            pauseCount = 10;
+            pauseCount = 20;
           }
           this.typed = this.typed.concat(letters[index]);
         }

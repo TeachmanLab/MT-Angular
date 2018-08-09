@@ -1,3 +1,10 @@
-<p>
-  training-condition works!
-</p>
+<mat-card class="scenario">
+  <mat-card-content>
+    <div *ngIf="scenarios">
+      <div class="round-header">Round {{currentRound + 1}} of {{totalRounds}}</div>
+        <app-training-round
+          [roundNumber]="currentRound" [scenarios]="getScenariosForRound()"
+                            (done)="nextRound()"></app-training-round>
+    </div>
+  </mat-card-content>
+</mat-card>

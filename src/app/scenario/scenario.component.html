@@ -1,7 +1,7 @@
-<mat-card class="scenario">
-  <mat-card-content>
+
+<div class="scenario">
     <div class="title" [ngClass]="state==='intro'? 'standout': 'subdue'" [@titleState]="state" >{{scenario.title}}</div>
-    <div class="image" [ngStyle]="{'background-image': 'url(./assets/' + scenario.image + '.jpg)'}"
+    <div class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
          [@imageState]="state">
     </div>
     <div class="display-area">
@@ -16,6 +16,4 @@
       </div>
     </div>
     <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>
-  </mat-card-content>
-
-</mat-card>
+</div>

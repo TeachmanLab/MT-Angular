@@ -67,7 +67,7 @@ export class QuestionComponent implements OnInit {
   }
 
   makeThemWait() {
-    const secondsCounter = interval(1000);
+    const secondsCounter = interval(500);
     this.waitPercent = 0;
     let counter = 0;
     const subscription = secondsCounter.subscribe(n => {
