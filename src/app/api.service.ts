@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {Session} from 'selenium-webdriver';
+import { Intro } from './interfaces';
 
 @Injectable()
 export class ApiService {
@@ -21,7 +22,7 @@ export class ApiService {
   }
 
   public getIntro(): Observable<any> {
-    return this.httpClient.get<Session>('./assets/json/intro.json')
+    return this.httpClient.get<Intro>('./assets/json/intro.json')
       .pipe((catchError(this.handleError)));
   }
 
