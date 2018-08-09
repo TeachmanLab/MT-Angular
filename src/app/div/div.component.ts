@@ -56,7 +56,6 @@ export class DivComponent implements OnInit {
   init() {
 
     if (this.div.questions) {
-      
       this.questionIndex = 0;
       this.currentQuestion = this.div.questions[0];
       this.numQuestions = this.div.questions.length;
@@ -111,7 +110,7 @@ export class DivComponent implements OnInit {
         }
         break;
       }
-      case "scenario": {
+      case 'scenario': {
         this.scenarioIndex++;
         if (this.scenarioIndex < this.numScenarios) {
           this.currentScenario = this.div.scenarios[this.scenarioIndex];

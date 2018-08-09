@@ -2,7 +2,7 @@
   <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--7-col-phone  mdl-shadow--4dp">
 
     <div class="mdl-card__supporting-text">
-          <img  class="card-img-top" src="{{ step.stepIndicator }}" alt="Card image cap"/>
+          <img  class="indicator" src="{{ step.stepIndicator }}" alt="Card image cap"/>
     </div>
 
     <div class="mdl-card__title mdl-card--border">
@@ -10,10 +10,9 @@
     </div>
    
     <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted()"></app-page>
-    
-    <a id="contact-button" [hidden]="!nextPageButtonVisible()" (click)="nextPage()" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
-      <i class="material-icons">navigate_next</i>
-    </a>
+
+    <button class="continue" [hidden]="!nextPageButtonVisible()" mat-raised-button (click)="nextPage()">
+      Continue</button>
   </div>
 
 </section>

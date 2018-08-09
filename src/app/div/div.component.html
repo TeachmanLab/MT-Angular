@@ -4,6 +4,19 @@
 <div *ngIf="div.text">
   <div *ngFor="let string of div.text" class="mdl-card__supporting-text">
     {{ string }}
+<<<<<<< HEAD
+=======
+  </div>
+</div>
+<div *ngIf="div.footer">
+  <div class="mat-grid-tile-footer" *ngFor="let string of div.footer">
+    {{ string }}
+  </div>
+</div>
+<div *ngIf="div.image">
+  <div class="mdl-card__supporting-text">
+    <img  class="body" src=" {{ div.image }}"/>
+>>>>>>> 089fbb039edac784ffe8c6c871f0fee6ecc3fd6f
   </div>
 </div>
 

@@ -1,7 +1,8 @@
 [
   {
     "title": "Session 1: Introduction to Anxiety",
-    "sessionIndicator": "./assets/session1.png",
+    "sessionIndicator": "./assets/Session1.png",
+    "allSteps": "./assets/allStepsS1.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -9,7 +10,7 @@
     "steps": [
       {
         "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/stepInd1.png",
+        "stepIndicator": "./assets/step1S1.png",
         "pages": [
           {
             "divs": [
@@ -18,7 +19,7 @@
                   "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think.",
                   "Anxious responses usually consist of a variety of changes in one’s thoughts, bodily reactions, feelings, and behavior, such as these:"
                 ],
-                "image": ""
+                "image": "./assets/step1S1body.png"
               }
             ]
           },
@@ -44,7 +45,7 @@
       },
       {
         "title": "When Is Anxiety Functional?",
-        "stepIndicator": "./assets/stepIndicator1-S1.png",
+        "stepIndicator": "./assets/allStepsS1.png",
         "pages": [
           {
             "divs": [
@@ -74,7 +75,7 @@
       },
       {
         "title": "When Is Anxiety Impairing?",
-        "stepIndicator": "stepIndicator1-S1.png",
+        "stepIndicator": "./assets/allStepsS1.png",
         "pages": [
           {
             "divs": [
@@ -114,12 +115,89 @@
             ]
           },
           {
+<<<<<<< HEAD
+=======
+            "questions": [
+              {
+                "question": "When do you plan to complete your next session?",
+                "type": "next session",
+                "options": [
+                  "Tomorrow",
+                  "In 2 to 4 days (recommended)",
+                  "In 5 to 7 days",
+                  "After more than 7 days",
+                  "Not planning to come back"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 2: Symptoms and Disorders",
+    "sessionIndicator": "./assets/Session2.png",
+    "allSteps": "./assets/allStepsS2.png",
+    "description": [
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
+      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+    ],
+    "steps": [
+      {
+        "title": "Anxiety Symptoms",
+        "stepIndicator": "./assets/Step1S2.png",
+        "pages": [
+          {
+            "divs": [
+              {
+                "text": [
+                  "As we have seen, anxiety is common, useful, and appropriate in situations that threaten one’s health or well-being or the health and well-being of people one cares about. But when has an anxious response in the absence of a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As stated in session 1, the emotion anxiety consists of changes in thoughts, bodily reactions, feelings, and behaviors. The same types of changes can cause anxiety problems. These problems are called symptoms by mental health professionals. Symptoms can vary in how much they affect a person and how long they last.",
+                  "Problems with anxiety can look different for different people. Below are some of the symptoms of various kinds of anxiety problems. Note that this list is incomplete and that many symptoms cut across several of the categories in the diagram. People with anxiety problems usually have some but not all of these symptoms, and some of the symptoms may relate to other emotional or behavioral problems that may include symptoms very different from these. *Always speak with a mental health professional to better understand your symptoms.*"
+                ],
+                "image": "./assets/Step1S2Body.png"
+              },
+              {
+                "text": [
+
+                  "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms.If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
+                ]
+              },
+              {
+                "footer": [
+                  "Hofmann, S. G., Asnaani, A., Vonk, I. J. J., Sawyer, A. T., & Fang, A. (2012). The efficacy of cognitive behavioral therapy: A review of meta-analyses. Cognitive Therapy and Research, 36(5), 427-440. http://dx.doi.org/10.1007/s10608-012-9476-1"
+                ],
+                "references": [
+                  "1Hofmann, S. G., Asnaani, A., Vonk, I. J. J., Sawyer, A. T., & Fang, A. (2012). The efficacy of cognitive behavioral therapy: A review of meta-analyses. Cognitive Therapy and Research, 36(5), 427-440. http://dx.doi.org/10.1007/s10608-012-9476-1"
+                ]
+              }
+            ]
+          },
+          {
+>>>>>>> 089fbb039edac784ffe8c6c871f0fee6ecc3fd6f
             "divs": [
               {
                 "questions": [
                   {
+<<<<<<< HEAD
                     "question": "When do you plan to complete your next session?",
                     "type": "next session",
+=======
+                    "question": "Everyone with anxiety problems has the same number and kind of symptoms.",
+                    "options": [
+                      "True",
+                      "False"
+                    ],
+                    "answer": "False",
+                    "explanation": "Anxiety can get so impairing that someone struggles to fulfill daily duties such as work or family responsibilities."
+                  }
+                ]
+              },
+              {
+                "questions": [
+                  {
+                    "question": "Researchers have found that treatment by a mental health professional can alleviate many anxiety symptoms.",
+>>>>>>> 089fbb039edac784ffe8c6c871f0fee6ecc3fd6f
                     "options": [
                       "Tomorrow",
                       "In 2 to 4 days (recommended)",
@@ -135,6 +213,7 @@
         ]
       },
       {
+<<<<<<< HEAD
         "title": "Session 2: Symptoms and Disorders",
         "sessionIndicator": "./assets/session2.png",
         "description": [
@@ -148,6 +227,35 @@
             "pages": [
               {
                 "divs": [
+=======
+        "title": "Anxiety Disorders",
+        "stepIndicator": "./assets/allStepsS2.png",
+        "pages": [
+          {
+            "divs": [
+              {
+                "text": [
+                  "Anxiety symptoms can be combined in various ways. Mental health professionals refer to certain clusters of symptoms that impair people’s lives as anxiety disorders. Some of these disorders are described below. Many of the symptoms of anxiety are common to several disorders."
+                ],
+                "thoughtBubbles": [
+                  {
+                    "title": "Zoe's Panic Attack",
+                    "image": "",
+                    "thought": "Zoe suffers from attacks of dizziness, blurred vision, and heart palpitations. Her first panic attack came unexpectedly while she was watching television at home. She was absolutely convinced that she was having a heart attack and about to die. Since then, she has felt tense and anxious most of the time because she worries about having another panic attack.",
+                    "followup": [
+                      "Our nervous systems are equipped with an alarm system that alerts us to danger and protects us from harm. When the alarm system activates, it can bring about panic attacks, which represent a variety of bodily reactions such as racing heart, rapid breathing, tingling or numbness, hot or cold flashes, sweating, and trembling. Panic attacks are useful when the alarm system alerts one to real danger, such as when Malik’s alarm system alerted him to the danger of nearly having a car accident in the previous section. But when the alarm system triggers in the absence of real danger, such as when Zoe is watching television at home, panic attacks can be impairing.",
+                      "People who experience panic attacks can develop a fear of these sensations and often attribute the attacks to major medical problems, such as a heart attack or stroke. When no physical cause of the sensations is identified, people begin to fear losing control or think they are going crazy. The more they fear these sensations, the more aware of the sensations they become. A fear of panic attacks ultimately can cause the attacks to be become more intense and frequent."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "divs": [
+              {
+                "questions": [
+>>>>>>> 089fbb039edac784ffe8c6c871f0fee6ecc3fd6f
                   {
                     "text": [
                       "As we have seen, anxiety is common, useful, and appropriate in situations that threaten one’s health or well-being or the health and well-being of people one cares about. But when has an anxious response in the absence of a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As stated in session 1, the emotion anxiety consists of changes in thoughts, bodily reactions, feelings, and behaviors. The same types of changes can cause anxiety problems. These problems are called symptoms by mental health professionals. Symptoms can vary in how much they affect a person and how long they last.",

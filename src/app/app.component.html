@@ -7,8 +7,8 @@
 
   <div [hidden]="!introVisible()">
     <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
-    <button id="contact-button" [hidden]="!beginButtonVisible()" (click)="getSessions()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      Get Started
+    <button class="btn red" [hidden]="!beginButtonVisible()" (click)="getSessions()">
+      <span>Get Started Sessions</span>
     </button>
   </div>
   

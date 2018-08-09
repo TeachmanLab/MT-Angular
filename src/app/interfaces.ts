@@ -7,6 +7,7 @@ export interface Intro {
 export interface Session {
   title: string;
   sessionIndicator: string;
+  allSteps: string;
   description: string[];
   steps: Step[];
 }
@@ -24,6 +25,8 @@ export interface Page{
 export interface Div {
   header?: string;
   text?: string[];
+  image?: string[];
+  footer?: string[];
   references?: string[],
   highlights: Highlight[]
   thoughtBubbles?: ThoughtBubble[];
