@@ -41,7 +41,7 @@ export class SessionComponent implements OnInit {
   }
 
   initSession() {
-    debugger;
+    // debugger;
     this.currentSession = this.sessions[this.sessionIndex];
     console.log(this.currentSession.steps);
     this.numSteps = this.currentSession.steps.length;
@@ -74,7 +74,7 @@ export class SessionComponent implements OnInit {
   }
   
   nextStep() {
-    debugger;
+    // debugger;
     this.stepIndex++;
     this.startedSession = true;
     if (this.stepIndex < this.numSteps) {

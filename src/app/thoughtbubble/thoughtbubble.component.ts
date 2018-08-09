@@ -46,7 +46,9 @@ export class ThoughtbubbleComponent implements OnInit {
 
   progressState() {
     this.stateIndex++;
-    if (this.stateIndex == this.numStates) {
+    if (this.stateIndex < this.numStates) {
+      this.currentState = this.states[this.stateIndex];
+    } else {
       this.allDone();
     }
   }
