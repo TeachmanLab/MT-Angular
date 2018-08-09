@@ -5,7 +5,7 @@ import {subscribeOn} from 'rxjs/operators';
 @Component({
   selector: 'app-statement',
   templateUrl: './statement.component.html',
-  styleUrls: ['./statement.component.css']
+  styleUrls: ['./statement.component.scss']
 })
 export class StatementComponent implements OnInit {
 

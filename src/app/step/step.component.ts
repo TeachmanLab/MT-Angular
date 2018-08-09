@@ -4,7 +4,7 @@ import {Step, Page} from '../interfaces';
 @Component({
   selector: 'app-step',
   templateUrl: './step.component.html',
-  styleUrls: ['./step.component.css']
+  styleUrls: ['./step.component.scss']
 })
 export class StepComponent implements OnInit {
 

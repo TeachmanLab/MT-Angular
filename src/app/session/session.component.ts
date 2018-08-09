@@ -4,7 +4,7 @@ import {Step, Session} from '../interfaces';
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
-  styleUrls: ['./session.component.css']
+  styleUrls: ['./session.component.scss']
 })
 export class SessionComponent implements OnInit {
 
@@ -42,6 +42,7 @@ export class SessionComponent implements OnInit {
 
   initSession() {
     this.currentSession = this.sessions[this.sessionIndex];
+    console.log(this.currentSession.steps);
     this.numSteps = this.currentSession.steps.length;
     this.sessionComplete = false;
     this.stepIndex = 0;
@@ -63,13 +64,14 @@ export class SessionComponent implements OnInit {
   }
 
   nextStepButtonVisible() {
-    return (!this.startedSession || this.stepComplete && !this.onLastStep);
+    // return (!this.startedSession || this.stepComplete && !this.onLastStep);
+    return true;
   }
 
   nextSessionButtonVisible() {
     return this.onLastStep && !this.onLastSession;
   }
-
+  
   nextStep() {
     this.stepIndex++;
     this.startedSession = true;

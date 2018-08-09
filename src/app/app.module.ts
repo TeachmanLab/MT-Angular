@@ -18,6 +18,8 @@ import { IntroComponent } from './intro/intro.component';
 import { StepComponent } from './step/step.component';
 import { DivComponent } from './div/div.component';
 import { PageComponent } from './page/page.component';
+import { ThoughtbubbleComponent } from './thoughtbubble/thoughtbubble.component';
+import { HighlightComponent } from './highlight/highlight.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PageComponent } from './page/page.component';
     IntroComponent,
     StepComponent,
     DivComponent,
-    PageComponent
+    PageComponent,
+    ThoughtbubbleComponent,
+    HighlightComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import {Injectable } from '@angular/core';
-import {Question, Scenario } from './interfaces';
+import {Question, Scenario, Highlight, ThoughtBubble } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,8 @@ export class LastService {
 
   lastQuestion: Question;
   lastScenario: Scenario;
+  lastHighlight: Highlight;
+  lastThoughtBubble: ThoughtBubble;
 
   constructor(
   ) { }
@@ -28,5 +30,20 @@ export class LastService {
     return this.lastScenario;
   }
 
+  setLastHighlight(lastHighlight: Highlight) {
+    this.lastHighlight = lastHighlight;
+  }
+
+  getLastHighlight() {
+    return this.lastHighlight;
+  }
+
+  setLastThoughtBubble(thoughtBubble: ThoughtBubble) {
+    this.lastThoughtBubble = thoughtBubble;
+  }
+
+  getLastThoughtBubble() {
+    return this.lastThoughtBubble;
+  }
 
 }

@@ -55,7 +55,8 @@ export class AppComponent {
   }
 
   beginButtonVisible() {
-    return this.introComplete;
+    // return this.introComplete;
+    return true;
   }
 
 }
