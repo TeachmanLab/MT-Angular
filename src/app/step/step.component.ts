@@ -46,7 +46,7 @@ export class StepComponent implements OnInit {
   }
 
   pageCompleted() {
-    console.log("Hello I actually completed this page!")
+    console.log('Completed page')
     this.pageComplete = true;
     if (this.onLastPage) {
       this.allDone();
@@ -54,7 +54,7 @@ export class StepComponent implements OnInit {
   }
 
   nextPage() {
-    console.log("beginning new page");
+    console.log("New page");
     this.pageIndex++;
     if (this.pageIndex < this.numPages) {
       this.currentPage = this.step.pages[this.pageIndex];

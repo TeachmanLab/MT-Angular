@@ -24,7 +24,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.getIntro();
-    console.log(this.introComplete);
   }
 
   getIntro() {
@@ -34,7 +33,6 @@ export class AppComponent {
       this.intro = intro;
       console.log('Loaded intro from JSON');
     });
-    console.log('INTRO COMPLETE: ' + this.introComplete);
   }
 
   getSessions() {

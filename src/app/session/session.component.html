@@ -13,8 +13,8 @@
                   <h2 class="mdl-card__title-text ">{{currentSession.title}}</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                  <img class="indicator" [src]="currentSession.sessionIndicator"/>
-                  <img [hidden]="stepsVisible()" class="indicator" [src]="currentSession.allSteps"/>
+                  <img class="indicator" src="{{ currentSession.sessionIndicator }}"/>
+                  <img [hidden]="stepsVisible()" class="indicator" src="{{ currentSession.allSteps }} "/>
                 </div>
                 <div [hidden]="!descriptionVisible()">
                   <div *ngFor="let string of currentSession.description">

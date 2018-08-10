@@ -85,7 +85,6 @@ export class DivComponent implements OnInit {
 
       this.thoughtBubbleIndex = 0;
       this.currentThoughtBubble = this.div.thoughtBubbles[0];
-      console.log(this.currentThoughtBubble);
       this.numThoughtBubbles = this.div.thoughtBubbles.length;
       this.lastService.setLastThoughtBubble(this.div.thoughtBubbles[this.numThoughtBubbles - 1]);
 
