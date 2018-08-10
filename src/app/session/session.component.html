@@ -24,8 +24,9 @@
                 <div [hidden]="!stepsVisible()">
                   <app-step *ngIf="currentStep" [step]="currentStep" (done)="stepComplete=true"></app-step>
                 </div>
-                <button class="continue" [hidden]="!nextStepButtonVisible()" mat-raised-button (click)="nextStep()">
+                <button [hidden]="!nextStepButtonVisible()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click)="nextStep()">
                   Begin Step {{ stepIndex + 2}} </button>
+
 
               </div>
             </section>

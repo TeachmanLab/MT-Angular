@@ -1,15 +1,14 @@
 @import '~@angular/material/theming';
 
-div {
-  padding-bottom:15px;
-}
+// div {
+//   padding-bottom:15px;
+// }
 
 mat-card {
   margin: 20px auto;
   min-height: 600px;
   max-width: 900px;
   border-radius: 25px;
-  padding: 0px;
   @include mat-elevation(10);
 
   mat-card-header {
@@ -36,14 +35,6 @@ mat-card {
       width: 80%;
       height: 50%;
       font-size: 1.2em;
-    }
-
-    button.continue {
-      position: absolute;
-      bottom: 30px;
-      right: 10%;
-      margin:auto;
-      font-size: 1.2rem;
     }
   }
 }

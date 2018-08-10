@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
-import {Step, Page} from '../interfaces';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Step, Page } from '../interfaces';
 
 @Component({
   selector: 'app-step',
@@ -15,6 +15,7 @@ export class StepComponent implements OnInit {
   currentPage: Page;
   onLastPage: boolean;
   pageComplete: boolean;
+  prevPagesCompleted: boolean;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -22,27 +23,44 @@ export class StepComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.init()
+    this.initStep()
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (!changes.step.isFirstChange()) {
       console.log('New step');
       this.step = changes.step.currentValue;
-      this.init();
+      this.initStep();
     }
   }
 
-  init() {
+  initStep() {
+    this.prevPagesCompleted = false;
     this.numPages = this.step.pages.length;
     this.pageIndex = 0;
-    this.currentPage = this.step.pages[0];
-    this.onLastPage = false;
+    this.initPage();
+
+  }
+
+  initPage() {
+    this.currentPage = this.step.pages[this.pageIndex];
+    if (this.pageIndex === this.numPages - 1) {
+      this.onLastPage = true;
+    } else {
+      this.onLastPage = false;
+    }
     this.pageComplete = false;
   }
 
   nextPageButtonVisible() {
-    return this.pageComplete && !this.onLastPage;
+    console.log("prev pages completed? " +this.prevPagesCompleted);
+    console.log("page complete? " + this.pageComplete);
+    console.log("on last page " + this.onLastPage);
+    return ((this.prevPagesCompleted || this.pageComplete) && !this.onLastPage);
+  }
+
+  prevPageButtonVisible() {
+    return !(this.pageIndex <= 0);
   }
 
   pageCompleted() {
@@ -54,17 +72,20 @@ export class StepComponent implements OnInit {
   }
 
   nextPage() {
-    console.log("New page");
+    console.log("Next page");
     this.pageIndex++;
     if (this.pageIndex < this.numPages) {
-      this.currentPage = this.step.pages[this.pageIndex];
-      this.pageComplete = false;
-      if (this.pageIndex == this.numPages - 1) {
-        this.onLastPage = true;
-      }
+      this.initPage();
     } else {
       this.allDone()
     }
+  }
+
+  prevPage() {
+    console.log("Previous page");
+    this.pageIndex--;
+    this.initPage();
+
   }
 
   allDone() {

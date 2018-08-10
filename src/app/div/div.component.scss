@@ -1,5 +1,13 @@
 @import '~@angular/material/theming';
 
+div {
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
 img.body{
     display: block;
     margin-left: auto;
@@ -7,54 +15,6 @@ img.body{
     width: 50%;
 }
   
-mat-card {
-  margin: 20px auto;
-  min-height: 600px;
-  max-width: 900px;
-  border-radius: 25px;
-  padding: 0px;
-  @include mat-elevation(10);
-
-  mat-card-header {
-    padding: 20px;
-  }
-
-  mat-card-content {
-    position: relative;
-
-    div.title {
-      position: absolute;
-      max-width: 80px;
-      top: 0px;
-      left: 35px;
-      font-weight: bold;
-      color: #000;
-    }
-
-    div.display-area {
-      position: absolute;
-      top: 10%;
-      left: 10%;
-      margin:auto;
-      width: 80%;
-      height: 50%;
-      font-size: 1.2em;
-    }
-
-    button.continue {
-      position: absolute;
-      bottom: 30px;
-      right: 10%;
-      margin:auto;
-      font-size: 1.2rem;
-    }
-  }
-}
-
-img {
-  max-width: 100%;
-}
-
 .site-header {
   position: relative;
 }
@@ -236,8 +196,6 @@ img.article-image {
   width: 192px;
   height: 192px;
 }
-
-
 
 .demo-card-image > .mdl-card__actions {
   height: 52px;
