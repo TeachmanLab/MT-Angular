@@ -5,7 +5,7 @@ import {subscribeOn} from 'rxjs/operators';
 @Component({
   selector: 'app-statement',
   templateUrl: './statement.component.html',
-  styleUrls: ['./statement.component.css']
+  styleUrls: ['./statement.component.scss']
 })
 export class StatementComponent implements OnInit {
 
@@ -19,6 +19,7 @@ export class StatementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.statement);
     const secondsCounter = interval(50);
     const letters = this.statement.split('');
     let pauseCount = 0;

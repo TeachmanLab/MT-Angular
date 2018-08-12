@@ -1,0 +1,3 @@
+<div class="mdl-card__supporting-text" *ngFor="let div of page.divs">
+  <app-div [div]="div" (done)="divCompleted()"></app-div>
+</div>

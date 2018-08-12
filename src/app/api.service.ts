@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {Session} from 'selenium-webdriver';
+import { Intro } from './interfaces';
 
 @Injectable()
 export class ApiService {
@@ -20,8 +21,18 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getContent(): Observable<any> {
-    return this.httpClient.get<Session>('./assets/example_session.json')
+  public getIntro(): Observable<any> {
+    return this.httpClient.get<Intro>('./assets/json/intro.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getEducation(): Observable<any> {
+    return this.httpClient.get<Session>('./assets/json/education.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getSessions(): Observable<any> {
+    return this.httpClient.get<Session[]>('./assets/json/sessions.json')
       .pipe((catchError(this.handleError)));
   }
 

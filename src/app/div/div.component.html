@@ -1,0 +1,26 @@
+<div *ngIf="div.header" class="mdl-card__title mdl-card--border">
+  <h1 class="mdl-card__title-text">{{div.header}}</h1>
+</div>
+<div *ngIf="div.text">
+  <div *ngFor="let string of div.text" class="mdl-card__supporting-text">
+    {{ string }}
+  </div>
+</div>
+<div *ngIf="div.footer">
+  <div class="mat-grid-tile-footer" *ngFor="let string of div.footer">
+    {{ string }}
+  </div>
+</div>
+<div *ngIf="div.image">
+  <div class="mdl-card__supporting-text">
+    <img  class="body" src=" {{ div.image }}"/>
+  </div>
+</div>
+
+<app-question *ngIf="currentQuestion" [question]="currentQuestion" (done)="next('question')"></app-question>
+
+<app-scenario *ngIf="currentScenario" [scenario]="currentScenario" (done)="next('scenario')"></app-scenario>
+
+<app-highlight *ngIf="currentHighlight" [highlight]="currentHighlight" (done)="next('highlight')"></app-highlight>
+
+<app-thoughtbubble *ngIf="currentThoughtBubble" [thoughtBubble]="currentThoughtBubble" (done)="next('thoughtBubble')"></app-thoughtbubble>

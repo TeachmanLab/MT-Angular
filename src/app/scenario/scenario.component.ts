@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {Scenario} from '../interfaces';
 import {interval} from 'rxjs';
@@ -52,8 +52,8 @@ export class ScenarioComponent implements OnInit {
 
   @Input()
   scenario: Scenario;
-  states = ['intro', 'statements', 'input', 'question'];
-  state_index = 0;
+  states = ['intro', 'statements'];
+  stateIndex = 0;
   state = this.states[0];
 
   @Output()
@@ -61,7 +61,29 @@ export class ScenarioComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.scenario.missingLetter) {
+      this.states[this.states.length] = 'input';
+    }
+    if (this.scenario.question) {
+      this.states[this.states.length] = 'question';
+    }
+
+    this.init()
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (!changes.scenario.isFirstChange()) {
+      console.log("New scenario!");
+      this.scenario = changes.scenario.currentValue;
+      this.init();
+    }
+  }
+
+  init() {
+    this.stateIndex = 0;
+    this.state = this.states[0];
+  }
 
   continueButtonVisible() {
     return this.state === 'intro';
@@ -72,14 +94,12 @@ export class ScenarioComponent implements OnInit {
   }
 
   progressState() {
-    if (this.state_index < this.states.length - 1) {
-      this.state_index++;
-      this.state = this.states[this.state_index];
-      console.log('The state index is ' + this.state_index + '.  The state is ' + this.state);
+    this.stateIndex++;
+    if (this.stateIndex < this.states.length) {
+      this.state = this.states[this.stateIndex];
+      console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
     } else {
-      console.log('The scenario is complete.' + this.state_index + '.  The state is ' + this.state);
-      this.state_index = 0;
-      this.state = this.states[this.state_index];
+      console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
       this.done.emit();
     }
   }
