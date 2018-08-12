@@ -22,6 +22,8 @@ import { ControlConditionComponent } from './control-condition/control-condition
 import { TrainingConditionComponent } from './training-condition/training-condition.component';
 import { TrainingRoundComponent } from './training-round/training-round.component';
 import {ProgressBarComponent} from './progress-bar/progress-bar.component';
+import { ThoughtbubbleComponent } from './thoughtbubble/thoughtbubble.component';
+import { HighlightComponent } from './highlight/highlight.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import {ProgressBarComponent} from './progress-bar/progress-bar.component';
     TrainingConditionComponent,
     TrainingRoundComponent,
     ProgressBarComponent,
+    ThoughtbubbleComponent,
+    HighlightComponent
   ],
   imports: [
     BrowserModule,

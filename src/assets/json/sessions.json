@@ -1,8 +1,8 @@
 [
   {
     "title": "Session 1: Introduction to Anxiety",
-    "sessionIndicator": "./assets/Session1.png",
-    "allSteps": "./assets/allStepsS1.png",
+    "sessionIndicator": "./assets/images/sessions/session_1/session1.png",
+    "allSteps": "./assets/images/sessions/session_1/allStepsS1.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -10,7 +10,7 @@
     "steps": [
       {
         "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/step1S1.png",
+        "stepIndicator": "./assets/images/sessions/session_1/step1S1.png",
         "pages": [
           {
             "divs": [
@@ -19,7 +19,7 @@
                   "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think.",
                   "Anxious responses usually consist of a variety of changes in one’s thoughts, bodily reactions, feelings, and behavior, such as these:"
                 ],
-                "image": "./assets/step1S1body.png"
+                "image": "./assets//images/sessions/session_1/step1S1body.png"
               }
             ]
           },
@@ -29,6 +29,7 @@
                 "questions": [
                   {
                     "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -44,7 +45,7 @@
       },
       {
         "title": "When Is Anxiety Functional?",
-        "stepIndicator": "./assets/allStepsS1.png",
+        "stepIndicator": "./assets/images/sessions/session_1/allStepsS1.png",
         "pages": [
           {
             "divs": [
@@ -74,7 +75,7 @@
       },
       {
         "title": "When Is Anxiety Impairing?",
-        "stepIndicator": "./assets/allStepsS1.png",
+        "stepIndicator": "./assets/images/sessions/session_1/allStepsS1.png",
         "pages": [
           {
             "divs": [
@@ -91,19 +92,17 @@
                 "questions": [
                   {
                     "question": "Although anxiety helped early humans survive dangerous situations, it is not a useful emotion to people in modern society.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
                     ],
                     "answer": "False",
                     "explanation": "Of course, today it is unlikely that we will be confronted by saber-toothed tigers on the street, but there are other situations in which anxiety is still reasonable."
-                  }
-                ]
-              },
-              {
-                "questions": [
+                  },
                   {
                     "question": "Anxiety can become so strong that it can make it difficult for people to go to work or to take care of their families",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -116,16 +115,20 @@
             ]
           },
           {
-            "questions": [
+            "divs": [
               {
-                "question": "When do you plan to complete your next session?",
-                "type": "next session",
-                "options": [
-                  "Tomorrow",
-                  "In 2 to 4 days (recommended)",
-                  "In 5 to 7 days",
-                  "After more than 7 days",
-                  "Not planning to come back"
+                "questions": [
+                  {
+                    "question": "When do you plan to complete your next session?",
+                    "type": "next session",
+                    "options": [
+                      "Tomorrow",
+                      "In 2 to 4 days (recommended)",
+                      "In 5 to 7 days",
+                      "After more than 7 days",
+                      "Not planning to come back"
+                    ]
+                  }
                 ]
               }
             ]
@@ -136,8 +139,7 @@
   },
   {
     "title": "Session 2: Symptoms and Disorders",
-    "sessionIndicator": "./assets/Session2.png",
-    "allSteps": "./assets/allStepsS2.png",
+    "sessionIndicator": "./assets/images/sessions/session_2/session2.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -145,7 +147,7 @@
     "steps": [
       {
         "title": "Anxiety Symptoms",
-        "stepIndicator": "./assets/Step1S2.png",
+        "stepIndicator": "./assets/images/sessions/session_2/step1S2.png",
         "pages": [
           {
             "divs": [
@@ -154,17 +156,11 @@
                   "As we have seen, anxiety is common, useful, and appropriate in situations that threaten one’s health or well-being or the health and well-being of people one cares about. But when has an anxious response in the absence of a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As stated in session 1, the emotion anxiety consists of changes in thoughts, bodily reactions, feelings, and behaviors. The same types of changes can cause anxiety problems. These problems are called symptoms by mental health professionals. Symptoms can vary in how much they affect a person and how long they last.",
                   "Problems with anxiety can look different for different people. Below are some of the symptoms of various kinds of anxiety problems. Note that this list is incomplete and that many symptoms cut across several of the categories in the diagram. People with anxiety problems usually have some but not all of these symptoms, and some of the symptoms may relate to other emotional or behavioral problems that may include symptoms very different from these. *Always speak with a mental health professional to better understand your symptoms.*"
                 ],
-                "image": "./assets/Step1S2Body.png"
+                "image": ""
               },
               {
                 "text": [
-
-                  "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms.If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
-                ]
-              },
-              {
-                "footer": [
-                  "Hofmann, S. G., Asnaani, A., Vonk, I. J. J., Sawyer, A. T., & Fang, A. (2012). The efficacy of cognitive behavioral therapy: A review of meta-analyses. Cognitive Therapy and Research, 36(5), 427-440. http://dx.doi.org/10.1007/s10608-012-9476-1"
+                  "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms.1 If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
                 ],
                 "references": [
                   "1Hofmann, S. G., Asnaani, A., Vonk, I. J. J., Sawyer, A. T., & Fang, A. (2012). The efficacy of cognitive behavioral therapy: A review of meta-analyses. Cognitive Therapy and Research, 36(5), 427-440. http://dx.doi.org/10.1007/s10608-012-9476-1"
@@ -178,19 +174,17 @@
                 "questions": [
                   {
                     "question": "Everyone with anxiety problems has the same number and kind of symptoms.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
                     ],
                     "answer": "False",
                     "explanation": "Anxiety can get so impairing that someone struggles to fulfill daily duties such as work or family responsibilities."
-                  }
-                ]
-              },
-              {
-                "questions": [
+                  },
                   {
                     "question": "Researchers have found that treatment by a mental health professional can alleviate many anxiety symptoms.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -206,7 +200,7 @@
       },
       {
         "title": "Anxiety Disorders",
-        "stepIndicator": "./assets/allStepsS2.png",
+        "stepIndicator": "./assets/images/sessions/session_2/stepInd2.png",
         "pages": [
           {
             "divs": [
@@ -234,6 +228,7 @@
                 "questions": [
                   {
                     "question": "The bodily reactions of panic attacks such as racing heart, rapid breathing, and sweating are never useful.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -295,6 +290,7 @@
                 "questions": [
                   {
                     "question": "People who fear open spaces (as in agoraphobia), negative evaluation (as in social phobia), or a particular object or situation (as in specific phobia) often avoid the things they fear.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -334,6 +330,7 @@
                 "questions": [
                   {
                     "question": "Anyone who follows a routine in the morning or evening has obsessive-compulsive disorder (OCD).",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -397,6 +394,7 @@
                 "questions": [
                   {
                     "question": "One in ten people have an anxiety disorder in their lifetime.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -464,32 +462,27 @@
                 "questions": [
                   {
                     "question": "All people born with sensitive temperaments or whose first-degree relatives have an anxiety disorder will develop an anxiety disorder themselves.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
                     ],
                     "answer": "False",
                     "explanation": "Anxiety disorders are caused by a complex interaction of many different factors. Although people with a genetic vulnerability are more likely to develop an anxiety disorder, not all vulnerable people will."
-                  }
-                ]
-              },
-              {
-                "questions": [
+                  },
                   {
                     "question": "Cognitive distortions, such as interpreting ambiguous situations more negatively than is warranted, can lead one to experience more anxiety and can be one reason why one’s anxiety is not decreasing over time.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
                     ],
                     "answer": "True",
                     "explanation": "Remember the example of unfriendly faces at a party. People who attribute the unfriendly faces to their own behavior or appearance are likely to experience more anxiety than people who attribute the faces to reasons unrelated to themselves (e.g., a bad day)."
-                  }
-                ]
-              },
-              {
-                "questions": [
+                  },
                   {
                     "question": "Seeing someone react fearfully to an object or situation can contribute to one’s anxiety about the object or situation.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -527,21 +520,14 @@
                 "questions": [
                   {
                     "question": "When people with anxiety disorders avoid the objects or situations they fear, they do not learn that they can handle their feelings, and the anxiety remains over time.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
                     ],
                     "answer": "True",
                     "explanation": "People who avoid feared objects or situations do not learn that their anxiety will decrease on its own after a while and that they are able to handle their feelings without avoiding the object or situation."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "divs": [
-              {
-                "questions": [
+                  },
                   {
                     "question": "When do you plan to complete your next session?",
                     "type": "next session",
@@ -563,7 +549,7 @@
   },
   {
     "title": "Session 4: Impact of Anxiety",
-    "sessionIndicator": "./assets/session1.png",
+    "sessionIndicator": "",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -595,6 +581,7 @@
                 "questions": [
                   {
                     "question": "Body and mind are two separate things. Problems with anxiety cannot also influence one’s physical health.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -635,6 +622,7 @@
                 "questions": [
                   {
                     "question": "Anxiety problems affect one’s ability to pay attention and remember things only in situations that are relevant to the focus of one’s anxiety.",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -675,6 +663,7 @@
                 "questions": [
                   {
                     "question": "Anxiety disorders can strain relationships with friends and family that otherwise help prevent and alleviate these disorders",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -700,21 +689,22 @@
                     "color": "blue",
                     "header": "Other Psychological Problems",
                     "higlight": "About 90% of people with an anxiety disorder have at least one more anxiety disorder or other mental disorder during their lifetime. For example, one half of depressed people also report an anxiety disorder in their lifetime, and one-quarter-to-one-half of people with an anxiety disorder have also had a lifetime substance use disorder. It may be that depression and substance abuse develop as a consequence of anxious people’s isolating themselves and trying to escape from their symptoms by using alcohol or drugs.1",
-                    "icon":""
+                    "icon": ""
                   }
                 ],
-                "references":[
+                "references": [
                   "1Kaufman, J., & Charney, D. (2000). Comorbidity of mood and anxiety disorders. Depression and Anxiety, 12, 69-76. http://dx.doi.org/10.1002/1520-6394(2000)12:1+<69::AID-DA9>3.0.CO;2-K"
                 ]
               }
             ]
           },
           {
-            "divs":[
+            "divs": [
               {
                 "questions": [
                   {
                     "question": "People with anxiety disorders commonly experience other mental disorders such as depression",
+                    "type": "single",
                     "options": [
                       "True",
                       "False"

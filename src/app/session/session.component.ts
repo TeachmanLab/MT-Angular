@@ -4,7 +4,7 @@ import {Step, Session} from '../interfaces';
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
-  styleUrls: ['./session.component.css']
+  styleUrls: ['./session.component.scss']
 })
 export class SessionComponent implements OnInit {
 
@@ -35,24 +35,23 @@ export class SessionComponent implements OnInit {
     this.numSessions = this.sessions.length;
 
     console.log(this.sessions)
-    console.log(this.sessions.length)
 
     this.initSession();
   }
-
+  
   initSession() {
-    debugger;
+    // debugger;
     this.currentSession = this.sessions[this.sessionIndex];
-    this.numSteps = this.currentSession.steps.length;
     this.sessionComplete = false;
     this.stepIndex = -1;
-    this.initStep();
+    this.numSteps = this.currentSession.steps.length;
+    this.onLastStep = false;
   }
 
   initStep() {
     this.stepComplete = false;
     this.currentStep = this.currentSession.steps[this.stepIndex];
-    console.log('Now on step ' + this.stepIndex + ' of ' + this.numSteps);
+    console.log('Now on step ' + (this.stepIndex + 1) + ' of ' + this.numSteps);
   }
 
   descriptionVisible() {
@@ -64,15 +63,24 @@ export class SessionComponent implements OnInit {
   }
 
   nextStepButtonVisible() {
-    return (!this.startedSession || this.stepComplete && !this.onLastStep);
+    var visible = false;
+    if (!this.startedSession) {
+      visible = true;
+    } else {
+      if (this.stepComplete && !this.onLastStep) {
+        visible = true;
+      }
+    }
+
+    return visible;
   }
 
   nextSessionButtonVisible() {
-    return this.onLastStep && !this.onLastSession;
+    return this.onLastStep && this.stepComplete && !this.onLastSession;
   }
-
+  
   nextStep() {
-    debugger;
+    // debugger;
     this.stepIndex++;
     this.startedSession = true;
     if (this.stepIndex < this.numSteps) {
@@ -100,7 +108,6 @@ export class SessionComponent implements OnInit {
   }
 
   allDone() {
-    console.log()
     this.done.emit();
   }
 

@@ -1,7 +1,7 @@
 <div [hidden]="!introVisible()">
   <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
   <button class="btn red" [hidden]="!beginButtonVisible()" (click)="getSessions()">
-    <span>Get Started Sessions</span>
+    <span>Get Started</span>
   </button>
 </div>
 

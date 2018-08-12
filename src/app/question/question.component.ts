@@ -12,8 +12,12 @@ export class QuestionComponent implements OnInit {
 
   @Input()
   question: Question;
+  states: string[];
+  numStates: number;
+  stateIndex: number;
   state: string;
   waitPercent: number;
+  isCorrect: boolean;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -23,6 +27,9 @@ export class QuestionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.states = ['asking', 'answered']
+    this.numStates = this.states.length;
+    this.waitPercent = 0;
     this.init();
   }
 
@@ -35,32 +42,57 @@ export class QuestionComponent implements OnInit {
   }
 
   init() {
-    this.state = 'asking';
-    this.waitPercent = 0;
+    this.stateIndex = 0;
+    this.state = this.states[0];
+    if (this.question.type === 'single') {
+      this.isCorrect = false;
+    }  
+    console.log(this.isCorrect);
+  }
+
+  progressState() {
+    this.stateIndex++;
+    if (this.stateIndex < this.numStates) {
+      this.state = this.states[this.stateIndex]
+    }
   }
 
   selected(option: string) {
     if (this.question.type === 'single') {
       if (option === this.question.answer) {
-        this.state = 'correct';
+        this.isCorrect = true;
+        this.progressState();
         this.waitAndEmit();
       } else {
-        this.state = 'incorrect';
+        this.isCorrect = false;
+        this.progressState();
         this.makeThemWait();
       }
     } else {
-      this.state = 'answered';
+      this.progressState();
       this.waitAndEmit();
     }
+  }
+
+  displayCorrectMessage() {
+    return this.question.type === 'single' && this.state === 'answered' && this.isCorrect;
+  }
+
+  displayIncorrectMessage() {
+    return this.question.type === 'single' && this.state === 'answered' && !this.isCorrect;
+  }
+
+  displayNextMessage() {
+    return this.question.type === 'any' && this.state==='answered' && !this.isLastQuestion();
+  }
+
+  displayThankYouMessage() {
+    return this.question.type === 'any' && this.state==='answered' && this.isLastQuestion();
   }
 
   waitAndEmit() {
     const secondsCounter = interval(1000);
     const subscription = secondsCounter.subscribe(n => {
-      // next line lets choices show up again, for questions in multiple succession
-      if (!this.isLastQuestion()){
-        this.state = 'asking';
-      }
       this.allDone();
       subscription.unsubscribe();
     });
@@ -74,7 +106,7 @@ export class QuestionComponent implements OnInit {
       counter++;
       this.waitPercent += 10;
       if (counter > 10) {
-        this.state = 'asking';
+        this.init();
         subscription.unsubscribe();
       }
     });

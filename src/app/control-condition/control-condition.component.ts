@@ -17,15 +17,14 @@ export class ControlConditionComponent implements OnInit {
   sessions: Session[];
   startedSessions: boolean;
 
-  // Read in the Json file.
   constructor(
     private api: ApiService,
     private sessionComponent: SessionComponent
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.getIntro();
-    console.log(this.introComplete);
   }
 
   getIntro() {
@@ -35,7 +34,6 @@ export class ControlConditionComponent implements OnInit {
       this.intro = intro;
       console.log('Loaded intro from JSON');
     });
-    console.log('INTRO COMPLETE: ' + this.introComplete);
   }
 
   getSessions() {
@@ -56,7 +54,7 @@ export class ControlConditionComponent implements OnInit {
   }
 
   beginButtonVisible() {
-    return this.introComplete;
+    // return this.introComplete;
+    return true;
   }
-
 }
