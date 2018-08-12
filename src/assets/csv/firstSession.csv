@@ -27,11 +27,5 @@ drive,Long drive with a friend,normal,"You are on a long drive with a friend. Yo
 concert,Loud concert,ecstatic ,"You are at a concert. You have been singing and yelling very loudly, and your throat feels tight. You feel like you are ",Are you happy while your throat feels tight?,Yes,Physical_AnxSensitive,Visual,none
 report,Writing a report,positive,"Your supervisor asks you to write a report. The finished document is quite brief but took a lot of time and effort. Based on your writing, you expect your supervisor’s opinion of you will be ",Do you expect your supervisor to have a positive opinion of you after reading your report?,Yes,Social_NoImage,Visual,none
 aid,First aid course,unprepared,"You have completed a first aid course and now have to take a practical test, in which you demonstrate what you learned in front of your classmates. You spent the evening before practicing for the difficult test. As you begin the test, your classmates observing you think you are ",Do your classmates think you are prepared for the practical test?,No,Social_Image,Visual,picture
-sick,Scheduling a doctor's appointment,temporary,"You have been feeling a little sick lately, so you schedule a doctor’s appointment. The soonest appointment you can get is a few days away. While you wait for your doctor’s appointment, you think your sickness is probably ",Do you think you are going to feel better soon?,Yes,Physical_NonAnxSensitive,Visual,none
+sick,Scheduling a doctors appointment,temporary,"You have been feeling a little sick lately, so you schedule a doctors appointment. The soonest appointment you can get is a few days away. While you wait for your doctor’s appointment, you think your sickness is probably ",Do you think you are going to feel better soon?,Yes,Physical_NonAnxSensitive,Visual,none
 suspension,Hike with friends,secure,"You are on a hike with friends. You come to a suspension bridge you need to cross, but you aren’t 100% sure it is safe even though your friends think it’s probably OK. As you cross the bridge, you feel ",Are you worried as you cross the bridge?  ,No,Other,Visual,none
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,%,,,,,,,

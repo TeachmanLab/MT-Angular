@@ -7,18 +7,10 @@ import {DomSanitizer} from '@angular/platform-browser';
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss']
 })
-export class ProgressBarComponent implements OnInit {
+export class ProgressBarComponent {
 
   @Input()
-  total: number;
-
-  @Input()
-  current: number;
-
-  @Input()
-  color: string;
-
-  counter: Array<any>;
+  items: ProgressItem[];
 
   constructor(private iconRegistry: MatIconRegistry,
               private sanitizer: DomSanitizer) {
@@ -36,11 +28,9 @@ export class ProgressBarComponent implements OnInit {
       sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/checked.svg'));
   }
 
+}
 
-  ngOnInit() {
-    this.counter = Array(this.total);
-    console.log("The total size is : " + this.total);
-    console.log("The counter is an array of size: " + this.counter.length);
-  }
-
+export interface ProgressItem {
+  // status can be complete, active, incomplete, or error.
+  status: string;
 }

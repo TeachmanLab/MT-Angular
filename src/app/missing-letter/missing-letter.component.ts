@@ -16,11 +16,10 @@ export class MissingLetterComponent implements OnInit {
   word: String;
 
   @Output()
-  done: EventEmitter<any> = new EventEmitter();
+  done: EventEmitter<boolean> = new EventEmitter();
 
 
   letters: LetterTile[];
-  incorrect_letters: string[];
   correct_letter: string;
   missing_letter_tile: LetterTile;
   options: string[];
@@ -57,21 +56,18 @@ export class MissingLetterComponent implements OnInit {
       const waitASectionTimer = interval(1500);
       const sub = waitASectionTimer.subscribe( n => {
         console.log('Waited!');
-        this.done.emit();
+        this.done.emit(this.incorrect_choices.length === 0);
         sub.unsubscribe();
       });
     } else {
       this.state = 'incorrect';
       this.missing_letter_tile.status = 'incorrect';
       this.incorrect_choices.push(letter);
+
     }
   }
 
   isIncorrectChoice(letter) {
-    console.log('Incorrect choices: ' + this.incorrect_choices);
-    console.log('was this letter incorrect?' + letter + ' --- ' +
-      (this.incorrect_choices.indexOf(letter) >= 0)
-    );
     return this.incorrect_choices.indexOf(letter) >= 0;
   }
 

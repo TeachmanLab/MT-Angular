@@ -13,15 +13,10 @@ export class AppComponent {
   intro: Intro;
   sessionType = '';
 
-  // Read in the Json file.
-<<<<<<< HEAD
-  constructor() { }
-
-  setType(type: string) {
+  setType(type) {
     this.sessionType = type;
-=======
-
->>>>>>> development
   }
 
 }
+
+

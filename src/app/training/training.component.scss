@@ -1,0 +1,63 @@
+@import '~@angular/material/theming';
+
+mat-card.training {
+  margin: 20px auto;
+  min-height: 600px;
+  max-width: 900px;
+  border-radius: 25px;
+  padding: 0px;
+  @include mat-elevation(10);
+
+  mat-card-header {
+    padding: 20px;
+  }
+
+  div.round-header {
+    font-size: 1.4em;
+    font-weight: 500;
+    padding: 15px 0 0px 20px;
+  }
+
+  app-progress-bar {
+    display: block;
+    padding: 10px 20px;
+  }
+
+  img.summaryImage {
+    width: 100%;
+  }
+
+  div.summary {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-end; /* Safari 7.0+ */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    div.text {
+      margin-bottom: 20px;
+
+      p {
+        margin:0px;
+        padding: 0px;
+      }
+      p.em {
+        font-weight: bold;
+      }
+    }
+
+    div.spacer {
+      flex-grow: 1;
+    }
+
+    button {
+    }
+
+  }
+
+
+
+}

@@ -19,11 +19,10 @@ import { StepComponent } from './step/step.component';
 import { DivComponent } from './div/div.component';
 import { PageComponent } from './page/page.component';
 import { ControlConditionComponent } from './control-condition/control-condition.component';
-import { TrainingConditionComponent } from './training-condition/training-condition.component';
-import { TrainingRoundComponent } from './training-round/training-round.component';
 import {ProgressBarComponent} from './progress-bar/progress-bar.component';
 import { ThoughtbubbleComponent } from './thoughtbubble/thoughtbubble.component';
 import { HighlightComponent } from './highlight/highlight.component';
+import { TrainingComponent } from './training/training.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +37,10 @@ import { HighlightComponent } from './highlight/highlight.component';
     DivComponent,
     PageComponent,
     ControlConditionComponent,
-    TrainingConditionComponent,
-    TrainingRoundComponent,
     ProgressBarComponent,
     ThoughtbubbleComponent,
-    HighlightComponent
+    HighlightComponent,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,

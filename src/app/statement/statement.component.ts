@@ -12,6 +12,7 @@ export class StatementComponent implements OnInit {
   @Input()
   statement: String;
   typed = '';
+  letter_delay = 45; // wait this many milliseconds before displaying the next content.
 
   @Output()
   doneTyping: EventEmitter<boolean> = new EventEmitter();
@@ -20,7 +21,7 @@ export class StatementComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.statement);
-    const secondsCounter = interval(45);
+    const secondsCounter = interval(this.letter_delay);
     const letters = this.statement.split('');
     let pauseCount = 0;
     let index = 0;

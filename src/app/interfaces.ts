@@ -34,12 +34,17 @@ export interface Div {
   scenarios?: Scenario[];
 }
 
+export interface Training {
+  scenarios: Scenario[];
+}
+
 export interface Scenario {
   title: String;
   image: string;
   statement: string;
   missingLetter?: MissingLetter;
   question?: Question;
+  status?: string; // So it can be used in progress component as a progress item.
 }
 
 export interface MissingLetter {

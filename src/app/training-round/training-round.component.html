@@ -1,7 +1,0 @@
-
-<div *ngIf="scenarios">
-  <div class="progress">
-    <app-progress-bar [total]="scenarios.length" [current]="scenarioIndex"></app-progress-bar>
-  </div>
-  <app-scenario *ngIf="currentScenario" [scenario]="currentScenario" (done)="nextSession()"></app-scenario>
-</div>

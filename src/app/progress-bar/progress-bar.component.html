@@ -1,8 +1,9 @@
 <div class="progress">
-  <ng-container *ngFor="let c of counter; let i = index">
-    <mat-icon *ngIf="i < current" class="circle complete"  svgIcon="checked"></mat-icon>
-    <mat-icon *ngIf="i == current" class="circle active" svgIcon="circle-open"></mat-icon>
-    <mat-icon *ngIf="i > current" class="circle incomplete" svgIcon="circle-full"></mat-icon>
-    <mat-icon *ngIf="i < total - 1" class="connect" color="primary" svgIcon="connector"></mat-icon>
+  <ng-container *ngFor="let item of items; let i = index">
+    <mat-icon *ngIf="!item.status" class="circle incomplete" svgIcon="circle-full"></mat-icon>
+    <mat-icon *ngIf="item.status === 'complete'" class="circle complete"  svgIcon="checked"></mat-icon>
+    <mat-icon *ngIf="item.status === 'active'" class="circle active" svgIcon="circle-open"></mat-icon>
+    <mat-icon *ngIf="item.status === 'error'" class="circle error" svgIcon="circle-full"></mat-icon>
+    <mat-icon *ngIf="i < items.length - 1" class="connect" color="primary" svgIcon="connector"></mat-icon>
   </ng-container>
 </div>

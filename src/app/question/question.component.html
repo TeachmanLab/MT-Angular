@@ -4,41 +4,32 @@
     <span class="material-icons">help_outline</span>
     <span>{{question.question}}</span>
   </h5>
-  <!--<div class="options" *ngIf="state==='asking'" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="center center"-->
-  <!--fxLayoutGap="20px" fxLayoutGap.xs="20px">-->
-  <!--<form action="">-->
-  <!--<ul class='likert'>-->
-  <!--<li *ngFor="let option of question.options" (click)="selected(option)">-->
-  <!--<input type="radio">-->
-  <!--<label>{{option}}</label>-->
-  <!--</li>-->
-  <!--</ul>-->
-  <!--</form>-->
-  <!--</div>-->
+
   <div class="options" *ngIf="state==='asking'" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="center center"
     fxLayoutGap="20px" fxLayoutGap.xs="20px">
 
-    <button [hidden]="isLastQuestion() && state==='answered'" mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
+    <button mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
 
   </div>
 
-  <div *ngIf="question.type === 'single'">
-    <div [hidden]="!displayCorrectMessage()">
-
+  <div *ngIf="question.answer">
+    <div [hidden]="!(this.state === 'correct')">
       <div class="correct">Correct!</div>
       <div>{{ question.explanation }} </div>
     </div>
 
-    <div class="incorrect" [hidden]="!displayIncorrectMessage()" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+    <div class="incorrect" [hidden]="!(this.state === 'incorrect')" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
       fxLayoutGap.xs="0">
       <mat-progress-bar value="{{waitPercent}}"></mat-progress-bar>
       Whoops. That wasn't the right answer. Please wait a moment and try again.</div>
   </div>
 
 
+  <!--
   <div *ngIf="question.type === 'any'">
     <div class="correct" [hidden]="!displayNextMessage()">Next question coming up...</div>
     <div class="correct" [hidden]="!displayThankYouMessage()">Thank you for providing your answers.</div>
   </div>
+  -->
 
 </div>
