@@ -1,0 +1,63 @@
+{
+  "title": "Example Session, with mixed Scenarios and Training",
+  "icon": "exmple.svg",
+  "scenarios": [
+    {
+      "scenario": {
+        "title": "Visiting Chicago (Scenario/Training)",
+        "image": "chicago",
+        "statement": "You are visiting Chicago.  While there you decide to purchase a souvenir.  You purchase a ",
+        "missingLetter": {
+          "word": "postcard"
+        },
+        "question": {
+          "question": "Are you in New York?",
+          "type": "single",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "answer": "No"
+        }
+      }
+    },
+    {
+      "scenario": {
+        "title": "Out Shopping",
+        "image": "shopping",
+        "statement": "You are out shopping with a friend who tends to be very loud. When you both enter an electronics store, other shoppers stop and look at you and your friend. The experience is ",
+        "missingLetter": {
+          "word": "tolerable"
+        },
+        "question": {
+          "question": "Is it OK for people to look at you and your friend while out shopping?",
+          "type": "single",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "answer": "Yes"
+        }
+      }
+    },
+    {
+      "scenario": {
+        "title": "At a Party",
+        "image": "party",
+        "statement": "You meet someone at a party and feel that you got along well. Later, you call and suggest meeting again. The reply you get makes you feel that the person thinks meeting again would be ",
+        "missingLetter": {
+          "word": "enjoyable"
+        },
+        "question": {
+          "question": "Will you ask them on a date?",
+          "type": "any",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "answer": "Say yes if you ask them on a date."
+        }
+      }
+    }
+  ]
+}

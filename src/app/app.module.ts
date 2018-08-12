@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { MatButtonModule, MatCardModule, MatToolbarModule, MatProgressBarModule } from '@angular/material';
+import {MatButtonModule, MatCardModule, MatToolbarModule, MatProgressBarModule, MatIconModule} from '@angular/material';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MissingLetterComponent } from './missing-letter/missing-letter.component';
@@ -18,6 +18,10 @@ import { IntroComponent } from './intro/intro.component';
 import { StepComponent } from './step/step.component';
 import { DivComponent } from './div/div.component';
 import { PageComponent } from './page/page.component';
+import { ControlConditionComponent } from './control-condition/control-condition.component';
+import { TrainingConditionComponent } from './training-condition/training-condition.component';
+import { TrainingRoundComponent } from './training-round/training-round.component';
+import {ProgressBarComponent} from './progress-bar/progress-bar.component';
 import { ThoughtbubbleComponent } from './thoughtbubble/thoughtbubble.component';
 import { HighlightComponent } from './highlight/highlight.component';
 
@@ -33,6 +37,10 @@ import { HighlightComponent } from './highlight/highlight.component';
     StepComponent,
     DivComponent,
     PageComponent,
+    ControlConditionComponent,
+    TrainingConditionComponent,
+    TrainingRoundComponent,
+    ProgressBarComponent,
     ThoughtbubbleComponent,
     HighlightComponent
   ],
@@ -41,6 +49,7 @@ import { HighlightComponent } from './highlight/highlight.component';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    MatIconModule,
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

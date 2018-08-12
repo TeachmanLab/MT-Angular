@@ -1,18 +1,8 @@
 @import '~@angular/material/theming';
 
-mat-card.scenario {
-  margin: 20px auto;
-  min-height: 600px;
-  max-width: 900px;
-  border-radius: 25px;
-  padding: 0px;
-  @include mat-elevation(10);
 
-  mat-card-header {
-    padding: 20px;
-  }
 
-  mat-card-content {
+  div.scenario {
     position: relative;
 
     div.title {
@@ -54,7 +44,7 @@ mat-card.scenario {
       height: 580px;
       border-radius: 0 0 25px 25px;
     }
-  }
+
 
 
   mat-card.statement {

@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+
+mat-card.scenario {
+  margin: 20px auto;
+  min-height: 600px;
+  max-width: 900px;
+  border-radius: 25px;
+  padding: 0px;
+  @include mat-elevation(10);
+
+  mat-card-header {
+    padding: 20px;
+  }
+
+  div.round-header {
+    font-size: 1.4em;
+    font-weight: 500;
+    padding: 15px 0 0px 20px;
+  }
+}

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {Scenario} from '../interfaces';
 import {interval} from 'rxjs';
@@ -48,7 +48,7 @@ import {interval} from 'rxjs';
     ]),
   ]
 })
-export class ScenarioComponent implements OnInit {
+export class ScenarioComponent implements OnInit, OnChanges {
 
   @Input()
   scenario: Scenario;
@@ -69,12 +69,12 @@ export class ScenarioComponent implements OnInit {
       this.states[this.states.length] = 'question';
     }
 
-    this.init()
+    this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (!changes.scenario.isFirstChange()) {
-      console.log("New scenario!");
+      console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
       this.init();
     }

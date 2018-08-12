@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ApiService } from './api.service';
 import { Intro, Session } from './interfaces';
 import { SessionComponent } from './session/session.component';
@@ -11,50 +11,17 @@ import { SessionComponent } from './session/session.component';
 export class AppComponent {
   title = 'app';
   intro: Intro;
-  introComplete: boolean;
-
-  sessions: Session[];
-  startedSessions: boolean;
+  sessionType = '';
 
   // Read in the Json file.
-  constructor(
-    private api: ApiService,
-    private sessionComponent: SessionComponent
-  ) { }
+<<<<<<< HEAD
+  constructor() { }
 
-  ngOnInit() {
-    this.getIntro();
-  }
+  setType(type: string) {
+    this.sessionType = type;
+=======
 
-  getIntro() {
-    this.startedSessions = false;
-    this.introComplete = false;
-    this.api.getIntro().subscribe(intro => {
-      this.intro = intro;
-      console.log('Loaded intro from JSON');
-    });
-  }
-
-  getSessions() {
-    console.log('INTRO COMPLETE: ' + this.introComplete);
-    this.startedSessions = true;
-    this.api.getSessions().subscribe(sessions => {
-      this.sessions = sessions;
-      console.log('Loaded sessions from JSON');
-    });
-  }
-
-  introVisible() {
-    return !this.startedSessions;
-  }
-
-  sessionsVisible() {
-    return this.startedSessions;
-  }
-
-  beginButtonVisible() {
-    // return this.introComplete;
-    return true;
+>>>>>>> development
   }
 
 }
