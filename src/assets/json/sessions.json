@@ -29,7 +29,6 @@
                 "questions": [
                   {
                     "question": "The emotion anxiety is characterized by changes in thoughts, bodily reactions, feelings, and behavior (T).",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -92,7 +91,6 @@
                 "questions": [
                   {
                     "question": "Although anxiety helped early humans survive dangerous situations, it is not a useful emotion to people in modern society.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -102,7 +100,6 @@
                   },
                   {
                     "question": "Anxiety can become so strong that it can make it difficult for people to go to work or to take care of their families",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -174,7 +171,6 @@
                 "questions": [
                   {
                     "question": "Everyone with anxiety problems has the same number and kind of symptoms.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -184,7 +180,6 @@
                   },
                   {
                     "question": "Researchers have found that treatment by a mental health professional can alleviate many anxiety symptoms.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -228,7 +223,6 @@
                 "questions": [
                   {
                     "question": "The bodily reactions of panic attacks such as racing heart, rapid breathing, and sweating are never useful.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -290,7 +284,6 @@
                 "questions": [
                   {
                     "question": "People who fear open spaces (as in agoraphobia), negative evaluation (as in social phobia), or a particular object or situation (as in specific phobia) often avoid the things they fear.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -330,7 +323,6 @@
                 "questions": [
                   {
                     "question": "Anyone who follows a routine in the morning or evening has obsessive-compulsive disorder (OCD).",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -394,7 +386,6 @@
                 "questions": [
                   {
                     "question": "One in ten people have an anxiety disorder in their lifetime.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -462,7 +453,6 @@
                 "questions": [
                   {
                     "question": "All people born with sensitive temperaments or whose first-degree relatives have an anxiety disorder will develop an anxiety disorder themselves.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -472,7 +462,6 @@
                   },
                   {
                     "question": "Cognitive distortions, such as interpreting ambiguous situations more negatively than is warranted, can lead one to experience more anxiety and can be one reason why one’s anxiety is not decreasing over time.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -482,7 +471,6 @@
                   },
                   {
                     "question": "Seeing someone react fearfully to an object or situation can contribute to one’s anxiety about the object or situation.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -520,7 +508,6 @@
                 "questions": [
                   {
                     "question": "When people with anxiety disorders avoid the objects or situations they fear, they do not learn that they can handle their feelings, and the anxiety remains over time.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -581,7 +568,6 @@
                 "questions": [
                   {
                     "question": "Body and mind are two separate things. Problems with anxiety cannot also influence one’s physical health.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -622,7 +608,6 @@
                 "questions": [
                   {
                     "question": "Anxiety problems affect one’s ability to pay attention and remember things only in situations that are relevant to the focus of one’s anxiety.",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -663,7 +648,6 @@
                 "questions": [
                   {
                     "question": "Anxiety disorders can strain relationships with friends and family that otherwise help prevent and alleviate these disorders",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"
@@ -704,7 +688,6 @@
                 "questions": [
                   {
                     "question": "People with anxiety disorders commonly experience other mental disorders such as depression",
-                    "type": "single",
                     "options": [
                       "True",
                       "False"

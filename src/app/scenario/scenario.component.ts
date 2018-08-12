@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {Scenario} from '../interfaces';
 import {interval} from 'rxjs';
@@ -31,7 +31,8 @@ import {interval} from 'rxjs';
       })),
       state('*',   style({
         color: '#000',
-        transform: 'scale(1)'
+        transform: 'scale(1)',
+        opacity: 0
       })),
       transition('intro => *', animate('600ms ease-in')),
       transition('* => intro', animate('600ms ease-out'))
@@ -48,16 +49,17 @@ import {interval} from 'rxjs';
     ]),
   ]
 })
-export class ScenarioComponent implements OnInit {
+export class ScenarioComponent implements OnInit, OnChanges {
 
   @Input()
   scenario: Scenario;
   states = ['intro', 'statements'];
   stateIndex = 0;
   state = this.states[0];
+  correct: boolean;
 
   @Output()
-  done: EventEmitter<any> = new EventEmitter();
+  done: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {}
 
@@ -69,12 +71,12 @@ export class ScenarioComponent implements OnInit {
       this.states[this.states.length] = 'question';
     }
 
-    this.init()
+    this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (!changes.scenario.isFirstChange()) {
-      console.log("New scenario!");
+      console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
       this.init();
     }
@@ -83,6 +85,7 @@ export class ScenarioComponent implements OnInit {
   init() {
     this.stateIndex = 0;
     this.state = this.states[0];
+    this.correct = true;
   }
 
   continueButtonVisible() {
@@ -93,14 +96,15 @@ export class ScenarioComponent implements OnInit {
     return(this.state === 'statements' || this.state === 'input');
   }
 
-  progressState() {
+  progressState(correctAnswer = true) {
+    if (!correctAnswer) this.correct = false;
     this.stateIndex++;
     if (this.stateIndex < this.states.length) {
       this.state = this.states[this.stateIndex];
       console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
     } else {
       console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
-      this.done.emit();
+      this.done.emit(this.correct);
     }
   }
 }

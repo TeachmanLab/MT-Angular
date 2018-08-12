@@ -1,0 +1,44 @@
+@import '~@angular/material/theming';
+
+
+.progress {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  -webkit-align-items: flex-end; /* Safari 7.0+ */
+  align-items: flex-start;
+}
+
+mat-icon {
+  cursor: pointer;
+  padding: -2px;
+}
+
+mat-icon.complete {
+  color: green;
+}
+
+mat-icon.error {
+  color: darkred;
+}
+
+mat-icon.active {
+  stroke: #000;
+}
+
+mat-icon.incomplete {
+  color: #888;
+  width: 13px;
+  height: 13px;
+}
+
+mat-icon.open {
+  color: #888;
+}
+
+mat-icon.connect {
+  stroke: #888;
+}
+
+

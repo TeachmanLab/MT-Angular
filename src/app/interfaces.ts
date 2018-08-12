@@ -15,11 +15,11 @@ export interface Session {
 export interface Step {
   title: string;
   stepIndicator: string;
-  pages: Page[]
+  pages: Page[];
 }
 
-export interface Page{
-  divs: Div[]
+export interface Page {
+  divs: Div[];
 }
 
 export interface Div {
@@ -27,11 +27,15 @@ export interface Div {
   text?: string[];
   image?: string[];
   footer?: string[];
-  references?: string[],
-  highlights: Highlight[]
+  references?: string[];
+  highlights: Highlight[];
   thoughtBubbles?: ThoughtBubble[];
   questions?: Question[];
   scenarios?: Scenario[];
+}
+
+export interface Training {
+  scenarios: Scenario[];
 }
 
 export interface Scenario {
@@ -40,6 +44,7 @@ export interface Scenario {
   statement: string;
   missingLetter?: MissingLetter;
   question?: Question;
+  status?: string; // So it can be used in progress component as a progress item.
 }
 
 export interface MissingLetter {

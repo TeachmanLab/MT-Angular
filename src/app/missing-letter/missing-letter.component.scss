@@ -22,6 +22,7 @@ div.correct {
   background-color: #AAD2B8;
   border: 1px solid #009650;
   box-shadow: -1px -1px #888;
+  font-size: 1.8em;
 }
 
 div.incorrect, button.incorrect {
@@ -41,6 +42,20 @@ div.correct-message {
 }
 div.incorrect-message {
   color: #9F202C;
+}
+
+div.select-a-tile {
+  margin: 20px 0px;
+  padding: 20px 0px;
+  border-top: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0px 0px 0px 0px;
+  }
+
 }
 
 button.letter {

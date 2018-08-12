@@ -1,0 +1,24 @@
+<mat-card class="training">
+  <mat-card-content>
+    <div *ngIf="round">
+      <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
+      <div class="progress">
+        <app-progress-bar [items]="round.scenarios"></app-progress-bar>
+      </div>
+      <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" (done)="next($event)"></app-scenario>
+      </div>
+    <div *ngIf="showSummary">
+      <img class="summaryImage" src="./assets/lemon.png"/>
+      <div class="summary">
+        <div class="text">
+          <p class="em">Round {{roundIndex+1}} complete!</p>
+          <p>You finished with a {{round.percentCorrect() | percent}} accuracy rating.</p>
+          <p> Excellent work. Keep it up!</p>
+        </div>
+        <div class="spacer"></div>
+        <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
+        <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="close()">Continue</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

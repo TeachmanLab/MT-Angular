@@ -1,7 +1,7 @@
-<mat-card class="scenario">
-  <mat-card-content>
-    <div class="title" [ngClass]="state==='intro'? 'standout': 'subdue'" [@titleState]="state" >{{scenario.title}}</div>
-    <div class="image" [ngStyle]="{'background-image': 'url(./assets/' + scenario.image + '.jpg)'}"
+
+<div class="scenario">
+    <div class="title" class="title" [@titleState]="state" >{{scenario.title}}</div>
+    <div class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
          [@imageState]="state">
     </div>
     <div class="display-area">
@@ -9,13 +9,11 @@
         <mat-card class="statement"><app-statement [statement]="scenario.statement" (doneTyping)="progressState()"></app-statement></mat-card>
       </div>
       <div class="letters" [@flyUpDown]="'in'" *ngIf="state==='input'">
-        <app-missing-letter [missingLetter]="scenario.missingLetter"  (done)="progressState()"></app-missing-letter>
+        <app-missing-letter [missingLetter]="scenario.missingLetter"  (done)="progressState($event)"></app-missing-letter>
       </div>
       <div class="question" [@flyUpDown]="'in'" *ngIf="state==='question'">
-        <app-question [question]="scenario.question"  (done)="progressState()"></app-question>
+        <app-question [question]="scenario.question"  (done)="progressState($event)"></app-question>
       </div>
     </div>
-    <button class="continue" *ngIf="continueButtonVisible()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="progressState()">Continue</button>
-  </mat-card-content>
-
-</mat-card>
+    <button class="continue" *ngIf="continueButtonVisible()"  class="mat-button"  mat-raised-button (click)="progressState()">Continue</button>
+</div>
