@@ -1,7 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { ApiService } from './api.service';
-import { Intro, Session } from './interfaces';
-import { SessionComponent } from './session/session.component';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +7,6 @@ import { SessionComponent } from './session/session.component';
 })
 export class AppComponent {
   title = 'app';
-  intro: Intro;
   sessionType = '';
 
   setType(type) {

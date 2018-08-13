@@ -22,9 +22,10 @@ export class TrainingCSV {
           continue;
         }
         missingLetter = {word: currentLine[2]};
-        question = {question: currentLine[4], answer: currentLine[5], type: 'single', options: ['Yes', 'No']};
+        question = {type: 'Question', question: currentLine[4], answer: currentLine[5], options: ['Yes', 'No']};
         image = `assets/training_images/${currentLine[0]}.jpg`;
         scenario = {
+          type: 'Scenario',
           title: currentLine[1], image: image, statement: currentLine[3],
           missingLetter: missingLetter, question: question
         };

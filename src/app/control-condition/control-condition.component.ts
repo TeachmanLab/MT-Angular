@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SessionComponent} from '../session/session.component';
 import {ApiService} from '../api.service';
-import {Intro, Session} from '../interfaces';
+import {Session} from '../interfaces';
 
 @Component({
   selector: 'app-control-condition',
@@ -11,7 +11,6 @@ import {Intro, Session} from '../interfaces';
 export class ControlConditionComponent implements OnInit {
 
   title = 'Control Condition';
-  intro: Intro;
   introComplete: boolean;
 
   sessions: Session[];
@@ -24,16 +23,7 @@ export class ControlConditionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getIntro();
-  }
-
-  getIntro() {
-    this.startedSessions = false;
-    this.introComplete = false;
-    this.api.getIntro().subscribe(intro => {
-      this.intro = intro;
-      console.log('Loaded intro from JSON');
-    });
+    this.getSessions();
   }
 
   getSessions() {

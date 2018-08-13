@@ -1,53 +1,44 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, SimpleChanges } from '@angular/core';
-import { Page, Div } from '../interfaces';
+import {Component, Input, Output, EventEmitter, OnChanges} from '@angular/core';
+import { Page } from '../interfaces';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit {
+export class PageComponent implements OnChanges {
 
   @Input()
   page: Page;
-  divIndex: number;
-  numDivs: number;
+  pageIndex: number;
+  numPages: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-    this.init();
+  ngOnChanges() {
+    this.pageIndex = 0;
+    this.numPages = this.page.elements.length;
+    this.markStaticComponentsComplete();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-
-    if (!changes.page.isFirstChange()) {
-      console.log('New page');
-      this.page = changes.page.currentValue;
-      this.init();
+  markStaticComponentsComplete() {
+    for (const element of this.page.elements) {
+      console.log(element.type);
+      if (['Paragraph', 'References', 'Image', 'Header'].includes(element.type)) {
+        console.log(`completing a ${element.type}`);
+        this.divCompleted();
+      }
     }
-  }
-
-  init() {
-    this.divIndex = 0;
-    this.numDivs = this.page.divs.length;
-
   }
 
   divCompleted() {
-    console.log('Completed div ' + (this.divIndex + 1) + ' of ' + this.numDivs);
-    this.divIndex++;
-    if (this.divIndex == this.numDivs) {
-      this.allDone();
+    console.log('Completed div ' + (this.pageIndex + 1) + ' of ' + this.numPages);
+    this.pageIndex++;
+    if (this.pageIndex === this.numPages) {
+      this.done.emit();
     }
   }
-
-  allDone() {
-    console.log("Completed page");
-    this.done.emit();
-  }
-
 }

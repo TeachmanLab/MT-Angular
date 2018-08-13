@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import { Step, Page } from '../interfaces';
 
 @Component({
@@ -6,16 +6,13 @@ import { Step, Page } from '../interfaces';
   templateUrl: './step.component.html',
   styleUrls: ['./step.component.scss']
 })
-export class StepComponent implements OnInit {
+export class StepComponent implements OnInit, OnChanges {
 
   @Input()
   step: Step;
-  numPages: number;
   pageIndex: number;
   currentPage: Page;
-  onLastPage: boolean;
-  pageComplete: boolean;
-  prevPagesCompleted: boolean;
+  allowContinue = false;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -23,73 +20,54 @@ export class StepComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initStep()
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (!changes.step.isFirstChange()) {
-      console.log('New step');
-      this.step = changes.step.currentValue;
-      this.initStep();
-    }
-  }
-
-  initStep() {
-    this.prevPagesCompleted = false;
-    this.numPages = this.step.pages.length;
     this.pageIndex = 0;
     this.initPage();
+  }
 
+  ngOnChanges() {
+    this.pageIndex = 0;
+    this.initPage();
   }
 
   initPage() {
     this.currentPage = this.step.pages[this.pageIndex];
-    if (this.pageIndex === this.numPages - 1) {
-      this.onLastPage = true;
-    } else {
-      this.onLastPage = false;
-    }
-    this.pageComplete = false;
+    this.allowContinue = false;
   }
 
   nextPageButtonVisible() {
-    console.log("prev pages completed? " +this.prevPagesCompleted);
-    console.log("page complete? " + this.pageComplete);
-    console.log("on last page " + this.onLastPage);
-    return ((this.prevPagesCompleted || this.pageComplete) && !this.onLastPage);
+    return (this.allowContinue && this.pageIndex < this.step.pages.length);
   }
 
   prevPageButtonVisible() {
-    return !(this.pageIndex <= 0);
+    return (this.allowContinue && !(this.pageIndex <= 0));
   }
 
   pageCompleted() {
-    console.log('Completed page')
-    this.pageComplete = true;
-    if (this.onLastPage) {
+    if (this.pageIndex < this.step.pages.length) {
+      this.allowContinue = true;
+    } else {
       this.allDone();
     }
   }
 
   nextPage() {
-    console.log("Next page");
+    console.log('Next page');
     this.pageIndex++;
-    if (this.pageIndex < this.numPages) {
+    if (this.pageIndex < this.step.pages.length) {
       this.initPage();
     } else {
-      this.allDone()
+      this.allDone();
     }
   }
 
   prevPage() {
-    console.log("Previous page");
+    console.log('Previous page');
     this.pageIndex--;
     this.initPage();
-
   }
 
   allDone() {
-    console.log("Completed step")
+    console.log('Completed step');
     this.done.emit();
   }
 }
