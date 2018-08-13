@@ -5,7 +5,6 @@ import {catchError, map} from 'rxjs/operators';
 import {Session} from 'selenium-webdriver';
 import {Scenario} from './interfaces';
 import {TrainingCSV} from './training-csv';
-import { Intro } from './interfaces';
 
 @Injectable()
 export class ApiService {
@@ -21,11 +20,6 @@ export class ApiService {
   };
 
   constructor(private httpClient: HttpClient) {
-  }
-
-  public getIntro(): Observable<any> {
-    return this.httpClient.get<Intro>('./assets/json/intro.json')
-      .pipe((catchError(this.handleError)));
   }
 
   public getTraining(): Observable<any> {

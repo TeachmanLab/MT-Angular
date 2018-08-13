@@ -1,9 +1,4 @@
 
-export interface Intro {
-  title: string;
-  page: Page;
-}
-
 export interface Session {
   title: string;
   sessionIndicator: string;
@@ -16,29 +11,20 @@ export interface Step {
   title: string;
   stepIndicator: string;
   pages: Page[];
+  status?: string;
 }
 
 export interface Page {
-  divs: Div[];
+  elements: Element[];
 }
 
-export interface Div {
-  header?: string;
-  text?: string[];
-  image?: string[];
-  footer?: string[];
-  references?: string[];
-  highlights: Highlight[];
-  thoughtBubbles?: ThoughtBubble[];
-  questions?: Question[];
-  scenarios?: Scenario[];
+export interface Element {
+  type: string;
+  content?: string;
 }
 
-export interface Training {
-  scenarios: Scenario[];
-}
-
-export interface Scenario {
+export interface Scenario extends Element {
+  type: 'Scenario';
   title: String;
   image: string;
   statement: string;
@@ -46,27 +32,29 @@ export interface Scenario {
   question?: Question;
   status?: string; // So it can be used in progress component as a progress item.
 }
-
 export interface MissingLetter {
   word: string;
 }
 
-export interface Question {
+
+export interface Question extends Element {
+  type: 'Question';
   question: string;
-  type: string;
   options: string[];
   answer?: string;
   explanation?: string;
 }
 
-export interface ThoughtBubble {
+export interface ThoughtBubble extends Element {
+  type: 'ThoughtBubble';
   color: string;
   header: string;
   thought: string;
   followup: string;
 }
 
-export interface Highlight {
+export interface Highlight extends Element {
+  type: 'Highlight';
   color: string;
   header: string;
   highlight: string;

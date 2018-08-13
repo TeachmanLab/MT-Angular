@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Question } from '../interfaces';
 import { interval } from 'rxjs';
-import { LastService } from '../last.service';
 
 
 enum QuestionStates {
@@ -26,9 +25,7 @@ export class QuestionComponent implements OnInit {
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(
-    private lastService: LastService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
     this.state = QuestionStates.asking;

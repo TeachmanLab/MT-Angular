@@ -1,10 +1,2 @@
-<div [hidden]="!introVisible()">
-  <app-intro *ngIf="intro" [intro]="intro" (done)="introComplete=true"></app-intro>
-  <button class="btn red" [hidden]="!beginButtonVisible()" (click)="getSessions()">
-    <span>Get Started</span>
-  </button>
-</div>
-
-<div [hidden]="!sessionsVisible()">
-  <app-session *ngIf="sessions" [sessions]="sessions"></app-session>
-</div>
+<app-session *ngIf="currentSession" [session]="currentSession" (done)="sessionComplete()"></app-session>
+<div *ngIf="allDone">All Sessions are Complete.</div>

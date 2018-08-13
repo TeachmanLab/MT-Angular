@@ -12,11 +12,8 @@ import { StatementComponent } from './statement/statement.component';
 import { QuestionComponent } from './question/question.component';
 import { SessionComponent } from './session/session.component';
 import { ApiService} from './api.service';
-import { LastService} from './last.service';
 import { HttpClientModule} from '@angular/common/http';
-import { IntroComponent } from './intro/intro.component';
 import { StepComponent } from './step/step.component';
-import { DivComponent } from './div/div.component';
 import { PageComponent } from './page/page.component';
 import { ControlConditionComponent } from './control-condition/control-condition.component';
 import {ProgressBarComponent} from './progress-bar/progress-bar.component';
@@ -32,9 +29,7 @@ import { TrainingComponent } from './training/training.component';
     StatementComponent,
     QuestionComponent,
     SessionComponent,
-    IntroComponent,
     StepComponent,
-    DivComponent,
     PageComponent,
     ControlConditionComponent,
     ProgressBarComponent,
@@ -56,7 +51,6 @@ import { TrainingComponent } from './training/training.component';
   ],
   providers: [
     ApiService,
-    LastService,
     SessionComponent
   ],
   bootstrap: [AppComponent]

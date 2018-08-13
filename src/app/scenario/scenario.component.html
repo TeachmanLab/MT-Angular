@@ -15,5 +15,5 @@
         <app-question [question]="scenario.question"  (done)="progressState($event)"></app-question>
       </div>
     </div>
-    <button class="continue" *ngIf="continueButtonVisible()"  class="mat-button"  mat-raised-button (click)="progressState()">Continue</button>
+    <button class="continue mat-button" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>
 </div>
