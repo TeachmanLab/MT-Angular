@@ -20,6 +20,7 @@ import {ProgressBarComponent} from './progress-bar/progress-bar.component';
 import { ThoughtbubbleComponent } from './thoughtbubble/thoughtbubble.component';
 import { HighlightComponent } from './highlight/highlight.component';
 import { TrainingComponent } from './training/training.component';
+import { BulletListComponent } from './bullet-list/bullet-list.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TrainingComponent } from './training/training.component';
     ProgressBarComponent,
     ThoughtbubbleComponent,
     HighlightComponent,
-    TrainingComponent
+    TrainingComponent,
+    BulletListComponent
   ],
   imports: [
     BrowserModule,

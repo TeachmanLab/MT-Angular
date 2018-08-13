@@ -61,7 +61,11 @@ export interface Highlight extends Element {
   icon: string;
 }
 
-
+export interface BulletList extends Element {
+  type: 'BulletList';
+  title: string;
+  bullets: string[];
+}
 
 
 

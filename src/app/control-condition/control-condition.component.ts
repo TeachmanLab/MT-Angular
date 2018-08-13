@@ -28,9 +28,6 @@ export class ControlConditionComponent implements OnInit {
     this.api.getSessions().subscribe(sessions => {
       this.sessions = sessions;
       this.currentSession = this.sessions[this.sessionIndex];
-      console.log(`Sessions:${JSON.stringify(this.sessions)}`);
-      console.log(`Loaded ${this.sessions.length} sessions.`);
-      console.log('The current session is ' + this.currentSession);
     });
   }
 
