@@ -1,14 +1,22 @@
 [
   {
     "title": "About Mindtrails",
-    "description": [
-      "The CalmThinking program includes five sessions. You will complete one session each week, and each session takes about 15 minutes or fewer to complete. You will also complete some assessments as part of our research study so we can evaluate how well the program works.",
-      "You will receive feedback after completing the study about how your thinking has changed over the course of the program. You can do the sessions anywhere; all you need is a quiet place and a device with Internet. This program is free and can be completed without ever leaving your desk."
-    ],
     "steps": [
       {
         "title": "How Does CalmThinking Work?",
         "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "The CalmThinking program includes five sessions. You will complete one session each week, and each session takes about 15 minutes or fewer to complete. You will also complete some assessments as part of our research study so we can evaluate how well the program works."
+              },
+              {
+                "type": "Paragraph",
+                "content": "You will receive feedback after completing the study about how your thinking has changed over the course of the program. You can do the sessions anywhere; all you need is a quiet place and a device with Internet. This program is free and can be completed without ever leaving your desk."
+              }
+            ]
+          },
           {
             "elements": [
               {
@@ -58,15 +66,36 @@
     "title": "Session 1: Introduction to Anxiety",
     "sessionIndicator": "./assets/images/sessions/session_1/session1.png",
     "allSteps": "./assets/images/sessions/session_1/allStepsS1.png",
-    "description": [
-      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
-      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
-    ],
     "steps": [
+      {
+        "title": "Introduction",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them."
+              },
+              {
+                "type": "Paragraph",
+                "content": "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+              }
+            ]
+          }
+        ]
+      },
       {
         "title": "What Is Anxiety?",
         "stepIndicator": "./assets/images/sessions/session_1/step1S1.png",
         "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "Anxiety, one of the most basic human emotions, is a normal and common experience. At one time or another, all of us are likely to feel “stressed out”; worried about finances, health, or family; fearful in potentially dangerous situations (e.g., on a ladder or before an operation); or concerned about what other people think."
+              }
+            ]
+          },
           {
             "elements": [
               {
@@ -184,10 +213,27 @@
     "title": "Session 2: Symptoms and Disorders",
     "sessionIndicator": "./assets/images/sessions/session_2/session2.png",
     "description": [
-      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
-      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them."
     ],
     "steps": [
+      {
+        "title": "Introduction",
+        "stepIndicator": "./assets/images/sessions/session_2/step1S2.png",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them."
+              },
+              {
+                "type": "Paragraph",
+                "content": "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+              }
+            ]
+          }
+        ]
+      },
       {
         "title": "Anxiety Symptoms",
         "stepIndicator": "./assets/images/sessions/session_2/step1S2.png",

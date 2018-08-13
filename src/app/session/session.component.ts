@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Step, Session} from '../interfaces';
 
 @Component({
@@ -6,22 +6,12 @@ import {Step, Session} from '../interfaces';
   templateUrl: './session.component.html',
   styleUrls: ['./session.component.scss']
 })
-export class SessionComponent implements OnInit {
+export class SessionComponent implements OnInit, OnChanges {
 
   @Input()
-  sessions: Session[];
-  numSessions: number;
-  startedSession: boolean;
-  sessionIndex: number;
-  currentSession: Session;
-  sessionComplete: boolean;
-  onLastSession: boolean;
-
+  session: Session;
   stepIndex: number;
-  stepComplete: boolean;
   currentStep: Step;
-  numSteps: number;
-  onLastStep: boolean;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -29,86 +19,32 @@ export class SessionComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.startedSession = false;
-    this.sessionIndex = 0;
-    this.onLastSession = false;
-    this.numSessions = this.sessions.length;
-
-    console.log(this.sessions)
-
-    this.initSession();
+    this.stepIndex = 0;
+    this.initStep();
   }
-  
-  initSession() {
-    // debugger;
-    this.currentSession = this.sessions[this.sessionIndex];
-    this.sessionComplete = false;
-    this.stepIndex = -1;
-    this.numSteps = this.currentSession.steps.length;
-    this.onLastStep = false;
+
+  ngOnChanges() {
+    console.log("The Session was changed!");
+    this.stepIndex = 0;
+    this.initStep();
   }
 
   initStep() {
-    this.stepComplete = false;
-    this.currentStep = this.currentSession.steps[this.stepIndex];
-    console.log('Now on step ' + (this.stepIndex + 1) + ' of ' + this.numSteps);
+    this.currentStep = this.session.steps[this.stepIndex];
+    this.currentStep.status = 'active';
+    console.log('The current Step is ' + JSON.stringify(this.currentStep));
   }
 
-  descriptionVisible() {
-    return !this.startedSession;
-  }
-
-  stepsVisible() {
-    return this.startedSession;
-  }
-
-  nextStepButtonVisible() {
-    var visible = false;
-    if (!this.startedSession) {
-      visible = true;
-    } else {
-      if (this.stepComplete && !this.onLastStep) {
-        visible = true;
-      }
-    }
-
-    return visible;
-  }
-
-  nextSessionButtonVisible() {
-    return this.onLastStep && this.stepComplete && !this.onLastSession;
-  }
-  
   nextStep() {
-    // debugger;
+    console.log('Next Step called, loading the next step!');
+    if (this.currentStep) {
+      this.currentStep.status = 'complete';
+    }
     this.stepIndex++;
-    this.startedSession = true;
-    if (this.stepIndex < this.numSteps) {
+    if (this.stepIndex < this.session.steps.length) {
       this.initStep();
-      if (this.stepIndex == this.numSteps - 1) {
-        this.onLastStep = true;
-      }
     } else {
-      this.allDone();
+      this.done.emit();
     }
   }
-
-  nextSession() {
-    this.sessionIndex++;
-    this.startedSession = false;
-    if (this.sessionIndex < this.numSessions) {
-      this.initSession();
-      if (this.sessionIndex == this.sessions.length - 1) {
-        this.onLastSession = true;
-      }
-
-    } else {
-      this.sessionComplete = true;
-    }
-  }
-
-  allDone() {
-    this.done.emit();
-  }
-
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {SessionComponent} from '../session/session.component';
 import {ApiService} from '../api.service';
 import {Session} from '../interfaces';
 
@@ -11,40 +10,37 @@ import {Session} from '../interfaces';
 export class ControlConditionComponent implements OnInit {
 
   title = 'Control Condition';
-  introComplete: boolean;
 
   sessions: Session[];
   startedSessions: boolean;
+  sessionIndex = 0;
+  currentSession: Session;
+  allDone = false;
 
-  constructor(
-    private api: ApiService,
-    private sessionComponent: SessionComponent
-  ) {
-  }
+  constructor(private api: ApiService) {}
 
   ngOnInit() {
     this.getSessions();
   }
 
   getSessions() {
-    console.log('INTRO COMPLETE: ' + this.introComplete);
     this.startedSessions = true;
     this.api.getSessions().subscribe(sessions => {
       this.sessions = sessions;
-      console.log('Loaded sessions from JSON');
+      this.currentSession = this.sessions[this.sessionIndex];
+      console.log(`Sessions:${JSON.stringify(this.sessions)}`);
+      console.log(`Loaded ${this.sessions.length} sessions.`);
+      console.log('The current session is ' + this.currentSession);
     });
   }
 
-  introVisible() {
-    return !this.startedSessions;
-  }
-
-  sessionsVisible() {
-    return this.startedSessions;
-  }
-
-  beginButtonVisible() {
-    // return this.introComplete;
-    return true;
+  sessionComplete() {
+    console.log('The session is complete.  Loading the next Session.');
+    this.sessionIndex++;
+    if (this.sessionIndex < this.sessions.length) {
+      this.currentSession = this.sessions[this.sessionIndex];
+    } else {
+      this.allDone = true;
+    }
   }
 }

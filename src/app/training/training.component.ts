@@ -9,7 +9,7 @@ import {Scenario} from '../interfaces';
 })
 export class TrainingComponent implements OnInit {
 
-  totalRounds = 15;
+  totalRounds = 4;
   roundIndex = 0;
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.

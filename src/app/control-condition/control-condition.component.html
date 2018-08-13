@@ -1,1 +1,2 @@
-<app-session *ngIf="sessions" [sessions]="sessions"></app-session>
+<app-session *ngIf="currentSession" [session]="currentSession" (done)="sessionComplete()"></app-session>
+<div *ngIf="allDone">All Sessions are Complete.</div>
