@@ -40,6 +40,7 @@ export class ControlConditionComponent implements OnInit {
     if (this.sessionIndex < this.sessions.length) {
       this.currentSession = this.sessions[this.sessionIndex];
     } else {
+      this.currentSession = null;
       this.allDone = true;
     }
   }
