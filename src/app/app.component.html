@@ -2,14 +2,8 @@
 <div class="main">
   <mat-toolbar class="mat-toolbar">
     <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-around center" class="logo">
-      <span class="spacer"></span>
-      <button mat-button color="accent" (click)="setType('training')">Training Scenerios</button>
-      <button mat-button color="accent" (click)="setType('control')">Control Condition</button>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <app-control-condition *ngIf="sessionType === 'control'"></app-control-condition>
-  <app-training *ngIf="sessionType === 'training'"></app-training>
-
-
+  <router-outlet></router-outlet>
 </div>

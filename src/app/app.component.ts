@@ -7,12 +7,6 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  sessionType = '';
-
-  setType(type) {
-    this.sessionType = type;
-  }
-
 }
 
 
