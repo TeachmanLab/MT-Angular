@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ApiService} from '../api.service';
 import {Scenario, Session} from '../interfaces';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-training',
@@ -67,6 +68,10 @@ export class TrainingComponent implements OnInit {
 
   isComplete(): boolean {
     return (this.roundIndex >= this.totalRounds - 1);
+  }
+
+  close() {
+    window.location.href = environment.redirect;
   }
 
   nextTraining(correct = true) {

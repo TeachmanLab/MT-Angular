@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  redirect: '/r01/angularTraining/completed'
 };

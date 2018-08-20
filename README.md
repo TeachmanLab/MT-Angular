@@ -6,6 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Adding to Mindtrails
+Run `ng build --prod --build-optimizer --base-href=/r01/angular_training/`
+Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/training2
+Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular_training`
+
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
