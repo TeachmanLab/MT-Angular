@@ -144,7 +144,8 @@
             "elements": [
               {
                 "type": "ThoughtBubble",
-                "image": "./assets/images/sessions/session_1/session1.png",
+                "image": "./assets/images/thoughtbubbles/thoughtbubble-orange.JPG",
+                "colorClass": "orange",
                 "title": "Avoiding an Accident",
                 "thought": "Driving home from work, Malik suddenly sees a child dart into the street in front of his car. Malik slams on the brakes and swerves, just missing the child. As he pulls over, Malik’s heart is beating furiously, and he is breathless, sweating, and shaking. He could have killed that child. Only after several long minutes is he able to continue his drive home.",
                 "followup": [

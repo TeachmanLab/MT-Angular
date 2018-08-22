@@ -48,6 +48,7 @@ export interface Question extends Element {
 export interface ThoughtBubble extends Element {
   type: 'ThoughtBubble';
   image: string;
+  colorClass: string;
   title: string;
   thought: string;
   followup: string;
