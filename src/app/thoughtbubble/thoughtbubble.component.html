@@ -1,12 +1,14 @@
-<div *ngIf="currentState==='thought'">
-  <div class="mdl-card__title mdl-card--border">
-    <h1 class="mdl-card__title-text">{{ thoughtBubble.title }} </h1>
-  </div>
-  <div> {{ thoughtBubble.thought }}</div>
+<div class="mdl-card__title mdl-card--border">
+  <h1 class="mdl-card__title-text">{{ thoughtBubble.title }} </h1>
 </div>
-<div *ngIf="currentState==='followup'">
-  <div *ngFor="let text of thoughtBubble.followup" class="mdl-card__supporting-text">
-    {{ text }}
+<div [ngStyle]="{'background-image': 'url(' + thoughtBubble.image + ')'}" [@fadeInBackground]="'in'">
+  <div *ngIf="currentState==='thought'" [@fadeInText]="'in'">
+    {{ thoughtBubble.thought }}
+  </div>
+  <div *ngIf="currentState==='followup'">
+    <div *ngFor="let text of thoughtBubble.followup" class="mdl-card__supporting-text" [@fadeInText]="'in'">
+      {{ text }}
+    </div>
   </div>
 </div>
 <button class="continue" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>
