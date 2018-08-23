@@ -32,10 +32,10 @@ export interface Scenario extends Element {
   question?: Question;
   status?: string; // So it can be used in progress component as a progress item.
 }
+
 export interface MissingLetter {
   word: string;
 }
-
 
 export interface Question extends Element {
   type: 'Question';
