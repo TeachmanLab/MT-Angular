@@ -1,4 +1,5 @@
 <div *ngFor="let el of page.elements">
+<<<<<<< HEAD
     <div class="mdl-card__title" *ngIf=" el.type==='Header'">{{el.content}}</div>
     <div class="mdl-card__supporting-text" *ngIf="el.type==='Paragraph' ">{{el.content}}</div>
     <div class="mdl-card__supporting-text" *ngIf="el.type==='References' ">
@@ -11,3 +12,17 @@
     <app-thoughtbubble *ngIf="el.type==='ThoughtBubble' " [thoughtBubble]="el " (done)="divCompleted() "></app-thoughtbubble>
     <app-highlight *ngIf="el.type==='Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
   </div> 
+=======
+  <div class="mdl-card__title" *ngIf=" el.type==='Header'">{{el.content}}</div>
+  <div class="mdl-card__supporting-text" *ngIf="el.type==='Paragraph' ">{{el.content}}</div>
+  <div class="mdl-card__supporting-text" *ngIf="el.type==='References' ">
+    <div *ngFor="let ref of el.content ">
+      <i>{{ref}}</i>
+    </div>
+  </div>
+  <img *ngIf="el.type==='Image' " [src]="el.content ">
+  <app-question *ngIf="el.type==='Question' " [question]="el " (done)="divCompleted() "></app-question>
+  <app-thoughtbubble *ngIf="el.type==='ThoughtBubble' " [thoughtBubble]="el " (done)="divCompleted() "></app-thoughtbubble>
+  <app-highlight *ngIf="el.type==='Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
+</div>
+>>>>>>> 0340d26... Completed basic functionality for thoughtbubbles and highlights

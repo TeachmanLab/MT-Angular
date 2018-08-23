@@ -4,6 +4,7 @@ div {
   padding: 10px;
 }
 
+<<<<<<< HEAD
 .centered, .mdl-card__supporting-text { 
   font-size: 1.35rem;
 }
@@ -18,10 +19,21 @@ div {
 }
 
 .orange { 
+=======
+.thoughtbubble {
+>>>>>>> 0340d26... Completed basic functionality for thoughtbubbles and highlights
   padding: 15px;
   margin-top: 5px;
   font-size: 1.2rem;
   color: white !important;
-  background-color: rgb(255, 145, 0);
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translate(-35%, -40%);
   border-radius: 35px;
 }
+// .orange { 
+ 
+//   background-color: rgb(255, 145, 0);
+  
+// }

@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 
+<<<<<<< HEAD
  div {
      padding: 10px;
  }
@@ -27,3 +28,28 @@
  .highlight {
      border-radius: 25px;
  }
+=======
+div {
+    padding: 10px;
+}
+
+.orange {
+    border: 2px solid orange;
+}
+
+.yellow {
+    border: 2px solid yellow;
+}
+
+.green {
+    border: 2px solid green;
+}
+
+.blue {
+    border: 2px solid blue;
+}
+
+.highlight {
+    border-radius: 25px;
+}
+>>>>>>> 0340d26... Completed basic functionality for thoughtbubbles and highlights
