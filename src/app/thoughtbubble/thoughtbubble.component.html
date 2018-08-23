@@ -4,7 +4,7 @@
 
 <div *ngIf="currentState==='thought'">
   <div [ngStyle]="{'background-image': 'url(' + thoughtBubble.image + ')', 'background-repeat': 'no-repeat', 'height':'600px', 'background-size': '100% 600px'}">
-    <div [@fadeInText]="'in'" class="thoughtbubble">
+    <div [@fadeInText]="'in'" class="centered">
       {{ thoughtBubble.thought }}
     </div>
   </div>

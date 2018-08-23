@@ -20,7 +20,7 @@ export interface Page {
 
 export interface Element {
   type: string;
-  content?: string | string[];
+  content?: string;
 }
 
 export interface Scenario extends Element {
@@ -56,8 +56,8 @@ export interface ThoughtBubble extends Element {
 
 export interface Highlight extends Element {
   type: 'Highlight';
-  colorClass: string;
-  title: string;
+  color: string;
+  header: string;
   highlight: string;
   icon: string;
 }
