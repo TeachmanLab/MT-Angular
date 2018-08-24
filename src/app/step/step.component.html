@@ -2,7 +2,7 @@
   <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--7-col-phone  mdl-shadow--4dp">
 
     
-    <div class="mdl-card__supporting-text">
+    <div class="mdl-card__supporting-text"*ngIf="step.stepIndicator">
       <img class="indicator" src="{{ step.stepIndicator }}" alt="Step {{ step.title }}" />
     </div>
    

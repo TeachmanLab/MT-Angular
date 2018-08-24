@@ -15,6 +15,7 @@
                 <div class="progress">
                   <app-progress-bar *ngIf="session.steps.length > 1" [items]="session.steps"></app-progress-bar>
                 </div>
+                <img class="indicator" src="{{ session.sessionIndicator }}"
                 <div>
                   <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep()"></app-step>
                 </div>

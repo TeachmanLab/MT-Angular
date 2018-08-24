@@ -85,8 +85,7 @@
         ]
       },
       {
-        "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/images/step-indicators/session-1/step1S1.png",
+        "stepIndicator": "../assets/images/step-indicators/session-1/session1-step1.png",
         "pages": [
           {
             "elements": [
@@ -108,7 +107,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets//images/sessions/session-1/step1S1body.png"
+                "content": "./assets/images/step-body-images/session1-step1-anxiety-diagram.png"
               }
             ]
           },
