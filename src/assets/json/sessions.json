@@ -64,8 +64,8 @@
   },
   {
     "title": "Session 1: Introduction to Anxiety",
-    "sessionIndicator": "./assets/images/sessions/session_1/session1.png",
-    "allSteps": "./assets/images/sessions/session_1/allStepsS1.png",
+    "sessionIndicator": "./assets/images/session-indicators/session1.png",
+    "allSteps": "./assets/images/step-indicators/session-1/session1-all-steps.png",
     "steps": [
       {
         "title": "Introduction",
@@ -86,7 +86,7 @@
       },
       {
         "title": "What Is Anxiety?",
-        "stepIndicator": "./assets/images/sessions/session_1/step1S1.png",
+        "stepIndicator": "./assets/images/step-indicators/session-1/step1S1.png",
         "pages": [
           {
             "elements": [
@@ -108,7 +108,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets//images/sessions/session_1/step1S1body.png"
+                "content": "./assets//images/sessions/session-1/step1S1body.png"
               }
             ]
           },
@@ -130,7 +130,7 @@
       },
       {
         "title": "When Is Anxiety Functional?",
-        "stepIndicator": "./assets/images/sessions/session_1/allStepsS1.png",
+        "stepIndicator": "./assets/images/step-indicators/session-1/session1-step2.png",
         "pages": [
           {
             "elements": [
@@ -158,7 +158,7 @@
       },
       {
         "title": "When Is Anxiety Impairing?",
-        "stepIndicator": "./assets/images/sessions/session_1/allStepsS1.png",
+        "stepIndicator": "./assets/images/step-indicators/session-1/session1-all-steps.png",
         "pages": [
           {
             "elements": [
@@ -213,14 +213,14 @@
   },
   {
     "title": "Session 2: Symptoms and Disorders",
-    "sessionIndicator": "./assets/images/sessions/session_2/session2.png",
+    "sessionIndicator": "./assets/images/session-indicators/session2.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them."
     ],
     "steps": [
       {
         "title": "Introduction",
-        "stepIndicator": "./assets/images/sessions/session_2/step1S2.png",
+        "stepIndicator": "./assets/images/step-indicators/session-2/session2-all-steps.png",
         "pages": [
           {
             "elements": [
@@ -238,7 +238,7 @@
       },
       {
         "title": "Anxiety Symptoms",
-        "stepIndicator": "./assets/images/sessions/session_2/step1S2.png",
+        "stepIndicator": "./assets/images/step-indicators/session-2/session2-step1.png",
         "pages": [
           {
             "elements": [
