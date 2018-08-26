@@ -1,10 +1,11 @@
 <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col">
-    <img src = "{{ highlight.icon }}" />
-  </div>
-  <div class="mdl-cell mdl-cell--10-col">
-      <div>{{ highlight.header }}</div>
-      <div>{{ highlight.highlight }}</div>
-  </div>
-</div>
-
+        <div class="{{ highlight.colorClass }} highlight">
+            <div class="mdl-cell mdl-cell--2-col">
+                <img src="{{ highlight.icon }}" />
+            </div>
+            <div class="mdl-cell mdl-cell--10-col">
+                <div class="mdl-card__title">{{ highlight.title }}</div>
+                <div>{{ highlight.highlight }}</div>
+            </div>
+        </div>
+    </div>
