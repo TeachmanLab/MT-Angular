@@ -35,7 +35,8 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   nextPageButtonVisible() {
-    return (this.allowContinue && this.pageIndex < this.step.pages.length);
+    // return (this.allowContinue && this.pageIndex < this.step.pages.length);
+    return true;
   }
 
   prevPageButtonVisible() {

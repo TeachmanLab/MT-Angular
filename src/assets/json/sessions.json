@@ -144,6 +144,8 @@
             "elements": [
               {
                 "type": "ThoughtBubble",
+                "image": "./assets/images/thoughtbubbles/thoughtbubble-orange.JPG",
+                "colorClass": "orange",
                 "title": "Avoiding an Accident",
                 "thought": "Driving home from work, Malik suddenly sees a child dart into the street in front of his car. Malik slams on the brakes and swerves, just missing the child. As he pulls over, Malik’s heart is beating furiously, and he is breathless, sweating, and shaking. He could have killed that child. Only after several long minutes is he able to continue his drive home.",
                 "followup": [
@@ -281,6 +283,144 @@
                 "explanation": "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms."
               }
             ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 5: Impact of Anxiety",
+    "sessionIndicator": "",
+    "description": [
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
+      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+    ],
+    "steps": [
+      {
+        "title": "Face Your Fears",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "The following sections describe different strategies that can be useful for managing your anxiety. Your anxiety won’t instantly disappear, but the strategies may help you to reduce your anxiety over time and to reduce your vulnerability to future anxiety."
+              },
+              {
+                "type": "Highlight",
+                "colorClass": "blue",
+                "title": "Face Your Fears",
+                "highlight": "Although it may be hard to believe, when people approach the objects and situations they fear their anxiety decreases over time. As stated before, one component of anxiety is bodily reactions, and the body cannot run at full capacity for long. Just as a sprinter can race at full speed for only a short distance, intense anxiety must subside at some point. This is true even if people approach feared situations step by step and start with smaller fears. It is not necessary to face one’s biggest fear from the start. In addition, people typically fear things more than their danger warrants, but when people do not approach these things, they do not learn their real danger.",
+                "icon": ""
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "If you stay in a situations that make you feel anxious, over time your anxiety will remain stable or even increase (F).",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "False",
+                "explanation": "Anxiety decreases over time. Just as a sprinter can race at full speed for only a short distance, intense anxiety must subside at some point."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Live Healthy",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Highlight",
+                "colorClass": "green",
+                "title": "Live Healthy",
+                "highlight": "When people maintain a healthy lifestyle with regular exercise, balanced nutrition, limited alcohol and caffeine, and adequate sleep, they are less vulnerable to emotions such as anxiety. By taking care of one’s body in these ways and others, including treating physical illness, one also takes care of one’s mind. You will feel better and be able to handle stressful situations more confidently.",
+                "icon": ""
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "A healthy lifestyle can help one handle anxiety more confidently. (T)",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "True",
+                "explanation": "By taking care of one’s body, one also takes care of one’s mind. You will feel better and be able to handle stress more confidently."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Think Flexibly",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements":[
+              {
+                "type": "Highlight",
+                "colorClass": "orange",
+                "title": "Think Flexibly",
+                "highlight": "How people think about a situation influences how they feel. Recall from session 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?",
+                "icon": ""
+              }
+            ]
+          },
+          {
+            "type": "Question",
+            "question": "How people think about situations can influence their levels of anxiety. (T)",
+            "options": [
+              "True",
+              "False"
+            ],
+            "answer": "True",
+            "explanation": "Thoughts influence feelings. Recognize your thoughts for what they are—just thoughts—and question them often to decrease your anxiety."
+          }
+        ]
+      },
+      {
+        "title": "Open up to Others",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements":[
+              {
+                "type": "Highlight",
+                "colorClass": "yellow",
+                "title": "Open up to Others",
+                "highlight": "As stated in the previous session, positive relationships with one's spouse, friends, or family can buffer the effect of anxiety problems. If others know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view, which can help you think flexibly.",
+                "icon": ""
+              }
+            ]
+          },
+          {
+            "elements":[
+              {
+                "type": "Question",
+                "question": "People with anxiety problems can find relationships with others to be stressful and, therefore, should avoid them. (F)",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "False",
+                "explanation": "If other people know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view."
+              }
+            ]
+          },
+          {
+            "type": "Paragraph",
+            "content": "Congratulations! You have completed all of the sessions about anxiety!"
           }
         ]
       }
