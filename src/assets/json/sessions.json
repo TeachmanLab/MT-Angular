@@ -289,7 +289,7 @@
   },
   {
     "title": "Session 3: Prevalence, Causes, and Maintenance of Anxiety Disorders",
-    "sessionIndicator": "./assets/session1.png",
+    "sessionIndicator": "./assets/images/session-indicators/session3.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -297,7 +297,7 @@
     "steps": [
       {
         "title": "Prevalence",
-        "stepIndicator": "./assets/stepInd1.png",
+        "stepIndicator": "./assets/images/step-indicators/session-3/session3-step1.png",
         "pages": [
           {
             "elements": [
@@ -329,7 +329,7 @@
       },
       {
         "title": "Causes",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-3/session3-step2.png",
         "pages": [
           {
             "elements": [
@@ -428,7 +428,7 @@
       },
       {
         "title": "Maintenance",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-3/session3-step3.png",
         "pages": [
           {
             "elements": [
@@ -478,8 +478,8 @@
     ]
   },
   {
-    "title": "Session 4: Impact of Anxiety",
-    "sessionIndicator": "",
+    "title": "Session 4: Managing Anxiety",
+    "sessionIndicator": "./assets/images/session-indicators/session4.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -487,7 +487,7 @@
     "steps": [
       {
         "title": "Physical Health",
-        "stepIndicator": "./assets/stepInd1.png",
+        "stepIndicator": "./assets/images/step-indicators/session-4/session4-step1.png",
         "pages": [
           {
             "elements": [
@@ -528,7 +528,7 @@
       },
       {
         "title": "Thinking",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-4/session4-step2.png",
         "pages": [
           {
             "elements": [
@@ -565,7 +565,7 @@
       },
       {
         "title": "Relationships",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-4/session4-step3.png",
         "pages": [
           {
             "elements": [
@@ -602,7 +602,7 @@
       },
       {
         "title": "Other Psychological Problems",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-4/session4-step4.png",
         "pages": [
           {
             "elements": [
@@ -641,7 +641,7 @@
   },
   {
     "title": "Session 5: Impact of Anxiety",
-    "sessionIndicator": "",
+    "sessionIndicator": "./assets/images/session-indicators/session5.png",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -649,7 +649,7 @@
     "steps": [
       {
         "title": "Face Your Fears",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-5/session5-step1.png",
         "pages": [
           {
             "elements": [
@@ -684,7 +684,7 @@
       },
       {
         "title": "Live Healthy",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-5/session5-step2.png",
         "pages": [
           {
             "elements": [
@@ -715,7 +715,7 @@
       },
       {
         "title": "Think Flexibly",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-5/session5-step3.png",
         "pages": [
           {
             "elements": [
@@ -742,7 +742,7 @@
       },
       {
         "title": "Open up to Others",
-        "stepIndicator": "",
+        "stepIndicator": "./assets/images/step-indicators/session-5/session5-step4.png",
         "pages": [
           {
             "elements": [
