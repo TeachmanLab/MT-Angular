@@ -288,6 +288,358 @@
     ]
   },
   {
+    "title": "Session 3: Prevalence, Causes, and Maintenance of Anxiety Disorders",
+    "sessionIndicator": "./assets/session1.png",
+    "description": [
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
+      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+    ],
+    "steps": [
+      {
+        "title": "Prevalence",
+        "stepIndicator": "./assets/stepInd1.png",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "As noted before, almost everyone experiences some difficulties with anxiety in some situations at some point in teir life. Fewer people experience anxiety that is so excessive and impairing that they meet criteria for an anxiety disorder. Still, anxiety disorders are very common."
+              },
+              {
+                "type": "Paragraph",
+                "content": "About one in nine people (11.6%) around the world have an anxiety disorder in a given year,1 and one in seven (14.6%) have an anxiety disorder at some point in their lives.2 In some countries, the prevalence is even higher. For example, almost one third of people in the United States has an anxiety disorder at some point in their lives.2 The most common anxiety disorders across the life course of Americans are specific phobia (12.5%), social phobia (12.1%), and posttraumatic stress disorder (6.8%). Generalized anxiety disorder (5.7%), panic disorder (4.7%), obsessive-compulsive disorder (1.6%), and agoraphobia without panic (1.4%) are rarer.3"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Many factors other than home country are associated with the prevalence of anxiety disorders. For example, anxiety disorders occur in twice as many women as men,1 and the rate of anxiety disorders is lower in older adults (over 55 years) than in younger adults (35-54 years).1 Findings for minority ethnic groups in comparison to majority ethnic groups are mixed.4, 5"
+              },
+              {
+                "type": "References",
+                "content": [
+                  "1Baxter, A. J., Scott, K. M., Vos, T., & Whiteford, H. A. (2013). Global prevalence of anxiety disorders: A                  systematic review and meta-regression. Psychological Medicine, 43, 897-910. http://dx.doi.org/10.1017/S003329171200147X",
+                  "2Kessler, R. C., Angermeyer, M., Anthony, J. C., De Graaf, R. O. N., Demyttenaere, K., Gasquet, I., ... & Kawakami, N. (2007). Lifetime prevalence and age-of-onset distributions of mental disorders in the World Health Organization's World Mental Health Survey Initiative. World Psychiatry, 6, 168. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2174588/",
+                  "3Kessler, R. C., Berglund, P., Demler, O., Jin, R., Merikangas, K. R., & Walters, E. E. (2005). Lifetime prevalence and age-of-onset distributions of DSM-IV disorders in the National Comorbidity Survey Replication. Archives of General Psychiatry, 62, 593-602. http://dx.doi.org/10.1001/archpsyc.62.6.593",
+                  "4Breslau, J., Aguilar-Gaxiola, S., Kendler, K. S., Su, M., Williams, D., & Kessler, R. C. (2006). Specifying race ethnic differences in risk for psychiatric disorder in a USA national sample. Psychological Medicine, 36, 57-68. http://dx.doi.org/10.1017/S0033291705006161",
+                  "5Himle, J. A., Baser, R. E., Taylor, R. J., Campbell, R. D., & Jackson, J. S. (2009). Anxiety disorders among African Americans, blacks of Caribbean descent, and non-Hispanic whites in the."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Causes",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "Anxiety disorders are caused by a complex interaction of many different factors. Researchers have identified biological, psychological, and environmental or social factors that contribute to the development of anxiety disorders. However, the specific interaction of these factors can vary across people, and more research is needed to identify other, as yet unknown factors."
+              },
+              {
+                "type": "Image",
+                "content": ""
+              },
+              {
+                "type": "Header",
+                "content": "Biological Causes"
+              },
+              {
+                "type": "Paragraph",
+                "text": "Studies show that people whose first-degree relatives have an anxiety disorder are more likely to develop one themselves than people whose first-degree relatives do not have an anxiety disorder. This is partly explained by genetic influences.1 Furthermore, some people are born with more sensitive temperaments than others. They react to stress and new situations more intensely and tend to respond with avoidance. People with these genetic influences are prone to experience anxiety more intensely and frequently and are more likely to develop a disorder.2"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Anxiety is based on a complex interaction of different body systems, and dysfunction in one or more of these systems might also partially explain why some people are more sensitive to stress and experience more intense anxiety. For example, researchers have found out that brain regions associated with fear and stress reactions are more sensitive and show greater activation in people with anxiety disorders.3 In addition, imbalances of certain stress hormones or neurotransmitters can also contribute to the development of anxiety disorders."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Header",
+                "content": "Psychological Causes"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Simply having a biological sensitivity to stress is not enough to develop an anxiety disorder; how a person perceives and evaluates certain situations also contributes. Researchers have found that when people tend to think that they cannot control stressful events in their lives, they experience more anxiety. This perceived lack of control can be influenced by early childhood experiences, such as experiencing abuse, illness, or an over- or under-protective parenting style.4"
+              },
+              {
+                "type": "Paragraph",
+                "content": "These early childhood experiences can lead to negative core beliefs about oneself or the world (e.g., “No one will ever like me” or “The world is a dangerous place”). Although people often are unaware of these beliefs, the beliefs can affect how people interpret situations, where they focus their attention, and what they remember. For example, people who enter a party with the belief “No one will ever like me” may focus on unfriendly faces, interpret them as evidence of rejection, and remember them more clearly than friendly faces. These cognitive distortions can lead one to feel more anxiety, and if one is prone to respond to anxiety with inflexible coping strategies (e.g., avoiding all parties), one’s anxiety is likely to become even stronger.5"
+              },
+              {
+                "type": "Header",
+                "content": "Environmental or Social Causes"
+              },
+              {
+                "type": "Paragraph",
+                "content": "While biological and psychological influences can make one vulnerable to anxiety, the social environment can contribute to the focus of a person’s anxiety and help explain why different people experience anxiety in different situations. People can learn to fear certain situations by watching other people such as caregivers or friends behave fearfully in those situations or by being told information that suggests the situations are dangerous.6 Such learning experiences can influence the development of one’s beliefs and perceived control. For example, if a girl’s mother is very afraid of dogs and the girl sees her mother avoid them, the girl may come to believe that dogs are dangerous and should be avoided, even if the girl liked dogs before."
+              },
+              {
+                "type": "References",
+                "content": [
+                  "1Hettema, J. M., Neale, M. C., & Kendler, K. S. (2001). A review and meta-analysis of the genetic epidemiology of anxiety disorders. American Journal of Psychiatry, 158, 1568-1578. http://dx.doi.org/10.1176/appi.ajp.158.10.1568",
+                  "2Hirshfeld, D. R., Rosenbaum, J. F., Biederman, J., Bolduc, E. A., Faraone, S. V., Snidman, N., ... & Kagan, J. (1992). Stable behavioral inhibition and its association with anxiety disorder. Journal of the American Academy of Child & Adolescent Psychiatry, 31, 103-111. http://dx.doi.org/10.1097/00004583-199201000-00016",
+                  "3Shin, L. M., & Liberzon, I. (2010). The neurocircuitry of fear, stress, and anxiety disorders. Neuropsychopharmacology, 35, 169. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3055419/",
+                  "4Chorpita, B. F., & Barlow, D. H. (1998). The development of anxiety: The role of control in the early environment. Psychological Bulletin, 124, 3-21. http://dx.doi.org/10.1037/0033-2909.124.1.3",
+                  "5Muris, P., & Field, A. P. (2008). Distorted cognition and pathological anxiety in children and adolescents. Cognition and Emotion, 22, 395-421. http://dx.doi.org/10.1080/02699930701843450",
+                  "6Gerull, F. C., & Rapee, R. M. (2002). Mother knows best: Effects of maternal modelling on the acquisition of fear and avoidance behaviour in toddlers. Behaviour Research and Therapy, 40, 279-287. http://dx.doi.org/10.1016/S0005-7967(01)00013-4"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "All people born with sensitive temperaments or whose first-degree relatives have an anxiety disorder will develop an anxiety disorder themselves.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "False",
+                "explanation": "Anxiety disorders are caused by a complex interaction of many different factors. Although people with a genetic vulnerability are more likely to develop an anxiety disorder, not all vulnerable people will."
+              },
+              {
+                "type": "Question",
+                "question": "Cognitive distortions, such as interpreting ambiguous situations more negatively than is warranted, can lead one to experience more anxiety and can be one reason why one’s anxiety is not decreasing over time.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "True",
+                "explanation": "Remember the example of unfriendly faces at a party. People who attribute the unfriendly faces to their own behavior or appearance are likely to experience more anxiety than people who attribute the faces to reasons unrelated to themselves (e.g., a bad day)."
+              },
+              {
+                "type": "Question",
+                "question": "Seeing someone react fearfully to an object or situation can contribute to one’s anxiety about the object or situation.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "True",
+                "explanation": "People can learn to fear certain situations by watching other people behave fearfully in those situations or by being told information that suggests the situations are dangerous."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Maintenance",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "Once anxiety disorders develop, why do they persist for many people? The main reason is that people understandably try to escape from their strong feelings of anxiety as fast as possible by avoiding feared objects or situations or engaging in safety behaviors that make them feel safer. For example, a person with social phobia might avoid public speaking altogether or give a talk only when she can wear black clothes so that no one would notice her sweating."
+              },
+              {
+                "type": "Paragraph",
+                "content": "Even though avoidance and safety behavior can decrease anxiety in the moment, when people rely on these strategies they do not learn that the object or situation they fear is not dangerous. They also do not learn that the anxiety will decrease on its own after a while and that they can handle their feelings with more adaptive coping skills. Finally, they do not have the chance to correct their cognitive distortions. As a result, their anxiety persists. For example, as long as a person with social phobia avoids other people, the person will not have the chance to correct a belief such as “No one will ever like me.” In turn, such beliefs and cognitive distortions only increase the likelihood that the person will keep avoiding others and using safety behavior.1"
+              },
+              {
+                "type": "References",
+                "content": [
+                  "1Clark, D. M. (1999). Anxiety disorders: Why they persist and how to treat them. Behaviour Research and Therapy, 37, 5-27. http://dx.doi.org/10.1016/S0005-7967(99)00048-0"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "When people with anxiety disorders avoid the objects or situations they fear, they do not learn that they can handle their feelings, and the anxiety remains over time.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "True",
+                "explanation": "People who avoid feared objects or situations do not learn that their anxiety will decrease on its own after a while and that they are able to handle their feelings without avoiding the object or situation."
+              },
+              {
+                "type": "Question",
+                "question": "When do you plan to complete your next session?",
+                "options": [
+                  "Tomorrow",
+                  "In 2 to 4 days (recommended)",
+                  "In 5 to 7 days",
+                  "After more than 7 days",
+                  "Not planning to come back"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 4: Impact of Anxiety",
+    "sessionIndicator": "",
+    "description": [
+      "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
+      "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
+    ],
+    "steps": [
+      {
+        "title": "Physical Health",
+        "stepIndicator": "./assets/stepInd1.png",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "Problems with anxiety can have a variety of effects on people’s lives, including negative effects on physical health, thinking abilities, relationships, and other psychological problems."
+              },
+              {
+                "type": "Highlight",
+                "colorClass": "green",
+                "title": "Physical Health",
+                "highlight": "Anxiety problems have been associated with several chronic physical illnesses such as gastrointestinal diseases, chronic respiratory conditions, and heart diseases. People with an untreated anxiety disorder in addition to one of these diseases tend to report more severe physical symptoms and recover more slowly. However, psychological treatments for anxiety such as cognitive-behavioral therapy (CBT) have been found to ease not only symptoms of anxiety, but also symptoms of the chronic physical illnesses.1",
+                "icon": "./assets/images/highlights/physical.png"
+              },
+              {
+                "type": "References",
+                "content": [
+                  "1Anxiety and physical illness. (2018, May 9). Harvard Health Publishing. Retrieved May 21, 2018 from https://www.health.harvard.edu/staying-healthy/anxiety_and_physical_illness"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "Body and mind are two separate things. Problems with anxiety cannot also influence one’s physical health.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "False",
+                "explanation": "Not everyone with an anxiety disorder also has poorer physical health, but people with both a chronic physical disease and an untreated anxiety disorder tend to report more severe physical symptoms and recover from the disease more slowly. Successfully treating the anxiety disorder can also improve one’s physical health."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Thinking",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Highlight",
+                "colorClass": "yellow",
+                "title": "Thinking",
+                "highlight": "As stated before, anxiety disorders are usually accompanied by distorted attention, interpretation, and memory. When people are distracted by cues they fear in a situation, their concentration and performance can suffer. In addition, even in situations that do not provoke anxiety, people with anxiety disorders struggle to pay attention and have problems recalling things in the short term and a tendency to avoid risks. Hence, anxiety problems can be a “constant companion” that drains cognitive resources.1",
+                "icon": "./assets/images/highlights/thinking.png"
+              },
+              {
+                "type": "References",
+                "content": [
+                  "1Robinson, O. J., Vytal, K., Cornwell, B. R., & Grillon, C. (2013). The impact of anxiety upon cognition: Perspectives from human threat of shock studies. Frontiers in Human Neuroscience, 7, 203. http://dx.doi.org/10.3389/fnhum.2013.00203"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "Anxiety problems affect one’s ability to pay attention and remember things only in situations that are relevant to the focus of one’s anxiety.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "False",
+                "explanation": "Anxiety problems can be a “constant companion” that drains cognitive resources even in situations that do not provoke anxiety."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Relationships",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Highlight",
+                "colorClass": "orange",
+                "title": "Relationships",
+                "highlight": "Although relationships with one’s spouse, friends, or family can buffer the development and impact of anxiety problems, anxiety problems can also strain social relationships. For example, some people with anxiety disorders tend to seek excessive reassurance that certain situations are not dangerous, and can become dependent on such feedback and the presence of others. By contrast, other people with anxiety disorders tend to avoid contact with other people because it seems too stressful to them.1",
+                "icon": "./assets/images/highlights/relationships.png"
+              },
+              {
+                "type": "References",
+                "references": [
+                  "1Whisman, M. A., Sheldon, C., & Goering, P. (2000). Psychiatric disorders and dissatisfaction with social relationships: Does type of relationship matter? Journal of Abnormal Psychology, 109, 803-808. http://dx.doi.org/10.1037/0021-843X.109.4.803"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "Anxiety disorders can strain relationships with friends and family that otherwise help prevent and alleviate these disorders",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "True",
+                "explanation": "Positive relationships can be a huge help. However, people with anxiety disorders may become dependent on others or avoid social contact."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Other Psychological Problems",
+        "stepIndicator": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Highlight",
+                "colorClass": "blue",
+                "title": "Other Psychological Problems",
+                "highlight": "About 90% of people with an anxiety disorder have at least one more anxiety disorder or other mental disorder during their lifetime. For example, one half of depressed people also report an anxiety disorder in their lifetime, and one-quarter-to-one-half of people with an anxiety disorder have also had a lifetime substance use disorder. It may be that depression and substance abuse develop as a consequence of anxious people’s isolating themselves and trying to escape from their symptoms by using alcohol or drugs.1",
+                "icon": "./assets/images/highlights/other.png"
+              },
+              {
+                "type": "References",
+                "content": [
+                  "1Kaufman, J., & Charney, D. (2000). Comorbidity of mood and anxiety disorders. Depression and Anxiety, 12, 69-76. http://dx.doi.org/10.1002/1520-6394(2000)12:1+<69::AID-DA9>3.0.CO;2-K"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "People with anxiety disorders commonly experience other mental disorders such as depression",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "True",
+                "explanation": "Approximately 90% of people with an anxiety disorder experience at least one more psychological disorder during their lifetime."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "Session 5: Impact of Anxiety",
     "sessionIndicator": "",
     "description": [
@@ -366,7 +718,7 @@
         "stepIndicator": "",
         "pages": [
           {
-            "elements":[
+            "elements": [
               {
                 "type": "Highlight",
                 "colorClass": "orange",
@@ -393,7 +745,7 @@
         "stepIndicator": "",
         "pages": [
           {
-            "elements":[
+            "elements": [
               {
                 "type": "Highlight",
                 "colorClass": "yellow",
@@ -404,7 +756,7 @@
             ]
           },
           {
-            "elements":[
+            "elements": [
               {
                 "type": "Question",
                 "question": "People with anxiety problems can find relationships with others to be stressful and, therefore, should avoid them. (F)",
