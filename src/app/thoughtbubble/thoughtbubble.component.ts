@@ -1,10 +1,45 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { ThoughtBubble } from '../interfaces';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-thoughtbubble',
   templateUrl: './thoughtbubble.component.html',
-  styleUrls: ['./thoughtbubble.component.scss']
+  styleUrls: ['./thoughtbubble.component.scss'],
+  animations: [
+    // from https://www.kdechant.com/blog/angular-animations-fade-in-and-fade-out
+    // the fade-in/fade-out animation.
+    trigger('fadeInBackground', [
+
+      // the "in" style determines the "resting" state of the element when it is visible.
+      state('in', style({opacity: 1})),
+
+      // fade in when created. this could also be written as transition('void => *')
+      transition(':enter', [
+        style({opacity: 0}),
+        animate(200)
+      ]),
+
+      // fade out when destroyed. this could also be written as transition('void => *')
+      transition(':leave',
+        animate(200, style({opacity: 0})))
+    ]),
+    trigger('fadeInText', [
+
+      // the "in" style determines the "resting" state of the element when it is visible.
+      state('in', style({opacity: 1})),
+
+      // fade in when created. this could also be written as transition('void => *')
+      transition(':enter', [
+        style({opacity: 0}),
+        animate(600)
+      ]),
+
+      // fade out when destroyed. this could also be written as transition('void => *')
+      transition(':leave',
+        animate(600, style({opacity: 0})))
+    ])
+  ]
 })
 export class ThoughtbubbleComponent implements OnInit {
 

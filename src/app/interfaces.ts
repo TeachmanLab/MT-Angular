@@ -20,7 +20,7 @@ export interface Page {
 
 export interface Element {
   type: string;
-  content?: string;
+  content?: string | string[];
 }
 
 export interface Scenario extends Element {
@@ -32,10 +32,10 @@ export interface Scenario extends Element {
   question?: Question;
   status?: string; // So it can be used in progress component as a progress item.
 }
+
 export interface MissingLetter {
   word: string;
 }
-
 
 export interface Question extends Element {
   type: 'Question';
@@ -47,16 +47,17 @@ export interface Question extends Element {
 
 export interface ThoughtBubble extends Element {
   type: 'ThoughtBubble';
-  color: string;
-  header: string;
+  image: string;
+  colorClass: string;
+  title: string;
   thought: string;
   followup: string;
 }
 
 export interface Highlight extends Element {
   type: 'Highlight';
-  color: string;
-  header: string;
+  colorClass: string;
+  title: string;
   highlight: string;
   icon: string;
 }
