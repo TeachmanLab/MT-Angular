@@ -1,3 +1,35 @@
+@import '~@angular/material/theming';
+
 div {
   padding: 10px;
 }
+
+.centered, .mdl-card__supporting-text { 
+  font-size: 1.35rem;
+}
+
+/* Centered text */
+.centered {
+  color: white; 
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-40%, -50%);
+}
+
+.orange { 
+  padding: 15px;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  color: white !important;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translate(-35%, -40%);
+  border-radius: 35px;
+}
+// .orange { 
+ 
+//   background-color: rgb(255, 145, 0);
+  
+// }
