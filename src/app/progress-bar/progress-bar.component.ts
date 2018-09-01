@@ -15,17 +15,17 @@ export class ProgressBarComponent {
   constructor(private iconRegistry: MatIconRegistry,
               private sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('progress-next',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/tiny_arrow.svg'));
+      sanitizer.bypassSecurityTrustResourceUrl('assets/progress/tiny_arrow.svg'));
     iconRegistry.addSvgIcon('connector',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/connector.svg'));
+      sanitizer.bypassSecurityTrustResourceUrl('assets/progress/connector.svg'));
     iconRegistry.addSvgIcon('connector-blank',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/connector_blank.svg'));
+      sanitizer.bypassSecurityTrustResourceUrl('assets/progress/connector_blank.svg'));
     iconRegistry.addSvgIcon('circle-open',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/circle_open.svg'));
+      sanitizer.bypassSecurityTrustResourceUrl('assets/progress/circle_open.svg'));
     iconRegistry.addSvgIcon('circle-full',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/circle_full.svg'));
+      sanitizer.bypassSecurityTrustResourceUrl('assets/progress/circle_full.svg'));
     iconRegistry.addSvgIcon('checked',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/progress/checked.svg'));
+      sanitizer.bypassSecurityTrustResourceUrl('assets/progress/checked.svg'));
   }
 
 }

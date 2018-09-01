@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ApiService} from '../api.service';
-import {Scenario} from '../interfaces';
+import {Scenario, Session} from '../interfaces';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-training',
@@ -9,19 +10,44 @@ import {Scenario} from '../interfaces';
 })
 export class TrainingComponent implements OnInit {
 
+  sessions: Session[];
+  sessionIndex = 0;
+  currentSession: Session;
+
   totalRounds = 4;
   roundIndex = 0;
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.
   showSummary = false;
+
+
   @Output() done: EventEmitter<any> = new EventEmitter();
 
   constructor(private api: ApiService) {
   }
 
   ngOnInit() {
+    this.loadIntro();
     this.loadTraining();
   }
+
+  loadIntro() {
+    this.api.getTrainingIntroduction().subscribe(sessions => {
+      this.sessions = sessions;
+      this.currentSession = this.sessions[this.sessionIndex];
+    });
+  }
+
+  sessionComplete() {
+    this.sessionIndex++;
+    if (this.sessionIndex < this.sessions.length) {
+      this.currentSession = this.sessions[this.sessionIndex];
+    } else {
+      this.currentSession = null;
+      this.nextTraining();
+    }
+  }
+
 
   loadTraining() {
     // Pull the training from the api, split it into a series of rounds
@@ -37,7 +63,6 @@ export class TrainingComponent implements OnInit {
         this.rounds.push(new Round(scenarios.slice(index)));
       }
       this.totalRounds = this.rounds.length;
-      this.next();
     });
   }
 
@@ -45,7 +70,11 @@ export class TrainingComponent implements OnInit {
     return (this.roundIndex >= this.totalRounds - 1);
   }
 
-  next(correct = true) {
+  close() {
+    window.location.href = environment.redirect;
+  }
+
+  nextTraining(correct = true) {
     console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];

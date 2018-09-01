@@ -2,8 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {Session} from 'selenium-webdriver';
-import {Scenario} from './interfaces';
+import {Scenario, Session} from './interfaces';
 import {TrainingCSV} from './training-csv';
 
 @Injectable()
@@ -22,8 +21,8 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getTraining(): Observable<any> {
-    return this.httpClient.get<Session>('./assets/json/training.json')
+  public getTrainingIntroduction(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/training_intro.json')
       .pipe((catchError(this.handleError)));
   }
 

@@ -20,6 +20,15 @@ import {ProgressBarComponent} from './progress-bar/progress-bar.component';
 import { ThoughtbubbleComponent } from './thoughtbubble/thoughtbubble.component';
 import { HighlightComponent } from './highlight/highlight.component';
 import { TrainingComponent } from './training/training.component';
+import { BulletListComponent } from './bullet-list/bullet-list.component';
+import {RouterModule, Routes} from '@angular/router';
+
+
+const routes: Routes = [
+  {path: '', redirectTo: 'control', pathMatch: 'full'},
+  { path: 'training', component: TrainingComponent },
+  { path: 'control', component: ControlConditionComponent }
+];
 
 @NgModule({
   declarations: [
@@ -35,9 +44,11 @@ import { TrainingComponent } from './training/training.component';
     ProgressBarComponent,
     ThoughtbubbleComponent,
     HighlightComponent,
-    TrainingComponent
+    TrainingComponent,
+    BulletListComponent
   ],
   imports: [
+    RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
     MatButtonModule,
     MatToolbarModule,

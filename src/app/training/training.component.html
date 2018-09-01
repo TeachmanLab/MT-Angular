@@ -1,11 +1,12 @@
 <mat-card class="training">
   <mat-card-content>
+    <app-session *ngIf="currentSession" [session]="currentSession" (done)="sessionComplete()"></app-session>
     <div *ngIf="round">
       <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
       <div class="progress">
         <app-progress-bar [items]="round.scenarios"></app-progress-bar>
       </div>
-      <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" (done)="next($event)"></app-scenario>
+      <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" (done)="nextTraining($event)"></app-scenario>
       </div>
     <div *ngIf="showSummary">
       <img class="summaryImage" src="./assets/lemon.png"/>
