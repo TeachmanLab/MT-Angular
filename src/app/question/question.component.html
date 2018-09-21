@@ -5,17 +5,24 @@
     <span>{{question.question}}</span>
   </h5>
 
-  <div class="options" *ngIf="state==='asking'" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="center center"
-    fxLayoutGap="20px" fxLayoutGap.xs="20px">
-
+  <div
+    class="options"
+    *ngIf="state==='asking'"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutWrap
+    fxLayoutAlign="center center"
+    fxLayoutGap="20px"
+    fxLayoutGap.xs="20px"
+  >
     <button mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
-
   </div>
-
-  <div *ngIf="question.answer">
+  <h5 class="answer" fxLayoutAlign="center" *ngIf="userAnswer && state === 'answered'">{{userAnswer}}</h5>
+  <div *ngIf="question.answer" fxLayoutAlign="center">
     <div [hidden]="!(this.state === 'correct')">
       <div class="correct">Correct!</div>
-      <div>{{ question.explanation }} </div>
+      <h5>{{ question.explanation }} </h5>
     </div>
 
     <div class="incorrect" [hidden]="!(this.state === 'incorrect')" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
