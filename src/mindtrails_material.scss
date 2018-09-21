@@ -123,8 +123,8 @@ $mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $min
   }
 
   .mat-raised-button {
-    background-color: #42BD41;
-    color: #fff;
+    background-color: mat-color($primary, A700);
+    color: mat-contrast($primary, A700);
   }
 
   .spacer {
