@@ -8,16 +8,18 @@
     </div>
     <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted()"></app-page>
     <div
+      class="button-row"
       fxLayout="row"
       fxLayout.xs="column"
       fxLayoutWrap
       fxLayoutGap="1em"
-      fxLayoutAlign="center"
+      fxLayoutAlign="space-between"
       *ngIf="(done)"
     >
       <button
         class="continue"
         mat-raised-button
+        color="primary"
         [disabled]="!prevPageButtonVisible()"
         (click)="prevPage()"
       >
@@ -26,6 +28,7 @@
       <button
         class="continue"
         mat-raised-button
+        color="primary"
         [disabled]="!nextPageButtonVisible()"
         (click)="nextPage()"
       >
