@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatCardModule, MatToolbarModule, MatProgressBarModule, MatIconModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatProgressBarModule, MatToolbarModule } from '@angular/material';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MissingLetterComponent } from './missing-letter/missing-letter.component';
@@ -51,13 +51,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
     MatButtonModule,
-    MatToolbarModule,
     MatCardModule,
+    MatDividerModule,
     MatIconModule,
-    BrowserModule,
+    MatProgressBarModule,
+    MatToolbarModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatProgressBarModule,
     HttpClientModule
   ],
   providers: [

@@ -1,6 +1,9 @@
 <mat-card class="scenario">
+  <mat-card-header>
+    <h1>{{session.title}}</h1>
+  </mat-card-header>
+  <mat-divider></mat-divider>
   <mat-card-content>
-    <h2>{{session.title}}</h2>
     <div class="progress">
       <app-progress-bar *ngIf="session.steps.length > 1" [items]="session.steps"></app-progress-bar>
     </div>
