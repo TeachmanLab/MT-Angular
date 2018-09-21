@@ -32,12 +32,11 @@
 mat-toolbar {
   height: 135px;
   background: url("../assets/images/header-logo.png") no-repeat left top, linear-gradient(#121648, #121648 30%, #27306A);
-  border-bottom: 5px solid #33BEF2;
+  border-bottom: 5px solid #178dcd;
 
   .spacer {
     flex: 1 1 auto;
   }
-
 }
 
 mat-toolbar-row {

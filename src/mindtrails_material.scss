@@ -100,7 +100,7 @@ $mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $min
   h1, h2 {
     background-color: #fff;
     color: #000;
-    padding: 10px 10px;
+    padding: 5px 0 5px 0;
     margin: 0 0 10px 0;
   }
 
@@ -125,6 +125,11 @@ $mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $min
   .mat-raised-button {
     background-color: mat-color($primary, A700);
     color: mat-contrast($primary, A700);
+  }
+
+  .mat-raised-button:hover{
+    background-color: mat-color($accent, 500);
+    color: mat-contrast($accent, 500);
   }
 
   .spacer {
