@@ -4,10 +4,10 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <div class="progress">
-      <app-progress-bar *ngIf="session.steps.length > 1" [items]="session.steps"></app-progress-bar>
+    <img *ngIf="session.sessionIndicator" class="indicator" src="{{ session.sessionIndicator }}" />
+    <div *ngIf="session.steps.length > 1"  class="progress">
+      <app-progress-bar [items]="session.steps"></app-progress-bar>
     </div>
-    <img class="indicator" src="{{ session.sessionIndicator }}" />
     <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep()"></app-step>
   </mat-card-content>
 </mat-card>
