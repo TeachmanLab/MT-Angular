@@ -94,7 +94,6 @@ $mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $min
   p {
     color: #666;
     font-weight: 400;
-    max-width: 600px;
   }
 
   h1, h2 {
@@ -123,8 +122,8 @@ $mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $min
   }
 
   .mat-raised-button {
-    background-color: mat-color($primary, A700);
-    color: mat-contrast($primary, A700);
+    background-color: mat-color($primary, A400);
+    color: mat-contrast($primary, A400);
   }
 
   .mat-raised-button:hover{
