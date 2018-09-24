@@ -10,8 +10,8 @@
 
   span.material-icons {
     display: inline-block;
-    background-color: mat-color($mindtrails-primary, A200);
-    color: mat-color($mindtrails-primary, 700);
+    background-color: mat-color($mindtrails-primary, A100);
+    color: mat-color($mindtrails-primary, 600);
     border-radius: 35px;
     font-size: 3rem;
     text-align: center;
@@ -19,6 +19,7 @@
     padding: 12px;
     margin: 12px;
   }
+
   div.correct {
     padding: 20px;
     margin: auto;
