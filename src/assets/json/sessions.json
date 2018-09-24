@@ -907,7 +907,7 @@
       },
       {
         "title": "Open up to Others",
-        "stepIndicator": "./assets/images/step-indicators/session-5/session5-step4.png",
+        "stepIndicator": "./assets/images/step-indicators/session-5/session5-all-steps.png",
         "pages": [
           {
             "elements": [
@@ -933,12 +933,18 @@
                 "explanation": "If other people know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view."
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Congratulations!",
+        "stepIndicator": "./assets/images/session-indicators/all-sessions.png",
+        "pages": [
           {
             "elements": [
               {
                 "type": "Header",
-                "content": "Congratulations! You have completed all of the sessions about anxiety!"
+                "content": "You have completed all of the sessions about anxiety!"
               }
             ]
           }
