@@ -1,0 +1,11 @@
+<div
+  *ngFor="let session of sessions"
+  fxLayout="row"
+  fxLayout.xs="column"
+>
+  <mat-card
+    class="session-card"
+  >
+    {{session.title}}
+  </mat-card>
+</div>

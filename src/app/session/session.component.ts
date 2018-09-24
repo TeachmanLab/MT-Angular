@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {Step, Session} from '../interfaces';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Step, Session } from '../interfaces';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-session',
@@ -7,6 +8,8 @@ import {Step, Session} from '../interfaces';
   styleUrls: ['./session.component.scss']
 })
 export class SessionComponent implements OnInit, OnChanges {
+
+  sessions: Session[];
 
   @Input()
   session: Session;
@@ -16,11 +19,16 @@ export class SessionComponent implements OnInit, OnChanges {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
+  constructor(
+    private api: ApiService;
+  ) {}
 
   ngOnInit() {
     this.stepIndex = 0;
     this.initStep();
+    this.api.getSessions().subscribe(sessions => {
+      this.sessions = sessions;
+    });
   }
 
   ngOnChanges() {

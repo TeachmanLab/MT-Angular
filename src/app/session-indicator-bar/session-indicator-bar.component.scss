@@ -1,0 +1,10 @@
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
+
+.session-card {
+  background-color: mat-color($mindtrails-accent, 200);
+  counter-reset: mat-color($mindtrails-accent, 700);
+  font-weight: bolder;
+  max-width: 15%;
+  margin: 2%;
+}
