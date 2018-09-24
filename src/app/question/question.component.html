@@ -18,11 +18,17 @@
   >
     <button mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
   </div>
-  <h5 class="answer" fxLayoutAlign="center" *ngIf="userAnswer && state === 'answered'">{{userAnswer}}</h5>
+
+  <div fxLayoutAlign="center">
+    <h5 class="answer" *ngIf="userAnswer && state === 'answered'">{{userAnswer}}</h5>
+  </div>
+
   <div *ngIf="question.answer" fxLayoutAlign="center">
-    <div [hidden]="!(this.state === 'correct')">
-      <div class="correct">Correct!</div>
-      <h5>{{ question.explanation }} </h5>
+    <div [hidden]="!(this.state === 'correct')" class="correct">
+      <div>Correct!</div>
+      <div fxLayoutAlign="center">
+        <p>{{ question.explanation }} </p>
+      </div>
     </div>
 
     <div class="incorrect" [hidden]="!(this.state === 'incorrect')" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
