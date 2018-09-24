@@ -1,11 +1,12 @@
-<div class="{{ highlight.colorClass }} highlight">
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col">
-            <img src="{{ highlight.icon }}" />
-        </div>
-        <div class="mdl-cell mdl-cell--9-col">
-            <div class="mdl-card__title">{{ highlight.title }}</div>
-            <div>{{ highlight.highlight }}</div>
-        </div>
-    </div>
+<div class="highlight" fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
+  <h5 *ngIf="highlight.icon">
+    <span class="material-icons">{{highlight.icon}}</span>
+  </h5>
+  <h5 *ngIf="!highlight.icon">
+    <span class="material-icons">star</span>
+  </h5>
+  <div>
+    <h1>{{highlight.title}}</h1>
+    <p>{{highlight.highlight}}</p>
+  </div>
 </div>

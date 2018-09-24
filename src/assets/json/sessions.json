@@ -665,7 +665,7 @@
                 "colorClass": "green",
                 "title": "Physical Health",
                 "highlight": "Anxiety problems have been associated with several chronic physical illnesses such as gastrointestinal diseases, chronic respiratory conditions, and heart diseases. People with an untreated anxiety disorder in addition to one of these diseases tend to report more severe physical symptoms and recover more slowly. However, psychological treatments for anxiety such as cognitive-behavioral therapy (CBT) have been found to ease not only symptoms of anxiety, but also symptoms of the chronic physical illnesses.1",
-                "icon": "./assets/images/highlights/physical.png"
+                "icon": "healing"
               },
               {
                 "type": "References",
@@ -702,7 +702,7 @@
                 "colorClass": "yellow",
                 "title": "Thinking",
                 "highlight": "As stated before, anxiety disorders are usually accompanied by distorted attention, interpretation, and memory. When people are distracted by cues they fear in a situation, their concentration and performance can suffer. In addition, even in situations that do not provoke anxiety, people with anxiety disorders struggle to pay attention and have problems recalling things in the short term and a tendency to avoid risks. Hence, anxiety problems can be a “constant companion” that drains cognitive resources.1",
-                "icon": "./assets/images/highlights/thinking.png"
+                "icon": "star"
               },
               {
                 "type": "References",
@@ -739,7 +739,7 @@
                 "colorClass": "orange",
                 "title": "Relationships",
                 "highlight": "Although relationships with one’s spouse, friends, or family can buffer the development and impact of anxiety problems, anxiety problems can also strain social relationships. For example, some people with anxiety disorders tend to seek excessive reassurance that certain situations are not dangerous, and can become dependent on such feedback and the presence of others. By contrast, other people with anxiety disorders tend to avoid contact with other people because it seems too stressful to them.1",
-                "icon": "./assets/images/highlights/relationships.png"
+                "icon": "group"
               },
               {
                 "type": "References",
@@ -776,7 +776,7 @@
                 "colorClass": "blue",
                 "title": "Other Psychological Problems",
                 "highlight": "About 90% of people with an anxiety disorder have at least one more anxiety disorder or other mental disorder during their lifetime. For example, one half of depressed people also report an anxiety disorder in their lifetime, and one-quarter-to-one-half of people with an anxiety disorder have also had a lifetime substance use disorder. It may be that depression and substance abuse develop as a consequence of anxious people’s isolating themselves and trying to escape from their symptoms by using alcohol or drugs.1",
-                "icon": "./assets/images/highlights/other.png"
+                "icon": "extension"
               },
               {
                 "type": "References",
@@ -827,7 +827,7 @@
                 "colorClass": "blue",
                 "title": "Face Your Fears",
                 "highlight": "Although it may be hard to believe, when people approach the objects and situations they fear their anxiety decreases over time. As stated before, one component of anxiety is bodily reactions, and the body cannot run at full capacity for long. Just as a sprinter can race at full speed for only a short distance, intense anxiety must subside at some point. This is true even if people approach feared situations step by step and start with smaller fears. It is not necessary to face one’s biggest fear from the start. In addition, people typically fear things more than their danger warrants, but when people do not approach these things, they do not learn their real danger.",
-                "icon": ""
+                "icon": "directions_run"
               }
             ]
           },
@@ -858,7 +858,7 @@
                 "colorClass": "green",
                 "title": "Live Healthy",
                 "highlight": "When people maintain a healthy lifestyle with regular exercise, balanced nutrition, limited alcohol and caffeine, and adequate sleep, they are less vulnerable to emotions such as anxiety. By taking care of one’s body in these ways and others, including treating physical illness, one also takes care of one’s mind. You will feel better and be able to handle stressful situations more confidently.",
-                "icon": ""
+                "icon": "favorite_border"
               }
             ]
           },
@@ -889,7 +889,7 @@
                 "colorClass": "orange",
                 "title": "Think Flexibly",
                 "highlight": "How people think about a situation influences how they feel. Recall from session 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?",
-                "icon": ""
+                "icon": "compare_arrows"
               }
             ]
           },
@@ -916,7 +916,7 @@
                 "colorClass": "yellow",
                 "title": "Open up to Others",
                 "highlight": "As stated in the previous session, positive relationships with one's spouse, friends, or family can buffer the effect of anxiety problems. If others know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view, which can help you think flexibly.",
-                "icon": ""
+                "icon": "lock_open"
               }
             ]
           },
@@ -935,8 +935,12 @@
             ]
           },
           {
-            "type": "Paragraph",
-            "content": "Congratulations! You have completed all of the sessions about anxiety!"
+            "elements": [
+              {
+                "type": "Header",
+                "content": "Congratulations! You have completed all of the sessions about anxiety!"
+              }
+            ]
           }
         ]
       }
