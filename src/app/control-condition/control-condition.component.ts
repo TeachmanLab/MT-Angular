@@ -5,7 +5,7 @@ import {Session} from '../interfaces';
 @Component({
   selector: 'app-control-condition',
   templateUrl: './control-condition.component.html',
-  styleUrls: ['./control-condition.component.css']
+  styleUrls: ['./control-condition.component.scss']
 })
 export class ControlConditionComponent implements OnInit {
 

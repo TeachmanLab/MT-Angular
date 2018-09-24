@@ -5,6 +5,7 @@ import { interval } from 'rxjs';
 
 enum QuestionStates {
   asking = 'asking',
+  answered = 'answered',
   correct = 'correct',
   incorrect = 'incorrect'
 }
@@ -15,12 +16,13 @@ enum QuestionStates {
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
+  userAnswer: string;
 
   @Input()
   question: Question;
   state: QuestionStates;
   waitPercent: number;
-  incorrectAnswerSupplied = false;  // empit this value when complete.
+  incorrectAnswerSupplied = false;  // emit this value when complete.
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -33,6 +35,7 @@ export class QuestionComponent implements OnInit {
   }
 
   selected(option: string) {
+    this.userAnswer = option;
     if (this.question.answer) {
       if (option === this.question.answer) {
         this.state = QuestionStates.correct;
@@ -43,7 +46,7 @@ export class QuestionComponent implements OnInit {
         this.makeThemWait();
       }
     } else {
-      this.state = QuestionStates.correct;  // answer answer was acceptable.
+      this.state = QuestionStates.answered;  // answer was acceptable.
       this.waitAndEmit();
     }
   }

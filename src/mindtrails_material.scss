@@ -1,0 +1,138 @@
+@import '../node_modules/@angular/material/theming';
+@include mat-core();
+
+
+$mindtrails-blue: (
+  50 : #e5e7ee,
+  100 : #bec2d7,
+  200 : #949bbb,
+  300 : #6c76a0,
+  400 : #4f5a8e,
+  500 : #323f7d,
+  600 : #2d3875,
+  700 : #25306a,
+  800 : #1d275e,
+  900 : #121747,
+  A100 : #b5e7fa,
+  A200 : #85d7f7,
+  A400 : #39bbf1,
+  A700 : #178dcd,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$mindtrails-red: (
+  50 : #ffdfd5,
+  100 : #f8bdb9,
+  200 : #d99997,
+  300 : #ba7572,
+  400 : #a35958,
+  500 : #8c3d3e,
+  600 : #7f3538,
+  700 : #6e292e,
+  800 : #5e1d27,
+  900 : #4d0f1d,
+  A100 : #e4e6bc,
+  A200 : #d2d692,
+  A400 : #b5bb4f,
+  A700 : #8d8d29,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$mindtrails-primary: mat-palette($mindtrails-blue);
+$mindtrails-accent: mat-palette($mindtrails-red);
+$mindtrails-warn: mat-palette($mat-deep-orange);
+
+$mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $mindtrails-warn);
+
+@include angular-material-theme($mindtrails-theme);
+
+
+// Define a mixin that accepts a theme and outputs the color styles for the component.
+@mixin mindtrails-theme($theme) {
+  // Extract whichever individual palettes you need from the theme.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+
+  // Use mat-color to extract individual colors from a palette as necessary.
+
+  body {
+    background-color: mat-color($primary, 50);
+    margin: 0px;
+  }
+
+  p {
+    color: #666;
+    font-weight: 400;
+  }
+
+  h1, h2 {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 0 5px 0;
+    margin: 0 0 10px 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  h2.mat-h2, h2.mat-title {
+    background-color: mat-contrast($primary, 900);
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .mat-raised-button {
+    background-color: mat-color($primary, A400);
+    color: mat-contrast($primary, A400);
+  }
+
+  .mat-raised-button:hover{
+    background-color: mat-color($accent, 500);
+    color: mat-contrast($accent, 500);
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+

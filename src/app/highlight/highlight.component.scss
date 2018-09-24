@@ -1,29 +1,24 @@
 @import '~@angular/material/theming';
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
 
- div {
-     padding: 10px;
- }
+.material-icons {
+  display: inline-block;
+  background-color: mat-color($mindtrails-primary, A100);
+  color: mat-color($mindtrails-primary, 700);
+  border-radius: 35px;
+  font-size: 3rem;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+  margin: 12px;
+}
 
- img {
-     vertical-align: middle;
- }
+.highlight {
+  border: 3px solid mat-color($mindtrails-primary, A700);
+  border-radius: 20px;
+}
 
- .orange {
-     border: 2px solid orange;
- }
-
- .yellow {
-     border: 2px solid yellow;
- }
-
- .green {
-     border: 2px solid green;
- }
-
- .blue {
-     border: 2px solid blue;
- }
-
- .highlight {
-     border-radius: 25px;
- }
+div {
+  padding: 10px;
+}
