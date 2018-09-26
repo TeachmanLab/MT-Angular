@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <app-session-indicator-bar *ngIf="session.title != 'About Mindtrails'" [sessions]="sessions"></app-session-indicator-bar>
+    <app-session-indicator-bar [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
     <img *ngIf="session.sessionIndicator" class="indicator" src="{{ session.sessionIndicator }}" />
     <div *ngIf="session.steps.length > 1"  class="progress">
       <app-progress-bar [items]="session.steps"></app-progress-bar>
