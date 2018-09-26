@@ -4,8 +4,16 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
+    <div
+      fxLayout="column"
+      fxLayout.sm="row"
+      fxLayout.xs="row"
+      fxLayoutGap="20px"
+      fxLayoutWrap
+    >
     <app-session-indicator-bar [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
-    <app-step-indicator-bar *ngIf="session.steps.length > 1" [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
+    <app-step-indicator-bar [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
+    </div>
     <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep()"></app-step>
   </mat-card-content>
 </mat-card>
