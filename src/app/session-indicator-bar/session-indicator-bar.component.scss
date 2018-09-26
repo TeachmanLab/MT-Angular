@@ -3,7 +3,8 @@
 
 .session-row {
   margin-top: 2%;
-  background-color: mat-color($mindtrails-accent, 200);
+  background-color: mat-color($mindtrails-accent, 100);
+  padding: 2%;
 }
 
 .session-card {
@@ -11,7 +12,6 @@
   color: mat-contrast($mindtrails-accent, 600);
   font-weight: bolder;
   padding: 2%;
-  margin: 2%;
 }
 
 span.material-icons {
