@@ -5,10 +5,7 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <app-session-indicator-bar [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
-    <!--<img *ngIf="session.sessionIndicator" class="indicator" src="{{ session.sessionIndicator }}" />-->
-    <div *ngIf="session.steps.length > 1"  class="progress">
-      <app-progress-bar [items]="session.steps"></app-progress-bar>
-    </div>
+    <app-step-indicator-bar *ngIf="session.steps.length > 1" [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
     <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep()"></app-step>
   </mat-card-content>
 </mat-card>

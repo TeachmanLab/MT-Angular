@@ -15,21 +15,20 @@
     fxLayoutGap="20px"
     fxLayoutGap.xs="20px"
     >
+    <div>
+      {{session.title}}
+    </div>
     <div
-      fxLayout="column"
-      fxLayoutAlign="space-between"
+      fxLayoutAlign="center"
+      fxLayoutAlign.sm="end"
+      fxLayoutAlign.xs="end"
     >
-      <div>
-        {{session.title}}
-      </div>
-      <div fxLayoutAlign="center">
-        <span
-          *ngIf="session.title === currentSession.title"
-          class="material-icons"
-        >
-          explore
-        </span>
-      </div>
+      <span
+        *ngIf="session.title === currentSession.title"
+        class="material-icons"
+      >
+        explore
+      </span>
     </div>
   </div>
 </div>
