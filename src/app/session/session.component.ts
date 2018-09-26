@@ -20,7 +20,7 @@ export class SessionComponent implements OnInit, OnChanges {
   done: EventEmitter<any> = new EventEmitter();
 
   constructor(
-    private api: ApiService;
+    private api: ApiService,
   ) {}
 
   ngOnInit() {
