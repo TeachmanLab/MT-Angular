@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Step, Session } from '../interfaces';
+
 
 @Component({
   selector: 'app-step-indicator-bar',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step-indicator-bar.component.scss']
 })
 export class StepIndicatorBarComponent implements OnInit {
+  @Input() steps: Step[];
+  @Input() currentStep: Step;
+  @Input() currentSession: Session;
 
   constructor() { }
 

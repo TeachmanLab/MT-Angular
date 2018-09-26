@@ -1,3 +1,32 @@
-<p>
-  step-indicator-bar works!
-</p>
+<div
+  class="step-row"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutAlign="start center"
+  fxLayoutWrap
+  fxLayoutGap="20px"
+  fxLayoutGap.xs="20px"
+>
+  <div class="session-title">
+    <h1>{{currentSession.title}}</h1>
+  </div>
+  <div
+    *ngFor="let step of steps"
+    class="step-card"
+    fxLayoutWrap
+    fxLayoutGap="20px"
+    fxLayoutGap.xs="20px"
+  >
+    <div>
+      {{step.title}}
+    </div>
+    <div fxLayoutAlign="center">
+      <span
+        *ngIf="step.title === currentStep.title"
+        class="material-icons"
+      >
+        explore
+      </span>
+    </div>
+  </div>
+</div>
