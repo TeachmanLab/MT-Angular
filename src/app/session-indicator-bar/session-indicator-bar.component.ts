@@ -8,9 +8,8 @@ import { Session } from '../interfaces';
 })
 export class SessionIndicatorBarComponent implements OnInit {
 
-  @Input()
-  sessions: Session[];
-  currentSession: Session;
+  @Input() sessions: Session[];
+  @Input() currentSession: Session;
 
   constructor() { }
 

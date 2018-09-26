@@ -2,14 +2,26 @@
 @include mindtrails-theme($mindtrails-theme);
 
 .session-row {
-  background-color: mat-color($mindtrails-accent, 50);
+  margin-top: 2%;
+  background-color: mat-color($mindtrails-accent, 200);
 }
 
 .session-card {
-  background-color: mat-color($mindtrails-accent, 200);
-  counter-reset: mat-color($mindtrails-accent, 700);
+  background-color: mat-color($mindtrails-accent, 600);
+  color: mat-contrast($mindtrails-accent, 600);
   font-weight: bolder;
   padding: 2%;
-  max-width: 15%;
   margin: 2%;
+}
+
+span.material-icons {
+  display: inline-block;
+  background-color: mat-color($mindtrails-accent, 400);
+  color: mat-contrast($mindtrails-accent, 400);
+  border-radius: 35px;
+  font-size: 2rem;
+  text-align: center;
+  vertical-align: middle;
+  padding: 6px;
+  margin: 6px;
 }

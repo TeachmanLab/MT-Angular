@@ -1,15 +1,35 @@
 <div
-  *ngFor="let session of sessions"
   class="session-row"
   fxLayout="row"
+  fxLayout.xs="column"
+  fxLayout.sm="column"
+  fxLayoutAlign="space-evenly"
   fxLayoutWrap
-  fxLayoutAlign="center center"
   fxLayoutGap="20px"
   fxLayoutGap.xs="20px"
 >
   <div
+    *ngFor="let session of sessions"
     class="session-card"
-  >
-    {{session.title}}
+    fxLayoutWrap
+    fxLayoutGap="20px"
+    fxLayoutGap.xs="20px"
+    >
+    <div
+      fxLayout="column"
+      fxLayoutAlign="space-between"
+    >
+      <div>
+        {{session.title}}
+      </div>
+      <div fxLayoutAlign="center">
+        <span
+          *ngIf="session.title === currentSession.title"
+          class="material-icons"
+        >
+          explore
+        </span>
+      </div>
+    </div>
   </div>
 </div>
