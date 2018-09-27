@@ -1,4 +1,4 @@
-<div class="mdl-card__supporting-text" *ngFor="let el of page.elements">
+<div *ngFor="let el of page.elements">
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
   <p *ngIf="el.type === 'References'"><i>{{el.content}}</i></p>
