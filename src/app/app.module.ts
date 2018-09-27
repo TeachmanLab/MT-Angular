@@ -35,9 +35,10 @@ import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-b
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'control', pathMatch: 'full'},
+  { path: '', redirectTo: 'control', pathMatch: 'full'},
   { path: 'training', component: TrainingComponent },
-  { path: 'control', component: ControlConditionComponent }
+  { path: 'control', component: ControlConditionComponent },
+  { path: 'control/:session', component: ControlConditionComponent }
 ];
 
 @NgModule({
