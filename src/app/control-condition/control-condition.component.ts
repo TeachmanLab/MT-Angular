@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../api.service';
-import {Session} from '../interfaces';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { Session } from '../interfaces';
 
 @Component({
   selector: 'app-control-condition',
@@ -20,7 +20,8 @@ export class ControlConditionComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -53,5 +54,13 @@ export class ControlConditionComponent implements OnInit {
       this.currentSession = null;
       this.allDone = true;
     }
+  }
+
+  introSession () {
+    return this.sessionIndex === 0;
+  }
+
+  goSession1 () {
+    this.router.navigate(['control', 1]);
   }
 }

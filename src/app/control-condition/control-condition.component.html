@@ -3,6 +3,7 @@
   <mat-card>
     <h1>Complete!</h1>
     <h5>You have completed <i>{{currentSession.title}}</i></h5>
+    <button mat-raised-button *ngIf="introSession()" (click)="goSession1()">Continue to Session 1</button>
   </mat-card>
 </div>
 <div *ngIf="allDone">
