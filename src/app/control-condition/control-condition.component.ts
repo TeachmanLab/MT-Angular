@@ -47,9 +47,7 @@ export class ControlConditionComponent implements OnInit {
 
   sessionComplete() {
     // console.log('The session is complete.  Loading the next Session.');
-    this.sessionIndex++;
-    if (this.sessionIndex < this.sessions.length) {
-      this.currentSession = null;
+    if (this.sessionIndex < this.sessions.length - 1) {
       this.sessionDone = true;
     } else {
       this.currentSession = null;
