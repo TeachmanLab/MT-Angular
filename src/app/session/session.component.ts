@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Step, Session } from '../interfaces';
 import { ApiService } from '../api.service';
 
@@ -10,11 +9,8 @@ import { ApiService } from '../api.service';
 })
 export class SessionComponent implements OnInit, OnChanges {
 
+  @Input() session: Session;
   sessions: Session[];
-
-  @Input()
-  session: Session;
-  sessionIndex: number;
   stepIndex: number;
   currentStep: Step;
 
@@ -22,22 +18,14 @@ export class SessionComponent implements OnInit, OnChanges {
   done: EventEmitter<any> = new EventEmitter();
 
   constructor(
-    private api: ApiService,
-    private route: ActivatedRoute
+    private api: ApiService
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      if (params && params.hasOwnProperty('session')) {
-        this.sessionIndex = params['session'];
-        this.loadSession(this.sessionIndex);
-      } else {
-        this.stepIndex = 0;
-        this.initStep();
-        this.api.getSessions().subscribe(sessions => {
-          this.sessions = sessions;
-        });
-      }
+    this.stepIndex = 0;
+    this.initStep();
+    this.api.getSessions().subscribe(sessions => {
+      this.sessions = sessions;
     });
   }
 
@@ -45,19 +33,6 @@ export class SessionComponent implements OnInit, OnChanges {
     // console.log('The Session was changed!');
     this.stepIndex = 0;
     this.initStep();
-  }
-
-  loadSession(sessionIndex: number) {
-    this.api.getSessions().subscribe(sessions => {
-      this.sessions = sessions;
-      if (this.sessions[sessionIndex]) {
-        this.session = this.sessions[sessionIndex];
-      } else {
-        this.session = this.sessions[0];
-      }
-      this.stepIndex = 0;
-      this.initStep();
-    });
   }
 
   initStep() {
