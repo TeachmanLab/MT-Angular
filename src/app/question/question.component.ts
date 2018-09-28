@@ -74,7 +74,7 @@ export class QuestionComponent implements OnInit {
   }
 
   allDone() {
-    console.log('Completed question');
+    // console.log('Completed question');
     this.done.emit(!this.incorrectAnswerSupplied);
   }
 }

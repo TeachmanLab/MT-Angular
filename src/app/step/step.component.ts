@@ -52,7 +52,7 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   nextPage() {
-    console.log('Next page');
+    // console.log('Next page');
     this.pageIndex++;
     if (this.pageIndex < this.step.pages.length) {
       this.initPage();
@@ -62,13 +62,13 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   prevPage() {
-    console.log('Previous page');
+    // console.log('Previous page');
     this.pageIndex--;
     this.initPage();
   }
 
   allDone() {
-    console.log('Completed step');
+    // console.log('Completed step');
     this.done.emit();
   }
 }
