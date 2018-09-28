@@ -479,6 +479,10 @@
                 "content": "Many factors other than home country are associated with the prevalence of anxiety disorders. For example, anxiety disorders occur in twice as many women as men,1 and the rate of anxiety disorders is lower in older adults (over 55 years) than in younger adults (35-54 years).1 Findings for minority ethnic groups in comparison to majority ethnic groups are mixed.4, 5"
               },
               {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step1.png"
+              },
+              {
                 "type": "References",
                 "content": [
                   "1Baxter, A. J., Scott, K. M., Vos, T., & Whiteford, H. A. (2013). Global prevalence of anxiety disorders: A                  systematic review and meta-regression. Psychological Medicine, 43, 897-910. http://dx.doi.org/10.1017/S003329171200147X",
@@ -504,7 +508,7 @@
               },
               {
                 "type": "Image",
-                "content": ""
+                "content": "./assets/images/step-body-images/session3-step2.png"
               },
               {
                 "type": "Header",
@@ -604,6 +608,10 @@
               {
                 "type": "Paragraph",
                 "content": "Even though avoidance and safety behavior can decrease anxiety in the moment, when people rely on these strategies they do not learn that the object or situation they fear is not dangerous. They also do not learn that the anxiety will decrease on its own after a while and that they can handle their feelings with more adaptive coping skills. Finally, they do not have the chance to correct their cognitive distortions. As a result, their anxiety persists. For example, as long as a person with social phobia avoids other people, the person will not have the chance to correct a belief such as “No one will ever like me.” In turn, such beliefs and cognitive distortions only increase the likelihood that the person will keep avoiding others and using safety behavior.1"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step3.png"
               },
               {
                 "type": "References",
