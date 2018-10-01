@@ -665,7 +665,11 @@
                 ],
                 "answer": "True",
                 "explanation": "People who avoid feared objects or situations do not learn that their anxiety will decrease on its own after a while and that they are able to handle their feelings without avoiding the object or situation."
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "When do you plan to complete your next session?",
