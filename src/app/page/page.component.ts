@@ -27,7 +27,7 @@ export class PageComponent implements OnChanges {
   markStaticComponentsComplete() {
     for (const element of this.page.elements) {
       // console.log(element.type);
-      if (['Paragraph', 'References', 'Image', 'Header'].includes(element.type)) {
+      if (['Paragraph', 'References', 'Image', 'Header', 'Caption'].includes(element.type)) {
         // console.log(`completing a ${element.type}`);
         this.divCompleted();
       }

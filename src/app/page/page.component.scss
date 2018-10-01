@@ -4,6 +4,17 @@ div {
   padding: 10px;
 }
 
+.reference {
+  font-size: smaller;
+  font-style: italic;
+}
+
+.caption {
+  text-align: center;
+  font-style: italic;
+  max-width: 50%;
+}
+
 img {
   display: block;
   max-width: 100%;
