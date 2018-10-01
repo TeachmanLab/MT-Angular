@@ -1,7 +1,12 @@
 <div *ngFor="let el of page.elements">
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
-  <p *ngIf="el.type === 'References'"><i>{{el.content}}</i></p>
+  <div *ngIf="el.type === 'Caption'"fxLayoutAlign="center"><p  class="caption">{{el.content}}</p></div>
+  <div *ngIf="el.type === 'References'">
+    <div *ngFor="let text of el.content">
+      <p class="reference">{{ text }}</p>
+    </div>
+  </div>
   <img class="pageImage" *ngIf="el.type === 'Image'" [src]="el.content">
   <app-highlight *ngIf="el.type === 'Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
   <app-bullet-list *ngIf="el.type === 'BulletList'" [bulletList]="el" (done)="divCompleted()"></app-bullet-list>
