@@ -5,9 +5,10 @@ div.session {
   display: -webkit-flex; /* Safari */
   display: flex;
   flex-flow: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   -webkit-align-items: center; /* Safari 7.0+ */
   align-items: center;
+  margin-top: 1em;
 
   div.image-title {
     flex: 1 1 auto;
@@ -42,9 +43,12 @@ div.session {
     }
   }
 
-  ul {
+  div.steps {
     flex: 3 1 auto;
-    padding: 0 0 0 50px;
+  }
+
+  ul {
+    padding: 5px 0 0 50px;
     list-style-type: none;
     margin: 0;
 
