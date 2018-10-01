@@ -63,8 +63,9 @@
     ]
   },
   {
-    "title": "Session 1: Introduction to Anxiety",
-    "sessionIndicator": "./assets/images/session-indicators/session1.png",
+    "title": "Session 1",
+    "subTitle": "Introduction to Anxiety",
+    "sessionIndicator": "session1",
     "allSteps": "./assets/images/step-indicators/session-1/session1-all-steps.png",
     "steps": [
       {
@@ -200,8 +201,9 @@
     ]
   },
   {
-    "title": "Session 2: Symptoms and Disorders",
-    "sessionIndicator": "./assets/images/session-indicators/session2.png",
+    "title": "Session 2",
+    "subTitle": "Symptoms and Disorders",
+    "sessionIndicator": "session2",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them."
     ],
@@ -453,8 +455,9 @@
     ]
   },
   {
-    "title": "Session 3: Prevalence, Causes, and Maintenance of Anxiety Disorders",
-    "sessionIndicator": "./assets/images/session-indicators/session3.png",
+    "title": "Session 3",
+    "subTitle": "Prevalence, Causes, and Maintenance of Anxiety Disorders",
+    "sessionIndicator": "session3",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -651,8 +654,9 @@
     ]
   },
   {
-    "title": "Session 4: Managing Anxiety",
-    "sessionIndicator": "./assets/images/session-indicators/session4.png",
+    "title": "Session 4",
+    "subTitle": "Managing Anxiety",
+    "sessionIndicator": "session4",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."
@@ -813,8 +817,9 @@
     ]
   },
   {
-    "title": "Session 5: Impact of Anxiety",
-    "sessionIndicator": "./assets/images/session-indicators/session5.png",
+    "title": "Session 5",
+    "subTitle": "Impact of Anxiety",
+    "sessionIndicator": "session5",
     "description": [
       "In this part of the program, you will read a series of pages about the topics below. Pay attention to the pages because after you have read all of the pages, you will be asked questions about them.",
       "For each page: \n- Read the information carefully. \n-There will be a Continue button at the end of each paragraph. \n-When you finish reading the information you will be asked questions about it. \n-The score, located in the top right corner, shows the number of times you answered a question correctly on the first try."

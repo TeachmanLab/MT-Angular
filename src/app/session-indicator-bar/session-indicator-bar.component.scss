@@ -1,41 +1,7 @@
 @import '../../mindtrails_material';
 @include mindtrails-theme($mindtrails-theme);
 
-.session-row {
-  margin-top: 2%;
-  background-color: mat-color($mindtrails-accent, 100);
-  padding: 2%;
-}
-
-.session-card {
-  background-color: mat-color($mindtrails-accent, 300);
-  color: mat-contrast($mindtrails-accent, 300);
-  font-weight: bolder;
-  padding: 2%;
-}
-
-.selected-card {
-  background-color: mat-color($mindtrails-accent, 600);
-  color: mat-contrast($mindtrails-accent, 600);
-  font-weight: bolder;
-  padding: 2%;
-}
-
-
-span.material-icons {
-  display: inline;
-  background-color: mat-color($mindtrails-accent, 400);
-  color: mat-contrast($mindtrails-accent, 400);
-  border-radius: 35px;
-  font-size: 2rem;
-  text-align: center;
-  vertical-align: middle;
-  padding: 6px;
-  margin: 6px;
-}
-
-@media (max-width: 400px) {
-  .session-menu {
-    display: none;
-  }
+app-session-indicator {
+  flex-grow: 1;
+  flex-basis: 0;
 }

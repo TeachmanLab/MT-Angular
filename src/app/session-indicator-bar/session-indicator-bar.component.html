@@ -2,28 +2,16 @@
 <div
   class="session-row"
   fxLayout="row"
-  fxLayout.xs="column"
-  fxLayout.sm="column"
   fxLayoutAlign="space-evenly"
   fxLayoutWrap
   fxLayoutGap="10px"
   fxLayoutGap.xs="10px"
 >
-  <div
-    *ngFor="let session of sessions"
-    [class]="session.title === currentSession.title ? 'selected-card' : 'session-card'"
-    fxLayoutWrap
-    fxLayoutGap="20px"
-    fxLayoutGap.xs="20px"
-    >
-    <div>
-      <!--
-      <span *ngIf="session.title === currentSession.title" class="material-icons">
-        explore
-      </span>
-      -->
-       {{session.title}}
-    </div>
-  </div>
-</div>
+  <app-session-indicator
+    *ngFor="let session of displaySessions()"
+    [session]="session"
+    [active]="session.title === currentSession.title"
+    [title]="true"
+    [steps]="false"
+  ></app-session-indicator>
 </div>

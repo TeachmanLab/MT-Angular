@@ -41,10 +41,12 @@ export class SessionComponent implements OnInit, OnChanges {
     // console.log('The current Step is ' + JSON.stringify(this.currentStep));
   }
 
-  nextStep() {
+  nextStep(correct= true) {
     // console.log('Next Step called, loading the next step!');
-    if (this.currentStep) {
+    if (this.currentStep && correct) {
       this.currentStep.status = 'complete';
+    } else if (this.currentStep) {
+      this.currentStep.status = 'error';
     }
     this.stepIndex++;
     if (this.stepIndex < this.session.steps.length) {

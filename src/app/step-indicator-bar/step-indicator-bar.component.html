@@ -1,25 +1,6 @@
-<div
-  class="step-row"
-  fxLayout="row"
-  fxLayout.sm="column"
-  fxLayout.xs="column"
-  fxLayoutAlign="space-evenly"
-  fxLayoutWrap
-  fxLayoutGap="10px"
-  fxLayoutGap.xs="10px"
->
-  <div class="session-title">
-    <h1>{{currentSession.title}}</h1>
-  </div>
-  <div
-    *ngFor="let step of steps"
-    [class]="step.title === currentStep.title ? 'selected-card' : 'step-card'"
-  >
-    <div >
-      <span *ngIf="step.title === currentStep.title" class="material-icons">
-        explore
-      </span>
-      {{step.title}}
-    </div>
-  </div>
-</div>
+<app-session-indicator
+  [session]="currentSession"
+  [active]="true"
+  [title]="true"
+  [steps]="true"
+></app-session-indicator>

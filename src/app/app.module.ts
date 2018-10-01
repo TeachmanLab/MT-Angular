@@ -32,6 +32,7 @@ import { BulletListComponent } from './bullet-list/bullet-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SessionIndicatorBarComponent } from './session-indicator-bar/session-indicator-bar.component';
 import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-bar.component';
+import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
 
 
 const routes: Routes = [
@@ -58,7 +59,8 @@ const routes: Routes = [
     TrainingComponent,
     BulletListComponent,
     SessionIndicatorBarComponent,
-    StepIndicatorBarComponent
+    StepIndicatorBarComponent,
+    SessionIndicatorComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
