@@ -33,6 +33,7 @@ export class StepComponent implements OnInit, OnChanges {
   initPage() {
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
+    window.scrollTo(0, 0);
   }
 
   nextPageButtonVisible() {
