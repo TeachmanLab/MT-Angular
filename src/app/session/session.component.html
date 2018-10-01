@@ -1,13 +1,15 @@
 <mat-card class="scenario">
-  <mat-card-header>
-    <h1>{{session.title}}</h1>
-  </mat-card-header>
-  <mat-divider></mat-divider>
   <mat-card-content>
-    <img *ngIf="session.sessionIndicator" class="indicator" src="{{ session.sessionIndicator }}" />
-    <div *ngIf="session.steps.length > 1"  class="progress">
-      <app-progress-bar [items]="session.steps"></app-progress-bar>
+    <div
+      fxLayout="column"
+      fxLayout.sm="row"
+      fxLayout.xs="row"
+      fxLayoutGap="20px"
+      fxLayoutWrap
+    >
+    <app-session-indicator-bar *ngIf="stepIndex === 0" [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
+    <app-step-indicator-bar *ngIf="stepIndex > 0" [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
     </div>
-    <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep()"></app-step>
+    <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep($event)"></app-step>
   </mat-card-content>
 </mat-card>

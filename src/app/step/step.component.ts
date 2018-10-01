@@ -13,6 +13,7 @@ export class StepComponent implements OnInit, OnChanges {
   pageIndex: number;
   currentPage: Page;
   allowContinue = false;
+  correct = true;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -32,6 +33,7 @@ export class StepComponent implements OnInit, OnChanges {
   initPage() {
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
+    window.scrollTo(0, 0);
   }
 
   nextPageButtonVisible() {
@@ -43,7 +45,10 @@ export class StepComponent implements OnInit, OnChanges {
     return (this.allowContinue && !(this.pageIndex <= 0));
   }
 
-  pageCompleted() {
+  pageCompleted(allCorrect= true) {
+    if (!allCorrect) {
+     this.correct = false;
+    }
     if (this.pageIndex < this.step.pages.length) {
       this.allowContinue = true;
     } else {
@@ -52,7 +57,7 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   nextPage() {
-    console.log('Next page');
+    // console.log('Next page');
     this.pageIndex++;
     if (this.pageIndex < this.step.pages.length) {
       this.initPage();
@@ -62,13 +67,13 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   prevPage() {
-    console.log('Previous page');
+    // console.log('Previous page');
     this.pageIndex--;
     this.initPage();
   }
 
   allDone() {
-    console.log('Completed step');
-    this.done.emit();
+    // console.log('Completed step');
+    this.done.emit(this.correct);
   }
 }

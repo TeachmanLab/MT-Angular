@@ -7,6 +7,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
+  MatGridListModule,
   MatIconModule,
   MatProgressBarModule,
   MatToolbarModule
@@ -29,12 +30,16 @@ import { HighlightComponent } from './highlight/highlight.component';
 import { TrainingComponent } from './training/training.component';
 import { BulletListComponent } from './bullet-list/bullet-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SessionIndicatorBarComponent } from './session-indicator-bar/session-indicator-bar.component';
+import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-bar.component';
+import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'control', pathMatch: 'full'},
+  { path: '', redirectTo: 'control', pathMatch: 'full'},
   { path: 'training', component: TrainingComponent },
-  { path: 'control', component: ControlConditionComponent }
+  { path: 'control', component: ControlConditionComponent },
+  { path: 'control/:session', component: ControlConditionComponent }
 ];
 
 @NgModule({
@@ -52,7 +57,10 @@ const routes: Routes = [
     ThoughtbubbleComponent,
     HighlightComponent,
     TrainingComponent,
-    BulletListComponent
+    BulletListComponent,
+    SessionIndicatorBarComponent,
+    StepIndicatorBarComponent,
+    SessionIndicatorComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -60,6 +68,7 @@ const routes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatGridListModule,
     MatIconModule,
     MatProgressBarModule,
     MatToolbarModule,

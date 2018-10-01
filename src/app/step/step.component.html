@@ -1,12 +1,9 @@
 <section class="section">
   <div>
-    <div *ngIf="step.stepIndicator">
-      <img class="indicator" src="{{ step.stepIndicator }}" alt="Step {{ step.title }}" />
-    </div>
     <div>
       <h3>{{ step.title }}</h3>
     </div>
-    <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted()"></app-page>
+    <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted($event)"></app-page>
     <div
       class="button-row"
       fxLayout="row"

@@ -1,0 +1,7 @@
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
+
+.step-row {
+  background-color: mat-color($mindtrails-accent, 50, .35);
+  padding: 2%;
+}

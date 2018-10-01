@@ -1,0 +1,85 @@
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
+
+div.session {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  -webkit-align-items: center; /* Safari 7.0+ */
+  align-items: center;
+  margin-top: 1em;
+
+  div.image-title {
+    flex: 1 1 auto;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    -webkit-align-items: center; /* Safari 7.0+ */
+    align-items: center;
+  }
+
+  mat-icon {
+    flex: 1 1 auto;
+    color: mat-color($mindtrails-primary, 500);
+    width: 50px;
+    height: 50px;
+  }
+
+  div.title-block {
+    flex: 1 1 auto;
+    padding: 10px 0 0 10px;
+    font-size: .9em;
+    line-height: 1em;
+    text-align: center;
+
+    div.title {
+      font-weight: 600;
+    }
+
+    div.sub-title {
+      text-align: center;
+    }
+  }
+
+  div.steps {
+    flex: 3 1 auto;
+  }
+
+  ul {
+    padding: 5px 0 0 50px;
+    list-style-type: none;
+    margin: 0;
+
+    li.active {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    li.error {
+      color:red;
+    }
+  }
+}
+
+div.active {
+  mat-icon {
+    flex: 1 1 auto;
+    color: mat-color($mindtrails-accent, 500);
+    width: 75px;
+    height: 75px;
+  }
+  div.title-block {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  div.inactive {
+    div.title-block {
+      display: none;
+    }
+  }
+
+}

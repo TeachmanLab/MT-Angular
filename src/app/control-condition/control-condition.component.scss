@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+mat-card {
+  margin: 40px auto;
+  max-width: 900px;
+  @include mat-elevation(10);
+
+  h1 {
+    font-weight: bolder;
+  }
+}

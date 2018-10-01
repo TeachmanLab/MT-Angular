@@ -12,6 +12,7 @@ export class PageComponent implements OnChanges {
   page: Page;
   pageIndex: number;
   numPages: number;
+  correct = true;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -26,19 +27,22 @@ export class PageComponent implements OnChanges {
 
   markStaticComponentsComplete() {
     for (const element of this.page.elements) {
-      console.log(element.type);
-      if (['Paragraph', 'References', 'Image', 'Header'].includes(element.type)) {
-        console.log(`completing a ${element.type}`);
+      // console.log(element.type);
+      if (['Paragraph', 'References', 'Image', 'Header', 'Caption'].includes(element.type)) {
+        // console.log(`completing a ${element.type}`);
         this.divCompleted();
       }
     }
   }
 
-  divCompleted() {
-    console.log('Completed div ' + (this.pageIndex + 1) + ' of ' + this.numPages);
+  divCompleted(correct= true) {
+    // console.log('Completed div ' + (this.pageIndex + 1) + ' of ' + this.numPages);
+    if (!correct) {
+      this.correct = false;
+    }
     this.pageIndex++;
     if (this.pageIndex === this.numPages) {
-      this.done.emit();
+      this.done.emit(correct);
     }
   }
 }
