@@ -5,3 +5,8 @@ app-session-indicator {
   flex-grow: 1;
   flex-basis: 0;
 }
+
+.session-row {
+  background-color: mat-color($mindtrails-primary, 50, .35);
+  padding: 2%;
+}

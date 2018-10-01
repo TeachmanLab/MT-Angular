@@ -1,18 +1,18 @@
 <div class="session-menu" *ngIf="sessions">
-<div
-  class="session-row"
-  fxLayout="row"
-  fxLayoutAlign="space-evenly"
-  fxLayoutWrap
-  fxLayoutGap="10px"
-  fxLayoutGap.xs="10px"
->
-  <app-session-indicator
-    *ngFor="let session of displaySessions()"
-    [session]="session"
-    [active]="session.title === currentSession.title"
-    [title]="true"
-    [steps]="false"
-  ></app-session-indicator>
-</div>
+  <div
+    class="session-row"
+    fxLayout="row"
+    fxLayoutAlign="space-evenly"
+    fxLayoutWrap
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="10px"
+  >
+    <app-session-indicator
+      *ngFor="let session of displaySessions()"
+      [session]="session"
+      [active]="session.title === currentSession.title"
+      [title]="true"
+      [steps]="false"
+    ></app-session-indicator>
+  </div>
 </div>
