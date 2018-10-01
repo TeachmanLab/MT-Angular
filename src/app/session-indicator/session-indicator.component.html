@@ -1,0 +1,14 @@
+<div class="session {{active ? 'active' : 'inactive'}}" >
+    <div class="image-title">
+      <mat-icon [svgIcon]="session.sessionIndicator"></mat-icon>
+      <div *ngIf="title" class="title-block">
+        <div class="title">{{session.title}}</div>
+        <div *ngIf="title" class="sub-title">{{session.subTitle}}</div>
+      </div>
+    </div>
+    <div *ngIf="steps" class="steps">
+      <ul *ngFor="let step of session.steps">
+        <li class="{{step.status}}">{{step.title}}</li>
+      </ul>
+    </div>
+</div>

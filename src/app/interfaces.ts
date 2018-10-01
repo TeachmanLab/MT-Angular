@@ -1,6 +1,7 @@
 
 export interface Session {
   title: string;
+  subTitle: String;
   sessionIndicator: string;
   allSteps: string;
   description: string[];

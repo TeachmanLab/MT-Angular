@@ -12,6 +12,7 @@ export class PageComponent implements OnChanges {
   page: Page;
   pageIndex: number;
   numPages: number;
+  correct = true;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -34,11 +35,14 @@ export class PageComponent implements OnChanges {
     }
   }
 
-  divCompleted() {
+  divCompleted(correct= true) {
     // console.log('Completed div ' + (this.pageIndex + 1) + ' of ' + this.numPages);
+    if (!correct) {
+      this.correct = false;
+    }
     this.pageIndex++;
     if (this.pageIndex === this.numPages) {
-      this.done.emit();
+      this.done.emit(correct);
     }
   }
 }

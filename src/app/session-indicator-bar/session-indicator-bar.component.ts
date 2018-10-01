@@ -16,4 +16,9 @@ export class SessionIndicatorBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  displaySessions() {
+    return this.sessions.filter(s => s.sessionIndicator);
+  }
+
+
 }

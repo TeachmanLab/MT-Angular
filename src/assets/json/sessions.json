@@ -75,7 +75,9 @@
     ]
   },
   {
-    "title": "Session 1: Introduction to Anxiety",
+    "title": "Session 1",
+    "subTitle": "Introduction to Anxiety",
+    "sessionIndicator": "session1",
     "steps": [
       {
         "title": "Introduction",
@@ -215,7 +217,9 @@
     ]
   },
   {
-    "title": "Session 2: Symptoms and Disorders",
+    "title": "Session 2",
+    "subTitle": "Symptoms and Disorders",
+    "sessionIndicator": "session2",
     "steps": [
       {
         "title": "Introduction",
@@ -453,7 +457,9 @@
     ]
   },
   {
-    "title": "Session 3: Prevalence, Causes, and Maintenance of Anxiety Disorders",
+    "title": "Session 3",
+    "subTitle": "Prevalence, Causes, and Maintenance of Anxiety Disorders",
+    "sessionIndicator": "session3",
     "steps": [
       {
         "title": "Introduction",
@@ -688,7 +694,9 @@
     ]
   },
   {
-    "title": "Session 4: Impact of Anxiety",
+    "title": "Session 4",
+    "subTitle": "Managing Anxiety",
+    "sessionIndicator": "session4",
     "steps": [
       {
         "title": "Introduction",
@@ -875,7 +883,9 @@
     ]
   },
   {
-    "title": "Session 5: Managing Anxiety",
+    "title": "Session 5",
+    "subTitle": "Impact of Anxiety",
+    "sessionIndicator": "session5",
     "steps": [
       {
         "title": "Introduction",
