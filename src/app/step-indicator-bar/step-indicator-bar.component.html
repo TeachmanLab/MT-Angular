@@ -5,29 +5,21 @@
   fxLayout.xs="column"
   fxLayoutAlign="space-evenly"
   fxLayoutWrap
-  fxLayoutGap="20px"
-  fxLayoutGap.xs="20px"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="10px"
 >
   <div class="session-title">
     <h1>{{currentSession.title}}</h1>
   </div>
   <div
     *ngFor="let step of steps"
-    class="step-card"
-    fxLayoutWrap
-    fxLayoutGap="20px"
-    fxLayoutGap.xs="20px"
+    [class]="step.title === currentStep.title ? 'selected-card' : 'step-card'"
   >
-    <div>
-      {{step.title}}
-    </div>
-    <div fxLayoutAlign="center">
-      <span
-        *ngIf="step.title === currentStep.title"
-        class="material-icons"
-      >
+    <div >
+      <span *ngIf="step.title === currentStep.title" class="material-icons">
         explore
       </span>
+      {{step.title}}
     </div>
   </div>
 </div>

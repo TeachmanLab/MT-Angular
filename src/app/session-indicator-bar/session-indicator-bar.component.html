@@ -1,3 +1,4 @@
+<div class="session-menu">
 <div
   class="session-row"
   fxLayout="row"
@@ -5,30 +6,24 @@
   fxLayout.sm="column"
   fxLayoutAlign="space-evenly"
   fxLayoutWrap
-  fxLayoutGap="20px"
-  fxLayoutGap.xs="20px"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="10px"
 >
   <div
     *ngFor="let session of sessions"
-    class="session-card"
+    [class]="session.title === currentSession.title ? 'selected-card' : 'session-card'"
     fxLayoutWrap
     fxLayoutGap="20px"
     fxLayoutGap.xs="20px"
     >
     <div>
-      {{session.title}}
-    </div>
-    <div
-      fxLayoutAlign="center"
-      fxLayoutAlign.sm="end"
-      fxLayoutAlign.xs="end"
-    >
-      <span
-        *ngIf="session.title === currentSession.title"
-        class="material-icons"
-      >
+      <!--
+      <span *ngIf="session.title === currentSession.title" class="material-icons">
         explore
       </span>
+      -->
+       {{session.title}}
     </div>
   </div>
+</div>
 </div>
