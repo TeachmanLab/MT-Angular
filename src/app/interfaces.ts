@@ -69,6 +69,18 @@ export interface BulletList extends Element {
   bullets: string[];
 }
 
-
-
-
+export interface PageData {
+  date: string;
+  session: string;
+  // tag: string;
+  time_on_page: number;
+  button_pressed: string;
+  correct: boolean;
+  // date_submitted: string;
+  device: string;
+  rt: number;
+  rt_first_react: number;
+  stimulus: string;
+  // time_elapsed: number;
+  trial_type: string;
+}

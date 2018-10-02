@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {Scenario, Session} from './interfaces';
+import {PageData, Scenario, Session} from './interfaces';
 import {TrainingCSV} from './training-csv';
 
 @Injectable()
@@ -32,10 +32,14 @@ export class ApiService {
       .pipe(map(n => TrainingCSV.toJson(n)));
   }
 
-
   public getSessions(): Observable<any> {
     return this.httpClient.get<Session[]>('./assets/json/sessions.json')
       .pipe((catchError(this.handleError)));
+  }
+
+  addResponse(pageData: PageData): Observable<PageData> {
+    return this.httpClient.post<PageData>(this.endpoints.response, pageData)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
