@@ -45,7 +45,11 @@
                   "Very Important",
                   "Extremely Important"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
@@ -56,7 +60,11 @@
                   "Very Confident",
                   "Extremely Confident"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "How confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
@@ -184,7 +192,11 @@
                 ],
                 "answer": "False",
                 "explanation": "Of course, today it is unlikely that we will be confronted by saber-toothed tigers on the street, but there are other situations in which anxiety is still reasonable."
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "Anxiety can become so strong that it can make it difficult for people to go to work or to take care of their families.",
@@ -284,7 +296,11 @@
                 ],
                 "answer": "False",
                 "explanation": "Problems with anxiety can look different for different people, and people with anxiety problems usually have some but not all of the symptoms listed in the previous diagram."
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "Researchers have found that treatment by a mental health professional can reduce many anxiety symptoms.",
@@ -610,7 +626,11 @@
                 ],
                 "answer": "False",
                 "explanation": "Anxiety disorders are caused by a complex interaction of many different factors. Although people with a genetic vulnerability are more likely to develop an anxiety disorder, not all vulnerable people will."
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "Cognitive distortions, such as interpreting ambiguous situations more negatively than is warranted, can lead one to experience more anxiety and can be one reason why one’s anxiety is not decreasing over time.",
@@ -620,7 +640,11 @@
                 ],
                 "answer": "True",
                 "explanation": "Remember the example of unfriendly faces at a party. People who attribute the unfriendly faces to their own behavior or appearance are likely to experience more anxiety than people who attribute the faces to reasons unrelated to themselves (e.g., a bad day)."
-              },
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Question",
                 "question": "Seeing someone react fearfully to an object or situation can contribute to one’s anxiety about the object or situation.",
