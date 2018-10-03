@@ -37,8 +37,8 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
-  addResponse(pageData: PageData): Observable<PageData> {
-    return this.httpClient.post<PageData>(this.endpoints.response, pageData)
+  addResponse(pageData: PageData[]): Observable<PageData[]> {
+    return this.httpClient.post<PageData[]>(this.endpoints.response, pageData)
       .pipe(catchError(this.handleError));
   }
 

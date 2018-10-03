@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import { Step, Page } from '../interfaces';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Step, Page, Session, PageData } from '../interfaces';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-step',
@@ -8,21 +9,25 @@ import { Step, Page } from '../interfaces';
 })
 export class StepComponent implements OnInit, OnChanges {
 
-  @Input()
-  step: Step;
+  @Input() step: Step;
+  @Input() session: Session;
   pageIndex: number;
+  pageData: PageData[] = [];
   currentPage: Page;
   allowContinue = false;
   correct = true;
+  startTime: number;
+  endTime: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor (
+    private api: ApiService
+  ) { }
 
   ngOnInit() {
     this.pageIndex = 0;
-    this.initPage();
   }
 
   ngOnChanges() {
@@ -31,6 +36,9 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   initPage() {
+    this.pageData = [];
+    this.startTime = performance.now();
+    console.log('start time', this.startTime);
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
     window.scrollTo(0, 0);
@@ -38,7 +46,6 @@ export class StepComponent implements OnInit, OnChanges {
 
   nextPageButtonVisible() {
     return (this.allowContinue && this.pageIndex < this.step.pages.length);
-    // return true;
   }
 
   prevPageButtonVisible() {
@@ -58,6 +65,15 @@ export class StepComponent implements OnInit, OnChanges {
 
   nextPage() {
     // console.log('Next page');
+    this.endTime = performance.now();
+    for (const el of this.currentPage.elements) {
+      const eData = {date: Date.now().toPrecision(), session: this.session.title + ': ' + this.session.subTitle,
+        device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0,
+        stimulus: this.step.title + ' - page index: ' + this.pageIndex.toString(),
+        trial_type: el.type};
+      this.pageData.push(eData);
+    }
+    // this.api.addResponse(this.pageData);
     this.pageIndex++;
     if (this.pageIndex < this.step.pages.length) {
       this.initPage();

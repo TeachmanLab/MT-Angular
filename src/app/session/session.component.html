@@ -10,6 +10,6 @@
     <app-session-indicator-bar *ngIf="stepIndex === 0" [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
     <app-step-indicator-bar *ngIf="stepIndex > 0" [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
     </div>
-    <app-step *ngIf="currentStep" [step]="currentStep" (done)="nextStep($event)"></app-step>
+    <app-step *ngIf="currentStep" [session]="session" [step]="currentStep" (done)="nextStep($event)"></app-step>
   </mat-card-content>
 </mat-card>
