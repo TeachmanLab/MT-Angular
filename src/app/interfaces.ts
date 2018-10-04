@@ -22,6 +22,8 @@ export interface Page {
 export interface Element {
   type: string;
   content?: string | string[];
+  responseTime?: number;
+  buttonPressed?: string;
 }
 
 export interface Scenario extends Element {

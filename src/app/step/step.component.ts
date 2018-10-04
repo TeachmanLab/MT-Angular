@@ -16,6 +16,7 @@ export class StepComponent implements OnInit, OnChanges {
   currentPage: Page;
   allowContinue = false;
   correct = true;
+  date: string;
   startTime: number;
   endTime: number;
 
@@ -37,6 +38,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   initPage() {
     this.pageData = [];
+    this.date = new Date().toLocaleDateString();
     this.startTime = performance.now();
     console.log('start time', this.startTime);
     this.currentPage = this.step.pages[this.pageIndex];
@@ -63,17 +65,27 @@ export class StepComponent implements OnInit, OnChanges {
     }
   }
 
-  nextPage() {
-    // console.log('Next page');
+  recordPageData() {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
-      const eData = {date: Date.now().toPrecision(), session: this.session.title + ': ' + this.session.subTitle,
+      const elData = {date: this.date, session: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0,
-        stimulus: this.step.title + ' - page index: ' + this.pageIndex.toString(),
-        trial_type: el.type};
-      this.pageData.push(eData);
+        stimulus: this.step.title + ': ' + el.type + ' - page index: ' + this.pageIndex.toString(),
+        trial_type: el.type, buttonPressed: el.buttonPressed,};
+      if (el.responseTime) {
+        elData['rt_first_react'] = el.responseTime - this.startTime;
+      } else {
+        elData['rt_first_react'] = this.endTime - this.startTime;
+      }
+      this.pageData.push(elData);
     }
+    console.log('pageData', this.pageData);
     // this.api.addResponse(this.pageData);
+  }
+
+  nextPage() {
+    // console.log('Next page');
+    this.recordPageData();
     this.pageIndex++;
     if (this.pageIndex < this.step.pages.length) {
       this.initPage();

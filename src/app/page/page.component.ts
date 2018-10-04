@@ -45,4 +45,17 @@ export class PageComponent implements OnChanges {
       this.done.emit(correct);
     }
   }
+
+  getQuestionDetails(event) {
+    for (const element of this.page.elements) {
+      if (['Question'].includes(element.type)) {
+        if (typeof event === 'number') {
+          element.responseTime = event;
+        }
+        if (typeof event === 'string') {
+          element.buttonPressed = event;
+        }
+      }
+    }
+  }
 }

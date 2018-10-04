@@ -16,16 +16,25 @@ enum QuestionStates {
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
-  userAnswer: string;
 
   @Input()
   question: Question;
+
+  userAnswer: string;
+  userAnswers: string[] = [];
   state: QuestionStates;
   waitPercent: number;
   incorrectAnswerSupplied = false;  // emit this value when complete.
+  responseTimes: number[] = [];
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
+
+  @Output()
+  initialResponse: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  buttonPressed: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
@@ -35,7 +44,9 @@ export class QuestionComponent implements OnInit {
   }
 
   selected(option: string) {
+    this.responseTimes.push(performance.now());
     this.userAnswer = option;
+    this.userAnswers.push(option);
     if (this.question.answer) {
       if (option === this.question.answer) {
         this.state = QuestionStates.correct;
@@ -75,6 +86,8 @@ export class QuestionComponent implements OnInit {
 
   allDone() {
     // console.log('Completed question');
+    this.initialResponse.emit(this.responseTimes[0]);
+    this.buttonPressed.emit(this.userAnswers[0]);
     this.done.emit(!this.incorrectAnswerSupplied);
   }
 }
