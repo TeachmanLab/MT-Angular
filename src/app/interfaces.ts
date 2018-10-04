@@ -6,6 +6,7 @@ export interface Session {
   allSteps: string;
   description: string[];
   steps: Step[];
+  startTime?: number;
 }
 
 export interface Step {
@@ -77,11 +78,13 @@ export interface PageData {
   button_pressed?: string;
   // conditioning: string;
   // study: string;
+  // step_title: string;
+  // step_index: number;
   correct?: boolean;
   device: string;
   rt: number;
   rt_first_react: number;
   stimulus: string;
-  // time_elapsed: number;
+  time_elapsed: number;
   trial_type: string;
 }

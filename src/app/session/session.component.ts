@@ -22,6 +22,7 @@ export class SessionComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit() {
+    this.session.startTime = performance.now();
     this.stepIndex = 0;
     this.initStep();
     this.api.getSessions().subscribe(sessions => {
