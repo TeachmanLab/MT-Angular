@@ -46,9 +46,9 @@ export class PageComponent implements OnChanges {
     }
   }
 
-  getQuestionDetails(event) {
+  getResponseDetails(event) {
     for (const element of this.page.elements) {
-      if (['Question'].includes(element.type)) {
+      if (['Question', 'ThoughtBubble'].includes(element.type)) {
         if (typeof event === 'number') {
           element.responseTime = event;
         }

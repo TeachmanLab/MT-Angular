@@ -13,9 +13,14 @@
   <app-question
     *ngIf="el.type === 'Question'"
     [question]="el"
-    (initialResponse)="getQuestionDetails($event)"
-    (buttonPressed)="getQuestionDetails($event)"
+    (initialResponse)="getResponseDetails($event)"
+    (buttonPressed)="getResponseDetails($event)"
     (done)="divCompleted($event)">
   </app-question>
-  <app-thoughtbubble *ngIf="el.type === 'ThoughtBubble'" [thoughtBubble]="el"  (done)="divCompleted()"></app-thoughtbubble>
+  <app-thoughtbubble
+    *ngIf="el.type === 'ThoughtBubble'"
+    [thoughtBubble]="el"
+    (initialResponse)="getResponseDetails($event)"
+    (done)="divCompleted()">
+  </app-thoughtbubble>
 </div>

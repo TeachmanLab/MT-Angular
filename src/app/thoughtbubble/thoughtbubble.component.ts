@@ -19,6 +19,9 @@ export class ThoughtbubbleComponent implements OnInit {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
+  @Output()
+  initialResponse: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -45,6 +48,7 @@ export class ThoughtbubbleComponent implements OnInit {
   }
 
   progressState() {
+    this.initialResponse.emit(performance.now());
     this.stateIndex++;
     window.scrollTo(0, 0);
     if (this.stateIndex < this.numStates) {
