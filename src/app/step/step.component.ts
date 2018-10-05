@@ -11,6 +11,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   @Input() step: Step;
   @Input() session: Session;
+  @Input() step_index: number;
   pageIndex: number;
   pageData: PageData[] = [];
   currentPage: Page;
@@ -38,7 +39,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   initPage() {
     this.pageData = [];
-    this.date = new Date().toLocaleDateString();
+    this.date = new Date().toString();
     this.startTime = performance.now();
     console.log('start time', this.startTime);
     this.currentPage = this.step.pages[this.pageIndex];
@@ -71,9 +72,9 @@ export class StepComponent implements OnInit, OnChanges {
     console.log('this.correct is:', this.correct);
     for (const el of this.currentPage.elements) {
       const elData = {date: this.date, session: this.session.title + ': ' + this.session.subTitle,
-        device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0,
-        stimulus: this.step.title + ': ' + el.type + ' - page index: ' + this.pageIndex.toString(),
-        trial_type: el.type, buttonPressed: el.buttonPressed, correct: this.correct, time_elapsed: this.endTime - this.session.startTime};
+        device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
+        step_index: this.step_index, stimulus: el.content, trial_type: el.type, buttonPressed: el.buttonPressed,
+        correct: this.correct, time_elapsed: this.endTime - this.session.startTime};
 
       if (el.responseTime) {
         elData['rt_first_react'] = el.responseTime - this.startTime;

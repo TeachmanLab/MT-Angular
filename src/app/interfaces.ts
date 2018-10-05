@@ -75,16 +75,16 @@ export interface BulletList extends Element {
 export interface PageData {
   date: string;
   session: string;
-  button_pressed?: string;
   // conditioning: string;
   // study: string;
-  // step_title: string;
-  // step_index: number;
+  step_title: string;
+  step_index: number;
+  trial_type: string;
+  stimulus: string | string[];
+  button_pressed?: string;
   correct?: boolean;
   device: string;
   rt: number;
   rt_first_react: number;
-  stimulus: string;
   time_elapsed: number;
-  trial_type: string;
 }
