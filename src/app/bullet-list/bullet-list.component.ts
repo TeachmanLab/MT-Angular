@@ -18,6 +18,7 @@ export class BulletListComponent implements OnInit {
 
   ngOnInit() {
     // No real steps to complete, just let the containing element know that.
+    this.bulletList.content = this.bulletList.title + ' ' + this.bulletList.bullets; // for populating pageData
     this.done.emit();
   }
 

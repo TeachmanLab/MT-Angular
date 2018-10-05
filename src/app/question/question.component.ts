@@ -41,6 +41,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
     this.state = QuestionStates.asking;
     this.waitPercent = 0;
+    this.question.content = this.question.question; // for populating pageData
   }
 
   selected(option: string) {

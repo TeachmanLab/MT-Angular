@@ -26,6 +26,7 @@ export class ThoughtbubbleComponent implements OnInit {
 
   ngOnInit() {
     this.states = ['thought', 'followup'];
+    this.thoughtBubble.content = this.thoughtBubble.thought; // for populating pageData
     this.init();
   }
 
@@ -40,7 +41,7 @@ export class ThoughtbubbleComponent implements OnInit {
     this.numStates = this.states.length;
     this.stateIndex = 0;
     this.currentState = this.states[0];
-    console.log('The current state is ' + this.currentState);
+    // console.log('The current state is ' + this.currentState);
   }
 
   continueButtonVisible() {
