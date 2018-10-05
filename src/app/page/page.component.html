@@ -3,9 +3,9 @@
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
   <div *ngIf="el.type === 'Caption'"fxLayoutAlign="center"><p  class="caption">{{el.content}}</p></div>
   <div *ngIf="el.type === 'References'">
-    <div *ngFor="let text of el.content">
+    <span *ngFor="let text of el.content">
       <p class="reference">{{ text }}</p>
-    </div>
+    </span>
   </div>
   <img class="pageImage" *ngIf="el.type === 'Image'" [src]="el.content">
   <app-highlight *ngIf="el.type === 'Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
