@@ -56,4 +56,13 @@ export class SessionComponent implements OnInit, OnChanges {
       this.done.emit();
     }
   }
+
+  previousStep() {
+    console.log('Previous Step called, loading the previous step!');
+    this.currentStep.status = 'paused';
+    this.stepIndex--;
+    if (this.session.steps[this.stepIndex]) {
+      this.initStep();
+    }
+  }
 }

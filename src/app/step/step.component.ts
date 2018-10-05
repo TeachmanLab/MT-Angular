@@ -16,6 +16,7 @@ export class StepComponent implements OnInit, OnChanges {
   pageData: PageData[] = [];
   currentPage: Page;
   allowContinue = false;
+  startFromEnd = false;
   correct = true;
   date: string;
   startTime: number;
@@ -23,6 +24,10 @@ export class StepComponent implements OnInit, OnChanges {
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
+
+  @Output()
+  review: EventEmitter<any> = new EventEmitter();
+
 
   constructor (
     private api: ApiService
@@ -33,7 +38,12 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.pageIndex = 0;
+    if (this.startFromEnd) {
+      this.pageIndex = this.step.pages.length - 1;
+      this.startFromEnd = false;
+    } else {
+      this.pageIndex = 0;
+    }
     this.initPage();
   }
 
@@ -41,7 +51,6 @@ export class StepComponent implements OnInit, OnChanges {
     this.pageData = [];
     this.date = new Date().toString();
     this.startTime = performance.now();
-    console.log('start time', this.startTime);
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
     window.scrollTo(0, 0);
@@ -52,7 +61,7 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   prevPageButtonVisible() {
-    return (this.allowContinue && !(this.pageIndex <= 0));
+    return (!(this.step_index <= 0));
   }
 
   pageCompleted(allCorrect= true) {
@@ -102,7 +111,12 @@ export class StepComponent implements OnInit, OnChanges {
   prevPage() {
     // console.log('Previous page');
     this.pageIndex--;
-    this.initPage();
+    if (this.pageIndex < 0) {
+      this.startFromEnd = true;
+      this.review.emit();
+    } else {
+      this.initPage();
+    }
   }
 
   allDone() {
