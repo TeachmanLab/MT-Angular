@@ -68,13 +68,13 @@ export class StepComponent implements OnInit, OnChanges {
 
   recordPageData() {
     this.endTime = performance.now();
-    console.log('page elements: ', this.currentPage.elements);
-    console.log('this.correct is:', this.correct);
     for (const el of this.currentPage.elements) {
       const elData = {date: this.date, session: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
         step_index: this.step_index, stimulus: el.content, trial_type: el.type, buttonPressed: el.buttonPressed,
-        correct: this.correct, time_elapsed: this.endTime - this.session.startTime};
+        correct: this.correct, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+        study: this.session.study
+      };
 
       if (el.responseTime) {
         elData['rt_first_react'] = el.responseTime - this.startTime;

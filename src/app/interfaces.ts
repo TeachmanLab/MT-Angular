@@ -7,6 +7,8 @@ export interface Session {
   description: string[];
   steps: Step[];
   startTime?: number;
+  conditioning: string;
+  study: string;
 }
 
 export interface Step {
@@ -75,8 +77,8 @@ export interface BulletList extends Element {
 export interface PageData {
   date: string;
   session: string;
-  // conditioning: string;
-  // study: string;
+  conditioning: string;
+  study: string;
   step_title: string;
   step_index: number;
   trial_type: string;

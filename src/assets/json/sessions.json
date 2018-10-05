@@ -1,6 +1,8 @@
 [
   {
     "title": "Introduction to CalmThinking",
+    "conditioning": "Control",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "How Does CalmThinking Work?",
@@ -86,6 +88,8 @@
     "title": "Session 1",
     "subTitle": "Introduction to Anxiety",
     "sessionIndicator": "session1",
+    "conditioning": "Control",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "Introduction",
@@ -232,6 +236,8 @@
     "title": "Session 2",
     "subTitle": "Symptoms and Disorders",
     "sessionIndicator": "session2",
+    "conditioning": "Control",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "Introduction",
@@ -476,6 +482,8 @@
     "title": "Session 3",
     "subTitle": "Prevalence, Causes, and Maintenance of Anxiety Disorders",
     "sessionIndicator": "session3",
+    "conditioning": "Control",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "Introduction",
@@ -721,6 +729,8 @@
     "title": "Session 4",
     "subTitle": "Managing Anxiety",
     "sessionIndicator": "session4",
+    "conditioning": "Control",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "Introduction",
@@ -910,6 +920,8 @@
     "title": "Session 5",
     "subTitle": "Impact of Anxiety",
     "sessionIndicator": "session5",
+    "conditioning": "Control",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "Introduction",
