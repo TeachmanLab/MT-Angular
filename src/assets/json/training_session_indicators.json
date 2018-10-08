@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Scenario",
+    "subTitle": "You will be giving a speech...",
+    "sessionIndicator": "session1",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Fragment",
+    "subTitle": "You think your nerves will be manageb_e.",
+    "sessionIndicator": "session2",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Question",
+    "subTitle": "Were you able to handle your anxiety?",
+    "sessionIndicator": "session3",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Answer",
+    "subTitle": "Yes or No",
+    "sessionIndicator": "session4",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Feedback",
+    "subTitle": "Great Job! or Try again.",
+    "sessionIndicator": "session5",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  }
+]
