@@ -6,7 +6,14 @@
 </div>
 
 <div *ngIf="currentState==='followup'">
-  <div *ngFor="let text of thoughtBubble.followup">
+  <div fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
+    <span class="material-icons">person</span>
+    <div class="thought">{{thoughtBubble.thought}}</div>
+  </div>
+  <div
+    *ngFor="let text of thoughtBubble.followup"
+    class="follow-up"
+  >
     <p>{{ text }}</p>
   </div>
 </div>
