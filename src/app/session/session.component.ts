@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 export class SessionComponent implements OnInit, OnChanges {
 
   @Input() session: Session;
-  sessions: Session[];
+  @Input() sessions: Session[];
   stepIndex: number;
   currentStep: Step;
 
@@ -25,9 +25,6 @@ export class SessionComponent implements OnInit, OnChanges {
     this.session.startTime = performance.now();
     this.stepIndex = 0;
     this.initStep();
-    this.api.getSessions().subscribe(sessions => {
-      this.sessions = sessions;
-    });
   }
 
   ngOnChanges() {

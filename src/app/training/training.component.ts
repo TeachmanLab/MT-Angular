@@ -13,6 +13,7 @@ export class TrainingComponent implements OnInit {
   sessions: Session[];
   sessionIndex = 0;
   currentSession: Session;
+  indicatorSessions: Session[];
 
   totalRounds = 4;
   roundIndex = 0;
@@ -29,12 +30,19 @@ export class TrainingComponent implements OnInit {
   ngOnInit() {
     this.loadIntro();
     this.loadTraining();
+    this.loadIndicatorSessions();
   }
 
   loadIntro() {
     this.api.getTrainingIntroduction().subscribe(sessions => {
       this.sessions = sessions;
       this.currentSession = this.sessions[this.sessionIndex];
+    });
+  }
+
+  loadIndicatorSessions() {
+    this.api.getTrainingSessionIndicators().subscribe(sessions => {
+      this.indicatorSessions = sessions;
     });
   }
 

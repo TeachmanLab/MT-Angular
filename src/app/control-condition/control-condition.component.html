@@ -1,4 +1,4 @@
-<app-session *ngIf="currentSession && !sessionDone" [session]="currentSession" (done)="sessionComplete()"></app-session>
+<app-session *ngIf="currentSession && !sessionDone" [session]="currentSession" [sessions]="sessions" (done)="sessionComplete()"></app-session>
 <div *ngIf="sessionDone && introSession()">
   <mat-card>
     <h1>Let's begin!</h1>

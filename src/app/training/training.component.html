@@ -1,6 +1,6 @@
 <mat-card class="training">
   <mat-card-content>
-    <app-session *ngIf="currentSession" [session]="currentSession" (done)="sessionComplete()"></app-session>
+    <app-session *ngIf="currentSession" [session]="currentSession" [sessions]="indicatorSessions" (done)="sessionComplete()"></app-session>
     <div *ngIf="round">
       <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
       <div class="progress">
