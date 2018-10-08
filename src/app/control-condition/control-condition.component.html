@@ -1,9 +1,14 @@
 <app-session *ngIf="currentSession && !sessionDone" [session]="currentSession" (done)="sessionComplete()"></app-session>
-<div *ngIf="sessionDone && !allDone">
+<div *ngIf="sessionDone && introSession()">
+  <mat-card>
+    <h1>Let's begin!</h1>
+    <button mat-raised-button *ngIf="introSession()" (click)="goSession1()">Continue to Session 1</button>
+  </mat-card>
+</div>
+<div *ngIf="sessionDone && !allDone && !introSession()">
   <mat-card>
     <h1>Complete!</h1>
     <h5>You have completed <i>{{currentSession.title}}: {{currentSession.subTitle}}</i></h5>
-    <button mat-raised-button *ngIf="introSession()" (click)="goSession1()">Continue to Session 1</button>
   </mat-card>
 </div>
 <div *ngIf="allDone">
