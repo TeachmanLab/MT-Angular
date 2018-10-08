@@ -52,7 +52,6 @@ export class StepComponent implements OnInit, OnChanges {
     this.date = new Date().toString();
     this.startTime = performance.now();
     this.currentPage = this.step.pages[this.pageIndex];
-    this.correct = true;
     this.allowContinue = false;
     window.scrollTo(0, 0);
   }
@@ -124,5 +123,6 @@ export class StepComponent implements OnInit, OnChanges {
   allDone() {
     // console.log('Completed step');
     this.done.emit(this.correct);
+    this.correct = true;
   }
 }
