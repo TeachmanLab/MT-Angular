@@ -39,7 +39,14 @@ export class QuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.state = QuestionStates.asking;
+    if (this.question.completed) {
+      if (this.question.answer) {
+        this.state = QuestionStates.correct;
+        this.allDone();
+      }
+    } else {
+      this.state = QuestionStates.asking;
+    }
     this.waitPercent = 0;
     this.question.content = this.question.question; // for populating pageData
   }
@@ -51,6 +58,7 @@ export class QuestionComponent implements OnInit {
     if (this.question.answer) {
       if (option === this.question.answer) {
         this.state = QuestionStates.correct;
+        this.question.completed = true;
         this.waitAndEmit();
       } else {
         this.state = QuestionStates.incorrect;

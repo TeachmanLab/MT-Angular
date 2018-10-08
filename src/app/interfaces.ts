@@ -49,6 +49,7 @@ export interface Question extends Element {
   options: string[];
   answer?: string;
   explanation?: string;
+  completed?: boolean;
 }
 
 export interface ThoughtBubble extends Element {
