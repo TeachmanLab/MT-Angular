@@ -62,7 +62,8 @@ export class StepComponent implements OnInit, OnChanges {
   }
 
   prevPageButtonVisible() {
-    return (!(this.step_index <= 0));
+    // This should disable the 'previous' button on the first page of the session only.
+      return (!(this.step_index <= 0 && this.pageIndex <= 0));
   }
 
   pageCompleted(allCorrect= true) {
