@@ -57,7 +57,17 @@ div.session {
       font-weight: 600;
     }
     li.error {
-      color:red;
+      color: red;
+      font-weight: 500;
+    }
+    mat-icon {
+      width: 25px;
+      height: 25px;
+      color: black;
+      padding: 2px;
+    }
+    mat-icon.error {
+      color: red;
     }
   }
 }
