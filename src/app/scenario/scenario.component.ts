@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
-import {Scenario} from '../interfaces';
+import {PageData, Scenario, Session} from '../interfaces';
 import {interval} from 'rxjs';
 
 @Component({
@@ -53,10 +53,17 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   @Input()
   scenario: Scenario;
+  @Input()
+  session: Session;
+
   states = ['intro', 'statements'];
   stateIndex = 0;
   state = this.states[0];
+  stateData: PageData[] = [];
   correct: boolean;
+  date: string;
+  startTime: number;
+  endTime: number;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -86,6 +93,9 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.stateIndex = 0;
     this.state = this.states[0];
     this.correct = true;
+    this.stateData = [];
+    this.date = new Date().toString();
+    this.startTime = performance.now();
   }
 
   continueButtonVisible() {
@@ -96,8 +106,32 @@ export class ScenarioComponent implements OnInit, OnChanges {
     return(this.state === 'statements' || this.state === 'input');
   }
 
+  recordStateData() {
+    this.endTime = performance.now();
+    const Data = {date: this.date, session: this.session.title,
+      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.state,
+      step_index: this.stateIndex, stimulus: this.scenario.content, trial_type: this.scenario.type,
+      buttonPressed: this.scenario.buttonPressed, correct: this.correct, time_elapsed: this.endTime - this.session.startTime,
+      conditioning: this.session.conditioning, study: this.session.study
+    };
+
+    if (this.scenario.responseTime) {
+      Data['rt_first_react'] = this.scenario.responseTime - this.startTime;
+    } else {
+      Data['rt_first_react'] = this.endTime - this.startTime;
+    }
+
+    this.stateData.push(Data);
+
+    console.log('pageData', this.stateData);
+    // this.api.addResponse(this.stateData);
+  }
+
   progressState(correctAnswer = true) {
-    if (!correctAnswer) this.correct = false;
+    if (!correctAnswer) {
+      this.correct = false;
+    }
+    this.recordStateData();
     this.stateIndex++;
     if (this.stateIndex < this.states.length) {
       this.state = this.states[this.stateIndex];

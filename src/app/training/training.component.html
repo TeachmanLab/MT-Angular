@@ -1,4 +1,4 @@
-<app-session *ngIf="currentSession" [session]="currentSession" [sessions]="indicatorSessions" (done)="sessionComplete()"></app-session>
+<app-session *ngIf="currentSession && !round" [session]="currentSession" [sessions]="indicatorSessions" (done)="sessionComplete()"></app-session>
 <div *ngIf="round && !showSummary">
   <mat-card class="training">
     <mat-card-content>
@@ -6,7 +6,7 @@
         <div class="progress">
           <app-progress-bar [items]="round.scenarios"></app-progress-bar>
         </div>
-        <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" (done)="nextTraining($event)"></app-scenario>
+        <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" [session]="currentSession" (done)="nextTraining($event)"></app-scenario>
     </mat-card-content>
   </mat-card>
 </div>

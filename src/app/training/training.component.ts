@@ -61,7 +61,6 @@ export class TrainingComponent implements OnInit {
   }
 
   sessionComplete() {
-    this.currentSession = null;
     this.nextTraining();
   }
 
