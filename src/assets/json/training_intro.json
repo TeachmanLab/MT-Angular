@@ -91,6 +91,10 @@
                 "content": "In this session, you will read a series of very short stories like the one above. Pay attention because you will be asked questions about the information."
               },
               {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
                 "type": "BulletList",
                 "title": "For each page:",
                 "bullets": [
@@ -98,6 +102,7 @@
                   "Picture yourself responding as the story describes, even if you usually react differently.",
                   "Select the letter that fills in the incomplete word at the end of each paragraph.",
                   "After you fill in the word, the next screen will ask you a question about the story.",
+                  "A progress bar like the one above will show how many answers were correct on the first try.",
                   "Click the Next button once you are ready to begin."
                 ]
               }
