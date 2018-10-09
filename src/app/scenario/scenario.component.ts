@@ -64,6 +64,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   date: string;
   startTime: number;
   endTime: number;
+  initialResponseTime: number;
+  buttonPressed: string;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -125,12 +127,12 @@ export class ScenarioComponent implements OnInit, OnChanges {
       Data['stimulus'] = this.scenario.title.toString();
     }
 
-    if (this.scenario.question.buttonPressed) {
-      Data['buttonPressed'] = this.scenario.question.buttonPressed;
+    if (this.buttonPressed) {
+      Data['buttonPressed'] = this.buttonPressed;
     }
 
-    if (this.scenario.question.responseTime) {
-      Data['rt_first_react'] = this.scenario.question.responseTime - this.startTime;
+    if (this.initialResponseTime) {
+      Data['rt_first_react'] = this.initialResponseTime - this.startTime;
     } else {
       Data['rt_first_react'] = this.endTime - this.startTime;
     }
@@ -147,6 +149,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
     }
     this.recordStateData();
     this.stateData = [];
+    this.initialResponseTime = null;
+    this.buttonPressed = undefined;
     this.stateIndex++;
     if (this.stateIndex < this.states.length) {
       this.state = this.states[this.stateIndex];
@@ -159,10 +163,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   getResponseDetails(event) {
     if (typeof event === 'number') {
-      this.scenario.question.responseTime = event;
+      this.initialResponseTime = event;
     }
     if (typeof event === 'string') {
-      this.scenario.question.buttonPressed = event;
+      this.buttonPressed = event;
     }
   }
 }

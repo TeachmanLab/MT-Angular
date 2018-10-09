@@ -14,9 +14,16 @@ export class MissingLetterComponent implements OnInit {
   @Input()
   missingLetter: MissingLetter;
   word: String;
+  responseTimes: number[] = [];
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
+
+  @Output()
+  initialResponse: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  buttonPressed: EventEmitter<string> = new EventEmitter();
 
 
   letters: LetterTile[];
@@ -49,6 +56,7 @@ export class MissingLetterComponent implements OnInit {
   }
 
   selectLetter(letter) {
+    this.responseTimes.push(performance.now());
     this.missing_letter_tile.letter = letter;
     if (letter === this.correct_letter) {
       this.state = 'correct';
@@ -56,6 +64,8 @@ export class MissingLetterComponent implements OnInit {
       const waitASectionTimer = interval(1500);
       const sub = waitASectionTimer.subscribe( n => {
         console.log('Waited!');
+        this.initialResponse.emit(this.responseTimes[0]);
+        this.buttonPressed.emit(this.incorrect_choices[0]);
         this.done.emit(this.incorrect_choices.length === 0);
         sub.unsubscribe();
       });
