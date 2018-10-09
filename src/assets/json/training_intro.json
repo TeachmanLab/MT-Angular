@@ -83,7 +83,7 @@
           {
             "elements": [
               {
-                "type": "Header",
+                "type": "LargeHeader",
                 "content": "Session 1: Training Stories"
               },
               {

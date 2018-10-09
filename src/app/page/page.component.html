@@ -1,4 +1,5 @@
 <div *ngFor="let el of page.elements">
+  <h1 *ngIf="el.type === 'LargeHeader'">{{el.content}}</h1>
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
   <div *ngIf="el.type === 'Caption'"fxLayoutAlign="center"><p  class="caption">{{el.content}}</p></div>
