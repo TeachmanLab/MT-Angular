@@ -110,12 +110,22 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.endTime = performance.now();
     const Data = {date: this.date, session: this.session.title,
       device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.state,
-      step_index: this.stateIndex, stimulus: this.scenario.content, trial_type: this.scenario.type,
+      step_index: this.stateIndex, stimulus: '', trial_type: this.scenario.type,
       buttonPressed: this.scenario.buttonPressed, correct: this.correct, time_elapsed: this.endTime - this.session.startTime,
       conditioning: this.session.conditioning, study: this.session.study
     };
 
-    if (this.scenario.responseTime) {
+    if (this.state === 'question') {
+      Data['stimulus'] = this.scenario.question.question;
+    } else if (this.state === 'input') {
+      Data['stimulus'] = 'Missing Letter word: ' + this.scenario.missingLetter.word;
+    } else if (this.state === 'statements') {
+      Data['stimulus'] = this.scenario.statement;
+    } else {
+      Data['stimulus'] = this.scenario.title.toString();
+    }
+
+    if (this.scenario.question.responseTime) {
       Data['rt_first_react'] = this.scenario.responseTime - this.startTime;
     } else {
       Data['rt_first_react'] = this.endTime - this.startTime;
@@ -132,6 +142,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
       this.correct = false;
     }
     this.recordStateData();
+    this.stateData = [];
     this.stateIndex++;
     if (this.stateIndex < this.states.length) {
       this.state = this.states[this.stateIndex];
