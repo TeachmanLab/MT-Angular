@@ -83,7 +83,7 @@ export class MissingLetterComponent implements OnInit {
 
   setOptions() {
     // Calculate a set of 4 possible options for the user to select.
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.replace(this.correct_letter, '');
     const rand_index = Math.floor(Math.random() * 4);
     this.options = [];
     for (let i = 0; i < 4;) {
