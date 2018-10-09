@@ -12,7 +12,12 @@
         <app-missing-letter [missingLetter]="scenario.missingLetter"  (done)="progressState($event)"></app-missing-letter>
       </div>
       <div class="question" [@flyUpDown]="'in'" *ngIf="state==='question'">
-        <app-question [question]="scenario.question"  (done)="progressState($event)"></app-question>
+        <app-question
+          [question]="scenario.question"
+          (initialResponse)="getResponseDetails($event)"
+          (buttonPressed)="getResponseDetails($event)"
+          (done)="progressState($event)"
+        ></app-question>
       </div>
     </div>
     <button class="continue mat-button" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>

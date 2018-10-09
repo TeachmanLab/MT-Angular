@@ -125,8 +125,12 @@ export class ScenarioComponent implements OnInit, OnChanges {
       Data['stimulus'] = this.scenario.title.toString();
     }
 
+    if (this.scenario.question.buttonPressed) {
+      Data['buttonPressed'] = this.scenario.question.buttonPressed;
+    }
+
     if (this.scenario.question.responseTime) {
-      Data['rt_first_react'] = this.scenario.responseTime - this.startTime;
+      Data['rt_first_react'] = this.scenario.question.responseTime - this.startTime;
     } else {
       Data['rt_first_react'] = this.endTime - this.startTime;
     }
@@ -150,6 +154,15 @@ export class ScenarioComponent implements OnInit, OnChanges {
     } else {
       console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
       this.done.emit(this.correct);
+    }
+  }
+
+  getResponseDetails(event) {
+    if (typeof event === 'number') {
+      this.scenario.question.responseTime = event;
+    }
+    if (typeof event === 'string') {
+      this.scenario.question.buttonPressed = event;
     }
   }
 }
