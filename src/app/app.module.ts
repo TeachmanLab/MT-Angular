@@ -38,6 +38,7 @@ import { SessionIndicatorComponent } from './session-indicator/session-indicator
 const routes: Routes = [
   { path: '', redirectTo: 'control', pathMatch: 'full'},
   { path: 'training', component: TrainingComponent },
+  { path: 'training/:session', component: TrainingComponent },
   { path: 'control', component: ControlConditionComponent },
   { path: 'control/:session', component: ControlConditionComponent }
 ];

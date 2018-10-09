@@ -9,6 +9,7 @@ export interface Session {
   startTime?: number;
   conditioning: string;
   study: string;
+  trainingTitle?: string;
 }
 
 export interface Step {

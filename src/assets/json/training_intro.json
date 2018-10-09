@@ -3,6 +3,7 @@
     "title": "Introduction to CalmThinking",
     "conditioning": "Training",
     "study": "Calm Thinking",
+    "trainingTitle": "firstSession",
     "steps": [
       {
         "title": "How Does CalmThinking Work?",
@@ -86,6 +87,154 @@
                 "type": "LargeHeader",
                 "content": "Session 1: Training Stories"
               },
+              {
+                "type": "Paragraph",
+                "content": "In this session, you will read a series of very short stories like the one above. Pay attention because you will be asked questions about the information."
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "BulletList",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really imagine yourself in the situation.",
+                  "Picture yourself responding as the story describes, even if you usually react differently.",
+                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
+                  "After you fill in the word, the next screen will ask you a question about the story.",
+                  "A progress bar like the one above will show how many answers were correct on the first try.",
+                  "Click the Next button once you are ready to begin."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 2",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "trainingTitle": "secondSession",
+    "steps": [
+      {
+        "title": "Session 2: Training Stories",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "In this session, you will read a series of very short stories like the one above. Pay attention because you will be asked questions about the information."
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "BulletList",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really imagine yourself in the situation.",
+                  "Picture yourself responding as the story describes, even if you usually react differently.",
+                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
+                  "After you fill in the word, the next screen will ask you a question about the story.",
+                  "A progress bar like the one above will show how many answers were correct on the first try.",
+                  "Click the Next button once you are ready to begin."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 3",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "trainingTitle": "thirdSession",
+    "steps": [
+      {
+        "title": "Session 3: Training Stories",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "In this session, you will read a series of very short stories like the one above. Pay attention because you will be asked questions about the information."
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "BulletList",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really imagine yourself in the situation.",
+                  "Picture yourself responding as the story describes, even if you usually react differently.",
+                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
+                  "After you fill in the word, the next screen will ask you a question about the story.",
+                  "A progress bar like the one above will show how many answers were correct on the first try.",
+                  "Click the Next button once you are ready to begin."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 4",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "trainingTitle": "fourthSession",
+    "steps": [
+      {
+        "title": "Session 4: Training Stories",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "In this session, you will read a series of very short stories like the one above. Pay attention because you will be asked questions about the information."
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "BulletList",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really imagine yourself in the situation.",
+                  "Picture yourself responding as the story describes, even if you usually react differently.",
+                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
+                  "After you fill in the word, the next screen will ask you a question about the story.",
+                  "A progress bar like the one above will show how many answers were correct on the first try.",
+                  "Click the Next button once you are ready to begin."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Session 5",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "trainingTitle": "fifthSession",
+    "steps": [
+      {
+        "title": "Session 5: Training Stories",
+        "pages": [
+          {
+            "elements": [
               {
                 "type": "Paragraph",
                 "content": "In this session, you will read a series of very short stories like the one above. Pay attention because you will be asked questions about the information."

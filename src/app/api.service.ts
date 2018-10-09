@@ -31,8 +31,9 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
-  public getTrainingCSV(): Observable<Scenario[]> {
-    return this.httpClient.get('./assets/csv/firstSession.csv', {responseType: 'text'})
+  public getTrainingCSV(trainingTitle: string): Observable<Scenario[]> {
+    const url = './assets/csv/<trainingTitle>.csv'.replace('<trainingTitle>', trainingTitle);
+    return this.httpClient.get(url, {responseType: 'text'})
       .pipe((catchError(this.handleError)))
       .pipe(map(n => TrainingCSV.toJson(n)));
   }
