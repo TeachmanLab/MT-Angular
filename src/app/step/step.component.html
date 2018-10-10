@@ -1,7 +1,7 @@
 <section class="section">
   <div>
     <div>
-      <h3>{{ step.title }}</h3>
+      <h3 *ngIf="(step_index <= 0 && pageIndex <= 1)">{{ step.title }}</h3>
     </div>
     <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted($event)"></app-page>
     <div

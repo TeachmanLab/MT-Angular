@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 export class SessionComponent implements OnInit, OnChanges {
 
   @Input() session: Session;
-  sessions: Session[];
+  @Input() sessions: Session[];
   stepIndex: number;
   currentStep: Step;
 
@@ -22,11 +22,9 @@ export class SessionComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit() {
+    this.session.startTime = performance.now();
     this.stepIndex = 0;
     this.initStep();
-    this.api.getSessions().subscribe(sessions => {
-      this.sessions = sessions;
-    });
   }
 
   ngOnChanges() {
@@ -53,6 +51,15 @@ export class SessionComponent implements OnInit, OnChanges {
       this.initStep();
     } else {
       this.done.emit();
+    }
+  }
+
+  previousStep() {
+    console.log('Previous Step called, loading the previous step!');
+    this.currentStep.status = 'paused';
+    this.stepIndex--;
+    if (this.session.steps[this.stepIndex]) {
+      this.initStep();
     }
   }
 }

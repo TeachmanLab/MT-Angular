@@ -53,11 +53,21 @@ div.session {
     margin: 0;
 
     li.active {
-      font-size: 1.2em;
-      font-weight: 600;
+      font-size: 1.5em;
+      font-weight: 700;
     }
     li.error {
-      color:red;
+      color: red;
+      font-weight: 500;
+    }
+    mat-icon {
+      width: 25px;
+      height: 25px;
+      color: black;
+      padding: 2px;
+    }
+    mat-icon.error {
+      color: red;
     }
   }
 }

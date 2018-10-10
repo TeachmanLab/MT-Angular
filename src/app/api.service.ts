@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {Scenario, Session} from './interfaces';
+import {PageData, Scenario, Session} from './interfaces';
 import {TrainingCSV} from './training-csv';
 
 @Injectable()
@@ -26,16 +26,26 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
-  public getTrainingCSV(): Observable<Scenario[]> {
-    return this.httpClient.get('./assets/csv/firstSession.csv', {responseType: 'text'})
+  public getTrainingSessionIndicators(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/training_session_indicators.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getTrainingCSV(trainingTitle: string): Observable<Scenario[]> {
+    const url = './assets/csv/<trainingTitle>.csv'.replace('<trainingTitle>', trainingTitle);
+    return this.httpClient.get(url, {responseType: 'text'})
       .pipe((catchError(this.handleError)))
       .pipe(map(n => TrainingCSV.toJson(n)));
   }
 
-
   public getSessions(): Observable<any> {
     return this.httpClient.get<Session[]>('./assets/json/sessions.json')
       .pipe((catchError(this.handleError)));
+  }
+
+  addResponse(pageData: PageData[]): Observable<PageData[]> {
+    return this.httpClient.post<PageData[]>(this.endpoints.response, pageData)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {

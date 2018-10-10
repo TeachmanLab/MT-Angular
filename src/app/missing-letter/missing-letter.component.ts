@@ -14,9 +14,16 @@ export class MissingLetterComponent implements OnInit {
   @Input()
   missingLetter: MissingLetter;
   word: String;
+  responseTimes: number[] = [];
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
+
+  @Output()
+  initialResponse: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  buttonPressed: EventEmitter<string> = new EventEmitter();
 
 
   letters: LetterTile[];
@@ -49,6 +56,7 @@ export class MissingLetterComponent implements OnInit {
   }
 
   selectLetter(letter) {
+    this.responseTimes.push(performance.now());
     this.missing_letter_tile.letter = letter;
     if (letter === this.correct_letter) {
       this.state = 'correct';
@@ -56,6 +64,12 @@ export class MissingLetterComponent implements OnInit {
       const waitASectionTimer = interval(1500);
       const sub = waitASectionTimer.subscribe( n => {
         console.log('Waited!');
+        if (this.incorrect_choices[0]) {
+          this.buttonPressed.emit(this.incorrect_choices[0]);
+        } else {
+          this.buttonPressed.emit(letter);
+        }
+        this.initialResponse.emit(this.responseTimes[0]);
         this.done.emit(this.incorrect_choices.length === 0);
         sub.unsubscribe();
       });
@@ -73,7 +87,7 @@ export class MissingLetterComponent implements OnInit {
 
   setOptions() {
     // Calculate a set of 4 possible options for the user to select.
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.replace(this.correct_letter, '');
     const rand_index = Math.floor(Math.random() * 4);
     this.options = [];
     for (let i = 0; i < 4;) {

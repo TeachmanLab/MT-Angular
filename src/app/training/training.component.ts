@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ApiService} from '../api.service';
-import {Scenario, Session} from '../interfaces';
-import {environment} from '../../environments/environment';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Scenario, Session } from '../interfaces';
+import { environment } from '../../environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-training',
@@ -13,6 +14,7 @@ export class TrainingComponent implements OnInit {
   sessions: Session[];
   sessionIndex = 0;
   currentSession: Session;
+  indicatorSessions: Session[];
 
   totalRounds = 4;
   roundIndex = 0;
@@ -23,35 +25,49 @@ export class TrainingComponent implements OnInit {
 
   @Output() done: EventEmitter<any> = new EventEmitter();
 
-  constructor(private api: ApiService) {
-  }
+  constructor(
+    private api: ApiService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.loadIntro();
-    this.loadTraining();
+    this.loadIndicatorSessions();
   }
 
   loadIntro() {
     this.api.getTrainingIntroduction().subscribe(sessions => {
       this.sessions = sessions;
-      this.currentSession = this.sessions[this.sessionIndex];
+      this.route.params.subscribe(params => {
+        if (params && params.hasOwnProperty('session')) {
+          this.sessionIndex = params['session'] - 1;
+          if (this.sessions[this.sessionIndex]) {
+            this.currentSession = this.sessions[this.sessionIndex];
+          } else {
+            this.currentSession = this.sessions[0];
+          }
+        } else {
+          this.currentSession = this.sessions[this.sessionIndex];
+        }
+      });
+      this.loadTraining();
+    });
+  }
+
+  loadIndicatorSessions() {
+    this.api.getTrainingSessionIndicators().subscribe(sessions => {
+      this.indicatorSessions = sessions;
     });
   }
 
   sessionComplete() {
-    this.sessionIndex++;
-    if (this.sessionIndex < this.sessions.length) {
-      this.currentSession = this.sessions[this.sessionIndex];
-    } else {
-      this.currentSession = null;
-      this.nextTraining();
-    }
+    this.nextTraining();
   }
 
 
   loadTraining() {
     // Pull the training from the api, split it into a series of rounds
-    this.api.getTrainingCSV().subscribe(scenarios => {
+    this.api.getTrainingCSV(this.currentSession.trainingTitle).subscribe(scenarios => {
       let index = 0;
       const increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
@@ -59,7 +75,7 @@ export class TrainingComponent implements OnInit {
         this.rounds.push(new Round(scenarios.slice(index, index + increment)));
         index += increment;
       }
-      if (index < scenarios.length - 1) {
+      if (index < scenarios.length) {
         this.rounds.push(new Round(scenarios.slice(index)));
       }
       this.totalRounds = this.rounds.length;
@@ -88,10 +104,10 @@ export class TrainingComponent implements OnInit {
 
   nextRound() {
     this.showSummary = false;
-    this.roundIndex++;
     if (this.isComplete()) {
       this.done.emit();
     } else {
+      this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
     }
 

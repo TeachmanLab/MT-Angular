@@ -7,8 +7,17 @@
       </div>
     </div>
     <div *ngIf="steps" class="steps">
-      <ul *ngFor="let step of session.steps">
-        <li class="{{step.status}}">{{step.title}}</li>
+      <ul
+        *ngFor="let step of session.steps"
+      >
+        <li
+          class="{{step.status}}"
+          fxLayoutAlign="auto center"
+        >
+          {{step.title}}
+          <mat-icon *ngIf="step.status === 'error'" style="color: red">highlight_off</mat-icon>
+          <mat-icon *ngIf="step.status === 'complete'">check_circle</mat-icon>
+        </li>
       </ul>
     </div>
 </div>

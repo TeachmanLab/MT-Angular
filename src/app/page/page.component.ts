@@ -28,7 +28,7 @@ export class PageComponent implements OnChanges {
   markStaticComponentsComplete() {
     for (const element of this.page.elements) {
       // console.log(element.type);
-      if (['Paragraph', 'References', 'Image', 'Header', 'Caption'].includes(element.type)) {
+      if (['Paragraph', 'References', 'Image', 'LargeHeader', 'Header', 'Caption'].includes(element.type)) {
         // console.log(`completing a ${element.type}`);
         this.divCompleted();
       }
@@ -43,6 +43,19 @@ export class PageComponent implements OnChanges {
     this.pageIndex++;
     if (this.pageIndex === this.numPages) {
       this.done.emit(correct);
+    }
+  }
+
+  getResponseDetails(event) {
+    for (const element of this.page.elements) {
+      if (['Question', 'ThoughtBubble'].includes(element.type)) {
+        if (typeof event === 'number') {
+          element.responseTime = event;
+        }
+        if (typeof event === 'string') {
+          element.buttonPressed = event;
+        }
+      }
     }
   }
 }

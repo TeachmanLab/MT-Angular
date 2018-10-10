@@ -1,14 +1,18 @@
-<mat-card class="training">
-  <mat-card-content>
-    <app-session *ngIf="currentSession" [session]="currentSession" (done)="sessionComplete()"></app-session>
-    <div *ngIf="round">
-      <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
-      <div class="progress">
-        <app-progress-bar [items]="round.scenarios"></app-progress-bar>
-      </div>
-      <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" (done)="nextTraining($event)"></app-scenario>
-      </div>
-    <div *ngIf="showSummary">
+<app-session *ngIf="currentSession && !round" [session]="currentSession" [sessions]="indicatorSessions" (done)="sessionComplete()"></app-session>
+<div *ngIf="round && !showSummary">
+  <mat-card class="training">
+    <mat-card-content>
+        <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
+        <div class="progress">
+          <app-progress-bar [items]="round.scenarios"></app-progress-bar>
+        </div>
+        <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" [scenarioIndex]="round.index" [session]="currentSession" (done)="nextTraining($event)"></app-scenario>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="showSummary && !isComplete()">
+  <mat-card class="training">
+    <mat-card-content>
       <img class="summaryImage" src="./assets/lemon.png"/>
       <div class="summary">
         <div class="text">
@@ -18,8 +22,14 @@
         </div>
         <div class="spacer"></div>
         <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
-        <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="close()">Continue</button>
+        <!--<button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="close()">Continue</button>-->
       </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="isComplete()">
+  <mat-card>
+    <h1>Complete!</h1>
+    <h5>You have completed <i>{{currentSession.title}}</i></h5>
+  </mat-card>
+</div>

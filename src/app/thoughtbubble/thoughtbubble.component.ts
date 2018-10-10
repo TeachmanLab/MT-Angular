@@ -19,10 +19,14 @@ export class ThoughtbubbleComponent implements OnInit {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
+  @Output()
+  initialResponse: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
     this.states = ['thought', 'followup'];
+    this.thoughtBubble.content = this.thoughtBubble.thought; // for populating pageData
     this.init();
   }
 
@@ -37,7 +41,7 @@ export class ThoughtbubbleComponent implements OnInit {
     this.numStates = this.states.length;
     this.stateIndex = 0;
     this.currentState = this.states[0];
-    console.log('The current state is ' + this.currentState);
+    // console.log('The current state is ' + this.currentState);
   }
 
   continueButtonVisible() {
@@ -45,6 +49,7 @@ export class ThoughtbubbleComponent implements OnInit {
   }
 
   progressState() {
+    this.initialResponse.emit(performance.now());
     this.stateIndex++;
     window.scrollTo(0, 0);
     if (this.stateIndex < this.numStates) {

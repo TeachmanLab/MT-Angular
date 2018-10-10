@@ -9,7 +9,7 @@ import { Highlight } from '../interfaces'
 export class HighlightComponent implements OnInit {
 
   @Input()
-  highlight: Highlight
+  highlight: Highlight;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -17,6 +17,7 @@ export class HighlightComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.highlight.content = this.highlight.title + ' ' + this.highlight.highlight; // for populating pageData
     this.allDone();
   }
 

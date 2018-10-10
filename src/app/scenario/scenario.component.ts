@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
-import {Scenario} from '../interfaces';
+import {PageData, Scenario, Session} from '../interfaces';
 import {interval} from 'rxjs';
 
 @Component({
@@ -53,10 +53,22 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   @Input()
   scenario: Scenario;
+  @Input()
+  scenarioIndex: number;
+  @Input()
+  session: Session;
+
   states = ['intro', 'statements'];
   stateIndex = 0;
   state = this.states[0];
-  correct: boolean;
+  stateData: PageData[] = [];
+  scenarioCorrect: boolean;
+  stateCorrect: boolean;
+  date: string;
+  startTime: number;
+  endTime: number;
+  initialResponseTime: number;
+  buttonPressed: string;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -85,7 +97,11 @@ export class ScenarioComponent implements OnInit, OnChanges {
   init() {
     this.stateIndex = 0;
     this.state = this.states[0];
-    this.correct = true;
+    this.scenarioCorrect = true;
+    this.stateCorrect = true;
+    this.stateData = [];
+    this.date = new Date().toString();
+    this.startTime = performance.now();
   }
 
   continueButtonVisible() {
@@ -96,15 +112,67 @@ export class ScenarioComponent implements OnInit, OnChanges {
     return(this.state === 'statements' || this.state === 'input');
   }
 
+  recordStateData() {
+    this.endTime = performance.now();
+    const Data = {date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title.toString(),
+      step_index: this.scenarioIndex, stimulus: '', trial_type: this.state, buttonPressed: this.scenario.buttonPressed,
+      correct: this.stateCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+      study: this.session.study
+    };
+
+    if (this.state === 'question') {
+      Data['stimulus'] = this.scenario.question.question;
+    } else if (this.state === 'input') {
+      Data['stimulus'] = 'Missing Letter word: ' + this.scenario.missingLetter.word;
+    } else if (this.state === 'statements') {
+      Data['stimulus'] = this.scenario.statement;
+    } else {
+      Data['stimulus'] = this.scenario.title.toString();
+    }
+
+    if (this.buttonPressed) {
+      Data['buttonPressed'] = this.buttonPressed;
+    }
+
+    if (this.initialResponseTime) {
+      Data['rt_first_react'] = this.initialResponseTime - this.startTime;
+    } else {
+      Data['rt_first_react'] = this.endTime - this.startTime;
+    }
+
+    this.stateData.push(Data);
+
+    console.log('pageData', this.stateData);
+    // this.api.addResponse(this.stateData);
+  }
+
   progressState(correctAnswer = true) {
-    if (!correctAnswer) this.correct = false;
+    if (!correctAnswer) {
+      this.scenarioCorrect = false;
+      this.stateCorrect = false;
+    }
+    this.recordStateData();
+    this.stateData = [];
+    this.initialResponseTime = null;
+    this.buttonPressed = undefined;
+    this.stateCorrect = true;
     this.stateIndex++;
     if (this.stateIndex < this.states.length) {
       this.state = this.states[this.stateIndex];
       console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
     } else {
       console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
-      this.done.emit(this.correct);
+      this.done.emit(this.scenarioCorrect);
+    }
+  }
+
+  getResponseDetails(event) {
+    if (typeof event === 'number') {
+      this.initialResponseTime = event;
+    }
+    if (typeof event === 'string') {
+      this.buttonPressed = event;
     }
   }
 }
