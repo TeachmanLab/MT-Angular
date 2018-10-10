@@ -8,7 +8,7 @@
       <div class="statement" [@flyUpDown]="'in'" *ngIf="showStatement()">
         <mat-card class="statement"><app-statement [statement]="scenario.statement" (doneTyping)="progressState()"></app-statement></mat-card>
       </div>
-      <div class="letters" [@flyUpDown]="'in'" *ngIf="state==='input'">
+      <div class="letters" [@flyUpDown]="'in'" *ngIf="state==='MissingLetter'">
         <app-missing-letter
           [missingLetter]="scenario.missingLetter"
           (initialResponse)="getResponseDetails($event)"
@@ -16,7 +16,7 @@
           (done)="progressState($event)"
         ></app-missing-letter>
       </div>
-      <div class="question" [@flyUpDown]="'in'" *ngIf="state==='question'">
+      <div class="question" [@flyUpDown]="'in'" *ngIf="state==='Question'">
         <app-question
           [question]="scenario.question"
           (initialResponse)="getResponseDetails($event)"

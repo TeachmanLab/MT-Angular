@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
-import {PageData, Scenario, Session} from '../interfaces';
+import {Page, PageData, Scenario, Session} from '../interfaces';
 import {interval} from 'rxjs';
 
 @Component({
@@ -58,12 +58,12 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   session: Session;
 
-  states = ['intro', 'statements'];
-  stateIndex = 0;
-  state = this.states[0];
-  stateData: PageData[] = [];
+  pageIndex = 0;
+  currentPage: Page;
+  state: string;
+  pageData: PageData[] = [];
   scenarioCorrect: boolean;
-  stateCorrect: boolean;
+  pageCorrect: boolean;
   date: string;
   startTime: number;
   endTime: number;
@@ -76,17 +76,12 @@ export class ScenarioComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    if (this.scenario.missingLetter) {
-      this.states[this.states.length] = 'input';
-    }
-    if (this.scenario.question) {
-      this.states[this.states.length] = 'question';
-    }
-
     this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    this.currentPage = this.scenario.pages[0];
+    this.state = this.currentPage.elements[0].type;
     if (!changes.scenario.isFirstChange()) {
       console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
@@ -95,11 +90,12 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   init() {
-    this.stateIndex = 0;
-    this.state = this.states[0];
+    this.pageIndex = 0;
+    this.currentPage = this.scenario.pages[0];
+    this.state = this.currentPage.elements[0].type;
     this.scenarioCorrect = true;
-    this.stateCorrect = true;
-    this.stateData = [];
+    this.pageCorrect = true;
+    this.pageData = [];
     this.date = new Date().toString();
     this.startTime = performance.now();
   }
@@ -109,26 +105,26 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   showStatement() {
-    return(this.state === 'statements' || this.state === 'input');
+    return(this.state === 'statements' || this.state === 'MissingLetter');
   }
 
   recordStateData() {
     this.endTime = performance.now();
     const Data = {date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
-      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title.toString(),
+      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title,
       step_index: this.scenarioIndex, stimulus: '', trial_type: this.state, buttonPressed: this.scenario.buttonPressed,
-      correct: this.stateCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+      correct: this.pageCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
       study: this.session.study
     };
 
-    if (this.state === 'question') {
+    if (this.state === 'Question') {
       Data['stimulus'] = this.scenario.question.question;
-    } else if (this.state === 'input') {
+    } else if (this.state === 'MissingLetter') {
       Data['stimulus'] = 'Missing Letter word: ' + this.scenario.missingLetter.word;
     } else if (this.state === 'statements') {
       Data['stimulus'] = this.scenario.statement;
     } else {
-      Data['stimulus'] = this.scenario.title.toString();
+      Data['stimulus'] = this.scenario.title;
     }
 
     if (this.buttonPressed) {
@@ -141,28 +137,29 @@ export class ScenarioComponent implements OnInit, OnChanges {
       Data['rt_first_react'] = this.endTime - this.startTime;
     }
 
-    this.stateData.push(Data);
+    this.pageData.push(Data);
 
-    console.log('pageData', this.stateData);
-    // this.api.addResponse(this.stateData);
+    console.log('pageData', this.pageData);
+    // this.api.addResponse(this.pageData);
   }
 
   progressState(correctAnswer = true) {
     if (!correctAnswer) {
       this.scenarioCorrect = false;
-      this.stateCorrect = false;
+      this.pageCorrect = false;
     }
     this.recordStateData();
-    this.stateData = [];
+    this.pageData = [];
     this.initialResponseTime = null;
     this.buttonPressed = undefined;
-    this.stateCorrect = true;
-    this.stateIndex++;
-    if (this.stateIndex < this.states.length) {
-      this.state = this.states[this.stateIndex];
-      console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
+    this.pageCorrect = true;
+    this.pageIndex++;
+    if (this.pageIndex < this.scenario.pages.length) {
+      this.currentPage = this.scenario.pages[this.pageIndex];
+      this.state = this.currentPage.elements[0].type;
+      console.log('The page index is ' + this.pageIndex + '.  The state is ' + this.state);
     } else {
-      console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
+      console.log('The scenario is complete.' + this.pageIndex + '.  The state is ' + this.state);
       this.done.emit(this.scenarioCorrect);
     }
   }
