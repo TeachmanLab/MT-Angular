@@ -10,7 +10,7 @@
     </mat-card-content>
   </mat-card>
 </div>
-<div *ngIf="showSummary">
+<div *ngIf="showSummary && !isComplete()">
   <mat-card class="training">
     <mat-card-content>
       <img class="summaryImage" src="./assets/lemon.png"/>
@@ -22,8 +22,14 @@
         </div>
         <div class="spacer"></div>
         <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
-        <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="close()">Continue</button>
+        <!--<button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="close()">Continue</button>-->
       </div>
     </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="isComplete()">
+  <mat-card>
+    <h1>Complete!</h1>
+    <h5>You have completed <i>{{currentSession.title}}</i></h5>
   </mat-card>
 </div>
