@@ -21,13 +21,16 @@ export class TrainingCSV {
           console.log(`Skipping line #${i}:  ${lines[i]}`);
           continue;
         }
-        missingLetter = {word: currentLine[2]};
+
+        const intro = {type: 'intro', content: currentLine[1]};
+        const statement = {type: 'statements', content: currentLine[3]};
+        missingLetter = {type: 'MissingLetter', word: currentLine[2]};
         question = {type: 'Question', question: currentLine[4], answer: currentLine[5], options: ['Yes', 'No']};
         image = `assets/training_images/${currentLine[0]}.jpg`;
         scenario = {
-          type: 'Scenario',
-          title: currentLine[1], image: image, statement: currentLine[3],
-          missingLetter: missingLetter, question: question
+          type: 'Scenario', title: currentLine[1], image: image, statement: currentLine[3],
+          pages: [{elements: [intro]}, {elements: [statement]}, {elements: [missingLetter]}, {elements: [question]}],
+          missingLetter: missingLetter, question: question, stepIndicator: image,
         };
         result.push(scenario);
       }

@@ -20,6 +20,15 @@ export interface Step {
   status?: string;
 }
 
+export interface Scenario extends Step {
+  type: 'Scenario';
+  image: string;
+  statement: string;
+  missingLetter?: MissingLetter;
+  question?: Question;
+  buttonPressed?: string;
+}
+
 export interface Page {
   elements: Element[];
 }
@@ -31,17 +40,8 @@ export interface Element {
   buttonPressed?: string;
 }
 
-export interface Scenario extends Element {
-  type: 'Scenario';
-  title: String;
-  image: string;
-  statement: string;
-  missingLetter?: MissingLetter;
-  question?: Question;
-  status?: string; // So it can be used in progress component as a progress item.
-}
-
-export interface MissingLetter {
+export interface MissingLetter extends Element {
+  type: 'MissingLetter';
   word: string;
 }
 
