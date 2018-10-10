@@ -54,6 +54,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   scenario: Scenario;
   @Input()
+  scenarioIndex: number;
+  @Input()
   session: Session;
 
   states = ['intro', 'statements'];
@@ -111,8 +113,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   recordStateData() {
     this.endTime = performance.now();
     const Data = {date: this.date, session: this.session.title,
-      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.state,
-      step_index: this.stateIndex, stimulus: '', trial_type: this.scenario.type,
+      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title.toString(),
+      step_index: this.scenarioIndex, stimulus: '', trial_type: this.state,
       buttonPressed: this.scenario.buttonPressed, correct: this.correct, time_elapsed: this.endTime - this.session.startTime,
       conditioning: this.session.conditioning, study: this.session.study
     };

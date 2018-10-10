@@ -6,7 +6,7 @@
         <div class="progress">
           <app-progress-bar [items]="round.scenarios"></app-progress-bar>
         </div>
-        <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" [session]="currentSession" (done)="nextTraining($event)"></app-scenario>
+        <app-scenario *ngIf="round.scenario" [scenario]="round.scenario" [scenarioIndex]="round.index" [session]="currentSession" (done)="nextTraining($event)"></app-scenario>
     </mat-card-content>
   </mat-card>
 </div>

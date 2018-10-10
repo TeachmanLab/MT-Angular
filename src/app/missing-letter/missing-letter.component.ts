@@ -64,8 +64,12 @@ export class MissingLetterComponent implements OnInit {
       const waitASectionTimer = interval(1500);
       const sub = waitASectionTimer.subscribe( n => {
         console.log('Waited!');
+        if (this.incorrect_choices[0]) {
+          this.buttonPressed.emit(this.incorrect_choices[0]);
+        } else {
+          this.buttonPressed.emit(letter);
+        }
         this.initialResponse.emit(this.responseTimes[0]);
-        this.buttonPressed.emit(this.incorrect_choices[0]);
         this.done.emit(this.incorrect_choices.length === 0);
         sub.unsubscribe();
       });
