@@ -114,11 +114,11 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   recordStateData() {
     this.endTime = performance.now();
-    const Data = {date: this.date, session: this.session.title,
+    const Data = {date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
       device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title.toString(),
-      step_index: this.scenarioIndex, stimulus: '', trial_type: this.state,
-      buttonPressed: this.scenario.buttonPressed, correct: this.stateCorrect, time_elapsed: this.endTime - this.session.startTime,
-      conditioning: this.session.conditioning, study: this.session.study
+      step_index: this.scenarioIndex, stimulus: '', trial_type: this.state, buttonPressed: this.scenario.buttonPressed,
+      correct: this.stateCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+      study: this.session.study
     };
 
     if (this.state === 'question') {

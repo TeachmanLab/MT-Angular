@@ -1,5 +1,6 @@
 
 export interface Session {
+  session: string; // the name used on the back end, such as firstSession, etc.
   title: string;
   subTitle: String;
   sessionIndicator: string;
@@ -79,6 +80,7 @@ export interface BulletList extends Element {
 export interface PageData {
   date: string;
   session: string;
+  sessionTitle: string;
   conditioning: string;
   study: string;
   step_title: string;
