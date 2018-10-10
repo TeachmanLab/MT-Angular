@@ -1,6 +1,8 @@
 [
   {
-    "title": "Introduction to CalmThinking & Session 1: Training Stories",
+    "session": "firstSession",
+    "title": "Introduction to CalmThinking & Session 1",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "trainingTitle": "firstSession",
@@ -114,7 +116,9 @@
     ]
   },
   {
-    "title": "Session 2: Training Stories",
+    "session": "secondSession",
+    "title": "Session 2",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "trainingTitle": "secondSession",
@@ -151,7 +155,9 @@
     ]
   },
   {
-    "title": "Session 3: Training Stories",
+    "session": "thirdSession",
+    "title": "Session 3",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "trainingTitle": "thirdSession",
@@ -188,7 +194,9 @@
     ]
   },
   {
-    "title": "Session 4: Training Stories",
+    "session": "fourthSession",
+    "title": "Session 4",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "trainingTitle": "fourthSession",
@@ -225,7 +233,9 @@
     ]
   },
   {
-    "title": "Session 5: Training Stories",
+    "session": "fifthSession",
+    "title": "Session 5",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "trainingTitle": "fifthSession",

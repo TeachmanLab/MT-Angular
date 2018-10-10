@@ -1,5 +1,6 @@
 [
   {
+    "session": "introSession",
     "title": "Introduction to CalmThinking",
     "conditioning": "Control",
     "study": "Calm Thinking",
@@ -85,6 +86,7 @@
     ]
   },
   {
+    "session": "firstSession",
     "title": "Session 1",
     "subTitle": "Introduction to Anxiety",
     "sessionIndicator": "session1",
@@ -233,6 +235,7 @@
     ]
   },
   {
+    "session": "secondSession",
     "title": "Session 2",
     "subTitle": "Symptoms and Disorders",
     "sessionIndicator": "session2",
@@ -479,6 +482,7 @@
     ]
   },
   {
+    "session": "thirdSession",
     "title": "Session 3",
     "subTitle": "Prevalence, Causes, and Maintenance",
     "sessionIndicator": "session3",
@@ -726,6 +730,7 @@
     ]
   },
   {
+    "session": "fourthSession",
     "title": "Session 4",
     "subTitle": "Impact of Anxiety",
     "sessionIndicator": "session4",
@@ -917,6 +922,7 @@
     ]
   },
   {
+    "session": "fifthSession",
     "title": "Session 5",
     "subTitle": "Managing Anxiety",
     "sessionIndicator": "session5",
