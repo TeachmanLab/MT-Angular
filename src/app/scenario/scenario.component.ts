@@ -62,7 +62,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   stateIndex = 0;
   state = this.states[0];
   stateData: PageData[] = [];
-  correct: boolean;
+  scenarioCorrect: boolean;
+  stateCorrect: boolean;
   date: string;
   startTime: number;
   endTime: number;
@@ -96,7 +97,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   init() {
     this.stateIndex = 0;
     this.state = this.states[0];
-    this.correct = true;
+    this.scenarioCorrect = true;
+    this.stateCorrect = true;
     this.stateData = [];
     this.date = new Date().toString();
     this.startTime = performance.now();
@@ -115,7 +117,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     const Data = {date: this.date, session: this.session.title,
       device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title.toString(),
       step_index: this.scenarioIndex, stimulus: '', trial_type: this.state,
-      buttonPressed: this.scenario.buttonPressed, correct: this.correct, time_elapsed: this.endTime - this.session.startTime,
+      buttonPressed: this.scenario.buttonPressed, correct: this.stateCorrect, time_elapsed: this.endTime - this.session.startTime,
       conditioning: this.session.conditioning, study: this.session.study
     };
 
@@ -147,19 +149,21 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   progressState(correctAnswer = true) {
     if (!correctAnswer) {
-      this.correct = false;
+      this.scenarioCorrect = false;
+      this.stateCorrect = false;
     }
     this.recordStateData();
     this.stateData = [];
     this.initialResponseTime = null;
     this.buttonPressed = undefined;
+    this.stateCorrect = true;
     this.stateIndex++;
     if (this.stateIndex < this.states.length) {
       this.state = this.states[this.stateIndex];
       console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
     } else {
       console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
-      this.done.emit(this.correct);
+      this.done.emit(this.scenarioCorrect);
     }
   }
 
