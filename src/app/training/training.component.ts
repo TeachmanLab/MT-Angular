@@ -75,7 +75,7 @@ export class TrainingComponent implements OnInit {
         this.rounds.push(new Round(scenarios.slice(index, index + increment)));
         index += increment;
       }
-      if (index < scenarios.length - 1) {
+      if (index < scenarios.length) {
         this.rounds.push(new Round(scenarios.slice(index)));
       }
       this.totalRounds = this.rounds.length;
@@ -104,10 +104,10 @@ export class TrainingComponent implements OnInit {
 
   nextRound() {
     this.showSummary = false;
-    this.roundIndex++;
     if (this.isComplete()) {
       this.done.emit();
     } else {
+      this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
     }
 
