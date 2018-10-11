@@ -64,7 +64,6 @@ export interface ThoughtBubble extends Element {
 
 export interface Highlight extends Element {
   type: 'Highlight';
-  colorClass: string;
   title: string;
   highlight: string;
   icon: string;
