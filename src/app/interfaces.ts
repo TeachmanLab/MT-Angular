@@ -75,20 +75,21 @@ export interface BulletList extends Element {
   bullets: string[];
 }
 
+// This is how we collect data as participants move through the sessions.
 export interface PageData {
-  date: string;
-  session: string;
-  sessionTitle: string;
-  conditioning: string;
-  study: string;
-  step_title: string;
-  step_index: number;
-  trial_type: string;
-  stimulus: string | string[];
-  button_pressed?: string;
-  correct?: boolean;
-  device: string;
-  rt: number;
-  rt_first_react: number;
-  time_elapsed: number;
+  date: string; // Date and time at the moment of beginning the page
+  session: string; // The back end id (firstSession)
+  sessionTitle: string; // The title and subtitle of the session that is displayed to the user (Session 1: Introduction to Anxiety)
+  conditioning: string; // The user group that determines which sessions are shown (Control or Training)
+  study: string; // The study being completed (Calm Thinking)
+  step_title: string; // The title of the current step (Anxiety Disorders)
+  step_index: number; // The index number of the step in the context of all the steps in the session (2)
+  trial_type: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
+  stimulus: string | string[]; // The content of the stimulus, such as the actual paragraph or question text
+  button_pressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
+  correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
+  device: string; // Device used to complete the exercise
+  rt: number; // Response time from starting the page to completing the page in milliseconds
+  rt_first_react: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in milliseconds
+  time_elapsed: number; // Time from the beginning of the session to the end of the current page in milliseconds
 }
