@@ -24,7 +24,6 @@ export interface Scenario extends Step {
   statement: string;
   missingLetter?: MissingLetter;
   question?: Question;
-  buttonPressed?: string;
 }
 
 export interface Page {
