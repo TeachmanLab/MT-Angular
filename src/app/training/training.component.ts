@@ -36,7 +36,7 @@ export class TrainingComponent implements OnInit {
   }
 
   loadIntro() {
-    this.api.getTrainingIntroduction().subscribe(sessions => {
+    this.api.getTrainingSessions().subscribe(sessions => {
       this.sessions = sessions;
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {

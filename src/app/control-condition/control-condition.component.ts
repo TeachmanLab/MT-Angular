@@ -29,7 +29,7 @@ export class ControlConditionComponent implements OnInit {
   }
 
   setCurrentSession () {
-    this.api.getSessions().subscribe(sessions => {
+    this.api.getControlSessions().subscribe(sessions => {
       this.sessions = sessions;
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
