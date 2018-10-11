@@ -67,7 +67,7 @@ export class TrainingComponent implements OnInit {
 
   loadTraining() {
     // Pull the training from the api, split it into a series of rounds
-    this.api.getTrainingCSV(this.currentSession.trainingTitle).subscribe(scenarios => {
+    this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
       const increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];

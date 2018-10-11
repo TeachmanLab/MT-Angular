@@ -4,13 +4,11 @@ export interface Session {
   title: string;
   subTitle: String;
   sessionIndicator: string;
-  allSteps: string;
   description: string[];
   steps: Step[];
   startTime?: number;
   conditioning: string;
   study: string;
-  trainingTitle?: string;
 }
 
 export interface Step {
