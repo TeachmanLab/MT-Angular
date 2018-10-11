@@ -63,7 +63,19 @@ export class StepComponent implements OnInit, OnChanges {
 
   prevPageButtonVisible() {
     // This should disable the 'previous' button on the first page of the session only.
-      return (!(this.step_index <= 0 && this.pageIndex <= 0));
+      return (!(this.step_index <= 0 && this.pageIndex <= 0) && this.allowPrevious());
+  }
+
+  allowPrevious() {
+    // it is important to step the user through questions with no answer so that we don't get multiple responses per question.
+    // if there is no answer set on a question, this will return false, otherwise true.
+    for (const element of this.currentPage.elements) {
+      if (element.type === 'Question') {
+        return element.answer;
+      } else {
+        return true;
+      }
+    }
   }
 
   pageCompleted(allCorrect= true) {

@@ -38,6 +38,7 @@ export interface Element {
   content?: string | string[];
   responseTime?: number;
   buttonPressed?: string;
+  answer?: string;
 }
 
 export interface MissingLetter extends Element {
