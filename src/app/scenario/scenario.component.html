@@ -1,29 +1,13 @@
 
 <div class="scenario">
-    <div class="title" class="title" [@titleState]="state" >{{scenario.title}}</div>
-    <div class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
-         [@imageState]="state">
+  <div class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
+       [@imageState]="state">
+  </div>
+  <div class="display-area">
+    <div class="statement" [@flyUpDown]="'in'" *ngIf="showStatement()">
+      <mat-card class="statement"><app-statement [statement]="scenario.statement" (doneTyping)="progressState()"></app-statement></mat-card>
     </div>
-    <div class="display-area">
-      <div class="statement" [@flyUpDown]="'in'" *ngIf="showStatement()">
-        <mat-card class="statement"><app-statement [statement]="scenario.statement" (doneTyping)="progressState()"></app-statement></mat-card>
-      </div>
-      <div class="letters" [@flyUpDown]="'in'" *ngIf="state==='MissingLetter'">
-        <app-missing-letter
-          [missingLetter]="scenario.missingLetter"
-          (initialResponse)="getResponseDetails($event)"
-          (buttonPressed)="getResponseDetails($event)"
-          (done)="progressState($event)"
-        ></app-missing-letter>
-      </div>
-      <div class="question" [@flyUpDown]="'in'" *ngIf="state==='Question'">
-        <app-question
-          [question]="scenario.question"
-          (initialResponse)="getResponseDetails($event)"
-          (buttonPressed)="getResponseDetails($event)"
-          (done)="progressState($event)"
-        ></app-question>
-      </div>
-    </div>
-    <button class="continue mat-button" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>
+    <app-page *ngIf="currentPage && state != 'Statements'" [page]="currentPage" (done)="progressState($event)"></app-page>
+  </div>
+  <button class="continue mat-button" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>
 </div>

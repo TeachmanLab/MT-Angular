@@ -22,9 +22,9 @@ export class TrainingCSV {
           continue;
         }
 
-        const intro = {type: 'intro', content: currentLine[1]};
-        const statement = {type: 'statements', content: currentLine[3]};
-        missingLetter = {type: 'MissingLetter', word: currentLine[2]};
+        const intro = {type: 'Intro', content: currentLine[1]};
+        const statement = {type: 'Statements', content: currentLine[3]};
+        missingLetter = {type: 'MissingLetter', word: currentLine[2], content: currentLine[2]}; // setting content as well as word in order to populate pageData stimulus field.
         question = {type: 'Question', question: currentLine[4], answer: currentLine[5], options: ['Yes', 'No']};
         image = `assets/training_images/${currentLine[0]}.jpg`;
         scenario = {
