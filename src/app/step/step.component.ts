@@ -68,14 +68,16 @@ export class StepComponent implements OnInit, OnChanges {
 
   allowPrevious() {
     // it is important to step the user through questions with no answer so that we don't get multiple responses per question.
-    // if there is no answer set on a question, this will return false, otherwise true.
-    for (const element of this.currentPage.elements) {
+    // in order to do this we should look at the elements on the current and previous page and disable the previous button when appropriate.
+    // if there is a question on a previous page and no answer is set on that question, this will return false, otherwise true.
+    const previousPage = this.step.pages[this.pageIndex - 1];
+    const elements = this.currentPage.elements.concat(previousPage.elements);
+    for (const element of elements) {
       if (element.type === 'Question') {
         return element.answer;
-      } else {
-        return true;
       }
     }
+    return true;
   }
 
   pageCompleted(allCorrect= true) {
