@@ -1,18 +1,18 @@
 [
   {
     "session": "introSession",
-    "title": "Introduction to CalmThinking",
+    "title": "Introduction to Calm Thinking",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "How Does CalmThinking Work?",
+        "title": "How Does Calm Thinking Work?",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "The CalmThinking program is five sessions. You will complete one session a week, and each session takes about 15 minutes or fewer. You will also answer some questions as part of our research study so we can evaluate how well the program works."
+                "content": "The Calm Thinking program is five sessions. You will complete one session a week, and each session takes about 15 minutes or fewer. You will also answer some questions as part of our research study so we can evaluate how well the program works."
               },
               {
                 "type": "Paragraph",
