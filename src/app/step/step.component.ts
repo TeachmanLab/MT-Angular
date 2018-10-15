@@ -104,7 +104,7 @@ export class StepComponent implements OnInit, OnChanges {
     for (const el of this.currentPage.elements) {
       const elData = {session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
-        step_index: this.step_index, stimulus: el.content, trial_type: el.type, buttonPressed: '',
+        step_index: this.step_index, stimulus: '', trial_type: el.type, buttonPressed: '',
         correct: this.elementCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
         study: this.session.study, session_counter: this.page_counter +  '.' + this.element_counter
       };
@@ -117,6 +117,12 @@ export class StepComponent implements OnInit, OnChanges {
 
       if (el.buttonPressed) {
         elData['buttonPressed'] = el.buttonPressed;
+      }
+
+      if (el.content instanceof Array) {
+        elData['stimulus'] = el.content.join(', ');
+      } else {
+        elData['stimulus'] = el.content;
       }
 
       this.element_counter++;

@@ -83,7 +83,7 @@ export interface PageData {
   step_title: string; // The title of the current step (Anxiety Disorders)
   step_index: number; // The index number of the step in the context of all the steps in the session (2)
   trial_type: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
-  stimulus: string | string[]; // The content of the stimulus, such as the actual paragraph or question text
+  stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
   button_pressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
   correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
   device: string; // Device used to complete the exercise
