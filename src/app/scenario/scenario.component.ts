@@ -63,7 +63,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
   pageData: PageData[] = [];
   scenarioCorrect: boolean;
   pageCorrect: boolean;
-  date: string;
   startTime: number;
   endTime: number;
   page_counter: number;
@@ -100,7 +99,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.scenarioCorrect = true;
     this.pageCorrect = true;
     this.pageData = [];
-    this.date = new Date().toString();
     this.startTime = performance.now();
     window.scrollTo(0, 0);
   }
@@ -117,7 +115,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
       const Data = {
-        date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+        session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title,
         step_index: this.scenarioIndex, stimulus: el.content, trial_type: this.state, buttonPressed: el.buttonPressed,
         correct: this.pageCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,

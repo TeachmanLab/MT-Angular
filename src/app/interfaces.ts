@@ -76,7 +76,6 @@ export interface BulletList extends Element {
 
 // This is how we collect data as participants move through the sessions.
 export interface PageData {
-  date: string; // Date and time at the moment of beginning the page
   session: string; // The back end id (firstSession)
   sessionTitle: string; // The title and subtitle of the session that is displayed to the user (Session 1: Introduction to Anxiety)
   conditioning: string; // The user group that determines which sessions are shown (Control or Training)

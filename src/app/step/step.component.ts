@@ -19,7 +19,6 @@ export class StepComponent implements OnInit, OnChanges {
   startFromEnd = false;
   stepCorrect = true;
   elementCorrect = true;
-  date: string;
   startTime: number;
   endTime: number;
   page_counter: number;
@@ -53,7 +52,6 @@ export class StepComponent implements OnInit, OnChanges {
 
   initPage() {
     this.pageData = [];
-    this.date = new Date().toString();
     this.startTime = performance.now();
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
@@ -104,7 +102,7 @@ export class StepComponent implements OnInit, OnChanges {
   recordPageData() {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
-      const elData = {date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+      const elData = {session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
         step_index: this.step_index, stimulus: el.content, trial_type: el.type, buttonPressed: el.buttonPressed,
         correct: this.elementCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
