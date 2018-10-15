@@ -102,6 +102,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.pageData = [];
     this.date = new Date().toString();
     this.startTime = performance.now();
+    window.scrollTo(0, 0);
   }
 
   continueButtonVisible() {
@@ -156,5 +157,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
       console.log('The scenario is complete.' + this.pageIndex + '.  The state is ' + this.state);
       this.done.emit(this.scenarioCorrect);
     }
+    window.scrollTo(0, 0);
   }
 }
