@@ -22,6 +22,8 @@ export class StepComponent implements OnInit, OnChanges {
   date: string;
   startTime: number;
   endTime: number;
+  page_counter: number;
+  element_counter: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -36,6 +38,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.pageIndex = 0;
+    this.page_counter = 1;
   }
 
   ngOnChanges() {
@@ -54,6 +57,7 @@ export class StepComponent implements OnInit, OnChanges {
     this.startTime = performance.now();
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
+    this.element_counter = 1;
     window.scrollTo(0, 0);
   }
 
@@ -99,7 +103,7 @@ export class StepComponent implements OnInit, OnChanges {
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
         step_index: this.step_index, stimulus: el.content, trial_type: el.type, buttonPressed: el.buttonPressed,
         correct: this.elementCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-        study: this.session.study
+        study: this.session.study, session_counter: this.page_counter +  '.' + this.element_counter
       };
 
       if (el.responseTime) {
@@ -108,10 +112,12 @@ export class StepComponent implements OnInit, OnChanges {
         elData['rt_first_react'] = this.endTime - this.startTime;
       }
 
+      this.element_counter++;
       this.pageData.push(elData);
     }
     console.log('pageData', this.pageData);
     // this.api.addResponse(this.pageData);
+    this.page_counter++;
   }
 
   nextPage() {

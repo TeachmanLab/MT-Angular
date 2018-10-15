@@ -21,6 +21,7 @@ export class TrainingComponent implements OnInit {
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.
   showSummary = false;
+  scenarioIndex = 1;
 
 
   @Output() done: EventEmitter<any> = new EventEmitter();
@@ -95,9 +96,11 @@ export class TrainingComponent implements OnInit {
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
     } else if (this.round.isComplete()) {
+      this.scenarioIndex++;
       this.round.next(correct);
       this.showSummary = true;
     } else {
+      this.scenarioIndex++;
       this.round.next(correct);
     }
   }

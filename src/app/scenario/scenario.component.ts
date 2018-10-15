@@ -66,13 +66,20 @@ export class ScenarioComponent implements OnInit, OnChanges {
   date: string;
   startTime: number;
   endTime: number;
+  page_counter: number;
+  element_counter = 1;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
+    // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
+    // the count must begin after the page count that gets established in the step component
+    // this also assumes that the session has only one step and that all scenarios have four "pages", which is true right now...
+    this.page_counter = this.session.steps[0].pages.length + (this.scenarioIndex * 4) - 3;
     this.init();
   }
 
@@ -113,7 +120,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title,
         step_index: this.scenarioIndex, stimulus: el.content, trial_type: this.state, buttonPressed: el.buttonPressed,
         correct: this.pageCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-        study: this.session.study
+        study: this.session.study, session_counter: this.page_counter + '.' + this.element_counter
       };
 
       if (el.responseTime) {
@@ -122,11 +129,13 @@ export class ScenarioComponent implements OnInit, OnChanges {
         Data['rt_first_react'] = this.endTime - this.startTime;
       }
 
+      this.element_counter++;
       this.pageData.push(Data);
     }
 
     console.log('pageData', this.pageData);
     // this.api.addResponse(this.pageData);
+    this.page_counter++;
   }
 
   progressState(correctAnswer = true) {
@@ -135,6 +144,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
       this.pageCorrect = false;
     }
     this.recordStateData();
+    this.element_counter = 1;
     this.pageData = [];
     this.pageCorrect = true;
     this.pageIndex++;

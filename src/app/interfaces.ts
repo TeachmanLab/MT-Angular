@@ -91,4 +91,5 @@ export interface PageData {
   rt: number; // Response time from starting the page to completing the page in milliseconds
   rt_first_react: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in milliseconds
   time_elapsed: number; // Time from the beginning of the session to the end of the current page in milliseconds
+  session_counter: string; // A counter that advances as a user moves through the session
 }
