@@ -117,7 +117,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
       const Data = {
         session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title,
-        step_index: this.scenarioIndex, stimulus: el.content, trial_type: this.state, buttonPressed: el.buttonPressed,
+        step_index: this.scenarioIndex, stimulus: el.content, trial_type: this.state, buttonPressed: '',
         correct: this.pageCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
         study: this.session.study, session_counter: this.page_counter + '.' + this.element_counter
       };
@@ -126,6 +126,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
         Data['rt_first_react'] = el.responseTime - this.startTime;
       } else {
         Data['rt_first_react'] = this.endTime - this.startTime;
+      }
+
+      if (el.buttonPressed) {
+        Data['buttonPressed'] = el.buttonPressed;
       }
 
       this.element_counter++;
