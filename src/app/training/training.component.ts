@@ -22,6 +22,7 @@ export class TrainingComponent implements OnInit {
   rounds: Round[];  // Training is broken up into a series of rounds.
   showSummary = false;
   scenarioIndex = 1;
+  pageCount: number;
 
 
   @Output() done: EventEmitter<any> = new EventEmitter();
@@ -65,6 +66,13 @@ export class TrainingComponent implements OnInit {
     this.nextTraining();
   }
 
+  stepPageCount(event) {
+    this.pageCount = event; // record the ending pageCount from the session steps before launching into the scenarios
+  }
+
+  updatePageCount(event) {
+    this.pageCount = event; // update the pageCount as the users work through the scenarios
+  }
 
   loadTraining() {
     // Pull the training from the api, split it into a series of rounds

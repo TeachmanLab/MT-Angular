@@ -56,6 +56,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   scenarioIndex: number;
   @Input()
   session: Session;
+  @Input()
+  pageCount: number;
 
   pageIndex = 0;
   currentPage: Page;
@@ -71,6 +73,9 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
+  @Output()
+  finalCount: EventEmitter<number> = new EventEmitter();
+
   constructor() {
   }
 
@@ -78,7 +83,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
     // the count must begin after the page count that gets established in the step component
     // this also assumes that the session has only one step and that all scenarios have four "pages", which is true right now...
-    this.pageCounter = this.session.steps[0].pages.length + (this.scenarioIndex * 4) - 3;
+    this.pageCounter = this.pageCount;
     this.init();
   }
 
@@ -164,6 +169,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     } else {
       console.log('The scenario is complete.' + this.pageIndex + '.  The state is ' + this.state);
       this.done.emit(this.scenarioCorrect);
+      this.finalCount.emit(this.pageCounter);
     }
     window.scrollTo(0, 0);
   }

@@ -30,6 +30,9 @@ export class StepComponent implements OnInit, OnChanges {
   @Output()
   review: EventEmitter<any> = new EventEmitter();
 
+  @Output()
+  finalPageCount: EventEmitter<number> = new EventEmitter();
+
 
   constructor (
     private api: ApiService
@@ -158,6 +161,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   allDone() {
     // console.log('Completed step');
+    this.finalPageCount.emit(this.pageCounter);
     this.done.emit(this.stepCorrect);
     this.stepCorrect = true;
   }
