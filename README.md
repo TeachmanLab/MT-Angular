@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Running on the AWS Server
+Run `ng build --prod --build-optimizer --base-href=/training/`
+Copy the files in ./dist/training-prototype up to the web server and placement in the /var/www/training directory.
+
 ## Adding to Mindtrails
 Run `ng build --prod --build-optimizer --base-href=/r01/angular_training/`
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/training2

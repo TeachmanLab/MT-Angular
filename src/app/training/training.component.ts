@@ -88,6 +88,7 @@ export class TrainingComponent implements OnInit {
   }
 
   close() {
+    console.log('Redirecting to ' + environment.redirect);
     window.location.href = environment.redirect;
   }
 
