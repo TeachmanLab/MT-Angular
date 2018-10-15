@@ -80,15 +80,15 @@ export interface PageData {
   sessionTitle: string; // The title and subtitle of the session that is displayed to the user (Session 1: Introduction to Anxiety)
   conditioning: string; // The user group that determines which sessions are shown (Control or Training)
   study: string; // The study being completed (Calm Thinking)
-  step_title: string; // The title of the current step (Anxiety Disorders)
-  step_index: number; // The index number of the step in the context of all the steps in the session (2)
-  trial_type: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
+  stepTitle: string; // The title of the current step (Anxiety Disorders)
+  stepIndex: number; // The index number of the step in the context of all the steps in the session (2)
+  trialType: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
   stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
-  button_pressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
+  buttonPressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
   correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
   device: string; // Device used to complete the exercise
   rt: number; // Response time from starting the page to completing the page in milliseconds
-  rt_first_react: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in milliseconds
-  time_elapsed: number; // Time from the beginning of the session to the end of the current page in milliseconds
-  session_counter: string; // A counter that advances as a user moves through the session
+  rtFirstReact: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in milliseconds
+  timeElapsed: number; // Time from the beginning of the session to the end of the current page in milliseconds
+  sessionCounter: string; // A counter that advances as a user moves through the session
 }

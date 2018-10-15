@@ -11,7 +11,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   @Input() step: Step;
   @Input() session: Session;
-  @Input() step_index: number;
+  @Input() stepIndex: number;
   pageIndex: number;
   pageData: PageData[] = [];
   currentPage: Page;
@@ -21,8 +21,8 @@ export class StepComponent implements OnInit, OnChanges {
   elementCorrect = true;
   startTime: number;
   endTime: number;
-  page_counter: number;
-  element_counter: number;
+  pageCounter: number;
+  elementCounter: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -37,7 +37,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.pageIndex = 0;
-    this.page_counter = 1;
+    this.pageCounter = 1;
   }
 
   ngOnChanges() {
@@ -55,7 +55,7 @@ export class StepComponent implements OnInit, OnChanges {
     this.startTime = performance.now();
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
-    this.element_counter = 1;
+    this.elementCounter = 1;
     window.scrollTo(0, 0);
   }
 
@@ -65,7 +65,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   prevPageButtonVisible() {
     // This should disable the 'previous' button on the first page of the session only.
-      return (!(this.step_index <= 0 && this.pageIndex <= 0) && this.allowPrevious());
+      return (!(this.stepIndex <= 0 && this.pageIndex <= 0) && this.allowPrevious());
   }
 
   allowPrevious() {
@@ -103,16 +103,16 @@ export class StepComponent implements OnInit, OnChanges {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
       const elData = {session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
-        device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
-        step_index: this.step_index, stimulus: '', trial_type: el.type, buttonPressed: '',
-        correct: this.elementCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-        study: this.session.study, session_counter: this.page_counter +  '.' + this.element_counter
+        device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.step.title,
+        stepIndex: this.stepIndex, stimulus: '', trialType: el.type, buttonPressed: '',
+        correct: this.elementCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+        study: this.session.study, sessionCounter: this.pageCounter +  '.' + this.elementCounter
       };
 
       if (el.responseTime) {
-        elData['rt_first_react'] = el.responseTime - this.startTime;
+        elData['rtFirstReact'] = el.responseTime - this.startTime;
       } else {
-        elData['rt_first_react'] = this.endTime - this.startTime;
+        elData['rtFirstReact'] = this.endTime - this.startTime;
       }
 
       if (el.buttonPressed) {
@@ -125,12 +125,12 @@ export class StepComponent implements OnInit, OnChanges {
         elData['stimulus'] = el.content;
       }
 
-      this.element_counter++;
+      this.elementCounter++;
       this.pageData.push(elData);
     }
     console.log('pageData', this.pageData);
     // this.api.addResponse(this.pageData);
-    this.page_counter++;
+    this.pageCounter++;
   }
 
   nextPage() {
