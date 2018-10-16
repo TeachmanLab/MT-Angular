@@ -100,7 +100,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "In this session, you will read a series of pages about the topic highlighted above. Pay attention because you will be asked questions about the information."
+                "content": "In this session, you will read a series of pages about the nature of anxiety and its management. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "BulletList",
@@ -249,7 +249,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "In this session, you will read a series of pages about the topic highlighted above. Pay attention because you will be asked questions about the information."
+                "content": "In this session, you will read a series of pages about the nature of anxiety and its management. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "BulletList",
@@ -284,7 +284,7 @@
               },
               {
                 "type": "Paragraph",
-                "content": "Very strong research findings show that treatment by a mental health professional can alleviate many anxiety symptoms(1). If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
+                "content": "Research findings clearly show that treatment by a well-trained mental health professional can alleviate many anxiety symptoms(1). If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
               },
               {
                 "type": "References",
@@ -369,7 +369,7 @@
                 "title": "Agoraphobia",
                 "thought": "When Tony leaves the house without company, he becomes very anxious. He imagines that he might have a heart attack and that no one would be around to help. Therefore, he has begun to avoid being alone whenever possible. He has also started avoiding places and situations, such as shopping malls, stores, crowds, theaters, and waiting in lines, where he fears being trapped if something happens.",
                 "followup": [
-                  "People with agoraphobia fear almost any open space, thereby making tasks such as grocery shopping or even seeing a therapist anxiety provoking. Agoraphobia often occurs with panic disorder; many people who experience panic disorder start to avoid open spaces at some point. They often fear that they might be trapped or embarrassed if they have panic attacks in public."
+                  "People with agoraphobia fear almost any open space, thereby making tasks such as grocery shopping or even seeing a therapist anxiety-provoking. Agoraphobia often occurs with panic disorder; many people who experience panic disorder start to avoid open spaces at some point. They often fear that they might be trapped or embarrassed if they have panic attacks in public."
                 ]
               }
             ]
@@ -378,10 +378,10 @@
             "elements": [
               {
                 "type": "ThoughtBubble",
-                "title": "Social Phobia",
-                "thought": "Michelle knows that on the first day of college, some professors will instruct her and her peers to go around the room and introduce themselves. She feels nauseous just thinking about sitting there, waiting to introduce herself to a roomful of strangers looking at her. Her voice might shake, and she might appear scared. She feels the anxiety is too much to bear, and she skips the first day of class to avoid the possibility of introducing herself.",
+                "title": "Social Anxiety Disorder",
+                "thought": "Michelle knows that on the first day of college, some professors will instruct her and her peers to go around the room and introduce themselves. She feels nauseated just thinking about sitting there, waiting to introduce herself to a roomful of strangers looking at her. Her voice might shake, and she might appear scared. She feels the anxiety is too much to bear, and she skips the first day of class to avoid the possibility of introducing herself.",
                 "followup": [
-                  "Speaking in front of a group, walking into a room full of strangers, or meeting with one’s boss can make anyone feel somewhat anxious, but some people experience intense fear and even panic attacks in these situations. People with social phobia fear being negatively evaluated and worry excessively about embarrassing themselves, often leading them to avoid social situations."
+                  "Speaking in front of a group, walking into a room full of strangers, or meeting with one’s boss can make anyone feel somewhat anxious, but some people experience intense fear and even panic attacks in these situations. People with social anxiety disorder fear being negatively evaluated and worry excessively about embarrassing themselves, often leading them to avoid social situations."
                 ]
               }
             ]
@@ -414,7 +414,7 @@
             "elements": [
               {
                 "type": "Question",
-                "question": "People who fear open spaces (as in agoraphobia), negative evaluation (as in social phobia), or a particular object or situation (as in specific phobia) often avoid the things they fear.",
+                "question": "People who fear open spaces (as in agoraphobia), negative evaluation (as in social anxiety disorder), or a particular object or situation (as in specific phobia) often avoid the things they fear.",
                 "options": [
                   "True",
                   "False"
@@ -496,7 +496,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "In this session, you will read a series of pages about the topic highlighted above. Pay attention because you will be asked questions about the information."
+                "content": "In this session, you will read a series of pages about the nature of anxiety and its management. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "BulletList",
@@ -523,7 +523,7 @@
               },
               {
                 "type": "Paragraph",
-                "content": "About one in nine people (11.6%) around the world have an anxiety disorder in a given year (1), and one in seven (14.6%) have an anxiety disorder at some point in their lives (2). In some countries, the prevalence is even higher. For example, almost one third of people in the United States has an anxiety disorder at some point in their lives (2). The most common anxiety disorders across the life course of Americans are specific phobia (12.5%), social phobia (12.1%), and posttraumatic stress disorder (6.8%). Generalized anxiety disorder (5.7%), panic disorder (4.7%), obsessive-compulsive disorder (1.6%), and agoraphobia without panic (1.4%) are rarer (3)."
+                "content": "About one in nine people (11.6%) around the world have an anxiety disorder in a given year (1), and one in seven (14.6%) have an anxiety disorder at some point in their lives (2). In some countries, the prevalence is even higher. For example, almost one third of people in the United States has an anxiety disorder at some point in their lives (2). The most common anxiety disorders across the life course of Americans are specific phobia (12.5%), social anxiety disorder (12.1%), and posttraumatic stress disorder (6.8%). Generalized anxiety disorder (5.7%), panic disorder (4.7%), obsessive-compulsive disorder (1.6%), and agoraphobia without panic (1.4%) are rarer (3)."
               },
               {
                 "type": "Paragraph",
@@ -708,11 +708,11 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "Once anxiety disorders develop, why do they persist for many people? The main reason is that people try to escape from their strong feelings of anxiety, which is understandable. They try to avoid feared objects or situations or engage in safety behaviors that make them feel safer. For example, a person with social phobia might avoid public speaking completely or give a talk only when she can wear black clothes so that no one would notice her sweating."
+                "content": "Once anxiety disorders develop, why do they persist for many people? One key reason is that people try to escape from their strong feelings of anxiety, which is understandable. They try to avoid feared objects or situations or engage in safety behaviors that make them feel safer. For example, a person with social anxiety disorder might avoid public speaking completely or give a talk only when she can wear black clothes so that no one would notice her sweating."
               },
               {
                 "type": "Paragraph",
-                "content": "Avoidance and safety behaviors can decrease anxiety in the moment. But when people rely on these strategies they do not learn that the object or situation they fear is not dangerous. They also do not learn that the anxiety will decrease on its own after a while and that they can handle their feelings with more adaptive coping skills. Finally, they do not have the chance to correct their cognitive distortions. As a result, their anxiety persists. For example, as long as a person with social phobia avoids other people, the person will not have the chance to correct a belief such as “No one will ever like me.” In turn, such beliefs and cognitive distortions only increase the likelihood that the person will keep avoiding others and using safety behavior (1)."
+                "content": "Avoidance and safety behaviors can decrease anxiety in the moment. But when people rely on these strategies they do not learn that the object or situation they fear is not dangerous. They also do not learn that the anxiety will decrease on its own after a while and that they can handle their feelings with more adaptive coping skills. Finally, they do not have the chance to correct their cognitive distortions. As a result, their anxiety persists. For example, as long as a person with social anxiety disorder avoids other people, the person will not have the chance to correct a belief such as “No one will ever like me.” In turn, such beliefs and cognitive distortions only increase the likelihood that the person will keep avoiding others and using safety behavior (1)."
               },
               {
                 "type": "Image",
@@ -774,7 +774,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "In this session, you will read a series of pages about the topic highlighted above. Pay attention because you will be asked questions about the information."
+                "content": "In this session, you will read a series of pages about the nature of anxiety and its management. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "BulletList",
@@ -966,7 +966,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "In this session, you will read a series of pages about the topic highlighted above. Pay attention because you will be asked questions about the information."
+                "content": "In this session, you will read a series of pages about the nature of anxiety and its management. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "BulletList",
