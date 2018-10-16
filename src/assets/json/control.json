@@ -1,7 +1,7 @@
 [
   {
     "session": "introSession",
-    "title": "Introduction to CalmThinking",
+    "title": "Introduction to Calm Thinking",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
@@ -576,11 +576,19 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2.png"
-              },
+                "content": "./assets/images/step-body-images/session3-step2-4.png"
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Header",
                 "content": "Biological Causes"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-1.png"
               },
               {
                 "type": "Paragraph",
@@ -589,6 +597,14 @@
               {
                 "type": "Paragraph",
                 "content": "Anxiety is based on a complex interaction of different body systems, and dysfunction in one or more of these systems might also partially explain why some people are more sensitive to stress and experience more intense anxiety. For example, researchers have found out that brain regions associated with fear and stress reactions are more sensitive and show greater activation in people with anxiety disorders (3). In addition, imbalances of certain stress hormones or neurotransmitters can also contribute to the development of anxiety disorders."
+              },
+              {
+                "type": "References",
+                "content": [
+                  "(1) Hettema, J. M., Neale, M. C., & Kendler, K. S. (2001). A review and meta-analysis of the genetic epidemiology of anxiety disorders. American Journal of Psychiatry, 158, 1568-1578. http://dx.doi.org/10.1176/appi.ajp.158.10.1568",
+                  "(2) Hirshfeld, D. R., Rosenbaum, J. F., Biederman, J., Bolduc, E. A., Faraone, S. V., Snidman, N., ... & Kagan, J. (1992). Stable behavioral inhibition and its association with anxiety disorder. Journal of the American Academy of Child & Adolescent Psychiatry, 31, 103-111. http://dx.doi.org/10.1097/00004583-199201000-00016",
+                  "(3) Shin, L. M., & Liberzon, I. (2010). The neurocircuitry of fear, stress, and anxiety disorders. Neuropsychopharmacology, 35, 169. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3055419/"
+                ]
               }
             ]
           },
@@ -599,6 +615,10 @@
                 "content": "Psychological Causes"
               },
               {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-2.png"
+              },
+              {
                 "type": "Paragraph",
                 "content": "Simply having a biological sensitivity to stress is not enough to develop an anxiety disorder; how a person perceives and evaluates certain situations also contributes. Researchers have found that when people tend to think that they cannot control stressful events in their lives, they experience more anxiety. This perceived lack of control can be influenced by early childhood experiences, such as experiencing abuse, illness, or an over- or under-protective parenting style (4)."
               },
@@ -607,8 +627,23 @@
                 "content": "These early childhood experiences can lead to negative core beliefs about oneself or the world (e.g., “No one will ever like me” or “The world is a dangerous place”). Although people often are unaware of these beliefs, the beliefs can affect how people interpret situations, where they focus their attention, and what they remember. For example, people who enter a party with the belief “No one will ever like me” may focus on unfriendly faces, interpret them as evidence of rejection, and remember them more clearly than friendly faces. These cognitive distortions can lead to more anxious feelings, and if someone is prone to respond to anxiety in ways that are inflexible (e.g., avoiding all parties), the anxiety is likely to become even stronger (5)."
               },
               {
+                "type": "References",
+                "content": [
+                  "(4) Chorpita, B. F., & Barlow, D. H. (1998). The development of anxiety: The role of control in the early environment. Psychological Bulletin, 124, 3-21. http://dx.doi.org/10.1037/0033-2909.124.1.3",
+                  "(5) Muris, P., & Field, A. P. (2008). Distorted cognition and pathological anxiety in children and adolescents. Cognition and Emotion, 22, 395-421. http://dx.doi.org/10.1080/02699930701843450"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
                 "type": "Header",
                 "content": "Environmental or Social Causes"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-3.png"
               },
               {
                 "type": "Paragraph",
@@ -617,11 +652,6 @@
               {
                 "type": "References",
                 "content": [
-                  "(1) Hettema, J. M., Neale, M. C., & Kendler, K. S. (2001). A review and meta-analysis of the genetic epidemiology of anxiety disorders. American Journal of Psychiatry, 158, 1568-1578. http://dx.doi.org/10.1176/appi.ajp.158.10.1568",
-                  "(2) Hirshfeld, D. R., Rosenbaum, J. F., Biederman, J., Bolduc, E. A., Faraone, S. V., Snidman, N., ... & Kagan, J. (1992). Stable behavioral inhibition and its association with anxiety disorder. Journal of the American Academy of Child & Adolescent Psychiatry, 31, 103-111. http://dx.doi.org/10.1097/00004583-199201000-00016",
-                  "(3) Shin, L. M., & Liberzon, I. (2010). The neurocircuitry of fear, stress, and anxiety disorders. Neuropsychopharmacology, 35, 169. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3055419/",
-                  "(4) Chorpita, B. F., & Barlow, D. H. (1998). The development of anxiety: The role of control in the early environment. Psychological Bulletin, 124, 3-21. http://dx.doi.org/10.1037/0033-2909.124.1.3",
-                  "(5) Muris, P., & Field, A. P. (2008). Distorted cognition and pathological anxiety in children and adolescents. Cognition and Emotion, 22, 395-421. http://dx.doi.org/10.1080/02699930701843450",
                   "(6) Gerull, F. C., & Rapee, R. M. (2002). Mother knows best: Effects of maternal modelling on the acquisition of fear and avoidance behaviour in toddlers. Behaviour Research and Therapy, 40, 279-287. http://dx.doi.org/10.1016/S0005-7967(01)00013-4"
                 ]
               }
@@ -773,7 +803,7 @@
                 "type": "Highlight",
                 "title": "Physical Health",
                 "highlight": "Anxiety problems have been associated with several chronic physical illnesses such as gastrointestinal diseases, chronic respiratory conditions, and heart diseases. People with an untreated anxiety disorder in addition to one of these diseases tend to report more severe physical symptoms and recover more slowly. However, psychological treatments for anxiety such as cognitive-behavioral therapy (CBT) have been found to ease not only symptoms of anxiety, but also symptoms of the chronic physical illnesses (1).",
-                "icon": "healing"
+                "icon": "physical-health"
               },
               {
                 "type": "References",
@@ -808,7 +838,7 @@
                 "type": "Highlight",
                 "title": "Thinking",
                 "highlight": "As stated before, anxiety disorders are usually accompanied by distorted attention, interpretation, and memory. When people are distracted by cues they fear in a situation, their concentration and performance can suffer. In addition, even in situations that do not provoke anxiety, people with anxiety disorders struggle to pay attention and have problems recalling things in the short term and a tendency to avoid risks. Hence, problems with anxiety can be a “constant companion” that makes it harder to think (1).",
-                "icon": "star"
+                "icon": "thinking"
               },
               {
                 "type": "References",
@@ -843,7 +873,7 @@
                 "type": "Highlight",
                 "title": "Relationships",
                 "highlight": "Although relationships with one’s spouse, friends, or family can buffer the development and impact of anxiety problems, anxiety problems can also strain social relationships. For example, some people with anxiety disorders tend to seek excessive reassurance that certain situations are not dangerous, and can become dependent on such feedback and the presence of others. By contrast, other people with anxiety disorders tend to avoid contact with other people because it seems too stressful to them (1).",
-                "icon": "group"
+                "icon": "relationships"
               },
               {
                 "type": "References",
@@ -878,7 +908,7 @@
                 "type": "Highlight",
                 "title": "Other Psychological Problems",
                 "highlight": "About 90% of people with an anxiety disorder have at least one more anxiety disorder or other mental disorder during their lifetime. For example, one half of depressed people also report an anxiety disorder in their lifetime, and one-quarter-to-one-half of people with an anxiety disorder have also had a lifetime substance use disorder. It may be that depression and substance abuse develop as a consequence of anxious people’s isolating themselves and trying to escape from their symptoms by using alcohol or drugs (1).",
-                "icon": "extension"
+                "icon": "other-psychological-problems"
               },
               {
                 "type": "References",
@@ -965,7 +995,7 @@
                 "type": "Highlight",
                 "title": "Face Your Fears",
                 "highlight": "Although it may be hard to believe, when people approach the objects and situations they fear their anxiety decreases over time. As stated before, one component of anxiety is bodily reactions, and the body cannot run at full capacity for long. Just as a sprinter can race at full speed for only a short distance, intense anxiety must subside at some point. This is true even if people approach feared situations step by step and start with smaller fears. It is not necessary to face one’s biggest fear from the start. In addition, people typically fear things more than their danger warrants, but when people do not approach these things, they do not learn their real danger.",
-                "icon": "directions_run"
+                "icon": "face-your-fears"
               }
             ]
           },
@@ -994,7 +1024,7 @@
                 "type": "Highlight",
                 "title": "Live Healthy",
                 "highlight": "When people maintain a healthy lifestyle with regular exercise, balanced nutrition, limited alcohol and caffeine, and adequate sleep, they are less vulnerable to emotions such as anxiety. By taking care of one’s body in these ways and others, including treating physical illness, one also takes care of one’s mind. You will feel better and be able to handle stressful situations more confidently.",
-                "icon": "favorite_border"
+                "icon": "live-healthy"
               }
             ]
           },
@@ -1023,7 +1053,7 @@
                 "type": "Highlight",
                 "title": "Think Flexibly",
                 "highlight": "How people think about a situation influences how they feel. Recall from session 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?\"",
-                "icon": "compare_arrows"
+                "icon": "think-flexibly"
               }
             ]
           },
@@ -1052,7 +1082,7 @@
                 "type": "Highlight",
                 "title": "Open up to Others",
                 "highlight": "As stated in the previous session, positive relationships with one's spouse, friends, or family can buffer the effect of anxiety problems. If others know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view, which can help you think flexibly.",
-                "icon": "lock_open"
+                "icon": "open-up-to-others"
               }
             ]
           },

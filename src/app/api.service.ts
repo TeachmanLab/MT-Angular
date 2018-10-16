@@ -21,8 +21,13 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getTrainingIntroduction(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/training_intro.json')
+  public getControlSessions(): Observable<any> {
+    return this.httpClient.get<Session[]>('./assets/json/control.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getTrainingSessions(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/training.json')
       .pipe((catchError(this.handleError)));
   }
 
@@ -31,16 +36,11 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
-  public getTrainingCSV(trainingTitle: string): Observable<Scenario[]> {
-    const url = './assets/csv/<trainingTitle>.csv'.replace('<trainingTitle>', trainingTitle);
+  public getTrainingCSV(session: string): Observable<Scenario[]> {
+    const url = './assets/csv/<session>.csv'.replace('<session>', session);
     return this.httpClient.get(url, {responseType: 'text'})
       .pipe((catchError(this.handleError)))
       .pipe(map(n => TrainingCSV.toJson(n)));
-  }
-
-  public getSessions(): Observable<any> {
-    return this.httpClient.get<Session[]>('./assets/json/sessions.json')
-      .pipe((catchError(this.handleError)));
   }
 
   addResponse(pageData: PageData[]): Observable<PageData[]> {

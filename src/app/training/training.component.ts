@@ -21,6 +21,8 @@ export class TrainingComponent implements OnInit {
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.
   showSummary = false;
+  scenarioIndex = 1;
+  pageCount: number;
 
 
   @Output() done: EventEmitter<any> = new EventEmitter();
@@ -36,7 +38,7 @@ export class TrainingComponent implements OnInit {
   }
 
   loadIntro() {
-    this.api.getTrainingIntroduction().subscribe(sessions => {
+    this.api.getTrainingSessions().subscribe(sessions => {
       this.sessions = sessions;
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
@@ -64,10 +66,17 @@ export class TrainingComponent implements OnInit {
     this.nextTraining();
   }
 
+  stepPageCount(event) {
+    this.pageCount = event; // record the ending pageCount from the session steps before launching into the scenarios
+  }
+
+  updatePageCount(event) {
+    this.pageCount = event; // update the pageCount as the users work through the scenarios
+  }
 
   loadTraining() {
     // Pull the training from the api, split it into a series of rounds
-    this.api.getTrainingCSV(this.currentSession.trainingTitle).subscribe(scenarios => {
+    this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
       const increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
@@ -96,9 +105,11 @@ export class TrainingComponent implements OnInit {
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
     } else if (this.round.isComplete()) {
+      this.scenarioIndex++;
       this.round.next(correct);
       this.showSummary = true;
     } else {
+      this.scenarioIndex++;
       this.round.next(correct);
     }
   }

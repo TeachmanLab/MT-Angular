@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
-import {PageData, Scenario, Session} from '../interfaces';
-import {interval} from 'rxjs';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { Page, PageData, Scenario, Session } from '../interfaces';
 
 @Component({
   selector: 'app-scenario',
@@ -26,7 +25,7 @@ import {interval} from 'rxjs';
       ])
     ]),
     trigger('titleState', [
-      state('intro', style({
+      state('Intro', style({
         transform: 'translateY(150%) translateX(150%) scale(4)'
       })),
       state('*',   style({
@@ -34,18 +33,18 @@ import {interval} from 'rxjs';
         transform: 'scale(1)',
         opacity: 0
       })),
-      transition('intro => *', animate('600ms ease-in')),
-      transition('* => intro', animate('600ms ease-out'))
+      transition('Intro => *', animate('600ms ease-in')),
+      transition('* => Intro', animate('600ms ease-out'))
     ]),
     trigger('imageState', [
-      state('intro', style({
+      state('Intro', style({
         opacity: 1
       })),
       state('*',   style({
         opacity: 0
       })),
-      transition('* => intro', animate('600ms ease-in')),
-      transition('intro => *', animate('600ms ease-out'))
+      transition('* => Intro', animate('600ms ease-in')),
+      transition('Intro => *', animate('600ms ease-out'))
     ]),
   ]
 })
@@ -57,36 +56,40 @@ export class ScenarioComponent implements OnInit, OnChanges {
   scenarioIndex: number;
   @Input()
   session: Session;
+  @Input()
+  pageCount: number;
 
-  states = ['intro', 'statements'];
-  stateIndex = 0;
-  state = this.states[0];
-  stateData: PageData[] = [];
+  pageIndex = 0;
+  currentPage: Page;
+  state: string;
+  pageData: PageData[] = [];
   scenarioCorrect: boolean;
-  stateCorrect: boolean;
-  date: string;
+  pageCorrect: boolean;
   startTime: number;
   endTime: number;
-  initialResponseTime: number;
-  buttonPressed: string;
+  pageCounter: number;
+  elementCounter = 1;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
+  @Output()
+  finalCount: EventEmitter<number> = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
-    if (this.scenario.missingLetter) {
-      this.states[this.states.length] = 'input';
-    }
-    if (this.scenario.question) {
-      this.states[this.states.length] = 'question';
-    }
-
+    // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
+    // the count must begin after the page count that gets established in the step component
+    // this also assumes that the session has only one step and that all scenarios have four "pages", which is true right now...
+    this.pageCounter = this.pageCount;
     this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    this.currentPage = this.scenario.pages[0];
+    this.state = this.currentPage.elements[0].type;
     if (!changes.scenario.isFirstChange()) {
       console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
@@ -95,84 +98,79 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   init() {
-    this.stateIndex = 0;
-    this.state = this.states[0];
+    this.pageIndex = 0;
+    this.currentPage = this.scenario.pages[0];
+    this.state = this.currentPage.elements[0].type;
     this.scenarioCorrect = true;
-    this.stateCorrect = true;
-    this.stateData = [];
-    this.date = new Date().toString();
+    this.pageCorrect = true;
+    this.pageData = [];
     this.startTime = performance.now();
+    window.scrollTo(0, 0);
   }
 
   continueButtonVisible() {
-    return this.state === 'intro';
+    return this.state === 'Intro';
   }
 
   showStatement() {
-    return(this.state === 'statements' || this.state === 'input');
+    return(this.state === 'Statements' || this.state === 'MissingLetter');
   }
 
   recordStateData() {
     this.endTime = performance.now();
-    const Data = {date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
-      device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.scenario.title.toString(),
-      step_index: this.scenarioIndex, stimulus: '', trial_type: this.state, buttonPressed: this.scenario.buttonPressed,
-      correct: this.stateCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-      study: this.session.study
-    };
+    for (const el of this.currentPage.elements) {
+      const Data = {
+        session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+        device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.scenario.title,
+        stepIndex: this.scenarioIndex, stimulus: '', trialType: this.state, buttonPressed: '',
+        correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+        study: this.session.study, sessionCounter: this.pageCounter + '.' + this.elementCounter
+      };
 
-    if (this.state === 'question') {
-      Data['stimulus'] = this.scenario.question.question;
-    } else if (this.state === 'input') {
-      Data['stimulus'] = 'Missing Letter word: ' + this.scenario.missingLetter.word;
-    } else if (this.state === 'statements') {
-      Data['stimulus'] = this.scenario.statement;
-    } else {
-      Data['stimulus'] = this.scenario.title.toString();
+      if (el.responseTime) {
+        Data['rtFirstReact'] = el.responseTime - this.startTime;
+      } else {
+        Data['rtFirstReact'] = this.endTime - this.startTime;
+      }
+
+      if (el.buttonPressed) {
+        Data['buttonPressed'] = el.buttonPressed;
+      }
+
+      if (el.content instanceof Array) {
+        Data['stimulus'] = el.content.join(', ');
+      } else {
+        Data['stimulus'] = el.content;
+      }
+
+      this.elementCounter++;
+      this.pageData.push(Data);
     }
 
-    if (this.buttonPressed) {
-      Data['buttonPressed'] = this.buttonPressed;
-    }
-
-    if (this.initialResponseTime) {
-      Data['rt_first_react'] = this.initialResponseTime - this.startTime;
-    } else {
-      Data['rt_first_react'] = this.endTime - this.startTime;
-    }
-
-    this.stateData.push(Data);
-
-    console.log('pageData', this.stateData);
-    // this.api.addResponse(this.stateData);
+    console.log('pageData', this.pageData);
+    // this.api.addResponse(this.pageData);
+    this.pageCounter++;
   }
 
   progressState(correctAnswer = true) {
     if (!correctAnswer) {
       this.scenarioCorrect = false;
-      this.stateCorrect = false;
+      this.pageCorrect = false;
     }
     this.recordStateData();
-    this.stateData = [];
-    this.initialResponseTime = null;
-    this.buttonPressed = undefined;
-    this.stateCorrect = true;
-    this.stateIndex++;
-    if (this.stateIndex < this.states.length) {
-      this.state = this.states[this.stateIndex];
-      console.log('The state index is ' + this.stateIndex + '.  The state is ' + this.state);
+    this.elementCounter = 1;
+    this.pageData = [];
+    this.pageCorrect = true;
+    this.pageIndex++;
+    if (this.pageIndex < this.scenario.pages.length) {
+      this.currentPage = this.scenario.pages[this.pageIndex];
+      this.state = this.currentPage.elements[0].type;
+      console.log('The page index is ' + this.pageIndex + '.  The state is ' + this.state);
     } else {
-      console.log('The scenario is complete.' + this.stateIndex + '.  The state is ' + this.state);
+      console.log('The scenario is complete.' + this.pageIndex + '.  The state is ' + this.state);
       this.done.emit(this.scenarioCorrect);
+      this.finalCount.emit(this.pageCounter);
     }
-  }
-
-  getResponseDetails(event) {
-    if (typeof event === 'number') {
-      this.initialResponseTime = event;
-    }
-    if (typeof event === 'string') {
-      this.buttonPressed = event;
-    }
+    window.scrollTo(0, 0);
   }
 }
