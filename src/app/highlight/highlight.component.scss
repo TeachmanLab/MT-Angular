@@ -2,8 +2,10 @@
 @import '../../mindtrails_material';
 @include mindtrails-theme($mindtrails-theme);
 
-.material-icons {
-  display: inline-block;
+mat-icon {
+  flex: 1 1 auto;
+  width: 50px;
+  height: 50px;
   background-color: mat-color($mindtrails-primary, A100);
   color: mat-color($mindtrails-primary, 700);
   border-radius: 35px;
