@@ -13,7 +13,7 @@ export class TrainingCSV {
       let missingLetter: MissingLetter;
       let question: Question;
       let image: string;
-
+      let answer: string;
       const result = [];
       for (let i = 1; i < lines.length - 1; i++) {
         currentLine = TrainingCSV.csvLineToArray(lines[i]);
@@ -22,7 +22,9 @@ export class TrainingCSV {
           continue;
         }
         missingLetter = {word: currentLine[2]};
-        question = {type: 'Question', question: currentLine[4], answer: currentLine[5], options: ['Yes', 'No']};
+
+        currentLine[7] === 'Positive' ?  answer = currentLine[5] : answer = currentLine[6];
+        question = {type: 'Question', question: currentLine[4], answer: answer, options: [currentLine[5], currentLine[6]]};
         image = `assets/training_images/${currentLine[0]}.jpg`;
         scenario = {
           type: 'Scenario',
