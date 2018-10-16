@@ -576,11 +576,19 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2.png"
-              },
+                "content": "./assets/images/step-body-images/session3-step2-4.png"
+              }
+            ]
+          },
+          {
+            "elements": [
               {
                 "type": "Header",
                 "content": "Biological Causes"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-1.png"
               },
               {
                 "type": "Paragraph",
@@ -589,6 +597,14 @@
               {
                 "type": "Paragraph",
                 "content": "Anxiety is based on a complex interaction of different body systems, and dysfunction in one or more of these systems might also partially explain why some people are more sensitive to stress and experience more intense anxiety. For example, researchers have found out that brain regions associated with fear and stress reactions are more sensitive and show greater activation in people with anxiety disorders (3). In addition, imbalances of certain stress hormones or neurotransmitters can also contribute to the development of anxiety disorders."
+              },
+              {
+                "type": "References",
+                "content": [
+                  "(1) Hettema, J. M., Neale, M. C., & Kendler, K. S. (2001). A review and meta-analysis of the genetic epidemiology of anxiety disorders. American Journal of Psychiatry, 158, 1568-1578. http://dx.doi.org/10.1176/appi.ajp.158.10.1568",
+                  "(2) Hirshfeld, D. R., Rosenbaum, J. F., Biederman, J., Bolduc, E. A., Faraone, S. V., Snidman, N., ... & Kagan, J. (1992). Stable behavioral inhibition and its association with anxiety disorder. Journal of the American Academy of Child & Adolescent Psychiatry, 31, 103-111. http://dx.doi.org/10.1097/00004583-199201000-00016",
+                  "(3) Shin, L. M., & Liberzon, I. (2010). The neurocircuitry of fear, stress, and anxiety disorders. Neuropsychopharmacology, 35, 169. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3055419/"
+                ]
               }
             ]
           },
@@ -599,6 +615,10 @@
                 "content": "Psychological Causes"
               },
               {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-2.png"
+              },
+              {
                 "type": "Paragraph",
                 "content": "Simply having a biological sensitivity to stress is not enough to develop an anxiety disorder; how a person perceives and evaluates certain situations also contributes. Researchers have found that when people tend to think that they cannot control stressful events in their lives, they experience more anxiety. This perceived lack of control can be influenced by early childhood experiences, such as experiencing abuse, illness, or an over- or under-protective parenting style (4)."
               },
@@ -607,8 +627,23 @@
                 "content": "These early childhood experiences can lead to negative core beliefs about oneself or the world (e.g., “No one will ever like me” or “The world is a dangerous place”). Although people often are unaware of these beliefs, the beliefs can affect how people interpret situations, where they focus their attention, and what they remember. For example, people who enter a party with the belief “No one will ever like me” may focus on unfriendly faces, interpret them as evidence of rejection, and remember them more clearly than friendly faces. These cognitive distortions can lead to more anxious feelings, and if someone is prone to respond to anxiety in ways that are inflexible (e.g., avoiding all parties), the anxiety is likely to become even stronger (5)."
               },
               {
+                "type": "References",
+                "content": [
+                  "(4) Chorpita, B. F., & Barlow, D. H. (1998). The development of anxiety: The role of control in the early environment. Psychological Bulletin, 124, 3-21. http://dx.doi.org/10.1037/0033-2909.124.1.3",
+                  "(5) Muris, P., & Field, A. P. (2008). Distorted cognition and pathological anxiety in children and adolescents. Cognition and Emotion, 22, 395-421. http://dx.doi.org/10.1080/02699930701843450"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
                 "type": "Header",
                 "content": "Environmental or Social Causes"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-3.png"
               },
               {
                 "type": "Paragraph",
@@ -617,11 +652,6 @@
               {
                 "type": "References",
                 "content": [
-                  "(1) Hettema, J. M., Neale, M. C., & Kendler, K. S. (2001). A review and meta-analysis of the genetic epidemiology of anxiety disorders. American Journal of Psychiatry, 158, 1568-1578. http://dx.doi.org/10.1176/appi.ajp.158.10.1568",
-                  "(2) Hirshfeld, D. R., Rosenbaum, J. F., Biederman, J., Bolduc, E. A., Faraone, S. V., Snidman, N., ... & Kagan, J. (1992). Stable behavioral inhibition and its association with anxiety disorder. Journal of the American Academy of Child & Adolescent Psychiatry, 31, 103-111. http://dx.doi.org/10.1097/00004583-199201000-00016",
-                  "(3) Shin, L. M., & Liberzon, I. (2010). The neurocircuitry of fear, stress, and anxiety disorders. Neuropsychopharmacology, 35, 169. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3055419/",
-                  "(4) Chorpita, B. F., & Barlow, D. H. (1998). The development of anxiety: The role of control in the early environment. Psychological Bulletin, 124, 3-21. http://dx.doi.org/10.1037/0033-2909.124.1.3",
-                  "(5) Muris, P., & Field, A. P. (2008). Distorted cognition and pathological anxiety in children and adolescents. Cognition and Emotion, 22, 395-421. http://dx.doi.org/10.1080/02699930701843450",
                   "(6) Gerull, F. C., & Rapee, R. M. (2002). Mother knows best: Effects of maternal modelling on the acquisition of fear and avoidance behaviour in toddlers. Behaviour Research and Therapy, 40, 279-287. http://dx.doi.org/10.1016/S0005-7967(01)00013-4"
                 ]
               }
