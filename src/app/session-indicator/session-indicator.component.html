@@ -15,8 +15,7 @@
           fxLayoutAlign="auto center"
         >
           <span class="icon-space" fxLayoutAlign="center center">
-            <mat-icon *ngIf="step.status === 'error'" style="color: red">highlight_off</mat-icon>
-            <mat-icon *ngIf="step.status === 'complete'">check_circle</mat-icon>
+            <mat-icon *ngIf="step.status === 'complete' || step.status === 'error'">check_circle</mat-icon>
           </span>
           {{step.title}}
         </li>
