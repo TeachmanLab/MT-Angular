@@ -367,7 +367,7 @@
               {
                 "type": "ThoughtBubble",
                 "title": "Agoraphobia",
-                "thought": "When Tony leaves the house without company, he becomes very anxious. He imagines that he might have a heart attack and that no one would be around to help. Therefore, he has begun to avoid being alone whenever possible. He has also started avoiding places and situations, such as shopping malls, stores, crowds, theaters, and waiting in lines, where he fears being trapped if something happens.",
+                "thought": "When Tony leaves the house by himself, he becomes very anxious. He imagines that he might have a heart attack and that no one would be around to help. Therefore, he has begun to avoid being alone whenever possible. He has also started avoiding places and situations, such as shopping malls, stores, crowds, theaters, and waiting in lines, where he fears being trapped if something happens.",
                 "followup": [
                   "People with agoraphobia fear almost any open space, thereby making tasks such as grocery shopping or even seeing a therapist anxiety-provoking. Agoraphobia often occurs with panic disorder; many people who experience panic disorder start to avoid open spaces at some point. They often fear that they might be trapped or embarrassed if they have panic attacks in public."
                 ]
@@ -553,7 +553,7 @@
             "elements": [
               {
                 "type": "Question",
-                "question": "One in ten people have an anxiety disorder in their lifetime. ",
+                "question": "One in twenty people have an anxiety disorder in their lifetime. ",
                 "options": [
                   "True",
                   "False"
