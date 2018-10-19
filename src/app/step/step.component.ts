@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Step, Page, Session, PageData } from '../interfaces';
 import { ApiService } from '../api.service';
+import {e} from '../../../node_modules/@angular/core/src/render3';
 
 @Component({
   selector: 'app-step',
@@ -11,7 +12,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   @Input() step: Step;
   @Input() session: Session;
-  @Input() step_index: number;
+  @Input() stepIndex: number;
   pageIndex: number;
   pageData: PageData[] = [];
   currentPage: Page;
@@ -19,15 +20,19 @@ export class StepComponent implements OnInit, OnChanges {
   startFromEnd = false;
   stepCorrect = true;
   elementCorrect = true;
-  date: string;
   startTime: number;
   endTime: number;
+  pageCounter: number;
+  elementCounter: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
   @Output()
   review: EventEmitter<any> = new EventEmitter();
+
+  @Output()
+  finalPageCount: EventEmitter<number> = new EventEmitter();
 
 
   constructor (
@@ -36,6 +41,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.pageIndex = 0;
+    this.pageCounter = 1;
   }
 
   ngOnChanges() {
@@ -50,10 +56,10 @@ export class StepComponent implements OnInit, OnChanges {
 
   initPage() {
     this.pageData = [];
-    this.date = new Date().toString();
     this.startTime = performance.now();
     this.currentPage = this.step.pages[this.pageIndex];
     this.allowContinue = false;
+    this.elementCounter = 1;
     window.scrollTo(0, 0);
   }
 
@@ -63,7 +69,25 @@ export class StepComponent implements OnInit, OnChanges {
 
   prevPageButtonVisible() {
     // This should disable the 'previous' button on the first page of the session only.
-      return (!(this.step_index <= 0 && this.pageIndex <= 0));
+      return (!(this.stepIndex <= 0 && this.pageIndex <= 0) && this.allowPrevious());
+  }
+
+  allowPrevious() {
+    // it is important to step the user through questions with no answer so that we don't get multiple responses per question.
+    // in order to do this we should look at the elements on the current and previous page and disable the previous button when appropriate.
+    // if there is a question on a previous page and no answer is set on that question, this will return false, otherwise true.
+    let elements = this.currentPage.elements;
+
+    const previousPage = this.step.pages[this.pageIndex - 1];
+    if (previousPage) {
+      elements = elements.concat(previousPage.elements);
+    }
+    for (const element of elements) {
+      if (element.type === 'Question') {
+        return element.answer;
+      }
+    }
+    return true;
   }
 
   pageCompleted(allCorrect= true) {
@@ -81,23 +105,35 @@ export class StepComponent implements OnInit, OnChanges {
   recordPageData() {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
-      const elData = {date: this.date, session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
-        device: navigator.userAgent, rt: this.endTime - this.startTime, rt_first_react: 0, step_title: this.step.title,
-        step_index: this.step_index, stimulus: el.content, trial_type: el.type, buttonPressed: el.buttonPressed,
-        correct: this.elementCorrect, time_elapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-        study: this.session.study
+      const elData = {session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+        device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.step.title,
+        stepIndex: this.stepIndex, stimulus: '', trialType: el.type, buttonPressed: '',
+        correct: this.elementCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
+        study: this.session.study, sessionCounter: this.pageCounter +  '.' + this.elementCounter
       };
 
       if (el.responseTime) {
-        elData['rt_first_react'] = el.responseTime - this.startTime;
+        elData['rtFirstReact'] = el.responseTime - this.startTime;
       } else {
-        elData['rt_first_react'] = this.endTime - this.startTime;
+        elData['rtFirstReact'] = this.endTime - this.startTime;
       }
 
+      if (el.buttonPressed) {
+        elData['buttonPressed'] = el.buttonPressed;
+      }
+
+      if (el.content instanceof Array) {
+        elData['stimulus'] = el.content.join(', ');
+      } else {
+        elData['stimulus'] = el.content;
+      }
+
+      this.elementCounter++;
       this.pageData.push(elData);
     }
     console.log('pageData', this.pageData);
     // this.api.addResponse(this.pageData);
+    this.pageCounter++;
   }
 
   nextPage() {
@@ -125,6 +161,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   allDone() {
     // console.log('Completed step');
+    this.finalPageCount.emit(this.pageCounter);
     this.done.emit(this.stepCorrect);
     this.stepCorrect = true;
   }

@@ -16,12 +16,29 @@
     [question]="el"
     (initialResponse)="getResponseDetails($event)"
     (buttonPressed)="getResponseDetails($event)"
-    (done)="divCompleted($event)">
-  </app-question>
+    (done)="divCompleted($event)"
+    [@flyUpDown]="'in'"
+  ></app-question>
   <app-thoughtbubble
     *ngIf="el.type === 'ThoughtBubble'"
     [thoughtBubble]="el"
     (initialResponse)="getResponseDetails($event)"
     (done)="divCompleted()">
   </app-thoughtbubble>
+
+  <div class="scenario">
+    <div *ngIf="el.type==='Intro'" class="title" [@titleState]="el.type" >{{el.content}}</div>
+      <div class="statement" [@flyUpDown]="'in'" *ngIf="el.type==='Statements'">
+        <mat-card class="statement"><app-statement [statement]="el.content" (doneTyping)="divCompleted()"></app-statement></mat-card>
+      </div>
+      <div class="letters" [@flyUpDown]="'in'" *ngIf="el.type==='MissingLetter'">
+        <app-missing-letter
+          [missingLetter]="el"
+          (initialResponse)="getResponseDetails($event)"
+          (buttonPressed)="getResponseDetails($event)"
+          (done)="divCompleted($event)"
+        ></app-missing-letter>
+      </div>
+  </div>
+
 </div>

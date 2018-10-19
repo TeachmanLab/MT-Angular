@@ -17,6 +17,9 @@ export class SessionComponent implements OnInit, OnChanges {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
+  @Output()
+  finalPageCount: EventEmitter<number> = new EventEmitter(); // pass along page count to training for starting scenarios
+
   constructor(
     private api: ApiService
   ) {}
@@ -61,5 +64,9 @@ export class SessionComponent implements OnInit, OnChanges {
     if (this.session.steps[this.stepIndex]) {
       this.initStep();
     }
+  }
+
+  pageCount(event) {
+    this.finalPageCount.emit(event);
   }
 }
