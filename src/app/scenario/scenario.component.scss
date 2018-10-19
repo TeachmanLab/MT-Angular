@@ -1,4 +1,6 @@
 @import '~@angular/material/theming';
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
 
   div.scenario {
     position: relative;
@@ -33,11 +35,11 @@
       border-radius: 10px;
       max-width: 90%;
       padding-left: 10%;
-      background: #00aeef; /* Old browsers */
-      background: -moz-linear-gradient(left, #00aeef 6%, #00aeef 6%, #fffdee 6%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(left, #00aeef 6%, #00aeef 6%, #fffdee 6%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right, #00aeef 6%, #00aeef 6%, #fffdee 6%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00aeef', endColorstr='#fffdee', GradientType=1); /* IE6-9 */
+      background: mat-color($mindtrails-primary, A700); /* Old browsers */
+      background: -moz-linear-gradient(left, mat-color($mindtrails-primary, A700) 6%, mat-color($mindtrails-primary, A700) 6%, mat-color($mindtrails-primary, A100, .35) 6%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, mat-color($mindtrails-primary, A700) 6%, mat-color($mindtrails-primary, A700) 6%, mat-color($mindtrails-primary, A100, .35) 6%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, mat-color($mindtrails-primary, A700) 6%, mat-color($mindtrails-primary, A700) 6%, mat-color($mindtrails-primary, A100, .35) 6%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#178dcd', endColorstr='#e5e7ee', GradientType=1); /* IE6-9 */
     }
 
 }
