@@ -13,6 +13,7 @@ export class StepComponent implements OnInit, OnChanges {
   @Input() step: Step;
   @Input() session: Session;
   @Input() stepIndex: number;
+  @Input() sessionIndex: number;
   pageIndex: number;
   pageData: PageData[] = [];
   currentPage: Page;
@@ -105,7 +106,7 @@ export class StepComponent implements OnInit, OnChanges {
   recordPageData() {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
-      const elData = {session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+      const elData = {session: this.session.session, sessionIndex: this.sessionIndex, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.step.title,
         stepIndex: this.stepIndex, stimulus: '', trialType: el.type, buttonPressed: '',
         correct: this.elementCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,

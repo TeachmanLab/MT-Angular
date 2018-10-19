@@ -58,6 +58,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   session: Session;
   @Input()
+  sessionIndex: number;
+  @Input()
   pageCount: number;
 
   pageIndex = 0;
@@ -122,7 +124,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
       const Data = {
-        session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+        session: this.session.session, sessionIndex: this.sessionIndex, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.scenario.title,
         stepIndex: this.scenarioIndex, stimulus: '', trialType: this.state, buttonPressed: '',
         correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
