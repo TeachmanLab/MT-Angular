@@ -132,9 +132,12 @@ export class StepComponent implements OnInit, OnChanges {
       this.pageData.push(elData);
     }
     console.log('pageData', this.pageData);
-    // this.api.addResponse(this.pageData);
-    this.pageCounter++;
+    this.api.saveProgress(this.pageData).subscribe(data => {
+      console.log('Saving the data to the server');
+      this.pageCounter++;
+    });
   }
+
 
   nextPage() {
     // console.log('Next page');

@@ -4,17 +4,17 @@ import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {PageData, Scenario, Session} from './interfaces';
 import {TrainingCSV} from './training-csv';
+import {environment} from '../environments/environment';
+import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class ApiService {
-  /* This is just a placeholder, presently.  We will eventually use this to connect with MindTrails to load the Joson
-  file and report user progress back to MindTrails so it can store information in the databsae.
-   */
+
 
   // REST endpoints
   endpoints = {
     content: '/api/content',
-    response: '/api/response',
+    progress: environment.progress_endpoint,
     session: '/api/session'
   };
 
@@ -43,8 +43,9 @@ export class ApiService {
       .pipe(map(n => TrainingCSV.toJson(n)));
   }
 
-  addResponse(pageData: PageData[]): Observable<PageData[]> {
-    return this.httpClient.post<PageData[]>(this.endpoints.response, pageData)
+  saveProgress(pageData: PageData[]): Observable<PageData[]> {
+    console.log('Saving Progress to ' + this.endpoints.progress);
+    return this.httpClient.post<PageData[]>(this.endpoints.progress, pageData)
       .pipe(catchError(this.handleError));
   }
 

@@ -11,7 +11,7 @@ Run `ng build --prod --build-optimizer --base-href=/training/`
 Copy the files in ./dist/training-prototype up to the web server and placement in the /var/www/training directory.
 
 ## Adding to Mindtrails
-Run `ng build --prod --build-optimizer --base-href=/r01/angular_training/`
+Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/angular_training/`
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/training2
 Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular_training`
 
@@ -24,7 +24,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Running unit testsasdfa
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 

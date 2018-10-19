@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { Page, PageData, Scenario, Session } from '../interfaces';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-scenario',
@@ -76,8 +77,9 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Output()
   finalCount: EventEmitter<number> = new EventEmitter();
 
-  constructor() {
-  }
+  constructor (
+    private api: ApiService
+  ) { }
 
   ngOnInit() {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
@@ -148,8 +150,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
     }
 
     console.log('pageData', this.pageData);
-    // this.api.addResponse(this.pageData);
-    this.pageCounter++;
+    this.api.saveProgress(this.pageData).subscribe(data => {
+      console.log('Saving the data to the server');
+      this.pageCounter++;
+    });
   }
 
   progressState(correctAnswer = true) {
