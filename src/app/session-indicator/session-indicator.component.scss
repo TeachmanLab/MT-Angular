@@ -8,7 +8,7 @@ div.session {
   flex-wrap: nowrap;
   -webkit-align-items: center; /* Safari 7.0+ */
   align-items: center;
-  margin-top: 1em;
+  margin: 1em;
 
   div.image-title {
     flex: 1 1 auto;
@@ -29,7 +29,7 @@ div.session {
 
   div.title-block {
     flex: 1 1 auto;
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 0;
     font-size: .9em;
     line-height: 1em;
     text-align: center;
@@ -56,18 +56,16 @@ div.session {
       font-size: 1.5em;
       font-weight: 700;
     }
-    li.error {
-      color: red;
-      font-weight: 500;
+    .icon-space {
+      width: 25px;
+      height: 25px;
+      padding-right: 3px;
     }
     mat-icon {
       width: 25px;
       height: 25px;
       color: black;
       padding: 2px;
-    }
-    mat-icon.error {
-      color: red;
     }
   }
 }

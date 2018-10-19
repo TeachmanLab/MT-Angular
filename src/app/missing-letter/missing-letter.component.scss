@@ -1,12 +1,15 @@
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
+
 .letter {
-  border: 1px solid darkslategray;
+  border: 1px solid mat-color($mindtrails-primary, 900);
   padding: 10px;
   border-radius: 8px;
   width: 15px;
   box-shadow: 2px 2px #888;
   font-weight: bold;
   font-size: 1.2rem;
-  background-color: #F6EDD0;
+  background-color: mat-color($mindtrails-primary, A100, .35);
 }
 
 h2 {
@@ -19,15 +22,15 @@ div.missing {
 }
 
 div.correct {
-  background-color: #AAD2B8;
-  border: 1px solid #009650;
+  background-color: mat-color($mindtrails-accent, A100);
+  border: mat-color($mindtrails-accent, A700);
   box-shadow: -1px -1px #888;
   font-size: 1.8em;
 }
 
 div.incorrect, button.incorrect {
-  background-color: #D7A99D;
-  border: 1px solid #9F202C;
+  background-color: mat-color($mindtrails-warn, A100);
+  border: 1px solid mat-color($mindtrails-warn, A700);
   box-shadow: -1px -1px #888;
 }
 
@@ -35,13 +38,14 @@ div.correct-message, div.incorrect-message {
   padding: 20px;
   margin: auto;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
 div.correct-message {
-  color: #009650;
+  color: mat-color($mindtrails-accent, A700);
 }
 div.incorrect-message {
-  color: #9F202C;
+  color: mat-color($mindtrails-warn, A700);
 }
 
 div.select-a-tile {

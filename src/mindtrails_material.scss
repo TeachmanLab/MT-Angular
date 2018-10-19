@@ -35,30 +35,30 @@ $mindtrails-blue: (
   )
 );
 
-$mindtrails-red: (
-  50 : #ffdfd5,
-  100 : #f8bdb9,
-  200 : #d99997,
-  300 : #ba7572,
-  400 : #a35958,
-  500 : #8c3d3e,
-  600 : #7f3538,
-  700 : #6e292e,
-  800 : #5e1d27,
-  900 : #4d0f1d,
-  A100 : #e4e6bc,
-  A200 : #d2d692,
-  A400 : #b5bb4f,
-  A700 : #8d8d29,
+$mindtrails-green: (
+  50 : #def6f2,
+  100 : #aee9de,
+  200 : #73dcc9,
+  300 : #17cdb2,
+  400 : #00c0a0,
+  500 : #00b28f,
+  600 : #00a481,
+  700 : #009370,
+  800 : #008262,
+  900 : #006544,
+  A100 : #c4e8c5,
+  A200 : #9dd9a0,
+  A400 : #4fc05b,
+  A700 : #009327,
   contrast: (
     50 : #000000,
     100 : #000000,
     200 : #000000,
     300 : #000000,
-    400 : #ffffff,
-    500 : #ffffff,
-    600 : #ffffff,
-    700 : #ffffff,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
     800 : #ffffff,
     900 : #ffffff,
     A100 : #000000,
@@ -69,7 +69,7 @@ $mindtrails-red: (
 );
 
 $mindtrails-primary: mat-palette($mindtrails-blue);
-$mindtrails-accent: mat-palette($mindtrails-red);
+$mindtrails-accent: mat-palette($mindtrails-green);
 $mindtrails-warn: mat-palette($mat-deep-orange);
 
 $mindtrails-theme: mat-light-theme($mindtrails-primary, $mindtrails-accent, $mindtrails-warn);
