@@ -15,7 +15,8 @@ export class ApiService {
   endpoints = {
     content: '/api/content',
     progress: environment.progress_endpoint,
-    session: '/api/session'
+    session: '/api/session',
+    conditioning: 'api/training/conditioning'
   };
 
   constructor(private httpClient: HttpClient) {
@@ -46,6 +47,18 @@ export class ApiService {
   saveProgress(pageData: PageData[]): Observable<PageData[]> {
     console.log('Saving Progress to ' + this.endpoints.progress);
     return this.httpClient.post<PageData[]>(this.endpoints.progress, pageData)
+      .pipe(catchError(this.handleError));
+  }
+
+  getConditioning(): Observable<any> {
+    console.log('Getting Conditioning');
+    return this.httpClient.get<string>(this.endpoints.conditioning)
+      .pipe(catchError(this.handleError));
+  }
+
+  getProgress(): Observable<PageData[]> {
+    console.log('Getting Progress');
+    return this.httpClient.get<PageData[]>(this.endpoints.progress)
       .pipe(catchError(this.handleError));
   }
 
