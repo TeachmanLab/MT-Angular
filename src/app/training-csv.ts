@@ -13,7 +13,7 @@ export class TrainingCSV {
       let missingLetter: MissingLetter;
       let question: Question;
       let image: string;
-
+      let answer: string;
       const result = [];
       for (let i = 1; i < lines.length - 1; i++) {
         currentLine = TrainingCSV.csvLineToArray(lines[i]);
@@ -21,11 +21,11 @@ export class TrainingCSV {
           console.log(`Skipping line #${i}:  ${lines[i]}`);
           continue;
         }
-
         const intro = {type: 'Intro', content: currentLine[1]};
         const statement = {type: 'Statements', content: currentLine[3]};
         missingLetter = {type: 'MissingLetter', word: currentLine[2], content: currentLine[2]}; // setting content as well as word in order to populate pageData stimulus field.
-        question = {type: 'Question', question: currentLine[4], answer: currentLine[5], options: ['Yes', 'No']};
+        currentLine[7] === 'Positive' ?  answer = currentLine[5] : answer = currentLine[6];
+        question = {type: 'Question', question: currentLine[4], answer: answer, options: [currentLine[5], currentLine[6]]};
         image = `assets/training_images/${currentLine[0]}.jpg`;
         scenario = {
           type: 'Scenario', title: currentLine[1], image: image, statement: currentLine[3],
