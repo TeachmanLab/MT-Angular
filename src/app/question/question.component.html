@@ -16,7 +16,7 @@
     fxLayoutGap="20px"
     fxLayoutGap.xs="20px"
   >
-    <button mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
+    <button class="option" mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
   </div>
 
   <div fxLayoutAlign="center">
@@ -26,7 +26,7 @@
   <div *ngIf="question.answer" fxLayoutAlign="center">
     <div [hidden]="!(this.state === 'correct')" class="correct">
       <div>Correct!</div>
-      <div fxLayoutAlign="center">
+      <div *ngIf="question.explanation" fxLayoutAlign="center">
         <p>{{ question.explanation }} </p>
       </div>
     </div>

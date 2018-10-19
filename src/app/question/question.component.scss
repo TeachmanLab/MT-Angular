@@ -46,6 +46,12 @@
     margin-bottom:10px;
   }
 
+  .option {
+    line-height: 2em;
+    padding: 10px;
+    white-space: normal;
+  }
+
   .answer{
     font-weight: bolder;
     color: mat-color($mindtrails-accent, A700);
