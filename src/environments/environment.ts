@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   redirect: 'http://localhost:4200/',
-  progress_endpoint: 'http://localhost:4200/'
+  progress_endpoint: 'api/training'
 };
 
 /*
