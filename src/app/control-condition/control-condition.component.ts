@@ -31,6 +31,12 @@ export class ControlConditionComponent implements OnInit {
   setCurrentSession () {
     this.api.getControlSessions().subscribe(sessions => {
       this.sessions = sessions;
+      // this.api.getProgress().subscribe(progress => {
+      //   if (progress['sessionIndex']) {
+      //     this.sessionIndex = progress['sessionIndex'];
+      //   }
+      //   this.currentSession = this.sessions[this.sessionIndex];
+      // });
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
           this.sessionIndex = params['session'];
