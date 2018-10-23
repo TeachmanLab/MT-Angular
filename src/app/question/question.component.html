@@ -27,7 +27,7 @@
     <div [hidden]="!(this.state === 'correct')" class="correct">
       <div>Correct!</div>
       <div *ngIf="question.explanation" fxLayoutAlign="center">
-        <p>{{ question.explanation }} </p>
+        <p>This is {{ question.answer.toLowerCase() }}. {{ question.explanation }}</p>
       </div>
     </div>
 
