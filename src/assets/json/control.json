@@ -367,7 +367,7 @@
               {
                 "type": "ThoughtBubble",
                 "title": "Agoraphobia",
-                "thought": "When Tony leaves the house by himself, he becomes very anxious. He imagines that he might have a heart attack and that no one would be around to help. Therefore, he has begun to avoid being alone whenever possible. He has also started avoiding places and situations, such as shopping malls, stores, crowds, theaters, and waiting in lines, where he fears being trapped if something happens.",
+                "thought": "When Tony leaves the house by himself, he becomes very anxious. He imagines that he might have a heart attack and that no one would be around to help. Therefore, he has started to avoid being alone whenever possible. He has also started avoiding places and situations, such as shopping malls, stores, crowds, theaters, and waiting in lines, where he fears being trapped if something happens.",
                 "followup": [
                   "People with agoraphobia fear almost any open space, thereby making tasks such as grocery shopping or even seeing a therapist anxiety-provoking. Agoraphobia often occurs with panic disorder; many people who experience panic disorder start to avoid open spaces at some point. They often fear that they might be trapped or embarrassed if they have panic attacks in public."
                 ]
@@ -379,7 +379,7 @@
               {
                 "type": "ThoughtBubble",
                 "title": "Social Anxiety Disorder",
-                "thought": "Michelle knows that on the first day of college, some professors will instruct her and her peers to go around the room and introduce themselves. She feels nauseated just thinking about sitting there, waiting to introduce herself to a roomful of strangers looking at her. Her voice might shake, and she might appear scared. She feels the anxiety is too much to bear, and she skips the first day of class to avoid the possibility of introducing herself.",
+                "thought": "Michelle knows that on the first day of college, some professors will instruct her and her peers to go around the room and introduce themselves. She feels nauseated just thinking about sitting there, waiting to introduce herself to a roomful of strangers looking at her. Her voice might shake, and she might appear scared. She feels the anxiety is too much to handle, and she skips the first day of class to avoid the possibility of introducing herself.",
                 "followup": [
                   "Speaking in front of a group, walking into a room full of strangers, or meeting with one’s boss can make anyone feel somewhat anxious, but some people experience intense fear and even panic attacks in these situations. People with social anxiety disorder fear being negatively evaluated and worry excessively about embarrassing themselves, often leading them to avoid social situations."
                 ]
@@ -391,7 +391,7 @@
               {
                 "type": "ThoughtBubble",
                 "title": "Generalized Anxiety Disorder",
-                "thought": "Shawn is always feeling stressed and constantly worries about anything and everything. When he worries, his heart races and he finds it difficult to breathe. He also feels tension in his shoulders, stomach, and legs. Shawn has been getting poor sleep due to worrying and frequent wakening throughout the night.",
+                "thought": "Shawn is always feeling stressed and constantly worries about anything and everything. When he worries, his heart races and he finds it difficult to breathe. He also feels tension in his shoulders, stomach, and legs. Shawn has been getting poor sleep due to worrying and wakes up throughout the night.",
                 "followup": [
                   "Everyone worries from time to time about finances, work, health, or family, but for people with generalized anxiety disorder (GAD) these worries can be excessive, unrealistic, and difficult to control. People with GAD experience a range of physical symptoms, such as muscle aches, tension, sleeplessness, irritability, restlessness, and concentration difficulties. When these symptoms persist for months, the person can feel even more helpless and anxious."
                 ]
@@ -429,7 +429,7 @@
               {
                 "type": "ThoughtBubble",
                 "title": "Obsessive-Compulsive Disorder",
-                "thought": "For years Travis has had particular concerns about bodily waste or secretions, fearing that he will contract a disease or spread a virus to others. His daily rituals include washing his hands excessively, taking prolonged showers, and extensive wiping and cleaning after he uses the toilet. The possibility that he might contract a disease or spread a virus to other people dominates his waking hours.",
+                "thought": "For years Travis has had particular concerns about bodily waste or secretions, fearing that he will contract a disease or spread a virus to others. His daily rituals include washing his hands excessively, taking prolonged showers, and extensive cleaning after he uses the toilet. The possibility that he might contract a disease or spread a virus to other people dominates his waking hours.",
                 "followup": [
                   "Most people have times when they wonder whether they locked a door or feel that something terrible is about to happen. Many people also have simple routines they follow in the morning or evening. For people with obsessive-compulsive disorder (OCD), these thoughts and routines occur repeatedly, feel difficult to stop, and consume a large amount of time. Their obsessions can involve fears of contamination or poisoning, religious themes, doubts, and thoughts of sex. Compulsions are often desperate attempts to neutralize the obsession and anxiety, and involve behaviors such as repeatedly washing, checking, counting, or touching things."
                 ]
@@ -441,7 +441,7 @@
               {
                 "type": "ThoughtBubble",
                 "title": "Posttraumatic Stress Disorder",
-                "thought": "Sophie witnessed active combat during her time in the military. Some particular incidents have never left her mind, such as the horrifying sight of Ben, a close friend, being shot to death. She has returned to civilian life, but images from battle run repeatedly through her mind and disrupt her focus. Smelling gasoline at a gas station brings back memories that sometimes feel so real she feels she is back in combat. Sophie also jumps at any loud noise, as if she were preparing herself for battle.",
+                "thought": "Sophie witnessed active combat during her time in the military. Some particular incidents have never left her mind, such as the horrifying sight of Ben, a close friend, dying. She has returned to civilian life, but images from battle run repeatedly through her mind and disrupt her focus. Smelling gasoline at a gas station brings back memories that sometimes feel so real she feels she is back in combat. Sophie also jumps at any loud noise, as if she were preparing herself for battle.",
                 "followup": [
                   "Terrible events can cause extreme feelings of helplessness, horror, and fear. These events might include physical or sexual assault, car accidents, natural disasters, robbery, and war. People with posttraumatic stress disorder (PTSD) develop anxiety and intrusive thoughts about the event and may feel at times as though the event were happening again. They often are easy to startle and experience nightmares, anger outbursts, feelings of detachment, and hopelessness. PTSD can occur within one month of the event, or it may be delayed for many years after the trauma."
                 ]
@@ -576,7 +576,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-4.png"
+                "content": "./assets/images/step-body-images/session3-step2-1.png"
               }
             ]
           },
@@ -596,7 +596,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-1.png"
+                "content": "./assets/images/step-body-images/session3-step2-2.png"
               },
               {
                 "type": "References",
@@ -624,7 +624,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-2.png"
+                "content": "./assets/images/step-body-images/session3-step2-3.png"
               },
               {
                 "type": "References",
@@ -647,13 +647,25 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-3.png"
+                "content": "./assets/images/step-body-images/session3-step2-4.png"
               },
               {
                 "type": "References",
                 "content": [
                   "(6) Gerull, F. C., & Rapee, R. M. (2002). Mother knows best: Effects of maternal modelling on the acquisition of fear and avoidance behaviour in toddlers. Behaviour Research and Therapy, 40, 279-287. http://dx.doi.org/10.1016/S0005-7967(01)00013-4"
                 ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "As we have seen, anxiety disorders are caused by a complex interaction of many different factors. Researchers have identified biological, psychological, and environmental or social factors that contribute to the development of anxiety disorders. However, the specific interaction of these factors can vary across people, and more research is needed to identify other, as yet unknown factors."
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-5.png"
               }
             ]
           },
@@ -1003,7 +1015,7 @@
             "elements": [
               {
                 "type": "Question",
-                "question": "If you stay in a situations that make you feel anxious, over time your anxiety will remain stable or even increase.",
+                "question": "If you stay in situations that make you feel anxious, over time your anxiety will remain stable or even increase.",
                 "options": [
                   "True",
                   "False"
