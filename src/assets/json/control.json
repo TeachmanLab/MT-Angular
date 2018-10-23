@@ -576,7 +576,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-4.png"
+                "content": "./assets/images/step-body-images/session3-step2-1.png"
               }
             ]
           },
@@ -596,7 +596,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-1.png"
+                "content": "./assets/images/step-body-images/session3-step2-2.png"
               },
               {
                 "type": "References",
@@ -624,7 +624,7 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-2.png"
+                "content": "./assets/images/step-body-images/session3-step2-3.png"
               },
               {
                 "type": "References",
@@ -647,13 +647,25 @@
               },
               {
                 "type": "Image",
-                "content": "./assets/images/step-body-images/session3-step2-3.png"
+                "content": "./assets/images/step-body-images/session3-step2-4.png"
               },
               {
                 "type": "References",
                 "content": [
                   "(6) Gerull, F. C., & Rapee, R. M. (2002). Mother knows best: Effects of maternal modelling on the acquisition of fear and avoidance behaviour in toddlers. Behaviour Research and Therapy, 40, 279-287. http://dx.doi.org/10.1016/S0005-7967(01)00013-4"
                 ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "content": "As we have seen, anxiety disorders are caused by a complex interaction of many different factors. Researchers have identified biological, psychological, and environmental or social factors that contribute to the development of anxiety disorders. However, the specific interaction of these factors can vary across people, and more research is needed to identify other, as yet unknown factors."
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/step-body-images/session3-step2-5.png"
               }
             ]
           },
