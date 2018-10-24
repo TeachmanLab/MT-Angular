@@ -35,51 +35,6 @@
                 "content": "This is an experimental program, so it is still in the testing phase. But previous research suggests that this program may be able to reduce anxious thinking as much as some forms of therapy. We want to learn whether it can be helpful for you."
               }
             ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How important is reducing your anxiety to you right now?",
-                "options": [
-                  "Not Important",
-                  "Slightly Important",
-                  "Moderately Important",
-                  "Very Important",
-                  "Extremely Important"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
-                "options": [
-                  "Not Confident",
-                  "Slightly Confident",
-                  "Moderately Confident",
-                  "Very Confident",
-                  "Extremely Confident"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
-                "options": [
-                  "Not Confident",
-                  "Slightly Confident",
-                  "Moderately Confident",
-                  "Very Confident",
-                  "Extremely Confident"
-                ]
-              }
-            ]
           }
         ]
       }
@@ -212,21 +167,6 @@
                 ],
                 "answer": "True",
                 "explanation": "Anxiety can get so impairing that someone struggles to fulfill daily duties such as work or family responsibilities."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "When do you plan to complete your next session?",
-                "options": [
-                  "Tomorrow",
-                  "In 2 to 4 days (recommended)",
-                  "In 5 to 7 days",
-                  "After more than 7 days",
-                  "Not planning to come back"
-                ]
               }
             ]
           }
@@ -459,21 +399,6 @@
                 ],
                 "answer": "False",
                 "explanation": "Many people have simple routines they follow in the morning or evening. For people with OCD, these thoughts and routines occur repeatedly, feel difficult to stop, and consume a large amount of time."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "When do you plan to complete your next session?",
-                "options": [
-                  "Tomorrow",
-                  "In 2 to 4 days (recommended)",
-                  "In 5 to 7 days",
-                  "After more than 7 days",
-                  "Not planning to come back"
-                ]
               }
             ]
           }
@@ -751,21 +676,6 @@
                 "explanation": "People who avoid feared objects or situations do not learn that their anxiety will decrease on its own after a while and that they are able to handle their feelings without avoiding the object or situation."
               }
             ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "When do you plan to complete your next session?",
-                "options": [
-                  "Tomorrow",
-                  "In 2 to 4 days (recommended)",
-                  "In 5 to 7 days",
-                  "After more than 7 days",
-                  "Not planning to come back"
-                ]
-              }
-            ]
           }
         ]
       }
@@ -943,21 +853,6 @@
                 "explanation": "Approximately 90% of people with an anxiety disorder experience at least one more psychological disorder during their lifetime."
               }
             ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "When do you plan to complete your next session?",
-                "options": [
-                  "Tomorrow",
-                  "In 2 to 4 days (recommended)",
-                  "In 5 to 7 days",
-                  "After more than 7 days",
-                  "Not planning to come back"
-                ]
-              }
-            ]
           }
         ]
       }
@@ -1095,20 +990,6 @@
                 "title": "Open to Others",
                 "highlight": "As stated in the previous session, positive relationships with one's spouse, friends, or family can buffer the effect of anxiety problems. If others know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view, which can help you think flexibly.",
                 "icon": "open-up-to-others"
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "People with anxiety problems can find relationships with others to be stressful and, therefore, should avoid them.",
-                "options": [
-                  "True",
-                  "False"
-                ],
-                "answer": "False",
-                "explanation": "If other people know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view."
               }
             ]
           }
