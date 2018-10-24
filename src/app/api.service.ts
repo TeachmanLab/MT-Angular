@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {PageData, Scenario, Session} from './interfaces';
+import {PageData, Scenario, Session, Study} from './interfaces';
 import {TrainingCSV} from './training-csv';
 import {environment} from '../environments/environment';
 import {RequestOptions} from '@angular/http';
@@ -16,7 +16,7 @@ export class ApiService {
     content: '/api/content',
     progress: environment.progress_endpoint,
     session: '/api/session',
-    conditioning: 'api/training/conditioning'
+    study: 'api/training/study',
   };
 
   constructor(private httpClient: HttpClient) {
@@ -50,15 +50,15 @@ export class ApiService {
       .pipe(catchError(this.handleError));
   }
 
-  getConditioning(): Observable<any> {
-    console.log('Getting Conditioning');
-    return this.httpClient.get<string>(this.endpoints.conditioning)
-      .pipe(catchError(this.handleError));
-  }
-
   getProgress(): Observable<PageData[]> {
     console.log('Getting Progress');
     return this.httpClient.get<PageData[]>(this.endpoints.progress)
+      .pipe(catchError(this.handleError));
+  }
+
+  getStudy(): Observable<Study> {
+    console.log('Getting Study');
+    return this.httpClient.get<Study>(this.endpoints.study)
       .pipe(catchError(this.handleError));
   }
 

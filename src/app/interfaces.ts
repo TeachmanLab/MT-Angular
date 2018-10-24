@@ -74,6 +74,12 @@ export interface BulletList extends Element {
   bullets: string[];
 }
 
+export interface Study {
+  conditioning: string;
+  currentSession: string; // the name used on the back end, such as firstSession, etc.
+  currentSessionIndex: string;
+}
+
 // This is how we collect data as participants move through the sessions.
 export interface PageData {
   session: string; // The back end id (firstSession)
