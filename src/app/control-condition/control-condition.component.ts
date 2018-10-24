@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Session } from '../interfaces';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-control-condition',
@@ -69,5 +70,10 @@ export class ControlConditionComponent implements OnInit {
 
   goSession1 () {
     this.router.navigate(['control', 1]);
+  }
+
+  close() {
+    console.log('Redirecting to ' + environment.redirect);
+    window.location.href = environment.redirect;
   }
 }

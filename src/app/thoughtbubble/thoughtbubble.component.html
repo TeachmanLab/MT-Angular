@@ -2,13 +2,17 @@
 
 <div *ngIf="currentState==='thought'" fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
   <span class="material-icons">person</span>
-  <div class="thought">{{thoughtBubble.thought}}</div>
+  <div class="thought">
+    <p>{{thoughtBubble.thought}}</p>
+  </div>
 </div>
 
 <div *ngIf="currentState==='followup'">
   <div fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
     <span class="material-icons">person</span>
-    <div class="thought">{{thoughtBubble.thought}}</div>
+    <div class="thought">
+      <p>{{thoughtBubble.thought}}</p>
+    </div>
   </div>
   <div
     *ngFor="let text of thoughtBubble.followup"
