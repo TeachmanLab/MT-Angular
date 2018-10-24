@@ -7,8 +7,9 @@
 </div>
 <div *ngIf="sessionDone && !allDone && !introSession()">
   <mat-card>
-    <h1>Complete!</h1>
-    <h5>You have completed <i>{{currentSession.title}}: {{currentSession.subTitle}}</i></h5>
+    <h1>Well Done!</h1>
+    <h5>Great job with <i>{{currentSession.title}}: {{currentSession.subTitle}}</i>.</h5>
+    <button *ngIf="sessionDone" class="continue"  mat-raised-button (click)="close()">Continue</button>
   </mat-card>
 </div>
 <div *ngIf="allDone">
