@@ -992,6 +992,20 @@
                 "icon": "open-up-to-others"
               }
             ]
+          },
+          {
+            "elements": [
+              {
+                "type": "Question",
+                "question": "People with anxiety problems can find relationships with others to be stressful and, therefore, should avoid them.",
+                "options": [
+                  "True",
+                  "False"
+                ],
+                "answer": "False",
+                "explanation": "If other people know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view."
+              }
+            ]
           }
         ]
       }
