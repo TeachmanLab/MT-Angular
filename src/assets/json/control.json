@@ -212,7 +212,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "As we saw, anxiety is common, useful, and appropriate in situations that threaten someone’s health or well-being. But when someone gets anxious without a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As you learned in Session 1, anxious feelings come with changes in thoughts, bodily reactions, and behaviors. The same types of changes can cause problems with anxiety that mental health professionals call symptoms. Symptoms can vary in how much they affect a person and how long they last."
+                "content": "As you saw in Session 1, anxiety is common, useful, and appropriate in situations that threaten someone’s health or well-being. But when someone gets anxious without a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As you learned, anxious feelings come with changes in thoughts, bodily reactions, and behaviors. The same types of changes can cause problems with anxiety that mental health professionals call symptoms. Symptoms can vary in how much they affect a person and how long they last."
               },
               {
                 "type": "Paragraph",
@@ -224,7 +224,7 @@
               },
               {
                 "type": "Paragraph",
-                "content": "Research findings clearly show that treatment by a well-trained mental health professional can alleviate many anxiety symptoms(1). If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
+                "content": "Research findings clearly show that treatment by a well-trained mental health professional can alleviate many anxiety symptoms (1). If you have been having symptoms for several weeks or longer, it is recommended that you see a professional for an evaluation and treatment recommendations."
               },
               {
                 "type": "References",
@@ -497,7 +497,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "Anxiety disorders are caused by a complex interaction of many different factors. Researchers have identified biological, psychological, and environmental or social factors that contribute to the development of anxiety disorders. However, the specific interaction of these factors can vary across people, and more research is needed to identify other, as yet unknown factors."
+                "content": "Anxiety disorders are caused by a complex interaction of many different factors. Researchers have identified biological, psychological, and environmental or social factors that contribute to the development of anxiety disorders. Let's go over each factor in a little more depth."
               },
               {
                 "type": "Image",
@@ -586,7 +586,7 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "content": "As we have seen, anxiety disorders are caused by a complex interaction of many different factors. Researchers have identified biological, psychological, and environmental or social factors that contribute to the development of anxiety disorders. However, the specific interaction of these factors can vary across people, and more research is needed to identify other, as yet unknown factors."
+                "content": "As we have seen, anxiety disorders are caused by a complex interaction of biological, psychological, and environmental or social factors. The specific interaction of these factors can vary across people, and more research is needed to identify other, as yet unknown factors."
               },
               {
                 "type": "Image",
@@ -612,7 +612,7 @@
             "elements": [
               {
                 "type": "Question",
-                "question": "Cognitive distortions, such as interpreting ambiguous situations more negatively than is warranted, can lead one to experience more anxiety and can be one reason why one’s anxiety is not decreasing over time.",
+                "question": "Cognitive distortions, such as interpreting ambiguous situations more negatively than is warranted, can lead one to experience more anxiety and can be one reason that a person's anxiety is not decreasing over time.",
                 "options": [
                   "True",
                   "False"
@@ -667,7 +667,7 @@
             "elements": [
               {
                 "type": "Question",
-                "question": "When people with anxiety disorders avoid the objects or situations they fear, they do not learn that they can handle their feelings, and the anxiety remains over time.",
+                "question": "When people with anxiety disorders avoid the objects or situations they fear, they do not learn that they can handle their feelings, and the anxiety persists over time.",
                 "options": [
                   "True",
                   "False"
@@ -809,7 +809,7 @@
             "elements": [
               {
                 "type": "Question",
-                "question": "Anxiety disorders can strain relationships with friends and family that otherwise help prevent and alleviate these disorders",
+                "question": "Anxiety disorders can strain relationships with friends and family that otherwise help prevent and alleviate these disorders.",
                 "options": [
                   "True",
                   "False"
@@ -829,7 +829,7 @@
               {
                 "type": "Highlight",
                 "title": "Other Psychological Problems",
-                "highlight": "About 90% of people with an anxiety disorder have at least one more anxiety disorder or other mental disorder during their lifetime. For example, one half of depressed people also report an anxiety disorder in their lifetime, and one-quarter-to-one-half of people with an anxiety disorder have also had a lifetime substance use disorder. It may be that depression and substance abuse develop as a consequence of anxious people’s isolating themselves and trying to escape from their symptoms by using alcohol or drugs (1).",
+                "highlight": "About 90% of people with an anxiety disorder have at least one more anxiety disorder or other mental disorder during their lifetime. For example, one half of depressed people also report an anxiety disorder in their lifetime, and from one quarter to one half of people with an anxiety disorder have also had a lifetime substance use disorder. It may be that depression and substance abuse develop as a consequence of anxious people’s isolating themselves and trying to escape from their symptoms by using alcohol or drugs (1).",
                 "icon": "other-psychological-problems"
               },
               {
@@ -959,7 +959,7 @@
               {
                 "type": "Highlight",
                 "title": "Think Flexibly",
-                "highlight": "How people think about a situation influences how they feel. Recall from session 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?\"",
+                "highlight": "How people think about a situation influences how they feel. Recall from Session 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?\"",
                 "icon": "think-flexibly"
               }
             ]
