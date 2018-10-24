@@ -37,6 +37,20 @@ export class TrainingComponent implements OnInit {
     this.loadIndicatorSessions();
   }
 
+  getProgress() {
+    this.api.getProgress().subscribe(progress => {
+      console.log('progress:', progress);
+      if (progress['sessionIndex'] === this.sessionIndex) {
+        if (progress['stepIndex'] > this.currentSession.steps.length) {
+          this.scenarioIndex = progress['stepIndex'];
+        } else {
+          this.done.emit();
+        }
+      }
+    });
+  }
+
+
   loadIntro() {
     this.api.getTrainingSessions().subscribe(sessions => {
       this.sessions = sessions;
@@ -89,6 +103,7 @@ export class TrainingComponent implements OnInit {
       }
       this.totalRounds = this.rounds.length;
     });
+    this.getProgress();
   }
 
   isComplete(): boolean {

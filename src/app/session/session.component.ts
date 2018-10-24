@@ -33,9 +33,13 @@ export class SessionComponent implements OnInit, OnChanges {
   ngOnChanges() {
     // console.log('The Session was changed!');
     this.api.getProgress().subscribe(progress => {
-      if (progress['sessionIndex'].toString() === this.sessionIndex) {
-        this.stepIndex = progress['stepIndex'];
-        this.initStep();
+      if (progress['sessionIndex'] === this.sessionIndex) {
+        if (progress['stepIndex'] < this.session.steps.length) {
+          this.stepIndex = progress['stepIndex'];
+          this.initStep();
+        } else {
+          this.done.emit();
+        }
       } else {
         this.initStep();
       }
