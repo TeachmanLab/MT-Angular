@@ -1,0 +1,8 @@
+<app-training
+  *ngIf="study && study.conditioning != 'NEUTRAL'"
+  [setSessionIndex]="study.currentSessionIndex"
+></app-training>
+<app-control-condition
+  *ngIf="study && study.conditioning === 'NEUTRAL'"
+  [setSessionIndex]="study.currentSessionIndex"
+></app-control-condition>

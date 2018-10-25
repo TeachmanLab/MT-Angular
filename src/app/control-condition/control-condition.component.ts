@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Session } from '../interfaces';
@@ -19,6 +19,8 @@ export class ControlConditionComponent implements OnInit {
   sessionDone = false;
   allDone = false;
 
+  @Input() setSessionIndex: number;
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
@@ -26,18 +28,15 @@ export class ControlConditionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if (this.setSessionIndex) {
+      this.sessionIndex = this.setSessionIndex;
+    }
     this.setCurrentSession();
   }
 
   setCurrentSession () {
     this.api.getControlSessions().subscribe(sessions => {
       this.sessions = sessions;
-      // this.api.getProgress().subscribe(progress => {
-      //   if (progress['sessionIndex']) {
-      //     this.sessionIndex = progress['sessionIndex'];
-      //   }
-      //   this.currentSession = this.sessions[this.sessionIndex];
-      // });
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
           this.sessionIndex = params['session'];

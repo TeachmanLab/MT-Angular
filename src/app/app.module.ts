@@ -33,10 +33,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { SessionIndicatorBarComponent } from './session-indicator-bar/session-indicator-bar.component';
 import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-bar.component';
 import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'control', pathMatch: 'full'},
+  { path: '', component: HomeComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'training/:session', component: TrainingComponent },
   { path: 'control', component: ControlConditionComponent },
@@ -46,22 +47,23 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ScenarioComponent,
-    MissingLetterComponent,
-    StatementComponent,
-    QuestionComponent,
-    SessionComponent,
-    StepComponent,
-    PageComponent,
-    ControlConditionComponent,
-    ProgressBarComponent,
-    ThoughtbubbleComponent,
-    HighlightComponent,
-    TrainingComponent,
     BulletListComponent,
+    ControlConditionComponent,
+    HighlightComponent,
+    HomeComponent,
+    MissingLetterComponent,
+    PageComponent,
+    ProgressBarComponent,
+    QuestionComponent,
+    ScenarioComponent,
+    SessionComponent,
+    SessionIndicatorComponent,
     SessionIndicatorBarComponent,
+    StatementComponent,
+    StepComponent,
     StepIndicatorBarComponent,
-    SessionIndicatorComponent
+    ThoughtbubbleComponent,
+    TrainingComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Scenario, Session } from '../interfaces';
 import { environment } from '../../environments/environment';
@@ -24,6 +24,7 @@ export class TrainingComponent implements OnInit {
   scenarioIndex = 1;
   pageCount: number;
 
+  @Input() setSessionIndex: number;
 
   @Output() done: EventEmitter<any> = new EventEmitter();
 
@@ -33,6 +34,9 @@ export class TrainingComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if (this.setSessionIndex) {
+      this.sessionIndex = this.setSessionIndex - 1;
+    }
     this.loadIntro();
     this.loadIndicatorSessions();
   }
