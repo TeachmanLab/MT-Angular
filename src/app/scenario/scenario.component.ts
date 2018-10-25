@@ -87,7 +87,11 @@ export class ScenarioComponent implements OnInit, OnChanges {
   ngOnInit() {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
     // the count must begin after the page count that gets established in the step component
-    this.pageCounter = this.pageCount;
+    if (this.pageCount) {
+      this.pageCounter = this.pageCount + 1;
+    } else {
+      this.pageCounter = 1;
+    }
     this.study = {name: '', currentSession: '', currentSessionIndex: 0, conditioning: ''};
     this.api.getStudy().subscribe(study => {
       if (study) {
@@ -101,7 +105,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     this.currentPage = this.scenario.pages[0];
     this.state = this.currentPage.elements[0].type;
-    if (!changes.scenario.isFirstChange()) {
+    if (changes.scenario && !changes.scenario.isFirstChange()) {
       console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
       this.init();
