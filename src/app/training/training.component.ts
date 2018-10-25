@@ -23,6 +23,8 @@ export class TrainingComponent implements OnInit {
   showSummary = false;
   scenarioIndex = 1;
   pageCount: number;
+  increment: number;
+  correctSession = false;
 
   @Input() setSessionIndex: number;
 
@@ -37,23 +39,25 @@ export class TrainingComponent implements OnInit {
     if (this.setSessionIndex) {
       this.sessionIndex = this.setSessionIndex - 1;
     }
+    this.getProgress();
     this.loadIntro();
     this.loadIndicatorSessions();
   }
 
   getProgress() {
     this.api.getProgress().subscribe(progress => {
-      console.log('progress:', progress);
       if (progress['sessionIndex'] === this.sessionIndex) {
+        this.correctSession = true;
         if (progress['stepIndex'] > this.currentSession.steps.length) {
-          this.scenarioIndex = progress['stepIndex'];
+          this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length + 1) / this.increment );
+          // this.scenarioIndex = this.currentSession.steps.length + (this.roundIndex * this.increment); // sets scenario index to beginning of round for returning users
+          this.scenarioIndex = progress['stepIndex'] - this.currentSession.steps.length + 1; // sets scenario back to the scenario that the user was last on
         } else {
           this.done.emit();
         }
       }
     });
   }
-
 
   loadIntro() {
     this.api.getTrainingSessions().subscribe(sessions => {
@@ -96,11 +100,11 @@ export class TrainingComponent implements OnInit {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
-      const increment = Math.floor(scenarios.length / this.totalRounds);
+      this.increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
       for (let i = 0; i < this.totalRounds - 1; i++) {
-        this.rounds.push(new Round(scenarios.slice(index, index + increment)));
-        index += increment;
+        this.rounds.push(new Round(scenarios.slice(index, index + this.increment)));
+        index += this.increment;
       }
       if (index < scenarios.length) {
         this.rounds.push(new Round(scenarios.slice(index)));
@@ -123,6 +127,10 @@ export class TrainingComponent implements OnInit {
     console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
+      if (this.correctSession) {
+        this.round.index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
+      }
+      this.round.next(correct);
     } else if (this.round.isComplete()) {
       this.scenarioIndex++;
       this.round.next(correct);
@@ -152,7 +160,6 @@ class Round {
   index = -1;
 
   constructor(public scenarios: Scenario[]) {
-    this.next();
   }
 
   isComplete(): boolean {
