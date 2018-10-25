@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     private api: ApiService
   ) {
     this.api.getStudy().subscribe(study => {
-      this.study = {currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
+      this.study = {name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
         conditioning: study.conditioning};
     });
   }
