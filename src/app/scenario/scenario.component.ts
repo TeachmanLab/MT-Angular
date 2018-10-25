@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-import { Page, PageData, Scenario, Session } from '../interfaces';
-import {ApiService} from '../api.service';
+import { Page, PageData, Scenario, Session, Study } from '../interfaces';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-scenario',
@@ -62,6 +62,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   pageCount: number;
 
+  study: Study;
   pageIndex = 0;
   currentPage: Page;
   state: string;
@@ -87,6 +88,13 @@ export class ScenarioComponent implements OnInit, OnChanges {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
     // the count must begin after the page count that gets established in the step component
     this.pageCounter = this.pageCount;
+    this.study = {name: '', currentSession: '', currentSessionIndex: 0, conditioning: ''};
+    this.api.getStudy().subscribe(study => {
+      if (study) {
+        this.study = {name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
+          conditioning: study.conditioning};
+      }
+    });
     this.init();
   }
 
@@ -126,8 +134,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
         session: this.session.session, sessionIndex: this.sessionIndex, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.scenario.title,
         stepIndex: this.scenarioIndex, stimulus: '', trialType: this.state, buttonPressed: '',
-        correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-        study: this.session.study, sessionCounter: this.pageCounter + '.' + this.elementCounter
+        correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.study.conditioning,
+        study: this.study.name, sessionCounter: this.pageCounter + '.' + this.elementCounter
       };
 
       if (el.responseTime) {
