@@ -49,7 +49,7 @@ export class TrainingComponent implements OnInit {
       if (progress['sessionIndex'] === this.sessionIndex) {
         this.correctSession = true;
         if (progress['stepIndex'] > this.currentSession.steps.length) {
-          this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length + 1) / this.increment );
+          this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length) / this.increment );
           // this.scenarioIndex = this.currentSession.steps.length + (this.roundIndex * this.increment); // sets scenario index to beginning of round for returning users
           this.scenarioIndex = progress['stepIndex'] - this.currentSession.steps.length + 1; // sets scenario back to the scenario that the user was last on
         } else {
@@ -128,7 +128,10 @@ export class TrainingComponent implements OnInit {
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       if (this.correctSession) {
-        this.round.index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
+        const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
+        if (index > -2) {
+          this.round.index = index;
+        }
       }
       this.round.next(correct);
     } else if (this.round.isComplete()) {
@@ -148,6 +151,7 @@ export class TrainingComponent implements OnInit {
     } else {
       this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
+      this.round.next();
     }
 
   }
