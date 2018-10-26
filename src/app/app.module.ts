@@ -34,6 +34,7 @@ import { SessionIndicatorBarComponent } from './session-indicator-bar/session-in
 import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-bar.component';
 import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
 import { HomeComponent } from './home/home.component';
+import { SessionWarningComponent } from './session-warning/session-warning.component';
 
 
 const routes: Routes = [
@@ -64,6 +65,7 @@ const routes: Routes = [
     StepIndicatorBarComponent,
     ThoughtbubbleComponent,
     TrainingComponent,
+    SessionWarningComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),

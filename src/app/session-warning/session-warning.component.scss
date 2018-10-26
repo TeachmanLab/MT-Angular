@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@import '../../mindtrails_material';
+@include mindtrails-theme($mindtrails-theme);
+
+.sessionWarning {
+  padding: 5px;
+  background: mat-color($mindtrails-warn, 600);
+  color: mat-contrast($mindtrails-warn, 600);
+  text-align: center;
+
+  button {
+    background: mat-color($mindtrails-warn, 300);
+    color: mat-contrast($mindtrails-warn, 300);
+    margin: 5px;
+  }
+}
