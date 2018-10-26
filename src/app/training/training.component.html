@@ -1,3 +1,4 @@
+<app-session-warning *ngIf="!correctSession"></app-session-warning>
 <app-session
   *ngIf="currentSession && !round"
   [session]="currentSession"

@@ -18,6 +18,7 @@ export class ControlConditionComponent implements OnInit {
   currentSession: Session;
   sessionDone = false;
   allDone = false;
+  correctSession = false;
 
   @Input() setSessionIndex: number;
 
@@ -32,6 +33,7 @@ export class ControlConditionComponent implements OnInit {
       this.sessionIndex = this.setSessionIndex;
     }
     this.setCurrentSession();
+    this.checkStudy();
   }
 
   setCurrentSession () {
@@ -39,7 +41,7 @@ export class ControlConditionComponent implements OnInit {
       this.sessions = sessions;
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
-          this.sessionIndex = params['session'];
+          this.sessionIndex = Number(params['session']);
           if (this.sessions[this.sessionIndex]) {
             this.currentSession = this.sessions[this.sessionIndex];
           } else {
@@ -61,6 +63,16 @@ export class ControlConditionComponent implements OnInit {
       this.currentSession = null;
       this.allDone = true;
     }
+  }
+
+  checkStudy() {
+    this.api.getStudy().subscribe(study => {
+      if (study.conditioning !== 'NEUTRAL') {
+        this.correctSession = false;
+      } else {
+        this.correctSession = study.currentSession['index'] === this.sessionIndex;
+      }
+    });
   }
 
   introSession () {

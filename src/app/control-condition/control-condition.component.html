@@ -1,3 +1,4 @@
+<app-session-warning *ngIf="!correctSession"></app-session-warning>
 <app-session *ngIf="currentSession && !sessionDone" [session]="currentSession" [sessions]="sessions" [sessionIndex]="sessionIndex" (done)="sessionComplete()"></app-session>
 <div *ngIf="sessionDone && introSession()">
   <mat-card>

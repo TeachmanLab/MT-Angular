@@ -42,12 +42,12 @@ export class TrainingComponent implements OnInit {
     this.getProgress();
     this.loadIntro();
     this.loadIndicatorSessions();
+    this.checkStudy();
   }
 
   getProgress() {
     this.api.getProgress().subscribe(progress => {
       if (progress['sessionIndex'] === this.sessionIndex) {
-        this.correctSession = true;
         if (progress['stepIndex'] > this.currentSession.steps.length) {
           this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length) / this.increment );
           // this.scenarioIndex = this.currentSession.steps.length + (this.roundIndex * this.increment); // sets scenario index to beginning of round for returning users
@@ -154,6 +154,16 @@ export class TrainingComponent implements OnInit {
       this.round.next();
     }
 
+  }
+
+  checkStudy() {
+    this.api.getStudy().subscribe(study => {
+      if (study.conditioning === 'NEUTRAL') {
+        this.correctSession = false;
+      } else {
+        this.correctSession = study.currentSession['index'] - 1 === this.sessionIndex;
+      }
+    });
   }
 
 }
