@@ -40,51 +40,6 @@
           {
             "elements": [
               {
-                "type": "Question",
-                "question": "How important is reducing your anxiety to you right now?",
-                "options": [
-                  "Not Important",
-                  "Slightly Important",
-                  "Moderately Important",
-                  "Very Important",
-                  "Extremely Important"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
-                "options": [
-                  "Not Confident",
-                  "Slightly Confident",
-                  "Moderately Confident",
-                  "Very Confident",
-                  "Extremely Confident"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
-                "options": [
-                  "Not Confident",
-                  "Slightly Confident",
-                  "Moderately Confident",
-                  "Very Confident",
-                  "Extremely Confident"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
                 "type": "LargeHeader",
                 "content": "Introduction"
               },
