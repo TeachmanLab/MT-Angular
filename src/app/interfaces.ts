@@ -23,6 +23,7 @@ export interface Scenario extends Step {
   image: string;
   statement: string;
   missingLetter?: MissingLetter;
+  fillInBlank?: FillInBlank;
   question?: Question;
 }
 
@@ -40,6 +41,11 @@ export interface Element {
 
 export interface MissingLetter extends Element {
   type: 'MissingLetter';
+  word: string;
+}
+
+export interface FillInBlank extends Element {
+  type: 'FillInBlank';
   word: string;
 }
 

@@ -26,7 +26,7 @@
     (done)="divCompleted()">
   </app-thoughtbubble>
 
-  <div *ngIf="el.type==='Intro' || el.type==='Statements' || el.type==='MissingLetter'" class="scenario">
+  <div *ngIf="el.type==='Intro' || el.type==='Statements' || el.type==='MissingLetter' || el.type==='FillInBlank'" class="scenario">
     <div *ngIf="el.type==='Intro'" class="title" [@titleState]="el.type" >{{el.content}}</div>
     <div *ngIf="el.type==='Statements'" class="statement" [@flyUpDown]="'in'">
       <mat-card class="statement"><app-statement [statement]="el.content" (doneTyping)="divCompleted()"></app-statement></mat-card>
@@ -38,6 +38,12 @@
         (buttonPressed)="getResponseDetails($event)"
         (done)="divCompleted($event)"
       ></app-missing-letter>
+    </div>
+    <div *ngIf="el.type==='FillInBlank'" class="letters" [@flyUpDown]="'in'">
+      <app-fill-in-the-blank
+        (buttonPressed)="getResponseDetails($event)"
+        (done)="divCompleted($event)"
+      ></app-fill-in-the-blank>
     </div>
   </div>
 

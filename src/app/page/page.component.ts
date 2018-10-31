@@ -90,7 +90,7 @@ export class PageComponent implements OnChanges {
 
   getResponseDetails(event) {
     for (const element of this.page.elements) {
-      if (['Question', 'ThoughtBubble', 'MissingLetter'].includes(element.type)) {
+      if (['Question', 'ThoughtBubble', 'MissingLetter', 'FillInBlank'].includes(element.type)) {
         if (typeof event === 'number') {
           element.responseTime = event;
         }

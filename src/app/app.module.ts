@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatProgressBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -35,6 +37,7 @@ import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-b
 import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
 import { HomeComponent } from './home/home.component';
 import { SessionWarningComponent } from './session-warning/session-warning.component';
+import { FillInTheBlankComponent } from './fill-in-the-blank/fill-in-the-blank.component';
 
 
 const routes: Routes = [
@@ -50,6 +53,7 @@ const routes: Routes = [
     AppComponent,
     BulletListComponent,
     ControlConditionComponent,
+    FillInTheBlankComponent,
     HighlightComponent,
     HomeComponent,
     MissingLetterComponent,
@@ -70,16 +74,19 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
+    MatInputModule,
     MatProgressBarModule,
     MatToolbarModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [
     ApiService,

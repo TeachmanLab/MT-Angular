@@ -128,7 +128,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   showStatement() {
-    return(this.state === 'Statements' || this.state === 'MissingLetter');
+    return(this.state === 'Statements' || this.state === 'MissingLetter' || this.state === 'FillInBlank');
   }
 
   recordStateData() {
