@@ -118,7 +118,7 @@ export class StepComponent implements OnInit, OnChanges {
         sessionTitle: this.session.title + ': ' + this.session.subTitle, device: navigator.userAgent, rt: this.endTime - this.startTime,
         rtFirstReact: 0, stepTitle: this.step.title, stepIndex: this.stepIndex, stimulus: '', trialType: el.type, buttonPressed: '',
         correct: this.elementCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.study.conditioning,
-        study: this.study.name, sessionCounter: this.pageCounter +  '.' + this.elementCounter,
+        study: this.study.name, sessionCounter: this.pageCounter +  '.' + this.elementCounter, stimulusName: '',
       };
 
       if (el.responseTime) {
