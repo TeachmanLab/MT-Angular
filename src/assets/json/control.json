@@ -1,7 +1,9 @@
 [
   {
-    "session": "introSession",
-    "title": "Introduction to Calm Thinking",
+    "session": "firstSession",
+    "title": "Session 1",
+    "subTitle": "Introduction to Anxiety",
+    "sessionIndicator": "session1",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
@@ -42,17 +44,7 @@
             ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "session": "firstSession",
-    "title": "Session 1",
-    "subTitle": "Introduction to Anxiety",
-    "sessionIndicator": "session1",
-    "conditioning": "Control",
-    "study": "Calm Thinking",
-    "steps": [
+      },
       {
         "title": "Introduction",
         "pages": [
