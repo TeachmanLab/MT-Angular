@@ -37,6 +37,7 @@ export interface Element {
   responseTime?: number;
   buttonPressed?: string;
   answer?: string;
+  stimulusName?: string;
 }
 
 export interface MissingLetter extends Element {
@@ -98,6 +99,7 @@ export interface PageData {
   stepIndex: number; // The index number of the step in the context of all the steps in the session (2)
   trialType: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
   stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
+  stimulusName?: string; // The short code name for stimulus
   buttonPressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
   correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
   device: string; // Device used to complete the exercise
