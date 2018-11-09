@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatProgressBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -33,10 +35,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { SessionIndicatorBarComponent } from './session-indicator-bar/session-indicator-bar.component';
 import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-bar.component';
 import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
+import { HomeComponent } from './home/home.component';
+import { SessionWarningComponent } from './session-warning/session-warning.component';
+import { FillInTheBlankComponent } from './fill-in-the-blank/fill-in-the-blank.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'control', pathMatch: 'full'},
+  { path: '', component: HomeComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'training/:session', component: TrainingComponent },
   { path: 'control', component: ControlConditionComponent },
@@ -46,36 +51,42 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ScenarioComponent,
-    MissingLetterComponent,
-    StatementComponent,
-    QuestionComponent,
-    SessionComponent,
-    StepComponent,
-    PageComponent,
-    ControlConditionComponent,
-    ProgressBarComponent,
-    ThoughtbubbleComponent,
-    HighlightComponent,
-    TrainingComponent,
     BulletListComponent,
+    ControlConditionComponent,
+    FillInTheBlankComponent,
+    HighlightComponent,
+    HomeComponent,
+    MissingLetterComponent,
+    PageComponent,
+    ProgressBarComponent,
+    QuestionComponent,
+    ScenarioComponent,
+    SessionComponent,
+    SessionIndicatorComponent,
     SessionIndicatorBarComponent,
+    StatementComponent,
+    StepComponent,
     StepIndicatorBarComponent,
-    SessionIndicatorComponent
+    ThoughtbubbleComponent,
+    TrainingComponent,
+    SessionWarningComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
+    MatInputModule,
     MatProgressBarModule,
     MatToolbarModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [
     ApiService,

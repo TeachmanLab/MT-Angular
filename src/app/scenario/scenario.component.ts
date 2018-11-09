@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-import { Page, PageData, Scenario, Session } from '../interfaces';
+import { Page, PageData, Scenario, Session, Study } from '../interfaces';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-scenario',
@@ -57,8 +58,11 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   session: Session;
   @Input()
+  sessionIndex: number;
+  @Input()
   pageCount: number;
 
+  study: Study;
   pageIndex = 0;
   currentPage: Page;
   state: string;
@@ -76,21 +80,32 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Output()
   finalCount: EventEmitter<number> = new EventEmitter();
 
-  constructor() {
-  }
+  constructor (
+    private api: ApiService
+  ) { }
 
   ngOnInit() {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
     // the count must begin after the page count that gets established in the step component
-    // this also assumes that the session has only one step and that all scenarios have four "pages", which is true right now...
-    this.pageCounter = this.pageCount;
+    if (this.pageCount) {
+      this.pageCounter = this.pageCount + 1;
+    } else {
+      this.pageCounter = 1;
+    }
+    this.study = {name: '', currentSession: '', currentSessionIndex: 0, conditioning: ''};
+    this.api.getStudy().subscribe(study => {
+      if (study) {
+        this.study = {name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
+          conditioning: study.conditioning};
+      }
+    });
     this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     this.currentPage = this.scenario.pages[0];
     this.state = this.currentPage.elements[0].type;
-    if (!changes.scenario.isFirstChange()) {
+    if (changes.scenario && !changes.scenario.isFirstChange()) {
       console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
       this.init();
@@ -113,18 +128,18 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   showStatement() {
-    return(this.state === 'Statements' || this.state === 'MissingLetter');
+    return(this.state === 'Statements' || this.state === 'MissingLetter' || this.state === 'FillInBlank');
   }
 
   recordStateData() {
     this.endTime = performance.now();
     for (const el of this.currentPage.elements) {
       const Data = {
-        session: this.session.session, sessionTitle: this.session.title + ': ' + this.session.subTitle,
+        session: this.session.session, sessionIndex: this.sessionIndex, sessionTitle: this.session.title + ': ' + this.session.subTitle,
         device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.scenario.title,
         stepIndex: this.scenarioIndex, stimulus: '', trialType: this.state, buttonPressed: '',
-        correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.session.conditioning,
-        study: this.session.study, sessionCounter: this.pageCounter + '.' + this.elementCounter
+        correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.study.conditioning,
+        study: this.study.name, sessionCounter: this.pageCounter + '.' + this.elementCounter
       };
 
       if (el.responseTime) {
@@ -148,8 +163,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
     }
 
     console.log('pageData', this.pageData);
-    // this.api.addResponse(this.pageData);
-    this.pageCounter++;
+    this.api.saveProgress(this.pageData).subscribe(data => {
+      console.log('Saving the data to the server');
+      this.pageCounter++;
+    });
   }
 
   progressState(correctAnswer = true) {

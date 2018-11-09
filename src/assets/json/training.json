@@ -13,10 +13,12 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "The Calm Thinking program is five sessions. You will complete one session a week, and each session takes about 15 minutes or fewer. You will also answer some questions as part of our research study so we can evaluate how well the program works."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "You will receive feedback after completing the study about how your anxious thinking has changed over the course of the program. You can do the sessions anywhere; all you need is a quiet place and a device with Internet."
               }
             ]
@@ -25,14 +27,17 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "Our goal is to reduce your anxious thinking by changing the way you make sense of information. In each session, you will practice responding to situations in different ways by reading brief stories and completing word fragments by filling in one or more missing letters in a word."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "Do not worry if you do not use online interventions much—the tasks are not designed to be tricky or too difficult, and you can always email us questions at studyteam@mindtrails.org. The program can feel a little repetitive, but the repetition helps you develop new thinking patterns."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "This is an experimental program, so it is still in the testing phase. But previous research suggests that this program may be able to reduce anxious thinking as much as therapy for some people. We want to learn whether it can be helpful for you."
               }
             ]
@@ -40,56 +45,13 @@
           {
             "elements": [
               {
-                "type": "Question",
-                "question": "How important is reducing your anxiety to you right now?",
-                "options": [
-                  "Not Important",
-                  "Slightly Important",
-                  "Moderately Important",
-                  "Very Important",
-                  "Extremely Important"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How confident are you that an online training program will be successful in reducing your anxiety?",
-                "options": [
-                  "Not Confident",
-                  "Slightly Confident",
-                  "Moderately Confident",
-                  "Very Confident",
-                  "Extremely Confident"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "Question",
-                "question": "How confident are you that an online training program that is designed to change how you think about situations will be successful in reducing your anxiety?",
-                "options": [
-                  "Not Confident",
-                  "Slightly Confident",
-                  "Moderately Confident",
-                  "Very Confident",
-                  "Extremely Confident"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
                 "type": "LargeHeader",
+                "stimulusName": "intro",
                 "content": "Introduction"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "In this training program you will read or listen to a series of short stories. We will ask you to imagine yourself in the situation described in each story. Before we begin, we'd like to walk you through a brief imagination exercise."
               }
             ]
@@ -98,10 +60,12 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le1",
                 "content": "Welcome to the \"Lemon\" exercise."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le1",
                 "content": "The purpose of this quick exercise is to demonstrate what imagination-based thinking is. You will go through what imagining seeing, touching, and smelling a lemon is like. Please imagine it as if you are really experiencing it."
               }
             ]
@@ -110,14 +74,17 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le2",
                 "content": "First-person perspective"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le2",
                 "content": "In this exercise, and throughout the training program, please remember to imagine what is happening through your own eyes (picture on the left), not as an outside observer (picture on the right) ..."
               },
               {
                 "type": "Image",
+                "stimulusName": "le2",
                 "content": "./assets/training_images/lemon/example.png"
               }
             ]
@@ -126,18 +93,22 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le3",
                 "content": "Ok, let's begin:"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le3",
                 "content": "Imagine you are holding the lemon in your right hand, and you can feel its shape and its weight."
               },
               {
                 "type": "Image",
+                "stimulusName": "le3",
                 "content": "./assets/training_images/lemon/lemon_1.png"
               },
               {
                 "type": "Caption",
+                "stimulusName": "le3",
                 "content": "(Please take a few seconds to imagine this)"
               }
             ]
@@ -146,18 +117,22 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le4",
                 "content": "The Lemon Exercise"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le4",
                 "content": "Now imagine you are shining a light on the lemon, and you can see the waxy and lumpy texture of the yellow skin."
               },
               {
                 "type": "Image",
+                "stimulusName": "le4",
                 "content": "./assets/training_images/lemon/lemon_5.png"
               },
               {
                 "type": "Caption",
+                "stimulusName": "le4",
                 "content": "(Please take a few seconds to imagine this)"
               }
             ]
@@ -166,18 +141,22 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le5",
                 "content": "The Lemon Exercise"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le5",
                 "content": "Now imagine that you scratch the skin with your fingernail, then you bring the lemon up to your nose, and you can smell the fresh zesty juice from the skin."
               },
               {
                 "type": "Image",
+                "stimulusName": "le5",
                 "content": "./assets/training_images/lemon/lemon_4.png"
               },
               {
                 "type": "Caption",
+                "stimulusName": "le5",
                 "content": "(Please take a few seconds to imagine this)"
               }
             ]
@@ -186,18 +165,22 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le6",
                 "content": "The Lemon Exercise"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le6",
                 "content": "Now imagine that you cut the lemon in half, and you bring one half of it up for a closer look. You can see the juicy flesh in the shape of segments that look like a wagon wheel."
               },
               {
                 "type": "Image",
+                "stimulusName": "le6",
                 "content": "./assets/training_images/lemon/lemon_2.png"
               },
               {
                 "type": "Caption",
+                "stimulusName": "le6",
                 "content": "(Please take a few seconds to imagine this)"
               }
             ]
@@ -206,18 +189,22 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le7",
                 "content": "The Lemon Exercise"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le7",
                 "content": "Now imagine that you squeeze the lemon and some of the juice squirts right into your eyes, and it is really stinging, making your eyes water."
               },
               {
                 "type": "Image",
+                "stimulusName": "le7",
                 "content": "./assets/training_images/lemon/lemon_3.png"
               },
               {
                 "type": "Caption",
+                "stimulusName": "le7",
                 "content": "(Please take a few seconds to imagine this)"
               }
             ]
@@ -226,14 +213,17 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "le8",
                 "content": "That was the lemon exercise!"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "le8",
                 "content": "Don't worry if you didn't experience all of the sensations strongly, this is completely normal."
               },
               {
                 "type": "Image",
+                "stimulusName": "le8",
                 "content": "./assets/training_images/lemon/lemon_6.png"
               }
             ]
@@ -242,18 +232,22 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "intro",
                 "content": "Session 1: Training Stories"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "For each page:",
                 "bullets": [
                   "Read the information carefully and really imagine yourself in the situation.",
@@ -284,14 +278,17 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "For each page:",
                 "bullets": [
                   "Read the information carefully and really imagine yourself in the situation.",
@@ -322,14 +319,17 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "For each page:",
                 "bullets": [
                   "Read the information carefully and really imagine yourself in the situation.",
@@ -360,14 +360,17 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "For each page:",
                 "bullets": [
                   "Read the information carefully and really imagine yourself in the situation.",
@@ -398,14 +401,17 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "For each page:",
                 "bullets": [
                   "Read the information carefully and really imagine yourself in the situation.",

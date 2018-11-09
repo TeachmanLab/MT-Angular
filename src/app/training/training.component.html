@@ -1,7 +1,9 @@
+<app-session-warning *ngIf="!correctSession"></app-session-warning>
 <app-session
   *ngIf="currentSession && !round"
   [session]="currentSession"
   [sessions]="indicatorSessions"
+  [sessionIndex]="sessionIndex"
   (finalPageCount)="stepPageCount($event)"
   (done)="sessionComplete()"
 ></app-session>
@@ -17,6 +19,7 @@
           [scenario]="round.scenario"
           [scenarioIndex]="scenarioIndex"
           [session]="currentSession"
+          [sessionIndex]="sessionIndex"
           [pageCount]="pageCount"
           (finalCount)="updatePageCount($event)"
           (done)="nextTraining($event)"

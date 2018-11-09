@@ -11,6 +11,7 @@ export class SessionComponent implements OnInit, OnChanges {
 
   @Input() session: Session;
   @Input() sessions: Session[];
+  @Input() sessionIndex: number;
   stepIndex: number;
   currentStep: Step;
 
@@ -27,13 +28,22 @@ export class SessionComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.session.startTime = performance.now();
     this.stepIndex = 0;
-    this.initStep();
   }
 
   ngOnChanges() {
     // console.log('The Session was changed!');
-    this.stepIndex = 0;
-    this.initStep();
+    this.api.getProgress().subscribe(progress => {
+      if (progress['sessionIndex'] === this.sessionIndex) {
+        if (progress['stepIndex'] < this.session.steps.length) {
+          this.stepIndex = progress['stepIndex'];
+          this.initStep();
+        } else {
+          this.done.emit();
+        }
+      } else {
+        this.initStep();
+      }
+    });
   }
 
   initStep() {

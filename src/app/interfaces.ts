@@ -23,6 +23,7 @@ export interface Scenario extends Step {
   image: string;
   statement: string;
   missingLetter?: MissingLetter;
+  fillInBlank?: FillInBlank;
   question?: Question;
 }
 
@@ -36,10 +37,16 @@ export interface Element {
   responseTime?: number;
   buttonPressed?: string;
   answer?: string;
+  stimulusName?: string;
 }
 
 export interface MissingLetter extends Element {
   type: 'MissingLetter';
+  word: string;
+}
+
+export interface FillInBlank extends Element {
+  type: 'FillInBlank';
   word: string;
 }
 
@@ -74,9 +81,17 @@ export interface BulletList extends Element {
   bullets: string[];
 }
 
+export interface Study {
+  name: string;
+  conditioning: string;
+  currentSession: string; // the name used on the back end, such as firstSession, etc.
+  currentSessionIndex: number;
+}
+
 // This is how we collect data as participants move through the sessions.
 export interface PageData {
   session: string; // The back end id (firstSession)
+  sessionIndex: number; // The index number of the current session (0)
   sessionTitle: string; // The title and subtitle of the session that is displayed to the user (Session 1: Introduction to Anxiety)
   conditioning: string; // The user group that determines which sessions are shown (Control or Training)
   study: string; // The study being completed (Calm Thinking)
@@ -84,6 +99,7 @@ export interface PageData {
   stepIndex: number; // The index number of the step in the context of all the steps in the session (2)
   trialType: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
   stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
+  stimulusName?: string; // The short code name for stimulus
   buttonPressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
   correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
   device: string; // Device used to complete the exercise

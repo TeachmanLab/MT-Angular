@@ -4,14 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+(NOTE: `ng serve` will work, but you may want the proxy running so you connect to the server side.)
 
 ## Running on the AWS Server
 Run `ng build --prod --build-optimizer --base-href=/training/`
 Copy the files in ./dist/training-prototype up to the web server and placement in the /var/www/training directory.
 
 ## Adding to Mindtrails
-Run `ng build --prod --build-optimizer --base-href=/r01/angular_training/`
+Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/angular_training/`
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/training2
 Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular_training`
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Scenario, Session } from '../interfaces';
 import { environment } from '../../environments/environment';
@@ -23,7 +23,10 @@ export class TrainingComponent implements OnInit {
   showSummary = false;
   scenarioIndex = 1;
   pageCount: number;
+  increment: number;
+  correctSession = false;
 
+  @Input() setSessionIndex: number;
 
   @Output() done: EventEmitter<any> = new EventEmitter();
 
@@ -33,8 +36,27 @@ export class TrainingComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if (this.setSessionIndex) {
+      this.sessionIndex = this.setSessionIndex - 1;
+    }
+    this.getProgress();
     this.loadIntro();
     this.loadIndicatorSessions();
+    this.checkStudy();
+  }
+
+  getProgress() {
+    this.api.getProgress().subscribe(progress => {
+      if (progress['sessionIndex'] === this.sessionIndex) {
+        if (progress['stepIndex'] > this.currentSession.steps.length) {
+          this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length) / this.increment );
+          // this.scenarioIndex = this.currentSession.steps.length + (this.roundIndex * this.increment); // sets scenario index to beginning of round for returning users
+          this.scenarioIndex = progress['stepIndex'] - this.currentSession.steps.length + 1; // sets scenario back to the scenario that the user was last on
+        } else {
+          this.done.emit();
+        }
+      }
+    });
   }
 
   loadIntro() {
@@ -78,17 +100,18 @@ export class TrainingComponent implements OnInit {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
-      const increment = Math.floor(scenarios.length / this.totalRounds);
+      this.increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
       for (let i = 0; i < this.totalRounds - 1; i++) {
-        this.rounds.push(new Round(scenarios.slice(index, index + increment)));
-        index += increment;
+        this.rounds.push(new Round(scenarios.slice(index, index + this.increment)));
+        index += this.increment;
       }
       if (index < scenarios.length) {
         this.rounds.push(new Round(scenarios.slice(index)));
       }
       this.totalRounds = this.rounds.length;
     });
+    this.getProgress();
   }
 
   isComplete(): boolean {
@@ -104,6 +127,13 @@ export class TrainingComponent implements OnInit {
     console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
+      if (this.correctSession) {
+        const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
+        if (index > -2) {
+          this.round.index = index;
+        }
+      }
+      this.round.next(correct);
     } else if (this.round.isComplete()) {
       this.scenarioIndex++;
       this.round.next(correct);
@@ -121,8 +151,19 @@ export class TrainingComponent implements OnInit {
     } else {
       this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
+      this.round.next();
     }
 
+  }
+
+  checkStudy() {
+    this.api.getStudy().subscribe(study => {
+      if (study.conditioning === 'NEUTRAL') {
+        this.correctSession = false;
+      } else {
+        this.correctSession = study.currentSession['index'] - 1 === this.sessionIndex;
+      }
+    });
   }
 
 }
@@ -133,7 +174,6 @@ class Round {
   index = -1;
 
   constructor(public scenarios: Scenario[]) {
-    this.next();
   }
 
   isComplete(): boolean {

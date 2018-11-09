@@ -1,7 +1,7 @@
 /**
  * Converts a CSV file into data we can read into a series of training sessions.
  */
-import {MissingLetter, Question, Scenario} from './interfaces';
+import { FillInBlank, MissingLetter, Question, Scenario} from './interfaces';
 import {current} from 'codelyzer/util/syntaxKind';
 
 export class TrainingCSV {
@@ -11,6 +11,7 @@ export class TrainingCSV {
       let currentLine = [];
       let scenario: Scenario;
       let missingLetter: MissingLetter;
+      let fillInBlank: FillInBlank;
       let question: Question;
       let image: string;
       let answer: string;
@@ -23,15 +24,23 @@ export class TrainingCSV {
         }
         const intro = {type: 'Intro', content: currentLine[1]};
         const statement = {type: 'Statements', content: currentLine[3]};
-        // setting content as well as word in order to populate pageData stimulus field.
-        missingLetter = {type: 'MissingLetter', word: currentLine[2], content: currentLine[2]};
+        let wordElement = null;
+        if (currentLine[2]) {
+          // setting content as well as word in order to populate pageData stimulus field.
+          missingLetter = {type: 'MissingLetter', word: currentLine[2], content: currentLine[2]};
+          wordElement = missingLetter;
+        } else {
+          // setting the content to the statement for populating the pageData stimulus field with relevant content.
+          fillInBlank = {type: 'FillInBlank', word: currentLine[2], content: currentLine[3]};
+          wordElement = fillInBlank;
+        }
         currentLine[7] === 'Positive' ?  answer = currentLine[5] : answer = currentLine[6];
         question = {type: 'Question', question: currentLine[4], answer: answer, options: [currentLine[5], currentLine[6]]};
         image = `assets/training_images/${currentLine[0]}.jpg`;
         scenario = {
           type: 'Scenario', title: currentLine[1], image: image, statement: currentLine[3],
-          pages: [{elements: [intro]}, {elements: [statement]}, {elements: [missingLetter]}, {elements: [question]}],
-          missingLetter: missingLetter, question: question, stepIndicator: image,
+          pages: [{elements: [intro]}, {elements: [statement]}, {elements: [wordElement]}, {elements: [question]}],
+          missingLetter: missingLetter, fillInBlank: fillInBlank, question: question, stepIndicator: image,
         };
         result.push(scenario);
       }

@@ -1,0 +1,24 @@
+<div class="fill-in-the-blank">
+  <div fxLayout="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+  >
+    <mat-form-field>
+      <input matInput placeholder="PLEASE FILL IN THE BLANK:" [formControl]="word" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="word.hasError('minlength') && !word.hasError('required')">
+        Please enter a word of three letters or more
+      </mat-error>
+      <mat-error *ngIf="word.hasError('required')">
+        You must enter a value
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!word.valid"
+    (click)="submitWord(word.value)"
+  >
+    Submit
+  </button>
+</div>
