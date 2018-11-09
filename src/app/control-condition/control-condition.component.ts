@@ -47,7 +47,7 @@ export class ControlConditionComponent implements OnInit {
             this.currentSession = this.sessions[0];
           }
         } else {
-          this.currentSession = this.sessions[this.sessionIndex];
+          this.currentSession = this.sessions[this.sessionIndex - 1];
         }
       });
     });
