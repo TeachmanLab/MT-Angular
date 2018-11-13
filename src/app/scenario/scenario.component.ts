@@ -104,6 +104,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.currentPage = this.scenario.pages[0];
+    console.log(this.currentPage);
     this.state = this.currentPage.elements[0].type;
     if (changes.scenario && !changes.scenario.isFirstChange()) {
       console.log('New scenario!');

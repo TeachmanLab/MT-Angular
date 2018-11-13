@@ -46,8 +46,10 @@ div.scenario {
     max-width: 80px;
     top: 0px;
     font-weight: bold;
-    color: #e9e9e9;
+    color: #fff;
     text-shadow: 1px 1px #000;
+    background: rgba(1,1,1,0.2);
+    border-radius: 6px;
   }
 
   mat-card.statement {
@@ -62,3 +64,6 @@ div.scenario {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#178dcd', endColorstr='#e5e7ee', GradientType=1); /* IE6-9 */
   }
 }
+
+
+

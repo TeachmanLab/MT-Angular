@@ -1,4 +1,4 @@
-<div *ngFor="let el of page.elements">
+<div *ngFor="let el of visibleElements">
   <h1 *ngIf="el.type === 'LargeHeader'">{{el.content}}</h1>
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
@@ -27,7 +27,7 @@
   </app-thoughtbubble>
 
   <div *ngIf="el.type==='Intro' || el.type==='Statements' || el.type==='MissingLetter' || el.type==='FillInBlank'" class="scenario">
-    <div *ngIf="el.type==='Intro'" class="title" [@titleState]="el.type" >{{el.content}}</div>
+    <div *ngIf="el.type==='Intro'" ngClass="" class="title" [@titleState]="el.type" >{{el.content}}</div>
     <div *ngIf="el.type==='Statements'" class="statement" [@flyUpDown]="'in'">
       <mat-card class="statement"><app-statement [statement]="el.content" (doneTyping)="divCompleted()"></app-statement></mat-card>
     </div>

@@ -37,7 +37,7 @@ export class MissingLetterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.word = this.missingLetter.word;
+    this.word = this.missingLetter.content.toString();
     const missing_index = Math.floor(Math.random() * this.word.length) ;
     this.letters = [];
     let letter = '';

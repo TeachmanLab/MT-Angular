@@ -1,13 +1,16 @@
 
 <div class="scenario">
-  <div class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
+  <div *ngIf="scenario.image" class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
        [@imageState]="state">
   </div>
   <div class="display-area">
+    <!--
     <div class="statement" [@flyUpDown]="'in'" *ngIf="showStatement()">
       <mat-card class="statement"><app-statement [statement]="scenario.statement" (doneTyping)="progressState()"></app-statement></mat-card>
     </div>
     <app-page *ngIf="currentPage && state != 'Statements'" [page]="currentPage" (done)="progressState($event)"></app-page>
+    -->
+    <app-page *ngIf="currentPage" [page]="currentPage" (done)="progressState($event)"></app-page>
   </div>
   <button class="continue mat-button" *ngIf="continueButtonVisible()" mat-raised-button (click)="progressState()">Continue</button>
 </div>

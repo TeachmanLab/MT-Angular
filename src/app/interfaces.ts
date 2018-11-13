@@ -21,10 +21,6 @@ export interface Step {
 export interface Scenario extends Step {
   type: 'Scenario';
   image: string;
-  statement: string;
-  missingLetter?: MissingLetter;
-  fillInBlank?: FillInBlank;
-  question?: Question;
 }
 
 export interface Page {
@@ -42,12 +38,10 @@ export interface Element {
 
 export interface MissingLetter extends Element {
   type: 'MissingLetter';
-  word: string;
 }
 
 export interface FillInBlank extends Element {
   type: 'FillInBlank';
-  word: string;
 }
 
 export interface Question extends Element {
