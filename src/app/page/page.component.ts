@@ -65,9 +65,9 @@ export class PageComponent implements OnChanges {
   ngOnChanges() {
     this.elementIndex = 0;
     this.numElements = this.page.elements.length;
-    this.markStaticComponentsComplete();
     this.visibleElements = [];
     this.visibleElements.push(this.page.elements[this.elementIndex]);
+    this.markStaticComponentsComplete();
   }
 
   markStaticComponentsComplete() {
