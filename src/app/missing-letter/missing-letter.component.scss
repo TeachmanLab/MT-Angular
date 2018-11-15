@@ -22,6 +22,12 @@ div.missing {
   box-shadow: -1px -1px #888;
 }
 
+div.blank {
+  border: none;
+  box-shadow: none;
+  background-color: #fff;
+}
+
 div.correct {
   background-color: mat-color($mindtrails-accent, A100);
   border: mat-color($mindtrails-accent, A700);

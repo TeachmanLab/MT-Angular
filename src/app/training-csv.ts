@@ -3,6 +3,7 @@
  */
 import { FillInBlank, MissingLetter, Question, Scenario} from './interfaces';
 
+
 export class TrainingCSV {
 
   static toJson(csv: string): Scenario[] {
@@ -25,7 +26,7 @@ export class TrainingCSV {
 
         pages.push({elements: [{type: 'Intro', content: currentLine[2]}]});
         elements = [];
-        elements.push({type: 'Statements', content: this.stripLastWord(currentLine[5])});
+        elements.push({type: 'Statements', content: this.stripLastWord(currentLine[5], currentLine[3])});
         // Add missing letter component or fill in the blank, depending.
         if (currentLine[3] !== 'None') {
           elements.push({type: 'MissingLetter', content: currentLine[3]});
@@ -37,7 +38,7 @@ export class TrainingCSV {
         // If there is a followup negation, add that to the pagess.
         if (currentLine[6] !== 'None') {
           elements = [];
-          elements.push({type: 'Statements', content: this.stripLastWord(currentLine[6])});
+          elements.push({type: 'Statements', content: this.stripLastWord(currentLine[6], currentLine[4])});
           if (currentLine[4] !== 'None') {
             elements.push({type: 'MissingLetter', content: currentLine[4]});
           } else {
@@ -62,8 +63,8 @@ export class TrainingCSV {
       return result;
   }
 
-  static stripLastWord(text: String): String {
-    return text.substring(0, text.lastIndexOf(' '));
+  static stripLastWord(text: string, wordsToStrip: string): String {
+    return text.substring(0, text.toLocaleLowerCase().lastIndexOf(wordsToStrip.toLocaleLowerCase()));
   }
 
 // Return array of string values, or NULL if CSV string not well formed.

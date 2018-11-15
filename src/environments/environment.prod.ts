@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   redirect: '/calm/angular/completed',
-  progress_endpoint: '/angular/api'
+  progress_endpoint: '/calm/angular/api/'
 };
