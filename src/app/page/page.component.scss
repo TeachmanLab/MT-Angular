@@ -3,7 +3,7 @@
 @include mindtrails-theme($mindtrails-theme);
 
 div {
-  padding: 10px;
+  padding: 0px;
 }
 
 .reference {
@@ -37,6 +37,13 @@ h1 {
   font-weight: 700;
 }
 
+.pageImage {
+  float: right;
+  margin-left: 20px;
+}
+br.clear {
+  clear: both;
+}
 
 div.scenario {
   position: relative;

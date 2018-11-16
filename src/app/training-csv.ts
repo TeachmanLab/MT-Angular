@@ -64,7 +64,13 @@ export class TrainingCSV {
   }
 
   static stripLastWord(text: string, wordsToStrip: string): String {
-    return text.substring(0, text.toLocaleLowerCase().lastIndexOf(wordsToStrip.toLocaleLowerCase()));
+    if ( wordsToStrip === 'None') { // if set to 'None" just remove the last word.
+      return text.substring(0, text.toLocaleLowerCase().lastIndexOf(' '));
+    } else if (text.toLocaleLowerCase().lastIndexOf(wordsToStrip.toLowerCase()) > 0) {
+      return text.substring(0, text.toLocaleLowerCase().lastIndexOf(wordsToStrip.toLocaleLowerCase()));
+    } else {
+      return text;
+    }
   }
 
 // Return array of string values, or NULL if CSV string not well formed.
