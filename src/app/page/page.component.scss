@@ -57,6 +57,7 @@ div.scenario {
     text-shadow: 1px 1px #000;
     background: rgba(1,1,1,0.2);
     border-radius: 6px;
+    padding: 10px;
   }
 
   mat-card.statement {
@@ -74,3 +75,14 @@ div.scenario {
 
 
 
+@media only screen and (max-width: 768px) {
+  div.scenario {
+    position: relative;
+
+    div.title {
+      font-size: 0.8em;
+      padding: 2px;
+      margin: 0px;
+    }
+  }
+}
