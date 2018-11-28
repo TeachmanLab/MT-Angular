@@ -36,6 +36,11 @@ export interface Element {
   stimulusName?: string;
 }
 
+export interface Image extends Element {
+  type: 'Image';
+  caption?: string;
+}
+
 export interface MissingLetter extends Element {
   type: 'MissingLetter';
 }

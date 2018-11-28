@@ -475,7 +475,8 @@
               {
                 "type": "Image",
                 "stimulusName": "p1",
-                "content": "./assets/images/step-body-images/session3-step1.png"
+                "content": "./assets/images/step-body-images/session3-step1.png",
+                "caption": "One in seven people have an anxiety disorder in their lifetime."
               },
               {
                 "type": "Paragraph",
@@ -491,11 +492,6 @@
                 "type": "Paragraph",
                 "stimulusName": "p1",
                 "content": "Many factors other than home country are associated with the prevalence of anxiety disorders. For example, anxiety disorders occur in twice as many women as men (1), and the rate of anxiety disorders is lower in older adults (over 55 years) than in younger adults (35-54 years) (1). Findings for minority ethnic groups in comparison to majority ethnic groups are mixed (4, 5)."
-              },
-              {
-                "type": "Caption",
-                "stimulusName": "p1",
-                "content": "One in seven people have an anxiety disorder in their lifetime."
               },
               {
                 "type": "References",
