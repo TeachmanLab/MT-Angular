@@ -37,13 +37,19 @@ export class MissingLetterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.word = this.missingLetter.word;
-    const missing_index = Math.floor(Math.random() * this.word.length) ;
+    this.word = this.missingLetter.content.toString();
+    let missing_index = Math.floor(Math.random() * this.word.length) ;
+    while (this.word.charAt(missing_index) === ' ') {
+      missing_index = Math.floor(Math.random() * this.word.length) ;
+    }
     this.letters = [];
     let letter = '';
     for (let i = 0; i < this.word.length; i++) {
       letter = this.word.charAt(i).toUpperCase();
       const tile = {letter: letter, status: 'provided'};
+      if (letter === ' ') {
+        tile.status = 'blank';
+      }
       this.letters.push(tile);
       if (i === missing_index) {
         this.correct_letter = letter;

@@ -78,14 +78,14 @@
                 "content": "First-person perspective"
               },
               {
-                "type": "Paragraph",
-                "stimulusName": "le2",
-                "content": "In this exercise, and throughout the training program, please remember to imagine what is happening through your own eyes (picture on the left), not as an outside observer (picture on the right) ..."
-              },
-              {
                 "type": "Image",
                 "stimulusName": "le2",
                 "content": "./assets/training_images/lemon/example.png"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le2",
+                "content": "In this exercise, and throughout the training program, please remember to imagine what is happening through your own eyes (picture on the left), not as an outside observer (picture on the right) ..."
               }
             ]
           },
@@ -97,19 +97,15 @@
                 "content": "Ok, let's begin:"
               },
               {
+                "type": "Image",
+                "stimulusName": "le3",
+                "content": "./assets/training_images/lemon/lemon_1.png",
+                "caption": "(Please take a few seconds to imagine this)"
+              },
+              {
                 "type": "Paragraph",
                 "stimulusName": "le3",
                 "content": "Imagine you are holding the lemon in your right hand, and you can feel its shape and its weight."
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le3",
-                "content": "./assets/training_images/lemon/lemon_1.png"
-              },
-              {
-                "type": "Caption",
-                "stimulusName": "le3",
-                "content": "(Please take a few seconds to imagine this)"
               }
             ]
           },
@@ -119,21 +115,17 @@
                 "type": "LargeHeader",
                 "stimulusName": "le4",
                 "content": "The Lemon Exercise"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le4",
+                "content": "./assets/training_images/lemon/lemon_5.png",
+                "caption": "(Please take a few seconds to imagine this)"
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "le4",
                 "content": "Now imagine you are shining a light on the lemon, and you can see the waxy and lumpy texture of the yellow skin."
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le4",
-                "content": "./assets/training_images/lemon/lemon_5.png"
-              },
-              {
-                "type": "Caption",
-                "stimulusName": "le4",
-                "content": "(Please take a few seconds to imagine this)"
               }
             ]
           },
@@ -143,21 +135,17 @@
                 "type": "LargeHeader",
                 "stimulusName": "le5",
                 "content": "The Lemon Exercise"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le5",
+                "content": "./assets/training_images/lemon/lemon_4.png",
+                "caption": "(Please take a few seconds to imagine this)"
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "le5",
                 "content": "Now imagine that you scratch the skin with your fingernail, then you bring the lemon up to your nose, and you can smell the fresh zesty juice from the skin."
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le5",
-                "content": "./assets/training_images/lemon/lemon_4.png"
-              },
-              {
-                "type": "Caption",
-                "stimulusName": "le5",
-                "content": "(Please take a few seconds to imagine this)"
               }
             ]
           },
@@ -167,21 +155,17 @@
                 "type": "LargeHeader",
                 "stimulusName": "le6",
                 "content": "The Lemon Exercise"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le6",
+                "content": "./assets/training_images/lemon/lemon_2.png",
+                "caption": "(Please take a few seconds to imagine this)"
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "le6",
                 "content": "Now imagine that you cut the lemon in half, and you bring one half of it up for a closer look. You can see the juicy flesh in the shape of segments that look like a wagon wheel."
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le6",
-                "content": "./assets/training_images/lemon/lemon_2.png"
-              },
-              {
-                "type": "Caption",
-                "stimulusName": "le6",
-                "content": "(Please take a few seconds to imagine this)"
               }
             ]
           },
@@ -193,19 +177,15 @@
                 "content": "The Lemon Exercise"
               },
               {
+                "type": "Image",
+                "stimulusName": "le7",
+                "content": "./assets/training_images/lemon/lemon_3.png",
+                "caption": "(Please take a few seconds to imagine this)"
+              },
+              {
                 "type": "Paragraph",
                 "stimulusName": "le7",
                 "content": "Now imagine that you squeeze the lemon and some of the juice squirts right into your eyes, and it is really stinging, making your eyes water."
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le7",
-                "content": "./assets/training_images/lemon/lemon_3.png"
-              },
-              {
-                "type": "Caption",
-                "stimulusName": "le7",
-                "content": "(Please take a few seconds to imagine this)"
               }
             ]
           },
@@ -217,14 +197,14 @@
                 "content": "That was the lemon exercise!"
               },
               {
-                "type": "Paragraph",
-                "stimulusName": "le8",
-                "content": "Don't worry if you didn't experience all of the sensations strongly, this is completely normal."
-              },
-              {
                 "type": "Image",
                 "stimulusName": "le8",
                 "content": "./assets/training_images/lemon/lemon_6.png"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le8",
+                "content": "Don't worry if you didn't experience all of the sensations strongly, this is completely normal."
               }
             ]
           },
@@ -236,14 +216,14 @@
                 "content": "Session 1: Training Stories"
               },
               {
-                "type": "Paragraph",
-                "stimulusName": "intro",
-                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
-              },
-              {
                 "type": "Image",
                 "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "intro",
+                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
               },
               {
                 "type": "BulletList",

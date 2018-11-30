@@ -52,9 +52,10 @@ export class PageComponent implements OnChanges {
 
   @Input()
   page: Page;
-  pageIndex: number;
-  numPages: number;
+  elementIndex: number;
+  numElements: number;
   correct = true;
+  visibleElements = [];
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -62,8 +63,10 @@ export class PageComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges() {
-    this.pageIndex = 0;
-    this.numPages = this.page.elements.length;
+    this.elementIndex = 0;
+    this.numElements = this.page.elements.length;
+    this.visibleElements = [];
+    this.visibleElements.push(this.page.elements[this.elementIndex]);
     this.markStaticComponentsComplete();
   }
 
@@ -82,9 +85,11 @@ export class PageComponent implements OnChanges {
     if (!correct) {
       this.correct = false;
     }
-    this.pageIndex++;
-    if (this.pageIndex === this.numPages) {
+    this.elementIndex++;
+    if (this.elementIndex === this.numElements) {
       this.done.emit(correct);
+    } else {
+      this.visibleElements.push(this.page.elements[this.elementIndex]);
     }
   }
 

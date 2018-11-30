@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import { Step, Session } from '../interfaces';
 import { ApiService } from '../api.service';
+import {errorHandler} from '@angular/platform-browser/src/browser';
 
 @Component({
   selector: 'app-session',
@@ -33,17 +34,21 @@ export class SessionComponent implements OnInit, OnChanges {
   ngOnChanges() {
     // console.log('The Session was changed!');
     this.api.getProgress().subscribe(progress => {
-      if (progress['sessionIndex'] === this.sessionIndex) {
-        if (progress['stepIndex'] < this.session.steps.length) {
-          this.stepIndex = progress['stepIndex'];
-          this.initStep();
+        if (progress['sessionIndex'] === this.sessionIndex) {
+          if (progress['stepIndex'] < this.session.steps.length) {
+            this.stepIndex = progress['stepIndex'];
+            this.initStep();
+          } else {
+            this.done.emit();
+          }
         } else {
-          this.done.emit();
+          this.initStep();
         }
-      } else {
+      },
+      error => {
+        this.stepIndex = 0;
         this.initStep();
-      }
-    });
+      });
   }
 
   initStep() {

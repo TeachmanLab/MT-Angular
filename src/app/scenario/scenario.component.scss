@@ -4,14 +4,14 @@
 
   div.scenario {
     position: relative;
+    height: 600px;
 
     div.display-area {
       position: absolute;
-      top: 10%;
+      top: 10px;
       left: 10%;
       margin:auto;
       width: 80%;
-      height: 50%;
     }
 
     button.continue {

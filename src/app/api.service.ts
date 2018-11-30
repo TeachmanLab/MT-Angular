@@ -13,10 +13,8 @@ export class ApiService {
 
   // REST endpoints
   endpoints = {
-    content: '/api/content',
     progress: environment.progress_endpoint,
-    session: '/api/session',
-    study: 'api/training/study',
+    study: environment.progress_endpoint + 'study'
   };
 
   constructor(private httpClient: HttpClient) {
