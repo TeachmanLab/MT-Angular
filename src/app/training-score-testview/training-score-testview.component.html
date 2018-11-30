@@ -1,0 +1,16 @@
+<p>
+  This is just a quick stub to allow us to see and quickly iterate on the final score page
+  quickly.  use the input boxes the change values so you can see different states.  You will
+  be working with the training-score component.
+</p>
+<p>The current parameters are Correct: {{numCorrect}} out of {{numScenarios}} scenarios</p>
+  <label>Number of Scenarios</label><input type="text" [value]="numScenarios" (blur)="setScenarioCount($event)">
+  <label>Number Correct</label><input type="text" [value]="numCorrect" (blur)="setCorrectCount($event)">
+
+<mat-card class="training">
+  <mat-card-content>
+    <app-training-score [round]="round"></app-training-score>
+    <div class="spacer"></div>
+    <button class="continue"  mat-raised-button>Start Round 2</button>
+  </mat-card-content>
+</mat-card>
