@@ -1,4 +1,4 @@
-
+<app-session-warning *ngIf="connectionError"></app-session-warning>
 <div class="scenario">
   <div *ngIf="scenario.image" class="image" [ngStyle]="{'background-image': 'url(' + scenario.image + ')'}"
        [@imageState]="state">

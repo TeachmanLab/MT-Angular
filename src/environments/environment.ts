@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   redirect: 'http://localhost:4200/',
+  login: 'http://localhost:8080/session',
   progress_endpoint: 'angular/api/'
 };
 
