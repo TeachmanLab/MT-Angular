@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
 
   constructor (
     private api: ApiService,
-    private router: Router
   ) {
     this.api.getStudy().subscribe(study => {
       this.study = {name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
       console.log(this.study);
     },
         error1 => {
-      console.log('FAiled to get study, sending user to the error page.');
+      console.log('Failed to get study, sending user to the error page.');
       this.connectionError = true;
     });
   }

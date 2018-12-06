@@ -83,8 +83,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   finalCount: EventEmitter<number> = new EventEmitter();
 
   constructor (
-    private api: ApiService,
-    private router: Router
+    private api: ApiService
   ) { }
 
   ngOnInit() {
