@@ -24,7 +24,7 @@ export class TrainingComponent implements OnInit {
   scenarioIndex = 1;
   pageCount: number;
   increment: number;
-  correctSession = false;
+  connectionError = false;
 
   @Input() setSessionIndex: number;
 
@@ -128,7 +128,7 @@ export class TrainingComponent implements OnInit {
     console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
-      if (this.correctSession) {
+      if (!this.connectionError) {
         const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
         if (index > -2) {
           this.round.index = index;
@@ -160,9 +160,9 @@ export class TrainingComponent implements OnInit {
   checkStudy() {
     this.api.getStudy().subscribe(study => {
       if (study.conditioning === 'NEUTRAL') {
-        this.correctSession = false;
+        this.connectionError = true;
       } else {
-        this.correctSession = study.currentSession['index'] - 1 === this.sessionIndex;
+        this.connectionError = !(study.currentSession['index'] - 1 === this.sessionIndex);
       }
     });
   }

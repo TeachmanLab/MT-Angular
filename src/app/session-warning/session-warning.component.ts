@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-session-warning',
@@ -17,7 +18,7 @@ export class SessionWarningComponent implements OnInit {
 
 
   goHome () {
-    this.router.navigate(['']);
+    window.location.assign(environment.login);
   }
 
 }

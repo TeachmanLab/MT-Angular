@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { Page, PageData, Scenario, Session, Study } from '../interfaces';
 import { ApiService } from '../api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-scenario',
@@ -73,6 +74,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   endTime: number;
   pageCounter: number;
   elementCounter = 1;
+  connectionError = false;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -167,7 +169,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.api.saveProgress(this.pageData).subscribe(data => {
       console.log('Saving the data to the server');
       this.pageCounter++;
-    });
+    },
+      error1 => {
+        this.connectionError = true;
+      });
   }
 
   progressState(correctAnswer = true) {

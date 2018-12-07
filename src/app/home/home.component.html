@@ -1,3 +1,4 @@
+<app-session-warning *ngIf="connectionError"></app-session-warning>
 <app-training
   *ngIf="study && study.conditioning != 'NEUTRAL'"
   [setSessionIndex]="study.currentSessionIndex"

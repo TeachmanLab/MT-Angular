@@ -17,7 +17,7 @@ export class ControlConditionComponent implements OnInit {
   sessionIndex = 0;
   currentSession: Session;
   sessionDone = false;
-  correctSession = false;
+  connectionError = false;
 
   @Input() setSessionIndex: number;
 
@@ -62,11 +62,14 @@ export class ControlConditionComponent implements OnInit {
   checkStudy() {
     this.api.getStudy().subscribe(study => {
       if (study.conditioning !== 'NEUTRAL') {
-        this.correctSession = false;
+        this.connectionError = true;
       } else {
-        this.correctSession = study.currentSession['index'] === this.sessionIndex;
+        this.connectionError = !(study.currentSession['index'] === this.sessionIndex);
       }
-    });
+    },
+      error1 => {
+        this.connectionError = true;
+      });
   }
 
   close() {
