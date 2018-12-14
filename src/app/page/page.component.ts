@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { Page } from '../interfaces';
+import {ElementEvent, Page} from '../interfaces';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -56,13 +56,23 @@ export class PageComponent implements OnChanges {
   numElements: number;
   correct = true;
   visibleElements = [];
+  startTime: number;
+  endTime: number;
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
+  /** Some Page elements may have additional information that should be logged.
+   * this will spit those out.
+   * @type {EventEmitter<any>}
+   */
+  @Output()
+  event: EventEmitter<ElementEvent> = new EventEmitter();
+
   constructor() { }
 
   ngOnChanges() {
+    this.startTime = performance.now();
     this.elementIndex = 0;
     this.numElements = this.page.elements.length;
     this.visibleElements = [];
@@ -87,22 +97,15 @@ export class PageComponent implements OnChanges {
     }
     this.elementIndex++;
     if (this.elementIndex === this.numElements) {
+      this.endTime = performance.now();
       this.done.emit(correct);
     } else {
       this.visibleElements.push(this.page.elements[this.elementIndex]);
     }
   }
 
-  getResponseDetails(event) {
-    for (const element of this.page.elements) {
-      if (['Question', 'ThoughtBubble', 'MissingLetter', 'FillInBlank'].includes(element.type)) {
-        if (typeof event === 'number') {
-          element.responseTime = event;
-        }
-        if (typeof event === 'string') {
-          element.buttonPressed = event;
-        }
-      }
-    }
+
+  handleElementEvent(event: ElementEvent) {
+    this.event.emit(event);
   }
 }

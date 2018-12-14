@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Step, Page, Session, PageData, Study } from '../interfaces';
+import { Step, Page, Session, EventRecord, Study } from '../interfaces';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class StepComponent implements OnInit, OnChanges {
 
   study: Study;
   pageIndex: number;
-  pageData: PageData[] = [];
+  pageData: EventRecord[] = [];
   currentPage: Page;
   allowContinue = false;
   startFromEnd = false;

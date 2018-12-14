@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {LetterTile} from '../letter-tile';
 import {animate, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {interval} from 'rxjs';
-import {MissingLetter} from '../interfaces';
+import {ElementEvent, MissingLetter} from '../interfaces';
 
 @Component({
   selector: 'app-missing-letter',
@@ -13,17 +13,17 @@ export class MissingLetterComponent implements OnInit {
 
   @Input()
   missingLetter: MissingLetter;
-  word: String;
-  responseTimes: number[] = [];
+  word: string;
+  startTime: number;
+  firstReactionTime: number;
+  endTime: number;
+
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
   @Output()
-  initialResponse: EventEmitter<number> = new EventEmitter();
-
-  @Output()
-  buttonPressed: EventEmitter<string> = new EventEmitter();
+  event: EventEmitter<ElementEvent> = new EventEmitter();
 
 
   letters: LetterTile[];
@@ -31,6 +31,7 @@ export class MissingLetterComponent implements OnInit {
   missing_letter_tile: LetterTile;
   options: string[];
   incorrect_choices: string[] = [];
+  choices: string[] = [];
   state = 'waiting';
 
   constructor() {
@@ -59,24 +60,23 @@ export class MissingLetterComponent implements OnInit {
       }
     }
     this.setOptions();
+    this.startTime = performance.now();
   }
 
   selectLetter(letter) {
-    this.responseTimes.push(performance.now());
+    const curTime = performance.now();
+    if (!this.firstReactionTime) {
+      this.firstReactionTime = curTime;
+    }
+    this.choices.push(letter);
     this.missing_letter_tile.letter = letter;
     if (letter === this.correct_letter) {
+      this.endTime = curTime;
       this.state = 'correct';
       this.missing_letter_tile.status = 'correct';
       const waitASectionTimer = interval(1500);
       const sub = waitASectionTimer.subscribe( n => {
-        console.log('Waited!');
-        if (this.incorrect_choices[0]) {
-          this.buttonPressed.emit(this.incorrect_choices[0]);
-        } else {
-          this.buttonPressed.emit(letter);
-        }
-        this.initialResponse.emit(this.responseTimes[0]);
-        this.done.emit(this.incorrect_choices.length === 0);
+        this.allDone();
         sub.unsubscribe();
       });
     } else {
@@ -86,6 +86,21 @@ export class MissingLetterComponent implements OnInit {
 
     }
   }
+
+  allDone() {
+    const event: ElementEvent = {
+      trialType: this.missingLetter.type,
+      stimulus: this.word,
+      stimulusName: '',
+      buttonPressed: this.choices.join(','),
+      correct: this.choices.length === 1,
+      rtFirstReact: this.firstReactionTime - this.startTime,
+      rt: this.endTime - this.startTime
+    };
+    this.event.emit(event);
+    this.done.emit(this.choices.length === 1);
+  }
+
 
   isIncorrectChoice(letter) {
     return this.incorrect_choices.indexOf(letter) >= 0;

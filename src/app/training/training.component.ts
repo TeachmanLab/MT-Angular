@@ -74,6 +74,7 @@ export class TrainingComponent implements OnInit {
           this.currentSession = this.sessions[this.sessionIndex];
         }
       });
+      this.currentSession.startTime = performance.now();
       this.loadTraining();
     });
   }
@@ -125,7 +126,6 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
-    console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       if (!this.connectionError) {

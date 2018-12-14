@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Question } from '../interfaces';
+import {ElementEvent, Question} from '../interfaces';
 import { interval } from 'rxjs';
 
 
@@ -25,20 +25,24 @@ export class QuestionComponent implements OnInit {
   state: QuestionStates;
   waitPercent: number;
   incorrectAnswerSupplied = false;  // emit this value when complete.
-  responseTimes: number[] = [];
+  startTime: number;
+  firstReactionTime = 0;
+  endTime: number;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
   @Output()
-  initialResponse: EventEmitter<number> = new EventEmitter();
-
-  @Output()
-  buttonPressed: EventEmitter<string> = new EventEmitter();
+  event: EventEmitter<ElementEvent> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.startTime = performance.now();
+    this.updateQuestionState();
+  }
+
+  updateQuestionState() {
     if (this.question.completed) {
       if (this.question.answer) {
         this.state = QuestionStates.correct;
@@ -49,15 +53,18 @@ export class QuestionComponent implements OnInit {
     }
     this.waitPercent = 0;
     this.question.content = this.question.question; // for populating pageData
-    this.shuffleOptions(this.question.options); // shuffle answer options so that the positive isn't always on the left, negative on right.
+    this.shuffleOptions(this.question.options); // shuffle tanswer options so that the positive isn't always on the left, negative on right.
   }
 
   selected(option: string) {
-    this.responseTimes.push(performance.now());
+    if (this.firstReactionTime === 0) {
+      this.firstReactionTime = performance.now();
+    }
     this.userAnswer = option;
     this.userAnswers.push(option);
     if (this.question.answer) {
       if (option === this.question.answer) {
+        this.endTime = performance.now();
         this.state = QuestionStates.correct;
         this.question.completed = true;
         this.waitAndEmit();
@@ -75,7 +82,7 @@ export class QuestionComponent implements OnInit {
   waitAndEmit() {
     const secondsCounter = interval(1000);
     const subscription = secondsCounter.subscribe(n => {
-    this.allDone();
+      this.allDone();
       subscription.unsubscribe();
     });
   }
@@ -88,7 +95,7 @@ export class QuestionComponent implements OnInit {
       counter++;
       this.waitPercent += 10;
       if (counter > 10) {
-        this.ngOnInit();
+        this.updateQuestionState();
         subscription.unsubscribe();
       }
     });
@@ -106,9 +113,16 @@ export class QuestionComponent implements OnInit {
   }
 
   allDone() {
-    // console.log('Completed question');
-    this.initialResponse.emit(this.responseTimes[0]);
-    this.buttonPressed.emit(this.userAnswers[0]);
+    const event: ElementEvent = {
+      trialType: this.question.type,
+      stimulus: this.question.question,
+      stimulusName: '',
+      buttonPressed: this.userAnswers.join(','),
+      correct: !this.incorrectAnswerSupplied,
+      rtFirstReact: this.firstReactionTime - this.startTime,
+      rt: this.endTime - this.startTime
+    };
+    this.event.emit(event);
     this.done.emit(!this.incorrectAnswerSupplied);
   }
 }

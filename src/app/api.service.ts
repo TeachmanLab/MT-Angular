@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {PageData, Scenario, Session, Study} from './interfaces';
+import {EventRecord, Scenario, Session, Study} from './interfaces';
 import {TrainingCSV} from './training-csv';
 import {environment} from '../environments/environment';
 import {RequestOptions} from '@angular/http';
@@ -42,15 +42,14 @@ export class ApiService {
       .pipe(map(n => TrainingCSV.toJson(n)));
   }
 
-  saveProgress(pageData: PageData[]): Observable<PageData[]> {
-    console.log('Saving Progress to ' + this.endpoints.progress);
-    return this.httpClient.post<PageData[]>(this.endpoints.progress, pageData)
+  saveProgress(pageData: EventRecord[]): Observable<EventRecord[]> {
+    return this.httpClient.post<EventRecord[]>(this.endpoints.progress, pageData)
       .pipe(catchError(this.handleError));
   }
 
-  getProgress(): Observable<PageData[]> {
+  getProgress(): Observable<EventRecord[]> {
     console.log('Getting Progress');
-    return this.httpClient.get<PageData[]>(this.endpoints.progress)
+    return this.httpClient.get<EventRecord[]>(this.endpoints.progress)
       .pipe(catchError(this.handleError));
   }
 

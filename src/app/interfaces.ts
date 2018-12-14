@@ -24,6 +24,7 @@ export interface Scenario extends Step {
 }
 
 export interface Page {
+  name: string;
   elements: Element[];
 }
 
@@ -87,8 +88,21 @@ export interface Study {
   currentSessionIndex: number;
 }
 
+
+// A way to provide details about a particular compoent, this
+// is a suubset of the full EventRecord
+export interface ElementEvent {
+  trialType: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
+  stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
+  stimulusName?: string; // The short code name for stimulus
+  buttonPressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
+  correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
+  rt: number; // Response time from starting the page to completing the page in milliseconds
+  rtFirstReact: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in ms.
+}
+
 // This is how we collect data as participants move through the sessions.
-export interface PageData {
+export interface EventRecord extends ElementEvent {
   session: string; // The back end id (firstSession)
   sessionIndex: number; // The index number of the current session (0)
   sessionTitle: string; // The title and subtitle of the session that is displayed to the user (Session 1: Introduction to Anxiety)
@@ -96,14 +110,8 @@ export interface PageData {
   study: string; // The study being completed (Calm Thinking)
   stepTitle: string; // The title of the current step (Anxiety Disorders)
   stepIndex: number; // The index number of the step in the context of all the steps in the session (2)
-  trialType: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
-  stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
-  stimulusName?: string; // The short code name for stimulus
-  buttonPressed?: string; // The first button pressed when answering a Question or completing a Missing Letter prompt
-  correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
   device: string; // Device used to complete the exercise
-  rt: number; // Response time from starting the page to completing the page in milliseconds
-  rtFirstReact: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in milliseconds
   timeElapsed: number; // Time from the beginning of the session to the end of the current page in milliseconds
   sessionCounter: string; // A counter that advances as a user moves through the session
 }
+

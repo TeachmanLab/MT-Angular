@@ -24,7 +24,7 @@ export class TrainingCSV {
         }
         pages = [];
 
-        pages.push({elements: [{type: 'Intro', content: currentLine[2]}]});
+        pages.push({name: 'scenarioTitle', elements: [{type: 'Intro', content: currentLine[2]}]});
         elements = [];
         elements.push({type: 'Statements', content: this.stripLastWord(currentLine[5], currentLine[3])});
         // Add missing letter component or fill in the blank, depending.
@@ -33,7 +33,7 @@ export class TrainingCSV {
         } else {
           elements.push({type: 'FillInBlank'});
         }
-        pages.push({elements: elements});
+        pages.push({name: 'scenario', elements: elements});
 
         // If there is a followup negation, add that to the pagess.
         if (currentLine[6] !== 'None') {
@@ -44,12 +44,12 @@ export class TrainingCSV {
           } else {
             elements.push({type: 'FillInBlank'});
           }
-          pages.push({elements: elements});
+          pages.push({name: 'scenarioNegation', elements: elements});
         }
         currentLine[10] === 'Positive' ?  answer = currentLine[8] : answer = currentLine[9];
         // Dont ask follow up questions if using fill int the blank
         if (currentLine[3] !== 'None') {
-          pages.push({elements: [{type: 'Question', question: currentLine[7], answer: answer, options: [currentLine[8], currentLine[9]]}]});
+          pages.push({name: 'scenarioQuestion', elements: [{type: 'Question', question: currentLine[7], answer: answer, options: [currentLine[8], currentLine[9]]}]});
         }
         // Add a picture if one exists.
         if (currentLine[13] === 'picture') {
