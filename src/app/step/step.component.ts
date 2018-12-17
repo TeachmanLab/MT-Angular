@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Step, Page, Session, EventRecord, Study } from '../interfaces';
+import {Step, Page, Session, EventRecord, Study, ElementEvent} from '../interfaces';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -111,46 +111,42 @@ export class StepComponent implements OnInit, OnChanges {
     }
   }
 
+  recordElementEvent(event: ElementEvent) {
+    const data = {
+      session: this.session.session,
+      sessionIndex: this.sessionIndex,
+      sessionTitle: this.session.title + ': ' + this.session.subTitle,
+      conditioning: this.study.conditioning,
+      study: this.study.name,
+      stepTitle: this.step.title,
+      stepIndex: this.stepIndex,
+      device: navigator.userAgent,
+      timeElapsed: this.endTime - this.session.startTime,
+      sessionCounter: this.sessionIndex +  '.' + this.stepIndex + '.' + this.pageIndex
+    };
+    const record: EventRecord = {...event, ...data};
+    this.pageData.push(record);
+  }
+
   recordPageData() {
     this.endTime = performance.now();
-    for (const el of this.currentPage.elements) {
-      const elData = {session: this.session.session, sessionIndex: this.sessionIndex,
-        sessionTitle: this.session.title + ': ' + this.session.subTitle, device: navigator.userAgent, rt: this.endTime - this.startTime,
-        rtFirstReact: 0, stepTitle: this.step.title, stepIndex: this.stepIndex, stimulus: '', trialType: el.type, buttonPressed: '',
-        correct: this.elementCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.study.conditioning,
-        study: this.study.name, sessionCounter: this.pageCounter +  '.' + this.elementCounter, stimulusName: '',
-      };
-
-      if (el.responseTime) {
-        elData['rtFirstReact'] = el.responseTime - this.startTime;
-      } else {
-        elData['rtFirstReact'] = this.endTime - this.startTime;
-      }
-
-      if (el.buttonPressed) {
-        elData['buttonPressed'] = el.buttonPressed;
-      }
-
-      if (el.stimulusName) {
-        elData['stimulusName'] = el.stimulusName;
-      }
-
-      if (el.content instanceof Array) {
-        elData['stimulus'] = el.content.join(', ');
-      } else {
-        elData['stimulus'] = el.content;
-      }
-
-      this.elementCounter++;
-      this.pageData.push(elData);
-    }
+    const elData = {session: this.session.session, sessionIndex: this.sessionIndex,
+      sessionTitle: this.session.title + ': ' + this.session.subTitle, device: navigator.userAgent, rt: this.endTime - this.startTime,
+      rtFirstReact: 0, stepTitle: this.step.title, stepIndex: this.stepIndex, stimulus: '', trialType: 'page', buttonPressed: '',
+      correct: this.elementCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.study.conditioning,
+      study: this.study.name, sessionCounter: this.sessionIndex +  '.' + this.stepIndex + '.' + this.pageIndex,
+      stimulusName: this.step.pages[this.pageIndex].elements[0].stimulusName,
+    };
+    elData['rtFirstReact'] = this.endTime - this.startTime;
+    elData['buttonPressed'] = 'next';
+    this.elementCounter++;
+    this.pageData.push(elData);
     console.log('pageData', this.pageData);
     this.api.saveProgress(this.pageData).subscribe(data => {
       console.log('Saving the data to the server');
       this.pageCounter++;
     });
   }
-
 
   nextPage() {
     // console.log('Next page');

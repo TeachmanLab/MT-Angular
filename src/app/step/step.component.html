@@ -3,7 +3,8 @@
     <div>
       <h3 *ngIf="(stepIndex <= 0 && pageIndex <= 1)">{{ step.title }}</h3>
     </div>
-    <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted($event)"></app-page>
+    <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted($event)"
+    (event)="recordElementEvent($event)"></app-page>
     <div
       class="button-row"
       fxLayout="row"

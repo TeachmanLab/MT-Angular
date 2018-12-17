@@ -67,11 +67,11 @@ export class ThoughtbubbleComponent implements OnInit {
     const event: ElementEvent = {
       trialType: this.thoughtBubble.type,
       stimulus: this.thoughtBubble.thought,
-      stimulusName: this.thoughtBubble.title,
-      buttonPressed: '',
+      stimulusName: this.thoughtBubble.stimulusName,
+      buttonPressed: 'continue',
       correct: true,
       rtFirstReact: this.firstResponseTime - this.startTime,
-      rt: this.startTime - this.endTime
+      rt: this.endTime - this.startTime
     };
     this.event.emit(event);
     this.done.emit();

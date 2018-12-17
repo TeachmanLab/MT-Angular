@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import { Step, Session } from '../interfaces';
 import { ApiService } from '../api.service';
-import {errorHandler} from '@angular/platform-browser/src/browser';
 
 @Component({
   selector: 'app-session',

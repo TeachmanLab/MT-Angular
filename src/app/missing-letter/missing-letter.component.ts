@@ -91,7 +91,7 @@ export class MissingLetterComponent implements OnInit {
     const event: ElementEvent = {
       trialType: this.missingLetter.type,
       stimulus: this.word,
-      stimulusName: '',
+      stimulusName: this.missingLetter.stimulusName,
       buttonPressed: this.choices.join(','),
       correct: this.choices.length === 1,
       rtFirstReact: this.firstReactionTime - this.startTime,

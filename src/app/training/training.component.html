@@ -10,8 +10,7 @@
 <app-session *ngIf="state === states.READINESS"
              [session]="readinessRulers[0]"
              [sessions]="readinessRulers"
-             [sessionIndex]="0"
-             (finalPageCount)="1"
+             [sessionIndex]="sessionIndex"
              (done)="readinessComplete()"
              (showIndicator)="false"
 ></app-session>
