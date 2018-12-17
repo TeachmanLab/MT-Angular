@@ -1,13 +1,21 @@
 <app-session-warning *ngIf="connectionError"></app-session-warning>
-<app-session
-  *ngIf="currentSession && !round"
+<app-session *ngIf="state === states.INTRO"
   [session]="currentSession"
   [sessions]="indicatorSessions"
   [sessionIndex]="sessionIndex"
   (finalPageCount)="stepPageCount($event)"
   (done)="sessionComplete()"
+  (showIndicator)="true"
 ></app-session>
-<div *ngIf="round && !showSummary">
+<app-session *ngIf="state === states.READINESS"
+             [session]="readinessRulers[0]"
+             [sessions]="readinessRulers"
+             [sessionIndex]="0"
+             (finalPageCount)="1"
+             (done)="readinessComplete()"
+             (showIndicator)="false"
+></app-session>
+<div *ngIf="state === states.TRAINING">
   <mat-card class="training">
     <mat-card-content>
         <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
@@ -27,7 +35,7 @@
     </mat-card-content>
   </mat-card>
 </div>
-<div *ngIf="showSummary">
+<div *ngIf="state === states.SUMMARY">
   <mat-card class="training">
     <mat-card-content>
       <img class="summaryImage" src="./assets/lemon.png"/>

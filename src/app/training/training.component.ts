@@ -4,6 +4,10 @@ import { Scenario, Session } from '../interfaces';
 import { environment } from '../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 
+enum TrainingState {
+  'INTRO', 'TRAINING', 'READINESS', 'SUMMARY'
+}
+
 @Component({
   selector: 'app-training',
   templateUrl: './training.component.html',
@@ -11,16 +15,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrainingComponent implements OnInit {
 
+  states = TrainingState;
+  state = TrainingState.INTRO;
+
   sessions: Session[];
+  readinessRulers: Session[];
+  readinessCompleted = false;
+  readinessSessionIndex = 0; // This is the index of the scenerio when we show readiness rulers question
+  readinessScenarioIndex = 5; // This is the index of the session we when we show readiness rulers.
   sessionIndex = 0;
   currentSession: Session;
   indicatorSessions: Session[];
-
   totalRounds = 4;
   roundIndex = 0;
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.
-  showSummary = false;
   scenarioIndex = 1;
   pageCount: number;
   increment: number;
@@ -39,9 +48,9 @@ export class TrainingComponent implements OnInit {
     if (this.setSessionIndex) {
       this.sessionIndex = this.setSessionIndex - 1;
     }
-    this.getProgress();
     this.loadIntro();
     this.loadIndicatorSessions();
+    this.getProgress();
     this.checkStudy();
   }
 
@@ -50,8 +59,8 @@ export class TrainingComponent implements OnInit {
       if (progress['sessionIndex'] === this.sessionIndex) {
         if (progress['stepIndex'] > this.currentSession.steps.length) {
           this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length) / this.increment );
-          // this.scenarioIndex = this.currentSession.steps.length + (this.roundIndex * this.increment); // sets scenario index to beginning of round for returning users
-          this.scenarioIndex = progress['stepIndex'] - this.currentSession.steps.length + 1; // sets scenario back to the scenario that the user was last on
+          // sets scenario back to the scenario that the user was last on
+          this.scenarioIndex = progress['stepIndex'] - this.currentSession.steps.length + 1;
         } else {
           this.done.emit();
         }
@@ -75,7 +84,14 @@ export class TrainingComponent implements OnInit {
         }
       });
       this.currentSession.startTime = performance.now();
+      this.loadReadinessRulers();
       this.loadTraining();
+    });
+  }
+
+  loadReadinessRulers() {
+    this.api.getReadinessRulers().subscribe(sessions => {
+      this.readinessRulers = sessions;
     });
   }
 
@@ -86,6 +102,14 @@ export class TrainingComponent implements OnInit {
   }
 
   sessionComplete() {
+//    this.currentSession = null;
+    this.state = this.states.TRAINING;
+    this.nextTraining();
+  }
+
+  readinessComplete() {
+    this.readinessCompleted = true;
+    this.state = this.states.TRAINING;
     this.nextTraining();
   }
 
@@ -126,6 +150,13 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
+    if (this.scenarioIndex === this.readinessScenarioIndex &&
+        this.sessionIndex === this.readinessSessionIndex &&
+        !this.readinessCompleted) {
+      this.state = this.states.READINESS;
+      return;
+    }
+    console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       if (!this.connectionError) {
@@ -138,7 +169,7 @@ export class TrainingComponent implements OnInit {
     } else if (this.round.isComplete()) {
       this.scenarioIndex++;
       this.round.next(correct);
-      this.showSummary = true;
+      this.state = this.states.SUMMARY;
     } else {
       this.scenarioIndex++;
       this.round.next(correct);
@@ -146,7 +177,7 @@ export class TrainingComponent implements OnInit {
   }
 
   nextRound() {
-    this.showSummary = false;
+    this.state = this.states.TRAINING;
     if (this.isComplete()) {
       this.done.emit();
     } else {

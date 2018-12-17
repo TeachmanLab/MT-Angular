@@ -53,7 +53,6 @@ export class QuestionComponent implements OnInit {
     }
     this.waitPercent = 0;
     this.question.content = this.question.question; // for populating pageData
-    this.shuffleOptions(this.question.options); // shuffle tanswer options so that the positive isn't always on the left, negative on right.
   }
 
   selected(option: string) {
@@ -99,17 +98,6 @@ export class QuestionComponent implements OnInit {
         subscription.unsubscribe();
       }
     });
-  }
-
-  shuffleOptions(array) {
-    // Randomize array element order in-place.
-    // Using Durstenfeld shuffle algorithm.
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
   }
 
   allDone() {

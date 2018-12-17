@@ -13,6 +13,7 @@ export class SessionComponent implements OnInit, OnChanges {
   @Input() session: Session;
   @Input() sessions: Session[];
   @Input() sessionIndex: number;
+  @Input() showIndicator ? = true;
   stepIndex: number;
   currentStep: Step;
 
