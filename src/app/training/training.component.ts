@@ -190,7 +190,7 @@ export class TrainingComponent implements OnInit {
 
   checkStudy() {
     this.api.getStudy().subscribe(study => {
-      if (study.conditioning === 'NEUTRAL') {
+      if (study.conditioning === 'CONTROL') {
         this.connectionError = true;
       } else {
         this.connectionError = !(study.currentSession['index'] - 1 === this.sessionIndex);
