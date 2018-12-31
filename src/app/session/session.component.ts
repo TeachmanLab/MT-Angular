@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import { Step, Session } from '../interfaces';
 import { ApiService } from '../api.service';
-import {errorHandler} from '@angular/platform-browser/src/browser';
 
 @Component({
   selector: 'app-session',
@@ -13,6 +12,7 @@ export class SessionComponent implements OnInit, OnChanges {
   @Input() session: Session;
   @Input() sessions: Session[];
   @Input() sessionIndex: number;
+  @Input() showIndicator ? = true;
   stepIndex: number;
   currentStep: Step;
 

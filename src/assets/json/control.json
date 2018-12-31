@@ -179,6 +179,33 @@
             ]
           }
         ]
+      },
+      {
+        "title": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "stimulusName": "p1",
+                "content": "This program is designed to teach you more about anxiety so it will seem less mysterious. You will learn about the different components of the anxiety response, and learn about different types of anxiety disorders and what factors tend to maintain anxiety."
+              },
+              {
+                "type": "Question",
+                "stimulusName": "readiness_rulers",
+                "question": "Based on what you’ve seen of the program and this description of its goals, how confident are you that this program will reduce your anxiety?",
+                "options": [
+                  "Not at all",
+                  "Slightly",
+                  "Somewhat",
+                  "Mostly",
+                  "Very",
+                  "Prefer not to answer"
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },

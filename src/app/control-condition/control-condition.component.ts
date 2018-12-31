@@ -61,7 +61,7 @@ export class ControlConditionComponent implements OnInit {
 
   checkStudy() {
     this.api.getStudy().subscribe(study => {
-      if (study.conditioning !== 'NEUTRAL') {
+      if (study.conditioning !== 'CONTROL') {
         this.connectionError = true;
       } else {
         this.connectionError = !(study.currentSession['index'] === this.sessionIndex);
