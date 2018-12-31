@@ -104,7 +104,7 @@ export class QuestionComponent implements OnInit {
     const event: ElementEvent = {
       trialType: this.question.type,
       stimulus: this.question.question,
-      stimulusName: '',
+      stimulusName: this.question.stimulusName,
       buttonPressed: this.userAnswers.join(','),
       correct: !this.incorrectAnswerSupplied,
       rtFirstReact: this.firstReactionTime - this.startTime,
