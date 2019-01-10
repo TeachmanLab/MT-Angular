@@ -13,13 +13,29 @@
   background-color: mat-color($mindtrails-primary, A100, .35);
 }
 
+.options {
+  min-height: 70px;
+}
+
 h2 {
   text-align: center;
 }
 
-div.missing {
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #c4a300; }
+  40% { box-shadow: 0 0 20px #c4a300; }
+  60% { box-shadow: 0 0 20px #c4a300; }
+  100% { box-shadow: 0 0 -10px #c4a300; }
+}
+
+div.missingActive {
   background-color: #fff;
-  box-shadow: -1px -1px #888;
+//  box-shadow: -1px -1px #888;
+//  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+  animation: glowing 1000ms 1 500ms;
+}
+
+div.missingInactive {
 }
 
 div.blank {

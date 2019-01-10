@@ -26,33 +26,33 @@ export class TrainingCSV {
 
         pages.push({elements: [{type: 'Intro', content: currentLine[2]}]});
         elements = [];
-        elements.push({type: 'Statements', content: this.stripLastWord(currentLine[5], currentLine[3])});
+        elements.push({type: 'Statements', content: this.stripLastWord(currentLine[6], currentLine[4])});
         // Add missing letter component or fill in the blank, depending.
-        if (currentLine[3] !== 'None') {
-          elements.push({type: 'MissingLetter', content: currentLine[3]});
+        if (currentLine[4] !== 'None') {
+          elements.push({type: 'MissingLetter', content: currentLine[4], numberMissing: +currentLine[3]});
         } else {
           elements.push({type: 'FillInBlank'});
         }
         pages.push({elements: elements});
 
         // If there is a followup negation, add that to the pagess.
-        if (currentLine[6] !== 'None') {
+        if (currentLine[7] !== 'None') {
           elements = [];
-          elements.push({type: 'Statements', content: this.stripLastWord(currentLine[6], currentLine[4])});
-          if (currentLine[4] !== 'None') {
-            elements.push({type: 'MissingLetter', content: currentLine[4]});
+          elements.push({type: 'Statements', content: this.stripLastWord(currentLine[7], currentLine[5])});
+          if (currentLine[5] !== 'None') {
+            elements.push({type: 'MissingLetter', content: currentLine[5], numberMissing: +currentLine[3]});
           } else {
             elements.push({type: 'FillInBlank'});
           }
           pages.push({elements: elements});
         }
-        currentLine[10] === 'Positive' ?  answer = currentLine[8] : answer = currentLine[9];
+        currentLine[11] === 'Positive' ?  answer = currentLine[9] : answer = currentLine[10];
         // Dont ask follow up questions if using fill int the blank
-        if (currentLine[3] !== 'None') {
-          pages.push({elements: [{type: 'Question', question: currentLine[7], answer: answer, options: [currentLine[8], currentLine[9]]}]});
+        if (currentLine[4] !== 'None') {
+          pages.push({elements: [{type: 'Question', question: currentLine[8], answer: answer, options: [currentLine[9], currentLine[10]]}]});
         }
         // Add a picture if one exists.
-        if (currentLine[13] === 'picture') {
+        if (currentLine[14] === 'picture') {
           image = `assets/training_images/${currentLine[1]}.jpeg`;
         } else {
           image = null;
@@ -64,6 +64,7 @@ export class TrainingCSV {
   }
 
   static stripLastWord(text: string, wordsToStrip: string): String {
+    text = text.trim();
     if ( wordsToStrip === 'None') { // if set to 'None" just remove the last word.
       return text.substring(0, text.toLocaleLowerCase().lastIndexOf(' '));
     } else if (text.toLocaleLowerCase().lastIndexOf(wordsToStrip.toLowerCase()) > 0) {

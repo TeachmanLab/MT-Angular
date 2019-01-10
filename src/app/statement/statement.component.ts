@@ -12,7 +12,7 @@ export class StatementComponent implements OnInit {
   @Input()
   statement: String;
   typed = '';
-  letter_delay = 45; // wait this many milliseconds before displaying the next content.
+  letter_delay = 35; // wait this many milliseconds before displaying the next content.
 
   @Output()
   doneTyping: EventEmitter<boolean> = new EventEmitter();

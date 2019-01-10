@@ -43,6 +43,7 @@ export interface Image extends Element {
 
 export interface MissingLetter extends Element {
   type: 'MissingLetter';
+  numberMissing: number;
 }
 
 export interface FillInBlank extends Element {
