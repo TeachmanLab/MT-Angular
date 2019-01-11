@@ -7,7 +7,7 @@
   (finalPageCount)="stepPageCount($event)"
   (done)="sessionComplete()"
 ></app-session>
-<div *ngIf="round && !showSummary">
+<div *ngIf="round && !showSummary && !finalSummary">
   <mat-card class="training">
     <mat-card-content>
         <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
@@ -33,8 +33,18 @@
     <app-training-score [round]="round"></app-training-score>
         <div class="spacer"></div>
         <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
-        <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="close()">Continue</button>
+        <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Continue</button>
     </mat-card-content>
   </mat-card>
 </div>
+<div *ngIf="finalSummary">
+  <mat-card class="training">
+    <mat-card-content>
+      <app-final-score [session]="currentSession" [rounds]="rounds" [totalScore]="totalScore"></app-final-score>
+      <div class="spacer"></div>
+      <button class="continue"  mat-raised-button (click)="close()">Continue</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
 

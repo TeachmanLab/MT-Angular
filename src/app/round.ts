@@ -24,14 +24,21 @@ export class Round {
     }
   }
 
-  percentCorrect() {
-    const errorCount = this.scenarios.filter(s => s.status === 'error').length;
-    return (this.scenarios.length - errorCount) / this.scenarios.length;
+  /** Provides a floating point number between 0 and 1, of the score of a scenario.
+   *
+   * @param {Scenario} scenario
+   * @returns {number}
+   */
+  scenarioScore(scenario: Scenario) {
+    return Math.round((scenario.numCorrect / scenario.pages.length) * 10) / 10;
   }
 
-  numCorrect() {
-    return this.scenarios.filter(s => s.status === 'complete').length;
+  roundScore() {
+    let score = 0;
+    for (const s of this.scenarios) {
+      score += this.scenarioScore(s);
+    }
+    return score;
   }
-
 
 }

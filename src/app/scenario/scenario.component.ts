@@ -64,6 +64,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   study: Study;
   pageIndex = 0;
+  pagesCorrect = 0;
   currentPage: Page;
   state: string;
   pageData: PageData[] = [];
@@ -115,6 +116,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   init() {
     this.pageIndex = 0;
+    this.scenario.numCorrect = 0;
     this.currentPage = this.scenario.pages[0];
     this.state = this.currentPage.elements[0].type;
     this.scenarioCorrect = true;
@@ -165,7 +167,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
     console.log('pageData', this.pageData);
     this.api.saveProgress(this.pageData).subscribe(data => {
-      console.log('Saving the data to the server');
       this.pageCounter++;
     });
   }
@@ -174,6 +175,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
     if (!correctAnswer) {
       this.scenarioCorrect = false;
       this.pageCorrect = false;
+    } else {
+      this.scenario.numCorrect ++;
     }
     this.recordStateData();
     this.elementCounter = 1;
@@ -183,9 +186,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
     if (this.pageIndex < this.scenario.pages.length) {
       this.currentPage = this.scenario.pages[this.pageIndex];
       this.state = this.currentPage.elements[0].type;
-      console.log('The page index is ' + this.pageIndex + '.  The state is ' + this.state);
     } else {
-      console.log('The scenario is complete.' + this.pageIndex + '.  The state is ' + this.state);
       this.done.emit(this.scenarioCorrect);
       this.finalCount.emit(this.pageCounter);
     }

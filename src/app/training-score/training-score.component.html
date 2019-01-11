@@ -2,19 +2,16 @@
     <div class="summary" *ngIf="ready">
       <div class="text">
         <!-- Here is how you could stuff values into sentence form -->
-        <p>You got {{round.numCorrect()}} correct out of {{round.scenarios.length}}.</p>
-        <p>You got {{round.percentCorrect() | percent}} of the ansers correct.</p>
+        <p>You got {{round.roundScore()}} correct out of {{round.scenarios.length}}.</p>
 
         <ngx-gauge [type]="'arch'"
-                   [value]="round.percentCorrect() * 100"
-                   [label]="'Percent Correct'"
-                   [append]="'%'">
+                   [value]="round.roundScore()">
         </ngx-gauge>
 
         <!-- conditional sections, based on percentage correct -->
-        <p *ngIf='round.percentCorrect() > 0 && round.percentCorrect() < .50'>You are terrible. Your mother was a hampster and your father smelt of eldeberries.</p>
-        <p *ngIf='round.percentCorrect() >= .50 && round.percentCorrect() < .80'>Pitiful. And no, I'm not insulting you, I'm describing you.</p>
-        <p *ngIf='round.percentCorrect() >= .80'>Guess your doing ok, finally.  We'll see if it lasts.</p>
+        <p *ngIf='round.roundScore() > 0 && round.roundScore() < 5'>You are terrible. Your mother was a hampster and your father smelt of eldeberries.</p>
+        <p *ngIf='round.roundScore() >= 5 && round.roundScore() <= 8'>Pitiful. And no, I'm not insulting you, I'm describing you.</p>
+        <p *ngIf='round.roundScore() > 8'>Guess your doing ok, finally.  We'll see if it lasts.</p>
       </div>
       <div class="spacer"></div>
     </div>

@@ -41,6 +41,8 @@ import { FillInTheBlankComponent } from './fill-in-the-blank/fill-in-the-blank.c
 import { TrainingScoreComponent } from './training-score/training-score.component';
 import { TrainingScoreTestviewComponent } from './training-score-testview/training-score-testview.component';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { FinalScoreComponent } from './final-score/final-score.component';
+import { FinalScoreTestviewComponent } from './final-score-testview/final-score-testview.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -48,7 +50,8 @@ const routes: Routes = [
   { path: 'training/:session', component: TrainingComponent },
   { path: 'control', component: ControlConditionComponent },
   { path: 'control/:session', component: ControlConditionComponent },
-  { path: 'scoreTest', component: TrainingScoreTestviewComponent }
+  { path: 'scoreTest', component: TrainingScoreTestviewComponent },
+  { path: 'finalScoreTest', component: FinalScoreTestviewComponent }
 ];
 
 @NgModule({
@@ -75,6 +78,8 @@ const routes: Routes = [
     SessionWarningComponent,
     TrainingScoreComponent,
     TrainingScoreTestviewComponent,
+    FinalScoreComponent,
+    FinalScoreTestviewComponent,
 
   ],
   imports: [

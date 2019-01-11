@@ -18,10 +18,12 @@ export class TrainingComponent implements OnInit {
   indicatorSessions: Session[];
 
   totalRounds = 4;
+  totalScore = 0;
   roundIndex = 0;
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.
   showSummary = false;
+  finalSummary = false;
   scenarioIndex = 1;
   pageCount: number;
   increment: number;
@@ -101,7 +103,7 @@ export class TrainingComponent implements OnInit {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
-      // scenarios = scenarios.slice(0, 5);
+      // for shortening stuff up. scenarios = scenarios.slice(0, 8);
       this.increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
       for (let i = 0; i < this.totalRounds - 1; i++) {
@@ -149,7 +151,11 @@ export class TrainingComponent implements OnInit {
   nextRound() {
     this.showSummary = false;
     if (this.isComplete()) {
-      this.done.emit();
+      for (const r of this.rounds) {
+        this.totalScore += r.roundScore();
+      }
+      this.finalSummary = true;
+
     } else {
       this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
@@ -157,6 +163,7 @@ export class TrainingComponent implements OnInit {
     }
 
   }
+
 
   checkStudy() {
     this.api.getStudy().subscribe(study => {
