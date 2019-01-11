@@ -61,7 +61,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "le1",
-                "content": "Welcome to the \"Lemon\" exercise."
+                "content": "The \"Lemon Exercise\""
               },
               {
                 "type": "Paragraph",
@@ -100,7 +100,7 @@
                 "type": "Image",
                 "stimulusName": "le3",
                 "content": "./assets/training_images/lemon/lemon_1.png",
-                "caption": "(Please take a few seconds to imagine this)"
+                "caption": "Please take a few seconds to imagine this."
               },
               {
                 "type": "Paragraph",
@@ -194,7 +194,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "le8",
-                "content": "That was the lemon exercise!"
+                "content": "That was The Lemon Exercise!"
               },
               {
                 "type": "Image",
@@ -213,7 +213,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "intro",
-                "content": "Session 1: Training Stories"
+                "content": "Training Session 1"
               },
               {
                 "type": "Image",
@@ -223,19 +223,18 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
+                "content": "You are now ready for the first Training Session!"
               },
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "For each page:",
+                "title": "For each short story:",
                 "bullets": [
-                  "Read the information carefully and really imagine yourself in the situation.",
-                  "Picture yourself responding as the story describes, even if you usually react differently.",
-                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
-                  "After you fill in the word, the next screen will ask you a question about the story.",
-                  "A progress bar like the one above will show how many answers were correct on the first try.",
-                  "Click the Next button once you are ready to begin."
+                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
+                  "At the end of the story, select the missing letter tile that completes the incomplete word. Answer correctly on your first try to receive half a point!",
+                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
+                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
                 ]
               }
             ]
@@ -252,14 +251,14 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Session 2: Training Stories",
+        "title": "Training Session 2",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
+                "content": "You are now ready for the second Training Session!"
               },
               {
                 "type": "Image",
@@ -269,14 +268,13 @@
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "For each page:",
+                "title": "For each short story:",
                 "bullets": [
-                  "Read the information carefully and really imagine yourself in the situation.",
-                  "Picture yourself responding as the story describes, even if you usually react differently.",
-                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
-                  "After you fill in the word, the next screen will ask you a question about the story.",
-                  "A progress bar like the one above will show how many answers were correct on the first try.",
-                  "Click the Next button once you are ready to begin."
+                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
+                  "At the end of the story, select the missing letter tile that completes the incomplete word. Answer correctly on your first try to receive half a point!",
+                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
+                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
                 ]
               }
             ]
@@ -293,14 +291,14 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Session 3: Training Stories",
+        "title": "Training Session 3",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
+                "content": "You are now ready for the third Training Session!"
               },
               {
                 "type": "Image",
@@ -310,14 +308,13 @@
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "For each page:",
+                "title": "For each short story:",
                 "bullets": [
-                  "Read the information carefully and really imagine yourself in the situation.",
-                  "Picture yourself responding as the story describes, even if you usually react differently.",
-                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
-                  "After you fill in the word, the next screen will ask you a question about the story.",
-                  "A progress bar like the one above will show how many answers were correct on the first try.",
-                  "Click the Next button once you are ready to begin."
+                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
+                  "At the end of the story, select the missing letter tiles that complete the incomplete word. Answer both correctly on your first try to receive half a point!",
+                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
+                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
                 ]
               }
             ]
@@ -334,14 +331,14 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Session 4: Training Stories",
+        "title": "Training Session 4",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
+                "content": "You are now ready for the fourth Training Session!"
               },
               {
                 "type": "Image",
@@ -351,14 +348,13 @@
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "For each page:",
+                "title": "For each short story:",
                 "bullets": [
-                  "Read the information carefully and really imagine yourself in the situation.",
-                  "Picture yourself responding as the story describes, even if you usually react differently.",
-                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
-                  "After you fill in the word, the next screen will ask you a question about the story.",
-                  "A progress bar like the one above will show how many answers were correct on the first try.",
-                  "Click the Next button once you are ready to begin."
+                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
+                  "At the end of the story, select the missing letter tiles that complete the incomplete word. Answer both correctly on your first try to receive half a point!",
+                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
+                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
                 ]
               }
             ]
@@ -375,14 +371,14 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Session 5: Training Stories",
+        "title": "Training Session 5",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "In this session, you will read a series of very short stories. Pay attention because you will be asked questions about the information."
+                "content": "Congratulations, you made it to the final Training Session!. This level has a new challenge. For some stories we’ll ask you to fill in the missing letters to complete a word, as you’ve done before. For other stories we will challenge you to generate a final word that will complete the story. Your goal is to think of a word that will end the story on a positive note. The ending doesn’t have to be so positive that it doesn’t seem possible, but we want you to imagine you are handling the situation well.",
               },
               {
                 "type": "Image",
@@ -392,14 +388,14 @@
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "For each page:",
+                "title": "For each short story:",
                 "bullets": [
-                  "Read the information carefully and really imagine yourself in the situation.",
+                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
                   "Picture yourself responding as the story describes, even if you usually react differently.",
-                  "Select the letter that fills in the incomplete word at the end of each paragraph.",
-                  "After you fill in the word, the next screen will ask you a question about the story.",
-                  "A progress bar like the one above will show how many answers were correct on the first try.",
-                  "Click the Next button once you are ready to begin."
+                  "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
+                  "For stories where you are presented with an incomplete word, select the missing letter tiles that complete the incomplete word. Answer correctly on your first try to receive half a point!",
+                  "For stories where you are presented with a blank space, think of a word to end the story on a positive note. Enter a word to receive a point – it has to be a valid word to get the point!",
+                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
                 ]
               }
             ]
