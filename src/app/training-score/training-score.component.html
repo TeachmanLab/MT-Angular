@@ -1,17 +1,32 @@
 <!-- formatting -->
-    <div class="summary" *ngIf="ready">
-      <div class="text">
+<div style="text-align:center">
+  <div flex="" layout="row" layout-align="center center">
+<div class="summary" *ngIf="ready">
+      <div class="text" layout-align="center">
         <!-- Here is how you could stuff values into sentence form -->
-        <p>You got {{round.roundScore()}} correct out of {{round.scenarios.length}}.</p>
+        <h2 class="mat-h2"> <i class="material-icons">
+          done_outline
+        </i>
+          ROUND 1 of 4: COMPLETE!</h2>
+        <br>
+        <h5>Your score for this round is:</h5>
 
-        <ngx-gauge [type]="'arch'"
-                   [value]="round.roundScore()">
+        <ngx-gauge [type]="'full'"
+                   [size]="250"
+                   [value]="round.roundScore()"
+                   [max]="round.scenarios.length"
+                   [append]="'/ ' + round.scenarios.length"
+                   [duration]="500"
+                   [thick]="25"
+                   [foregroundColor]="'rgba(0, 0, 136, 1)'">
         </ngx-gauge>
 
         <!-- conditional sections, based on percentage correct -->
-        <p *ngIf='round.roundScore() > 0 && round.roundScore() < 5'>You are terrible. Your mother was a hampster and your father smelt of eldeberries.</p>
-        <p *ngIf='round.roundScore() >= 5 && round.roundScore() <= 8'>Pitiful. And no, I'm not insulting you, I'm describing you.</p>
-        <p *ngIf='round.roundScore() > 8'>Guess your doing ok, finally.  We'll see if it lasts.</p>
+        <h5 *ngIf='round.roundScore() > 0 && round.roundScore() <= 6.5'>Remember to pay really close attention to the whole story each time — including how it ends — and to use the information in the story to answer the question.</h5>
+        <h5 *ngIf='round.roundScore() > 6.5 && round.roundScore() <= 8'>Good work! We encourage you to pay really close attention to the stories.</h5>
+        <h5 *ngIf='round.roundScore() >= 9'>Excellent work, keep it up!</h5>
       </div>
       <div class="spacer"></div>
     </div>
+</div>
+</div>
