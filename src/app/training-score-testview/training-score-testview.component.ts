@@ -43,8 +43,14 @@ export class TrainingScoreTestviewComponent implements OnInit {
       while (count <= this.numScenarios) {
         correct = false;
         if (count <= this.numCorrect) {
+          this.round.scenarios[count].numCorrect = this.round.scenarios[count].pages.length;
           correct = true;
+        } else if (count <= this.numCorrect + 2) {
+          this.round.scenarios[count].numCorrect = 1;
+        } else {
+          this.round.scenarios[count].numCorrect = 0;
         }
+
         this.round.next(correct);
         count++;
       }

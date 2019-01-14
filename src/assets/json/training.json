@@ -61,12 +61,12 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "le1",
-                "content": "The \"Lemon Exercise\""
+                "content": "The Lemon Exercise"
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "le1",
-                "content": "The purpose of this quick exercise is to demonstrate what imagination-based thinking is. You will go through what imagining seeing, touching, and smelling a lemon is like. Please imagine it as if you are really experiencing it."
+                "content": "The purpose of this quick exercise is to demonstrate what imagination-based thinking is. You will imagine what  seeing, touching, and smelling a lemon is like. Please imagine this as if you are really experiencing it."
               }
             ]
           },
@@ -75,7 +75,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "le2",
-                "content": "First-person perspective"
+                "content": "First-Person Perspective"
               },
               {
                 "type": "Image",
@@ -94,7 +94,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "le3",
-                "content": "Ok, let's begin:"
+                "content": "Ok, Let's Begin"
               },
               {
                 "type": "Image",
@@ -120,7 +120,7 @@
                 "type": "Image",
                 "stimulusName": "le4",
                 "content": "./assets/training_images/lemon/lemon_5.png",
-                "caption": "(Please take a few seconds to imagine this)"
+                "caption": "Please take a few seconds to imagine this."
               },
               {
                 "type": "Paragraph",
@@ -140,7 +140,7 @@
                 "type": "Image",
                 "stimulusName": "le5",
                 "content": "./assets/training_images/lemon/lemon_4.png",
-                "caption": "(Please take a few seconds to imagine this)"
+                "caption": "Please take a few seconds to imagine this."
               },
               {
                 "type": "Paragraph",
@@ -160,7 +160,7 @@
                 "type": "Image",
                 "stimulusName": "le6",
                 "content": "./assets/training_images/lemon/lemon_2.png",
-                "caption": "(Please take a few seconds to imagine this)"
+                "caption": "Please take a few seconds to imagine this."
               },
               {
                 "type": "Paragraph",
@@ -180,7 +180,7 @@
                 "type": "Image",
                 "stimulusName": "le7",
                 "content": "./assets/training_images/lemon/lemon_3.png",
-                "caption": "(Please take a few seconds to imagine this)"
+                "caption": "Please take a few seconds to imagine this."
               },
               {
                 "type": "Paragraph",
@@ -194,7 +194,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "le8",
-                "content": "That was The Lemon Exercise!"
+                "content": "That Was the Lemon Exercise!"
               },
               {
                 "type": "Image",
@@ -204,7 +204,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "le8",
-                "content": "Don't worry if you didn't experience all of the sensations strongly, this is completely normal."
+                "content": "Don't worry if you didn't experience all of the sensations strongly.  This is completely normal."
               }
             ]
           },
@@ -223,14 +223,14 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "You are now ready for the first Training Session!"
+                "content": "You are now ready for the first training session!"
               },
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
                 "title": "For each short story:",
                 "bullets": [
-                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to really imagine yourself in the situation described. Some of the stories include a picture to help you — for other stories, just use your imagination to picture the situation.",
                   "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
                   "At the end of the story, select the missing letter tile that completes the incomplete word. Answer correctly on your first try to receive half a point!",
                   "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
@@ -258,7 +258,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "You are now ready for the second Training Session!"
+                "content": "You are now ready for the second training session!"
               },
               {
                 "type": "Image",
@@ -270,7 +270,7 @@
                 "stimulusName": "intro",
                 "title": "For each short story:",
                 "bullets": [
-                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to really imagine yourself in the situation described. Some of the stories include a picture to help you — for other stories, just use your imagination to picture the situation.",
                   "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
                   "At the end of the story, select the missing letter tile that completes the incomplete word. Answer correctly on your first try to receive half a point!",
                   "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
@@ -298,7 +298,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "You are now ready for the third Training Session!"
+                "content": "You are now ready for the third training session!"
               },
               {
                 "type": "Image",
@@ -310,7 +310,7 @@
                 "stimulusName": "intro",
                 "title": "For each short story:",
                 "bullets": [
-                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to really imagine yourself in the situation described. Some of the stories include a picture to help you — for other stories, just use your imagination to picture the scene being described.",
                   "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
                   "At the end of the story, select the missing letter tiles that complete the incomplete word. Answer both correctly on your first try to receive half a point!",
                   "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
@@ -338,7 +338,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "You are now ready for the fourth Training Session!"
+                "content": "You are now ready for the fourth training session!"
               },
               {
                 "type": "Image",
@@ -350,7 +350,7 @@
                 "stimulusName": "intro",
                 "title": "For each short story:",
                 "bullets": [
-                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
+                  "Try to really imagine yourself in the situation described. Some of the stories include a picture to help you — for other stories, just use your imagination to picture the situation.",
                   "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
                   "At the end of the story, select the missing letter tiles that complete the incomplete word. Answer both correctly on your first try to receive half a point!",
                   "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
@@ -378,7 +378,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Congratulations, you made it to the final Training Session!. This level has a new challenge. For some stories we’ll ask you to fill in the missing letters to complete a word, as you’ve done before. For other stories we will challenge you to generate a final word that will complete the story. Your goal is to think of a word that will end the story on a positive note. The ending doesn’t have to be so positive that it doesn’t seem possible, but we want you to imagine you are handling the situation well.",
+                "content": "Congratulations, you made it to the final Training Session!. This level has a new challenge. For some stories we’ll ask you to fill in the missing letters to complete a word, as you’ve done before. For other stories we'll challenge you to generate a final word that will complete the story. Your goal is to think of a word that will end the story on a positive note. The ending doesn’t have to be so positive that it doesn’t seem possible, but we want you to imagine you are handling the situation well."
               },
               {
                 "type": "Image",
@@ -390,11 +390,10 @@
                 "stimulusName": "intro",
                 "title": "For each short story:",
                 "bullets": [
-                  "Try to really imagine yourself being in the situation described. Some of the stories are presented with a picture to help you along — for other stories, just use your imagination to picture the scene being described.",
-                  "Picture yourself responding as the story describes, even if you usually react differently.",
+                  "Try to really imagine yourself in the situation described. Some of the stories include a picture to help you — for other stories, just use your imagination to picture the situation.",
                   "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
-                  "For stories where you are presented with an incomplete word, select the missing letter tiles that complete the incomplete word. Answer correctly on your first try to receive half a point!",
-                  "For stories where you are presented with a blank space, think of a word to end the story on a positive note. Enter a word to receive a point – it has to be a valid word to get the point!",
+                  "For stories where you are given an incomplete word, select the missing letter tiles that complete the word. Answer correctly on your first try to receive half a point!",
+                  "For stories where you are given a blank space, think of a word to end the story on a positive note. Enter a word to receive a point – it has to be a valid word to get the point!",
                   "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
                 ]
               }

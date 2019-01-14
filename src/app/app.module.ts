@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {
@@ -79,8 +78,7 @@ const routes: Routes = [
     TrainingScoreComponent,
     TrainingScoreTestviewComponent,
     FinalScoreComponent,
-    FinalScoreTestviewComponent,
-
+    FinalScoreTestviewComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
