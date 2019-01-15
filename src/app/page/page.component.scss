@@ -75,4 +75,15 @@ div.scenario {
       margin: 0px;
     }
   }
+
+  .pageImage {
+    float: right;
+    padding: 10px 0px 30px 30px;
+    width: 100%;
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+
 }
