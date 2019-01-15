@@ -74,6 +74,7 @@ export class MissingLetterComponent implements OnInit {
       this.endTime = curTime;
       this.state = 'correct';
       this.missing_letter_tile.status = 'correct';
+      this.incorrect_choices = []; // reset incorrect choices - Added by Anna
       const waitASectionTimer = interval(1500);
       const sub = waitASectionTimer.subscribe( n => {
         this.allDone();
