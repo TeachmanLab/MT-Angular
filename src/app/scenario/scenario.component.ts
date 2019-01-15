@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-import { Page, PageData, Scenario, Session, Study } from '../interfaces';
-import { ApiService } from '../api.service';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
+import {Page, EventRecord, Scenario, Session, Study, ElementEvent} from '../interfaces';
+import {ApiService} from '../api.service';
+import {Router} from '@angular/router';
+import {renderComponentOrTemplate} from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-scenario',
@@ -13,15 +15,15 @@ import { ApiService } from '../api.service';
       transition('void => *', [
         animate(600, keyframes([
           style({opacity: 0, transform: 'translateY(100%)', offset: 0}),
-          style({opacity: 1, transform: 'translateY(15px)',  offset: 0.3}),
-          style({opacity: 1, transform: 'translateY(0)',     offset: 1.0})
+          style({opacity: 1, transform: 'translateY(15px)', offset: 0.3}),
+          style({opacity: 1, transform: 'translateY(0)', offset: 1.0})
         ]))
       ]),
       transition('* => void', [
         animate(300, keyframes([
-          style({opacity: 1, transform: 'translateY(0)',     offset: 0}),
+          style({opacity: 1, transform: 'translateY(0)', offset: 0}),
           style({opacity: 1, transform: 'translateY(-15px)', offset: 0.7}),
-          style({opacity: 0, transform: 'translateY(-100%)',  offset: 1.0})
+          style({opacity: 0, transform: 'translateY(-100%)', offset: 1.0})
         ]))
       ])
     ]),
@@ -29,7 +31,7 @@ import { ApiService } from '../api.service';
       state('Intro', style({
         transform: 'translateY(150%) translateX(150%) scale(4)'
       })),
-      state('*',   style({
+      state('*', style({
         color: '#000',
         transform: 'scale(1)',
         opacity: 0
@@ -41,7 +43,7 @@ import { ApiService } from '../api.service';
       state('Intro', style({
         opacity: 1
       })),
-      state('*',   style({
+      state('*', style({
         opacity: 0
       })),
       transition('* => Intro', animate('600ms ease-in')),
@@ -67,13 +69,14 @@ export class ScenarioComponent implements OnInit, OnChanges {
   pagesCorrect = 0;
   currentPage: Page;
   state: string;
-  pageData: PageData[] = [];
+  pageData: EventRecord[] = [];
   scenarioCorrect: boolean;
   pageCorrect: boolean;
   startTime: number;
   endTime: number;
+  firstReactionTime: number;
   pageCounter: number;
-  elementCounter = 1;
+  connectionError = false;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -81,9 +84,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Output()
   finalCount: EventEmitter<number> = new EventEmitter();
 
-  constructor (
+  constructor(
     private api: ApiService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
@@ -96,8 +100,10 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.study = {name: '', currentSession: '', currentSessionIndex: 0, conditioning: ''};
     this.api.getStudy().subscribe(study => {
       if (study) {
-        this.study = {name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
-          conditioning: study.conditioning};
+        this.study = {
+          name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
+          conditioning: study.conditioning
+        };
       }
     });
     this.init();
@@ -130,45 +136,36 @@ export class ScenarioComponent implements OnInit, OnChanges {
     return this.state === 'Intro';
   }
 
-  showStatement() {
-    return(this.state === 'Statements' || this.state === 'MissingLetter' || this.state === 'FillInBlank');
+  handleEvent(event: ElementEvent) {
+    this.endTime = performance.now();
+    this.recordStateData(event);
   }
 
-  recordStateData() {
-    this.endTime = performance.now();
-    for (const el of this.currentPage.elements) {
-      const Data = {
-        session: this.session.session, sessionIndex: this.sessionIndex, sessionTitle: this.session.title + ': ' + this.session.subTitle,
-        device: navigator.userAgent, rt: this.endTime - this.startTime, rtFirstReact: 0, stepTitle: this.scenario.title,
-        stepIndex: this.scenarioIndex, stimulus: '', trialType: this.state, buttonPressed: '',
-        correct: this.pageCorrect, timeElapsed: this.endTime - this.session.startTime, conditioning: this.study.conditioning,
-        study: this.study.name, sessionCounter: this.pageCounter + '.' + this.elementCounter
-      };
+  recordStateData(event: ElementEvent) {
+    const data = {
+      session: this.session.session,
+      sessionIndex: this.sessionIndex,
+      sessionTitle: this.session.title + ': ' + this.session.subTitle,
+      conditioning: this.study.conditioning,
+      study: this.study.name,
+      stepTitle: this.scenario.title,
+      stepIndex: this.scenarioIndex,
+      device: navigator.userAgent,
+      timeElapsed: this.endTime - this.session.startTime,
+      sessionCounter: this.sessionIndex + '.' + this.scenarioIndex + '.' + this.pageIndex
+    };
 
-      if (el.responseTime) {
-        Data['rtFirstReact'] = el.responseTime - this.startTime;
-      } else {
-        Data['rtFirstReact'] = this.endTime - this.startTime;
-      }
-
-      if (el.buttonPressed) {
-        Data['buttonPressed'] = el.buttonPressed;
-      }
-
-      if (el.content instanceof Array) {
-        Data['stimulus'] = el.content.join(', ');
-      } else {
-        Data['stimulus'] = el.content;
-      }
-
-      this.elementCounter++;
-      this.pageData.push(Data);
-    }
+    const record: EventRecord = {...event, ...data};
+    this.pageData.push(record);
 
     console.log('pageData', this.pageData);
-    this.api.saveProgress(this.pageData).subscribe(data => {
-      this.pageCounter++;
-    });
+    this.api.saveProgress(this.pageData).subscribe(d => {
+        this.pageCounter++;
+        console.log('Saving the data to the server');
+      },
+      error1 => {
+        this.connectionError = true;
+      });
   }
 
   progressState(correctAnswer = true) {
@@ -178,11 +175,13 @@ export class ScenarioComponent implements OnInit, OnChanges {
     } else {
       this.scenario.numCorrect ++;
     }
-    this.recordStateData();
-    this.elementCounter = 1;
+    if (!this.firstReactionTime) {
+      this.firstReactionTime = performance.now();
+    }
     this.pageData = [];
     this.pageCorrect = true;
     this.pageIndex++;
+    this.pageCounter++;
     if (this.pageIndex < this.scenario.pages.length) {
       this.currentPage = this.scenario.pages[this.pageIndex];
       this.state = this.currentPage.elements[0].type;
@@ -191,5 +190,22 @@ export class ScenarioComponent implements OnInit, OnChanges {
       this.finalCount.emit(this.pageCounter);
     }
     window.scrollTo(0, 0);
+  }
+
+  continue() {
+    let data: ElementEvent;
+    this.endTime = performance.now();
+    for (const el of this.currentPage.elements) {
+      data = {
+        trialType: el.type,
+        stimulus: el.content.toString(),
+        buttonPressed: 'continue',
+        correct: true,
+        rtFirstReact: this.endTime - this.startTime,
+        rt: this.endTime - this.startTime
+      };
+      this.recordStateData(data);
+    }
+    this.progressState(true);
   }
 }

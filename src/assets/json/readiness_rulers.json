@@ -1,0 +1,44 @@
+[
+  {
+    "session": "readinessRulers",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "stimulusName": "readiness_rulers_p1",
+                "content": "This program is designed to shift anxious thinking styles. You are being asked to read lots of brief stories that are potentially anxiety-provoking. By really imagining yourself in these situations and then completing the last word of the story in a way that frequently, but not always, assigns a positive ending to the story, you are being challenged to think about potentially threatening situations in new ways."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "readiness_rulers_p2",
+                "content": "This program will present many different stories and give you lots of practice imagining yourself responding in ways that may be different than you would typically respond. This practice is intended to encourage more flexible thinking and help you break the habit of negative or catastrophic thinking."
+              },
+              {
+                "type": "Question",
+                "stimulusName": "readiness_rulers",
+                "question": "Based on what you’ve seen of the program and this description of its goals, how confident are you that this program will reduce your anxiety?",
+                "options": [
+                  "Not at all",
+                  "Slightly",
+                  "Somewhat",
+                  "Mostly",
+                  "Very",
+                  "Prefer not to answer"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

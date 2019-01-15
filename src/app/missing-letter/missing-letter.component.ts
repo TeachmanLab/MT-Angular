@@ -2,8 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {LetterTile, LetterTileState} from '../letter-tile';
 import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {interval} from 'rxjs';
-import {MissingLetter} from '../interfaces';
-import {and} from '@angular/router/src/utils/collection';
+import {ElementEvent, MissingLetter} from '../interfaces';
 
 
 enum MyState {
@@ -48,20 +47,20 @@ export class MissingLetterComponent implements OnInit {
   missingTileIndex = 0;
   options: string[] = [];
   incorrectChoices: string[] = [];
+  choices: string[] = [];
   state = MyState.Waiting;
+  startTime: number;
+  firstReactionTime: number;
+  endTime: number;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
   @Output()
-  initialResponse: EventEmitter<number> = new EventEmitter();
-
-  @Output()
-  buttonPressed: EventEmitter<string> = new EventEmitter();
+  event: EventEmitter<ElementEvent> = new EventEmitter();
 
   constructor() {
   }
-
 
   ngOnInit() {
     const word = this.missingLetter.content.toString();
@@ -95,6 +94,26 @@ export class MissingLetterComponent implements OnInit {
       this.tiles.push(tile);
     }
     this.setOptions();
+    this.startTime = performance.now();
+  }
+
+  allDone() {
+    const event: ElementEvent = {
+      trialType: this.missingLetter.type,
+      stimulus: this.missingLetter.content.toString(),
+      stimulusName: this.missingLetter.stimulusName,
+      buttonPressed: this.choices.join(','),
+      correct: this.choices.length === 1,
+      rtFirstReact: this.firstReactionTime - this.startTime,
+      rt: this.endTime - this.startTime
+    };
+    this.event.emit(event);
+    this.done.emit(this.choices.length === 1);
+  }
+
+
+  isIncorrectChoice(letter) {
+    return this.incorrectChoices.indexOf(letter) >= 0;
   }
 
   setOptions() {
@@ -119,7 +138,7 @@ export class MissingLetterComponent implements OnInit {
   selectLetter(letter) {
     this.responseTimes.push(performance.now());
     this.missingTiles[this.missingTileIndex].letterDisplayed = letter;
-    this.buttonPressed.emit(letter);
+    this.choices.push(letter);
 
     // If the answer is correct
     if (letter === this.missingTiles[this.missingTileIndex].letter) {
@@ -151,19 +170,8 @@ export class MissingLetterComponent implements OnInit {
     });
   }
 
-  allDone() {
-    this.state = MyState.Correct;
-    const waitASectionTimer = interval(1000);
-    const sub = waitASectionTimer.subscribe( n => {
-      this.initialResponse.emit(this.responseTimes[0]);
-      this.done.emit(this.incorrectChoices.length === 0);
-      sub.unsubscribe();
-    });
-  }
 
-  isIncorrectChoice(letter) {
-    return this.incorrectChoices.indexOf(letter) >= 0;
-  }
+
 
 
 }

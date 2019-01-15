@@ -23,17 +23,17 @@ export class TrainingCSV {
           continue;
         }
         pages = [];
-
-        pages.push({elements: [{type: 'Intro', content: currentLine[2]}]});
+        pages.push({name: 'scenarioTitle', elements: [{type: 'Intro', content: currentLine[2]}]});
         elements = [];
-        elements.push({type: 'Statements', content: this.stripLastWord(currentLine[6], currentLine[4])});
+        const lastWord = currentLine[4].trim();
+        elements.push({type: 'Statements', content: this.stripLastWord(currentLine[6], lastWord)});
         // Add missing letter component or fill in the blank, depending.
         if (currentLine[4] !== 'None') {
           elements.push({type: 'MissingLetter', content: currentLine[4], numberMissing: +currentLine[3]});
         } else {
           elements.push({type: 'FillInBlank'});
         }
-        pages.push({elements: elements});
+        pages.push({name: 'scenario', elements: elements});
 
         // If there is a followup negation, add that to the pagess.
         if (currentLine[7] !== 'None') {
@@ -44,12 +44,13 @@ export class TrainingCSV {
           } else {
             elements.push({type: 'FillInBlank'});
           }
-          pages.push({elements: elements});
+          pages.push({name: 'scenarioNegation', elements: elements});
         }
         currentLine[11] === 'Positive' ?  answer = currentLine[9] : answer = currentLine[10];
         // Dont ask follow up questions if using fill int the blank
         if (currentLine[4] !== 'None') {
-          pages.push({elements: [{type: 'Question', question: currentLine[8], answer: answer, options: [currentLine[9], currentLine[10]]}]});
+          const options = TrainingCSV.shuffleOptions([currentLine[9], currentLine[10]]);
+          pages.push({elements: [{type: 'Question', question: currentLine[8], answer: answer, options: options}]});
         }
         // Add a picture if one exists.
         if (currentLine[14] === 'picture') {
@@ -62,6 +63,19 @@ export class TrainingCSV {
       }
       return result;
   }
+
+  static shuffleOptions(array) {
+    // Randomize array element order in-place.
+    // Using Durstenfeld shuffle algorithm.
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
 
   static stripLastWord(text: string, wordsToStrip: string): String {
     text = text.trim();

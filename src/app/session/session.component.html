@@ -7,8 +7,8 @@
       fxLayoutGap="20px"
       fxLayoutWrap
     >
-    <app-session-indicator-bar *ngIf="stepIndex === 0" [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
-    <app-step-indicator-bar *ngIf="stepIndex > 0" [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
+    <app-session-indicator-bar *ngIf="showIndicator && stepIndex === 0" [sessions]="sessions" [currentSession]="session"></app-session-indicator-bar>
+    <app-step-indicator-bar *ngIf="showIndicator && stepIndex > 0" [steps]="session.steps" [currentStep]="currentStep" [currentSession]="session"></app-step-indicator-bar>
     </div>
     <app-step
       *ngIf="currentStep"

@@ -16,15 +16,14 @@
   <app-question
     *ngIf="el.type === 'Question'"
     [question]="el"
-    (initialResponse)="getResponseDetails($event)"
-    (buttonPressed)="getResponseDetails($event)"
+    (event)="handleElementEvent($event)"
     (done)="divCompleted($event)"
     [@flyUpDown]="'in'"
   ></app-question>
   <app-thoughtbubble
     *ngIf="el.type === 'ThoughtBubble'"
     [thoughtBubble]="el"
-    (initialResponse)="getResponseDetails($event)"
+    (event)="handleElementEvent($event)"
     (done)="divCompleted()">
   </app-thoughtbubble>
 
@@ -36,14 +35,13 @@
     <div *ngIf="el.type==='MissingLetter'" class="letters" [@flyUpDown]="'in'">
       <app-missing-letter
         [missingLetter]="el"
-        (initialResponse)="getResponseDetails($event)"
-        (buttonPressed)="getResponseDetails($event)"
+        (event)="handleElementEvent($event)"
         (done)="divCompleted($event)"
       ></app-missing-letter>
     </div>
     <div *ngIf="el.type==='FillInBlank'" class="letters" [@flyUpDown]="'in'">
       <app-fill-in-the-blank
-        (buttonPressed)="getResponseDetails($event)"
+        (event)="handleElementEvent($event)"
         (done)="divCompleted($event)"
       ></app-fill-in-the-blank>
     </div>
