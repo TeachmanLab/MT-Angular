@@ -53,13 +53,11 @@ export class ApiService {
   }
 
   getProgress(): Observable<EventRecord[]> {
-    console.log('Getting Progress');
     return this.httpClient.get<EventRecord[]>(this.endpoints.progress)
       .pipe(catchError(this.handleError));
   }
 
   getStudy(): Observable<Study> {
-    console.log('Getting Study');
     return this.httpClient.get<Study>(this.endpoints.study)
       .pipe(catchError(this.handleError));
   }

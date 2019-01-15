@@ -147,7 +147,6 @@ export class TrainingComponent implements OnInit {
   }
 
   close() {
-    console.log('Redirecting to ' + environment.redirect);
     window.location.href = environment.redirect;
   }
 
@@ -158,7 +157,6 @@ export class TrainingComponent implements OnInit {
       this.state = this.states.READINESS;
       return;
     }
-    console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       if (!this.connectionError) {

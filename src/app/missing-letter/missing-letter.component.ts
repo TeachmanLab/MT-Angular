@@ -72,7 +72,6 @@ export class MissingLetterComponent implements OnInit {
         missingIndex = Math.floor(Math.random() * word.length);
       }
       missingIndexes.push(missingIndex);
-      console.log('Removing letter at index : ' + missingIndex);
     }
     missingIndexes.sort();
 
@@ -86,7 +85,6 @@ export class MissingLetterComponent implements OnInit {
         tile.state = LetterTileState.Blank;
       }
       if (missingIndexes.includes(i)) {
-        console.log('The missing tile is : ' + tile.letter);
         tile.state = LetterTileState.MissingInactive;
         tile.letterDisplayed = ' ';
         this.missingTiles.push(tile);

@@ -111,10 +111,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.currentPage = this.scenario.pages[0];
-    console.log(this.currentPage);
     this.state = this.currentPage.elements[0].type;
     if (changes.scenario && !changes.scenario.isFirstChange()) {
-      console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
       this.init();
     }
@@ -158,10 +156,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
     const record: EventRecord = {...event, ...data};
     this.pageData.push(record);
 
-    console.log('pageData', this.pageData);
     this.api.saveProgress(this.pageData).subscribe(d => {
         this.pageCounter++;
-        console.log('Saving the data to the server');
       },
       error1 => {
         this.connectionError = true;

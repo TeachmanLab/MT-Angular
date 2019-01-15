@@ -53,7 +53,6 @@ export class ThoughtbubbleComponent implements OnInit {
     this.stateIndex++;
     if (this.stateIndex < this.numStates) {
       this.currentState = this.states[this.stateIndex];
-      console.log('The current state is ' + this.currentState);
       if (this.stateIndex === this.numStates - 1) {
         this.endTime = performance.now();
         this.allDone();
