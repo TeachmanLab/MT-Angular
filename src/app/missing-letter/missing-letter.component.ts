@@ -103,12 +103,12 @@ export class MissingLetterComponent implements OnInit {
       stimulus: this.missingLetter.content.toString(),
       stimulusName: this.missingLetter.stimulusName,
       buttonPressed: this.choices.join(','),
-      correct: this.choices.length === 1,
+      correct: this.incorrectChoices.length === 0,
       rtFirstReact: this.firstReactionTime - this.startTime,
       rt: this.endTime - this.startTime
     };
     this.event.emit(event);
-    this.done.emit(this.choices.length === 1);
+    this.done.emit(this.incorrectChoices.length === 0);
   }
 
 
@@ -146,7 +146,11 @@ export class MissingLetterComponent implements OnInit {
       this.missingTileIndex++;
       // if there is another missing letter to complete, set that up.otherwise we are all done.
       if (this.missingTileIndex === this.missingLetter.numberMissing ) {
-        this.allDone();
+        const waitASectionTimer = interval(1500);
+        this.state = MyState.Correct;
+        const sub = waitASectionTimer.subscribe( n => {
+          this.allDone();
+        });
       } else {
 //        this.state = MyState.Waiting;
 //        this.setOptions();
