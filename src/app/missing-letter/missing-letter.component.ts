@@ -1,23 +1,57 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {LetterTile} from '../letter-tile';
-import {animate, query, stagger, state, style, transition, trigger} from '@angular/animations';
+import {LetterTile, LetterTileState} from '../letter-tile';
+import {animate, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {interval} from 'rxjs';
 import {ElementEvent, MissingLetter} from '../interfaces';
+
+
+enum MyState {
+  Waiting = 'waiting',
+  Incorrect = 'incorrect',
+  Correct = 'correct'
+}
 
 @Component({
   selector: 'app-missing-letter',
   templateUrl: './missing-letter.component.html',
-  styleUrls: ['./missing-letter.component.scss']
+  styleUrls: ['./missing-letter.component.scss'],
+  animations: [
+    trigger('listAnimation', [
+      transition('* <=> *', [
+        query(':enter', style({ opacity: 0 }), {optional: true}),
+        query(':enter', stagger('-100ms', [
+          animate('1s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateX(-175%)', offset: 0}),
+            style({opacity: .5, transform: 'translateX(10px)',  offset: 0.3}),
+            style({opacity: 1, transform: 'translateX(0)',     offset: 1.0}),
+          ]))]), {optional: true}),
+        query(':leave', stagger('-100ms', [
+          animate('1s ease-in', keyframes([
+            style({opacity: 1, transform: 'translateX(0)', offset: 0}),
+            style({opacity: .5, transform: 'translateX(-10px)',  offset: 0.3}),
+            style({opacity: 0, transform: 'translateX(175%)',     offset: 1.0}),
+          ]))]), {optional: true})
+
+      ])
+    ])
+  ]
 })
 export class MissingLetterComponent implements OnInit {
 
   @Input()
   missingLetter: MissingLetter;
-  word: string;
+  responseTimes: number[] = [];
+
+  tiles: LetterTile[];
+  missingTiles: LetterTile[];
+  missingTileIndex = 0;
+  options: string[] = [];
+  incorrectChoices: string[] = [];
+  choices: string[] = [];
+  state = MyState.Waiting;
   startTime: number;
   firstReactionTime: number;
   endTime: number;
-
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -25,90 +59,67 @@ export class MissingLetterComponent implements OnInit {
   @Output()
   event: EventEmitter<ElementEvent> = new EventEmitter();
 
-
-  letters: LetterTile[];
-  correct_letter: string;
-  missing_letter_tile: LetterTile;
-  options: string[];
-  incorrect_choices: string[] = [];
-  choices: string[] = [];
-  state = 'waiting';
-
   constructor() {
   }
 
   ngOnInit() {
-    this.word = this.missingLetter.content.toString();
-    let missing_index = Math.floor(Math.random() * this.word.length) ;
-    while (this.word.charAt(missing_index) === ' ') {
-      missing_index = Math.floor(Math.random() * this.word.length) ;
+    const word = this.missingLetter.content.toString();
+
+    const missingIndexes = [];
+    for (let count = 0; count < this.missingLetter.numberMissing; count++) {
+      let missingIndex = Math.floor(Math.random() * word.length);
+      while (word.charAt(missingIndex) === ' ' || missingIndexes.includes(missingIndex)) {
+        missingIndex = Math.floor(Math.random() * word.length);
+      }
+      missingIndexes.push(missingIndex);
     }
-    this.letters = [];
+    missingIndexes.sort();
+
+    this.tiles = [];
+    this.missingTiles = [];
     let letter = '';
-    for (let i = 0; i < this.word.length; i++) {
-      letter = this.word.charAt(i).toUpperCase();
-      const tile = {letter: letter, status: 'provided'};
+    for (let i = 0; i < word.length; i++) {
+      letter = word.charAt(i).toUpperCase();
+      const tile = {letter: letter, letterDisplayed: letter, state: LetterTileState.Provided};
       if (letter === ' ') {
-        tile.status = 'blank';
+        tile.state = LetterTileState.Blank;
       }
-      this.letters.push(tile);
-      if (i === missing_index) {
-        this.correct_letter = letter;
-        this.missing_letter_tile = tile;
-        this.missing_letter_tile.letter = '';
-        this.missing_letter_tile.status = 'missing';
+      if (missingIndexes.includes(i)) {
+        tile.state = LetterTileState.MissingInactive;
+        tile.letterDisplayed = ' ';
+        this.missingTiles.push(tile);
       }
+      this.tiles.push(tile);
     }
     this.setOptions();
     this.startTime = performance.now();
   }
 
-  selectLetter(letter) {
-    const curTime = performance.now();
-    if (!this.firstReactionTime) {
-      this.firstReactionTime = curTime;
-    }
-    this.choices.push(letter);
-    this.missing_letter_tile.letter = letter;
-    if (letter === this.correct_letter) {
-      this.endTime = curTime;
-      this.state = 'correct';
-      this.missing_letter_tile.status = 'correct';
-      const waitASectionTimer = interval(1500);
-      const sub = waitASectionTimer.subscribe( n => {
-        this.allDone();
-        sub.unsubscribe();
-      });
-    } else {
-      this.state = 'incorrect';
-      this.missing_letter_tile.status = 'incorrect';
-      this.incorrect_choices.push(letter);
-
-    }
-  }
-
   allDone() {
     const event: ElementEvent = {
       trialType: this.missingLetter.type,
-      stimulus: this.word,
+      stimulus: this.missingLetter.content.toString(),
       stimulusName: this.missingLetter.stimulusName,
       buttonPressed: this.choices.join(','),
-      correct: this.choices.length === 1,
+      correct: this.incorrectChoices.length === 0,
       rtFirstReact: this.firstReactionTime - this.startTime,
       rt: this.endTime - this.startTime
     };
     this.event.emit(event);
-    this.done.emit(this.choices.length === 1);
+    this.done.emit(this.incorrectChoices.length === 0);
   }
 
 
   isIncorrectChoice(letter) {
-    return this.incorrect_choices.indexOf(letter) >= 0;
+    return this.incorrectChoices.indexOf(letter) >= 0;
   }
 
   setOptions() {
-    // Calculate a set of 4 possible options for the user to select.
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.replace(this.correct_letter, '');
+    // Calculate a set of 4 possible options for the user to select, one of them being the correct letter
+    const correctLetter = this.missingTiles[this.missingTileIndex].letter;
+    this.missingTiles[this.missingTileIndex].state = LetterTileState.MissingActive;
+
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.replace(correctLetter, '');
     const rand_index = Math.floor(Math.random() * 4);
     this.options = [];
     for (let i = 0; i < 4;) {
@@ -118,7 +129,51 @@ export class MissingLetterComponent implements OnInit {
         i++;
       }
     }
-    this.options[rand_index] = this.correct_letter;
+    this.options[rand_index] = correctLetter;
   }
+
+
+  selectLetter(letter) {
+    this.responseTimes.push(performance.now());
+    this.missingTiles[this.missingTileIndex].letterDisplayed = letter;
+    this.choices.push(letter);
+
+    // If the answer is correct
+    if (letter === this.missingTiles[this.missingTileIndex].letter) {
+      this.missingTiles[this.missingTileIndex].state = LetterTileState.Correct;
+      this.missingTileIndex++;
+      // if there is another missing letter to complete, set that up.otherwise we are all done.
+      if (this.missingTileIndex === this.missingLetter.numberMissing ) {
+        const waitASectionTimer = interval(1500);
+        this.state = MyState.Correct;
+        const sub = waitASectionTimer.subscribe( n => {
+          this.allDone();
+        });
+      } else {
+//        this.state = MyState.Waiting;
+//        this.setOptions();
+        this.nextLetter();
+      }
+    } else {
+      this.state = MyState.Incorrect;
+      this.missingTiles[this.missingTileIndex].state = LetterTileState.Incorrect;
+      this.incorrectChoices.push(letter);
+    }
+  }
+
+  nextLetter() {
+    this.state = MyState.Correct;
+    this.options = [];
+    const waitASectionTimer = interval(1500);
+    const sub = waitASectionTimer.subscribe( n => {
+      this.state = MyState.Waiting;
+      this.setOptions();
+      sub.unsubscribe();
+    });
+  }
+
+
+
+
 
 }

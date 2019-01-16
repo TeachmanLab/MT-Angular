@@ -12,9 +12,9 @@ Run `ng build --prod --build-optimizer --base-href=/training/`
 Copy the files in ./dist/training-prototype up to the web server and placement in the /var/www/training directory.
 
 ## Adding to Mindtrails
-Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/angular_training/`
+Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/angular/`
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/training2
-Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular_training`
+Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular`
 
 
 ## Code scaffolding

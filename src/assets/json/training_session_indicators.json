@@ -1,39 +1,39 @@
 [
   {
-    "title": "Scenario",
-    "subTitle": "You will be giving a speech...",
+    "title": "Step 1",
+    "subTitle": "Imagine yourself being in a situation",
     "sessionIndicator": "training1",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "steps": []
   },
   {
-    "title": "Fragment",
-    "subTitle": "You think your nerves will be manageb_e.",
+    "title": "Step 2",
+    "subTitle": "Select the correct letter tile to fill an incomplete word",
     "sessionIndicator": "training2",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "steps": []
   },
   {
-    "title": "Question",
-    "subTitle": "Were you able to handle your anxiety?",
+    "title": "Step 3",
+    "subTitle": "Answer a question about the situation",
     "sessionIndicator": "training3",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "steps": []
   },
   {
-    "title": "Answer",
-    "subTitle": "Yes or No",
+    "title": "Step 4",
+    "subTitle": "Get the correct answer, or try again!",
     "sessionIndicator": "training4",
     "conditioning": "Training",
     "study": "Calm Thinking",
     "steps": []
   },
   {
-    "title": "Feedback",
-    "subTitle": "Great Job! or Try again.",
+    "title": "Step 5",
+    "subTitle": "Maximize points by selecting the correct options on your first try!",
     "sessionIndicator": "training5",
     "conditioning": "Training",
     "study": "Calm Thinking",

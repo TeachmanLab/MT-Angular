@@ -3,9 +3,10 @@ import { ApiService } from '../api.service';
 import { Scenario, Session } from '../interfaces';
 import { environment } from '../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import {Round} from '../round';
 
 enum TrainingState {
-  'INTRO', 'TRAINING', 'READINESS', 'SUMMARY'
+  'INTRO', 'TRAINING', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -27,6 +28,7 @@ export class TrainingComponent implements OnInit {
   currentSession: Session;
   indicatorSessions: Session[];
   totalRounds = 4;
+  totalScore = 0;
   roundIndex = 0;
   round: Round;
   rounds: Round[];  // Training is broken up into a series of rounds.
@@ -125,7 +127,7 @@ export class TrainingComponent implements OnInit {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
-      // scenarios = scenarios.slice(0, 5);
+      // for shortening stuff up. scenarios = scenarios.slice(0, 8);
       this.increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
       for (let i = 0; i < this.totalRounds - 1; i++) {
@@ -145,7 +147,6 @@ export class TrainingComponent implements OnInit {
   }
 
   close() {
-    console.log('Redirecting to ' + environment.redirect);
     window.location.href = environment.redirect;
   }
 
@@ -156,7 +157,6 @@ export class TrainingComponent implements OnInit {
       this.state = this.states.READINESS;
       return;
     }
-    console.log('Next Called.');
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       if (!this.connectionError) {
@@ -179,7 +179,11 @@ export class TrainingComponent implements OnInit {
   nextRound() {
     this.state = this.states.TRAINING;
     if (this.isComplete()) {
-      this.done.emit();
+      for (const r of this.rounds) {
+        this.totalScore += r.roundScore();
+      }
+      this.state = this.states.FINAL_SUMMARY;
+
     } else {
       this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
@@ -187,6 +191,7 @@ export class TrainingComponent implements OnInit {
     }
 
   }
+
 
   checkStudy() {
     this.api.getStudy().subscribe(study => {
@@ -201,33 +206,4 @@ export class TrainingComponent implements OnInit {
 }
 
 
-class Round {
-  scenario?: Scenario;
-  index = -1;
 
-  constructor(public scenarios: Scenario[]) {
-  }
-
-  isComplete(): boolean {
-    return (this.index >= this.scenarios.length - 1);
-  }
-
-  next(correct = true) {
-    if (this.scenario) {
-      this.scenario.status = correct ? 'complete' : 'error';
-    }
-    this.index++;
-    if (this.index < this.scenarios.length) {
-      this.scenario = this.scenarios[this.index];
-      this.scenario.status = 'active';
-    } else {
-      this.scenario = null;
-    }
-  }
-
-  percentCorrect() {
-    const errorCount = this.scenarios.filter(s => s.status === 'error').length;
-    return (this.scenarios.length - errorCount) / this.scenarios.length;
-  }
-
-}

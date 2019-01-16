@@ -73,7 +73,6 @@ export class ControlConditionComponent implements OnInit {
   }
 
   close() {
-    console.log('Redirecting to ' + environment.redirect);
     window.location.href = environment.redirect;
   }
 }
