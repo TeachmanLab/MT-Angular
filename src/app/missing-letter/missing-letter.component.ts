@@ -150,7 +150,7 @@ export class MissingLetterComponent implements OnInit {
           this.allDone();
         });
       } else {
-        this.incorrect_choices = []; // reset incorrect choices - Added by Anna
+        this.incorrectChoices = []; // reset incorrect choices - Added by Anna
         this.nextLetter();
       }
     } else {

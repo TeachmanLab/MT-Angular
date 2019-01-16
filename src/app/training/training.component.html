@@ -1,4 +1,5 @@
 <app-session-warning *ngIf="connectionError"></app-session-warning>
+<div *ngIf="ready()">
 <app-session *ngIf="state === states.INTRO"
   [session]="currentSession"
   [sessions]="indicatorSessions"
@@ -53,5 +54,5 @@
     </mat-card-content>
   </mat-card>
 </div>
-
+</div>
 

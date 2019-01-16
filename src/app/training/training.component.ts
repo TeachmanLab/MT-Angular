@@ -56,6 +56,10 @@ export class TrainingComponent implements OnInit {
     this.checkStudy();
   }
 
+  ready() {
+    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0;
+  }
+
   getProgress() {
     this.api.getProgress().subscribe(progress => {
       if (progress['sessionIndex'] === this.sessionIndex) {
