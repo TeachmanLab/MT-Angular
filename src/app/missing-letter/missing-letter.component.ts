@@ -150,8 +150,7 @@ export class MissingLetterComponent implements OnInit {
           this.allDone();
         });
       } else {
-//        this.state = MyState.Waiting;
-//        this.setOptions();
+        this.incorrect_choices = []; // reset incorrect choices - Added by Anna
         this.nextLetter();
       }
     } else {
