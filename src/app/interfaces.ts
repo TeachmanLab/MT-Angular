@@ -21,6 +21,7 @@ export interface Step {
 export interface Scenario extends Step {
   type: 'Scenario';
   image: string;
+  numCorrect?: number; // Total number of correctly completed pages in this scenario.
 }
 
 export interface Page {
@@ -44,6 +45,7 @@ export interface Image extends Element {
 
 export interface MissingLetter extends Element {
   type: 'MissingLetter';
+  numberMissing: number;
 }
 
 export interface FillInBlank extends Element {

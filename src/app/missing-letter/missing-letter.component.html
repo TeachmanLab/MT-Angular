@@ -4,7 +4,7 @@
        fxLayoutAlign="center"
        fxLayoutGap="10px"
        fxLayoutGap.xs="0">
-    <div class="letter foldout" *ngFor="let tile of letters" [ngClass]="tile.status">{{tile.letter}}</div>
+    <div class="letter foldout" *ngFor="let tile of tiles" [ngClass]="tile.state">{{tile.letterDisplayed}}</div>
   </div>
 
   <div class="select-a-tile">
@@ -12,6 +12,7 @@
     <h2>SELECT A TILE:</h2>
 
     <div class="options"
+         [@listAnimation]="options.length"
          fxLayout="row"
          fxLayoutAlign="center"
          fxLayoutGap="10px"
@@ -25,6 +26,6 @@
 
 
   <div *ngIf="state === 'correct'" class="correct-message">Correct!</div>
-  <div *ngIf="state === 'incorrect'" class="incorrect-message">Hum. That doesn't look right! Please try again.</div>
+  <div *ngIf="state === 'incorrect'" class="incorrect-message">Hmm. That doesn't look right! Please try again.</div>
 
 </div>

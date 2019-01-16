@@ -20,7 +20,6 @@ export class StatementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.statement);
     const secondsCounter = interval(this.letter_delay);
     const letters = this.statement.split('');
     let pauseCount = 0;

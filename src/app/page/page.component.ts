@@ -91,7 +91,6 @@ export class PageComponent implements OnChanges {
   }
 
   divCompleted(correct= true) {
-    // console.log('Completed div ' + (this.pageIndex + 1) + ' of ' + this.numPages);
     if (!correct) {
       this.correct = false;
     }

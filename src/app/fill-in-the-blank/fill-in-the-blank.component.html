@@ -11,6 +11,12 @@
       <mat-error *ngIf="word.hasError('required')">
         You must enter a value
       </mat-error>
+      <mat-error *ngIf="word.hasError('isWord') && !word.hasError('minlength') && !word.hasError('required')">
+        This does not look like a word
+      </mat-error>
+      <mat-error *ngIf="word.hasError('maxlength')">
+        Please shorten your response
+      </mat-error>
     </mat-form-field>
   </div>
   <button

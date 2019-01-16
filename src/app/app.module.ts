@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {
@@ -38,14 +37,20 @@ import { SessionIndicatorComponent } from './session-indicator/session-indicator
 import { HomeComponent } from './home/home.component';
 import { SessionWarningComponent } from './session-warning/session-warning.component';
 import { FillInTheBlankComponent } from './fill-in-the-blank/fill-in-the-blank.component';
-
+import { TrainingScoreComponent } from './training-score/training-score.component';
+import { TrainingScoreTestviewComponent } from './training-score-testview/training-score-testview.component';
+import { NgxGaugeModule } from 'ngx-gauge';
+import { FinalScoreComponent } from './final-score/final-score.component';
+import { FinalScoreTestviewComponent } from './final-score-testview/final-score-testview.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'training/:session', component: TrainingComponent },
   { path: 'control', component: ControlConditionComponent },
-  { path: 'control/:session', component: ControlConditionComponent }
+  { path: 'control/:session', component: ControlConditionComponent },
+  { path: 'scoreTest', component: TrainingScoreTestviewComponent },
+  { path: 'finalScoreTest', component: FinalScoreTestviewComponent }
 ];
 
 @NgModule({
@@ -70,6 +75,10 @@ const routes: Routes = [
     ThoughtbubbleComponent,
     TrainingComponent,
     SessionWarningComponent,
+    TrainingScoreComponent,
+    TrainingScoreTestviewComponent,
+    FinalScoreComponent,
+    FinalScoreTestviewComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -86,7 +95,8 @@ const routes: Routes = [
     MatInputModule,
     MatProgressBarModule,
     MatToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxGaugeModule,
   ],
   providers: [
     ApiService,

@@ -1,10 +1,7 @@
 <section class="section">
   <div>
-    <div>
-      <h3 *ngIf="(stepIndex <= 0 && pageIndex <= 1)">{{ step.title }}</h3>
-    </div>
-    <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted($event)"
-    (event)="recordElementEvent($event)"></app-page>
+    <h1 *ngIf="(stepIndex <= 0 && pageIndex <= 1)">{{ step.title }}</h1>
+    <app-page *ngIf="currentPage" [page]="currentPage" (done)="pageCompleted($event)" (event)="recordElementEvent($event)"></app-page>
     <div
       class="button-row"
       fxLayout="row"

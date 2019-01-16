@@ -66,6 +66,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   study: Study;
   pageIndex = 0;
+  pagesCorrect = 0;
   currentPage: Page;
   state: string;
   pageData: EventRecord[] = [];
@@ -110,10 +111,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.currentPage = this.scenario.pages[0];
-    console.log(this.currentPage);
     this.state = this.currentPage.elements[0].type;
     if (changes.scenario && !changes.scenario.isFirstChange()) {
-      console.log('New scenario!');
       this.scenario = changes.scenario.currentValue;
       this.init();
     }
@@ -121,6 +120,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   init() {
     this.pageIndex = 0;
+    this.scenario.numCorrect = 0;
     this.currentPage = this.scenario.pages[0];
     this.state = this.currentPage.elements[0].type;
     this.scenarioCorrect = true;
@@ -156,9 +156,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
     const record: EventRecord = {...event, ...data};
     this.pageData.push(record);
 
-    console.log('pageData', this.pageData);
     this.api.saveProgress(this.pageData).subscribe(d => {
-        console.log('Saving the data to the server');
+        this.pageCounter++;
       },
       error1 => {
         this.connectionError = true;
@@ -169,6 +168,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
     if (!correctAnswer) {
       this.scenarioCorrect = false;
       this.pageCorrect = false;
+    } else {
+      this.scenario.numCorrect ++;
     }
     if (!this.firstReactionTime) {
       this.firstReactionTime = performance.now();

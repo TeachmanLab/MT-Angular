@@ -1,0 +1,18 @@
+<p>
+  This is just a quick stub to allow us to see and quickly iterate on the end of session page
+  quickly.  use the input boxes the change values so you can see different states.  You will
+  be working with the training-score component.
+</p>
+<p>The current parameters are Correct: {{numCorrect}} out of {{numScenarios}} scenarios</p>
+<label>Round 1 Correct: </label><input type="text" [value]="numCorrect[0]" (blur)="setCorrectCount($event,0)"><br/>
+<label>Round 2 Correct: </label><input type="text" [value]="numCorrect[1]" (blur)="setCorrectCount($event,1)"><br/>
+<label>Round 3 Correct: </label><input type="text" [value]="numCorrect[2]" (blur)="setCorrectCount($event,2)"><br/>
+<label>Round 4 Correct: </label><input type="text" [value]="numCorrect[3]" (blur)="setCorrectCount($event,3)"><br/>
+
+<mat-card class="training" *ngIf="ready">
+  <mat-card-content>
+    <app-final-score [session]="session" [rounds]="rounds" [totalScore]="totalScore"></app-final-score>
+    <div class="spacer"></div>
+    <button class="continue"  mat-raised-button>Continue</button>
+  </mat-card-content>
+</mat-card>

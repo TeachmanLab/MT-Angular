@@ -62,17 +62,13 @@ mat-card.training {
     div.spacer {
       flex-grow: 1;
     }
-
   }
+}
 
-  button.continue {
-    position: absolute;
-    bottom: 30px;
-    right: 10%;
-    margin:auto;
-    font-size: 1.2rem;
-  }
-
-
-
+button.continue {
+  position: absolute;
+  bottom: 30px;
+  right: 10%;
+  margin: auto;
+  font-size: 1.2rem;
 }
