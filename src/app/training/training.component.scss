@@ -10,11 +10,18 @@ mat-card {
   }
 }
 
-mat-card.training {
+mat-card {
   margin: 20px auto;
   min-height: 600px;
   max-width: 900px;
   border-radius: 25px;
+}
+
+mat-card.readiness {
+  padding: 40px 20px;
+}
+
+mat-card.training {
   padding: 0px;
   @include mat-elevation(10);
 

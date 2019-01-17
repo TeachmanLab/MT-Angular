@@ -8,14 +8,18 @@
   (done)="sessionComplete()"
   (showIndicator)="true"
 ></app-session>
-<app-session *ngIf="state === states.READINESS"
-             [session]="readinessRulers[0]"
-             [sessions]="readinessRulers"
-             [sessionIndex]="sessionIndex"
-             (done)="readinessComplete()"
-             (showIndicator)="false"
-></app-session>
-<div *ngIf="state === states.TRAINING">
+  <mat-card class="readiness" *ngIf="state === states.READINESS">
+    <mat-card-content>
+  <app-step
+    [session]="readinessRulers[0]"
+    [step]="readinessRulers[0].steps[0]"
+    [stepIndex]="stepIndex"
+    [sessionIndex]="sessionIndex"
+    (done)="readinessComplete()"
+  ></app-step>
+    </mat-card-content>
+  </mat-card>
+ <div *ngIf="state === states.TRAINING">
   <mat-card class="training">
     <mat-card-content>
         <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>

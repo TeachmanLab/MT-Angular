@@ -22,7 +22,6 @@ export class TrainingComponent implements OnInit {
   sessions: Session[];
   readinessRulers: Session[];
   readinessCompleted = false;
-  readinessSessionIndex = 0; // This is the index of the scenerio when we show readiness rulers question
   readinessScenarioIndex = 5; // This is the index of the session we when we show readiness rulers.
   sessionIndex = 0;
   currentSession: Session;
@@ -155,10 +154,14 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
+    console.log('Scenario Index:' + this.scenarioIndex);
+    console.log('Readiness Scenario Index:' + this.readinessScenarioIndex);
+    console.log('Scenario Index = Readiness Scenario? ' + (this.scenarioIndex === this.readinessScenarioIndex));
+    console.log('Is readiness Completed?' + this.readinessCompleted);
     if (this.scenarioIndex === this.readinessScenarioIndex &&
-        this.sessionIndex === this.readinessSessionIndex &&
         !this.readinessCompleted) {
       this.state = this.states.READINESS;
+      console.log('Showing Readiness');
       return;
     }
     if (!this.round) {

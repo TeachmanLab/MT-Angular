@@ -1,9 +1,9 @@
 <div id="question">
 
-  <h5 class="question" fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
+  <div class="question" fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
     <span class="material-icons">help_outline</span>
     <span>{{question.question}}</span>
-  </h5>
+  </div>
 
   <div
     class="options"
@@ -25,7 +25,7 @@
 
   <div *ngIf="question.answer" fxLayoutAlign="center">
     <div [hidden]="!(this.state === 'correct')" class="correct">
-      <div>Correct!</div>
+      <div class="heading">Correct!</div>
       <div *ngIf="question.explanation" fxLayoutAlign="center">
         <p>This is {{ question.answer.toLowerCase() }}. {{ question.explanation }}</p>
       </div>
