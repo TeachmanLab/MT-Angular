@@ -9,6 +9,7 @@ import {Round} from '../round';
 export class TrainingScoreComponent implements OnInit {
 
   @Input() round: Round;
+  @Input() roundNumber: number;
   ready = false;
 
   constructor() {}

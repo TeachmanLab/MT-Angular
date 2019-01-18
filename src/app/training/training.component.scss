@@ -18,7 +18,9 @@ mat-card {
 }
 
 mat-card.readiness {
-  padding: 40px 20px;
+  mat-card-content {
+    padding-top: 10%;
+  }
 }
 
 mat-card.training {

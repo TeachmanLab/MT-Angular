@@ -35,6 +35,11 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
+  public getVividness(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/vividness.json')
+      .pipe((catchError(this.handleError)));
+  }
+
   public getTrainingSessionIndicators(): Observable<Session[]> {
     return this.httpClient.get<Session[]>('./assets/json/training_session_indicators.json')
       .pipe((catchError(this.handleError)));

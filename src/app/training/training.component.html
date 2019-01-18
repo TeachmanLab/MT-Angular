@@ -11,14 +11,26 @@
   <mat-card class="readiness" *ngIf="state === states.READINESS">
     <mat-card-content>
   <app-step
-    [session]="readinessRulers[0]"
+    [session]="currentSession"
     [step]="readinessRulers[0].steps[0]"
-    [stepIndex]="stepIndex"
-    [sessionIndex]="sessionIndex"
+    [stepIndex]="this.scenarioIndex"
+    [sessionIndex]="this.sessionIndex"
     (done)="readinessComplete()"
   ></app-step>
     </mat-card-content>
   </mat-card>
+  <mat-card class="readiness" *ngIf="state === states.VIVIDNESS">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="vividness[0].steps[0]"
+        [stepIndex]="this.scenarioIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="vividnessComplete()"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
+
  <div *ngIf="state === states.TRAINING">
   <mat-card class="training">
     <mat-card-content>
@@ -34,7 +46,7 @@
           [sessionIndex]="sessionIndex"
           [pageCount]="pageCount"
           (finalCount)="updatePageCount($event)"
-          (done)="nextTraining($event)"
+          (done)="scenarioComplete($event)"
         ></app-scenario>
     </mat-card-content>
   </mat-card>
@@ -42,7 +54,7 @@
 <div *ngIf="state === states.SUMMARY">
   <mat-card class="training">
     <mat-card-content>
-    <app-training-score [round]="round"></app-training-score>
+    <app-training-score [round]="round" [roundNumber]="roundIndex + 1"></app-training-score>
         <div class="spacer"></div>
         <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
         <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Continue</button>

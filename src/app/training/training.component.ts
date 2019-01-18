@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import {Round} from '../round';
 
 enum TrainingState {
-  'INTRO', 'TRAINING', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
+  'INTRO', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -20,7 +20,9 @@ export class TrainingComponent implements OnInit {
   state = TrainingState.INTRO;
 
   sessions: Session[];
-  readinessRulers: Session[];
+  readinessRulers: Session[] = [];
+  vividness: Session[] = [];
+  vividIndexes = [1, 2, 20, 40];
   readinessCompleted = false;
   readinessScenarioIndex = 5; // This is the index of the session we when we show readiness rulers.
   sessionIndex = 0;
@@ -51,12 +53,11 @@ export class TrainingComponent implements OnInit {
     }
     this.loadIntro();
     this.loadIndicatorSessions();
-    this.getProgress();
     this.checkStudy();
   }
 
   ready() {
-    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0;
+    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0 && this.vividness.length > 0;
   }
 
   getProgress() {
@@ -65,7 +66,7 @@ export class TrainingComponent implements OnInit {
         if (progress['stepIndex'] > this.currentSession.steps.length) {
           this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length) / this.increment );
           // sets scenario back to the scenario that the user was last on
-          this.scenarioIndex = progress['stepIndex'] - this.currentSession.steps.length + 1;
+          this.scenarioIndex = progress['stepIndex'];
         } else {
           this.done.emit();
         }
@@ -90,6 +91,7 @@ export class TrainingComponent implements OnInit {
       });
       this.currentSession.startTime = performance.now();
       this.loadReadinessRulers();
+      this.loadVividness();
       this.loadTraining();
     });
   }
@@ -99,6 +101,13 @@ export class TrainingComponent implements OnInit {
       this.readinessRulers = sessions;
     });
   }
+
+  loadVividness() {
+    this.api.getVividness().subscribe(sessions => {
+      this.vividness = sessions;
+    });
+  }
+
 
   loadIndicatorSessions() {
     this.api.getTrainingSessionIndicators().subscribe(sessions => {
@@ -118,6 +127,19 @@ export class TrainingComponent implements OnInit {
     this.nextTraining();
   }
 
+  vividnessComplete() {
+    console.log('Vividness complete, moving on...');
+    this.state = this.states.TRAINING;
+    this.nextTraining();
+  }
+
+  scenarioComplete($event) {
+    console.log('Scenario Completed');
+    this.scenarioIndex++;
+    this.state = this.states.TRAINING;
+    this.nextTraining($event);
+  }
+
   stepPageCount(event) {
     this.pageCount = event; // record the ending pageCount from the session steps before launching into the scenarios
   }
@@ -130,7 +152,7 @@ export class TrainingComponent implements OnInit {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
       let index = 0;
-      // for shortening stuff up. scenarios = scenarios.slice(0, 8);
+      // for shortening stuff up. scenarios = scenarios.slice(0, 15);
       this.increment = Math.floor(scenarios.length / this.totalRounds);
       this.rounds = [];
       for (let i = 0; i < this.totalRounds - 1; i++) {
@@ -154,14 +176,14 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
-    console.log('Scenario Index:' + this.scenarioIndex);
-    console.log('Readiness Scenario Index:' + this.readinessScenarioIndex);
-    console.log('Scenario Index = Readiness Scenario? ' + (this.scenarioIndex === this.readinessScenarioIndex));
-    console.log('Is readiness Completed?' + this.readinessCompleted);
     if (this.scenarioIndex === this.readinessScenarioIndex &&
         !this.readinessCompleted) {
       this.state = this.states.READINESS;
       console.log('Showing Readiness');
+      return;
+    } else if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
+      this.vividIndexes.splice( this.vividIndexes.indexOf(this.scenarioIndex - 1), 1 );
+      this.state = this.states.VIVIDNESS;
       return;
     }
     if (!this.round) {
@@ -174,11 +196,9 @@ export class TrainingComponent implements OnInit {
       }
       this.round.next(correct);
     } else if (this.round.isComplete()) {
-      this.scenarioIndex++;
       this.round.next(correct);
       this.state = this.states.SUMMARY;
     } else {
-      this.scenarioIndex++;
       this.round.next(correct);
     }
   }
