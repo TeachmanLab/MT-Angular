@@ -7,9 +7,9 @@
   <label>Number of Scenarios</label><input type="text" [value]="numScenarios" (blur)="setScenarioCount($event)">
   <label>Number Correct</label><input type="text" [value]="numCorrect" (blur)="setCorrectCount($event)">
 
-<mat-card class="training">
-  <mat-card-content>
-    <app-training-score [round]="round"></app-training-score>
+<mat-card class="training"  *ngIf="ready">
+  <mat-card-content *ngIf="round">
+    <app-training-score [round]="round" [roundNumber]="4"></app-training-score>
     <div class="spacer"></div>
     <button class="continue"  mat-raised-button>Start Round 2</button>
   </mat-card-content>

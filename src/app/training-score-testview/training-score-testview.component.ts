@@ -13,6 +13,7 @@ export class TrainingScoreTestviewComponent implements OnInit {
   numScenarios = 10;
   numCorrect = 5;
   round: Round;
+  ready = false;
 
   constructor(private api: ApiService,
               private route: ActivatedRoute) { }
@@ -55,6 +56,7 @@ export class TrainingScoreTestviewComponent implements OnInit {
         count++;
       }
     });
+    this.ready = true;
 
   }
 }
