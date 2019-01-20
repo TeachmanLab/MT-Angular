@@ -13,6 +13,8 @@
   background-color: mat-color($mindtrails-primary, A100, .35);
 }
 
+
+
 .options {
   min-height: 60px;
 }
@@ -87,4 +89,13 @@ div.select-a-tile {
 
 button.letter {
   font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .letter {
+    font-size: 1.0rem;
+    padding: 7px;
+  }
+
 }
