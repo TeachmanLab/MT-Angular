@@ -24,7 +24,7 @@ export class TrainingComponent implements OnInit {
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
   readinessCompleted = false;
-  readinessScenarioIndex = 5; // This is the index of the session we when we show readiness rulers.
+  readinessScenarioIndex = 6; // Show the readiness rulers just prior to this session.
   sessionIndex = 0;
   currentSession: Session;
   indicatorSessions: Session[];
@@ -176,7 +176,7 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
-    if (this.scenarioIndex === this.readinessScenarioIndex &&
+    if (this.currentSession.session === 'firstSession' && this.scenarioIndex === this.readinessScenarioIndex &&
         !this.readinessCompleted) {
       this.state = this.states.READINESS;
       console.log('Showing Readiness');
