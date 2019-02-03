@@ -121,6 +121,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   init() {
     this.pageIndex = 0;
     this.scenario.numCorrect = 0;
+    this.scenario.numAnswer = 0;
+    this.scenario.score = 0;
     this.currentPage = this.scenario.pages[0];
     this.state = this.currentPage.elements[0].type;
     this.scenarioCorrect = true;
@@ -165,6 +167,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   progressState(correctAnswer = true) {
+    this.scenario.numAnswer ++;
     if (!correctAnswer) {
       this.scenarioCorrect = false;
       this.pageCorrect = false;
@@ -202,6 +205,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
       };
       this.recordStateData(data);
     }
-    this.progressState(true);
+    this.progressState(false);
   }
 }

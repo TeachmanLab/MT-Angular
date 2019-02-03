@@ -30,7 +30,18 @@ export class Round {
    * @returns {number}
    */
   scenarioScore(scenario: Scenario) {
-    return Math.round((scenario.numCorrect / scenario.pages.length) * 10) / 10;
+    if (scenario.numAnswer === 4) {
+      if (scenario.numCorrect === 1) {
+        scenario.score = 0.25;
+      } else if (scenario.numCorrect === 2) {
+        scenario.score = 0.5;
+      } else if (scenario.numCorrect === 3) {
+        scenario.score = 1;
+      }
+    } else {
+      scenario.score = (scenario.numCorrect) * 0.5;
+    }
+    return  scenario.score;
   }
 
   roundScore() {
