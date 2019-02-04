@@ -134,6 +134,8 @@ export class MissingLetterComponent implements OnInit {
 
 
   selectLetter(letter) {
+    const responseTime = performance.now();
+    if (!this.firstReactionTime) { this.firstReactionTime = responseTime }
     this.responseTimes.push(performance.now());
     this.missingTiles[this.missingTileIndex].letterDisplayed = letter;
     this.choices.push(letter);
@@ -144,6 +146,7 @@ export class MissingLetterComponent implements OnInit {
       this.missingTileIndex++;
       // if there is another missing letter to complete, set that up.otherwise we are all done.
       if (this.missingTileIndex === this.missingLetter.numberMissing ) {
+        this.endTime = responseTime;
         const waitASectionTimer = interval(1500);
         this.state = MyState.Correct;
         const sub = waitASectionTimer.subscribe( n => {
