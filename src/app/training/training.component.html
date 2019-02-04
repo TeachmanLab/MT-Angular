@@ -5,7 +5,7 @@
   [sessions]="indicatorSessions"
   [sessionIndex]="sessionIndex"
   (finalPageCount)="stepPageCount($event)"
-  (done)="sessionComplete()"
+  (done)="introComplete()"
   (showIndicator)="true"
 ></app-session>
   <mat-card class="readiness" *ngIf="state === states.READINESS">
@@ -17,6 +17,17 @@
     [sessionIndex]="this.sessionIndex"
     (done)="readinessComplete()"
   ></app-step>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="imagery" *ngIf="state === states.IMAGERY">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="imageryPrime[0].steps[0]"
+        [stepIndex]="this.scenarioIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="imageryComplete()"
+      ></app-step>
     </mat-card-content>
   </mat-card>
   <mat-card class="readiness" *ngIf="state === states.VIVIDNESS">

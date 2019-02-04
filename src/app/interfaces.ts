@@ -52,6 +52,17 @@ export interface FillInBlank extends Element {
   type: 'FillInBlank';
 }
 
+export interface Countdown extends Element {
+  type: 'Countdown';
+  delayInSeconds: 20;
+}
+
+export interface Slider extends Element {
+  type: 'Slider';
+  min: number;
+  max: number;
+}
+
 export interface Question extends Element {
   type: 'Question';
   question: string;
