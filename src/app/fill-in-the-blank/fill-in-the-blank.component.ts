@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {ElementEvent, FillInBlank} from '../interfaces';
@@ -17,11 +17,16 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./fill-in-the-blank.component.scss']
 })
 export class FillInTheBlankComponent implements OnInit {
-  word = new FormControl('', [Validators.required, Validators.minLength(3),
-    wordValidator, Validators.maxLength(25)]);
+
+  defaultMax = 25;
+  word: FormControl;
   matcher = new MyErrorStateMatcher();
   startTime: number;
   endTime: number;
+  completed = false;
+
+  @Input()
+  fillInBlank: FillInBlank;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -35,13 +40,14 @@ export class FillInTheBlankComponent implements OnInit {
 
   ngOnInit() {
     this.startTime = performance.now();
+    const maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax
+    this.word = new FormControl('', [Validators.required, Validators.minLength(3), wordValidator, Validators.maxLength(maxLength)]);
   }
 
   submitWord(word: string) {
       this.endTime = performance.now();
-      const fillInBlank: FillInBlank = {type: 'FillInBlank'};  // forcing some type checking to keep types consistent.
       const event: ElementEvent = {
-        trialType: fillInBlank.type,
+        trialType: this.fillInBlank.type,
         stimulus: '',
         stimulusName: '',
         buttonPressed: word,
@@ -51,6 +57,7 @@ export class FillInTheBlankComponent implements OnInit {
       };
     this.event.emit(event);
     this.done.emit(true);
+    this.completed = true;
   }
 }
 

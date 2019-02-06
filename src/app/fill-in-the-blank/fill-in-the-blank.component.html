@@ -19,10 +19,11 @@
       </mat-error>
     </mat-form-field>
   </div>
+  <p>Works is valid? {{word.valid}}</p>
   <button
     mat-raised-button
     color="primary"
-    [disabled]="!word.valid"
+    [disabled]="!word.valid || completed"
     (click)="submitWord(word.value)"
   >
     Submit

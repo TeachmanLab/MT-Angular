@@ -15,6 +15,7 @@
     [step]="readinessRulers[0].steps[0]"
     [stepIndex]="this.scenarioIndex"
     [sessionIndex]="this.sessionIndex"
+    [previousEnabled]="false"
     (done)="readinessComplete()"
   ></app-step>
     </mat-card-content>
@@ -26,6 +27,7 @@
         [step]="imageryPrime[0].steps[0]"
         [stepIndex]="this.scenarioIndex"
         [sessionIndex]="this.sessionIndex"
+        [previousEnabled]="false"
         (done)="imageryComplete()"
       ></app-step>
     </mat-card-content>
@@ -38,6 +40,7 @@
         [stepIndex]="this.scenarioIndex"
         [sessionIndex]="this.sessionIndex"
         (done)="vividnessComplete()"
+        [previousEnabled]="false"
       ></app-step>
     </mat-card-content>
   </mat-card>

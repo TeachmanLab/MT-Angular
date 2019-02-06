@@ -62,10 +62,9 @@ export class PageComponent implements OnChanges {
   @Output()
   done: EventEmitter<any> = new EventEmitter();
 
-  /** Some Page elements may have additional information that should be logged.
-   * this will spit those out.
-   * @type {EventEmitter<any>}
-   */
+  @Output()
+  update: EventEmitter<ElementEvent> = new EventEmitter();
+
   @Output()
   event: EventEmitter<ElementEvent> = new EventEmitter();
 
@@ -97,12 +96,16 @@ export class PageComponent implements OnChanges {
     this.elementIndex++;
     if (this.elementIndex === this.numElements) {
       this.endTime = performance.now();
+      // If we have any update events, submit those
       this.done.emit(correct);
     } else {
       this.visibleElements.push(this.page.elements[this.elementIndex]);
     }
   }
 
+  elementUpdated(event: ElementEvent) {
+    this.update.emit(event);
+  }
 
   handleElementEvent(event: ElementEvent) {
     this.event.emit(event);

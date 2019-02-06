@@ -13,6 +13,7 @@ export class StepComponent implements OnInit, OnChanges {
   @Input() session: Session;
   @Input() stepIndex: number;
   @Input() sessionIndex: number;
+  @Input() previousEnabled = false;
 
   study: Study;
   pageIndex: number;
@@ -26,6 +27,7 @@ export class StepComponent implements OnInit, OnChanges {
   endTime: number;
   pageCounter: number;
   elementCounter: number;
+  updateEvents = new Map<string, ElementEvent>();
 
   @Output()
   done: EventEmitter<any> = new EventEmitter();
@@ -85,6 +87,8 @@ export class StepComponent implements OnInit, OnChanges {
     // it is important to step the user through questions with no answer so that we don't get multiple responses per question.
     // in order to do this we should look at the elements on the current and previous page and disable the previous button when appropriate.
     // if there is a question on a previous page and no answer is set on that question, this will return false, otherwise true.
+    if (!this.previousEnabled) return false;
+
     let elements = this.currentPage.elements;
 
     const previousPage = this.step.pages[this.pageIndex - 1];
@@ -128,8 +132,21 @@ export class StepComponent implements OnInit, OnChanges {
     this.pageData.push(record);
   }
 
+  // Some elements will emit events that might be replaced later.
+  // they will emit updates, and only the last update should be recorded.
+  elementUpdated(event: ElementEvent) {
+    this.updateEvents[event.stimulusName] = event;
+  }
+
   recordPageData() {
     this.endTime = performance.now();
+
+    // As we complete the page, record all update events.
+    this.updateEvents.forEach((event: ElementEvent, key: string) => {
+      this.recordElementEvent(event);
+    });
+    this.updateEvents.clear();
+
     const elData = {session: this.session.session, sessionIndex: this.sessionIndex,
       sessionTitle: this.session.title + ': ' + this.session.subTitle, device: navigator.userAgent, rt: this.endTime - this.startTime,
       rtFirstReact: 0, stepTitle: this.step.title, stepIndex: this.stepIndex, stimulus: '', trialType: 'page', buttonPressed: '',

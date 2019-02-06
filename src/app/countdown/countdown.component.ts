@@ -3,7 +3,7 @@ import {Countdown, ElementEvent, MissingLetter} from '../interfaces';
 import {interval} from 'rxjs';
 
 enum CountDownState {
-  'WAIT', 'READY'
+  'NOT_STARTED', 'WAIT', 'READY'
 }
 
 @Component({
@@ -16,7 +16,8 @@ export class CountdownComponent implements OnInit {
   @Input()
   countdown: Countdown;
 
-  state = CountDownState.WAIT;
+  state = CountDownState.NOT_STARTED;
+  states = CountDownState;
   startTime: number;
   endTime: number;
   currentSecond = 0;
@@ -31,7 +32,10 @@ export class CountdownComponent implements OnInit {
 
   ngOnInit() {
     this.startTime = performance.now();
+    }
 
+  startCountdown() {
+    this.state = CountDownState.WAIT;
     const waitASectionTimer = interval( 1000);
     const sub = waitASectionTimer.subscribe( n => {
       this.currentSecond++;
@@ -41,11 +45,11 @@ export class CountdownComponent implements OnInit {
         sub.unsubscribe();
       }
     });
-
   }
 
   timeIsUp() {
     this.endTime = performance.now();
+    this.playAudio();
     const event: ElementEvent = {
       trialType: this.countdown.type,
       stimulus: '',
@@ -59,4 +63,10 @@ export class CountdownComponent implements OnInit {
     this.done.emit(true);
   }
 
+  playAudio() {
+    const audio = new Audio();
+    audio.src = 'assets/sounds/bing.wav';
+    audio.load();
+    audio.play();
+  }
 }
