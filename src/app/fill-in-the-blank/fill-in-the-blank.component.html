@@ -22,7 +22,7 @@
   <button
     mat-raised-button
     color="primary"
-    [disabled]="!word.valid"
+    [disabled]="!word.valid || completed"
     (click)="submitWord(word.value)"
   >
     Submit

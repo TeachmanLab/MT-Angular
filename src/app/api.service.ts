@@ -40,6 +40,11 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
+  public getImageryPrime(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/imagery_prime.json')
+      .pipe((catchError(this.handleError)));
+  }
+
   public getTrainingSessionIndicators(): Observable<Session[]> {
     return this.httpClient.get<Session[]>('./assets/json/training_session_indicators.json')
       .pipe((catchError(this.handleError)));

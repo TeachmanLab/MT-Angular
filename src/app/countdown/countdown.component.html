@@ -1,0 +1,11 @@
+<button
+  *ngIf="state == states.NOT_STARTED"
+  mat-raised-button
+  color="primary"
+  (click)="startCountdown()"
+>
+  Begin
+</button>
+<h2 *ngIf="state == states.WAIT">You have {{countdown.delayInSeconds - currentSecond}} seconds remaining.  We will let you know when the time is up.</h2>
+
+<h2 *ngIf="state == states.READY">All Done!</h2>

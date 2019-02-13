@@ -1,3 +1,4 @@
+<div class="page">
 <div *ngFor="let el of visibleElements">
   <h1 *ngIf="el.type === 'LargeHeader'">{{el.content}}</h1>
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
@@ -10,6 +11,12 @@
   <div class="pageImage" *ngIf="el.type === 'Image'">
     <img  [src]="el.content">
     <p fxLayoutAlign="center" class="caption">{{el.caption}}</p>
+  </div>
+  <div class="slider" *ngIf="el.type === 'Slider'">
+    <app-slider [slider]="el"
+                (done)="divCompleted()"
+                (updated)="elementUpdated($event)">
+    </app-slider>
   </div>
   <app-highlight *ngIf="el.type === 'Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
   <app-bullet-list *ngIf="el.type === 'BulletList'" [bulletList]="el" (done)="divCompleted()"></app-bullet-list>
@@ -26,6 +33,14 @@
     (event)="handleElementEvent($event)"
     (done)="divCompleted()">
   </app-thoughtbubble>
+  <div *ngIf="el.type==='Countdown'" class="letters" [@flyUpDown]="'in'">
+    <app-countdown
+      [countdown]="el"
+      (event)="handleElementEvent($event)"
+      (done)="divCompleted($event)"
+    ></app-countdown>
+  </div>
+
 
   <div *ngIf="el.type==='Intro' || el.type==='Statements' || el.type==='MissingLetter' || el.type==='FillInBlank'" class="scenario">
     <div *ngIf="el.type==='Intro'" ngClass="" class="title" [@titleState]="el.type" >{{el.content}}</div>
@@ -39,12 +54,14 @@
         (done)="divCompleted($event)"
       ></app-missing-letter>
     </div>
-    <div *ngIf="el.type==='FillInBlank'" class="letters" [@flyUpDown]="'in'">
+    <div *ngIf="el.type==='FillInBlank'"  class="letters" [@flyUpDown]="'in'">
       <app-fill-in-the-blank
-        (event)="handleElementEvent($event)"
+        [fillInBlank]='el'
+        (updated)="elementUpdated($event)"
         (done)="divCompleted($event)"
       ></app-fill-in-the-blank>
     </div>
   </div>
 </div>
 <br class="clear"/>
+</div>

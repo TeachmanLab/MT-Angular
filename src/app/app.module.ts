@@ -10,7 +10,7 @@ import {
   MatGridListModule,
   MatIconModule,
   MatInputModule,
-  MatProgressBarModule,
+  MatProgressBarModule, MatSliderModule,
   MatToolbarModule
 } from '@angular/material';
 import { ScenarioComponent } from './scenario/scenario.component';
@@ -42,6 +42,8 @@ import { TrainingScoreTestviewComponent } from './training-score-testview/traini
 import { NgxGaugeModule } from 'ngx-gauge';
 import { FinalScoreComponent } from './final-score/final-score.component';
 import { FinalScoreTestviewComponent } from './final-score-testview/final-score-testview.component';
+import { CountdownComponent } from './countdown/countdown.component';
+import { SliderComponent } from './slider/slider.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -78,7 +80,9 @@ const routes: Routes = [
     TrainingScoreComponent,
     TrainingScoreTestviewComponent,
     FinalScoreComponent,
-    FinalScoreTestviewComponent
+    FinalScoreTestviewComponent,
+    CountdownComponent,
+    SliderComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -97,6 +101,7 @@ const routes: Routes = [
     MatToolbarModule,
     ReactiveFormsModule,
     NgxGaugeModule,
+    MatSliderModule
   ],
   providers: [
     ApiService,

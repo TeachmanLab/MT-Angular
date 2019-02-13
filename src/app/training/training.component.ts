@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import {Round} from '../round';
 
 enum TrainingState {
-  'INTRO', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
+  'INTRO', 'IMAGERY', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -23,7 +23,9 @@ export class TrainingComponent implements OnInit {
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
+  imageryPrime: Session[] = [];
   readinessCompleted = false;
+  imageryPrimeCompleted = false;
   readinessScenarioIndex = 6; // Show the readiness rulers just prior to this session.
   sessionIndex = 0;
   currentSession: Session;
@@ -57,7 +59,7 @@ export class TrainingComponent implements OnInit {
   }
 
   ready() {
-    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0 && this.vividness.length > 0;
+    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0 && this.vividness.length > 0 && this.imageryPrime.length > 0;
   }
 
   getProgress() {
@@ -93,6 +95,7 @@ export class TrainingComponent implements OnInit {
       this.loadReadinessRulers();
       this.loadVividness();
       this.loadTraining();
+      this.loadImageryPrime();
     });
   }
 
@@ -108,6 +111,11 @@ export class TrainingComponent implements OnInit {
     });
   }
 
+  loadImageryPrime() {
+    this.api.getImageryPrime().subscribe(sessions => {
+      this.imageryPrime = sessions;
+    });
+  }
 
   loadIndicatorSessions() {
     this.api.getTrainingSessionIndicators().subscribe(sessions => {
@@ -115,10 +123,9 @@ export class TrainingComponent implements OnInit {
     });
   }
 
-  sessionComplete() {
+  introComplete() {
 //    this.currentSession = null;
-    this.state = this.states.TRAINING;
-    this.nextTraining();
+    this.state = this.states.IMAGERY;
   }
 
   readinessComplete() {
@@ -129,6 +136,13 @@ export class TrainingComponent implements OnInit {
 
   vividnessComplete() {
     console.log('Vividness complete, moving on...');
+    this.state = this.states.TRAINING;
+    this.nextTraining();
+  }
+
+  imageryComplete() {
+    console.log('Imagery Prime complete, moving on...');
+    this.imageryPrimeCompleted = true;
     this.state = this.states.TRAINING;
     this.nextTraining();
   }

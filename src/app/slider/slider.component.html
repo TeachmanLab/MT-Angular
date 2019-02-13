@@ -1,0 +1,17 @@
+<p fxLayoutAlign="center">{{slider.content}}</p>
+  <div class="row">
+    <div class="slider">
+      <input id="clearSlider" [class]="sliderStyle()" type="range" min="0" max="100" (change)="updateValue($event)" [value]="value" [disabled]="preferNotToAnswer">
+    </div>
+  </div>
+  <div class="slider-row">
+    <div class="left">Absolutely No Anxiety</div>
+    <div class="right">Totally Anxious</div>
+  </div>
+
+  <div class="after_slider"><label class="standard">
+    <br>
+    <input id="sliderEnabled" type="checkbox" value="555" [checked]="preferNotToAnswer"
+    (change)="togglePreferNotToAnswer($event)"/>
+    Prefer not to answer
+  </label></div>

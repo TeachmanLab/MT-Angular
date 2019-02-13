@@ -52,6 +52,18 @@ export interface MissingLetter extends Element {
 
 export interface FillInBlank extends Element {
   type: 'FillInBlank';
+  maxCharacters: number;
+}
+
+export interface Countdown extends Element {
+  type: 'Countdown';
+  delayInSeconds: 20;
+}
+
+export interface Slider extends Element {
+  type: 'Slider';
+  min: number;
+  max: number;
 }
 
 export interface Question extends Element {
@@ -93,8 +105,8 @@ export interface Study {
 }
 
 
-// A way to provide details about a particular compoent, this
-// is a suubset of the full EventRecord
+// A way to provide details about a particular component, this
+// is a subset of the full EventRecord
 export interface ElementEvent {
   trialType: string; // The type of the stimulus (Paragraph, Question, MissingLetter)
   stimulus: string; // The content of the stimulus, such as the actual paragraph or question text
