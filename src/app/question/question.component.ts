@@ -59,11 +59,11 @@ export class QuestionComponent implements OnInit {
     if (this.firstReactionTime === 0) {
       this.firstReactionTime = performance.now();
     }
+    this.endTime = performance.now();
     this.userAnswer = option;
     this.userAnswers.push(option);
     if (this.question.answer) {
       if (option === this.question.answer) {
-        this.endTime = performance.now();
         this.state = QuestionStates.correct;
         this.question.completed = true;
         this.waitAndEmit();
