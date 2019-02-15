@@ -1,26 +1,30 @@
 import {Scenario} from './interfaces';
 
 export class Round {
-  scenario?: Scenario;
+  scenarios: Scenario[] = [];
   index = -1;
 
-  constructor(public scenarios: Scenario[]) {
-  }
+  constructor() {}
 
   isComplete(): boolean {
     return (this.index >= this.scenarios.length - 1);
   }
 
+  add(scenario: Scenario) {
+    this.scenarios.push(scenario);
+  }
+
+  getScenario() {
+    return this.scenarios[this.index];
+  }
+
   next(correct = true) {
-    if (this.scenario) {
-      this.scenario.status = correct ? 'complete' : 'error';
+    if (this.getScenario() && this.getScenario().status !== 'error') {
+      this.getScenario().status = correct ? 'complete' : 'error';
     }
     this.index++;
     if (this.index < this.scenarios.length) {
-      this.scenario = this.scenarios[this.index];
-      this.scenario.status = 'active';
-    } else {
-      this.scenario = null;
+      this.getScenario().status = 'active';
     }
   }
 
@@ -30,7 +34,7 @@ export class Round {
    * @returns {number}
    */
   scenarioScore(scenario: Scenario) {
-    if (scenario.numAnswer === 4) {
+    if (scenario.numAnswer >= 3) {
       if (scenario.numCorrect === 1) {
         scenario.score = 0.25;
       } else if (scenario.numCorrect === 2) {

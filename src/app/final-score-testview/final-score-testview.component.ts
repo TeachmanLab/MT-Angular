@@ -45,7 +45,8 @@ export class FinalScoreTestviewComponent implements OnInit {
     this.totalScore = 0;
     this.api.getTrainingCSV('firstSession').subscribe(scenarios => {
         for (let i = 0; i < 4; i++) {
-          const round = new Round(scenarios.slice(i * this.numScenarios, this.numScenarios * (i + 1)));
+          const round = new Round();
+          round.scenarios = scenarios.slice(i * this.numScenarios, this.numScenarios * (i + 1));
           // mark the rounds as complete with the given number of correct answers.
           let count = 0;
           let correct = true;

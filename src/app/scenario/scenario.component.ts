@@ -62,16 +62,15 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   sessionIndex: number;
   @Input()
+  stepIndex: number;
+  @Input()
   pageCount: number;
 
   study: Study;
   pageIndex = 0;
-  pagesCorrect = 0;
   currentPage: Page;
   state: string;
   pageData: EventRecord[] = [];
-  scenarioCorrect: boolean;
-  pageCorrect: boolean;
   startTime: number;
   endTime: number;
   firstReactionTime: number;
@@ -125,8 +124,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
     this.scenario.score = 0;
     this.currentPage = this.scenario.pages[0];
     this.state = this.currentPage.elements[0].type;
-    this.scenarioCorrect = true;
-    this.pageCorrect = true;
     this.pageData = [];
     this.startTime = performance.now();
     window.scrollTo(0, 0);
@@ -148,16 +145,16 @@ export class ScenarioComponent implements OnInit, OnChanges {
       sessionTitle: this.session.title + ': ' + this.session.subTitle,
       conditioning: this.study.conditioning,
       study: this.study.name,
-      stepTitle: this.scenario.title,
-      stepIndex: this.scenarioIndex,
+      stepTitle: 'scenario',
+      stepIndex: this.stepIndex,
+      stimulusName: this.scenario.title,
       device: navigator.userAgent,
       timeElapsed: this.endTime - this.session.startTime,
-      sessionCounter: this.sessionIndex + '.' + this.scenarioIndex + '.' + this.pageIndex
+      sessionCounter: this.sessionIndex + '.' + this.stepIndex + '.' + this.pageIndex
     };
 
     const record: EventRecord = {...event, ...data};
     this.pageData.push(record);
-
     this.api.saveProgress(this.pageData).subscribe(d => {
         this.pageCounter++;
       },
@@ -167,25 +164,17 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   progressState(correctAnswer = true) {
-    this.scenario.numAnswer ++;
-    if (!correctAnswer) {
-      this.scenarioCorrect = false;
-      this.pageCorrect = false;
-    } else {
-      this.scenario.numCorrect ++;
-    }
-    if (!this.firstReactionTime) {
-      this.firstReactionTime = performance.now();
-    }
+   this.scenario.numAnswer ++;
+    if (correctAnswer) { this.scenario.numCorrect ++; }
+    if (!this.firstReactionTime) { this.firstReactionTime = performance.now(); }
     this.pageData = [];
-    this.pageCorrect = true;
     this.pageIndex++;
     this.pageCounter++;
     if (this.pageIndex < this.scenario.pages.length) {
       this.currentPage = this.scenario.pages[this.pageIndex];
       this.state = this.currentPage.elements[0].type;
     } else {
-      this.done.emit(this.scenarioCorrect);
+      this.done.emit(this.scenario.numAnswer === this.scenario.numCorrect);
       this.finalCount.emit(this.pageCounter);
     }
     window.scrollTo(0, 0);
@@ -205,6 +194,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
       };
       this.recordStateData(data);
     }
-    this.progressState(false);
+    this.progressState(true);
   }
 }

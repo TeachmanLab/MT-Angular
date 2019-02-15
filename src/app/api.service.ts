@@ -14,7 +14,8 @@ export class ApiService {
   // REST endpoints
   endpoints = {
     progress: environment.progress_endpoint,
-    study: environment.progress_endpoint + 'study'
+    study: environment.progress_endpoint + 'study',
+    scenarios: environment.progress_endpoint + 'scenarios'
   };
 
   constructor(private httpClient: HttpClient) {
@@ -64,6 +65,11 @@ export class ApiService {
 
   getProgress(): Observable<EventRecord[]> {
     return this.httpClient.get<EventRecord[]>(this.endpoints.progress)
+      .pipe(catchError(this.handleError));
+  }
+
+  getScenarios(): Observable<EventRecord[]> {
+    return this.httpClient.get<EventRecord[]>(this.endpoints.scenarios)
       .pipe(catchError(this.handleError));
   }
 

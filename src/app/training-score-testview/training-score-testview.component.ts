@@ -36,7 +36,8 @@ export class TrainingScoreTestviewComponent implements OnInit {
   createTestRound() {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV('firstSession').subscribe(scenarios => {
-      this.round = new Round(scenarios.slice(0, this.numScenarios));
+      this.round = new Round();
+      this.round.scenarios = scenarios.slice(0, this.numScenarios);
 
       // mark the rounds as complete with the given number of correct answers.
       let count = 0;
