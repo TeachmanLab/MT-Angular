@@ -20,9 +20,9 @@
                   "Slightly",
                   "Somewhat",
                   "Mostly",
-                  "Very Much",
-                  "Prefer not to answer"
-                ]
+                  "Very Much"
+                ],
+                "preferNotToAnswer":true
               }
             ]
           }

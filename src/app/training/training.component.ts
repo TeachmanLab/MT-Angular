@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import {Round} from '../round';
 
 enum TrainingState {
-  'INTRO', 'IMAGERY', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
+  'IMAGERY', 'INTRO', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -17,7 +17,7 @@ enum TrainingState {
 export class TrainingComponent implements OnInit {
 
   states = TrainingState;
-  state = TrainingState.INTRO;
+  state = TrainingState.IMAGERY;
 
   sessions: Session[];
   readinessRulers: Session[] = [];
@@ -125,7 +125,7 @@ export class TrainingComponent implements OnInit {
 
   introComplete() {
 //    this.currentSession = null;
-    this.state = this.states.IMAGERY;
+    this.state = this.states.TRAINING;
   }
 
   readinessComplete() {
@@ -143,7 +143,7 @@ export class TrainingComponent implements OnInit {
   imageryComplete() {
     console.log('Imagery Prime complete, moving on...');
     this.imageryPrimeCompleted = true;
-    this.state = this.states.TRAINING;
+    this.state = this.states.INTRO;
     this.nextTraining();
   }
 

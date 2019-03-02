@@ -1,22 +1,36 @@
 <div id="question">
 
-  <div class="question" fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="10px">
+  <div class="question" fxLayout="row" fxLayoutAlign="auto center" fxLayoutWrap fxLayoutGap="30px" style="padding-bottom: 30px; padding-top:30px">
     <span class="material-icons">help_outline</span>
     <span>{{question.question}}</span>
   </div>
+
+
 
   <div
     class="options"
     *ngIf="state==='asking'"
     fxLayout="row"
-    fxLayout.sm="column"
+    fxFlexFill.xs
     fxLayout.xs="column"
-    fxLayoutWrap
-    fxLayoutAlign="center center"
+    fxlayoutwrap.xs="20"
     fxLayoutGap="20px"
-    fxLayoutGap.xs="20px"
-  >
+    fxLayoutAlign="center none">
     <button class="option" mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
+  </div>
+
+  <div dir="rtl"
+    *ngIf="question.preferNotToAnswer">
+    <br>
+    <button
+      class="preferNotToAnswer"
+      style="background-color:lightblue"
+      mat-raised-button
+      fxLayout="row"
+      fxLayoutGap="20"
+      fxLayoutAlign="center none">
+      Prefer not to answer
+    </button>
   </div>
 
   <div fxLayoutAlign="center">
