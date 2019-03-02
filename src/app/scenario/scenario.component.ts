@@ -163,9 +163,9 @@ export class ScenarioComponent implements OnInit, OnChanges {
       });
   }
 
-  progressState(correctAnswer = true) {
-   this.scenario.numAnswer ++;
-    if (correctAnswer) { this.scenario.numCorrect ++; }
+  progressState(correctAnswer = true, scored = true) {
+    if (scored) { this.scenario.numAnswer++; }
+    if (scored && correctAnswer) { this.scenario.numCorrect ++; }
     if (!this.firstReactionTime) { this.firstReactionTime = performance.now(); }
     this.pageData = [];
     this.pageIndex++;
@@ -194,6 +194,6 @@ export class ScenarioComponent implements OnInit, OnChanges {
       };
       this.recordStateData(data);
     }
-    this.progressState(true);
+    this.progressState(true, false);
   }
 }

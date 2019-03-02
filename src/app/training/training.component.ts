@@ -139,6 +139,9 @@ export class TrainingComponent implements OnInit {
         }
         this.scenariosToRounds(scenarios);
       }
+    }, error1 => {
+      console.log('Backend not responding, loading the scenarios without progress.');
+      this.scenariosToRounds(scenarios);
     });
   }
 

@@ -19,8 +19,10 @@ export class Round {
   }
 
   next(correct = true) {
-    if (this.getScenario() && this.getScenario().status !== 'error') {
-      this.getScenario().status = correct ? 'complete' : 'error';
+    if (this.getScenario()) {
+      const scenario = this.getScenario();
+      scenario.score = this.scenarioScore(scenario);
+      scenario.status = scenario.score >= 1 ? 'complete' : 'error';
     }
     this.index++;
     if (this.index < this.scenarios.length) {
@@ -51,7 +53,7 @@ export class Round {
   roundScore() {
     let score = 0;
     for (const s of this.scenarios) {
-      score += this.scenarioScore(s);
+      score += s.score;
     }
     return score;
   }
