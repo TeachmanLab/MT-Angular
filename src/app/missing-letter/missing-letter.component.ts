@@ -52,6 +52,7 @@ export class MissingLetterComponent implements OnInit {
   startTime: number;
   firstReactionTime: number;
   endTime: number;
+  correct = true;
 
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
@@ -101,12 +102,12 @@ export class MissingLetterComponent implements OnInit {
       stimulus: this.missingLetter.content.toString(),
       stimulusName: this.missingLetter.stimulusName,
       buttonPressed: this.choices.join(','),
-      correct: this.incorrectChoices.length === 0,
+      correct: this.correct,
       rtFirstReact: this.firstReactionTime - this.startTime,
       rt: this.endTime - this.startTime
     };
     this.event.emit(event);
-    this.done.emit(this.incorrectChoices.length === 0);
+    this.done.emit(this.correct);
   }
 
 
@@ -134,6 +135,8 @@ export class MissingLetterComponent implements OnInit {
 
 
   selectLetter(letter) {
+    const responseTime = performance.now();
+    if (!this.firstReactionTime) { this.firstReactionTime = responseTime; }
     this.responseTimes.push(performance.now());
     this.missingTiles[this.missingTileIndex].letterDisplayed = letter;
     this.choices.push(letter);
@@ -144,10 +147,12 @@ export class MissingLetterComponent implements OnInit {
       this.missingTileIndex++;
       // if there is another missing letter to complete, set that up.otherwise we are all done.
       if (this.missingTileIndex === this.missingLetter.numberMissing ) {
+        this.endTime = responseTime;
         const waitASectionTimer = interval(1500);
         this.state = MyState.Correct;
         const sub = waitASectionTimer.subscribe( n => {
           this.allDone();
+          sub.unsubscribe();
         });
       } else {
         this.incorrectChoices = []; // reset incorrect choices - Added by Anna
@@ -157,6 +162,7 @@ export class MissingLetterComponent implements OnInit {
       this.state = MyState.Incorrect;
       this.missingTiles[this.missingTileIndex].state = LetterTileState.Incorrect;
       this.incorrectChoices.push(letter);
+      this.correct = false;
     }
   }
 

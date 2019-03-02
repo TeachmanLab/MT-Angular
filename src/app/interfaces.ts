@@ -22,6 +22,8 @@ export interface Scenario extends Step {
   type: 'Scenario';
   image: string;
   numCorrect?: number; // Total number of correctly completed pages in this scenario.
+  score?: number;
+  numAnswer?: number;
 }
 
 export interface Page {

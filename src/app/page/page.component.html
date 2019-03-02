@@ -57,7 +57,7 @@
     <div *ngIf="el.type==='FillInBlank'"  class="letters" [@flyUpDown]="'in'">
       <app-fill-in-the-blank
         [fillInBlank]='el'
-        (updated)="elementUpdated($event)"
+        (event)="handleElementEvent($event)"
         (done)="divCompleted($event)"
       ></app-fill-in-the-blank>
     </div>

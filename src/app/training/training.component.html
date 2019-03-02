@@ -13,7 +13,7 @@
   <app-step
     [session]="currentSession"
     [step]="readinessRulers[0].steps[0]"
-    [stepIndex]="this.scenarioIndex"
+    [stepIndex]="this.stepIndex"
     [sessionIndex]="this.sessionIndex"
     [previousEnabled]="false"
     (done)="readinessComplete()"
@@ -25,7 +25,7 @@
       <app-step
         [session]="currentSession"
         [step]="imageryPrime[0].steps[0]"
-        [stepIndex]="this.scenarioIndex"
+        [stepIndex]="this.stepIndex"
         [sessionIndex]="this.sessionIndex"
         [previousEnabled]="false"
         (done)="imageryComplete()"
@@ -37,7 +37,7 @@
       <app-step
         [session]="currentSession"
         [step]="vividness[0].steps[0]"
-        [stepIndex]="this.scenarioIndex"
+        [stepIndex]="this.stepIndex"
         [sessionIndex]="this.sessionIndex"
         (done)="vividnessComplete()"
         [previousEnabled]="false"
@@ -53,11 +53,12 @@
           <app-progress-bar [items]="round.scenarios"></app-progress-bar>
         </div>
         <app-scenario
-          *ngIf="round.scenario"
-          [scenario]="round.scenario"
+          *ngIf="round.getScenario()"
+          [scenario]="round.getScenario()"
           [scenarioIndex]="scenarioIndex"
           [session]="currentSession"
           [sessionIndex]="sessionIndex"
+          [stepIndex]="stepIndex"
           [pageCount]="pageCount"
           (finalCount)="updatePageCount($event)"
           (done)="scenarioComplete($event)"

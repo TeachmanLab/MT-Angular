@@ -28,6 +28,7 @@ export class TrainingComponent implements OnInit {
   imageryPrimeCompleted = false;
   readinessScenarioIndex = 6; // Show the readiness rulers just prior to this session.
   sessionIndex = 0;
+  stepIndex = 0;
   currentSession: Session;
   indicatorSessions: Session[];
   totalRounds = 4;
@@ -59,20 +60,89 @@ export class TrainingComponent implements OnInit {
   }
 
   ready() {
-    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0 && this.vividness.length > 0 && this.imageryPrime.length > 0;
+    return this.sessions != null && this.readinessRulers != null && this.sessions.length > 0 && this.readinessRulers.length > 0 &&
+      this.vividness.length > 0 && this.imageryPrime.length > 0;
   }
 
-  getProgress() {
-    this.api.getProgress().subscribe(progress => {
-      if (progress['sessionIndex'] === this.sessionIndex) {
-        if (progress['stepIndex'] > this.currentSession.steps.length) {
-          this.roundIndex = Math.floor((progress['stepIndex'] - this.currentSession.steps.length) / this.increment );
-          // sets scenario back to the scenario that the user was last on
-          this.scenarioIndex = progress['stepIndex'];
-        } else {
-          this.done.emit();
+  scenariosToRounds(scenarios) {
+    let index = 0;
+    // for shortening stuff up. scenarios = scenarios.slice(0, 15);
+    this.increment = Math.floor(scenarios.length / this.totalRounds);
+    this.rounds = [];
+    let round = new Round();
+    for (const scenario of scenarios) {
+      if (index % this.increment === 0) {
+        round = new Round();
+        this.rounds.push(round);
+        if (scenario.status !== undefined && index > 0) {
+          this.roundIndex++;
         }
       }
+      round.add(scenario);
+      if (scenario.status !== undefined) {
+        round.index++;
+      }
+      index++;
+    }
+    this.totalRounds = this.rounds.length;
+    this.round = this.rounds[this.roundIndex];
+  }
+
+
+  loadTraining() {
+    // Pull the training from the api, split it into a series of rounds
+    this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
+      if (scenarios.length !== 40) {
+        throw Error('There must be 40 scenarios! There are only ' + scenarios.length);
+      }
+      this.loadProgress(scenarios);
+    });
+  }
+
+  findScenarioByName(scenarios: Scenario[], name: string): Scenario {
+    for (const s of scenarios) {
+      if (s.title === name) {
+        return s;
+      }
+    }
+  }
+
+  loadProgress(scenarios) {
+    this.api.getScenarios().subscribe(progress => {
+      if (progress.length === 0) {
+        this.scenariosToRounds(scenarios);
+        return;
+      } else {
+        const lastProgress = progress[progress.length - 1];
+        this.scenarioIndex = lastProgress.stepIndex;
+        this.state = TrainingState.TRAINING;
+        this.stepIndex = lastProgress.stepIndex;
+        let eventIndex = 0;
+        for (const eventRecord of progress) {
+          const scenario = this.findScenarioByName(scenarios, eventRecord.stimulusName);
+          if (scenario.numAnswer === undefined) {scenario.numAnswer = 0; }
+          if (scenario.numCorrect === undefined) {scenario.numCorrect = 0; }
+          scenario.numAnswer++;
+          if (eventRecord.correct) {
+            scenario.numCorrect++;
+          }
+          if (scenario.numAnswer === scenario.numCorrect) {
+            scenario.score = 1;
+            scenario.status = 'complete';
+          } else {
+            scenario.score = 0;
+            scenario.status = 'error';
+          }
+          if (eventIndex === progress.length - 1) {
+            scenario.status = 'active';
+          }
+          eventIndex++;
+        }
+        this.scenariosToRounds(scenarios);
+      }
+    }, error1 => {
+      console.log('Backend not responding, loading the scenarios without progress.');
+      this.scenariosToRounds(scenarios);
     });
   }
 
@@ -125,7 +195,8 @@ export class TrainingComponent implements OnInit {
 
   introComplete() {
 //    this.currentSession = null;
-    this.state = this.states.TRAINING;
+    this.state = this.states.IMAGERY;
+    this.stepIndex++;
   }
 
   readinessComplete() {
@@ -135,20 +206,17 @@ export class TrainingComponent implements OnInit {
   }
 
   vividnessComplete() {
-    console.log('Vividness complete, moving on...');
     this.state = this.states.TRAINING;
     this.nextTraining();
   }
 
   imageryComplete() {
-    console.log('Imagery Prime complete, moving on...');
     this.imageryPrimeCompleted = true;
     this.state = this.states.INTRO;
     this.nextTraining();
   }
 
   scenarioComplete($event) {
-    console.log('Scenario Completed');
     this.scenarioIndex++;
     this.state = this.states.TRAINING;
     this.nextTraining($event);
@@ -162,24 +230,6 @@ export class TrainingComponent implements OnInit {
     this.pageCount = event; // update the pageCount as the users work through the scenarios
   }
 
-  loadTraining() {
-    // Pull the training from the api, split it into a series of rounds
-    this.api.getTrainingCSV(this.currentSession.session).subscribe(scenarios => {
-      let index = 0;
-      // for shortening stuff up. scenarios = scenarios.slice(0, 15);
-      this.increment = Math.floor(scenarios.length / this.totalRounds);
-      this.rounds = [];
-      for (let i = 0; i < this.totalRounds - 1; i++) {
-        this.rounds.push(new Round(scenarios.slice(index, index + this.increment)));
-        index += this.increment;
-      }
-      if (index < scenarios.length) {
-        this.rounds.push(new Round(scenarios.slice(index)));
-      }
-      this.totalRounds = this.rounds.length;
-    });
-    this.getProgress();
-  }
 
   isComplete(): boolean {
     return (this.roundIndex >= this.totalRounds - 1);
@@ -190,10 +240,10 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
+    this.stepIndex++;
     if (this.currentSession.session === 'firstSession' && this.scenarioIndex === this.readinessScenarioIndex &&
         !this.readinessCompleted) {
       this.state = this.states.READINESS;
-      console.log('Showing Readiness');
       return;
     } else if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
       this.vividIndexes.splice( this.vividIndexes.indexOf(this.scenarioIndex - 1), 1 );
