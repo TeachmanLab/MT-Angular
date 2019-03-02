@@ -16,7 +16,7 @@ export class TrainingCSV {
       const result = [];
       let elements = [];
 
-      for (let i = 1; i < lines.length - 1; i++) {
+      for (let i = 1; i < lines.length; i++) {
         currentLine = TrainingCSV.csvLineToArray(lines[i]);
         if (!currentLine)  {
           console.log(`Skipping line #${i}:  ${lines[i]}`);
@@ -59,6 +59,7 @@ export class TrainingCSV {
           image = null;
         }
         scenario = { type: 'Scenario', title: currentLine[1], image: image, stepIndicator: image, pages: pages};
+        console.log(currentLine[1]);
         result.push(scenario);
       }
       return result;
