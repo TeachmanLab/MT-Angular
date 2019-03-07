@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import {Round} from '../round';
 
 enum TrainingState {
-  'IMAGERY', 'INTRO', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
+  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -17,13 +17,15 @@ enum TrainingState {
 export class TrainingComponent implements OnInit {
 
   states = TrainingState;
-  state = TrainingState.IMAGERY;
+  state = TrainingState.INTRO;
 
   sessions: Session[];
+  lemonExercise: Session[] = [];
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
   imageryPrime: Session[] = [];
+  lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   readinessScenarioIndex = 6; // Show the readiness rulers just prior to this session.
@@ -147,7 +149,7 @@ export class TrainingComponent implements OnInit {
   }
 
   loadIntro() {
-    this.api.getTrainingSessions().subscribe(sessions => {
+    this.api.getTrainingIntro().subscribe(sessions => {
       this.sessions = sessions;
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
@@ -162,10 +164,20 @@ export class TrainingComponent implements OnInit {
         }
       });
       this.currentSession.startTime = performance.now();
+      if (this.currentSession.session === 'firstSession' && !this.lemonExerciseCompleted) {
+        this.loadLemonExercise();
+        this.state = this.states.LEMON;
+      }
       this.loadReadinessRulers();
       this.loadVividness();
       this.loadTraining();
       this.loadImageryPrime();
+    });
+  }
+
+  loadLemonExercise() {
+    this.api.getLemonExercise().subscribe(sessions => {
+      this.lemonExercise = sessions;
     });
   }
 
@@ -193,10 +205,19 @@ export class TrainingComponent implements OnInit {
     });
   }
 
-  introComplete() {
-//    this.currentSession = null;
+  lemonComplete() {
+    this.lemonExerciseCompleted = true;
     this.state = this.states.IMAGERY;
-    this.stepIndex++;
+  }
+
+  imageryComplete() {
+    this.imageryPrimeCompleted = true;
+    this.state = this.states.INTRO;
+  }
+
+  introComplete() {
+    this.state = this.states.TRAINING;
+    this.nextTraining();
   }
 
   readinessComplete() {
@@ -210,11 +231,6 @@ export class TrainingComponent implements OnInit {
     this.nextTraining();
   }
 
-  imageryComplete() {
-    this.imageryPrimeCompleted = true;
-    this.state = this.states.INTRO;
-    this.nextTraining();
-  }
 
   scenarioComplete($event) {
     this.scenarioIndex++;
@@ -263,6 +279,7 @@ export class TrainingComponent implements OnInit {
       this.round.next(correct);
       this.state = this.states.SUMMARY;
     } else {
+      console.log("Next Training Called.  Current score is " + this.round.roundScore());
       this.round.next(correct);
     }
   }

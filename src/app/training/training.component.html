@@ -1,6 +1,6 @@
 <app-session-warning *ngIf="connectionError"></app-session-warning>
 <div *ngIf="ready()">
-<app-session *ngIf="state === states.INTRO"
+  <app-session *ngIf="state === states.INTRO"
   [session]="currentSession"
   [sessions]="indicatorSessions"
   [sessionIndex]="sessionIndex"
@@ -8,6 +8,18 @@
   (done)="introComplete()"
   (showIndicator)="true"
 ></app-session>
+  <mat-card class="readiness" *ngIf="state === states.LEMON">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="lemonExercise[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        [previousEnabled]="false"
+        (done)="lemonComplete()"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
   <mat-card class="readiness" *ngIf="state === states.READINESS">
     <mat-card-content>
   <app-step

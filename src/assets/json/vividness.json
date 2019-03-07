@@ -10,6 +10,7 @@
         "title": "vividness",
         "pages": [
           {
+            "auto_continue": true,
             "elements": [
               {
                 "type": "Question",

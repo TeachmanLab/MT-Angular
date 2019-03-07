@@ -31,7 +31,8 @@
               }
             ]
           },
-              {"elements": [
+          { "auto_continue": true,
+            "elements": [
                 {
                 "type": "Header",
                 "stimulusName": "readiness_heading",
@@ -87,7 +88,7 @@
               }
             ]
           },
-          {
+          { "auto_continue": true,
             "elements": [
               {
                 "type": "Question",
@@ -104,7 +105,7 @@
               }
               ]
               },
-              {
+              { "auto_continue": true,
                 "elements": [
               {
                 "type": "Question",
@@ -121,7 +122,8 @@
               }
                 ]
               },
-              {"elements": [
+              {"auto_continue": true,
+                "elements": [
                 {
                   "type": "Question",
                   "stimulusName": "readiness_manageable_question",

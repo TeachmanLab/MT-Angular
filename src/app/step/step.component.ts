@@ -111,7 +111,11 @@ export class StepComponent implements OnInit, OnChanges {
      this.elementCorrect = false;
     }
     if (this.pageIndex < this.step.pages.length) {
-      this.allowContinue = true;
+      if (this.currentPage.auto_continue) {
+        this.nextPage();
+      } else {
+        this.allowContinue = true;
+      }
     } else {
       this.allDone();
     }
