@@ -11,7 +11,6 @@
     class="options"
     *ngIf="state==='asking'"
     fxLayout="row"
-    fxFlexFill.xs
     fxLayout.xs="column"
     fxlayoutwrap.xs="20"
     fxLayoutGap="20px"
@@ -19,16 +18,9 @@
     <button class="option" mat-raised-button *ngFor="let option of question.options" (click)="selected(option)">{{option}}</button>
   </div>
 
-  <div dir="rtl"
-    *ngIf="question.preferNotToAnswer">
-    <br>
-    <button
-      class="preferNotToAnswer"
-      style="background-color:lightblue"
-      mat-raised-button
-      fxLayout="row"
-      fxLayoutGap="20"
-      fxLayoutAlign="center none">
+  <div  *ngIf="state==='asking' && question.preferNotToAnswer" class="preferNotToAnswer">
+    <button class="option preferNotToAnswer" mat-raised-button
+      (click)="selected('Prefer not to answer')">
       Prefer not to answer
     </button>
   </div>

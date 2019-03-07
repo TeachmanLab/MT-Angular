@@ -55,6 +55,10 @@
     margin-bottom:10px;
   }
 
+  .options {
+    margin: auto;
+  }
+
   .option {
     line-height: 2em;
     width: 280px;
@@ -62,11 +66,16 @@
     white-space: normal;
   }
 
-  .preferNotToAnswer {
-    line-height: 2em;
-    width: 160px;
-    padding: 10px;
-    white-space: normal;
+  div.preferNotToAnswer {
+    margin: 20px auto;
+    button.preferNotToAnswer {
+      line-height: 2em;
+      width: 160px;
+      padding: 10px;
+      margin: 20px 0 0 0;
+      white-space: normal;
+      background-color:lightblue;
+    }
   }
 
   .answer{
