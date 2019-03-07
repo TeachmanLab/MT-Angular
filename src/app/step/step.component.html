@@ -16,6 +16,7 @@
       *ngIf="(done)"
     >
       <button
+        *ngIf="allowPrevious()"
         class="continue"
         mat-raised-button
         color="primary"
@@ -24,6 +25,7 @@
       >
       Previous
       </button>
+      <span *ngIf="!allowPrevious()"></span>
       <button
         class="continue"
         mat-raised-button
