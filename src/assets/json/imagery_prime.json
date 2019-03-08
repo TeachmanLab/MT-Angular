@@ -67,7 +67,7 @@
               {
                 "type": "Countdown",
                 "stimulusName": "readiness_timer",
-                "delayInSeconds":1,
+                "delayInSeconds":20,
                 "content": "We will tell you when 20 seconds are up."
               }
             ]
