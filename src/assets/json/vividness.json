@@ -10,6 +10,7 @@
         "title": "vividness",
         "pages": [
           {
+            "auto_continue": true,
             "elements": [
               {
                 "type": "Question",
@@ -20,9 +21,9 @@
                   "Slightly",
                   "Somewhat",
                   "Mostly",
-                  "Very Much",
-                  "Prefer not to answer"
-                ]
+                  "Very Much"
+                ],
+                "preferNotToAnswer":true
               }
             ]
           }

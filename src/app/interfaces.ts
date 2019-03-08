@@ -29,6 +29,7 @@ export interface Scenario extends Step {
 export interface Page {
   name: string;
   elements: Element[];
+  auto_continue?: boolean;
 }
 
 export interface Element {
@@ -73,6 +74,7 @@ export interface Question extends Element {
   answer?: string;
   explanation?: string;
   completed?: boolean;
+  preferNotToAnswer?: boolean;
 }
 
 export interface ThoughtBubble extends Element {
