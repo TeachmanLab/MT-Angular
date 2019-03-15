@@ -13,6 +13,11 @@
             "auto_continue": true,
             "elements": [
               {
+                "type": "LargeHeader",
+                "stimulusName": "vividHeader",
+                "content": "Vividness Check"
+              },
+              {
                 "type": "Question",
                 "stimulusName": "vividness",
                 "question": "How vividly did you imagine the scenario (as if you were really there and experiencing it first hand)?",
