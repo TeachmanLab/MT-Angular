@@ -3,7 +3,7 @@
 @include mindtrails-theme($mindtrails-theme);
 
 div.page {
-  min-height: 400px;
+  min-height: 350px;
 }
 
 div {
@@ -30,7 +30,7 @@ div {
 
   .caption {
     text-align: center;
-    font-style: italic;
+    font-size: small;
     margin: 20px 0px;
   }
 }
@@ -56,7 +56,7 @@ div.scenario {
 
   mat-card.statement {
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 25px;
     max-width: 90%;
     padding-left: 10%;
     background: mat-color($mindtrails-primary, A700); /* Old browsers */

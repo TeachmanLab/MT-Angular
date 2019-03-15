@@ -11,16 +11,10 @@ mat-card {
 }
 
 mat-card {
-  margin: 20px auto;
-  min-height: 600px;
+  margin: 5px auto;
+  min-height: 400px;
   max-width: 900px;
   border-radius: 25px;
-}
-
-mat-card.readiness {
-  mat-card-content {
-    padding-top: 10%;
-  }
 }
 
 mat-card.training {
