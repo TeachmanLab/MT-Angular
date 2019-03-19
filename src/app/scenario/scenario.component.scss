@@ -4,6 +4,7 @@
 
   div.scenario {
     position: relative;
+    height: 600px;
 
     div.display-area {
       position: absolute;
@@ -23,10 +24,10 @@
 
     div.image {
       padding-top:20px;
-      min-height: 300px;
+      height: 100%;
       border-radius: 0 0 25px 25px;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100%;
     }
 
     mat-card.statement {
@@ -42,4 +43,10 @@
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#178dcd', endColorstr='#e5e7ee', GradientType=1); /* IE6-9 */
     }
 
+}
+
+@media only screen and (max-width: 768px) {
+  div.scenario {
+    height: 400px;
+  }
 }
