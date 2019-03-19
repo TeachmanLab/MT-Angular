@@ -73,7 +73,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "le1",
-                "content": "The purpose of this quick exercise is to demonstrate what imagination-based thinking is. You will imagine what  seeing, touching, and smelling a lemon is like. Please imagine this as if you are really experiencing it."
+                "content": "The purpose of this quick exercise is to demonstrate what imagination-based thinking is. You will imagine what seeing, touching, and smelling a lemon is like. Please imagine this as if you are really experiencing it."
               }
             ]
           },
@@ -106,7 +106,7 @@
               {
                 "type": "Image",
                 "stimulusName": "le3",
-                "content": "./assets/training_images/lemon/lemon_1.png",
+                "content": "./assets/training_images/lemon/lemon_1.JPG",
                 "caption": "Please take a few seconds to imagine this."
               },
               {
@@ -126,7 +126,7 @@
               {
                 "type": "Image",
                 "stimulusName": "le4",
-                "content": "./assets/training_images/lemon/lemon_5.png",
+                "content": "./assets/training_images/lemon/lemon_2.JPG",
                 "caption": "Please take a few seconds to imagine this."
               },
               {
@@ -146,7 +146,7 @@
               {
                 "type": "Image",
                 "stimulusName": "le5",
-                "content": "./assets/training_images/lemon/lemon_4.png",
+                "content": "./assets/training_images/lemon/lemon_3.JPG",
                 "caption": "Please take a few seconds to imagine this."
               },
               {
@@ -166,7 +166,7 @@
               {
                 "type": "Image",
                 "stimulusName": "le6",
-                "content": "./assets/training_images/lemon/lemon_2.png",
+                "content": "./assets/training_images/lemon/lemon_4.JPG",
                 "caption": "Please take a few seconds to imagine this."
               },
               {
@@ -186,7 +186,7 @@
               {
                 "type": "Image",
                 "stimulusName": "le7",
-                "content": "./assets/training_images/lemon/lemon_3.png",
+                "content": "./assets/training_images/lemon/lemon_5.JPG",
                 "caption": "Please take a few seconds to imagine this."
               },
               {
