@@ -165,7 +165,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
 
   progressState(correctAnswer = true, scored = true) {
     if (scored) { this.scenario.numAnswer++; }
-    if (scored && correctAnswer) { this.scenario.numCorrect ++; }
+    if (scored && correctAnswer) { this.scenario.numCorrect++; }
     if (!this.firstReactionTime) { this.firstReactionTime = performance.now(); }
     this.pageData = [];
     this.pageIndex++;

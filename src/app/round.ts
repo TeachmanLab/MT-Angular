@@ -36,7 +36,11 @@ export class Round {
    * @returns {number}
    */
   scenarioScore(scenario: Scenario) {
-    if (scenario.numAnswer >= 3) {
+    if (scenario.numAnswer === 1) {
+      scenario.score = scenario.numCorrect;
+    } else if (scenario.numAnswer === 2) {
+      scenario.score = (scenario.numCorrect) * 0.5;
+    } else if (scenario.numAnswer >= 3) {
       if (scenario.numCorrect === 1) {
         scenario.score = 0.25;
       } else if (scenario.numCorrect === 2) {
@@ -44,8 +48,6 @@ export class Round {
       } else if (scenario.numCorrect === 3) {
         scenario.score = 1;
       }
-    } else {
-      scenario.score = (scenario.numCorrect) * 0.5;
     }
     return  scenario.score;
   }
@@ -53,7 +55,7 @@ export class Round {
   roundScore() {
     let score = 0;
     for (const s of this.scenarios) {
-      score += s.score;
+      if (s.score) {score += s.score; }
     }
     return score;
   }
