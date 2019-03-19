@@ -4,7 +4,6 @@
 
   div.scenario {
     position: relative;
-    height: 600px;
 
     div.display-area {
       position: absolute;
@@ -24,9 +23,10 @@
 
     div.image {
       padding-top:20px;
-      height: 580px;
+      min-height: 300px;
       border-radius: 0 0 25px 25px;
       background-repeat: no-repeat;
+      background-size: cover;
     }
 
     mat-card.statement {
