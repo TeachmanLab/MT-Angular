@@ -6,7 +6,7 @@ import { FillInBlank, MissingLetter, Question, Scenario} from './interfaces';
 
 export class TrainingCSV {
 
-  static toJson(csv: string): Scenario[] {
+  static toJson(sessionName: String, csv: string): Scenario[] {
       const lines = csv.split('\n');
       let currentLine = [];
       let scenario: Scenario;
@@ -17,7 +17,7 @@ export class TrainingCSV {
       let elements = [];
 
       for (let i = 1; i < lines.length; i++) {
-        if (lines[i].trim().length === 0) continue;
+        if (lines[i].trim().length === 0) {continue; }
         currentLine = TrainingCSV.csvLineToArray(lines[i]);
         if (!currentLine)  {
           console.log(`Skipping line #${i}:  ${lines[i]}`);
@@ -55,7 +55,7 @@ export class TrainingCSV {
         }
         // Add a picture if one exists.
         if (currentLine[14] === 'picture') {
-          image = `assets/training_images/${currentLine[1]}.jpeg`;
+          image = `assets/training_images/${sessionName}/${currentLine[1]}.jpeg`;
         } else {
           image = null;
         }
