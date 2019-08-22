@@ -24,15 +24,16 @@
 
     div.image {
       padding-top:20px;
-      height: 580px;
+      height: 100%;
       border-radius: 0 0 25px 25px;
       background-repeat: no-repeat;
+      background-size: 100%;
     }
 
     mat-card.statement {
       font-size: 1.5rem;
       margin: 10px;
-      border-radius: 10px;
+      border-radius: 2px;
       max-width: 90%;
       padding-left: 10%;
       background: mat-color($mindtrails-primary, A700); /* Old browsers */
@@ -42,4 +43,10 @@
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#178dcd', endColorstr='#e5e7ee', GradientType=1); /* IE6-9 */
     }
 
+}
+
+@media only screen and (max-width: 768px) {
+  div.scenario {
+    height: 400px;
+  }
 }

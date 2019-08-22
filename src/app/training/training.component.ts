@@ -28,7 +28,6 @@ export class TrainingComponent implements OnInit {
   lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
-  readinessScenarioIndex = 6; // Show the readiness rulers just prior to this session.
   sessionIndex = 0;
   stepIndex = 0;
   currentSession: Session;
@@ -257,11 +256,7 @@ export class TrainingComponent implements OnInit {
 
   nextTraining(correct = true) {
     this.stepIndex++;
-    if (this.currentSession.session === 'firstSession' && this.scenarioIndex === this.readinessScenarioIndex &&
-        !this.readinessCompleted) {
-      this.state = this.states.READINESS;
-      return;
-    } else if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
+    if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
       this.vividIndexes.splice( this.vividIndexes.indexOf(this.scenarioIndex - 1), 1 );
       this.state = this.states.VIVIDNESS;
       return;

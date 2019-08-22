@@ -40,7 +40,7 @@ export class FillInTheBlankComponent implements OnInit {
 
   ngOnInit() {
     this.startTime = performance.now();
-    const maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax
+    const maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
     this.word = new FormControl('', [Validators.required, Validators.minLength(3), wordValidator, Validators.maxLength(maxLength)]);
   }
 

@@ -60,7 +60,7 @@ export class ApiService {
     const url = './assets/csv/<session>.csv'.replace('<session>', session);
     return this.httpClient.get(url, {responseType: 'text'})
       .pipe((catchError(this.handleError)))
-      .pipe(map(n => TrainingCSV.toJson(n)));
+      .pipe(map(csv => TrainingCSV.toJson(session, csv)));
   }
 
   saveProgress(pageData: EventRecord[]): Observable<EventRecord[]> {
