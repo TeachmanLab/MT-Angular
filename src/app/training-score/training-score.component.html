@@ -1,7 +1,7 @@
 <!-- formatting -->
 <div style="text-align:center">
   <div flex="" layout="row" layout-align="center center">
-<div class="summary" *ngIf="ready">
+<br class="summary" *ngIf="ready">
       <div class="text" layout-align="center">
         <!-- Here is how you could stuff values into sentence form -->
         <h2 class="mat-h2"> <i class="material-icons">
@@ -22,11 +22,15 @@
         </ngx-gauge>
 
         <!-- conditional sections, based on percentage correct -->
-        <h5 *ngIf='score > 0 && score <= 6.5'>Remember to pay really close attention to the whole story each time — including how it ends — and to use the information in the story to answer the question.</h5>
-        <h5 *ngIf='score > 6.5 && score <= 8'>Good work! We encourage you to pay really close attention to the stories.</h5>
-        <h5 *ngIf='score >= 9'>Excellent work, keep it up!</h5>
+        <h5 style="padding-left: 50px;padding-right: 50px;" *ngIf='score > 0 && score <= 6.5'>Remember to pay really close attention to the whole story each time — including how it ends — and to use the information in the story to answer the question.</h5>
+        <h5 style="padding-left: 50px;padding-right: 50px;" *ngIf='score > 6.5 && score <= 8'>Good work! We encourage you to pay really close attention to the stories.</h5>
+        <h5 style="padding-left: 50px;padding-right: 50px;" *ngIf='score >= 9'>Excellent work, keep it up!</h5>
       </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
       <div class="spacer"></div>
     </div>
-</div>
 </div>

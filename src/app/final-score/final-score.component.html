@@ -7,8 +7,8 @@
     -->
 
     <div class="header">
-      <h1>{{session.title}} Complete!</h1>
-      <p>You have completed all rounds in the session.  You recieved the following score in each round:</p>
+      <h1>{{session.title}}: Complete!</h1>
+      <p>You have completed all rounds in the session. You received the following score in each round:</p>
     </div>
     <div class="rounds"
          fxLayout="row wrap"
@@ -48,8 +48,11 @@
                [foregroundColor]="'rgba(0, 0, 136, 1)'"
                [append]="'/40'">
     </ngx-gauge>
+    <br/>
+    <br/>
     <div class="description">
       <div class="scoreHeader">Your total score for this session is {{totalScore}} out of 40.</div>
+    <br/>
     <p *ngIf="totalScore >= 36">
       This is terrific, and shows you’re paying careful attention to the stories! Keep it up, as
       this can help you to get the most out of the training.
@@ -68,5 +71,8 @@
     </p>
     </div>
   </div>
+  <br/>
+  <br/>
+  <br/>
   <div class="hack-spacer"></div>
 </div>
