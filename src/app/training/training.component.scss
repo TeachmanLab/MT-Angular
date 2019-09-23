@@ -17,6 +17,14 @@ mat-card {
   border-radius: 25px;
 }
 
+@media only screen and (max-width: 768px) {
+  mat-card {
+    margin: 0 auto;
+    border-radius: 0;
+    box-shadow: none !important;
+  }
+}
+
 mat-card.training {
   padding: 0px;
   @include mat-elevation(10);
@@ -41,11 +49,13 @@ mat-card.training {
   }
 
   div.summary {
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;
+    /* Safari */
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    -webkit-align-items: flex-end; /* Safari 7.0+ */
+    -webkit-align-items: flex-end;
+    /* Safari 7.0+ */
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -54,9 +64,10 @@ mat-card.training {
       margin-bottom: 20px;
 
       p {
-        margin:0px;
+        margin: 0px;
         padding: 0px;
       }
+
       p.em {
         font-weight: bold;
       }
@@ -72,7 +83,7 @@ mat-card.training {
     position: absolute;
     bottom: 30px;
     right: 10%;
-    margin:auto;
+    margin: auto;
     font-size: 1.2rem;
   }
 

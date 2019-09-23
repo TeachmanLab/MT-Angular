@@ -28,7 +28,7 @@ mat-card {
       position: absolute;
       top: 10%;
       left: 10%;
-      margin:auto;
+      margin: auto;
       width: 80%;
       height: 50%;
       font-size: 1.2em;
@@ -38,12 +38,21 @@ mat-card {
       position: absolute;
       bottom: 30px;
       right: 10%;
-      margin:auto;
+      margin: auto;
       font-size: 1.2rem;
     }
+
     app-session-indicator-bar {
       width: 100%;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  mat-card {
+    margin: 0 auto;
+    border-radius: 0;
+    box-shadow: none !important;
   }
 }
 
