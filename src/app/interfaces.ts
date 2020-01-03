@@ -54,6 +54,8 @@ export interface MissingLetter extends Element {
 export interface FillInBlank extends Element {
   type: 'FillInBlank';
   maxCharacters: number;
+  minCharacters: number;
+  placeholder?: String;
 }
 
 export interface Countdown extends Element {

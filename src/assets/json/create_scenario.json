@@ -1,0 +1,69 @@
+[
+  {
+    "session": "create_scenario",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "Write your own Scenario",
+        "pages": [
+          {
+            "auto_continue": true,
+            "elements": [
+              { "type": "Paragraph",
+                "stimulusName": "readiness_p1",
+                "content": "Think of a situation that you worry might go badly, or that you expect will evoke symptoms related to anxiety (e.g., racing heart, sweating). Any situation that will make you feel quite anxious or scared will work, as long as it is a situation that you’re likely to actually encounter."
+              },
+              { "type": "Paragraph",
+                "stimulusName": "readiness_p1",
+                "content": "Write a new scenario based on this situation, but allow the final few words to dictate the outcome.  Then provide a positive outcome, and a negative outcome."
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "new_scenario",
+                "placeholder": "Please describe the situation in a few words.",
+                "maxCharacters": 1000,
+                "minCharacters": 50
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "positive_outcome",
+                "placeholder": "Finish the statement in a positive way.",
+                "maxCharacters": 100
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "negative_outcome",
+                "placeholder": "Finish the statement in a negative way.",
+                "maxCharacters": 100
+              }]
+          },
+          {
+            "title": "A positive resolution",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "use2",
+                "content": "A Positive Resolution"
+              },
+              {
+                "type": "Header",
+                "stimulusName": "positive_outcome_statement",
+                "content": "Explain why the positive resolution could occur for you. (e.g., why would you be able to handle it, or what evidence exists to make a positive outcome more likely) "
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "why_positive",
+                "placeholder": "Explain why a positive outcome is likely.",
+                "maxCharacters": 1000
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

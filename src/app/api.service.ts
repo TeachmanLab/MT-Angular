@@ -31,6 +31,11 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
+  public getCreateScenario(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/create_scenario.json')
+      .pipe((catchError(this.handleError)));
+  }
+
   public getLemonExercise(): Observable<Session[]> {
     return this.httpClient.get<Session[]>('./assets/json/lemon.json')
       .pipe((catchError(this.handleError)));

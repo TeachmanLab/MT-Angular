@@ -13,6 +13,7 @@ export class SessionComponent implements OnInit, OnChanges {
   @Input() sessions: Session[];
   @Input() sessionIndex: number;
   @Input() showIndicator ? = true;
+  @Input() checkProgress ? = true;
   stepIndex: number;
   currentStep: Step;
 
@@ -32,7 +33,11 @@ export class SessionComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    // console.log('The Session was changed!');
+    if (!this.checkProgress) {
+      this.stepIndex = 0;
+      this.initStep();
+      return;
+    }
     this.api.getProgress().subscribe(progress => {
         if (progress['sessionIndex'] === this.sessionIndex) {
           if (progress['stepIndex'] < this.session.steps.length) {
