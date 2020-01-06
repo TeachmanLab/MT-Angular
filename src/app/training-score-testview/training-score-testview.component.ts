@@ -12,6 +12,7 @@ export class TrainingScoreTestviewComponent implements OnInit {
 
   numScenarios = 10;
   numCorrect = 5;
+  numRounds = 4;
   round: Round;
   ready = false;
 
@@ -32,6 +33,11 @@ export class TrainingScoreTestviewComponent implements OnInit {
     this.createTestRound();
   }
 
+  setNumRounds(event: any) { // without type info
+    this.numRounds = Number(event.target.value);
+    this.createTestRound();
+  }
+
 
   createTestRound() {
     // Pull the training from the api, split it into a series of rounds
@@ -41,23 +47,13 @@ export class TrainingScoreTestviewComponent implements OnInit {
 
       // mark the rounds as complete with the given number of correct answers.
       let count = 0;
-      let correct = true;
       while (count <= this.numScenarios) {
-        correct = false;
-        if (count <= this.numCorrect) {
-          this.round.scenarios[count].numCorrect = this.round.scenarios[count].pages.length;
-          correct = true;
-        } else if (count <= this.numCorrect + 2) {
-          this.round.scenarios[count].numCorrect = 1;
-        } else {
-          this.round.scenarios[count].numCorrect = 0;
+        if (count < this.numCorrect) {
+          this.round.scenarios[count].score = 1;
         }
-
-        this.round.next(correct);
         count++;
       }
     });
     this.ready = true;
-
   }
 }

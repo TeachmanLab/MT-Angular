@@ -114,7 +114,6 @@ export class TrainingComponent implements OnInit {
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
     }
-    this.state = this.states.PSYCHOED_FOLLOWUP;
   }
 
   ready() {

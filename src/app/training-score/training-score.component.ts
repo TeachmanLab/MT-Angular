@@ -10,6 +10,7 @@ export class TrainingScoreComponent implements OnInit {
 
   @Input() round: Round;
   @Input() roundNumber: number;
+  @Input() totalRounds: number;
   ready = false;
   score: number;
 

@@ -4,12 +4,13 @@
   be working with the training-score component.
 </p>
 <p>The current parameters are Correct: {{numCorrect}} out of {{numScenarios}} scenarios</p>
+  <label>Total Rounds</label><input type="text" [value]="numRounds" (blur)="setNumRounds($event)">
   <label>Number of Scenarios</label><input type="text" [value]="numScenarios" (blur)="setScenarioCount($event)">
   <label>Number Correct</label><input type="text" [value]="numCorrect" (blur)="setCorrectCount($event)">
 
 <mat-card class="training"  *ngIf="ready">
   <mat-card-content *ngIf="round">
-    <app-training-score [round]="round" [roundNumber]="4"></app-training-score>
+    <app-training-score [round]="round" [roundNumber]="4" [totalRounds]="numRounds"></app-training-score>
     <div class="spacer"></div>
     <button class="continue"  mat-raised-button>Start Round 2</button>
   </mat-card-content>

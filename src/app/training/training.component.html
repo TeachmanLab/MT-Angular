@@ -107,7 +107,7 @@
 <div *ngIf="state === states.SUMMARY">
   <mat-card class="training">
     <mat-card-content>
-    <app-training-score [round]="round" [roundNumber]="roundIndex + 1"></app-training-score>
+    <app-training-score [round]="round" [roundNumber]="roundIndex + 1" [totalRounds]=rounds.length></app-training-score>
         <div class="spacer"></div>
         <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
         <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Continue</button>
