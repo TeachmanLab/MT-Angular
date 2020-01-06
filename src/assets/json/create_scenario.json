@@ -40,9 +40,9 @@
                 "type": "ThoughtBubble",
                 "stimulusName": "create_scenario_p5",
                 "title": "Example Scenario:",
-                "thought": "I send an email message to a friend asking them to grab coffee, but they never respond. I wonder if they are mad at me. Thinking back on the last time I got together with this friend, I remember they don’t check email often and I feel ... ",
+                "thought": "I send an email message to a friend asking them to grab coffee, but they never respond. I wonder if they are mad at me. Thinking back on the last time I got together with this friend, I remember they don’t check email often and I feel ... relieved.",
                 "followup": [
-                  "RELIEVED.   Notice that the statement 'I wonder if they are mad at me' creates ambiguity.  And that the final word 'relieved' resolves this is a non-threatening way."
+                  "Notice that the statement 'I wonder if they are mad at me' creates ambiguity.  And that the final word 'relieved' resolves this is a non-threatening way."
                 ]
               },
               {
@@ -51,12 +51,6 @@
                 "placeholder": "Please write your scenario",
                 "maxCharacters": 1000,
                 "minCharacters": 50
-              },
-              {
-                "type": "FillInBlank",
-                "stimulusName": "positive_outcome",
-                "placeholder": "Now provide a final term or short phrase that resolves the scenario.",
-                "maxCharacters": 100
               }
             ]
           },
