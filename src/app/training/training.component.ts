@@ -8,7 +8,7 @@ import {catchError, map, withLatestFrom} from 'rxjs/operators';
 import {combineLatest, observable, Observable} from 'rxjs';
 
 enum TrainingState {
-  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY', 'CREATE'
+  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY', 'CREATE'
 }
 
 @Component({
@@ -27,6 +27,7 @@ export class TrainingComponent implements OnInit {
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
   psychoed: Session[] = [];
+  psychoedFollowup: Session[] = [];
   psychoedSession: Session;
   psychoedRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   createScenario: Session[] = [];
@@ -86,6 +87,7 @@ export class TrainingComponent implements OnInit {
         this.loadImageryPrime();
         this.loadTraining(study);
         this.loadIndicatorSessions();
+        this.loadPsychoEdFollowup();
         this.loadLemonExercise();
         this.loadPsyched(study);
         this.loadCreateScenario();
@@ -109,6 +111,10 @@ export class TrainingComponent implements OnInit {
     if (testing) {
       this.scenariosPerRound = 3;
     }
+    if (testing && condition === 'TRAINING_CREATE') {
+      this.state = this.states.CREATE;
+    }
+    this.state = this.states.PSYCHOED_FOLLOWUP;
   }
 
   ready() {
@@ -258,6 +264,12 @@ export class TrainingComponent implements OnInit {
     });
   }
 
+  loadPsychoEdFollowup() {
+    this.api.getEdFollowup().subscribe(sessions => {
+      this.psychoedFollowup = sessions;
+    });
+  }
+
   lemonComplete() {
     this.lemonExerciseCompleted = true;
     this.state = this.states.IMAGERY;
@@ -285,8 +297,12 @@ export class TrainingComponent implements OnInit {
   }
 
   psychoedComplete() {
-    this.state = this.states.TRAINING;
-    this.nextRound();
+    if (this.state === this.states.PSYCHOED)
+      this.state = this.states.PSYCHOED_FOLLOWUP;
+    else {
+      this.state = this.states.TRAINING;
+      this.nextRound();
+    }
   }
 
   createComplete() {

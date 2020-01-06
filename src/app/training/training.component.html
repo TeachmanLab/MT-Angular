@@ -70,6 +70,19 @@
   <mat-card *ngIf="state === states.PSYCHOED" class="readiness" >
     <app-session [session]="psychoedSession" [sessions]="psychoed" [sessionIndex]="sessionIndex" (done)="psychoedComplete()" checkProgress="false"></app-session>
   </mat-card>
+  <mat-card class="psychoedFollowup" *ngIf="state === states.PSYCHOED_FOLLOWUP">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="psychoedFollowup[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="psychoedComplete()"
+        [previousEnabled]="false"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
+
  <div *ngIf="state === states.TRAINING">
   <mat-card class="training">
     <mat-card-content *ngIf="round">
