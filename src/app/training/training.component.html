@@ -68,7 +68,7 @@
     </mat-card-content>
   </mat-card>
   <mat-card *ngIf="state === states.PSYCHOED" class="readiness" >
-    <app-session [session]="psychoedSession" [sessions]="psychoed" [sessionIndex]="sessionIndex" (done)="psychoedComplete()" checkProgress="false"></app-session>
+    <app-session [session]="psychoedSession" [sessions]="psychoed" [sessionIndex]="sessionIndex" (done)="psychoedComplete()" [checkProgress]="false"></app-session>
   </mat-card>
   <mat-card class="psychoedFollowup" *ngIf="state === states.PSYCHOED_FOLLOWUP">
     <mat-card-content>

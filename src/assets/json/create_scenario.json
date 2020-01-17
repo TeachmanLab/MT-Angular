@@ -77,7 +77,7 @@
               {
                 "type": "FillInBlank",
                 "stimulusName": "why_positive",
-                "placeholder": "Explain why a positive outcome is likely.",
+                "placeholder": "Note some reasons why a positive outcome would be likely for your scenario",
                 "maxCharacters": 1000
               }
             ]

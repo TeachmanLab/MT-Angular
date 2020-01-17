@@ -104,10 +104,16 @@ export interface BulletList extends Element {
 export interface Study {
   name: string;
   conditioning: string;
-  currentSession: string; // the name used on the back end, such as firstSession, etc.
-  currentSessionIndex: number;
+  currentSession: ServerSessionInfo; // the name used on the back end, such as firstSession, etc.
 }
 
+export interface ServerSessionInfo {
+  index: number;
+  name: string;
+  displayName?: string;
+  complete?: boolean;
+  current?: boolean;
+}
 
 // A way to provide details about a particular component, this
 // is a subset of the full EventRecord

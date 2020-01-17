@@ -16,8 +16,7 @@ export class HomeComponent implements OnInit {
     private api: ApiService,
   ) {
     this.api.getStudy().subscribe(study => {
-      this.study = {name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
-        conditioning: study.conditioning};
+      this.study = study;
     },
         error1 => {
       console.log('Failed to get study, sending user to the error page.');

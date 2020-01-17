@@ -33,11 +33,14 @@ export class SessionComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    console.log('Check progress is set to ', this.checkProgress);
     if (!this.checkProgress) {
+      console.log("So not checking progress.")
       this.stepIndex = 0;
       this.initStep();
       return;
     }
+    console.log("we never get here.")
     this.api.getProgress().subscribe(progress => {
         if (progress['sessionIndex'] === this.sessionIndex) {
           if (progress['stepIndex'] < this.session.steps.length) {
@@ -63,7 +66,7 @@ export class SessionComponent implements OnInit, OnChanges {
   }
 
   nextStep(correct= true) {
-    // console.log('Next Step called, loading the next step!');
+    console.log('Next Step called, loading the next step!', this.stepIndex);
     if (this.currentStep && correct) {
       this.currentStep.status = 'complete';
     } else if (this.currentStep) {

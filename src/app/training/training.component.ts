@@ -91,7 +91,7 @@ export class TrainingComponent implements OnInit {
         this.loadLemonExercise();
         this.loadPsyched(study);
         this.loadCreateScenario();
-        if (study.currentSession === 'firstSession' && !this.lemonExerciseCompleted) {
+        if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
           console.log('Setting state to lemon.');
           this.state = this.states.LEMON;
         }
@@ -156,7 +156,7 @@ export class TrainingComponent implements OnInit {
 
   loadTraining(study: Study) {
     // Pull the training from the api, split it into a series of rounds
-    this.api.getTrainingCSV(study.currentSession).subscribe(scenarios => {
+    this.api.getTrainingCSV(study.currentSession.name).subscribe(scenarios => {
       if (scenarios.length !== 40) {
         throw Error('There must be 40 scenarios! There are only ' + scenarios.length);
       }
@@ -223,7 +223,7 @@ export class TrainingComponent implements OnInit {
   loadPsyched(study: Study) {
     this.api.getControlSessions().subscribe(sessions => {
       this.psychoed = sessions;
-      this.psychoedSession = sessions[study.currentSessionIndex];
+      this.psychoedSession = sessions[study.currentSession.index];
     });
   }
 
@@ -296,9 +296,9 @@ export class TrainingComponent implements OnInit {
   }
 
   psychoedComplete() {
-    if (this.state === this.states.PSYCHOED)
+    if (this.state === this.states.PSYCHOED) {
       this.state = this.states.PSYCHOED_FOLLOWUP;
-    else {
+    } else {
       this.state = this.states.TRAINING;
       this.nextRound();
     }
@@ -388,22 +388,22 @@ export class TrainingComponent implements OnInit {
         const study = {
           name: 'default',
           conditioning: 'TRAINING',
-          currentSession: 'firstSession',
+          currentSession: {index: 0, name: 'firstSession'},
           currentSessionIndex: 0
         };
         study.currentSessionIndex = +paramMap.get('session') - 1;
         switch (paramMap.get('session')) {
           case('1'):
-            study.currentSession = 'firstSession';
+            study.currentSession.name = 'firstSession';
             break;
           case('2'):
-            study.currentSession = 'secondSession';
+            study.currentSession.name = 'secondSession';
             break;
           case('3'):
-            study.currentSession = 'thirdSession';
+            study.currentSession.name = 'thirdSession';
             break;
           case('4'):
-            study.currentSession = 'fourthSession';
+            study.currentSession.name = 'fourthSession';
             break;
         }
         if (queryParamMap.has('condition')) {
@@ -424,7 +424,7 @@ export class TrainingComponent implements OnInit {
       if (study.conditioning === 'CONTROL') {
         return true;
       } else {
-        return !(study.currentSessionIndex - 1 === this.sessionIndex);
+        return !(study.currentSession.index - 1 === this.sessionIndex);
       }
     }));
   }
