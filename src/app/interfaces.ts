@@ -55,12 +55,14 @@ export interface FillInBlank extends Element {
   type: 'FillInBlank';
   maxCharacters: number;
   minCharacters: number;
+  compact?: boolean;
   placeholder?: String;
 }
 
 export interface Countdown extends Element {
   type: 'Countdown';
-  delayInSeconds: 20;
+  delayInSeconds: number;
+  autoStart: boolean;
 }
 
 export interface Slider extends Element {
@@ -99,6 +101,17 @@ export interface BulletList extends Element {
   type: 'BulletList';
   title: string;
   bullets: string[];
+}
+
+export interface RandomNonPreviousStatement extends Element {
+  type: 'RandomNonPreviousStatement';
+  options: string[];
+}
+
+export interface MultiEntry extends Element {
+  type: 'MultiEntry';
+  title: string;
+  fillInBlank: FillInBlank;
 }
 
 export interface Study {

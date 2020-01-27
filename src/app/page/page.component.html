@@ -33,6 +33,18 @@
     (event)="handleElementEvent($event)"
     (done)="divCompleted()">
   </app-thoughtbubble>
+  <app-random-non-previous-statement
+    *ngIf="el.type === 'RandomNonPreviousStatement'"
+    [randomStatement]="el"
+    (done)="divCompleted($event)"
+    (updated)="elementUpdated($event)">
+  </app-random-non-previous-statement>
+  <app-multi-entry
+    *ngIf="el.type === 'MultiEntry'"
+    [multiEntry]="el"
+    (done)="divCompleted($event)"
+    (updated)="elementUpdated($event)">
+  </app-multi-entry>
   <div *ngIf="el.type==='Countdown'" class="letters" [@flyUpDown]="'in'">
     <app-countdown
       [countdown]="el"

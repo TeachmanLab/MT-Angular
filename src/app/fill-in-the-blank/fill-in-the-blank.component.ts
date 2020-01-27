@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChildren} from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {ElementEvent, FillInBlank} from '../interfaces';
@@ -16,7 +16,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './fill-in-the-blank.component.html',
   styleUrls: ['./fill-in-the-blank.component.scss']
 })
-export class FillInTheBlankComponent implements OnInit {
+export class FillInTheBlankComponent implements OnInit, AfterViewInit {
 
   defaultMax = 25;
   defaultMin = 3;
@@ -26,6 +26,7 @@ export class FillInTheBlankComponent implements OnInit {
   startTime: number;
   endTime: number;
   completed = false;
+  force_focus = false;
 
   @Input()
   fillInBlank: FillInBlank;
@@ -39,6 +40,17 @@ export class FillInTheBlankComponent implements OnInit {
   error: string;
 
   constructor() { }
+
+  @ViewChildren('input') vc;
+
+  ngAfterViewInit() {
+    /**
+     * Focus the input element when this is loaded.
+     */
+    if (this.force_focus) {
+      this.vc.first.nativeElement.focus();
+    }
+  }
 
   ngOnInit() {
     this.startTime = performance.now();
@@ -54,6 +66,7 @@ export class FillInTheBlankComponent implements OnInit {
   }
 
   submitWord(word: string) {
+      if (!this.word.valid || this.completed) { return; }
       this.endTime = performance.now();
       const event: ElementEvent = {
         trialType: this.fillInBlank.type,

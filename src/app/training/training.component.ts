@@ -8,7 +8,7 @@ import {catchError, map, withLatestFrom} from 'rxjs/operators';
 import {combineLatest, observable, Observable} from 'rxjs';
 
 enum TrainingState {
-  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'SUMMARY', 'FINAL_SUMMARY', 'CREATE'
+  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -23,6 +23,7 @@ export class TrainingComponent implements OnInit {
 
   sessions: Session[];
   lemonExercise: Session[] = [];
+  lemonExerciseCompleted = false;
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
@@ -33,7 +34,8 @@ export class TrainingComponent implements OnInit {
   createScenario: Session[] = [];
   createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   imageryPrime: Session[] = [];
-  lemonExerciseCompleted = false;
+  flexible_thinking: Session[] = [];
+  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   sessionIndex = 0;
@@ -84,6 +86,7 @@ export class TrainingComponent implements OnInit {
         this.loadIntro(this.sessionIndex);
         this.loadReadinessRulers();
         this.loadVividness();
+        this.loadFlexibleThinking();
         this.loadImageryPrime();
         this.loadTraining(study);
         this.loadIndicatorSessions();
@@ -102,6 +105,7 @@ export class TrainingComponent implements OnInit {
   setupCondition(condition: String, testing: boolean) {
     if (condition === 'TRAINING_30') {
       this.totalRounds = 3;
+      this.flexibleThinkingRoundIndex = 3;
       this.vividIndexes = [1, 2, 20, 30];
     } else if (condition === 'TRAINING_ED') {
       this.psychoedRoundIndex = 1; // Show training after completing the second round.
@@ -110,6 +114,8 @@ export class TrainingComponent implements OnInit {
     }
     if (testing) {
       this.scenariosPerRound = 3;
+      this.totalRounds = 2;
+      this.state = this.states.FLEXIBLE_THINKING;
     }
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
@@ -175,6 +181,7 @@ export class TrainingComponent implements OnInit {
   loadProgress(scenarios, study: Study) {
     console.log('Loading Progress');
     this.api.getScenarios().subscribe(progress => {
+      console.log("Progress:", progress);
       if (progress.length === 0) {
         this.scenariosToRounds(scenarios, study);
         return;
@@ -251,6 +258,12 @@ export class TrainingComponent implements OnInit {
     });
   }
 
+  loadFlexibleThinking() {
+    this.api.getFlexibleThinking().subscribe(sessions => {
+      this.flexible_thinking = sessions;
+    });
+  }
+
   loadImageryPrime() {
     this.api.getImageryPrime().subscribe(sessions => {
       this.imageryPrime = sessions;
@@ -291,6 +304,11 @@ export class TrainingComponent implements OnInit {
   }
 
   vividnessComplete() {
+    this.state = this.states.TRAINING;
+    this.nextTraining();
+  }
+
+  flexibleComplete() {
     this.state = this.states.TRAINING;
     this.nextTraining();
   }
@@ -367,6 +385,9 @@ export class TrainingComponent implements OnInit {
     } else if (this.roundIndex === this.createScenarioRoundIndex) {
         this.state = this.states.CREATE;
         this.createScenarioRoundIndex = -1;
+    } else if (this.roundIndex === this.flexibleThinkingRoundIndex) {
+      this.state = this.states.FLEXIBLE_THINKING;
+      this.flexibleThinkingRoundIndex = -1;
     } else if (this.isComplete()) {
         for (const r of this.rounds) {
           this.totalScore += r.roundScore();

@@ -44,6 +44,8 @@ import { FinalScoreComponent } from './final-score/final-score.component';
 import { FinalScoreTestviewComponent } from './final-score-testview/final-score-testview.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { SliderComponent } from './slider/slider.component';
+import { RandomNonPreviousStatementComponent } from './random-non-previous-statement/random-non-previous-statement.component';
+import { MultiEntryComponent } from './multi-entry/multi-entry.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -82,7 +84,9 @@ const routes: Routes = [
     FinalScoreComponent,
     FinalScoreTestviewComponent,
     CountdownComponent,
-    SliderComponent
+    SliderComponent,
+    RandomNonPreviousStatementComponent,
+    MultiEntryComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -107,6 +111,7 @@ const routes: Routes = [
     ApiService,
     SessionComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [FillInTheBlankComponent]
 })
 export class AppModule { }

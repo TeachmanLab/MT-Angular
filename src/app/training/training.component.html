@@ -67,6 +67,18 @@
       ></app-step>
     </mat-card-content>
   </mat-card>
+  <mat-card class="readiness" *ngIf="state === states.FLEXIBLE_THINKING">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="flexible_thinking[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="flexibleComplete()"
+        [previousEnabled]="false"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
   <mat-card *ngIf="state === states.PSYCHOED" class="readiness" >
     <app-session [session]="psychoedSession" [sessions]="psychoed" [sessionIndex]="sessionIndex" (done)="psychoedComplete()" [checkProgress]="false"></app-session>
   </mat-card>
@@ -75,7 +87,7 @@
       <app-step
         [session]="currentSession"
         [step]="psychoedFollowup[0].steps[0]"
-        [stepIndex]="this.stepIndex"
+        [stepIndex]="0"
         [sessionIndex]="this.sessionIndex"
         (done)="psychoedComplete()"
         [previousEnabled]="false"

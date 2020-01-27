@@ -1,0 +1,62 @@
+[
+  {
+    "session": "flexible_thinking",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "Flexible Thinking",
+        "pages": [
+          {
+            "auto_continue": false,
+            "elements": [
+              { "type": "Paragraph",
+                "stimulusName": "flex_thinking_p1",
+                "content": "Please take one minute to list as many different explanations as possible for why the following, event (described on the next page) might have occurred. You can just write a few words for each explanation – you don't need to write full sentences."
+              }
+            ]
+          },
+          {
+            "auto_continue": true,
+            "elements": [
+              {
+                "type": "RandomNonPreviousStatement",
+                "stimulusName": "flex_random_scenario",
+                "options": [
+                  "Event: Immediately after you do a presentation, the audience is quiet.",
+                  "Event: You notice your heart beating more rapidly than usual.",
+                  "Event: You hear a noise in your kitchen but didn’t think anyone else was home.",
+                  "Event: You haven’t heard from a friend for 2 weeks and you usually talk weekly.",
+                  "Event: You applied for a job 1 month ago and haven’t yet been contacted for an interview."
+                ]
+              },
+              {
+                "type": "MultiEntry",
+                "title": "Why might this have occurred?",
+                "stimulusName": "flex_thinking_explanations",
+                "fillInBlank":
+                  {
+                    "type": "FillInBlank",
+                    "stimulusName": "flex_thinking_explanation",
+                    "placeholder": "Add an explanation.",
+                    "maxCharacters": 100,
+                    "compact": true
+                  }
+              },
+              {
+                "type": "Countdown",
+                "stimulusName": "readiness_timer",
+                "delayInSeconds": 60,
+                "autoStart": true,
+                "content": "You have 60 seconds to complete as many explanations as possible."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+
