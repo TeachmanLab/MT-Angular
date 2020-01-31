@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Countdown, ElementEvent, MissingLetter} from '../interfaces';
 import {interval} from 'rxjs';
 
@@ -11,7 +11,7 @@ enum CountDownState {
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.css']
 })
-export class CountdownComponent implements OnInit {
+export class CountdownComponent implements OnInit, AfterViewInit {
 
   @Input()
   countdown: Countdown;
@@ -32,7 +32,13 @@ export class CountdownComponent implements OnInit {
 
   ngOnInit() {
     this.startTime = performance.now();
+  }
+
+  ngAfterViewInit(): void {
+    if (this.countdown.autoStart) {
+      this.startCountdown();
     }
+  }
 
   startCountdown() {
     this.state = CountDownState.WAIT;

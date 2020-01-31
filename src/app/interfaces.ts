@@ -54,11 +54,15 @@ export interface MissingLetter extends Element {
 export interface FillInBlank extends Element {
   type: 'FillInBlank';
   maxCharacters: number;
+  minCharacters: number;
+  compact?: boolean;
+  placeholder?: String;
 }
 
 export interface Countdown extends Element {
   type: 'Countdown';
-  delayInSeconds: 20;
+  delayInSeconds: number;
+  autoStart: boolean;
 }
 
 export interface Slider extends Element {
@@ -99,13 +103,30 @@ export interface BulletList extends Element {
   bullets: string[];
 }
 
+export interface RandomNonPreviousStatement extends Element {
+  type: 'RandomNonPreviousStatement';
+  options: string[];
+}
+
+export interface MultiEntry extends Element {
+  type: 'MultiEntry';
+  title: string;
+  fillInBlank: FillInBlank;
+}
+
 export interface Study {
   name: string;
   conditioning: string;
-  currentSession: string; // the name used on the back end, such as firstSession, etc.
-  currentSessionIndex: number;
+  currentSession: ServerSessionInfo; // the name used on the back end, such as firstSession, etc.
 }
 
+export interface ServerSessionInfo {
+  index: number;
+  name: string;
+  displayName?: string;
+  complete?: boolean;
+  current?: boolean;
+}
 
 // A way to provide details about a particular component, this
 // is a subset of the full EventRecord

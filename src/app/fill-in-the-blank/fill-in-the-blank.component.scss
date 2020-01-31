@@ -9,5 +9,14 @@ div.fill-in-the-blank {
     font-size: x-large;
     width: 100%;
   }
+}
+
+div.complact {
+  margin: 5px 0px;
+  padding: 5px 0px;
+
+  mat-form-field {
+    width: 50%;
+  }
 
 }

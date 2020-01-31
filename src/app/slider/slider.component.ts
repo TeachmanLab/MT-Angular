@@ -30,6 +30,10 @@ export class SliderComponent implements OnInit {
     this.startTime = performance.now();
   }
 
+  enableSlider() {
+   this.clicked = true;
+  }
+
   updateValue($event) {
     this.endTime = performance.now();
     this.clicked = true;
