@@ -15,7 +15,8 @@ export class ApiService {
   endpoints = {
     progress: environment.progress_endpoint,
     study: environment.progress_endpoint + 'study',
-    scenarios: environment.progress_endpoint + 'scenarios'
+    scenarios: environment.progress_endpoint + 'scenarios',
+    all_scenarios: environment.progress_endpoint + 'all_scenarios'
   };
 
   constructor(private httpClient: HttpClient) {
@@ -31,6 +32,11 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
+  public getCreateScenario(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/create_scenario.json')
+      .pipe((catchError(this.handleError)));
+  }
+
   public getLemonExercise(): Observable<Session[]> {
     return this.httpClient.get<Session[]>('./assets/json/lemon.json')
       .pipe((catchError(this.handleError)));
@@ -43,6 +49,16 @@ export class ApiService {
 
   public getVividness(): Observable<Session[]> {
     return this.httpClient.get<Session[]>('./assets/json/vividness.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getFlexibleThinking(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/flexible_thinking.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getEdFollowup(): Observable<Session[]> {
+    return this.httpClient.get<Session[]>('./assets/json/psychoed_followup.json')
       .pipe((catchError(this.handleError)));
   }
 
@@ -77,6 +93,12 @@ export class ApiService {
     return this.httpClient.get<EventRecord[]>(this.endpoints.scenarios)
       .pipe(catchError(this.handleError));
   }
+
+  getAllScenariosByType(type: String): Observable<EventRecord[]> {
+    return this.httpClient.get<EventRecord[]>(this.endpoints.all_scenarios + '/' + type)
+      .pipe(catchError(this.handleError));
+  }
+
 
   getStudy(): Observable<Study> {
     return this.httpClient.get<Study>(this.endpoints.study)

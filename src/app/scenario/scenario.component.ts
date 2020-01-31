@@ -96,14 +96,9 @@ export class ScenarioComponent implements OnInit, OnChanges {
     } else {
       this.pageCounter = 1;
     }
-    this.study = {name: '', currentSession: '', currentSessionIndex: 0, conditioning: ''};
+    this.study = {name: '', currentSession: {index: 0, name: ''}, conditioning: ''};
     this.api.getStudy().subscribe(study => {
-      if (study) {
-        this.study = {
-          name: study.name, currentSession: study.currentSession['name'], currentSessionIndex: study.currentSession['index'],
-          conditioning: study.conditioning
-        };
-      }
+      this.study = study;
     });
     this.init();
   }

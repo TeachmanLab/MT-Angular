@@ -1,12 +1,14 @@
-<div class="fill-in-the-blank">
+<div [className]="fillInBlank.compact? 'compact' : 'fill-in-the-blank'">
   <div fxLayout="column"
        fxLayoutAlign="center"
        fxLayoutGap="10px"
   >
     <mat-form-field>
-      <input matInput placeholder="PLEASE FILL IN THE BLANK:" [formControl]="word" [errorStateMatcher]="matcher">
+      <input #input *ngIf="fillInBlank.maxCharacters <= 100" matInput placeholder="{{fillInBlank.placeholder}}" [formControl]="word" [errorStateMatcher]="matcher" (keyup.enter)="submitWord(word.value)">
+      <textarea #input *ngIf="fillInBlank.maxCharacters > 100" matInput placeholder="{{fillInBlank.placeholder}}" [formControl]="word" [errorStateMatcher]="matcher">
+      </textarea>
       <mat-error *ngIf="word.hasError('minlength') && !word.hasError('required')">
-        Please enter a word of three letters or more
+        Please enter at least {{minCharacters}} characters.
       </mat-error>
       <mat-error *ngIf="word.hasError('required')">
         You must enter a value
@@ -20,6 +22,8 @@
     </mat-form-field>
   </div>
   <button
+    type="submit"
+    *ngIf="!completed"
     mat-raised-button
     color="primary"
     [disabled]="!word.valid || completed"

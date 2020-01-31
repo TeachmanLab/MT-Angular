@@ -13,6 +13,7 @@ export class FinalScoreTestviewComponent implements OnInit {
 
   numScenarios = 10;
   numCorrect = [2, 8, 10, 4];
+  totalRounds = 4;
   rounds: Round[];
   session: Session;
   ready = false;
@@ -30,6 +31,10 @@ export class FinalScoreTestviewComponent implements OnInit {
     this.createTestRounds();
   }
 
+  setTotalRounds(event: any) { // without type info
+    this.totalRounds = Number(event.target.value);
+    this.createTestRounds();
+  }
 
   loadSession2() {
     this.api.getTrainingIntro().subscribe(s => {
@@ -44,23 +49,16 @@ export class FinalScoreTestviewComponent implements OnInit {
     this.rounds = [];
     this.totalScore = 0;
     this.api.getTrainingCSV('firstSession').subscribe(scenarios => {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < this.totalRounds; i++) {
           const round = new Round();
           round.scenarios = scenarios.slice(i * this.numScenarios, this.numScenarios * (i + 1));
           // mark the rounds as complete with the given number of correct answers.
           let count = 0;
-          let correct = true;
           while (count < this.numScenarios) {
-            correct = false;
-            if (count <= this.numCorrect[i]) {
-              round.scenarios[count].numCorrect = round.scenarios[count].pages.length;
-              correct = true;
-            } else if (count <= this.numCorrect[i] + 2) {
-              round.scenarios[count].numCorrect = 1;
-            } else {
-              round.scenarios[count].numCorrect = 0;
-            }
-            round.next(correct);
+             if (count <= this.numCorrect[i]) {
+                round.scenarios[count].score = 1;
+              }
+            round.next(true);
             count++;
           }
           this.rounds.push(round);

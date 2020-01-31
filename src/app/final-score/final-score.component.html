@@ -8,7 +8,7 @@
 
     <div class="header">
       <h1>{{session.title}} Complete!</h1>
-      <p>You have completed all rounds in the session.  You recieved the following score in each round:</p>
+      <p>You have completed all rounds in the session.  You received the following score in each round:</p>
     </div>
     <div class="rounds"
          fxLayout="row wrap"
@@ -19,7 +19,7 @@
           <div class="roundHeader">Round {{i+1}}</div>
           <ngx-gauge [type]="'full'"
                      [min]="0"
-                     [max]="round.scenarios.length"
+                     [max]="10"
                      [value]="round.roundScore()"
                      [label]=""
                      [style]="'round'"
@@ -39,17 +39,17 @@
 
     <ngx-gauge [type]="'full'"
                [min]="0"
-               [max]="40"
+               [max]="rounds.length * 10"
                [value]="totalScore"
                [label]=""
                [style]="'round'"
                [size]="200"
                [thick]="20"
                [foregroundColor]="'rgba(0, 0, 136, 1)'"
-               [append]="'/40'">
+               [append]="'/' + rounds.length * 10">
     </ngx-gauge>
     <div class="description">
-      <div class="scoreHeader">Your total score for this session is {{totalScore}} out of 40.</div>
+      <div class="scoreHeader">Your total score for this session is {{totalScore}} out of {{rounds.length * 10}}.</div>
     <p *ngIf="totalScore >= 36">
       This is terrific, and shows you’re paying careful attention to the stories! Keep it up, as
       this can help you to get the most out of the training.

@@ -4,6 +4,8 @@
   be working with the training-score component.
 </p>
 <p>The current parameters are Correct: {{numCorrect}} out of {{numScenarios}} scenarios</p>
+<label>Total Rounds</label><input type="text" [value]="totalRounds" (blur)="setTotalRounds($event)">
+
 <label>Round 1 Correct: </label><input type="text" [value]="numCorrect[0]" (blur)="setCorrectCount($event,0)"><br/>
 <label>Round 2 Correct: </label><input type="text" [value]="numCorrect[1]" (blur)="setCorrectCount($event,1)"><br/>
 <label>Round 3 Correct: </label><input type="text" [value]="numCorrect[2]" (blur)="setCorrectCount($event,2)"><br/>

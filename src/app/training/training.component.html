@@ -1,4 +1,3 @@
-<app-session-warning *ngIf="connectionError"></app-session-warning>
 <div *ngIf="ready()">
   <app-session *ngIf="state === states.INTRO"
   [session]="currentSession"
@@ -17,6 +16,18 @@
         [sessionIndex]="this.sessionIndex"
         [previousEnabled]="false"
         (done)="lemonComplete()"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="readiness" *ngIf="state === states.CREATE">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="createScenario[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        [previousEnabled]="false"
+        (done)="createComplete()"
       ></app-step>
     </mat-card-content>
   </mat-card>
@@ -56,10 +67,37 @@
       ></app-step>
     </mat-card-content>
   </mat-card>
+  <mat-card class="readiness" *ngIf="state === states.FLEXIBLE_THINKING">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="flexible_thinking[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="flexibleComplete()"
+        [previousEnabled]="false"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="state === states.PSYCHOED" class="readiness" >
+    <app-session [session]="psychoedSession" [sessions]="psychoed" [sessionIndex]="sessionIndex" (done)="psychoedComplete()" [checkProgress]="false"></app-session>
+  </mat-card>
+  <mat-card class="psychoedFollowup" *ngIf="state === states.PSYCHOED_FOLLOWUP">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="psychoedFollowup[0].steps[0]"
+        [stepIndex]="0"
+        [sessionIndex]="this.sessionIndex"
+        (done)="psychoedComplete()"
+        [previousEnabled]="false"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
 
  <div *ngIf="state === states.TRAINING">
   <mat-card class="training">
-    <mat-card-content>
+    <mat-card-content *ngIf="round">
         <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
         <div class="progress">
           <app-progress-bar [items]="round.scenarios"></app-progress-bar>
@@ -81,7 +119,7 @@
 <div *ngIf="state === states.SUMMARY">
   <mat-card class="training">
     <mat-card-content>
-    <app-training-score [round]="round" [roundNumber]="roundIndex + 1"></app-training-score>
+    <app-training-score [round]="round" [roundNumber]="roundIndex + 1" [totalRounds]=rounds.length></app-training-score>
         <div class="spacer"></div>
         <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
         <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Continue</button>

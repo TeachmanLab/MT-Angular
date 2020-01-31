@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {interval} from 'rxjs';
 import {subscribeOn} from 'rxjs/operators';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-statement',
@@ -17,9 +18,14 @@ export class StatementComponent implements OnInit {
   @Output()
   doneTyping: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParamMap.subscribe(queryParamMap => {
+      if (queryParamMap.get('testing') === 'true' || false) {
+        this.letter_delay = 0;
+      }
+    });
     const secondsCounter = interval(this.letter_delay);
     const letters = this.statement.split('');
     let pauseCount = 0;
