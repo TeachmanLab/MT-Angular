@@ -7,8 +7,8 @@
     -->
 
     <div class="header">
-      <h1>{{session.title}} Complete!</h1>
-      <p>You have completed all rounds in the session.  You received the following score in each round:</p>
+      <h1>{{session.title}}: Complete!</h1>
+      <p>You have completed all rounds in the session. You received the following score in each round:</p>
     </div>
     <div class="rounds"
          fxLayout="row wrap"
@@ -48,6 +48,8 @@
                [foregroundColor]="'rgba(0, 0, 136, 1)'"
                [append]="'/' + rounds.length * 10">
     </ngx-gauge>
+    <br/>
+    <br/>
     <div class="description">
       <div class="scoreHeader">Your total score for this session is {{totalScore}} out of {{rounds.length * 10}}.</div>
     <p *ngIf="totalScore >= 36">
@@ -68,5 +70,8 @@
     </p>
     </div>
   </div>
+  <br/>
+  <br/>
+  <br/>
   <div class="hack-spacer"></div>
 </div>
