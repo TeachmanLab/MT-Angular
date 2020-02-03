@@ -56,7 +56,8 @@ export interface FillInBlank extends Element {
   maxCharacters: number;
   minCharacters: number;
   compact?: boolean;
-  placeholder?: String;
+  placeholder?: string;
+  submitButtonText?: string;
 }
 
 export interface Countdown extends Element {

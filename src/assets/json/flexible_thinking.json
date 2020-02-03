@@ -7,20 +7,32 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Flexible Thinking",
+        "title": "Quick Thinking",
         "pages": [
           {
             "auto_continue": false,
             "elements": [
               { "type": "Paragraph",
                 "stimulusName": "flex_thinking_p1",
-                "content": "Please take one minute to list as many different explanations as possible for why the following, event (described on the next page) might have occurred. You can just write a few words for each explanation – you don't need to write full sentences."
+                "content": "Please take 1 minute to list as many different explanations as possible for why the following event (described on the next page) might have occurred. You can just write a few words for each explanation."
+              },
+              { "type":  "Header",
+                "stimulusName":  "flex_thinking_note_p1",
+                "content": "You don't need to write full sentences."
+              },
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p2",
+                "content": "When you are ready to begin, press Next."
               }
             ]
           },
           {
             "auto_continue": true,
             "elements": [
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p3",
+                "content": "Click 'Submit' or press Enter to add another entry."
+              },
               {
                 "type": "RandomNonPreviousStatement",
                 "stimulusName": "flex_random_scenario",
@@ -40,7 +52,8 @@
                   {
                     "type": "FillInBlank",
                     "stimulusName": "flex_thinking_explanation",
-                    "placeholder": "Add an explanation.",
+                    "placeholder": "Add an explanation. (submit/enter to enter another)",
+                    "submitButtonText": "Submit",
                     "maxCharacters": 100,
                     "compact": true
                   }

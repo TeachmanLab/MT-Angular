@@ -38,6 +38,8 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
   event: EventEmitter<ElementEvent> = new EventEmitter();
 
   error: string;
+  placeholder: string;
+  submitButtonText: string;
 
   constructor() { }
 
@@ -59,6 +61,8 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
     }
     const maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
     this.minCharacters = this.fillInBlank.minCharacters > 0 ?  this.fillInBlank.minCharacters : this.defaultMin;
+    this.placeholder = this.fillInBlank.placeholder;
+    this.submitButtonText = this.fillInBlank.submitButtonText || 'Submit';
     this.word = new FormControl('', [
       Validators.required,
       Validators.minLength(this.minCharacters), wordValidator,
@@ -68,6 +72,7 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
   submitWord(word: string) {
       if (!this.word.valid || this.completed) { return; }
       this.endTime = performance.now();
+      this.placeholder = '';
       const event: ElementEvent = {
         trialType: this.fillInBlank.type,
         stimulus: '',
