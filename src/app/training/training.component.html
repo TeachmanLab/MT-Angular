@@ -7,7 +7,7 @@
   (done)="introComplete()"
   (showIndicator)="true"
 ></app-session>
-  <mat-card class="readiness" *ngIf="state === states.LEMON">
+  <!-- <mat-card class="readiness" *ngIf="state === states.LEMON">
     <mat-card-content>
       <app-step
         [session]="currentSession"
@@ -18,7 +18,7 @@
         (done)="lemonComplete()"
       ></app-step>
     </mat-card-content>
-  </mat-card>
+  </mat-card> -->
   <mat-card class="readiness" *ngIf="state === states.CREATE">
     <mat-card-content>
       <app-step

@@ -8,7 +8,8 @@ import {catchError, map, withLatestFrom} from 'rxjs/operators';
 import {combineLatest, observable, Observable} from 'rxjs';
 
 enum TrainingState {
-  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
+  // 'LEMON', 
+  'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -22,8 +23,8 @@ export class TrainingComponent implements OnInit {
   state = TrainingState.INTRO;
 
   sessions: Session[];
-  lemonExercise: Session[] = [];
-  lemonExerciseCompleted = false;
+  // lemonExercise: Session[] = [];
+  // lemonExerciseCompleted = false;
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
@@ -35,6 +36,7 @@ export class TrainingComponent implements OnInit {
   createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
+  // Need to check with Dan that I didn't mess up the index, here, after removing lemon exercise. Hmm... - Anna 2/11/20
   flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
@@ -81,7 +83,7 @@ export class TrainingComponent implements OnInit {
       this.sessionIndex = +(paramMap.get('session') || 1) - 1;
       this.study.subscribe(study => {
         console.log('Study is:', study);
-        console.log('Lemon Complete?', this.lemonExerciseCompleted);
+        // console.log('Lemon Complete?', this.lemonExerciseCompleted);
         this.setupCondition(study.conditioning, testing);
         this.loadIntro(this.sessionIndex);
         this.loadReadinessRulers();
@@ -91,13 +93,14 @@ export class TrainingComponent implements OnInit {
         this.loadTraining(study);
         this.loadIndicatorSessions();
         this.loadPsychoEdFollowup();
-        this.loadLemonExercise();
+        // this.loadLemonExercise();
         this.loadPsyched(study);
         this.loadCreateScenario();
-        if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
-          console.log('Setting state to lemon.');
-          this.state = this.states.LEMON;
-        }
+
+        // if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
+        //   console.log('Setting state to lemon.');
+        //   this.state = this.states.LEMON;
+        // }
       });
     });
   }
@@ -163,8 +166,8 @@ export class TrainingComponent implements OnInit {
   loadTraining(study: Study) {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(study.currentSession.name).subscribe(scenarios => {
-      if (scenarios.length !== 40) {
-        throw Error('There must be 40 scenarios! There are only ' + scenarios.length);
+      if (scenarios.length !== 4) {
+        throw Error('There must be 4 scenarios! There are only ' + scenarios.length);
       }
       this.loadProgress(scenarios, study);
     });
@@ -240,11 +243,11 @@ export class TrainingComponent implements OnInit {
     });
   }
 
-  loadLemonExercise() {
-    this.api.getLemonExercise().subscribe(sessions => {
-      this.lemonExercise = sessions;
-    });
-  }
+  // loadLemonExercise() {
+  //   this.api.getLemonExercise().subscribe(sessions => {
+  //     this.lemonExercise = sessions;
+  //   });
+  // }
 
   loadReadinessRulers() {
     this.api.getReadinessRulers().subscribe(sessions => {
@@ -282,10 +285,10 @@ export class TrainingComponent implements OnInit {
     });
   }
 
-  lemonComplete() {
-    this.lemonExerciseCompleted = true;
-    this.state = this.states.IMAGERY;
-  }
+  // lemonComplete() {
+  //   this.lemonExerciseCompleted = true;
+  //   this.state = this.states.IMAGERY;
+  // }
 
   imageryComplete() {
     this.imageryPrimeCompleted = true;
