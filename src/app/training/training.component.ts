@@ -27,7 +27,7 @@ export class TrainingComponent implements OnInit {
   // lemonExerciseCompleted = false;
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
-  vividIndexes = [1, 2, 20, 40];
+  vividIndexes = [1];
   psychoed: Session[] = [];
   psychoedFollowup: Session[] = [];
   psychoedSession: Session;
@@ -37,15 +37,15 @@ export class TrainingComponent implements OnInit {
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
   // Need to check with Dan that I didn't mess up the index, here, after removing lemon exercise. Hmm... - Anna 2/11/20
-  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
+  flexibleThinkingRoundIndex = 2; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   sessionIndex = 0;
   stepIndex = 0;
   currentSession: Session;
   indicatorSessions: Session[];
-  totalRounds = 4;
-  scenariosPerRound = 10;
+  totalRounds = 2;
+  scenariosPerRound = 2;
   totalScore = 0;
   roundIndex = 0;
   round: Round;
@@ -107,16 +107,16 @@ export class TrainingComponent implements OnInit {
 
   setupCondition(condition: String, testing: boolean) {
     if (condition === 'TRAINING_30') {
-      this.totalRounds = 3;
-      this.flexibleThinkingRoundIndex = 3;
-      this.vividIndexes = [1, 2, 20, 30];
+      this.totalRounds = 2;
+      this.flexibleThinkingRoundIndex = 2;
+      this.vividIndexes = [1];
     } else if (condition === 'TRAINING_ED') {
       this.psychoedRoundIndex = 1; // Show training after completing the second round.
     } else if (condition === 'TRAINING_CREATE') {
-      this.createScenarioRoundIndex = 3;
+      this.createScenarioRoundIndex = 2;
     }
     if (testing) {
-      this.scenariosPerRound = 3;
+      this.scenariosPerRound = 2;
       this.totalRounds = 2;
       this.state = this.states.FLEXIBLE_THINKING;
     }
