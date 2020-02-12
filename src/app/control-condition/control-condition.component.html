@@ -2,8 +2,10 @@
 <app-session *ngIf="currentSession && !sessionDone" [session]="currentSession" [sessions]="sessions" [sessionIndex]="sessionIndex" (done)="sessionComplete()"></app-session>
 <div *ngIf="sessionDone">
   <mat-card>
-    <h1>Well Done!</h1>
-    <h5>Great job with <i>{{currentSession.title}}: {{currentSession.subTitle}}</i>.</h5>
+    <h1>Module Complete!</h1>
+    <h6>You have completed the <i>{{currentSession.subTitle}}</i> section. Well done!</h6>
+    <h6>You are now ready for Part 2 of <b>Finishing Stories Training</b>. Click the button below to start!</h6>
+    <br>
     <button *ngIf="sessionDone" class="continue"  mat-raised-button (click)="close()">Continue</button>
   </mat-card>
 </div>

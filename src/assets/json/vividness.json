@@ -20,7 +20,7 @@
               {
                 "type": "Question",
                 "stimulusName": "vividness",
-                "question": "How vividly did you imagine the scenario (as if you were really there and experiencing it first hand)?",
+                "question": "How vividly did you imagine the scenario you just read (as if you were really there and experiencing it firsthand)?",
                 "options": [
                   "Not at all",
                   "Slightly",
