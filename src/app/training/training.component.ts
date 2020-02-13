@@ -221,7 +221,7 @@ export class TrainingComponent implements OnInit {
   }
 
   loadPsyched(study: Study) {
-    this.api.getControlSessions().subscribe(sessions => {
+    this.api.getControlInTrainingSessions().subscribe(sessions => {
       this.psychoed = sessions;
       this.psychoedSession = sessions[study.currentSession.index - 1];
     });

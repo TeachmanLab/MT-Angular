@@ -27,6 +27,11 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
+  public getControlInTrainingSessions(): Observable<any> {
+    return this.httpClient.get<Session[]>('./assets/json/control_in_training.json')
+      .pipe((catchError(this.handleError)));
+  }
+
   public getTrainingIntro(): Observable<Session[]> {
     return this.httpClient.get<Session[]>('./assets/json/training_intro.json')
       .pipe((catchError(this.handleError)));

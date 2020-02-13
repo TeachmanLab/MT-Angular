@@ -7,31 +7,50 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Quick Thinking",
+        "title": "Exercise: Quick Thinking",
         "pages": [
           {
             "auto_continue": false,
             "elements": [
-              { "type": "Paragraph",
+              {
+                "type": "LargeHeader",
+                "stimulusName": "create_scenario_header",
+                "content": "Exercise: Quick Thinking"
+              },
+              {
+                "type": "Paragraph",
                 "stimulusName": "flex_thinking_p1",
-                "content": "Please take 1 minute to list as many different explanations as possible for why the following event (described on the next page) might have occurred. You can just write a few words for each explanation."
+                "content": "On the next page, an event with an uncertain outcome will be presented. An example is shown below:"
               },
               { "type":  "Header",
                 "stimulusName":  "flex_thinking_note_p1",
-                "content": "You don't need to write full sentences."
+                "content": "Event: You haven’t heard from a friend for 2 weeks and you usually talk weekly."
               },
               { "type":  "Paragraph",
                 "stimulusName":  "flex_thinking_p2",
-                "content": "When you are ready to begin, press Next."
+                "content": "In the text fields, list as many different explanations as possible to explain why the event presented might have occurred. A 60 second timer will start when you proceed to the next page. Your responses may consist of a few words; you don’t need to write full sentences."
+              },
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p3",
+                "content": "To add an additional text field, press the Submit button on your screen or the Return key on your keyboard."
+              },
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p4",
+                "content": "Try and think of as many explanations as you can in 60 seconds!"
               }
             ]
           },
           {
-            "auto_continue": true,
+            "auto_continue": false,
             "elements": [
               { "type":  "Paragraph",
                 "stimulusName":  "flex_thinking_p3",
                 "content": "Click 'Submit' or press Enter to add another entry."
+              },
+              {
+                "type": "LargeHeader",
+                "stimulusName": "create_scenario_header",
+                "content": "Exercise: Quick Thinking"
               },
               {
                 "type": "RandomNonPreviousStatement",
@@ -46,13 +65,13 @@
               },
               {
                 "type": "MultiEntry",
-                "title": "Why might this have occurred?",
+                "title": "Your Explanations:",
                 "stimulusName": "flex_thinking_explanations",
                 "fillInBlank":
                   {
                     "type": "FillInBlank",
                     "stimulusName": "flex_thinking_explanation",
-                    "placeholder": "Add an explanation. (submit/enter to enter another)",
+                    "placeholder": "Add an explanation:",
                     "submitButtonText": "Submit",
                     "maxCharacters": 100,
                     "compact": true
@@ -61,7 +80,7 @@
               {
                 "type": "Countdown",
                 "stimulusName": "readiness_timer",
-                "delayInSeconds": 60,
+                "delayInSeconds": 1,
                 "autoStart": true,
                 "content": "You have 60 seconds to complete as many explanations as possible."
               }
