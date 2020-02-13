@@ -5,8 +5,8 @@
   >
     <mat-form-field>
       <mat-label>{{placeholder}}</mat-label>
-      <input #input *ngIf="fillInBlank.maxCharacters <= 100" matInput [formControl]="word" [errorStateMatcher]="matcher" (keyup.enter)="submitWord(word.value)">
-      <textarea #input *ngIf="fillInBlank.maxCharacters > 100" matInput placeholder="{{placeholder}}" [formControl]="word" [errorStateMatcher]="matcher">
+      <input #input *ngIf="maxCharacters <= 100" matInput [formControl]="word" [errorStateMatcher]="matcher" (keyup.enter)="submitWord(word.value)">
+      <textarea #input *ngIf="maxCharacters > 100" matInput placeholder="{{placeholder}}" [formControl]="word" [errorStateMatcher]="matcher">
       </textarea>
       <mat-error *ngIf="word.hasError('minlength') && !word.hasError('required')">
         Please enter at least {{minCharacters}} characters.
