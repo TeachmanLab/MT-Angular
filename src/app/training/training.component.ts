@@ -77,7 +77,7 @@ export class TrainingComponent implements OnInit {
         console.log('Study is:', study);
         console.log('Lemon Complete?', this.lemonExerciseCompleted);
         this.setupCondition(study.conditioning, testing);
-        this.loadIntro(study.currentSession.index - 1);
+        this.loadIntro(study.currentSession.index - 1, study.conditioning);
         this.loadReadinessRulers();
         this.loadVividness();
         this.loadFlexibleThinking();
@@ -212,12 +212,20 @@ export class TrainingComponent implements OnInit {
     });
   }
 
-  loadIntro(sessionIndex) {
-    this.api.getTrainingIntro().subscribe(sessions => {
-      this.sessions = sessions;
-      this.currentSession = this.sessions[sessionIndex];
-      this.currentSession.startTime = performance.now();
-    });
+  loadIntro(sessionIndex, condition) {
+    if (condition === 'TRAINING_30') {
+      this.api.getTraining30Intro().subscribe(sessions => {
+        this.sessions = sessions;
+        this.currentSession = this.sessions[sessionIndex];
+        this.currentSession.startTime = performance.now();
+      });
+    } else {
+      this.api.getTrainingIntro().subscribe(sessions => {
+        this.sessions = sessions;
+        this.currentSession = this.sessions[sessionIndex];
+        this.currentSession.startTime = performance.now();
+      });
+    }
   }
 
   loadPsyched(study: Study) {
