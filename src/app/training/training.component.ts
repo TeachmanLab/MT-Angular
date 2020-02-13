@@ -213,19 +213,11 @@ export class TrainingComponent implements OnInit {
   }
 
   loadIntro(sessionIndex, condition) {
-    if (condition === 'TRAINING_30') {
-      this.api.getTraining30Intro().subscribe(sessions => {
-        this.sessions = sessions;
-        this.currentSession = this.sessions[sessionIndex];
-        this.currentSession.startTime = performance.now();
-      });
-    } else {
-      this.api.getTrainingIntro().subscribe(sessions => {
-        this.sessions = sessions;
-        this.currentSession = this.sessions[sessionIndex];
-        this.currentSession.startTime = performance.now();
-      });
-    }
+    this.api.getTrainingIntro(condition).subscribe(sessions => {
+      this.sessions = sessions;
+      this.currentSession = this.sessions[sessionIndex];
+      this.currentSession.startTime = performance.now();
+    });
   }
 
   loadPsyched(study: Study) {
