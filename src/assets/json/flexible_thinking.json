@@ -80,7 +80,7 @@
               {
                 "type": "Countdown",
                 "stimulusName": "readiness_timer",
-                "delayInSeconds": 1,
+                "delayInSeconds": 60,
                 "autoStart": true,
                 "content": "You have 60 seconds to complete as many explanations as possible."
               }

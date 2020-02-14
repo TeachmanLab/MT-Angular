@@ -35,7 +35,7 @@ export class TrainingComponent implements OnInit {
   createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
-  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be followed by flex thinking
+  flexibleThinkingRoundIndex = 3; // The (0 based) index of the round that should be followed by flex thinking
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   sessionIndex = 0;
@@ -99,7 +99,7 @@ export class TrainingComponent implements OnInit {
   setupCondition(condition: String, testing: boolean) {
     if (condition === 'TRAINING_30') {
       this.totalRounds = 3;
-      this.flexibleThinkingRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 2;
       this.vividIndexes = [1, 2, 20, 30];
     } else if (condition === 'TRAINING_ED') {
       this.psychoedRoundIndex = 1; // Show training after completing the second round.
@@ -109,6 +109,7 @@ export class TrainingComponent implements OnInit {
     if (testing) {
       this.scenariosPerRound = 3;
       this.totalRounds = 2;
+      this.flexibleThinkingRoundIndex = 1;
     }
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
