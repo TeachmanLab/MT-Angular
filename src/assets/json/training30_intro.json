@@ -14,7 +14,7 @@
               {
                 "type": "Image",
                 "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
+                "content": "./assets/images/session-indicators/progress_bar30.png"
               },
               {
                 "type": "Paragraph",
@@ -59,7 +59,7 @@
               {
                 "type": "Image",
                 "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
+                "content": "./assets/images/session-indicators/progress_bar30.png"
               },
               {
                 "type": "BulletList",
@@ -99,7 +99,7 @@
               {
                 "type": "Image",
                 "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
+                "content": "./assets/images/session-indicators/progress_bar30.png"
               },
               {
                 "type": "BulletList",
@@ -139,7 +139,7 @@
               {
                 "type": "Image",
                 "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
+                "content": "./assets/images/session-indicators/progress_bar30.png"
               },
               {
                 "type": "BulletList",
@@ -179,7 +179,7 @@
               {
                 "type": "Image",
                 "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
+                "content": "./assets/images/session-indicators/progress_bar30.png"
               },
               {
                 "type": "BulletList",
