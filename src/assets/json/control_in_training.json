@@ -1,7 +1,7 @@
 [
   {
     "session": "firstSession",
-    "title": "Module 1",
+    "title": "Section 1",
     "subTitle": "Introduction to Anxiety",
     "sessionIndicator": "session1",
     "conditioning": "Control",
@@ -9,14 +9,14 @@
     "steps": [
 
       {
-        "title": "Module 1: Introduction to Anxiety",
+        "title": "Section 1: Introduction to Anxiety",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Time to take a break from Finishing Stories Training! In this short module, you will read about the nature of anxiety and its management."
+                "content": "Time to take a break from Finishing Stories Training! In this short section, you will read about the nature of anxiety and its management."
               },
               {
                 "type": "BulletList",
@@ -162,21 +162,21 @@
   },
   {
     "session": "secondSession",
-    "title": "Module 2",
+    "title": "Section 2",
     "subTitle": "Symptoms and Disorders",
     "sessionIndicator": "session2",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Module 2: Symptoms and Disorders",
+        "title": "Section 2: Symptoms and Disorders",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Time to take a break from Finishing Stories Training! In this short module, you will read about the nature of anxiety and its management."
+                "content": "Time to take a break from Finishing Stories Training! In this short section, you will read about the nature of anxiety and its management."
               },
               {
                 "type": "BulletList",
@@ -211,7 +211,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "as1",
-                "content": "As you saw in Module 1, anxiety is common, useful, and appropriate in situations that threaten someone’s health or well-being. But when someone gets anxious without a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As you learned, anxious feelings come with changes in thoughts, bodily reactions, and behaviors. The same types of changes can cause problems with anxiety that mental health professionals call symptoms. Symptoms can vary in how much they affect a person and how long they last."
+                "content": "As you saw in Section 1, anxiety is common, useful, and appropriate in situations that threaten someone’s health or well-being. But when someone gets anxious without a true threat or to an excessive degree, the anxiety can be impairing and cause problems in a person’s life. As you learned, anxious feelings come with changes in thoughts, bodily reactions, and behaviors. The same types of changes can cause problems with anxiety that mental health professionals call symptoms. Symptoms can vary in how much they affect a person and how long they last."
               },
               {
                 "type": "Paragraph",
@@ -289,7 +289,7 @@
                 "title": "Case Example: Panic Disorder",
                 "thought": "”Zoe suffers from attacks of dizziness, blurred vision, and heart palpitations. Her first panic attack came unexpectedly while she was watching television at home. She was absolutely convinced that she was having a heart attack and about to die. Since then, she has felt tense and anxious most of the time because she worries about having another panic attack.”",
                 "followup": [
-                  "Our nervous systems are equipped with an alarm system that alerts us to danger and protects us from harm. When the alarm system activates, it can bring about panic attacks, which represent a variety of bodily reactions such as racing heart, rapid breathing, tingling or numbness, hot or cold flashes, sweating, and trembling. Panic attacks are useful when the alarm system alerts one to real danger, such as when Malik’s alarm system alerted him to the danger of nearly hitting a child with his car in Module 1. But when the alarm system triggers in the absence of real danger, such as when Zoe is watching television at home, panic attacks can be impairing.",
+                  "Our nervous systems are equipped with an alarm system that alerts us to danger and protects us from harm. When the alarm system activates, it can bring about panic attacks, which represent a variety of bodily reactions such as racing heart, rapid breathing, tingling or numbness, hot or cold flashes, sweating, and trembling. Panic attacks are useful when the alarm system alerts one to real danger, such as when Malik’s alarm system alerted him to the danger of nearly hitting a child with his car in Section 1. But when the alarm system triggers in the absence of real danger, such as when Zoe is watching television at home, panic attacks can be impairing.",
                   "People who experience panic attacks can develop a fear of these sensations and often attribute the attacks to major medical problems, such as a heart attack or stroke. When no physical cause of the sensations is identified, people begin to fear losing control or think they are going crazy. The more they fear these sensations, the more aware of the sensations they become. A fear of panic attacks ultimately can cause the attacks to be become more intense and frequent."
                 ]
               }
@@ -424,21 +424,21 @@
   },
   {
     "session": "thirdSession",
-    "title": "Module 3",
+    "title": "Section 3",
     "subTitle": "Prevalence, Causes, and Maintenance",
     "sessionIndicator": "session3",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Module 3: Prevalence, Causes, and Maintenance",
+        "title": "Section 3: Prevalence, Causes, and Maintenance",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Time to take a break from Finishing Stories Training! In this short module, you will read about the nature of anxiety and its management."
+                "content": "Time to take a break from Finishing Stories Training! In this short section, you will read about the nature of anxiety and its management."
               },
               {
                 "type": "BulletList",
@@ -474,7 +474,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "p1",
-                "content": "As you learned in previous sessions, almost everyone experiences anxiety in certain situations at some point in their life. Fewer people experience anxiety that is so excessive and impairing that they meet criteria for an anxiety disorder. Still, anxiety disorders are very common."
+                "content": "As you learned in previous sections, almost everyone experiences anxiety in certain situations at some point in their life. Fewer people experience anxiety that is so excessive and impairing that they meet criteria for an anxiety disorder. Still, anxiety disorders are very common."
               },
               {
                 "type": "Paragraph",
@@ -750,21 +750,21 @@
   },
   {
     "session": "fourthSession",
-    "title": "Module 4",
+    "title": "Section 4",
     "subTitle": "Impact of Anxiety",
     "sessionIndicator": "session4",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Module 4: Impact of Anxiety",
+        "title": "Section 4: Impact of Anxiety",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Time to take a break from Finishing Stories Training! In this short module, you will read about the nature of anxiety and its management."
+                "content": "Time to take a break from Finishing Stories Training! In this short section, you will read about the nature of anxiety and its management."
               },
               {
                 "type": "BulletList",
@@ -956,21 +956,21 @@
   },
   {
     "session": "fifthSession",
-    "title": "Module 5",
+    "title": "Section 5",
     "subTitle": "Managing Anxiety",
     "sessionIndicator": "session5",
     "conditioning": "Control",
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "Module 5: Managing Anxiety",
+        "title": "Section 5: Managing Anxiety",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Time to take a break from Finishing Stories Training! In this short module, you will read about the nature of anxiety and its management."
+                "content": "Time to take a break from Finishing Stories Training! In this short section, you will read about the nature of anxiety and its management."
               },
               {
                 "type": "BulletList",
@@ -1072,7 +1072,7 @@
                 "type": "Highlight",
                 "stimulusName": "tf1",
                 "title": "Think Flexibly",
-                "highlight": "How people think about a situation influences how they feel. Recall from Module 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?\"",
+                "highlight": "How people think about a situation influences how they feel. Recall from Section 3 that someone with a negative core belief may readily interpret an unfriendly face at a party as evidence of rejection when there may be other reasons for the frown (e.g., tiredness, argument with a friend). Recognize your thoughts for what they are—just thoughts—and question them often. For example, ask yourself, “Is my behavior or appearance really the only explanation for this unfriendly face, or might there be another reason?\"",
                 "icon": "think-flexibly"
               }
             ]
@@ -1103,7 +1103,7 @@
                 "type": "Highlight",
                 "stimulusName": "oto1",
                 "title": "Open to Others",
-                "highlight": "As stated in the previous module, positive relationships with one's spouse, friends, or family can buffer the effect of anxiety problems. If others know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view, which can help you think flexibly.",
+                "highlight": "As stated in the previous section, positive relationships with one's spouse, friends, or family can buffer the effect of anxiety problems. If others know about your anxiety, they can support and encourage you to approach objects and situations you fear or to think about your experiences from another point of view, which can help you think flexibly.",
                 "icon": "open-up-to-others"
               }
             ]
