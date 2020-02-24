@@ -304,7 +304,7 @@ export class TrainingComponent implements OnInit {
 
   flexibleComplete() {
     this.state = this.states.TRAINING;
-    this.nextTraining();
+    this.nextRound();
   }
 
   psychoedComplete() {
