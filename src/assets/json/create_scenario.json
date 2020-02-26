@@ -74,7 +74,7 @@
                 "stimulusName": "create_scenario_p5",
                 "thought": "I send an email message to a friend asking them to grab coffee, but they never respond. I wonder if they are mad at me. Thinking back on the last time I got together with this friend, I remember they don’t check email often and I feel ... relieved.",
                 "followup": [
-                  "Notice that the statement, \"I wonder if they are mad at me\" creates ambiguity.  And that the final word 'relieved' resolves this is a non-threatening way."
+                  "Notice that the statement, \"I wonder if they are mad at me\" creates uncertainty.  And that the final word 'relieved' resolves this in a non-threatening way."
                 ]
               },
               {
@@ -100,9 +100,15 @@
                 "content": "Now, on the next page, list as many reasons as you can think of for why the ending in the scenario you created could be likely to occur for you. For example, why do you think you will be able to handle the situation, or what evidence is there to suggest that the situation will turn out positively?"
               },
               {
+                "type": "ThoughtBubble",
+                "stimulusName": "create_scenario_p5",
+                "thought": "I send an email message to a friend asking them to grab coffee, but they never respond. I wonder if they are mad at me. Thinking back on the last time I got together with this friend, I remember they don’t check email often and I feel ... relieved.",
+                "skip_continue": true
+              },
+              {
                 "type": "BulletList",
                 "stimulusName": "create_scenario_p7",
-                "title": "Example Reasons:",
+                "title": "Sample Reasons:",
                 "bullets": [
                   "This friend has told me that they like hanging out with me so they probably wouldn’t ignore me on purpose.",
                   "I didn’t get into an argument with this person recently so it’s unlikely that they are mad at me.",
@@ -124,7 +130,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "create_scenario_p6",
-                "content": "In the scenario you created, why might have this positive or non-threatening ending occurred?"
+                "content": "In the scenario you created, why might this positive or non-threatening ending have occurred?"
               },
               {
                 "type": "Paragraph",

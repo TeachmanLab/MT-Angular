@@ -95,8 +95,8 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
 function wordValidator(control: FormControl) {
   const word = control.value;
   const threeLetters = new RegExp('[a-z]{3}', 'i');
-  const hasVowel = new RegExp('[aeiou]+', 'i');
-  const hasCon = new RegExp('[bcdfghjklmnpqrstvxzwy]', 'i');
+  const hasVowel = new RegExp('[aeiouy]+', 'i');
+  const hasCon = new RegExp('[bcdfghjklmnpqrstvxzw]', 'i');
   if (threeLetters.test(word) && hasVowel.test(word) && hasCon.test(word)) {
     return null;
   } else {
