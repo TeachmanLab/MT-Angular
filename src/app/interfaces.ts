@@ -89,6 +89,7 @@ export interface ThoughtBubble extends Element {
   title: string;
   thought: string;
   followup: string;
+  skip_continue?: boolean;
 }
 
 export interface Highlight extends Element {

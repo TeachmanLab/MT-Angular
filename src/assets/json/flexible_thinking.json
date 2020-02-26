@@ -24,7 +24,7 @@
               },
               { "type":  "Header",
                 "stimulusName":  "flex_thinking_note_p1",
-                "content": "Event: You haven’t heard from a friend for 2 weeks and you usually talk weekly."
+                "content": "Event: You receive a call from your boss that they want to meet with you tomorrow."
               },
               { "type":  "Paragraph",
                 "stimulusName":  "flex_thinking_p2",
