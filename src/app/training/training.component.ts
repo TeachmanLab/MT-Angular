@@ -37,14 +37,14 @@ export class TrainingComponent implements OnInit {
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
   // Need to check with Dan that I didn't mess up the index, here, after removing lemon exercise. Hmm... - Anna 2/11/20
-  flexibleThinkingRoundIndex = 2; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
+  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   sessionIndex = 0;
   stepIndex = 0;
   currentSession: Session;
   indicatorSessions: Session[];
-  totalRounds = 2;
+  totalRounds = 4;
   scenariosPerRound = 2;
   totalScore = 0;
   roundIndex = 0;
@@ -117,7 +117,7 @@ export class TrainingComponent implements OnInit {
     }
     if (testing) {
       this.scenariosPerRound = 2;
-      this.totalRounds = 2;
+      this.totalRounds = 4;
       this.state = this.states.FLEXIBLE_THINKING;
     }
     if (testing && condition === 'TRAINING_CREATE') {
@@ -160,14 +160,18 @@ export class TrainingComponent implements OnInit {
     }
     this.totalRounds = this.rounds.length;
     this.round = this.rounds[this.roundIndex];
+    console.log("Rounds:")
+    console.log(this.rounds)
   }
 
 
   loadTraining(study: Study) {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(study.currentSession.name).subscribe(scenarios => {
-      if (scenarios.length !== 4) {
-        throw Error('There must be 4 scenarios! There are only ' + scenarios.length);
+      if (scenarios.length !== (this.totalRounds * this.scenariosPerRound)) {
+        throw Error('There must be ' + 
+        (this.totalRounds * this.scenariosPerRound) + 
+        'scenarios! There are only ' + scenarios.length);
       }
       this.loadProgress(scenarios, study);
     });
@@ -372,10 +376,11 @@ export class TrainingComponent implements OnInit {
       }
       this.round.next(correct);
     } else if (this.round.isComplete()) {
+      console.log('Round completed.');
       this.round.next(correct);
       this.state = this.states.SUMMARY;
     } else {
-      console.log(`Next Training Called.  Current score is ${this.round.roundScore()}`);
+      console.log('Next Training Called.  Current score is ${this.round.roundScore()}');
       this.round.next(correct);
     }
   }
@@ -412,22 +417,13 @@ export class TrainingComponent implements OnInit {
         const study = {
           name: 'default',
           conditioning: 'TRAINING',
-          currentSession: {index: 0, name: 'firstSession'},
+          currentSession: {index: 0, name: 'demo'},
           currentSessionIndex: 0
         };
         study.currentSessionIndex = +paramMap.get('session') - 1;
         switch (paramMap.get('session')) {
           case('1'):
-            study.currentSession.name = 'firstSession';
-            break;
-          case('2'):
-            study.currentSession.name = 'secondSession';
-            break;
-          case('3'):
-            study.currentSession.name = 'thirdSession';
-            break;
-          case('4'):
-            study.currentSession.name = 'fourthSession';
+            study.currentSession.name = 'demo';
             break;
         }
         if (queryParamMap.has('condition')) {

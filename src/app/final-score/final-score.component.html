@@ -19,7 +19,7 @@
           <div class="roundHeader">Round {{i+1}}</div>
           <ngx-gauge [type]="'full'"
                      [min]="0"
-                     [max]="scenariosPerRound"
+                     [max]="2"
                      [value]="round.roundScore()"
                      [label]=""
                      [style]="'round'"
@@ -46,23 +46,23 @@
                [size]="200"
                [thick]="20"
                [foregroundColor]="'rgba(0, 0, 136, 1)'"
-               [append]="'/' + rounds.length * scenariosPerRound">
+               [append]="'/' + 8">
     </ngx-gauge>
     <br/>
     <br/>
     <div class="description">
       <div class="scoreHeader">Your total score for this session is {{totalScore}} out of {{rounds.length * scenariosPerRound}}.</div>
-    <p *ngIf="totalScore >= 3">
+    <p *ngIf="totalScore >= (0.8 * 8)">
       This is terrific, and shows you’re paying careful attention to the stories! Keep it up, as
       this can help you to get the most out of the training.
     </p>
-    <p *ngIf="totalScore >= 2 && totalScore < 3">
+    <p *ngIf="totalScore >= (0.4 * 8) && totalScore < (0.8 * 8)">
     You’re doing well! We encourage you to pay close attention to the stories to figure
     out the missing letters to complete the final words and answer the questions. We
     think that the more carefully you attend to the stories and really imagine yourself in
     them, the more you will get out of the training.
     </p>
-    <p *ngIf="totalScore < 2">
+    <p *ngIf="totalScore < (0.4 * 8)">
     We want to encourage you to pay really close attention to the whole story each time,
     including how it ends, and to use the information in the story to answer the question.
     We think this will help you get the most out of the training. If any aspect of the task is

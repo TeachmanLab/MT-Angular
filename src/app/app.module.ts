@@ -35,7 +35,6 @@ import { SessionIndicatorBarComponent } from './session-indicator-bar/session-in
 import { StepIndicatorBarComponent } from './step-indicator-bar/step-indicator-bar.component';
 import { SessionIndicatorComponent } from './session-indicator/session-indicator.component';
 import { HomeComponent } from './home/home.component';
-import { SessionWarningComponent } from './session-warning/session-warning.component';
 import { FillInTheBlankComponent } from './fill-in-the-blank/fill-in-the-blank.component';
 import { TrainingScoreComponent } from './training-score/training-score.component';
 import { TrainingScoreTestviewComponent } from './training-score-testview/training-score-testview.component';
@@ -78,7 +77,7 @@ const routes: Routes = [
     StepIndicatorBarComponent,
     ThoughtbubbleComponent,
     TrainingComponent,
-    SessionWarningComponent,
+    // SessionWarningComponent,
     TrainingScoreComponent,
     TrainingScoreTestviewComponent,
     FinalScoreComponent,
