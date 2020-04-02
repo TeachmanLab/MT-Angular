@@ -4,7 +4,8 @@
   <mat-card>
     <h1>Module Complete!</h1>
     <h6>You have completed the <i>{{currentSession.subTitle}}</i> section. Well done!</h6>
-    <h6>You are now ready for Part 2 of <b>Finishing Stories Training</b>. Click the button below to start!</h6>
+    <br>
+    <br>
     <br>
     <button *ngIf="sessionDone" class="continue"  mat-raised-button (click)="close()">Continue</button>
   </mat-card>

@@ -56,7 +56,8 @@ export interface FillInBlank extends Element {
   maxCharacters: number;
   minCharacters: number;
   compact?: boolean;
-  placeholder?: String;
+  placeholder?: string;
+  submitButtonText?: string;
 }
 
 export interface Countdown extends Element {
@@ -88,6 +89,7 @@ export interface ThoughtBubble extends Element {
   title: string;
   thought: string;
   followup: string;
+  skip_continue?: boolean;
 }
 
 export interface Highlight extends Element {

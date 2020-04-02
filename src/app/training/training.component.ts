@@ -35,7 +35,7 @@ export class TrainingComponent implements OnInit {
   createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
-  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
+  flexibleThinkingRoundIndex = 3; // The (0 based) index of the round that should be followed by flex thinking
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   sessionIndex = 0;
@@ -52,7 +52,6 @@ export class TrainingComponent implements OnInit {
   pageCount: number;
   increment: number;
   study: Observable<Study>;
-  connectionError: Observable<Boolean>;
   /**
    *   Possible conditions:  TRAINING, TRAINING_ED, TRAINING_CREATE, TRAINING_30
    */
@@ -68,22 +67,17 @@ export class TrainingComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (this.setSessionIndex) {
-      this.sessionIndex = this.setSessionIndex - 1;
-    }
     this.study = this.getStudy();
-    this.connectionError = this.getConnectionError();
 
     this.route.url.pipe(
       withLatestFrom(this.route.paramMap, this.route.queryParamMap)
     ).subscribe(([url, paramMap, queryParamMap]) => {
       const testing = (queryParamMap.get('testing') === 'true' || false);
-      this.sessionIndex = +(paramMap.get('session') || 1) - 1;
       this.study.subscribe(study => {
         console.log('Study is:', study);
         console.log('Lemon Complete?', this.lemonExerciseCompleted);
         this.setupCondition(study.conditioning, testing);
-        this.loadIntro(this.sessionIndex);
+        this.loadIntro(study.currentSession.index - 1, study.conditioning);
         this.loadReadinessRulers();
         this.loadVividness();
         this.loadFlexibleThinking();
@@ -105,7 +99,7 @@ export class TrainingComponent implements OnInit {
   setupCondition(condition: String, testing: boolean) {
     if (condition === 'TRAINING_30') {
       this.totalRounds = 3;
-      this.flexibleThinkingRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 2;
       this.vividIndexes = [1, 2, 20, 30];
     } else if (condition === 'TRAINING_ED') {
       this.psychoedRoundIndex = 1; // Show training after completing the second round.
@@ -115,7 +109,7 @@ export class TrainingComponent implements OnInit {
     if (testing) {
       this.scenariosPerRound = 3;
       this.totalRounds = 2;
-      this.state = this.states.FLEXIBLE_THINKING;
+      this.flexibleThinkingRoundIndex = 1;
     }
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
@@ -181,7 +175,7 @@ export class TrainingComponent implements OnInit {
   loadProgress(scenarios, study: Study) {
     console.log('Loading Progress');
     this.api.getScenarios().subscribe(progress => {
-      console.log("Progress:", progress);
+      console.log('Progress:', progress);
       if (progress.length === 0) {
         this.scenariosToRounds(scenarios, study);
         return;
@@ -219,8 +213,8 @@ export class TrainingComponent implements OnInit {
     });
   }
 
-  loadIntro(sessionIndex) {
-    this.api.getTrainingIntro().subscribe(sessions => {
+  loadIntro(sessionIndex, condition) {
+    this.api.getTrainingIntro(condition).subscribe(sessions => {
       this.sessions = sessions;
       this.currentSession = this.sessions[sessionIndex];
       this.currentSession.startTime = performance.now();
@@ -228,9 +222,9 @@ export class TrainingComponent implements OnInit {
   }
 
   loadPsyched(study: Study) {
-    this.api.getControlSessions().subscribe(sessions => {
+    this.api.getControlInTrainingSessions().subscribe(sessions => {
       this.psychoed = sessions;
-      this.psychoedSession = sessions[study.currentSession.index];
+      this.psychoedSession = sessions[study.currentSession.index - 1];
     });
   }
 
@@ -310,7 +304,7 @@ export class TrainingComponent implements OnInit {
 
   flexibleComplete() {
     this.state = this.states.TRAINING;
-    this.nextTraining();
+    this.nextRound();
   }
 
   psychoedComplete() {
@@ -361,11 +355,9 @@ export class TrainingComponent implements OnInit {
     }
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
-      if (!this.connectionError) {
-        const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
-        if (index > -2) {
-          this.round.index = index;
-        }
+      const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
+      if (index > -2) {
+        this.round.index = index;
       }
       this.round.next(correct);
     } else if (this.round.isComplete()) {
@@ -406,13 +398,14 @@ export class TrainingComponent implements OnInit {
     return this.route.url.pipe(
       withLatestFrom(this.route.paramMap, this.route.queryParamMap)).pipe(
         map(([url, paramMap, queryParamMap]) => {
-        const study = {
+          const sessionIndex = +(paramMap.get('session') || 1) ;
+          const study = {
           name: 'default',
           conditioning: 'TRAINING',
-          currentSession: {index: 0, name: 'firstSession'},
-          currentSessionIndex: 0
+          currentSession: {index: sessionIndex, name: 'firstSession'},
+          currentSessionIndex: sessionIndex
         };
-        study.currentSessionIndex = +paramMap.get('session') - 1;
+        //study.currentSessionIndex = +paramMap.get('session') - 1;
         switch (paramMap.get('session')) {
           case('1'):
             study.currentSession.name = 'firstSession';
@@ -425,6 +418,9 @@ export class TrainingComponent implements OnInit {
             break;
           case('4'):
             study.currentSession.name = 'fourthSession';
+            break;
+          case('5'):
+            study.currentSession.name = 'fifthSession';
             break;
         }
         if (queryParamMap.has('condition')) {
@@ -444,8 +440,6 @@ export class TrainingComponent implements OnInit {
     return this.getStudy().pipe(map(study => {
       if (study.conditioning === 'CONTROL') {
         return true;
-      } else {
-        return !(study.currentSession.index - 1 === this.sessionIndex);
       }
     }));
   }

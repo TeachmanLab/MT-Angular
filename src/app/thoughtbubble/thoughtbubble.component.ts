@@ -39,6 +39,7 @@ export class ThoughtbubbleComponent implements OnInit {
     this.numStates = this.states.length;
     this.stateIndex = 0;
     this.currentState = this.states[0];
+    if (this.thoughtBubble.skip_continue) {this.progressState(); }
     // console.log('The current state is ' + this.currentState);
   }
 

@@ -24,7 +24,7 @@
               },
               { "type":  "Header",
                 "stimulusName":  "flex_thinking_note_p1",
-                "content": "Event: You haven’t heard from a friend for 2 weeks and you usually talk weekly."
+                "content": "Event: You receive a call from your boss that they want to meet with you tomorrow."
               },
               { "type":  "Paragraph",
                 "stimulusName":  "flex_thinking_p2",
@@ -32,7 +32,7 @@
               },
               { "type":  "Paragraph",
                 "stimulusName":  "flex_thinking_p3",
-                "content": "To add an additional text field, press the Submit button on your screen or the Return key on your keyboard."
+                "content": "To add an additional text field, press the 'Submit' button on your screen or the Return key on your keyboard."
               },
               { "type":  "Paragraph",
                 "stimulusName":  "flex_thinking_p4",
@@ -76,7 +76,7 @@
               {
                 "type": "Countdown",
                 "stimulusName": "readiness_timer",
-                "delayInSeconds": 1,
+                "delayInSeconds": 60,
                 "autoStart": true,
                 "content": "You have 60 seconds to complete as many explanations as possible."
               }
