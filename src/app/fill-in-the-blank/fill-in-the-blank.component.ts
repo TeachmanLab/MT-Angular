@@ -20,6 +20,7 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
 
   defaultMax = 25;
   defaultMin = 3;
+  maxLength = 0;
   minCharacters = this.defaultMin;
   word: FormControl;
   matcher = new MyErrorStateMatcher();
@@ -41,7 +42,9 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
   placeholder: string;
   submitButtonText: string;
 
-  constructor() { }
+  constructor() {
+    console.log('Fill in the Blank is:' , this.fillInBlank);
+  }
 
   @ViewChildren('input') vc;
 
@@ -55,18 +58,19 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    console.log('Fill in the Blank is:' , this.fillInBlank);
     this.startTime = performance.now();
     if (!this.fillInBlank.placeholder) {
       this.fillInBlank.placeholder = 'PLEASE FILL IN THE BLANK:';
     }
-    const maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
+    this.maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
     this.minCharacters = this.fillInBlank.minCharacters > 0 ?  this.fillInBlank.minCharacters : this.defaultMin;
     this.placeholder = this.fillInBlank.placeholder;
     this.submitButtonText = this.fillInBlank.submitButtonText || 'Submit';
     this.word = new FormControl('', [
       Validators.required,
       Validators.minLength(this.minCharacters), wordValidator,
-      Validators.maxLength(maxLength)]);
+      Validators.maxLength(this.maxLength)]);
   }
 
   submitWord(word: string) {

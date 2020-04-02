@@ -8,7 +8,7 @@ import {catchError, map, withLatestFrom} from 'rxjs/operators';
 import {combineLatest, observable, Observable} from 'rxjs';
 
 enum TrainingState {
-  // 'LEMON', 
+  // 'LEMON',
   'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
@@ -118,7 +118,6 @@ export class TrainingComponent implements OnInit {
     if (testing) {
       this.scenariosPerRound = 2;
       this.totalRounds = 4;
-      this.state = this.states.FLEXIBLE_THINKING;
     }
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
@@ -169,8 +168,8 @@ export class TrainingComponent implements OnInit {
     // Pull the training from the api, split it into a series of rounds
     this.api.getTrainingCSV(study.currentSession.name).subscribe(scenarios => {
       if (scenarios.length !== (this.totalRounds * this.scenariosPerRound)) {
-        throw Error('There must be ' + 
-        (this.totalRounds * this.scenariosPerRound) + 
+        throw Error('There must be ' +
+        (this.totalRounds * this.scenariosPerRound) +
         'scenarios! There are only ' + scenarios.length);
       }
       this.loadProgress(scenarios, study);
