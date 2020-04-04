@@ -33,19 +33,19 @@ export class TrainingComponent implements OnInit {
   psychoedSession: Session;
   psychoedRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   createScenario: Session[] = [];
-  createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
+  createScenarioRoundIndex = 1; // The (0 based) index of the round that should be followed by creating your own scenario. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
   // Need to check with Dan that I didn't mess up the index, here, after removing lemon exercise. Hmm... - Anna 2/11/20
-  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
+  flexibleThinkingRoundIndex = -1; // The (0 based) index of the round that should be   lemonExerciseCompleted = false;
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   sessionIndex = 0;
   stepIndex = 0;
   currentSession: Session;
   indicatorSessions: Session[];
-  totalRounds = 4;
-  scenariosPerRound = 2;
+  totalRounds = 2;
+  scenariosPerRound = 3;
   totalScore = 0;
   roundIndex = 0;
   round: Round;
@@ -88,7 +88,7 @@ export class TrainingComponent implements OnInit {
         this.loadIntro(this.sessionIndex);
         this.loadReadinessRulers();
         this.loadVividness();
-        this.loadFlexibleThinking();
+        // this.loadFlexibleThinking();
         this.loadImageryPrime();
         this.loadTraining(study);
         this.loadIndicatorSessions();
@@ -114,10 +114,6 @@ export class TrainingComponent implements OnInit {
       this.psychoedRoundIndex = 1; // Show training after completing the second round.
     } else if (condition === 'TRAINING_CREATE') {
       this.createScenarioRoundIndex = 2;
-    }
-    if (testing) {
-      this.scenariosPerRound = 2;
-      this.totalRounds = 4;
     }
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
