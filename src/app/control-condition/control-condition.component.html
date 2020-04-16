@@ -2,8 +2,8 @@
 <app-session *ngIf="currentSession && !sessionDone" [session]="currentSession" [sessions]="sessions" [sessionIndex]="sessionIndex" (done)="sessionComplete()"></app-session>
 <div *ngIf="sessionDone">
   <mat-card>
-    <h1>Session Complete!</h1>
-    <h6>You have completed <b>{{currentSession.title}}: {{currentSession.subTitle}}</b>. Nice work!</h6>
+    <h1>Module Complete!</h1>
+    <h6>You have completed the <i>{{currentSession.subTitle}}</i> section. Well done!</h6>
     <br>
     <br>
     <br>

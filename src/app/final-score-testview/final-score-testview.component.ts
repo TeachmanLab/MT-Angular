@@ -37,7 +37,7 @@ export class FinalScoreTestviewComponent implements OnInit {
   }
 
   loadSession2() {
-    this.api.getTrainingIntro().subscribe(s => {
+    this.api.getTrainingIntro("training").subscribe(s => {
         this.session = s[1];
         this.createTestRounds();
       }

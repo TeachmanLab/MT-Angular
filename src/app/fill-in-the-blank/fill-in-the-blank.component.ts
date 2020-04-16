@@ -22,6 +22,7 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
   defaultMin = 3;
   maxLength = 0;
   minCharacters = this.defaultMin;
+  maxCharacters = this.defaultMax;
   word: FormControl;
   matcher = new MyErrorStateMatcher();
   startTime: number;
@@ -43,12 +44,13 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
   submitButtonText: string;
 
   constructor() {
-    console.log('Fill in the Blank is:' , this.fillInBlank);
+    console.log('Fill in blank content:', this.fillInBlank);
   }
 
   @ViewChildren('input') vc;
 
   ngAfterViewInit() {
+
     /**
      * Focus the input element when this is loaded.
      */
@@ -63,14 +65,14 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
     if (!this.fillInBlank.placeholder) {
       this.fillInBlank.placeholder = 'PLEASE FILL IN THE BLANK:';
     }
-    this.maxLength = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
+    this.maxCharacters = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
     this.minCharacters = this.fillInBlank.minCharacters > 0 ?  this.fillInBlank.minCharacters : this.defaultMin;
     this.placeholder = this.fillInBlank.placeholder;
     this.submitButtonText = this.fillInBlank.submitButtonText || 'Submit';
     this.word = new FormControl('', [
       Validators.required,
       Validators.minLength(this.minCharacters), wordValidator,
-      Validators.maxLength(this.maxLength)]);
+      Validators.maxLength(this.maxCharacters)]);
   }
 
   submitWord(word: string) {
@@ -95,8 +97,8 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
 function wordValidator(control: FormControl) {
   const word = control.value;
   const threeLetters = new RegExp('[a-z]{3}', 'i');
-  const hasVowel = new RegExp('[aeiou]+', 'i');
-  const hasCon = new RegExp('[bcdfghjklmnpqrstvxzwy]', 'i');
+  const hasVowel = new RegExp('[aeiouy]+', 'i');
+  const hasCon = new RegExp('[bcdfghjklmnpqrstvxzw]', 'i');
   if (threeLetters.test(word) && hasVowel.test(word) && hasCon.test(word)) {
     return null;
   } else {

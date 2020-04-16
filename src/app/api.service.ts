@@ -27,8 +27,21 @@ export class ApiService {
       .pipe((catchError(this.handleError)));
   }
 
-  public getTrainingIntro(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/training_intro.json')
+  public getControlInTrainingSessions(): Observable<any> {
+    return this.httpClient.get<Session[]>('./assets/json/control_in_training.json')
+      .pipe((catchError(this.handleError)));
+  }
+
+  public getTrainingIntro(condition: String): Observable<Session[]> {
+    let url = '';
+    if (condition === 'TRAINING_30') {
+      url = './assets/json/training30_intro.json';
+    } else if (condition === 'TRAINING_ED') {
+      url = './assets/json/traininged_intro.json';
+    } else {
+      url = './assets/json/training_intro.json';
+    }
+    return this.httpClient.get<Session[]>(url)
       .pipe((catchError(this.handleError)));
   }
 
