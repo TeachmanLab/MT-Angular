@@ -28,6 +28,9 @@ export class MultiEntryComponent implements OnInit {
   @Output()
   updated: EventEmitter<ElementEvent> = new EventEmitter();
 
+  @Output()
+  event: EventEmitter<ElementEvent> = new EventEmitter();
+
   constructor(private factoryResolver: ComponentFactoryResolver,
               private viewContainerRef: ViewContainerRef) { }
 
@@ -37,11 +40,17 @@ export class MultiEntryComponent implements OnInit {
     this.addDynamicComponent();  // Add first entry
   }
 
+  addEvent(event) {
+    event.stimulusName = this.multiEntry.stimulusName;
+    this.event.emit(event);
+  }
+
   addDynamicComponent() {
     const factory = this.factoryResolver.resolveComponentFactory(FillInTheBlankComponent);
     const component = factory.create(this.viewContainerRef.parentInjector);
     component.instance.fillInBlank = this.multiEntry.fillInBlank;
     component.instance.force_focus = true;
+    component.instance.event.subscribe(e => this.addEvent(e));
     component.instance.done.subscribe(v => this.addDynamicComponent());
     this.viewContainerRef.insert(component.hostView);
   }

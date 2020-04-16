@@ -43,6 +43,7 @@
     *ngIf="el.type === 'MultiEntry'"
     [multiEntry]="el"
     (done)="divCompleted($event)"
+    (event)="handleElementEvent($event)"
     (updated)="elementUpdated($event)">
   </app-multi-entry>
   <div *ngIf="el.type==='Countdown'" class="letters" [@flyUpDown]="'in'">
