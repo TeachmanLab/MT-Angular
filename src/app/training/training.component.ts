@@ -79,7 +79,7 @@ export class TrainingComponent implements OnInit {
         console.log('Study is:', study);
         // console.log('Lemon Complete?', this.lemonExerciseCompleted);
         this.setupCondition(study.conditioning, testing);
-        this.loadIntro(study.currentSession.index - 1, study.conditioning);
+        this.loadIntro(study.currentSession.index, study.conditioning);
         this.loadReadinessRulers();
         this.loadVividness();
         // this.loadFlexibleThinking();
@@ -226,7 +226,8 @@ export class TrainingComponent implements OnInit {
   loadPsyched(study: Study) {
     this.api.getControlInTrainingSessions().subscribe(sessions => {
       this.psychoed = sessions;
-      this.psychoedSession = sessions[study.currentSession.index - 1];
+      this.psychoedSession = sessions[study.currentSession.index];
+      console.log("Psychoed Session", this.psychoedSession);
     });
   }
 
