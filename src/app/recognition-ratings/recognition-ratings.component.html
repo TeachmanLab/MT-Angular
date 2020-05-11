@@ -1,0 +1,16 @@
+<div>
+  <mat-card class="recognitionRatings">
+    <mat-card-content>
+      <div class="scenario-header">Story {{scenarioIndex+ 1}} of {{9}}</div>
+      <app-scenario
+        *ngIf="round.getScenario()"
+        [scenario]="round.getScenario()"
+        [scenarioIndex]="scenarioIndex"
+        [stepIndex]="stepIndex"
+        [pageCount]="pageCount"
+        (finalCount)="updatePageCount($event)"
+        (done)="scenarioComplete($event)"
+      ></app-scenario>
+    </mat-card-content>
+  </mat-card>
+</div>
