@@ -55,7 +55,7 @@ export class RecognitionRatingsComponent implements OnInit {
 
   ngOnInit() {
     this.loadIntro();
-    this.loadTraining()
+    this.loadTraining();
     // Pull the training from the api, split it into a series of rounds
   /*
     this.api.getTrainingCSV(study.recognitionRatings).subscribe(scenarios => {

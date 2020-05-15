@@ -58,7 +58,7 @@
   <div *ngIf="el.type==='Intro' || el.type==='Statements' || el.type==='MissingLetter' || el.type==='FillInBlank'" class="scenario">
     <div *ngIf="el.type==='Intro'" ngClass="" class="title" [@titleState]="el.type" >{{el.content}}</div>
     <div *ngIf="el.type==='Statements'" class="statement" [@flyUpDown]="'in'">
-      <mat-card class="statement"><app-statement [statement]="el.content" (doneTyping)="divCompleted()"></app-statement></mat-card>
+      <mat-card class="statement"><app-statement [statement]="el.content" [isStory]="isStory" (doneTyping)="divCompleted()"></app-statement></mat-card>
     </div>
     <div *ngIf="el.type==='MissingLetter'" class="letters" [@flyUpDown]="'in'">
       <app-missing-letter

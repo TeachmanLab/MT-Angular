@@ -11,7 +11,10 @@ import {ActivatedRoute} from '@angular/router';
 export class StatementComponent implements OnInit {
 
   @Input()
-  statement: String;
+  isStory = false;
+
+  @Input()
+  statement: string;
   typed = '';
   letter_delay = 45; // wait this many milliseconds before displaying the next content.
 
@@ -21,6 +24,14 @@ export class StatementComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    console.log("isStory is ", this.isStory)
+    if (this.isStory) {
+      this.typed = this.statement;
+      this.doneTyping.emit(true);
+      return;
+    }
+
     this.route.queryParamMap.subscribe(queryParamMap => {
       if (queryParamMap.get('testing') === 'true' || false) {
         this.letter_delay = 0;

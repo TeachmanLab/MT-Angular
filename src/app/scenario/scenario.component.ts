@@ -56,6 +56,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
   @Input()
   scenario: Scenario;
   @Input()
+  isStory = false;
+  @Input()
   scenarioIndex: number;
   @Input()
   session: Session;
@@ -91,6 +93,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
   ngOnInit() {
     // setting up the page counter in order to transition seamlessly between the session steps and round scenarios
     // the count must begin after the page count that gets established in the step component
+
     if (this.pageCount) {
       this.pageCounter = this.pageCount + 1;
     } else {
