@@ -19,7 +19,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "You are now ready for a Training Session!"
+                "content": "You are now ready for the Demo Training Session!"
               },
               {
                 "type": "BulletList",
@@ -28,8 +28,8 @@
                 "bullets": [
                   "Try to really imagine yourself in the situation described – use the picture to help you!",
                   "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
-                  "At the end of the story, select the missing letter tile that completes the incomplete word. Answer correctly on your first try to receive half a point!",
-                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!"
+                  "At the end of the story, you'll be presented with one of three types of questions: A missing letter exercise, a complete-the-sentence exercise, or a fill-in-the-blank exercise. For the missing letter, you'll need to select the missing letter tile that completes the incomplete word. For the complete-the-sentence, you'll need to select the ending that best completes the scenario. For the fill-in-the-blank, you'll need to type the word that best completes the sentence.",
+                  "Respond to the question about the story. Answer correctly on your first try to receive half a point!"
                 ]
               }
             ]
