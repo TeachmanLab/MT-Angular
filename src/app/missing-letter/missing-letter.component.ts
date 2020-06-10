@@ -54,6 +54,9 @@ export class MissingLetterComponent implements OnInit {
   endTime: number;
   correct = true;
 
+  @Input()
+  isStory = false;
+
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
@@ -64,6 +67,7 @@ export class MissingLetterComponent implements OnInit {
   }
 
   ngOnInit() {
+
     const word = this.missingLetter.content.toString();
 
     const missingIndexes = [];
@@ -133,7 +137,6 @@ export class MissingLetterComponent implements OnInit {
     this.options[rand_index] = correctLetter;
   }
 
-
   selectLetter(letter) {
     const responseTime = performance.now();
     if (!this.firstReactionTime) { this.firstReactionTime = responseTime; }
@@ -148,7 +151,9 @@ export class MissingLetterComponent implements OnInit {
       // if there is another missing letter to complete, set that up.otherwise we are all done.
       if (this.missingTileIndex === this.missingLetter.numberMissing ) {
         this.endTime = responseTime;
-        const waitASectionTimer = interval(1500);
+        let waitASectionTimer = interval(1500);
+        if (this.isStory) waitASectionTimer = interval(750);
+        console.log (this.isStory, 'waitASectionTimer');
         this.state = MyState.Correct;
         const sub = waitASectionTimer.subscribe( n => {
           this.allDone();
@@ -176,9 +181,4 @@ export class MissingLetterComponent implements OnInit {
       sub.unsubscribe();
     });
   }
-
-
-
-
-
 }

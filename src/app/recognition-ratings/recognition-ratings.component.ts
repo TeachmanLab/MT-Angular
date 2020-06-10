@@ -80,7 +80,7 @@ export class RecognitionRatingsComponent implements OnInit {
       session: 'Recognition Ratings',
       title: 'Recognition Ratings',
       subTitle: 'asdasf',
-      sessionIndicator: 'asdf',
+      sessionIndicator: 'recognitionRatings',
       description: [],
       steps: [],
       conditioning: '',

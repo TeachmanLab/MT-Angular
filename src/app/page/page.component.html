@@ -8,8 +8,8 @@
       <p class="reference">{{ text }}</p>
     </span>
   </div>
-  <div class="pageImage" *ngIf="el.type === 'Image'">
-    <img  [src]="el.content">
+  <div class="pageImage" *ngIf="el.type === 'Image'" [ngClass]="{'story': isStory === true, 'Image':isStory !== true }">
+  <img  [src]="el.content">
     <p fxLayoutAlign="center" class="caption">{{el.caption}}</p>
   </div>
   <div class="slider" *ngIf="el.type === 'Slider'">
@@ -21,8 +21,9 @@
   <app-highlight *ngIf="el.type === 'Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
   <app-bullet-list *ngIf="el.type === 'BulletList'" [bulletList]="el" (done)="divCompleted()"></app-bullet-list>
   <app-question
-    *ngIf="el.type === 'Question'"
+    *ngIf="el.type === 'Question'" [ngClass]="{'story': isStory === true, 'Question':isStory !== true }"
     [question]="el"
+    [isStory]=true
     (event)="handleElementEvent($event)"
     (done)="divCompleted($event)"
     [@flyUpDown]="'in'"
@@ -46,9 +47,10 @@
     (event)="handleElementEvent($event)"
     (updated)="elementUpdated($event)">
   </app-multi-entry>
-  <div *ngIf="el.type==='Countdown'" class="letters" [@flyUpDown]="'in'">
+  <div *ngIf="el.type==='Countdown'" [ngClass]="{'story': isStory === true, 'Countdown':isStory !== true }" class="letters" [@flyUpDown]="'in'">
     <app-countdown
       [countdown]="el"
+      [isStory]=true
       (event)="handleElementEvent($event)"
       (done)="divCompleted($event)"
     ></app-countdown>
@@ -57,17 +59,18 @@
 
   <div *ngIf="el.type==='Intro' || el.type==='Statements' || el.type==='MissingLetter' || el.type==='FillInBlank'" class="scenario">
     <div *ngIf="el.type==='Intro'" ngClass="" class="title" [@titleState]="el.type" >{{el.content}}</div>
-    <div *ngIf="el.type==='Statements'" class="statement" [@flyUpDown]="'in'">
+    <div *ngIf="el.type==='Statements'" [ngClass]="{'story': isStory === true, 'Statements':isStory !== true }" class="statement" [@flyUpDown]="'in'">
       <mat-card class="statement"><app-statement [statement]="el.content" [isStory]="isStory" (doneTyping)="divCompleted()"></app-statement></mat-card>
     </div>
-    <div *ngIf="el.type==='MissingLetter'" class="letters" [@flyUpDown]="'in'">
+    <div *ngIf="el.type==='MissingLetter'" [ngClass]="{'story': isStory === true, 'MissingLetter':isStory !== true }" class="letters" [@flyUpDown]="'in'">
       <app-missing-letter
         [missingLetter]="el"
+        [isStory]="isStory"
         (event)="handleElementEvent($event)"
         (done)="divCompleted($event)"
       ></app-missing-letter>
     </div>
-    <div *ngIf="el.type==='FillInBlank'"  class="letters" [@flyUpDown]="'in'">
+    <div *ngIf="el.type==='FillInBlank'" class="letters" [@flyUpDown]="'in'">
       <app-fill-in-the-blank
         [fillInBlank]='el'
         (event)="handleElementEvent($event)"

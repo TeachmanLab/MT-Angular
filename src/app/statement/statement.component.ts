@@ -29,6 +29,7 @@ export class StatementComponent implements OnInit {
     if (this.isStory) {
       this.typed = this.statement;
       this.doneTyping.emit(true);
+      this.typed = this.typed.concat('...');
       return;
     }
 

@@ -29,6 +29,9 @@ export class QuestionComponent implements OnInit {
   firstReactionTime = 0;
   endTime: number;
 
+  @Input()
+  isStory = false;
+
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
@@ -79,7 +82,9 @@ export class QuestionComponent implements OnInit {
   }
 
   waitAndEmit() {
-    const secondsCounter = interval(1000);
+    let secondsCounter = interval(1500);
+    if (this.isStory) secondsCounter = interval(750);
+    console.log (this.isStory, 'secondsCounter');
     const subscription = secondsCounter.subscribe(n => {
       this.allDone();
       subscription.unsubscribe();
@@ -87,7 +92,9 @@ export class QuestionComponent implements OnInit {
   }
 
   makeThemWait() {
-    const secondsCounter = interval(500);
+    let secondsCounter = interval(500);
+    if (this.isStory) secondsCounter = interval(200);
+    console.log (this.isStory, 'secondsCounter');
     this.waitPercent = 0;
     let counter = 0;
     const subscription = secondsCounter.subscribe(n => {

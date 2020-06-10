@@ -68,7 +68,36 @@ div.scenario {
   }
 }
 
+div.story {
+  position: relative;
 
+  div.title {
+    position: absolute;
+    max-width: 80px;
+    top: 10px;
+    color: #000000;
+    text-shadow: 0px 0px #fed8b1;
+    background: rgba(1,1,1,0.2);
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  div.image {
+    border-radius: 0 0 0 0;
+  }
+
+  mat-card {
+    border-radius: 0px;
+  }
+
+  mat-card.statement {
+    background: #ffe5cc;
+    margin: 10px;
+    border-radius: 6px;
+    max-width: 90%;
+    padding-left: 10%;
+    }
+  }
 
 @media only screen and (max-width: 768px) {
   div.scenario {
@@ -90,5 +119,4 @@ div.scenario {
       margin: auto;
     }
   }
-
 }
