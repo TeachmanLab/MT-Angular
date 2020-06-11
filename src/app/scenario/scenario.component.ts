@@ -29,7 +29,7 @@ import {renderComponentOrTemplate} from '@angular/core/src/render3/instructions'
     ]),
     trigger('titleState', [
       state('Intro', style({
-        transform: 'translateY(150%) translateX(150%) scale(4)'
+        transform: 'translateY(200%) translateX(100%) scale(4)'
       })),
       state('*', style({
         color: '#000',

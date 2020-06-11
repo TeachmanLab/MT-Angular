@@ -10,7 +10,7 @@
       position: absolute;
       top: 10px;
       left: 10%;
-      margin:auto;
+      margin: auto;
       width: 80%;
     }
 
@@ -18,17 +18,18 @@
       position: absolute;
       bottom: 30px;
       right: 10%;
-      margin:auto;
+      margin: auto;
       font-size: 1.2rem;
     }
 
     div.image {
-      padding-top:20px;
+      padding-top: 20px;
       height: 100%;
       border-radius: 0 0 25px 25px;
       background-repeat: no-repeat;
       background-size: 100%;
     }
+  }
 
     mat-card.statement {
       font-size: 1.5rem;
@@ -43,10 +44,8 @@
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#178dcd', endColorstr='#e5e7ee', GradientType=1); /* IE6-9 */
     }
 
-}
-
-@media only screen and (max-width: 768px) {
-  div.scenario {
-    height: 400px;
-  }
-}
+    @media only screen and (max-width: 768px) {
+      div.scenario {
+        height: 400px;
+      }
+    }
