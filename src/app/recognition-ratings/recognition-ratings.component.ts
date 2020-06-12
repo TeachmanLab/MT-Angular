@@ -8,6 +8,8 @@ import {Round} from '../round';
 import {combineLatest, observable, Observable} from 'rxjs';
 import {withLatestFrom} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
 
 enum State {
   'INTRO', 'RR'
@@ -49,8 +51,12 @@ export class RecognitionRatingsComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer
   ) {
+    iconRegistry.addSvgIcon('recognitionRatings',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/training_images/example_icons/recognitionRatings.svg'));
   }
 
 

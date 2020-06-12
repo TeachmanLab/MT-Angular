@@ -93,7 +93,7 @@ export class QuestionComponent implements OnInit {
 
   makeThemWait() {
     let secondsCounter = interval(500);
-    if (this.isStory) secondsCounter = interval(200);
+    if (this.isStory) secondsCounter = interval(250);
     console.log (this.isStory, 'secondsCounter');
     this.waitPercent = 0;
     let counter = 0;
