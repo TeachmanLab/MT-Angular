@@ -33,7 +33,7 @@ export class TrainingComponent implements OnInit {
   psychoedSession: Session;
   psychoedRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   createScenario: Session[] = [];
-  createScenarioRoundIndex = 1; // The (0 based) index of the round that should be followed by creating your own scenario. -1 for none.
+  createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by creating your own scenario. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
   // Need to check with Dan that I didn't mess up the index, here, after removing lemon exercise. Hmm... - Anna 2/11/20
