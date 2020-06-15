@@ -223,7 +223,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "calmWork",
-                "content": "How Calm Thinking Works"
+                "content": "How MindTrails Works"
               },
               {
                 "type": "Paragraph",
@@ -237,7 +237,7 @@
                   {
                     "type": "LargeHeader",
                     "stimulusName": "readinessHeader2",
-                    "content": "How Calm Thinking Works"
+                    "content": "How MindTrails Works"
                   },
                   {
                     "type": "Question",

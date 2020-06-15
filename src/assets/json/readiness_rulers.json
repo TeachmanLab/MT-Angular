@@ -14,7 +14,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "readinessHeader",
-                "content": "How Calm Thinking Works"
+                "content": "How MindTrails Works"
               },
               {
                 "type": "Paragraph",
@@ -24,7 +24,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_rulers_p1",
-                "content": "The Calm Thinking program is designed to shift anxious thinking styles. By really imagining yourself in these situations and then completing the last word of the story in a way that frequently–but not always–assigns a positive ending to the story, you are being challenged to think about potentially threatening situations in new ways."
+                "content": "The MindTrails program is designed to shift anxious thinking styles. By really imagining yourself in these situations and then completing the last word of the story in a way that frequently–but not always–assigns a positive ending to the story, you are being challenged to think about potentially threatening situations in new ways."
               },
               {
                 "type": "Paragraph",
@@ -38,7 +38,7 @@
                 {
                   "type": "LargeHeader",
                   "stimulusName": "readinessHeader",
-                  "content": "How Calm Thinking Works"
+                  "content": "How MindTrails Works"
                 },
                 {
                   "type": "Question",

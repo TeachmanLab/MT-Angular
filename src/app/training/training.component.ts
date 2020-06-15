@@ -38,6 +38,7 @@ export class TrainingComponent implements OnInit {
   flexibleThinkingRoundIndex = -1; // The (0 based) index of the round that should be followed by flex thinking. -1 for none.
   readinessCompleted = false;
   imageryPrimeCompleted = false;
+  readinessScenarioIndex = 6;
   sessionIndex = 0;
   stepIndex = 0;
   currentSession: Session;
@@ -109,6 +110,7 @@ export class TrainingComponent implements OnInit {
       this.flexibleThinkingRoundIndex = 3;
     } else if (condition === 'TRAINING_ORIG' ) {
       this.flexibleThinkingRoundIndex = 3;
+
     }
 
     if (testing) {
@@ -350,7 +352,15 @@ export class TrainingComponent implements OnInit {
   }
 
   nextTraining(correct = true) {
-    this.stepIndex++;
+    if (this.currentSession.session === 'firstSession' && this.scenarioIndex === this.readinessScenarioIndex &&
+      !this.readinessCompleted) {
+      this.state = this.states.READINESS;
+      return;
+    } else if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
+      this.vividIndexes.splice( this.vividIndexes.indexOf(this.scenarioIndex - 1), 1 );
+      this.state = this.states.VIVIDNESS;
+      return;
+    }
     if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
       this.vividIndexes.splice( this.vividIndexes.indexOf(this.scenarioIndex - 1), 1 );
       this.state = this.states.VIVIDNESS;
