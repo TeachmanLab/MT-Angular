@@ -54,7 +54,51 @@
                   "preferNotToAnswer": true
                 }
                   ]
-                }
+                },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "readinessHeader",
+                "content": "How MindTrails Works"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "video1",
+                "content": "Now that you have some experience with MindTrails, we would like to invite you to view our short videos by MindTrails team members, who address some common questions about the training and provide tips about using the program more effectively."
+              },
+              {
+                "type": "Image",
+                "stimulusName": "videosimg",
+                "content": "./assets/training_images/videos.jpeg"
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "video3",
+                "title": "Topics include:",
+                "bullets": ["Why all the stories do not end positively",
+                  "Why it’s important to really imagine yourself in the stories, and how to do that",
+                  "Why repetition is involved in the training",
+                  "How training can shift your experiences in the real world"
+                ]
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "video4",
+                "content": "You can view these videos at the link below, or by navigating to the About page on the menubar at any time outside of the training session sections."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "video5",
+                "link": "www.somesite.com/abc/xyz"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "video6",
+                "content": "Press the Next button to resume the training session!"
+              }
+            ]
+          }
               ]
             }
           ]
