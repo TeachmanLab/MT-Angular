@@ -22,6 +22,9 @@ export class CountdownComponent implements OnInit, AfterViewInit {
   endTime: number;
   currentSecond = 0;
 
+  @Input()
+  isStory = false;
+
   @Output()
   done: EventEmitter<boolean> = new EventEmitter();
 
@@ -42,7 +45,9 @@ export class CountdownComponent implements OnInit, AfterViewInit {
 
   startCountdown() {
     this.state = CountDownState.WAIT;
-    const waitASectionTimer = interval( 1000);
+    let waitASectionTimer = interval(1000);
+    if (this.isStory) waitASectionTimer = interval(500);
+    console.log (this.isStory, 'waitASectionTimer');
     const sub = waitASectionTimer.subscribe( n => {
       this.currentSecond++;
       if (this.currentSecond >= this.countdown.delayInSeconds) {

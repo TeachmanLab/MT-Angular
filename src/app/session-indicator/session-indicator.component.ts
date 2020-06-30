@@ -23,6 +23,9 @@ export class SessionIndicatorComponent implements OnInit {
   @Input()
   steps = false;
 
+  @Input()
+  isStory = false;
+
   constructor(private iconRegistry: MatIconRegistry,
               private sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('session1',
@@ -35,6 +38,8 @@ export class SessionIndicatorComponent implements OnInit {
       sanitizer.bypassSecurityTrustResourceUrl('assets/control/s4.svg'));
     iconRegistry.addSvgIcon('session5',
       sanitizer.bypassSecurityTrustResourceUrl('assets/control/s5.svg'));
+    iconRegistry.addSvgIcon('recognitionRatings',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/training_images/example_icons/recognitionRatings.svg'));
     iconRegistry.addSvgIcon('training1',
       sanitizer.bypassSecurityTrustResourceUrl('assets/training_images/example_icons/s1.svg'));
     iconRegistry.addSvgIcon('training2',

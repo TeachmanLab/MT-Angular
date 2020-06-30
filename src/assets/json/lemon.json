@@ -13,12 +13,12 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "intro1",
-                "content": "The Calm Thinking Program"
+                "content": "The MindTrails Program"
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "The goal of the Calm Thinking Program is to reduce your anxious thinking by changing the way you make sense of information. In each session, you will practice responding to situations in different ways by reading brief stories and completing word fragments by filling in one or more missing letters in a word."
+                "content": "The goal of MindTrails is to reduce your anxious thinking by changing the way you make sense of information. In each session, you will practice responding to situations in different ways by reading brief stories and completing word fragments by filling in one or more missing letters in a word."
               },
               {
                 "type": "Paragraph",
@@ -28,7 +28,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "This is an experimental program, so it is still in the testing phase. But previous research suggests that this program may be able to reduce anxious thinking as much as therapy for some people. We want to learn whether it can be helpful for you."
+                "content": "This is an experimental program that is still in the testing phase. But previous research suggests that this program may be able to reduce anxious thinking as much as therapy does for some people. We want to learn whether it can be helpful for you."
               }
             ]
           },
@@ -42,7 +42,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Because the Calm Thinking program requires you to imagine yourself in different situations, we believe that vividly imagining yourself in these situations is important for the program to be effective. Before you start the training, we want you to complete two brief, practice imagery exercises:"
+                "content": "Because the MindTrails program requires you to imagine yourself in different situations, we believe that vividly imagining yourself in these situations is important for the program to be effective. Before you start the training, we want you to complete two brief, practice imagery exercises:"
               },
               {
                 "type": "BulletList",

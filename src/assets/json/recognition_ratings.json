@@ -1,0 +1,38 @@
+[
+  {
+    "session": "recognition",
+    "title": "Completing Short Stories",
+    "subTitle": "",
+    "conditioning": "Recognition Ratings",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "readinessHeader",
+                "content": "Completing Short Stories"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "recognitionRatingsIntro",
+                "content": "In this brief exercise, you will read several short stories."
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "intro",
+                "bullets": ["Please read each one carefully and try to imagine yourself in the situation.",
+                  "The last word of each story is incomplete. Click on the missing letter to complete the word.",
+                  "After you correctly complete the word, you will be asked a question about the story. Answer the question based on the information in the story."
+                ]
+              }
+            ]
+          }
+              ]
+            }
+          ]
+      }
+    ]

@@ -1,5 +1,5 @@
 <div class="letter_options">
-  <div class="letters"
+  <div [ngClass] = "{'letters':true, 'isStory': isStory}"
        fxLayout="row"
        fxLayoutAlign="center"
        fxLayoutGap="10px"
@@ -11,7 +11,7 @@
 
     <h2>SELECT A TILE:</h2>
 
-    <div class="options"
+    <div [ngClass] = "{'options':true, 'isStory': isStory}"
          [@listAnimation]="options.length"
          fxLayout="row"
          fxLayoutAlign="center"

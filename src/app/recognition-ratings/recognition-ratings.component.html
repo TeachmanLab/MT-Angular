@@ -1,0 +1,28 @@
+<div>
+  <app-session *ngIf="state === states.INTRO"
+               [session]="currentSession"
+               [sessions]="sessions"
+               [sessionIndex]="sessionIndex"
+               (done)="introComplete()"
+  ></app-session>
+
+  <mat-card *ngIf="state === states.RR" class="recognitionRatings">
+    <mat-card-content>
+      <div class="story-header">
+        <mat-icon svgIcon="recognitionRatings"></mat-icon>
+        Story {{scenarioIndex+ 1}} of {{9}}</div>
+      <app-scenario
+        *ngIf="currentScenario"
+        [session]="currentScenario"
+        [isStory]=true
+        [scenario]="currentScenario"
+        [scenarioIndex]="scenarioIndex"
+        [stepIndex]="stepIndex"
+        [pageCount]="pageCount"
+        (finalCount)="updatePageCount($event)"
+        (done)="scenarioComplete($event)"
+      ></app-scenario>
+    </mat-card-content>
+  </mat-card>
+</div>
+

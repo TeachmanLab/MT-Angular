@@ -1,101 +1,222 @@
 @import '../../mindtrails_material';
 @include mindtrails-theme($mindtrails-theme);
 
-.letter {
-  border: 1px solid mat-color($mindtrails-primary, 900);
-  padding: 10px;
-  border-radius: 8px;
-  width: 15px;
-  box-shadow: 2px 2px #888;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
-  background-color: mat-color($mindtrails-primary, A100, .35);
-}
-
-
-
-.options {
-  min-height: 60px;
-}
-
-h2 {
-  text-align: center;
-}
-
-@keyframes glowing {
-  0% { box-shadow: 0 0 -10px #c4a300; }
-  40% { box-shadow: 0 0 20px #c4a300; }
-  60% { box-shadow: 0 0 20px #c4a300; }
-  100% { box-shadow: 0 0 -10px #c4a300; }
-}
-
-div.missingActive {
-  background-color: #fff;
-//  box-shadow: -1px -1px #888;
-//  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-  animation: glowing 1000ms 1 500ms;
-}
-
-div.missingInactive {
-}
-
-div.blank {
-  border: none;
-  box-shadow: none;
-  background-color: #fff;
-}
-
-div.correct {
-  background-color: mat-color($mindtrails-accent, A100);
-//  border: mat-color($mindtrails-accent, A700);
-  box-shadow: -1px -1px #888;
-//  font-size: 1.8em;
-}
-
-div.incorrect, button.incorrect {
-  background-color: mat-color($mindtrails-warn, A100);
-  border: 1px solid mat-color($mindtrails-warn, A700);
-  box-shadow: -1px -1px #888;
-}
-
-div.correct-message, div.incorrect-message {
-  padding: 20px;
-  margin: auto;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bolder;
-}
-div.correct-message {
-  color: mat-color($mindtrails-accent, A700);
-}
-div.incorrect-message {
-  color: mat-color($mindtrails-warn, A700);
-}
-
-div.select-a-tile {
-  margin: 20px 0px;
-  padding: 20px 0px;
-  border-top: 2px solid lightgray;
-  border-bottom: 2px solid lightgray;
-
-  h2 {
-    font-size: 1rem;
-    font-weight: 300;
-    margin: 0px 0px 0px 0px;
-  }
-
-}
-
-button.letter {
-  font-size: 1.3rem;
-}
-
-@media only screen and (max-width: 768px) {
 
   .letter {
-    font-size: 1.0rem;
-    padding: 7px;
+    border: 1px solid mat-color($mindtrails-primary, 900);
+    padding: 10px;
+    border-radius: 8px;
+    width: 15px;
+    box-shadow: 2px 2px #888;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: mat-color($mindtrails-primary, A100, .35);
   }
 
-}
+  div.isStory {
+    .letter {
+      border: 1px solid mat-color($mindtrails-primary, 900);
+      padding: 10px;
+      border-radius: 8px;
+      width: 15px;
+      box-shadow: 2px 2px #888;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      background-color: #ffe5cc;
+    }
+  }
+
+  .options {
+    min-height: 60px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 -10px #c4a300;
+    }
+    40% {
+      box-shadow: 0 0 20px #c4a300;
+    }
+    60% {
+      box-shadow: 0 0 20px #c4a300;
+    }
+    100% {
+      box-shadow: 0 0 -10px #c4a300;
+    }
+  }
+
+  div.missingActive {
+    background-color: #fff;
+    //  box-shadow: -1px -1px #888;
+    //  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+    animation: glowing 1000ms 1 500ms;
+  }
+
+  div.isStory {
+    div.missingActive {
+      background-color: #fff;
+      animation: glowing 1000ms 1 500ms;
+    }
+  }
+
+  div.missingInactive {
+  }
+
+  div.blank {
+    border: none;
+    box-shadow: none;
+    background-color: #fff;
+  }
+
+
+  div.correct {
+    background-color: mat-color($mindtrails-accent, A100);
+    //  border: mat-color($mindtrails-accent, A700);
+    box-shadow: -1px -1px #888;
+    //  font-size: 1.8em;
+  }
+
+  div.incorrect, button.incorrect {
+    background-color: mat-color($mindtrails-warn, A100);
+    border: 1px solid mat-color($mindtrails-warn, A700);
+    box-shadow: -1px -1px #888;
+  }
+
+  div.correct-message, div.incorrect-message {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  div.correct-message {
+    color: mat-color($mindtrails-accent, A700);
+  }
+
+  div.incorrect-message {
+    color: mat-color($mindtrails-warn, A700);
+  }
+
+  div.select-a-tile {
+    margin: 20px 0px;
+    padding: 20px 0px;
+    border-top: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 0px 0px 0px 0px;
+    }
+  }
+
+  button.letter {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    .letter {
+      font-size: 1.0rem;
+      padding: 7px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 -10px #c4a300;
+    }
+    40% {
+      box-shadow: 0 0 20px #c4a300;
+    }
+    60% {
+      box-shadow: 0 0 20px #c4a300;
+    }
+    100% {
+      box-shadow: 0 0 -10px #c4a300;
+    }
+  }
+
+  div.missingActive {
+    background-color: #fff;
+    //  box-shadow: -1px -1px #888;
+    //  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+    animation: glowing 1000ms 1 500ms;
+  }
+
+  div.missingInactive {
+  }
+
+  div.blank {
+    border: none;
+    box-shadow: none;
+    background-color: #fff;
+  }
+
+
+  div.correct {
+    background-color: mat-color($mindtrails-accent, A100);
+    //  border: mat-color($mindtrails-accent, A700);
+    box-shadow: -1px -1px #888;
+    //  font-size: 1.8em;
+  }
+
+  div.incorrect, button.incorrect {
+    background-color: mat-color($mindtrails-warn, A100);
+    border: 1px solid mat-color($mindtrails-warn, A700);
+    box-shadow: -1px -1px #888;
+  }
+
+  div.correct-message, div.incorrect-message {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  div.isStory {
+    div.correct {
+      background-color: mat-color($mindtrails-accent, A100);
+      //  border: mat-color($mindtrails-accent, A700);
+      box-shadow: -1px -1px #888;
+      //  font-size: 1.8em;
+    }
+
+    div.incorrect, button.incorrect {
+      background-color: mat-color($mindtrails-warn, A100);
+      border: 1px solid mat-color($mindtrails-warn, A700);
+      box-shadow: -1px -1px #888;
+    }
+  }
+
+  div.correct-message {
+    color: mat-color($mindtrails-accent, A700);
+  }
+
+  div.incorrect-message {
+    color: mat-color($mindtrails-warn, A700);
+  }
+
+  button.letter {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    .letter {
+      font-size: 1.0rem;
+      padding: 7px;
+    }
+  }

@@ -22,6 +22,11 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
+  public getRecognitionRatings(): Observable<any> {
+      return this.httpClient.get('./assets/json/recognition_ratings.json')
+    .pipe((catchError(this.handleError)));
+  }
+
   public getControlSessions(): Observable<any> {
     return this.httpClient.get<Session[]>('./assets/json/control.json')
       .pipe((catchError(this.handleError)));

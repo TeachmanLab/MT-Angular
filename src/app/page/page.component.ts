@@ -51,6 +51,9 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
 export class PageComponent implements OnChanges {
 
   @Input()
+  isStory = false;
+
+  @Input()
   page: Page;
   elementIndex: number;
   numElements: number;

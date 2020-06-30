@@ -8,14 +8,14 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "How Does Calm Thinking Work?",
+        "title": "How Does MindTrails Work?",
         "pages": [
           {
             "elements": [
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "The Calm Thinking program is five sessions. You will complete one session a week, and each session takes about 15 minutes or fewer. You will also answer some questions as part of our research study so we can evaluate how well the program works."
+                "content": "The MindTrails program is five sessions. You will complete one session a week, and each session takes about 15 minutes or fewer. You will also answer some questions as part of our research study so we can evaluate how well the program works."
               },
               {
                 "type": "Paragraph",
@@ -223,7 +223,7 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "calmWork",
-                "content": "How Calm Thinking Works"
+                "content": "How MindTrails Works"
               },
               {
                 "type": "Paragraph",
@@ -237,7 +237,7 @@
                   {
                     "type": "LargeHeader",
                     "stimulusName": "readinessHeader2",
-                    "content": "How Calm Thinking Works"
+                    "content": "How MindTrails Works"
                   },
                   {
                     "type": "Question",

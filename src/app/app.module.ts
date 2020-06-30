@@ -46,6 +46,7 @@ import { CountdownComponent } from './countdown/countdown.component';
 import { SliderComponent } from './slider/slider.component';
 import { RandomNonPreviousStatementComponent } from './random-non-previous-statement/random-non-previous-statement.component';
 import { MultiEntryComponent } from './multi-entry/multi-entry.component';
+import { RecognitionRatingsComponent } from './recognition-ratings/recognition-ratings.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -54,7 +55,8 @@ const routes: Routes = [
   { path: 'control', component: ControlConditionComponent },
   { path: 'control/:session', component: ControlConditionComponent },
   { path: 'scoreTest', component: TrainingScoreTestviewComponent },
-  { path: 'finalScoreTest', component: FinalScoreTestviewComponent }
+  { path: 'finalScoreTest', component: FinalScoreTestviewComponent },
+  { path: 'recognition', component: RecognitionRatingsComponent },
 ];
 
 @NgModule({
@@ -86,7 +88,8 @@ const routes: Routes = [
     CountdownComponent,
     SliderComponent,
     RandomNonPreviousStatementComponent,
-    MultiEntryComponent
+    MultiEntryComponent,
+    RecognitionRatingsComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
