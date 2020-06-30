@@ -3,14 +3,19 @@
   <h1 *ngIf="el.type === 'LargeHeader'">{{el.content}}</h1>
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
+  <a *ngIf="el.type === 'Link'" href="{{el.link}}" target="{{el.target}}">{{el.content}}</a>
   <div *ngIf="el.type === 'References'">
     <span *ngFor="let text of el.content">
       <p class="reference">{{ text }}</p>
     </span>
   </div>
   <div class="pageImage" *ngIf="el.type === 'Image'" [ngClass]="{'story': isStory === true, 'Image':isStory !== true }">
-  <img  [src]="el.content">
-    <p fxLayoutAlign="center" class="caption">{{el.caption}}</p>
+    <a *ngIf="el.link" href="{{el.link}}" target="new">
+      <img  [src]="el.content">
+    </a>
+    <img *ngIf="!(el.link)" [src]="el.content">
+
+      <p fxLayoutAlign="center" class="caption">{{el.caption}}</p>
   </div>
   <div class="slider" *ngIf="el.type === 'Slider'">
     <app-slider [slider]="el"

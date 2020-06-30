@@ -115,7 +115,10 @@ export class TrainingComponent implements OnInit {
 
     if (testing) {
       this.scenariosPerRound = 3;
+      this.flexibleThinkingRoundIndex = 1;
       this.totalRounds = 2;
+      this.readinessScenarioIndex = 1;
+      this.lemonExerciseCompleted = true;
     }
     if (testing && condition === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;

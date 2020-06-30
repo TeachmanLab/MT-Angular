@@ -44,6 +44,13 @@ export interface Element {
 export interface Image extends Element {
   type: 'Image';
   caption?: string;
+  link?: string;
+}
+
+export interface Link extends Element {
+  type: 'Link';
+  link: string;
+  target: string;
 }
 
 export interface MissingLetter extends Element {
