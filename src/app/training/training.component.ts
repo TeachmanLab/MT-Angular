@@ -419,7 +419,8 @@ export class TrainingComponent implements OnInit {
           const study = {
           name: 'default',
           conditioning: 'TRAINING',
-          currentSession: {index: sessionIndex, name: 'firstSession'},
+          currentSession: {index: sessionIndex, name: 'firstSession',
+            currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}},
           currentSessionIndex: sessionIndex
         };
         //study.currentSessionIndex = +paramMap.get('session') - 1;

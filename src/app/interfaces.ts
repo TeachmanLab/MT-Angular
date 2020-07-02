@@ -1,4 +1,5 @@
 
+
 export interface Session {
   session: string; // the name used on the back end, such as firstSession, etc.
   title: string;
@@ -135,6 +136,13 @@ export interface ServerSessionInfo {
   displayName?: string;
   complete?: boolean;
   current?: boolean;
+  currentTask: Task;
+}
+
+export interface Task {
+  name: string;
+  displayName: string;
+  type: string;
 }
 
 // A way to provide details about a particular component, this
@@ -147,6 +155,7 @@ export interface ElementEvent {
   correct?: boolean; // False when an incorrect answer is chosen, otherwise True.
   rt: number; // Response time from starting the page to completing the page in milliseconds
   rtFirstReact: number; // Response time from starting the page to the first reaction (pressing a button to answer a question) in ms.
+  task?: string;  // The current task as specified by the backend.
 }
 
 // This is how we collect data as participants move through the sessions.

@@ -43,9 +43,6 @@ export class RecognitionRatingsComponent implements OnInit {
   pageCount: number;
   increment: number;
 
-
-  @Input() setScenarioIndex: number;
-
   @Output() done: EventEmitter<any> = new EventEmitter();
 
 
@@ -63,14 +60,6 @@ export class RecognitionRatingsComponent implements OnInit {
   ngOnInit() {
     this.loadIntro();
     this.loadTraining();
-    // Pull the training from the api, split it into a series of rounds
-  /*
-    this.api.getTrainingCSV(study.recognitionRatings).subscribe(scenarios => {
-      if (scenarios.length !== 10) {
-        throw Error('There must be 10 scenarios! There are only ' + scenarios.length);
-      }
-    });
-  */
   }
 
   loadIntro() {
@@ -86,7 +75,7 @@ export class RecognitionRatingsComponent implements OnInit {
     this.currentSession = {
       session: 'Recognition Ratings',
       title: 'Recognition Ratings',
-      subTitle: 'asdasf',
+      subTitle: '',
       sessionIndicator: 'recognitionRatings',
       description: [],
       steps: [],

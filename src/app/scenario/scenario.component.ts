@@ -99,7 +99,8 @@ export class ScenarioComponent implements OnInit, OnChanges {
     } else {
       this.pageCounter = 1;
     }
-    this.study = {name: '', currentSession: {index: 0, name: ''}, conditioning: ''};
+    this.study = {name: '', currentSession: {index: 0, name: '',
+        currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}}, conditioning: ''};
     this.api.getStudy().subscribe(study => {
       this.study = study;
     });
@@ -143,6 +144,7 @@ export class ScenarioComponent implements OnInit, OnChanges {
       sessionTitle: this.session.title + ': ' + this.session.subTitle,
       conditioning: this.study.conditioning,
       study: this.study.name,
+      task: this.study.currentSession.currentTask.name,
       stepTitle: 'scenario',
       stepIndex: this.stepIndex,
       stimulusName: this.scenario.title,

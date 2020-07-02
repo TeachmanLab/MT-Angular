@@ -46,7 +46,8 @@ export class StepComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.pageIndex = 0;
     this.pageCounter = 1;
-    this.study = {name: '', currentSession: {index: 0, name: ''}, conditioning: ''};
+    this.study = {name: '', currentSession: {index: 0, name: '',
+        currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}}, conditioning: ''};
     this.api.getStudy().subscribe(study => {
       this.study = study;
     });
