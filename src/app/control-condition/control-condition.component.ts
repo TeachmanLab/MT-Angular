@@ -35,6 +35,7 @@ export class ControlConditionComponent implements OnInit {
     }
     this.setCurrentSession();
     this.checkStudy();
+    this.loadFlexibleThinking();
   }
 
   loadFlexibleThinking() {
@@ -46,7 +47,6 @@ export class ControlConditionComponent implements OnInit {
   setCurrentSession () {
     this.api.getControlSessions().subscribe(sessions => {
       this.sessions = sessions;
-      this.loadFlexibleThinking();
       this.route.params.subscribe(params => {
         if (params && params.hasOwnProperty('session')) {
           this.sessionIndex = Number(params['session'] - 1);
@@ -66,11 +66,12 @@ export class ControlConditionComponent implements OnInit {
     // console.log('The session is complete.  Loading the next Session.');
     window.scrollTo(0, 0);
     this.flexible = true;
-
+    console.log('Flexible Thinking', this.flexible_thinking)
   }
 
   sessionComplete() {
     // console.log('The session is complete.  Loading the next Session.');
+    this.flexible = false;
     window.scrollTo(0, 0);
     this.sessionDone = true;
   }

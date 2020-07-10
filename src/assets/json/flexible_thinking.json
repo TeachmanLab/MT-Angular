@@ -12,6 +12,11 @@
             "auto_continue": false,
             "elements": [
               {
+                "type": "LargeHeader",
+                "stimulusName": "create_scenario_header",
+                "content": "Exercise: Quick Thinking"
+              },
+              {
                 "type": "Paragraph",
                 "stimulusName": "flex_thinking_p1",
                 "content": "On the next page, an event with an uncertain outcome will be presented. An example is shown below:"

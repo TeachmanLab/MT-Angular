@@ -1,6 +1,6 @@
 <app-session-warning *ngIf="connectionError"></app-session-warning>
 <app-session *ngIf="currentSession && !flexible && !sessionDone" [session]="currentSession" [sessions]="sessions" [sessionIndex]="sessionIndex" (done)="showFlexible()"></app-session>
-<app-session *ngIf="currentSession && flexible" [session]="flexible_thinking[0]" [sessions]="flexible_thinking" [sessionIndex]="sessionIndex" (done)="sessionComplete()" ></app-session>
+<app-session *ngIf="flexible" [session]="flexible_thinking[0]" [sessions]="flexible_thinking" [sessionIndex]="0" [checkProgress]="false" (done)="sessionComplete()" ></app-session>
 <div *ngIf="sessionDone">
   <mat-card>
     <h1>Module Complete!</h1>

@@ -71,7 +71,7 @@
                 "type": "Image",
                 "stimulusName": "videosimg",
                 "content": "./assets/training_images/videos.jpeg",
-                "link": "https://www.youtube.com/channel/UCjwCTz0ZbIX6XcLZRaE8Ujw/videos"
+                "link": "../public/about"
               },
               {
                 "type": "BulletList",
@@ -91,9 +91,9 @@
               {
                 "type": "Link",
                 "stimulusName": "video5",
-                "link": "https://www.youtube.com/channel/UCjwCTz0ZbIX6XcLZRaE8Ujw/videos",
+                "link": "../public/about",
                 "target": "videos",
-                "content": "Visit the Mindtrails Channel on Youtube to watch the videos."
+                "content": "Visit our About Page to view the videos in a new window."
               },
               {
                 "type": "Paragraph",

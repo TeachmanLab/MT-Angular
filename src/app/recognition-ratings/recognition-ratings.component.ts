@@ -42,6 +42,7 @@ export class RecognitionRatingsComponent implements OnInit {
   scenarioIndex = 0;
   pageCount: number;
   increment: number;
+  study: Study;
 
   @Output() done: EventEmitter<any> = new EventEmitter();
 
@@ -60,6 +61,13 @@ export class RecognitionRatingsComponent implements OnInit {
   ngOnInit() {
     this.loadIntro();
     this.loadTraining();
+    this.loadStudy();
+  }
+
+  loadStudy() {
+    this.api.getStudy().subscribe(study => {
+      this.study = study;
+    });
   }
 
   loadIntro() {

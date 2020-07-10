@@ -13,10 +13,11 @@
       <app-scenario
         *ngIf="currentScenario"
         [session]="currentSession"
+        [sessionIndex]="study.currentSession.index"
         [isStory]=true
         [scenario]="currentScenario"
         [scenarioIndex]="scenarioIndex"
-        [stepIndex]="stepIndex"
+        [stepIndex]="scenarioIndex"
         [pageCount]="pageCount"
         (finalCount)="updatePageCount($event)"
         (done)="scenarioComplete($event)"
