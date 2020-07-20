@@ -196,6 +196,9 @@ export class TrainingComponent implements OnInit {
         let eventIndex = 0;
         for (const eventRecord of progress) {
           const scenario = this.findScenarioByName(scenarios, eventRecord.stimulusName);
+          if (!scenario) {
+            continue;  // If we can't find the scneario, don't try to process this record.
+          }
           if (scenario.numAnswer === undefined) {scenario.numAnswer = 0; }
           if (scenario.numCorrect === undefined) {scenario.numCorrect = 0; }
           scenario.numAnswer++;
