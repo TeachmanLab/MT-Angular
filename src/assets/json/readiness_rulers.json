@@ -33,28 +33,6 @@
               }
             ]
           },
-            {
-              "elements": [
-                {
-                  "type": "LargeHeader",
-                  "stimulusName": "readinessHeader",
-                  "content": "How MindTrails Works"
-                },
-                {
-                  "type": "Question",
-                  "stimulusName": "readiness_rulers",
-                  "question": "Based on what you’ve seen of the program and the description of its goals, how confident are you that this program will reduce your anxiety?",
-                  "options": [
-                    "Not at all",
-                    "Slightly",
-                    "Somewhat",
-                    "Mostly",
-                    "Very"
-                  ],
-                  "preferNotToAnswer": true
-                }
-                  ]
-                },
           {
             "elements": [
               {
@@ -94,14 +72,31 @@
                 "link": "../public/about",
                 "target": "videos",
                 "content": "Visit our About Page to view the videos in a new window."
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "video6",
-                "content": "Press the Next button to resume the training session!"
               }
             ]
-          }
+          },
+            {
+              "elements": [
+                {
+                  "type": "LargeHeader",
+                  "stimulusName": "readinessHeader",
+                  "content": "How MindTrails Works"
+                },
+                {
+                  "type": "Question",
+                  "stimulusName": "readiness_rulers",
+                  "question": "Based on what you’ve seen of the program and the description of its goals, how confident are you that this program will reduce your anxiety?",
+                  "options": [
+                    "Not at all",
+                    "Slightly",
+                    "Somewhat",
+                    "Mostly",
+                    "Very"
+                  ],
+                  "preferNotToAnswer": true
+                }
+                  ]
+                }
               ]
             }
           ]
