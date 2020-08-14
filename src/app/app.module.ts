@@ -47,6 +47,8 @@ import { SliderComponent } from './slider/slider.component';
 import { RandomNonPreviousStatementComponent } from './random-non-previous-statement/random-non-previous-statement.component';
 import { MultiEntryComponent } from './multi-entry/multi-entry.component';
 import { RecognitionRatingsComponent } from './recognition-ratings/recognition-ratings.component';
+import { EmbedVideo } from 'ngx-embed-video';
+import { VideoComponent } from './video/video.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -89,7 +91,8 @@ const routes: Routes = [
     SliderComponent,
     RandomNonPreviousStatementComponent,
     MultiEntryComponent,
-    RecognitionRatingsComponent
+    RecognitionRatingsComponent,
+    VideoComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -108,7 +111,8 @@ const routes: Routes = [
     MatToolbarModule,
     ReactiveFormsModule,
     NgxGaugeModule,
-    MatSliderModule
+    MatSliderModule,
+    EmbedVideo.forRoot()
   ],
   providers: [
     ApiService,

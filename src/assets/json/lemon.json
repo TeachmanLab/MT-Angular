@@ -29,6 +29,11 @@
                 "type": "Paragraph",
                 "stimulusName": "intro",
                 "content": "This is an experimental program that is still in the testing phase. But previous research suggests that this program may be able to reduce anxious thinking as much as therapy does for some people. We want to learn whether it can be helpful for you."
+              },
+              {
+                "type": "video",
+                "stimulusName": "video1",
+                "content": "https://www.youtube.com/watch?v=iHhcHTlGtRs"
               }
             ]
           },
