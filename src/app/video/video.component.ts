@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { EmbedVideoService } from 'ngx-embed-video';
+import {Video} from '../interfaces';
 
 @Component({
-  selector: 'app-root',
-  template: 'video.component.html',
+  selector: 'app-video',
+  templateUrl: './video.component.html',
   styles: ['video.component.css']
 })
 export class VideoComponent implements OnInit {
 
+  @Input()
+  video: Video;
+
   yt_iframe_html: any;
 
-  youtubeUrl = 'https://www.youtube.com/watch?v=iHhcHTlGtRs';
-
   constructor(private embedService: EmbedVideoService) {
-   //# this.yt_iframe_html = this.embedService.embed(this.youtubeUrl);
   }
 
   ngOnInit() {
+    console.log('Using video url:', this.video.content);
+    this.yt_iframe_html = this.embedService.embed(this.video.content);
   }
 
 }

@@ -23,6 +23,7 @@
                 (updated)="elementUpdated($event)">
     </app-slider>
   </div>
+  <app-video *ngIf="el.type === 'Video'" [video]="el"></app-video>
   <app-highlight *ngIf="el.type === 'Highlight'" [highlight]="el" (done)="divCompleted()"></app-highlight>
   <app-bullet-list *ngIf="el.type === 'BulletList'" [bulletList]="el" (done)="divCompleted()"></app-bullet-list>
   <app-question

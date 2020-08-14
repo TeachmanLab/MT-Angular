@@ -48,6 +48,10 @@ export interface Image extends Element {
   link?: string;
 }
 
+export interface Video extends Element {
+  type: 'Video';
+}
+
 export interface Link extends Element {
   type: 'Link';
   link: string;
