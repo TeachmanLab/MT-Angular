@@ -5,7 +5,7 @@ import {Video} from '../interfaces';
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
-  styles: ['video.component.css']
+  styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
 

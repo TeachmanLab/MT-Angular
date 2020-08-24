@@ -11,14 +11,9 @@
           {
             "elements": [
               {
-                "type": "Video",
-                "stimulusName": "video1",
-                "content": "https://www.youtube.com/watch?v=iHhcHTlGtRs"
-              },
-              {
                 "type": "LargeHeader",
                 "stimulusName": "intro1",
-                "content": "The MindTrails Program, right?!?!?!"
+                "content": "The MindTrails Program"
               },
               {
                 "type": "Paragraph",

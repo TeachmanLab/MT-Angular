@@ -53,6 +53,11 @@
                 "type": "Paragraph",
                 "stimulusName": "create_scenario_p3",
                 "content": "Keep in mind each story should be 3 sentences \u2014 just enough to set up your challenging situation where it is unclear whether it will end well or end badly until the very end of the story."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "create_scenario_p4",
+                "content": "Note: Please do not press the 'Back' button in your web browser as you complete the exercise, as you will lose your work."
               }
             ]
           },

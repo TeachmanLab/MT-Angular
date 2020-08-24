@@ -46,12 +46,6 @@
                 "content": "Now that you have some experience with MindTrails, we would like to invite you to view our short videos by MindTrails team members, who address some common questions about the training and provide tips about using the program more effectively."
               },
               {
-                "type": "Image",
-                "stimulusName": "videosimg",
-                "content": "./assets/training_images/videos.jpeg",
-                "link": "../public/about"
-              },
-              {
                 "type": "BulletList",
                 "stimulusName": "video3",
                 "title": "Topics include:",
@@ -62,16 +56,29 @@
                 ]
               },
               {
-                "type": "Paragraph",
-                "stimulusName": "video4",
-                "content": "You can view these videos at the link below, or by navigating to the About page on the menubar at any time outside of the training session sections."
+                "type": "Video",
+                "stimulusName": "video1",
+                "content": "https://www.youtube.com/watch?v=SNrXoTFFeok/[id]?rel=0"
               },
               {
-                "type": "Link",
-                "stimulusName": "video5",
-                "link": "../public/about",
-                "target": "videos",
-                "content": "Visit our About Page to view the videos in a new window."
+                "type": "Video",
+                "stimulusName": "video2",
+                "content": "https://www.youtube.com/watch?v=hhFjs0rIGRg/[id]?rel=0"
+              },
+              {
+                "type": "Video",
+                "stimulusName": "video3",
+                "content": "https://www.youtube.com/watch?v=mktHMDGfzu8/[id]?rel=0"
+              },
+              {
+                "type": "Video",
+                "stimulusName": "video4",
+                "content": "https://www.youtube.com/watch?v=IFlj72zBzYY/[id]?rel=0"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "video4",
+                "content": "You can also view these videos at any time by navigating to the About page on the menubar outside of the training session sections."
               }
             ]
           },
