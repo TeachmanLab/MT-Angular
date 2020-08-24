@@ -58,22 +58,22 @@
               {
                 "type": "Video",
                 "stimulusName": "video1",
-                "content": "https://www.youtube.com/watch?v=SNrXoTFFeok/[id]?rel=0"
+                "content":"https://youtu.be/SNrXoTFFeok"
               },
               {
                 "type": "Video",
                 "stimulusName": "video2",
-                "content": "https://www.youtube.com/watch?v=hhFjs0rIGRg/[id]?rel=0"
+                "content": "https://youtu.be/hhFjs0rIGRg"
               },
               {
                 "type": "Video",
                 "stimulusName": "video3",
-                "content": "https://www.youtube.com/watch?v=mktHMDGfzu8/[id]?rel=0"
+                "content": "https://youtu.be/mktHMDGfzu8"
               },
               {
                 "type": "Video",
                 "stimulusName": "video4",
-                "content": "https://www.youtube.com/watch?v=IFlj72zBzYY/[id]?rel=0"
+                "content": "https://youtu.be/IFlj72zBzYY"
               },
               {
                 "type": "Paragraph",

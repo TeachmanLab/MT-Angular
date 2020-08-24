@@ -19,7 +19,7 @@ export class VideoComponent implements OnInit {
 
   ngOnInit() {
     console.log('Using video url:', this.video.content);
-    this.yt_iframe_html = this.embedService.embed(this.video.content);
+    this.yt_iframe_html = this.embedService.embed(this.video.content, { query: { rel: 0 }});
   }
 
 }
