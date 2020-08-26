@@ -43,7 +43,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "video1",
-                "content": "Now that you have some experience with MindTrails, we would like to invite you to view our short videos by MindTrails team members, who address some common questions about the training and provide tips about using the program more effectively."
+                "content": "Now that you have some experience with MindTrails, we encourage you to view our short videos by MindTrails team members. These 1-minute videos address some common questions about the training and provide tips about using the program most effectively."
               },
               {
                 "type": "BulletList",
@@ -78,7 +78,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "video4",
-                "content": "You can also view these videos at any time by navigating to the About page on the menubar outside of the training session sections."
+                "content": "You can also view these videos at any time by navigating to the About page on the menu bar outside of the training session sections."
               }
             ]
           },
