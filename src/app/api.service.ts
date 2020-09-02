@@ -5,7 +5,6 @@ import {catchError, map} from 'rxjs/operators';
 import {EventRecord, Scenario, Session, Study} from './interfaces';
 import {TrainingCSV} from './training-csv';
 import {environment} from '../environments/environment';
-import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class ApiService {

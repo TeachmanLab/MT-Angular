@@ -2,8 +2,6 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
 import {Page, EventRecord, Scenario, Session, Study, ElementEvent} from '../interfaces';
 import {ApiService} from '../api.service';
-import {Router} from '@angular/router';
-import {renderComponentOrTemplate} from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-scenario',

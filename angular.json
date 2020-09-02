@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "training-prototype"
+  "defaultProject": "training-prototype",
+  "cli": {
+    "analytics": "eda62b27-cbcf-44dc-a25f-c7a7f48a3ad2"
+  }
 }
