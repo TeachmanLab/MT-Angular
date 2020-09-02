@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^9.1.12",
     "@angular/router": "^9.1.12",
     "core-js": "^2.6.11",
+    "ngx-embed-video": "^1.0.4",
     "ngx-gauge": "^1.1.0",
     "rxjs": "^6.6.2",
     "tslib": "^1.10.0",
