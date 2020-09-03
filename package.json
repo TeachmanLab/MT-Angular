@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "extract-i18n": "ng xi18n training-prototype --i18n-format xlf --output-path i18n --i18n-locale en && ng run training-prototype:xliffmerge",
+    "start-es": "ng serve --configuration=es"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +25,7 @@
     "@angular/platform-browser": "^9.1.12",
     "@angular/platform-browser-dynamic": "^9.1.12",
     "@angular/router": "^9.1.12",
+    "@ngx-i18nsupport/tooling": "^8.0.3",
     "core-js": "^2.6.11",
     "ngx-embed-video": "^1.0.4",
     "ngx-gauge": "^1.1.0",
@@ -35,6 +38,7 @@
     "@angular/cli": "^9.1.12",
     "@angular/compiler-cli": "^9.1.12",
     "@angular/language-service": "^9.1.12",
+    "@ngx-i18nsupport/ngx-i18nsupport": "^1.1.6",
     "@types/jasmine": "^2.8.17",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^12.11.1",

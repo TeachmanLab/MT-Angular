@@ -29,11 +29,9 @@ ng serve --configuration=es
 ```
 If you add or edit i18n translations in the html content, you will want to re-generate the translation files, you can do that with
 ```angular2html
-ng xi18n --output-path locale
+npm run extract-i18n
 ```
-This will update the english file.  You will need a tool like [poedit](https://poedit.net/) to update translation files.
-When PoEdit opens, use the open button to open up the messages.xlf file.  Then save it as messages.es-ES.xlf.  Edit
-as needed to complete all the entries so it is complete.
+We are using a angular plugin called [xliffmerge](https://github.com/martinroob/ngx-i18nsupport/wiki/Tutorial-for-using-xliffmerge-with-angular-cli) to handle the extraction of traslateable text that will keep our other documents up to date.
 
 
 ## Code scaffolding

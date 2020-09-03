@@ -21,7 +21,9 @@
           "options": {
             "aot": true,
             "outputPath": "dist/training-prototype",
-            "localize": ["en-US"],
+            "localize": [
+              "en-US"
+            ],
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -60,7 +62,11 @@
               "buildOptimizer": true
             },
             "es": {
-              "localize": ["es-ES"]
+              "aot": true,
+              "outputPath": "dist/training-prototype-es",
+              "i18nFile": "src/i18n/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es"
             }
           }
         },
@@ -111,6 +117,21 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "i18nFormat": "xlf",
+              "srcDir": "src/i18n",
+              "genDir": "src/i18n",
+              "defaultLanguage": "en",
+              "languages": [
+                "en",
+                "es"
+              ]
+            }
           }
         }
       }
