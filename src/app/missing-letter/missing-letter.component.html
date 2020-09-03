@@ -9,7 +9,7 @@
 
   <div class="select-a-tile">
 
-    <h2>SELECT A TILE:</h2>
+    <h2 i18n="missing letter section title">SELECT A TILE:</h2>
 
     <div [ngClass] = "{'options':true, 'isStory': isStory}"
          [@listAnimation]="options.length"
@@ -25,7 +25,7 @@
   </div>
 
 
-  <div *ngIf="state === 'correct'" class="correct-message">Correct!</div>
-  <div *ngIf="state === 'incorrect'" class="incorrect-message">Hmm. That doesn't look right! Please try again.</div>
+  <div i18n="missing letter correct" *ngIf="state === 'correct'" class="correct-message">Correct!</div>
+  <div i18n="missing letter incorrect" *ngIf="state === 'incorrect'" class="incorrect-message">Hmm. That doesn't look right! Please try again.</div>
 
 </div>

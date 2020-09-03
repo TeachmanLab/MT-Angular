@@ -6,6 +6,6 @@
 >
   Begin
 </button>
-<h2 *ngIf="state == states.WAIT">You have {{countdown.delayInSeconds - currentSecond}} seconds remaining.  We will let you know when the time is up.</h2>
+<h2 *ngIf="state == states.WAIT" i18n="countdown wait|you have x seconds remaining">You have {{countdown.delayInSeconds - currentSecond}} seconds remaining.  We will let you know when the time is up.</h2>
 
-<h2 *ngIf="state == states.READY">All Done!</h2>
+<h2 *ngIf="state == states.READY"  i18n="countdown done|The countdown completed">All Done!</h2>

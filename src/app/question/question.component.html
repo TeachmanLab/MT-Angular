@@ -19,7 +19,7 @@
   </div>
 
   <div  *ngIf="state==='asking' && question.preferNotToAnswer" class="preferNotToAnswer">
-    <button class="option preferNotToAnswer" mat-raised-button
+    <button i18n="prefer not to answer" class="option preferNotToAnswer" mat-raised-button
       (click)="selected('Prefer not to answer')">
       Prefer not to answer
     </button>
@@ -31,7 +31,7 @@
 
   <div *ngIf="question.answer" fxLayoutAlign="center">
     <div [hidden]="!(this.state === 'correct')" class="correct">
-      <div class="heading">Correct!</div>
+      <div i18n="correct" class="heading">Correct!</div>
       <div *ngIf="question.explanation" fxLayoutAlign="center">
         <p>This is {{ question.answer.toLowerCase() }}. {{ question.explanation }}</p>
       </div>
@@ -40,7 +40,7 @@
     <div class="incorrect" [hidden]="!(this.state === 'incorrect')" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
       fxLayoutGap.xs="0">
       <mat-progress-bar value="{{waitPercent}}"></mat-progress-bar>
-      Whoops. That wasn't the right answer. Please wait a moment and try again.</div>
+      <span i18n="question response incorrect">Whoops. That wasn't the right answer. Please wait a moment and try again.</span></div>
   </div>
 
 
