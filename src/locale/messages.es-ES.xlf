@@ -1,16 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="es">
     <body>
       <trans-unit id="96a4535d6ae9894a9cb374e24f2ed39bc326b525" datatype="html">
         <source>Welcome to Mindtrails Training</source>
-        <target>bienvenidas to Mindtrails !</target>
+        <target state="translated">Bienvenido a Mindtrails Training</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
         <note priority="1" from="description">Message at top of all pages</note>
         <note priority="1" from="meaning">welcome message</note>
+      </trans-unit>
+      <trans-unit id="a183f55921a00cde827aa0db27a0009f748b55cf" datatype="html">
+        <source>Module Complete!</source>
+        <target state="translated">¡Módulo completo!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">the module is complete, and the training is over.</note>
+        <note priority="1" from="meaning">module complete</note>
+      </trans-unit>
+      <trans-unit id="fc08cc122f5cf53d531b7623deaa28384c0538fe" datatype="html">
+        <source>You have completed the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> section. Well done!</source>
+        <target state="translated">Ha completado la <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/>sección .currentSession.subTitle.<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> ¡Bien hecho!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">The session you have completed</note>
+        <note priority="1" from="meaning">module complete message</note>
+      </trans-unit>
+      <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
+        <source>Continue</source>
+        <target state="translated">Continuar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">continue</note>
       </trans-unit>
     </body>
   </file>

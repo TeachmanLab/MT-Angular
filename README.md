@@ -27,6 +27,13 @@ This app can be built for both English and Spanish.  If you want to run locally 
 ```
 ng serve --configuration=es
 ```
+If you add or edit i18n translations in the html content, you will want to re-generate the translation files, you can do that with
+```angular2html
+ng xi18n --output-path locale
+```
+This will update the english file.  You will need a tool like [poedit](https://poedit.net/) to update translation files.
+When PoEdit opens, use the open button to open up the messages.xlf file.  Then save it as messages.es-ES.xlf.  Edit
+as needed to complete all the entries so it is complete.
 
 
 ## Code scaffolding
