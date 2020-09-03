@@ -20,6 +20,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient,
               @Inject(LOCALE_ID) public locale: string) {
+    console.log(`The Locale is set to ${locale}`);
   }
 
   private getJsonFile(fileName: String): Observable<any> {

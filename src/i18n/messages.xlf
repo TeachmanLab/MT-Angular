@@ -53,13 +53,20 @@
         </context-group>
         <note priority="1" from="description">continue</note>
       </trans-unit>
+      <trans-unit id="33c13f39e82db6da3f56517ab1a2a3d57f3f3cbb" datatype="html">
+        <source>PLEASE FILL IN THE BLANK:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="43f3c9a1dcffd71ed9fb008ef216f908ab14ec74" datatype="html">
         <source>
         Please enter at least <x id="INTERPOLATION" equiv-text="{{minCharacters}}"/> characters.
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">fill in blank min error</note>
       </trans-unit>
@@ -69,7 +76,7 @@
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <note priority="1" from="description">fill in blank required error</note>
       </trans-unit>
@@ -79,7 +86,7 @@
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">fill in blank not word error</note>
       </trans-unit>
@@ -89,19 +96,16 @@
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <note priority="1" from="description">fill in blank too long error</note>
       </trans-unit>
-      <trans-unit id="c1e570fbf58d587c63f38ec5cd8d93b5da44aed3" datatype="html">
-        <source>
-    <x id="INTERPOLATION" equiv-text="{{submitButtonText}}"/>
-  </source>
+      <trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
+        <source>Submit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">35</context>
         </context-group>
-        <note priority="1" from="description">submit</note>
       </trans-unit>
       <trans-unit id="e86a3182a63738c0fa7efe34e3e4bd9c0b4d72b7" datatype="html">
         <source>SELECT A TILE:</source>

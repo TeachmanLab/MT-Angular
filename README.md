@@ -31,7 +31,10 @@ If you add or edit i18n translations in the html content, you will want to re-ge
 ```angular2html
 npm run extract-i18n
 ```
-We are using a angular plugin called [xliffmerge](https://github.com/martinroob/ngx-i18nsupport/wiki/Tutorial-for-using-xliffmerge-with-angular-cli) to handle the extraction of traslateable text that will keep our other documents up to date.
+We are using a angular plugin called [xliffmerge](https://github.com/martinroob/ngx-i18nsupport/wiki/Tutorial-for-using-xliffmerge-with-angular-cli) to handle the extraction of text that will keep our other documents up to date.
+When you run the above command it will update the existing files, so you junt need to open them with a translation 
+editor like [PoEdit](https://poeditor.com/) make the updates, and save them.
+
 
 
 ## Code scaffolding

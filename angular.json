@@ -12,7 +12,7 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "es-ES": "src/locale/messages.es-ES.xlf"
+          "es-ES": "src/i18n/messages.es.xlf"
         }
       },
       "architect": {
@@ -63,10 +63,8 @@
             },
             "es": {
               "aot": true,
-              "outputPath": "dist/training-prototype-es",
-              "i18nFile": "src/i18n/messages.es.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "es"
+              "localize": ["es-ES"],
+              "outputPath": "dist/training-prototype-es"
             }
           }
         },
@@ -123,7 +121,7 @@
           "builder": "@ngx-i18nsupport/tooling:xliffmerge",
           "options": {
             "xliffmergeOptions": {
-              "i18nFormat": "xlf",
+              "format": "xlf",
               "srcDir": "src/i18n",
               "genDir": "src/i18n",
               "defaultLanguage": "en",

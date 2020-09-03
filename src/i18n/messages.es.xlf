@@ -21,7 +21,7 @@
         <note priority="1" from="meaning">module complete</note>
       </trans-unit>
       <trans-unit id="fc08cc122f5cf53d531b7623deaa28384c0538fe" datatype="html">
-        <source>You have completed the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> section. Well done!</source><target state="translated">Has completado la  <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> sección. 
+        <source>You have completed the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> section. Well done!</source><target state="translated">Has completado la  <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> sección.
 ¡Bien hecho!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
@@ -53,59 +53,48 @@
           <context context-type="linenumber">134</context>
         </context-group>
         <note priority="1" from="description">continue</note>
+      </trans-unit><trans-unit id="33c13f39e82db6da3f56517ab1a2a3d57f3f3cbb" datatype="html">
+        <source>PLEASE FILL IN THE BLANK:</source><target state="translated">POR FAVOR LLENE EL ESPACIO EN BLANCO:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="43f3c9a1dcffd71ed9fb008ef216f908ab14ec74" datatype="html">
         <source>
         Please enter at least <x id="INTERPOLATION" equiv-text="{{minCharacters}}"/> characters.
       </source><target state="translated">Por favor escribe un palabra de <x id="INTERPOLATION" equiv-text="{{minCharacters}}"/> o más letras</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
+
         <note priority="1" from="description">fill in blank min error</note>
-      </trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit>
       <trans-unit id="e463e4313227b548dbbcbb25a0feb836a2af8de5" datatype="html">
         <source>
         You must enter a value
       </source><target state="translated">Debe escribir algo</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
+
         <note priority="1" from="description">fill in blank required error</note>
-      </trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">15</context></context-group></trans-unit>
       <trans-unit id="378fd81a9e01f41f1766bb7046eca0ee9fc43806" datatype="html">
         <source>
         This does not look like a word
       </source><target state="translated">Esto no parece una palabra</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
+
         <note priority="1" from="description">fill in blank not word error</note>
-      </trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
       <trans-unit id="e79a1f6a4440d65f5481bee356fa37e022fdbb1d" datatype="html">
         <source>
         Please shorten your response
       </source><target state="translated">Acorta tu respuesta</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
+
         <note priority="1" from="description">fill in blank too long error</note>
-      </trans-unit>
-      <trans-unit id="c1e570fbf58d587c63f38ec5cd8d93b5da44aed3" datatype="html">
-        <source>
-    <x id="INTERPOLATION" equiv-text="{{submitButtonText}}"/>
-  </source><target state="new">
-    <x id="INTERPOLATION" equiv-text="{{submitButtonText}}"/>
-  </target>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit><trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
+        <source>Submit</source><target state="translated">Enviar</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">35</context>
         </context-group>
-        <note priority="1" from="description">submit</note>
       </trans-unit>
+
       <trans-unit id="e86a3182a63738c0fa7efe34e3e4bd9c0b4d72b7" datatype="html">
         <source>SELECT A TILE:</source><target state="translated">SELECCIONA UNA FICHA:</target>
         <context-group purpose="location">
@@ -163,7 +152,7 @@
         <note priority="1" from="description">next</note>
       </trans-unit>
       <trans-unit id="0f90559c85873eaafc4dd25adcf9b337ea9b3f34" datatype="html">
-        <source>Round <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></source><target state="translated">RONDA {{roundNumber}} de <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></target>
+        <source>Round <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></source><target state="translated">RONDA <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> de <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/training/training.component.html</context>
           <context context-type="linenumber">101</context>

@@ -23,7 +23,7 @@
       </mat-error>
     </mat-form-field>
   </div>
-  <button i18n="submit"
+  <button
     type="submit"
     *ngIf="!completed"
     mat-raised-button
@@ -31,6 +31,7 @@
     [disabled]="!word.valid || completed"
     (click)="submitWord(word.value)"
   >
-    {{submitButtonText}}
+    <span *ngIf="fillInBlank.submitButtonText">{{fillInBlank.submitButtonText}}</span>
+    <span i18n *ngIf="!fillInBlank.submitButtonText">Submit</span>
   </button>
 </div>
