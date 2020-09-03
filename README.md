@@ -22,6 +22,13 @@ Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/a
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/angular
 Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular`
 
+## Localization
+This app can be built for both English and Spanish.  If you want to run locally and see the Spanish version of the site use:
+```
+ng serve --configuration=es
+```
+
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
