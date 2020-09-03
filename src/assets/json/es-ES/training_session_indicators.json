@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Paso 1",
+    "subTitle": "Imagínate a ti mismo en una situación",
+    "sessionIndicator": "training1",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Paso 2",
+    "subTitle": "Selecciona la ficha de letra correcto para completar una palabra incompleta",
+    "sessionIndicator": "training2",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Paso 3",
+    "subTitle": "Responde a la pregunta sobre la situación",
+    "sessionIndicator": "training3",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Paso 4",
+    "subTitle": "¡Obtén la respuesta correcta o vuelve a intentarlo!",
+    "sessionIndicator": "training4",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  },
+  {
+    "title": "Paso 5",
+    "subTitle": "¡Maximiza los puntos seleccionando las opciones correctas en tu primer intento!",
+    "sessionIndicator": "training5",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": []
+  }
+]

@@ -1,0 +1,213 @@
+[
+  {
+    "session": "lemonExercise",
+    "title": "Training Session 1",
+    "subTitle": "Training Stories",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "intro1",
+                "content": "El programa de Calm Thinking"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "intro",
+                "content": "El objetivo del programa de Calm Thinking es reducir tu pensamiento ansioso cambiando la forma en que interpretas la información. En cada sesión, practicarás responder a situaciones de diferentes maneras leyendo cuentos breves y completando fragmentos de palabras eligiendo letras faltantes."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "intro",
+                "content": "No te preocupes si no usas mucho los programas de Internet: las sesiones no están diseñadas para ser complicadas o demasiado difíciles. El programa puede parecer un poco repetitivo, pero la repetición te ayuda a desarrollar nuevas formas de pensar."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "intro",
+                "content": "Este es un programa experimental, por lo que todavía está en la fase de prueba. Pero investigaciones anteriores sugieren que este programa puede reducir tanto el pensamiento ansioso como la terapia para algunas personas. Queremos saber si puede ayudarte."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "intro2",
+                "content": "Ejercicios antes del entrenamiento"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "intro",
+                "content": "Debido a que el programa Calm Thinking requiere que te imagines a ti mismo en diferentes situaciones, creemos que imaginarte vívidamente en estas situaciones es importante para que el programa sea efectivo. Antes de comenzar el entrenamiento, completará dos ejercicios breves de práctica de la imaginería:"
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "intro",
+                "bullets": [
+                  "El ejercicio de limón",
+                  "Usa tu imaginación"
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le1",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le1",
+                "content": "El objetivo de este ejercicio es demostrar qué es el pensamiento basado en la imaginación. Imaginarás cómo es ver, tocar y oler un limón. Lo imaginarás como si realmente lo sintieras."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le2",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le2",
+                "content": "./assets/training_images/lemon/example.png"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le2",
+                "content": "En este ejercicio, y durante todo el programa de entrenamiento, imagina lo que sucede a través de tus propios ojos, similar a la imagen de la izquierda. Esto es más efectivo que ver la situación como un observador externo, como la imagen de la derecha."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le3",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le3",
+                "content": "./assets/training_images/lemon/lemon_1.JPG",
+                "caption": "Toma unos segundos para imaginar esto."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le3",
+                "content": "Listo ... ¡comencemos! Imagina que tienes el limón en tu mano derecha y puedes sentir su forma y su peso."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le4",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le4",
+                "content": "./assets/training_images/lemon/lemon_2.JPG",
+                "caption": "Toma unos segundos para imaginar esto."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le4",
+                "content": "Ahora imagina que estás iluminando el limón y puede ver la textura cerosa y grumosa de la piel amarilla."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le5",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le5",
+                "content": "./assets/training_images/lemon/lemon_3.JPG",
+                "caption": "Toma unos segundos para imaginar esto."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le5",
+                "content": "Ahora imagina que te rascas la piel con la uña, luego te llevas el limón a la nariz y puedes oler el jugo fresco de la piel."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le6",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le6",
+                "content": "./assets/training_images/lemon/lemon_4.JPG",
+                "caption": "Toma unos segundos para imaginar esto."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le6",
+                "content": "Ahora imagina que cortas el limón por la mitad y levantas la mitad para verlo más de cerca. Puedes ver la carne jugosa en forma de segmentos que parecen una rueda de carreta."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le7",
+                "content": "El ejercicio de limón"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le7",
+                "content": "./assets/training_images/lemon/lemon_5.JPG",
+                "caption": "Toma unos segundos para imaginar esto."
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le7",
+                "content": "Ahora imagina que exprimes el limón y el jugo entra en tus ojos. Pica y duele, haciendo que tus ojos se llenen de lágrimas."
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "le8",
+                "content": "El ejercicio de limón: ¡Completado!"
+              },
+              {
+                "type": "Image",
+                "stimulusName": "le8",
+                "content": "./assets/training_images/lemon/lemon_6.png"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "le8",
+                "content": "Ese fue el ejercicio de limón! No te preocupes si no tuvo todas las sensaciones fuertemente. Esto es completamente normal."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
