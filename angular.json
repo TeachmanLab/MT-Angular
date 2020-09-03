@@ -9,12 +9,19 @@
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es-ES": "src/locale/messages.es-ES.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
             "outputPath": "dist/training-prototype",
+            "localize": ["es"],
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

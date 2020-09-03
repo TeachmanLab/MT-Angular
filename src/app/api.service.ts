@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {Inject, Injectable, LOCALE_ID} from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {EventRecord, Scenario, Session, Study} from './interfaces';
@@ -18,7 +18,8 @@ export class ApiService {
     all_scenarios: environment.progress_endpoint + 'all_scenarios'
   };
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+              @Inject(LOCALE_ID) public locale: string) {
   }
 
   public getRecognitionRatings(): Observable<any> {
@@ -90,7 +91,8 @@ export class ApiService {
   }
 
   public getTrainingCSV(session: string): Observable<Scenario[]> {
-    const url = './assets/csv/<session>.csv'.replace('<session>', session);
+    const url = `./assets/csv/${this.locale}/${session}.csv`;
+    console.log(`Loading session from ${url}`);
     return this.httpClient.get(url, {responseType: 'text'})
       .pipe((catchError(this.handleError)))
       .pipe(map(csv => TrainingCSV.toJson(session, csv)));
