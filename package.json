@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
+    "start-es": "ng serve --configuration=es --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -32,6 +33,7 @@
     "rxjs": "^6.6.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
+    "node-sass": "^4.14.1",
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.12",
