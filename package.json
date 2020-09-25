@@ -4,13 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "start-es": "ng serve --configuration=es --proxy-config proxy.conf.json",
+    "start-es": "ng serve --configuration=es",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "extract-i18n": "ng xi18n training-prototype --i18n-format xlf --output-path i18n --i18n-locale en && ng run training-prototype:xliffmerge",
-    "start-es": "ng serve --configuration=es"
+    "extract-i18n": "ng xi18n training-prototype --i18n-format xlf --output-path i18n --i18n-locale en && ng run training-prototype:xliffmerge"
   },
   "private": true,
   "dependencies": {
@@ -32,8 +31,8 @@
     "ngx-gauge": "^1.1.0",
     "rxjs": "^6.6.2",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
-    "node-sass": "^4.14.1",
+    "zone.js": "~0.10.2",
+    "node-sass": "^4.14.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.12",
