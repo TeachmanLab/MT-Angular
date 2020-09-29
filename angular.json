@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "training-prototype"
+  "defaultProject": "training-prototype",
+  "cli": {
+    "analytics": "13883d96-8fd9-4d34-a24f-3e0cc5ff80fc"
+  }
 }
