@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import {Round} from '../round';
 import {catchError, map, withLatestFrom} from 'rxjs/operators';
-import {combineLatest, observable, Observable} from 'rxjs';
+import {combineLatest, observable, Observable} from 'rxjs'; 
 
 enum TrainingState {
   'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
@@ -35,7 +35,7 @@ export class TrainingComponent implements OnInit {
   createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
-  flexibleThinkingRoundIndex = -1; // The (0 based) index of the round that should be followed by flex thinking. -1 for none.
+  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be followed by flex thinking. -1 for none.
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   readinessScenarioIndex = 6;
