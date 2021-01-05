@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  redirect: '/calm/angular/completed',
-  login: '/calm/session',
-  progress_endpoint: '/calm/angular/api/'
+  redirect: '/kaiser/angular/completed',
+  login: '/kaiser/session',
+  progress_endpoint: '/kaiser/angular/api/'
 };
