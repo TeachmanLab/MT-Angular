@@ -84,9 +84,7 @@ export class PageComponent implements OnChanges {
 
   markStaticComponentsComplete() {
     for (const element of this.page.elements) {
-      console.log(element.type);
-      if (['Paragraph', 'References', 'Image', 'LargeHeader', 'Header', 'Caption', 'Link', 'Video'].includes(element.type)) {
-        console.log(`completing a ${element.type}`);
+      if (['Paragraph', 'References', 'Image', 'LargeHeader', 'Header', 'Caption', 'Link', 'Video', 'BulletList'].includes(element.type)) {
         this.divCompleted();
       }
     }
@@ -97,7 +95,7 @@ export class PageComponent implements OnChanges {
       this.correct = false;
     }
     this.elementIndex++;
-    if (this.elementIndex === this.numElements) {
+    if (this.elementIndex >= this.numElements) {
       this.endTime = performance.now();
       // If we have any update events, submit those
       this.done.emit(correct);

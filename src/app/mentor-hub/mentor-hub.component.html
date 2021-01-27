@@ -1,0 +1,95 @@
+
+
+<app-mentor-hub-email *ngIf="current_state==states.email" (emailCollected)="saveEmail($event)"></app-mentor-hub-email>
+
+<mat-card class="imagery" *ngIf="current_state === states.imagery_prime && imageryPrime">
+  <mat-card-content>
+    <app-step
+      [session]="imageryPrime"
+      [step]="imageryPrime[0].steps[0]"
+      [stepIndex]=0
+      [sessionIndex]=0
+      [previousEnabled]=false
+      [useApi]=false
+      (done)="incrementState()"
+    ></app-step>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="current_state === states.flexible_thinking && flexibleThinking">
+  <mat-card-content>
+    <app-step
+      [session]="flexibleThinking"
+      [step]="flexibleThinking[0].steps[0]"
+      [stepIndex]=0
+      [sessionIndex]=0
+      [previousEnabled]=false
+      [useApi]=false
+      (done)="incrementState()"
+    ></app-step>
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="current_state === states.intro && intro != null">
+  <mat-card class="training">
+    <app-step
+      [session]="intro"
+      [step]="intro.steps[0]"
+      [stepIndex]=0
+      [sessionIndex]=0
+      [previousEnabled]=false
+      [useApi]=false
+      (done)="incrementState()"
+    ></app-step>
+  </mat-card>
+</div>
+
+<div *ngIf="current_state === states.training">
+  <mat-card class="training">
+    <mat-card-content *ngIf="round">
+      <div class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
+      <div class="progress">
+        <app-progress-bar [items]="round.scenarios"></app-progress-bar>
+      </div>
+      <app-scenario
+        *ngIf="round.getScenario()"
+        [scenario]="round.getScenario()"
+        [scenarioIndex]="scenarioIndex"
+        [pageCount]="pageCount"
+        [useApi]=false
+        (finalCount)="updatePageCount($event)"
+        (done)="scenarioComplete($event)"
+      ></app-scenario>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="current_state === states.summary">
+  <mat-card class="training">
+    <mat-card-content>
+      <app-training-score [round]="round" [roundNumber]="roundIndex + 1" [totalRounds]=rounds.length></app-training-score>
+      <div class="spacer"></div>
+      <button *ngIf="!isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Start Round {{roundIndex+2}}</button>
+      <button *ngIf="isComplete()" class="continue"  mat-raised-button (click)="nextRound()">Continue</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="current_state === states.final_summary">
+  <mat-card class="training">
+    <mat-card-content>
+      <app-final-score [rounds]="rounds" [totalScore]="totalScore"></app-final-score>
+      <div class="spacer"></div>
+      <button class="continue"  mat-raised-button (click)="incrementState()">Continue</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="current_state === states.wrap_up">
+  <mat-card>
+    <mat-card-content>
+      <h1>Thank you!</h1>
+      <p>Thank you for completing the exercises.</p>
+    </mat-card-content>
+  </mat-card>
+</div>
