@@ -1,4 +1,5 @@
 export const environment = {
+  gaTrackingId: 'UA-77944674-6',
   production: true,
   redirect: '/calm/angular/completed',
   login: '/calm/session',

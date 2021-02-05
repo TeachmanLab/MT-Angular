@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../api.service';
 import {Scenario, Session, Study} from '../interfaces';
 import {Round} from '../round';
 import {forkJoin} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
+import {MentorHubService} from '../mentorhub.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {GoogleAnalyticsService} from '../google-analytics.service';
 
 enum States {
-  'summary', 'email', 'imagery_prime', 'intro', 'training', 'final_summary', 'flexible_thinking', 'wrap_up'}
-/**
-1) Welcome/email entry/18+ verification
-2) Use your imagination exercise (page 21 of the R01/TET appendix, attached)
-3) [randomized set of 40 training scenarios w/ progress bar?] - not sure how these are broken up, but whatever the current organization is works!
-4) Quick thinking (page 31)
-5) Wrap up page (thanks for practicing, etc.)
-*/
+  'summary', 'email', 'imagery_prime', 'intro', 'training', 'final_summary', 'flexible_thinking', 'wrap_up'
+}
 
 @Component({
   selector: 'app-mentor-hub',
@@ -22,7 +19,7 @@ enum States {
 })
 export class MentorHubComponent implements OnInit {
 
-  current_state = States.intro;
+  current_state = States.email;
   states = States;
   imageryPrime: Session[];
   flexibleThinking: Session[];
@@ -40,7 +37,10 @@ export class MentorHubComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private route: ActivatedRoute
+    private mentorApi: MentorHubService,
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar,
+    private googleAnalytics: GoogleAnalyticsService
   ) {
 
     this.route.queryParamMap.subscribe(queryParamMap => {
@@ -51,7 +51,6 @@ export class MentorHubComponent implements OnInit {
     });
 
   }
-
 
 
   ngOnInit() {
@@ -65,7 +64,13 @@ export class MentorHubComponent implements OnInit {
       this.intro = sessions.find(e => e.session === 'mentorHub');
     });
 
-      this.getRandomScenarios();
+    this.getRandomScenarios();
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
   getRandomScenarios() {
@@ -80,7 +85,7 @@ export class MentorHubComponent implements OnInit {
     const total_count = this.totalRounds * this.scenariosPerRound;
     const from_each = Math.ceil(total_count / 5);
     this.trainingScenarios = [];
-    forkJoin([s1, s2, s3, s4, s5]).subscribe( results => {
+    forkJoin([s1, s2, s3, s4, s5]).subscribe(results => {
       // So that things get incrementally harder, grab a random subset from each
       // session, and then join them.
       for (let i = 0; i < 5; i++) {
@@ -130,9 +135,21 @@ export class MentorHubComponent implements OnInit {
     this.round.index = 0;
   }
 
-  saveEmail(email: String) {
+  saveEmail(email: string) {
     console.log('The email is ' + email);
-    this.incrementState();
+    this.mentorApi.recordEmail(email).subscribe(
+      result => {
+        if (result.success) {
+          this.incrementState();
+        } else {
+          console.log('Error contacting MentorHub:' + result.response);
+          this.openSnackBar('Error contacting MentorHub.', 'Error');
+        }
+      },
+      err => {
+        this.openSnackBar('Error contacting MentorHub.', 'Error');
+      }
+    );
   }
 
   scenarioComplete(correct) {
@@ -160,6 +177,7 @@ export class MentorHubComponent implements OnInit {
       this.roundIndex++;
       this.round = this.rounds[this.roundIndex];
       this.round.next();
+      this.googleAnalytics.logPageView('training/round/' + (this.roundIndex + 1));
     }
   }
 
@@ -169,6 +187,7 @@ export class MentorHubComponent implements OnInit {
     const total_states = Object.keys(States).length / 2;
     if (total_states > this.current_state + 1) {
       this.current_state = States[States[this.current_state + 1]];
+      this.googleAnalytics.logPageView(this.states[this.current_state]);
     }
   }
 
@@ -178,3 +197,4 @@ export class MentorHubComponent implements OnInit {
 
 
 }
+
