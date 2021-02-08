@@ -63,7 +63,7 @@ export class SliderComponent implements OnInit {
     this.endTime = performance.now();
     const event: ElementEvent = {
       trialType: this.slider.type,
-      stimulus: this.slider.content.toString(),
+      stimulus: '',
       stimulusName: this.slider.stimulusName,
       buttonPressed: this.value.toString(),
       correct: true,
