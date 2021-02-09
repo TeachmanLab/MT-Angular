@@ -14,6 +14,7 @@ export class StepComponent implements OnInit, OnChanges {
   @Input() stepIndex: number;
   @Input() sessionIndex: number;
   @Input() previousEnabled = false;
+  @Input() useApi = true;
 
   study: Study;
   pageIndex: number;
@@ -48,9 +49,11 @@ export class StepComponent implements OnInit, OnChanges {
     this.pageCounter = 1;
     this.study = {name: '', currentSession: {index: 0, name: '',
         currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}}, conditioning: ''};
-    this.api.getStudy().subscribe(study => {
-      this.study = study;
-    });
+    if (this.useApi) {
+      this.api.getStudy().subscribe(study => {
+        this.study = study;
+      });
+    }
   }
 
   ngOnChanges() {
@@ -162,13 +165,18 @@ export class StepComponent implements OnInit, OnChanges {
     elData['buttonPressed'] = 'next';
     this.elementCounter++;
     this.pageData.push(elData);
-    this.api.saveProgress(this.pageData).subscribe(data => {
+
+    if (this.useApi) {
+      this.api.saveProgress(this.pageData).subscribe(data => {
+        this.pageCounter++;
+      });
+    } else {
       this.pageCounter++;
-    });
+    }
   }
 
   nextPage() {
-    // console.log('Next page');
+    console.log('Next page');
     this.recordPageData();
     this.elementCorrect = true;
     this.pageIndex++;
