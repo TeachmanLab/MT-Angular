@@ -12,7 +12,7 @@ cd ..
 
 # Build angular app
 cd ..
-ng build --prod --build-optimizer --base-href=/mentorhub/
+ng build --prod --build-optimizer --base-href=/
 cd java
 
 # Move files to the correct locations to create a war file structure
