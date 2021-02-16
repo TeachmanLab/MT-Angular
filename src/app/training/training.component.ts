@@ -92,6 +92,8 @@ export class TrainingComponent implements OnInit {
         if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
           console.log('Setting state to lemon.');
           this.state = this.states.LEMON;
+        } else if (study.currentSession.name !== 'firstSession' && !this.imageryComplete()) {
+          this.state = this.states.IMAGERY;
         }
       });
     });
