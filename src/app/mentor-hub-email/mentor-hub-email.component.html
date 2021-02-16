@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <div class="yellow-sliver"></div>
+      <div class="title-text">
+        <div class="title title1">Understand your thinking.</div>
+        <div class="title title2">Feel Less Anxious. </div>
+        <ul>
+          <li>Join for free to change your anxious thinking.</li>
+          <li>All you need is a computer, tablet, or smartphone.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+
+    <h1>Welcome to Mindtrails!</h1>
+    <p>MindTrails can help change your anxious thinking by helping you to practice thinking about
+      situations in new ways. In the program, you learn how to use flexible thinking in your everyday
+      life.</p>
+    <p>To get started, enter the email address that’s associated with MentorHub (this allows your
+      mentor to see that you’ve used MindTrails – we won’t use your email for any other purpose). </p>
+
+    <form [formGroup]="emailForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input #emailElement id="email" name="email" type="text" class="form-control" formControlName="email">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+               class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors.minlength">
+              Email must be at least 4 characters long.
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Please enter a valid email address.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input id="over18" name="over18" type="checkbox" class="form-control" formControlName="over18" r>
+          <label for="over18">I am over 18 years old. </label>
+          <div class="form_note">MindTrails is only available to adults 18-years-old and older. By checking the following box, you indicate you are at least 18-years-old.</div>
+        </div>
+      </div>
+      <button class="button" type="submit" [disabled]="!emailForm.valid || emailForm.get('email').untouched">Continue</button>
+    </form>
+
+
+      <p>Note that our team is currently conducting research studies to find out how MindTrails can most
+        effectively reduce anxious thinking. We think the version you are about to use is our best-
+        available version of the program. By using this version, you are not participating in research and
+        your data will not be stored. To learn more about the research study, please visit:
+        <a target="mindtrails" href="https://mindtrails.virginia.edu">mindtrails.virginia.edu</a></p>
+
+    </div>
+  </mat-card-content>
+</mat-card>
