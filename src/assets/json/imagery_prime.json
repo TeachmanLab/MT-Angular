@@ -13,11 +13,11 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_p1",
+                "stimulusName": "pre_prime_instructions1",
                 "content": "In this exercise, please think of an UPCOMING situation that you expect will make you feel anxious, worried, or scared."
               },
               { "type": "Paragraph",
-              "stimulusName": "readiness_p1",
+              "stimulusName": "pre_prime_instructions2",
               "content": "Pick a situation that you worry might go badly, or that you expect will evoke symptoms related to anxiety (e.g., racing heart, sweating). Any situation that will make you feel quite anxious or scared will work, as long as it is a situation that you’re likely to actually encounter."
               }
             ]
@@ -27,12 +27,12 @@
             "elements": [
                 {
                 "type": "Header",
-                "stimulusName": "readiness_heading",
+                "stimulusName": "pre_prime_situation",
                 "content": "Please describe the situation in a few words:"
               },
               {
                 "type": "FillInBlank",
-                "stimulusName": "readiness_situation",
+                "stimulusName": "pre_prime_situation",
                 "question": "Please describe the situation in a few words.",
                 "maxCharacters": 100
               }
@@ -43,12 +43,12 @@
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use1",
+                "stimulusName": "pre_prime_header",
                 "content": "Use Your Imagination"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "readiness_p3",
+                "stimulusName": "pre_prime_instructions3",
                 "title": "Please imagine the situation as vividly as possible (i.e., so that it feels very real).",
                 "bullets": [
                   "Try to imagine you are actually in the situation.",
@@ -59,12 +59,12 @@
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_p5",
+                "stimulusName": "pre_prime_instructions4",
                 "content": "Please click the \"Begin\" button below and play this situation in your head for the next 20 seconds. We will tell you when the 20 seconds are up–make sure the sound on your device is not muted."
               },
               {
                 "type": "Countdown",
-                "stimulusName": "readiness_timer",
+                "stimulusName": "pre_prime_timer",
                 "delayInSeconds":20,
                 "content": "We will tell you when the 20 seconds are up."
               }
@@ -75,17 +75,17 @@
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use2",
+                "stimulusName": "pre_prime_header",
                 "content": "Use Your Imagination"
               },
               {
                 "type": "Header",
-                "stimulusName": "readiness_heading",
+                "stimulusName": "pre_prime_q1_description",
                 "content": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
               },
               {
                 "type": "Slider",
-                "stimulusName": "readiness_anxiety_question",
+                "stimulusName": "pre_prime_q1",
                 "min": 0,
                 "max": 100
               }
@@ -95,12 +95,12 @@
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use3",
+                "stimulusName": "pre_prime_header",
                 "content": "Use Your Imagination"
               },
               {
                 "type": "Question",
-                "stimulusName": "readiness_vivid_question",
+                "stimulusName": "pre_prime_q2",
                 "question": "How vividly did you imagine the situation?",
                 "options": [
                   "Not at all vivid",
@@ -117,17 +117,17 @@
                 "elements": [
                   {
                     "type": "LargeHeader",
-                    "stimulusName": "use4",
+                    "stimulusName": "pre_prime_header",
                     "content": "Use Your Imagination"
                   },
               {
                 "type": "Question",
-                "stimulusName": "readiness_badly_question",
+                "stimulusName": "pre_prime_q3",
                 "question": "How likely is it that this situation or task will turn out well versus turn out badly?",
                 "options": [
                   "Very likely to turn out well",
                   "Somewhat likely to turn out well",
-                  "Neutral             ",
+                  "Neutral",
                   "Somewhat likely to turn out badly",
                   "Very likely to turn out badly"
                 ],
@@ -139,12 +139,12 @@
                 "elements": [
                   {
                     "type": "LargeHeader",
-                    "stimulusName": "use5",
+                    "stimulusName": "pre_prime_header",
                     "content": "Use Your Imagination"
                   },
                 {
                   "type": "Question",
-                  "stimulusName": "readiness_manageable_question",
+                  "stimulusName": "pre_prime_q4",
                   "question": "If this situation did turn out badly, how well or badly would you be able to handle it?",
                   "options": [
                     "Very well",
