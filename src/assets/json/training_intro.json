@@ -11,20 +11,29 @@
         "pages": [
           {
             "elements": [
+                  {
+                    "type": "Paragraph",
+                    "stimulusName": "training_session1_instructions1",
+                    "content": "You are now ready for the first training session!"
+                  },
+                  {
+                    "type": "BulletList",
+                    "stimulusName": "training_session1_instructions2",
+                    "title": "This session consists of:",
+                    "bullets": ["The MindTrails training",
+                      "A short reading section in the middle of the training",
+                      "A post-training exercise"
+                    ]
+                  },
               {
                 "type": "Image",
-                "stimulusName": "intro",
+                "stimulusName": "training_session1_image",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
-                "type": "Paragraph",
-                "stimulusName": "intro",
-                "content": "You are now ready for the first training session!"
-              },
-              {
                 "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
+                "stimulusName": "training_session1_instructions3",
+                "title": "For each short story in the training:",
                 "bullets": [
                   "Try to really imagine yourself in the situation described – use the picture to help you!",
                   "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
@@ -53,18 +62,27 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
+                "stimulusName": "training_session2_instructions1",
                 "content": "You are now ready for the second training session!"
               },
               {
+                "type": "BulletList",
+                "stimulusName": "training_session2_instructions2",
+                "title": "This session consists of:",
+                "bullets": ["The MindTrails training",
+                  "A short reading section in the middle of the training",
+                  "A post-training exercise"
+                ]
+              },
+              {
                 "type": "Image",
-                "stimulusName": "intro",
+                "stimulusName": "training_session2_image",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
+                "stimulusName": "training_session2_instructions3",
+                "title": "For each short story in the training:",
                 "bullets": [
                   "Try to really imagine yourself in the situation described – use the picture to help you!",
                   "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
@@ -93,18 +111,27 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
+                "stimulusName": "training_session3_instructions1",
                 "content": "You are now ready for the third training session!"
               },
               {
+                "type": "BulletList",
+                "stimulusName": "training_session3_instructions2",
+                "title": "This session consists of:",
+                "bullets": ["The MindTrails training",
+                  "A short reading section in the middle of the training",
+                  "Two post-training exercises"
+                ]
+              },
+              {
                 "type": "Image",
-                "stimulusName": "intro",
+                "stimulusName": "training_session3_image",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
+                "stimulusName": "training_session3_instructions3",
+                "title": "For each short story in the training:",
                 "bullets": [
                   "Try to really imagine yourself in the situation described – use the picture to help you!",
                   "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
@@ -133,18 +160,27 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
+                "stimulusName": "training_session4_instructions1",
                 "content": "You are now ready for the fourth training session!"
               },
               {
+                "type": "BulletList",
+                "stimulusName": "training_session4_instructions2",
+                "title": "This session consists of:",
+                "bullets": ["The MindTrails training",
+                  "A short reading section in the middle of the training",
+                  "Two post-training exercises"
+                ]
+              },
+              {
                 "type": "Image",
-                "stimulusName": "intro",
+                "stimulusName": "training_session4_image",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
+                "stimulusName": "training_session4_instructions3",
+                "title": "For each short story in the training:",
                 "bullets": [
                   "Try to really imagine yourself in the situation described – use the picture to help you!",
                   "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
@@ -173,18 +209,27 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
+                "stimulusName": "training_session5_instructions1",
                 "content": "Congratulations, you made it to the final training session! This level has a new challenge. For some stories we’ll ask you to fill in the missing letters to complete a word, as you’ve done before. For other stories we'll challenge you to generate a final word that will complete the story. Your goal is to think of a word that will end the story on a positive note. The ending doesn’t have to be so positive that it doesn’t seem possible, but we want you to imagine you are handling the situation well."
               },
               {
+                "type": "BulletList",
+                "stimulusName": "training_session5_instructions3",
+                "title": "This session consists of:",
+                "bullets": ["The MindTrails training",
+                  "A short reading section in the middle of the training",
+                  "Two post-training exercises"
+                ]
+              },
+              {
                 "type": "Image",
-                "stimulusName": "intro",
+                "stimulusName": "training_session5_image",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
+                "stimulusName": "training_session5_instructions4",
+                "title": "For each short story in the training:",
                 "bullets": [
                   "Try to really imagine yourself in the situation described – use the picture to help you!",
                   "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
