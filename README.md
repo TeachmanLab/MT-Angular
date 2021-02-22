@@ -22,6 +22,13 @@ Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/a
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/angular
 Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular`
 
+### Custom Builds
+We may be running multiple studies with difference settings at the same time, for this reason
+we provide a mechanism for doing custom builds, for instance, in Kaiser you would do:
+
+`ng build --configuration kaiser --build-optimizer --output-hashing none --base-href=/kaiser/angular/`
+`cp -r dist/training-prototype ~/code/MindTrails/kaiser/src/main/resources/static/angular`
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

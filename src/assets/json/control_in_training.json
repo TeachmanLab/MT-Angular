@@ -15,8 +15,19 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "ed_session1_instructions",
+                "stimulusName": "ed_session1_instructions1",
                 "content": "Time to take a break from the MindTrails training! In this short section, you will read about the nature of anxiety and its management."
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "ed_session1_instructions2",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really try to understand it.",
+                  "Consider all of the information provided, even if some of it seems new to you.",
+                  "After you finish a page, the next screen will ask you a question about it.",
+                  "Click the Next button once you are ready to begin."
+                ]
               }
             ]
           }
@@ -164,8 +175,19 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "ed_session2_instructions",
+                "stimulusName": "ed_session2_instructions1",
                 "content": "Time to take a break from the MindTrails training! In this short section, you will read about the nature of anxiety and its management."
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "ed_session2_instructions2",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really try to understand it.",
+                  "Consider all of the information provided, even if some of it seems new to you.",
+                  "After you finish a page, the next screen will ask you a question about it.",
+                  "Click the Next button once you are ready to begin."
+                ]
               }
             ]
           }
@@ -415,8 +437,19 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "ed_session3_instructions",
+                "stimulusName": "ed_session3_instructions1",
                 "content": "Time to take a break from the MindTrails training! In this short section, you will read about the nature of anxiety and its management."
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "ed_session3_instructions2",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really try to understand it.",
+                  "Consider all of the information provided, even if some of it seems new to you.",
+                  "After you finish a page, the next screen will ask you a question about it.",
+                  "Click the Next button once you are ready to begin."
+                ]
               }
             ]
           }
@@ -730,8 +763,19 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "ed_session4_instructions",
+                "stimulusName": "ed_session4_instructions1",
                 "content": "Time to take a break from the MindTrails training! In this short section, you will read about the nature of anxiety and its management."
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "ed_session4_instructions2",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really try to understand it.",
+                  "Consider all of the information provided, even if some of it seems new to you.",
+                  "After you finish a page, the next screen will ask you a question about it.",
+                  "Click the Next button once you are ready to begin."
+                ]
               }
             ]
           }
@@ -925,8 +969,19 @@
             "elements": [
               {
                 "type": "Paragraph",
-                "stimulusName": "ed_session5_instructions",
+                "stimulusName": "ed_session5_instructions1",
                 "content": "Time to take a break from the MindTrails training! In this short section, you will read about the nature of anxiety and its management."
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "ed_session5_instructions2",
+                "title": "For each page:",
+                "bullets": [
+                  "Read the information carefully and really try to understand it.",
+                  "Consider all of the information provided, even if some of it seems new to you.",
+                  "After you finish a page, the next screen will ask you a question about it.",
+                  "Click the Next button once you are ready to begin."
+                ]
               }
             ]
           }
