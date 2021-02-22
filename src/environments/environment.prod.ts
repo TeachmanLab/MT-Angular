@@ -1,7 +1,7 @@
 export const environment = {
-  gaTrackingId: 'UA-77944674-6',
+  gaTrackingId: 'UA-77944674-4',
   production: true,
-  redirect: '/kaiser/angular/completed',
-  login: '/kaiser/session',
-  progress_endpoint: '/kaiser/angular/api/'
+  redirect: '/calm/angular/completed',
+  login: '/calm/session',
+  progress_endpoint: '/calm/angular/api/'
 };
