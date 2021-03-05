@@ -29,7 +29,7 @@
   <app-question
     *ngIf="el.type === 'Question'" [ngClass]="{'story': isStory === true, 'Question':isStory !== true }"
     [question]="el"
-    [isStory]=true
+    [isStory]=isStory
     (event)="handleElementEvent($event)"
     (done)="divCompleted($event)"
     [@flyUpDown]="'in'"
@@ -56,7 +56,7 @@
   <div *ngIf="el.type==='Countdown'" [ngClass]="{'story': isStory === true, 'Countdown':isStory !== true }" class="letters" [@flyUpDown]="'in'">
     <app-countdown
       [countdown]="el"
-      [isStory]=true
+      [isStory]=isStory
       (event)="handleElementEvent($event)"
       (done)="divCompleted($event)"
     ></app-countdown>

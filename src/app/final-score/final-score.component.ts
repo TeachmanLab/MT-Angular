@@ -18,14 +18,18 @@ export class FinalScoreComponent implements OnInit {
   @Input()
   totalScore: number;
 
+  title = 'Session Completed!';
+
   constructor() { }
 
   ngOnInit() {
+    if (this.session != null) {
+      this.title = this.session.title + ': Complete!';
+    }
   }
 
-
   ready() {
-    return (this.session != null && this.rounds != null);
+    return (this.rounds != null);
   }
 
 

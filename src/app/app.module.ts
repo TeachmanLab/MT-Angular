@@ -48,6 +48,11 @@ import { MultiEntryComponent } from './multi-entry/multi-entry.component';
 import { RecognitionRatingsComponent } from './recognition-ratings/recognition-ratings.component';
 import { EmbedVideo } from 'ngx-embed-video';
 import { VideoComponent } from './video/video.component';
+import { MentorHubEmailComponent } from './mentor-hub-email/mentor-hub-email.component';
+import { MentorHubComponent } from './mentor-hub/mentor-hub.component';
+import {MentorHubService} from './mentorhub.service';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {GoogleAnalyticsService} from './google-analytics.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -58,6 +63,7 @@ const routes: Routes = [
   { path: 'scoreTest', component: TrainingScoreTestviewComponent },
   { path: 'finalScoreTest', component: FinalScoreTestviewComponent },
   { path: 'recognition', component: RecognitionRatingsComponent },
+  { path: 'mentorHub', component: MentorHubComponent },
 ];
 
 @NgModule({
@@ -91,7 +97,9 @@ const routes: Routes = [
     RandomNonPreviousStatementComponent,
     MultiEntryComponent,
     RecognitionRatingsComponent,
-    VideoComponent
+    VideoComponent,
+    MentorHubEmailComponent,
+    MentorHubComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -111,12 +119,16 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgxGaugeModule,
     MatSliderModule,
+    MatSnackBarModule,
     EmbedVideo.forRoot()
   ],
   providers: [
     ApiService,
-    SessionComponent
-  ],
+    MentorHubService,
+    SessionComponent,
+    GoogleAnalyticsService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
+    ],
   bootstrap: [AppComponent],
   entryComponents: [FillInTheBlankComponent]
 })

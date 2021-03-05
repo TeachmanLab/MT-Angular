@@ -57,14 +57,19 @@ export class ScenarioComponent implements OnInit, OnChanges {
   isStory = false;
   @Input()
   scenarioIndex: number;
+
+  // IF using the api to store progress, additional arguments are required.
   @Input()
-  session: Session;
+  useApi = true;
   @Input()
-  sessionIndex: number;
+  session: Session = null;
   @Input()
-  stepIndex: number;
+  sessionIndex: number = null;
   @Input()
-  pageCount: number;
+  stepIndex: number = null;
+  @Input()
+  pageCount: number = null;
+
 
   study: Study;
   pageIndex = 0;
@@ -99,9 +104,11 @@ export class ScenarioComponent implements OnInit, OnChanges {
     }
     this.study = {name: '', currentSession: {index: 0, name: '',
         currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}}, conditioning: ''};
-    this.api.getStudy().subscribe(study => {
-      this.study = study;
-    });
+    if (this.useApi) {
+      this.api.getStudy().subscribe(study => {
+        this.study = study;
+      });
+    }
     this.init();
   }
 
@@ -136,6 +143,11 @@ export class ScenarioComponent implements OnInit, OnChanges {
   }
 
   recordStateData(event: ElementEvent) {
+    if (!this.useApi) {
+      this.pageCounter++;
+      return;
+    }
+
     const data = {
       session: this.session.session,
       sessionIndex: this.sessionIndex,

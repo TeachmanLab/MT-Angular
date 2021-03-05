@@ -36,7 +36,7 @@ export class TrainingComponent implements OnInit {
   createScenarioRoundIndex = -1; // The (0 based) index of the round that should be followed by psycho-education. -1 for none.
   imageryPrime: Session[] = [];
   flexible_thinking: Session[] = [];
-  flexibleThinkingRoundIndex = -1; // The (0 based) index of the round that should be followed by flex thinking. -1 for none.
+  flexibleThinkingRoundIndex = 4; // The (0 based) index of the round that should be followed by flex thinking. -1 for none.
   readinessCompleted = false;
   imageryPrimeCompleted = false;
   readinessScenarioIndex = 6;
@@ -80,7 +80,7 @@ export class TrainingComponent implements OnInit {
       this.study.subscribe(study => {
         console.log('Study is:', study);
         console.log('Lemon Complete?', this.lemonExerciseCompleted);
-        this.setupCondition(study.conditioning, testing);
+        this.setupCondition(study, testing);
         this.loadIntro(study.currentSession.index - 1, study.conditioning);
         this.loadReadinessRulers();
         this.loadVividness();
@@ -95,25 +95,32 @@ export class TrainingComponent implements OnInit {
         if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
           console.log('Setting state to lemon.');
           this.state = this.states.LEMON;
+        } else if (study.currentSession.name !== 'firstSession' && !this.imageryPrimeCompleted) {
+          this.state = this.states.IMAGERY;
         }
       });
     });
   }
 
-  setupCondition(condition: String, testing: boolean) {
-    if (condition === 'TRAINING_30') {
+  setupCondition( study: Study, testing: boolean) {
+    if (study.name === 'KAISER') {
+      this.psychoedRoundIndex = 1; // Show training after completing the second round.
+      this.flexibleThinkingRoundIndex = 3;
+      if (study.currentSession.index >= 2) { // Only turn on the create scenario part in sessions 3, and 4
+        this.createScenarioRoundIndex = 3;
+      }
+    } else if (study.conditioning === 'TRAINING_30') {
       this.totalRounds = 3;
       this.flexibleThinkingRoundIndex = 2;
       this.vividIndexes = [1, 2, 20, 30];
-    } else if (condition === 'TRAINING_ED') {
+    } else if (study.conditioning === 'TRAINING_ED') {
       this.psychoedRoundIndex = 1; // Show training after completing the second round.
       this.flexibleThinkingRoundIndex = 3;
-    } else if (condition === 'TRAINING_CREATE') {
+    } else if (study.conditioning === 'TRAINING_CREATE') {
       this.createScenarioRoundIndex = 3;
       this.flexibleThinkingRoundIndex = 3;
-    } else if (condition === 'TRAINING_ORIG' ) {
+    } else if (study.conditioning === 'TRAINING_ORIG' ) {
       this.flexibleThinkingRoundIndex = 3;
-
     }
 
     if (testing) {
@@ -123,7 +130,7 @@ export class TrainingComponent implements OnInit {
       this.readinessScenarioIndex = 1;
       this.lemonExerciseCompleted = true;
     }
-    if (testing && condition === 'TRAINING_CREATE') {
+    if (testing && study.conditioning === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
     }
   }
@@ -423,8 +430,8 @@ export class TrainingComponent implements OnInit {
         map(([url, paramMap, queryParamMap]) => {
           const sessionIndex = +(paramMap.get('session') || 1) ;
           const study = {
-          name: 'default',
-          conditioning: 'TRAINING',
+          name: 'KAISER',
+          conditioning: 'NO_INCENTIVE',
           currentSession: {index: sessionIndex, name: 'firstSession',
             currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}},
           currentSessionIndex: sessionIndex
