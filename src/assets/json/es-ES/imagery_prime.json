@@ -14,12 +14,12 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_p1",
-                "content": "En este ejercicio, piensa en una situación PRÓXIMA que esperas que lo haga sentir ansioso, preocupado o asustado."
+                "content": "En este ejercicio, piensa en una situación PRÓXIMA que esperas que te haga sentir ansioso, preocupado o asustado."
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_p1",
-                "content": "Elija una situación que le preocupe, que podría salir mal, o que espera evocará síntomas relacionados con la ansiedad (por ejemplo, latidos cardíacos o sudoración). Cualquier situación que te haga sentir bastante ansioso o asustado funcionará, siempre y cuando sea una situación que probablemente encuentres."
+                "content": "Elige una situación que te preocupe que vaya a salir mal o que esperas que evoque síntomas relacionados con la ansiedad (e.j., palpitaciones cardíacas o sudoración). Cualquier situación que te haga sentir ansioso o asustado funcionará, siempre y cuando sea una situación a la que probablemente te enfrentes."
               }
             ]
           },
@@ -55,14 +55,14 @@
                 "bullets": [
                   "Trata de imaginar que realmente estás en la situación.",
                   "Piensa en las partes específicas de la situación en tu mente.",
-                  "Intenta imaginar usar todos tus sentidos mientras piensas en esta situación. Piensa en las cosas que verías, oirías y olerías si realmente estuvieras en esa situación.",
+                  "Intenta imaginar usando todos tus sentidos mientras piensas en esta situación. Piensa en las cosas que verías, oirías y olerías si realmente estuvieras en esa situación.",
                   "Piensa en el tipo de cosas que pensarías o sentirías si estuvieras allí."
                 ]
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_p5",
-                "content": "Haga clic en el botón \"Comienza\" y piense en esta situación en su mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegura de que el sonido de tu aparato no esté silenciado."
+                "content": "Haz clic en el botón \"Comenzar\" y reproduce esta situación en tu mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegura de que el sonido de tu dispositivo no esté silenciado."
               },
               {
                 "type": "Countdown",
@@ -83,7 +83,7 @@
               {
                 "type": "Header",
                 "stimulusName": "readiness_heading",
-                "content": "¿Qué tan ansioso te sintió (al más alto nivel de ansiedad) al completar la tarea de imaginería? Haga clic en la barra para ver el control deslizante."
+                "content": "¿Qué tan ansioso te sentiste (en el nivel más alto de ansiedad) al completar la tarea de imaginería? Haz clic en la barra para ver el deslizador."
               },
               {
                 "type": "Slider",
@@ -106,10 +106,10 @@
                 "stimulusName": "readiness_vivid_question",
                 "question": "¿Qué tan vívidamente imaginaste la situación?",
                 "options": [
-                  "No vívida",
+                  "Para nada vívida",
                   "Algo vívida",
                   "Moderadamente vívida",
-                  "Muy vívido",
+                  "Muy vívida",
                   "Totalmente vívida"
                 ],
                 "preferNotToAnswer": true
@@ -150,7 +150,7 @@
               {
                 "type": "Question",
                 "stimulusName": "readiness_manageable_question",
-                "question": "Si esta situación resultara mal, ¿qué tan bien o mal serías capaz de manejarla?",
+                "question": "Si esta situación saliera mal, ¿qué tan bien o mal serías capaz de manejarla?",
                 "options": [
                   "Muy bien",
                   "Algo bien",

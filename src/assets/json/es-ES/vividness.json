@@ -7,7 +7,7 @@
     "study": "Calm Thinking",
     "steps": [
       {
-        "title": "vividness",
+        "title": "",
         "pages": [
           {
             "auto_continue": true,
@@ -20,9 +20,9 @@
               {
                 "type": "Question",
                 "stimulusName": "vividness",
-                "question": "¿Qué tan vívidamente imaginaste la situación (como si realmente estuvieras allí)?",
+                "question": "¿Qué tan vívidamente imaginaste el escenario que acabas de leer (como si estuvieras realmente allí)?",
                 "options": [
-                  "De ningún modo",
+                  "Para nada",
                   "Ligeramente",
                   "Algo",
                   "Principalmente",

@@ -14,22 +14,22 @@
               {
                 "type": "LargeHeader",
                 "stimulusName": "readinessHeader",
-                "content": "How Calm Thinking Works"
+                "content": "Cómo funciona MindTrails"
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_rulers_p1",
-                "content": "As you have seen in the training so far, you are being asked to read lots of brief stories that are potentially anxiety-provoking."
+                "content": "Como has visto en el entrenamiento hasta ahorita, estás leyendo muchas historias cortas que pudieran producir ansiedad."
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_rulers_p1",
-                "content": "The Calm Thinking program is designed to shift anxious thinking styles. By really imagining yourself in these situations and then completing the last word of the story in a way that frequently–but not always–assigns a positive ending to the story, you are being challenged to think about potentially threatening situations in new ways."
+                "content": "El programa MindTrails está diseñado para cambiar los estilos de pensamiento ansioso. Al imaginarse realmente en estas situaciones y luego completando la última palabra de la historia de una manera que usualmente, pero no siempre, asigna un final positivo a la historia, se te está desafiando a pensar sobre situaciones potencialmente amenazadoras de nuevas formas."
               },
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_rulers_p3",
-                "content": "This program will present many different stories and give you lots of practice imagining yourself responding in ways that may be different than you would typically respond. This practice is intended to encourage more flexible thinking and help you break the habit of negative or catastrophic thinking."
+                "content": "Este programa presentará muchas historias diferentes y te dará mucha práctica imaginándote a ti mismo respondiendo de maneras que pueden ser diferentes a las que normalmente responderías. Esta práctica está diseñada para fomentar un pensamiento más flexible y ayudarte a romper el hábito del pensamiento negativo o catastrófico."
               }
             ]
           },
@@ -38,18 +38,18 @@
                 {
                   "type": "LargeHeader",
                   "stimulusName": "readinessHeader",
-                  "content": "How Calm Thinking Works"
+                  "content": "Cómo funciona MindTrails"
                 },
                 {
                   "type": "Question",
                   "stimulusName": "readiness_rulers",
-                  "question": "Based on what you’ve seen of the program and the description of its goals, how confident are you that this program will reduce your anxiety?",
+                  "question": "Según lo que has visto del programa y la descripción de sus objetivos, ¿qué tan seguro estás de que este programa reducirá tu ansiedad?",
                   "options": [
-                    "Not at all",
-                    "Slightly",
-                    "Somewhat",
-                    "Mostly",
-                    "Very"
+                    "Para nada",
+                    "Ligeramente",
+                    "Algo",
+                    "Principalmente",
+                    "Mucho"
                   ],
                   "preferNotToAnswer": true
                 }

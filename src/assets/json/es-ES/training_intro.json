@@ -24,13 +24,13 @@
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "Para cada cuento:",
+                "title": "Para cada historia:",
                 "bullets": [
                   "Intenta imaginarte realmente en la situación descrita. ¡Usa la imagen para ayudarte!",
                   "Trata de imaginarte respondiendo de la manera que describe la situación, incluso si usualmente reaccionas de una manera diferente.",
-                  "Al final del cuento, selecciona la ficha que falta que completa la palabra incompleta. ¡Responde correctamente en tu primer intento para recibir medio punto!",
-                  "Responde a una pregunta sobre el cuento. ¡Responde correctamente en tu primer intento para recibir medio punto!",
-                  "Hay 40 cuentos en esta sesión y 40 puntos en total. ¡Intenta obtener una puntuación perfecta!"
+                  "Al final de la historia, haz clic en la ficha de la letra faltante que completa la palabra incompleta. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Responde a una pregunta sobre la historia. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Hay 40 historias cortas en esta sesión y 40 puntos en total. ¡Intenta obtener una puntuación perfecta!"
                 ]
               }
             ]
@@ -64,133 +64,13 @@
               {
                 "type": "BulletList",
                 "stimulusName": "intro",
-                "title": "Para cada cuento:",
+                "title": "Para cada historia:",
                 "bullets": [
                   "Intenta imaginarte realmente en la situación descrita. ¡Usa la imagen para ayudarte!",
                   "Trata de imaginarte respondiendo de la manera que describe la situación, incluso si usualmente reaccionas de una manera diferente.",
-                  "Al final del cuento, selecciona la ficha que falta que completa la palabra incompleta. ¡Responde correctamente en tu primer intento para recibir medio punto!",
-                  "Responde a una pregunta sobre el cuento. ¡Responde correctamente en tu primer intento para recibir medio punto!",
-                  "Hay 40 cuentos en esta sesión y 40 puntos en total. ¡Intenta obtener una puntuación perfecta!"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "session": "thirdSession",
-    "title": "Training Session 3",
-    "subTitle": "Training Stories",
-    "conditioning": "Training",
-    "study": "Calm Thinking",
-    "steps": [
-      {
-        "title": "Training Session 3",
-        "pages": [
-          {
-            "elements": [
-              {
-                "type": "Paragraph",
-                "stimulusName": "intro",
-                "content": "You are now ready for the third Training Session!"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
-              },
-              {
-                "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
-                "bullets": [
-                  "Try to really imagine yourself in the situation described – use the picture to help you!",
-                  "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
-                  "At the end of the story, select the missing letter tiles that complete the incomplete word. Answer both correctly on your first try to receive half a point!",
-                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
-                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "session": "fourthSession",
-    "title": "Training Session 4",
-    "subTitle": "Training Stories",
-    "conditioning": "Training",
-    "study": "Calm Thinking",
-    "steps": [
-      {
-        "title": "Training Session 4",
-        "pages": [
-          {
-            "elements": [
-              {
-                "type": "Paragraph",
-                "stimulusName": "intro",
-                "content": "You are now ready for the fourth Training Session!"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
-              },
-              {
-                "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
-                "bullets": [
-                  "Try to really imagine yourself in the situation described – use the picture to help you!",
-                  "Try to picture yourself responding in the way the situation describes, even if you usually react in a different way.",
-                  "At the end of the story, select the missing letter tiles that complete the incomplete word. Answer both correctly on your first try to receive half a point!",
-                  "Respond to a question about the story. Answer correctly on your first try to receive half a point!",
-                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "session": "fifthSession",
-    "title": "Training Session 5",
-    "subTitle": "Training Stories",
-    "conditioning": "Training",
-    "study": "Calm Thinking",
-    "steps": [
-      {
-        "title": "Training Session 5",
-        "pages": [
-          {
-            "elements": [
-              {
-                "type": "Paragraph",
-                "stimulusName": "intro",
-                "content": "Congratulations, you made it to the final Training Session!. This level has a new challenge. For some stories we’ll ask you to fill in the missing letters to complete a word, as you’ve done before. For other stories we'll challenge you to generate a final word that will complete the story. Your goal is to think of a word that will end the story on a positive note. The ending doesn’t have to be so positive that it doesn’t seem possible, but we want you to imagine you are handling the situation well."
-              },
-              {
-                "type": "Image",
-                "stimulusName": "intro",
-                "content": "./assets/images/session-indicators/progress_bar.png"
-              },
-              {
-                "type": "BulletList",
-                "stimulusName": "intro",
-                "title": "For each short story:",
-                "bullets": [
-                  "Try to really imagine yourself in the situation described – use the picture to help you!",
-                  "Try to picture yourself responding in the way the situation describes – even if you usually react in a different way.",
-                  "For stories where you are given an incomplete word, select the missing letter tiles that complete the word. Answer correctly on your first try to receive half a point!",
-                  "For stories where you are given a blank space, think of a word to end the story on a positive note. Enter a word to receive a point – it has to be a valid word to get the point!",
-                  "There are 40 short stories in this session, and 40 points total. Try to get a perfect score!"
+                  "Al final de la historia, haz clic en la ficha de la letra faltante que completa la palabra incompleta. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Responde a una pregunta sobre la historia. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Hay 40 historias cortas en esta sesión y 40 puntos en total. ¡Intenta obtener una puntuación perfecta!"
                 ]
               }
             ]

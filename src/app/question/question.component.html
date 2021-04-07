@@ -33,7 +33,7 @@
     <div [hidden]="!(this.state === 'correct')" class="correct">
       <div i18n="correct" class="heading">Correct!</div>
       <div *ngIf="question.explanation" fxLayoutAlign="center">
-        <p>This is {{ question.answer.toLowerCase() }}. {{ question.explanation }}</p>
+        <p i18n = "explaincorrect">This is {{ question.answer.toLowerCase() }}. {{ question.explanation }}</p>
       </div>
     </div>
 

@@ -5,7 +5,7 @@
   >
     <mat-form-field>
       <mat-label *ngIf="this.fillInBlank.placeholder">{{placeholder}}</mat-label>
-      <mat-label i18n *ngIf="!this.fillInBlank.placeholder">PLEASE FILL IN THE BLANK:</mat-label>
+      <mat-label i18n = "fill in the blank" *ngIf="!this.fillInBlank.placeholder">PLEASE FILL IN THE BLANK:</mat-label>
       <input #input *ngIf="maxCharacters <= 100" matInput [formControl]="word" [errorStateMatcher]="matcher" (keyup.enter)="submitWord(word.value)">
       <textarea #input *ngIf="maxCharacters > 100" matInput placeholder="{{placeholder}}" [formControl]="word" [errorStateMatcher]="matcher">
       </textarea>
