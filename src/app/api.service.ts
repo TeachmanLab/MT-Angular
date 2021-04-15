@@ -1,11 +1,10 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {Inject, Injectable, LOCALE_ID} from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {EventRecord, Scenario, Session, Study} from './interfaces';
 import {TrainingCSV} from './training-csv';
 import {environment} from '../environments/environment';
-import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class ApiService {
@@ -19,79 +18,75 @@ export class ApiService {
     all_scenarios: environment.progress_endpoint + 'all_scenarios'
   };
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+              @Inject(LOCALE_ID) public locale: string) {
+    console.log(`The Locale is set to ${locale}`);
+  }
+
+  private getJsonFile(fileName: String): Observable<any> {
+    return this.httpClient.get<Session[]>(`./assets/json/${this.locale}/${fileName}`)
+      .pipe((catchError(this.handleError)));
   }
 
   public getRecognitionRatings(): Observable<any> {
-      return this.httpClient.get('./assets/json/recognition_ratings.json')
-    .pipe((catchError(this.handleError)));
+    return this.getJsonFile('recognition_ratings.json');
   }
 
   public getControlSessions(): Observable<any> {
-    return this.httpClient.get<Session[]>('./assets/json/control.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('control.json');
   }
 
   public getControlInTrainingSessions(): Observable<any> {
-    return this.httpClient.get<Session[]>('./assets/json/control_in_training.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('control_in_training.json');
   }
 
   public getTrainingIntro(condition: String): Observable<Session[]> {
-    let url = '';
+    let file = '';
     if (condition === 'TRAINING_30') {
-      url = './assets/json/training30_intro.json';
+      file = 'training30_intro.json';
     } else if (condition === 'TRAINING_ED') {
-      url = './assets/json/traininged_intro.json';
+      file = 'traininged_intro.json';
     } else {
-      url = './assets/json/training_intro.json';
+      file = 'training_intro.json';
     }
-    return this.httpClient.get<Session[]>(url)
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile(file);
   }
 
   public getCreateScenario(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/create_scenario.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('create_scenario.json');
   }
 
   public getLemonExercise(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/lemon.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('lemon.json');
   }
 
   public getReadinessRulers(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/readiness_rulers.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('readiness_rulers.json');
   }
 
   public getVividness(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/vividness.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('vividness.json');
   }
 
   public getFlexibleThinking(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/flexible_thinking.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('flexible_thinking.json');
   }
 
   public getEdFollowup(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/psychoed_followup.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('psychoed_followup.json');
   }
 
   public getImageryPrime(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/imagery_prime.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('imagery_prime.json');
   }
 
   public getTrainingSessionIndicators(): Observable<Session[]> {
-    return this.httpClient.get<Session[]>('./assets/json/training_session_indicators.json')
-      .pipe((catchError(this.handleError)));
+    return this.getJsonFile('training_session_indicators.json');
   }
 
   public getTrainingCSV(session: string): Observable<Scenario[]> {
-    const url = './assets/csv/<session>.csv'.replace('<session>', session);
+    const url = `./assets/csv/${this.locale}/${session}.csv`;
+    console.log(`Loading session from ${url}`);
     return this.httpClient.get(url, {responseType: 'text'})
       .pipe((catchError(this.handleError)))
       .pipe(map(csv => TrainingCSV.toJson(session, csv)));
@@ -116,7 +111,6 @@ export class ApiService {
     return this.httpClient.get<EventRecord[]>(this.endpoints.all_scenarios + '/' + type)
       .pipe(catchError(this.handleError));
   }
-
 
   getStudy(): Observable<Study> {
     return this.httpClient.get<Study>(this.endpoints.study)

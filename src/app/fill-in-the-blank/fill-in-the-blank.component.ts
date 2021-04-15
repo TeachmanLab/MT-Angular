@@ -40,7 +40,6 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
 
   error: string;
   placeholder: string;
-  submitButtonText: string;
 
   constructor() {
     console.log('Fill in blank content:', this.fillInBlank);
@@ -60,13 +59,9 @@ export class FillInTheBlankComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.startTime = performance.now();
-    if (!this.fillInBlank.placeholder) {
-      this.fillInBlank.placeholder = 'PLEASE FILL IN THE BLANK:';
-    }
     this.maxCharacters = this.fillInBlank.maxCharacters > 0 ?  this.fillInBlank.maxCharacters : this.defaultMax;
     this.minCharacters = this.fillInBlank.minCharacters > 0 ?  this.fillInBlank.minCharacters : this.defaultMin;
     this.placeholder = this.fillInBlank.placeholder;
-    this.submitButtonText = this.fillInBlank.submitButtonText || 'Submit';
     this.word = new FormControl('', [
       Validators.required,
       Validators.minLength(this.minCharacters), wordValidator,

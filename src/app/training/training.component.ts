@@ -5,10 +5,11 @@ import { environment } from '../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import {Round} from '../round';
 import {catchError, map, withLatestFrom} from 'rxjs/operators';
-import {combineLatest, observable, Observable} from 'rxjs';
+import {Observable} from 'rxjs';
 
 enum TrainingState {
-  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP', 'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
+  'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP',
+  'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -62,6 +63,8 @@ export class TrainingComponent implements OnInit {
 
   @Output() done: EventEmitter<any> = new EventEmitter();
 
+
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute
@@ -92,7 +95,7 @@ export class TrainingComponent implements OnInit {
         if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
           console.log('Setting state to lemon.');
           this.state = this.states.LEMON;
-        } else if (study.currentSession.name !== 'firstSession' && !this.imageryComplete()) {
+        } else if (study.currentSession.name !== 'firstSession' && !this.imageryPrimeCompleted) {
           this.state = this.states.IMAGERY;
         }
       });
@@ -433,7 +436,7 @@ export class TrainingComponent implements OnInit {
             currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}},
           currentSessionIndex: sessionIndex
         };
-        //study.currentSessionIndex = +paramMap.get('session') - 1;
+        // study.currentSessionIndex = +paramMap.get('session') - 1;
         switch (paramMap.get('session')) {
           case('1'):
             study.currentSession.name = 'firstSession';

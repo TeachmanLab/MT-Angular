@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="es">
+    <body>
+      <trans-unit id="96a4535d6ae9894a9cb374e24f2ed39bc326b525" datatype="html">
+        <source>Welcome to Mindtrails Training</source><target state="translated">Bienvenido al entrenamiento de MindTrails</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Message at top of all pages</note>
+        <note priority="1" from="meaning">welcome message</note>
+      </trans-unit>
+      <trans-unit id="a183f55921a00cde827aa0db27a0009f748b55cf" datatype="html">
+        <source>Module Complete!</source><target state="translated">¡Módulo completado!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">the module is complete, and the training is over.</note>
+        <note priority="1" from="meaning">module complete</note>
+      </trans-unit>
+      <trans-unit id="fc08cc122f5cf53d531b7623deaa28384c0538fe" datatype="html">
+        <source>You have completed the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> section. Well done!</source><target state="translated">Has completado la  <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="INTERPOLATION" equiv-text="{{currentSession.subTitle}}"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> sección.
+¡Bien hecho!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">The session you have completed</note>
+        <note priority="1" from="meaning">module complete message</note>
+      </trans-unit>
+      <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
+        <source>Continue</source><target state="translated">Continuar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/control-condition/control-condition.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/scenario/scenario.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/thoughtbubble/thoughtbubble.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+        <note priority="1" from="description">continue</note>
+      </trans-unit><trans-unit id="33c13f39e82db6da3f56517ab1a2a3d57f3f3cbb" datatype="html">
+        <source>PLEASE FILL IN THE BLANK:</source><target state="translated">POR FAVOR LLENA EL ESPACIO EN BLANCO:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      <note from="description" priority="1">fill in the blank</note></trans-unit>
+      <trans-unit id="43f3c9a1dcffd71ed9fb008ef216f908ab14ec74" datatype="html">
+        <source>
+        Please enter at least <x id="INTERPOLATION" equiv-text="{{minCharacters}}"/> characters.
+      </source><target state="translated">Por favor ingresa por lo menos <x id="INTERPOLATION" equiv-text="{{minCharacters}}"/> caracteres.
+ </target>
+
+        <note priority="1" from="description">fill in blank min error</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit>
+      <trans-unit id="e463e4313227b548dbbcbb25a0feb836a2af8de5" datatype="html">
+        <source>
+        You must enter a value
+      </source><target state="translated"> Tienes que ingresar un valor</target>
+
+        <note priority="1" from="description">fill in blank required error</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">15</context></context-group></trans-unit>
+      <trans-unit id="378fd81a9e01f41f1766bb7046eca0ee9fc43806" datatype="html">
+        <source>
+        This does not look like a word
+      </source><target state="translated">  Esto no parece ser una palabra
+ </target>
+
+        <note priority="1" from="description">fill in blank not word error</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
+      <trans-unit id="e79a1f6a4440d65f5481bee356fa37e022fdbb1d" datatype="html">
+        <source>
+        Please shorten your response
+      </source><target state="translated"> Por favor acorta tu respuesta
+ </target>
+
+        <note priority="1" from="description">fill in blank too long error</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit><trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
+        <source>Submit</source><target state="translated">Enviar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="e86a3182a63738c0fa7efe34e3e4bd9c0b4d72b7" datatype="html">
+        <source>SELECT A TILE:</source><target state="translated">SELECCIONA UNA LETRA:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/missing-letter/missing-letter.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">missing letter section title</note>
+      </trans-unit>
+      <trans-unit id="b0e76dd2ee81e2bbf1c51ddeb57be99ffb0a3387" datatype="html">
+        <source>Correct!</source><target state="translated">¡Correcto!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/missing-letter/missing-letter.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/question/question.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">missing letter correct</note>
+      </trans-unit>
+      <trans-unit id="27f2b00978dfba4d628a5251ef054f9172340fc2" datatype="html">
+        <source>Hmm. That doesn't look right! Please try again.</source><target state="translated">Hmm. ¡No se ve como la respuesta correcta! Inténtalo de nuevo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/missing-letter/missing-letter.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">missing letter incorrect</note>
+      </trans-unit>
+      <trans-unit id="7421cffa236d6445907d4c7e11dc7f32e53a8758" datatype="html">
+        <source>
+      Prefer not to answer
+    </source><target state="translated">  Prefiero no contestar
+ </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/question/question.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">prefer not to answer</note>
+      </trans-unit><trans-unit id="a3cdb3d87c89cb8bb2c2407787ef275cab3aeef5" datatype="html">
+        <source>This is <x id="INTERPOLATION" equiv-text="{{ question.answer.toLowerCase() }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ question.explanation }}"/></source><target state="translated">Esto es <x id="INTERPOLATION" equiv-text="{{ question.answer.toLowerCase() }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ question.explanation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/question/question.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">explaincorrect</note>
+      </trans-unit>
+      <trans-unit id="354d42bd4681e325306bb99b57862d78da398ce3" datatype="html">
+        <source>Whoops. That wasn't the right answer. Please wait a moment and try again.</source><target state="translated">Esa no es la respuesta correcta. Por favor espera un momento e intenta de nuevo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/question/question.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">question response incorrect</note>
+      </trans-unit><trans-unit id="1dba8562557f3ace4c4c8e72a7146f0fee3ae4d6" datatype="html">
+        <source>
+      Previous
+      </source><target state="translated">
+      Regresar
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/step/step.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">previous</note>
+      </trans-unit>
+      <trans-unit id="ee3a3296289e5b580e8e012f761df9867da635da" datatype="html">
+        <source>
+      Next
+      </source><target state="translated"> Siguiente
+ </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/step/step.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">next</note>
+      </trans-unit>
+      <trans-unit id="0f90559c85873eaafc4dd25adcf9b337ea9b3f34" datatype="html">
+        <source>Round <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></source><target state="translated">Ronda <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> de <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <note priority="1" from="description">round x of y</note>
+      </trans-unit>
+      <trans-unit id="ab4a8f5dc9516f46cc71bd23ca4614a157269882" datatype="html">
+        <source>Start Round <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></source><target state="translated">Comenzar ronda <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+        <note priority="1" from="description">start round x</note>
+      </trans-unit><trans-unit id="cfcc41dcd9a6e44b8a4e0e250af4705079107943" datatype="html">
+        <source>We encountered an unexpected error.  You session may have expired, or you
+  have followed a link or bookmark that is no longer valid.</source><target state="translated">Ha surgido un error inesperado. Es posible que tu sesión expiró o que
+  fuiste redireccionado a un enlace inválido.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/session-warning/session-warning.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">warning</note>
+      </trans-unit><trans-unit id="acfcacf9e5b748a839f6fbf3f2bf495ff5ae3a3a" datatype="html">
+        <source>Get Back on Track</source><target state="translated">Continúa el entrenamiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/session-warning/session-warning.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">getback</note>
+      </trans-unit>
+      <trans-unit id="bdf39e18bcfcecdb4f78827ad5718c6d127a2c68" datatype="html">
+        <source>ROUND <x id="INTERPOLATION" equiv-text="{{roundNumber}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/>: COMPLETE!</source><target state="translated">RONDA <x id="INTERPOLATION" equiv-text="{{roundNumber}}"/> de 4: ¡COMPLETADA!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training-score/training-score.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">round x of y complete</note>
+      </trans-unit>
+      <trans-unit id="d40d6263fb065569bf4cc53c63d7d585fedd3f5c" datatype="html">
+        <source>Your score for this round is:</source><target state="translated">Tu puntuación para esta ronda es:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training-score/training-score.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">your score</note>
+      </trans-unit>
+      <trans-unit id="59836db468d5408ba1f2c141d59caf42fa517fd9" datatype="html">
+        <source>Remember to pay really close attention to the whole story each time — including how it ends — and to use the information in the story to answer the question.</source><target state="translated">Recuerda prestar mucha atención a toda la historia y su final y usar la información en la historia para contestar las preguntas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training-score/training-score.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">low score message at round end</note>
+      </trans-unit>
+      <trans-unit id="2274d589b73efe5e7baef51fc8cda442d124d3eb" datatype="html">
+        <source>Good work! We encourage you to pay really close attention to the stories.</source><target state="translated">¡Excelente trabajo! Te animamos a que prestes mucha atención a las historias.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training-score/training-score.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">medium score message at round end</note>
+      </trans-unit>
+      <trans-unit id="c8d9e99b1f9e37b8c2cbf71133ba3a69f4ccef16" datatype="html">
+        <source>Excellent work. Keep it up!</source><target state="translated">¡Excelente trabajo!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training-score/training-score.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">high score message at round end</note>
+      </trans-unit><trans-unit id="9e3c4143691971703e8e42833a49575985b25301" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{session.title}}"/>: Complete!</source><target state="translated"><x id="INTERPOLATION" equiv-text="{{session.title}}"/>: Completado!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Complete</note>
+      </trans-unit><trans-unit id="1f0385407aecbb87c7f14ef1e4e7a867ec241423" datatype="html">
+        <source>You have completed all rounds in the session. You received the following score in each round:</source><target state="translated">Has completado todas las rondas de la sesión. Recibiste la siguiente puntuación en cada ronda:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Complete all rounds</note>
+      </trans-unit><trans-unit id="c9774be57ed397d7affc0153fbc7034180e16168" datatype="html">
+        <source>Round <x id="INTERPOLATION" equiv-text="{{i+1}}"/></source><target state="translated">Ronda <x id="INTERPOLATION" equiv-text="{{i+1}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Round</note>
+      </trans-unit><trans-unit id="b6e430d5a8d95ed06c386c5cbe0fd8e3812b63cb" datatype="html">
+        <source>Your total score for this session is <x id="INTERPOLATION" equiv-text="{{totalScore}}"/> out of <x id="INTERPOLATION_1" equiv-text="{{rounds.length * 10}}"/>.</source><target state="translated">Tu puntuación total para esta sesión es <x id="INTERPOLATION" equiv-text="{{totalScore}}"/> de <x id="INTERPOLATION_1" equiv-text="{{rounds.length * 10}}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">Total Score</note>
+      </trans-unit><trans-unit id="3b6e5aa0dd2047cef646fc39de9b47b19117d553" datatype="html">
+        <source>
+      This is terrific, and shows you’re paying careful attention to the stories! Keep it up, as
+      this can help you to get the most out of the training.
+    </source><target state="translated">
+      Esto es excelente y demuestra que le estás poniendo mucha atención a las historias! Sigue así ya que 
+      te puede ayudar a sacarle el mayor provecho al entrenamiento.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">Total Score 36</note>
+      </trans-unit><trans-unit id="eac3865325a43097a7d160facc648fc982673841" datatype="html">
+        <source>
+    You’re doing well! We encourage you to pay close attention to the stories to figure
+    out the missing letters to complete the final words and answer the questions. We
+    think that the more carefully you attend to the stories and really imagine yourself in
+    them, the more you will get out of the training.
+    </source><target state="translated">
+    ¡Lo estás haciendo muy bien! Te animamos a que prestes mucha atención a las historias para averiguar
+    las letras faltantes y así poder completar la palabra y responder a las preguntas.
+    Pensamos que entre más atención le prestes a las historias y verdaderamente te imagines en
+    ellas, mayor provecho le sacarás al entrenamiento.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <note priority="1" from="description">Total Score 28</note>
+      </trans-unit><trans-unit id="b9163712bd12191357e422c3a5d92710216aef70" datatype="html">
+        <source>
+    We want to encourage you to pay really close attention to the whole story each time,
+    including how it ends, and to use the information in the story to answer the question.
+    We think this will help you get the most out of the training. If any aspect of the task is
+    unclear, please email us with any questions at studyteam@mindtrails.org.
+    </source><target state="translated">
+    Queremos animarte a que cada vez prestes mucha atención a la historia y su final,
+    y que uses la información en la historia para contestar las preguntas.
+    Pensamos que esto te ayudará a sacarle el mayor provecho al entrenamiento. Si hay alguna parte del ejercicio
+    que no te haya quedado claro, por favor mándanos tus preguntas al correo electrónico studyteam@mindtrails.org.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/final-score/final-score.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <note priority="1" from="description">Total Score less 28</note>
+      </trans-unit><trans-unit id="f59cf1fbcd005d9000b21a512e37002c127234e0" datatype="html">
+        <source>
+  Begin
+</source><target state="translated">
+  Comenzar
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/countdown/countdown.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">begin button</note>
+      </trans-unit>
+      <trans-unit id="841f5f8515a215f6b71398e7f0089ffd3df4d63b" datatype="html">
+        <source>You have <x id="INTERPOLATION" equiv-text="{{countdown.delayInSeconds - currentSecond}}"/> seconds remaining.  We will let you know when the time is up.</source><target state="translated">Te quedan <x id="INTERPOLATION" equiv-text="{{countdown.delayInSeconds - currentSecond}}"/> segundos. Te avisaremos cuando se acabe el tiempo.</target>
+        
+        <note priority="1" from="description">you have x seconds remaining</note>
+        <note priority="1" from="meaning">countdown wait</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/countdown/countdown.component.html</context><context context-type="linenumber">10</context></context-group></trans-unit>
+      <trans-unit id="bec4a7966aa0d3a87865adb35090665fa9c749ab" datatype="html">
+        <source>All Done!</source><target state="translated">¡Listo!</target>
+        
+        <note priority="1" from="description">The countdown completed</note>
+        <note priority="1" from="meaning">countdown done</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/countdown/countdown.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit>
+      <trans-unit id="1b24fefa85d69edd5dcdb3ba0557a88954501b25" datatype="html">
+        <source>Absolutely no anxiety</source><target state="translated">Absolutamente sin ansiedad</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/slider/slider.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">slider no anxiety</note>
+      </trans-unit>
+      <trans-unit id="cae3c3455f07251b02c8e44acc14b48ac575b39a" datatype="html">
+        <source>Totally anxious</source><target state="translated">Totalmente ansioso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/slider/slider.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">slider totally anxious</note>
+      </trans-unit><trans-unit id="5b1cdec4a661b7ad366b859d8e15c10feda010d2" datatype="html">
+        <source>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+    <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/>"/>
+    Prefer not to answer
+  </source><target state="translated"><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/>"/>
+    Prefiero no contestar
+  </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/slider/slider.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">prefer not to answer</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

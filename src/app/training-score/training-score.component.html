@@ -7,9 +7,9 @@
         <h2 class="mat-h2"> <i class="material-icons">
           done_outline
         </i>
-          ROUND {{roundNumber}} of {{totalRounds}}: COMPLETE!</h2>
+          <span i18n="round x of y complete">ROUND {{roundNumber}} of {{totalRounds}}: COMPLETE!</span></h2>
         <br>
-        <h5>Your score for this round is:</h5>
+        <h5 i18n="your score">Your score for this round is:</h5>
 
         <ngx-gauge [type]="'full'"
                    [size]="250"
@@ -22,9 +22,9 @@
         </ngx-gauge>
 
         <!-- conditional sections, based on percentage correct -->
-        <h5 *ngIf='score > 0 && score <= 6.5'>Remember to pay really close attention to the whole story each time — including how it ends — and to use the information in the story to answer the question.</h5>
-        <h5 *ngIf='score > 6.5 && score <= 8'>Good work! We encourage you to pay really close attention to the stories.</h5>
-        <h5 *ngIf='score >= 9'>Excellent work. Keep it up!</h5>
+        <h5 i18n="low score message at round end" *ngIf='score > 0 && score <= 6.5'>Remember to pay really close attention to the whole story each time — including how it ends — and to use the information in the story to answer the question.</h5>
+        <h5 i18n="medium score message at round end" *ngIf='score > 6.5 && score <= 8'>Good work! We encourage you to pay really close attention to the stories.</h5>
+        <h5 i18n="high score message at round end" *ngIf='score >= 9'>Excellent work. Keep it up!</h5>
       </div>
     <br/>
     <br/>

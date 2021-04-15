@@ -3,11 +3,11 @@
 <app-session *ngIf="flexible" [session]="flexible_thinking[0]" [sessions]="flexible_thinking" [sessionIndex]="0" [checkProgress]="false" (done)="sessionComplete()" ></app-session>
 <div *ngIf="sessionDone">
   <mat-card>
-    <h1>Module Complete!</h1>
-    <h6>You have completed the <i>{{currentSession.subTitle}}</i> section. Well done!</h6>
+    <h1 i18n="module complete|the module is complete, and the training is over.">Module Complete!</h1>
+    <h6 i18n="module complete message|The session you have completed">You have completed the <i>{{currentSession.subTitle}}</i> section. Well done!</h6>
     <br>
     <br>
     <br>
-    <button *ngIf="sessionDone" class="continue"  mat-raised-button (click)="close()">Continue</button>
+    <button *ngIf="sessionDone" class="continue"  mat-raised-button (click)="close()" i18n="continue">Continue</button>
   </mat-card>
 </div>

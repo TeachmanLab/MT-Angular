@@ -15,7 +15,7 @@
       fxLayoutAlign="space-between"
       *ngIf="(done)"
     >
-      <button
+      <button i18n="previous"
         *ngIf="allowPrevious()"
         class="continue"
         mat-raised-button
@@ -26,7 +26,7 @@
       Previous
       </button>
       <span *ngIf="!allowPrevious()"></span>
-      <button
+      <button i18n="next"
         class="continue"
         mat-raised-button
         color="primary"

@@ -9,11 +9,21 @@
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es-ES": "src/i18n/messages.es.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/training-prototype",
+            "localize": [
+              "en-US"
+            ],
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,6 +39,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -41,6 +57,33 @@
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "es": {
+              "aot": true,
+              "localize": [
+                "es-ES"
+              ],
+              "outputPath": "dist/training-prototype-es"
+            },
+            "spanish": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.spanish.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "localize": [
+                "es-ES"
+              ],
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
@@ -72,6 +115,9 @@
           "configurations": {
             "production": {
               "browserTarget": "training-prototype:build:production"
+            },
+            "es": {
+              "browserTarget": "training-prototype:build:es"
             }
           }
         },
@@ -109,6 +155,21 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "format": "xlf",
+              "srcDir": "src/i18n",
+              "genDir": "src/i18n",
+              "defaultLanguage": "en",
+              "languages": [
+                "en",
+                "es"
+              ]
+            }
+          }
         }
       }
     },
@@ -142,6 +203,6 @@
   },
   "defaultProject": "training-prototype",
   "cli": {
-    "analytics": "13883d96-8fd9-4d34-a24f-3e0cc5ff80fc"
+    "analytics": "eda62b27-cbcf-44dc-a25f-c7a7f48a3ad2"
   }
 }

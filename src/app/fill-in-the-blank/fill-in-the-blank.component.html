@@ -4,20 +4,21 @@
        fxLayoutGap="10px"
   >
     <mat-form-field>
-      <mat-label>{{placeholder}}</mat-label>
+      <mat-label *ngIf="this.fillInBlank.placeholder">{{placeholder}}</mat-label>
+      <mat-label i18n = "fill in the blank" *ngIf="!this.fillInBlank.placeholder">PLEASE FILL IN THE BLANK:</mat-label>
       <input #input *ngIf="maxCharacters <= 100" matInput [formControl]="word" [errorStateMatcher]="matcher" (keyup.enter)="submitWord(word.value)">
       <textarea #input *ngIf="maxCharacters > 100" matInput placeholder="{{placeholder}}" [formControl]="word" [errorStateMatcher]="matcher">
       </textarea>
-      <mat-error *ngIf="word.hasError('minlength') && !word.hasError('required')">
+      <mat-error i18n="fill in blank min error" *ngIf="word.hasError('minlength') && !word.hasError('required')">
         Please enter at least {{minCharacters}} characters.
       </mat-error>
-      <mat-error *ngIf="word.hasError('required')">
+      <mat-error i18n="fill in blank required error" *ngIf="word.hasError('required')">
         You must enter a value
       </mat-error>
-      <mat-error *ngIf="word.hasError('isWord') && !word.hasError('minlength') && !word.hasError('required')">
+      <mat-error i18n="fill in blank not word error" *ngIf="word.hasError('isWord') && !word.hasError('minlength') && !word.hasError('required')">
         This does not look like a word
       </mat-error>
-      <mat-error *ngIf="word.hasError('maxlength')">
+      <mat-error i18n="fill in blank too long error" *ngIf="word.hasError('maxlength')">
         Please shorten your response
       </mat-error>
     </mat-form-field>
@@ -30,6 +31,7 @@
     [disabled]="!word.valid || completed"
     (click)="submitWord(word.value)"
   >
-    {{submitButtonText}}
+    <span *ngIf="fillInBlank.submitButtonText">{{fillInBlank.submitButtonText}}</span>
+    <span i18n *ngIf="!fillInBlank.submitButtonText">Submit</span>
   </button>
 </div>
