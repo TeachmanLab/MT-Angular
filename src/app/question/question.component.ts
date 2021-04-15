@@ -29,6 +29,8 @@ export class QuestionComponent implements OnInit {
   firstReactionTime = 0;
   endTime: number;
 
+  prefer_not_to_answer = $localize`Prefer not to answer`;
+
   @Input()
   isStory = false;
 
@@ -41,6 +43,7 @@ export class QuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('Prefer not to answer:', this.prefer_not_to_answer);
     this.startTime = performance.now();
     this.updateQuestionState();
   }

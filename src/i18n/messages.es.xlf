@@ -118,6 +118,10 @@
         </context-group>
         <note priority="1" from="description">missing letter correct</note>
       </trans-unit>
+      <trans-unit id="32121819882942677" datatype="html">
+        <source>Prefer not to answer</source>
+        <target state="translated">Prefiero no contestar</target>
+      </trans-unit>
       <trans-unit id="27f2b00978dfba4d628a5251ef054f9172340fc2" datatype="html">
         <source>Hmm. That doesn't look right! Please try again.</source><target state="translated">Hmm. ¡No se ve como la respuesta correcta! Inténtalo de nuevo.</target>
         <context-group purpose="location">
@@ -278,7 +282,7 @@
       This is terrific, and shows you’re paying careful attention to the stories! Keep it up, as
       this can help you to get the most out of the training.
     </source><target state="translated">
-      Esto es excelente y demuestra que le estás poniendo mucha atención a las historias! Sigue así ya que 
+      Esto es excelente y demuestra que le estás poniendo mucha atención a las historias! Sigue así ya que
       te puede ayudar a sacarle el mayor provecho al entrenamiento.
     </target>
         <context-group purpose="location">
@@ -334,13 +338,13 @@
       </trans-unit>
       <trans-unit id="841f5f8515a215f6b71398e7f0089ffd3df4d63b" datatype="html">
         <source>You have <x id="INTERPOLATION" equiv-text="{{countdown.delayInSeconds - currentSecond}}"/> seconds remaining.  We will let you know when the time is up.</source><target state="translated">Te quedan <x id="INTERPOLATION" equiv-text="{{countdown.delayInSeconds - currentSecond}}"/> segundos. Te avisaremos cuando se acabe el tiempo.</target>
-        
+
         <note priority="1" from="description">you have x seconds remaining</note>
         <note priority="1" from="meaning">countdown wait</note>
       <context-group purpose="location"><context context-type="sourcefile">app/countdown/countdown.component.html</context><context context-type="linenumber">10</context></context-group></trans-unit>
       <trans-unit id="bec4a7966aa0d3a87865adb35090665fa9c749ab" datatype="html">
         <source>All Done!</source><target state="translated">¡Listo!</target>
-        
+
         <note priority="1" from="description">The countdown completed</note>
         <note priority="1" from="meaning">countdown done</note>
       <context-group purpose="location"><context context-type="sourcefile">app/countdown/countdown.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit>
