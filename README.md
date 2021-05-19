@@ -41,14 +41,16 @@ We may be running multiple studies with difference settings at the same time, fo
 we provide a mechanism for doing custom builds, for instance, in Kaiser you would do:
 
 `ng build --configuration kaiser --build-optimizer --output-hashing none --base-href=/kaiser/angular/`
-`cp -r dist/training-prototype ~/code/MindTrails/kaiser/src/main/resources/static/angular`
+`cp -r dist/training-prototype/en-US ~/code/MindTrails/kaiser/src/main/resources/static/angular`
 
 A complete build of spanish for deployment like:
-(NOTE:  For spanish we will need to build both an engish version and an spanish version, with the
-translations properly set up now, that should be as simple as adding one more config, but for now
-this will build the site translated into Spanish)
+(NOTE:  For spanish we will need to build both an engish version and an spanish version, follow the 'Adding to Mindtrails'
+section above for building in english. then do the following to create the spanish language version.)
 `ng build --configuration spanish --build-optimizer --output-hashing none --base-href=/spanish/angular/`
-`cp -r dist/training-prototype ~/code/MindTrails/spanish/src/main/resources/static/angular`
+`cp -r dist/training-prototype/es-ES ~/code/MindTrails/spanish/src/main/resources/static/angular-es`
+`ng build --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
+`cp -r dist/training-prototype/en-US ~/code/MindTrails/spanish/src/main/resources/static/angular`
+
 
 ## Code scaffolding
 
