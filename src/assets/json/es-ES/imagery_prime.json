@@ -14,7 +14,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_p1",
-                "content": "En este ejercicio, piensa en una situación PRÓXIMA que esperas que te haga sentir ansioso, preocupado o asustado."
+                "content": "En este ejercicio, piensa en una situación que esperas que te hará sentir ansioso, preocupado o asustado en el futuro cercano."
               },
               {
                 "type": "Paragraph",
@@ -83,7 +83,7 @@
               {
                 "type": "Header",
                 "stimulusName": "readiness_heading",
-                "content": "¿Qué tan ansioso te sentiste (en el nivel más alto de ansiedad) al completar la tarea de imaginería? Haz clic en la barra para ver el deslizador."
+                "content": "¿Qué tan ansioso te sentiste (en el nivel más alto de ansiedad) al completar la tarea de imaginación vívida? Haz clic en la barra para ver el deslizador."
               },
               {
                 "type": "Slider",

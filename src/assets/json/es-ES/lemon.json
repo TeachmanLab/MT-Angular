@@ -18,7 +18,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "El objetivo de MindTrails es reducir tu pensamiento ansioso al cambiar la manera de la que tú haces sentido de la información. En cada sesión, practicarás respondiendo a situaciones de maneras diferentes al leer cuentos breves y completar fragmentos de palabras al elegir una o más letras faltantes de la palabra."
+                "content": "El objetivo de MindTrails es reducir tu pensamiento ansioso al cambiar la manera en la que tú interpretas la información. En cada sesión, practicarás respondiendo a situaciones de maneras diferentes al leer cuentos breves y completar fragmentos de palabras eligiendo una o más letras faltantes de la palabra."
 
 
               },
@@ -44,7 +44,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "intro",
-                "content": "Ya que el programa de MindTrails requiere que te imagines a ti mismo en diferentes situaciones, creemos que imaginándote vívidamente en estas situaciones es importante para que el programa sea efectivo. Antes de comenzar el entrenamiento, queremos que completes dos ejercicios cortos para practicar la imaginería:"
+                "content": "Ya que el programa de MindTrails requiere que te imagines a ti mismo en diferentes situaciones, creemos que imaginándote vívidamente en estas situaciones es importante para que el programa sea efectivo. Antes de comenzar el entrenamiento, queremos que completes dos ejercicios cortos para practicar la imaginación vívida:"
               },
               {
                 "type": "BulletList",
@@ -204,7 +204,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "le8",
-                "content": "¡Ese fue el ejercicio del limón! No te preocupes si no sentiste fuertemente todas las sensaciones. Esto es completamente normal."
+                "content": "¡Ese fue el ejercicio del limón! No te preocupes si no sentiste fuertemente todas las sensaciones. Eso es completamente normal."
               }
             ]
           }
