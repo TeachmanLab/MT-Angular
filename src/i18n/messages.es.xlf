@@ -118,10 +118,7 @@
         </context-group>
         <note priority="1" from="description">missing letter correct</note>
       </trans-unit>
-      <trans-unit id="32121819882942677" datatype="html">
-        <source>Prefer not to answer</source>
-        <target state="translated">Prefiero no contestar</target>
-      </trans-unit>
+      
       <trans-unit id="27f2b00978dfba4d628a5251ef054f9172340fc2" datatype="html">
         <source>Hmm. That doesn't look right! Please try again.</source><target state="translated">Hmm. ¡No se ve como la respuesta correcta! Inténtalo de nuevo.</target>
         <context-group purpose="location">
@@ -177,15 +174,24 @@
           <context context-type="linenumber">35</context>
         </context-group>
         <note priority="1" from="description">next</note>
-      </trans-unit>
-      <trans-unit id="0f90559c85873eaafc4dd25adcf9b337ea9b3f34" datatype="html">
-        <source>Round <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></source><target state="translated">Ronda <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> de <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></target>
+      </trans-unit><trans-unit id="a2584fb842d9a5e2fd2e93ec55ef31d3671d68b7" datatype="html">
+        <source>Round</source><target state="translated">Ronda</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/training/training.component.html</context>
           <context context-type="linenumber">101</context>
         </context-group>
-        <note priority="1" from="description">round x of y</note>
+      </trans-unit><trans-unit id="169eed2bc3e08e1bea977bcc5d799379f6b8a758" datatype="html">
+        <source>of</source><target state="translated">de</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit>
+      
       <trans-unit id="ab4a8f5dc9516f46cc71bd23ca4614a157269882" datatype="html">
         <source>Start Round <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></source><target state="translated">Comenzar ronda <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></target>
         <context-group purpose="location">
@@ -376,6 +382,13 @@
           <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">prefer not to answer</note>
+      </trans-unit><trans-unit id="33dc872e0dbaf189fc4577f83e20fa4bcba2757a" datatype="html">
+        <source>Story</source><target state="translated">Historia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        
       </trans-unit>
     </body>
   </file>

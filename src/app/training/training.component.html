@@ -98,7 +98,7 @@
  <div *ngIf="state === states.TRAINING">
   <mat-card class="training">
     <mat-card-content *ngIf="round">
-        <div i18n="round x of y" class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
+      <div class="round-header"> <span i18n>Round</span> {{roundIndex+ 1}} <span i18n>of</span> {{totalRounds}}</div>
         <div class="progress">
           <app-progress-bar [items]="round.scenarios"></app-progress-bar>
         </div>
