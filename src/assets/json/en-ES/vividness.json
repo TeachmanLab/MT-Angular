@@ -1,0 +1,35 @@
+[
+  {
+    "session": "vividness",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "Vividness Check",
+        "pages": [
+          {
+            "auto_continue": true,
+            "elements": [
+              {
+                "type": "Question",
+                "stimulusName": "vividness",
+                "question": "How vividly did you imagine the scenario you just read (as if you were really there and experiencing it firsthand)?",
+                "options": [
+                  "Not at all",
+                  "Slightly",
+                  "Somewhat",
+                  "Mostly",
+                  "Very Much"
+                ],
+                "preferNotToAnswer":true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

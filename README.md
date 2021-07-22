@@ -47,9 +47,9 @@ A complete build of spanish for deployment like:
 (NOTE:  For spanish we will need to build both an engish version and an spanish version, follow the 'Adding to Mindtrails'
 section above for building in english. then do the following to create the spanish language version.)
 `ng build --configuration spanish --build-optimizer --output-hashing none --base-href=/spanish/angular/`
-`cp -r dist/training-prototype/es-ES ~/code/MindTrails/spanish/src/main/resources/static/angular-es`
-`ng build --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
-`cp -r dist/training-prototype/en-US ~/code/MindTrails/spanish/src/main/resources/static/angular`
+`cp -r dist/training-prototype/es-ES/* ~/code/MindTrails/spanish/src/main/resources/static/angular-es`
+`ng build --configuration spanish-en --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
+`cp -r dist/training-prototype/en-ES/* ~/code/MindTrails/spanish/src/main/resources/static/angular`
 
 
 ## Code scaffolding
