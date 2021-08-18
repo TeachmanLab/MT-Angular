@@ -140,6 +140,9 @@
             },
             "es": {
               "browserTarget": "training-prototype:build:es"
+            },
+            "spanish-en": {
+              "browserTarget": "training-prototype:build:spanish-en"
             }
           }
         },
