@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 
 enum TrainingState {
   'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP',
-  'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
+  'VIVIDNESS', 'READINESS', 'DICHOS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -28,6 +28,8 @@ export class TrainingComponent implements OnInit {
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
+  dichos: Session[] = [];
+  dichosIndexes = [10, 20, 30];
   psychoed: Session[] = [];
   psychoedFollowup: Session[] = [];
   psychoedSession: Session;
@@ -84,6 +86,7 @@ export class TrainingComponent implements OnInit {
         this.loadIntro(study.currentSession.index - 1, study.conditioning);
         this.loadReadinessRulers();
         this.loadVividness();
+        this.loadDichos();
         this.loadFlexibleThinking();
         this.loadImageryPrime();
         this.loadTraining(study);
@@ -109,6 +112,10 @@ export class TrainingComponent implements OnInit {
       if (study.currentSession.index >= 2) { // Only turn on the create scenario part in sessions 3, and 4
         this.createScenarioRoundIndex = 3;
       }
+    } else if (study.conditioning === 'SPANISH') {
+        this.dichosIndexes = [10, 20, 30];
+    } else if (study.conditioning === 'SPANISH_FLUENT') {
+      this.dichosIndexes = [10, 20, 30];
     } else if (study.conditioning === 'TRAINING_30') {
       this.totalRounds = 3;
       this.flexibleThinkingRoundIndex = 2;
@@ -142,6 +149,7 @@ export class TrainingComponent implements OnInit {
       this.psychoedSession != null &&
       this.readinessRulers.length > 0 &&
       this.vividness.length > 0 &&
+      this.dichos.length > 0 &&
       this.imageryPrime.length > 0;
   }
 
@@ -274,6 +282,13 @@ export class TrainingComponent implements OnInit {
     });
   }
 
+  loadDichos() {
+    this.api.getDichos().subscribe(sessions => {
+      this.dichos = sessions;
+      console.log(this.dichos);
+    });
+  }
+
   loadFlexibleThinking() {
     this.api.getFlexibleThinking().subscribe(sessions => {
       this.flexible_thinking = sessions;
@@ -320,6 +335,11 @@ export class TrainingComponent implements OnInit {
   }
 
   vividnessComplete() {
+    this.state = this.states.TRAINING;
+    this.nextTraining();
+  }
+
+  dichosComplete() {
     this.state = this.states.TRAINING;
     this.nextTraining();
   }
@@ -380,6 +400,12 @@ export class TrainingComponent implements OnInit {
     if (this.vividIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
       this.vividIndexes.splice( this.vividIndexes.indexOf(this.scenarioIndex - 1), 1 );
       this.state = this.states.VIVIDNESS;
+      this.stepIndex--;
+      return;
+    }
+    if (this.dichosIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
+      this.dichosIndexes.splice( this.dichosIndexes.indexOf(this.scenarioIndex - 1), 1 );
+      this.state = this.states.DICHOS;
       this.stepIndex--;
       return;
     }

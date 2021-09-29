@@ -55,6 +55,18 @@
       ></app-step>
     </mat-card-content>
   </mat-card>
+  <mat-card class="readiness" *ngIf="state === states.DICHOS">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="dichos[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="dichosComplete()"
+        [previousEnabled]="false"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
   <mat-card class="readiness" *ngIf="state === states.VIVIDNESS">
     <mat-card-content>
       <app-step
