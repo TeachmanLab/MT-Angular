@@ -11,17 +11,12 @@
             "auto_continue": false,
             "elements": [
               {
-                "type": "LargeHeader",
-                "stimulusName": "dichosHeader",
-                "content": "Dichos"
-              },
-              {
                 "type": "Image",
                 "stimulusName": "dicho1",
                 "content": "./assets/training_images/dichos/dicho1.jpeg"
               },
               {
-                "type": "Paragraph",
+                "type": "CenterHeader",
                 "stimulusName": "dichoText1",
                 "content": "Un consejo: Recuerda tratar de imaginar vívidamente los escenarios."
               }

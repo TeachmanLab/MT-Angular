@@ -65,7 +65,7 @@
             "es": {
               "aot": true,
               "localize": [
-                "en-ES"
+                "es-ES"
               ],
               "outputPath": "dist/training-prototype-es"
             },
