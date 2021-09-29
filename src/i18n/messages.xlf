@@ -378,6 +378,9 @@
         </context-group>
         <note priority="1" from="description">slider totally anxious</note>
       </trans-unit>
+      <trans-unit id="prefer_not_to_answer">
+        <source>Prefer not to answer</source>
+      </trans-unit>
       <trans-unit id="5b1cdec4a661b7ad366b859d8e15c10feda010d2" datatype="html">
         <source>
     <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>

@@ -65,7 +65,7 @@
       </source><target state="final">
         Please enter at least <x id="INTERPOLATION" equiv-text="{{minCharacters}}"/> characters.
       </target>
-        
+
         <note priority="1" from="description">fill in blank min error</note>
       <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit>
       <trans-unit id="e463e4313227b548dbbcbb25a0feb836a2af8de5" datatype="html">
@@ -74,7 +74,7 @@
       </source><target state="final">
         You must enter a value
       </target>
-        
+
         <note priority="1" from="description">fill in blank required error</note>
       <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">15</context></context-group></trans-unit>
       <trans-unit id="378fd81a9e01f41f1766bb7046eca0ee9fc43806" datatype="html">
@@ -83,7 +83,7 @@
       </source><target state="final">
         This does not look like a word
       </target>
-        
+
         <note priority="1" from="description">fill in blank not word error</note>
       <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
       <trans-unit id="e79a1f6a4440d65f5481bee356fa37e022fdbb1d" datatype="html">
@@ -92,7 +92,7 @@
       </source><target state="final">
         Please shorten your response
       </target>
-        
+
         <note priority="1" from="description">fill in blank too long error</note>
       <context-group purpose="location"><context context-type="sourcefile">app/fill-in-the-blank/fill-in-the-blank.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit><trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
         <source>Submit</source><target state="final">Submit</target>
@@ -101,7 +101,7 @@
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
-      
+
       <trans-unit id="e86a3182a63738c0fa7efe34e3e4bd9c0b4d72b7" datatype="html">
         <source>SELECT A TILE:</source><target state="final">SELECT A TILE:</target>
         <context-group purpose="location">
@@ -129,6 +129,10 @@
           <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">missing letter incorrect</note>
+      </trans-unit>
+      <trans-unit id="prefer_not_to_answer">
+        <source>Prefer not to answer</source>
+        <target>Prefer not to answer</target>
       </trans-unit>
       <trans-unit id="7421cffa236d6445907d4c7e11dc7f32e53a8758" datatype="html">
         <source>
@@ -196,7 +200,7 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      
+
       <trans-unit id="ab4a8f5dc9516f46cc71bd23ca4614a157269882" datatype="html">
         <source>Start Round <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></source><target state="final">Start Round <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></target>
         <context-group purpose="location">
@@ -349,13 +353,13 @@
       </trans-unit>
       <trans-unit id="841f5f8515a215f6b71398e7f0089ffd3df4d63b" datatype="html">
         <source>You have <x id="INTERPOLATION" equiv-text="{{countdown.delayInSeconds - currentSecond}}"/> seconds remaining.  We will let you know when the time is up.</source><target state="final">You have <x id="INTERPOLATION" equiv-text="{{countdown.delayInSeconds - currentSecond}}"/> seconds remaining.  We will let you know when the time is up.</target>
-        
+
         <note priority="1" from="description">you have x seconds remaining</note>
         <note priority="1" from="meaning">countdown wait</note>
       <context-group purpose="location"><context context-type="sourcefile">app/countdown/countdown.component.html</context><context context-type="linenumber">10</context></context-group></trans-unit>
       <trans-unit id="bec4a7966aa0d3a87865adb35090665fa9c749ab" datatype="html">
         <source>All Done!</source><target state="final">All Done!</target>
-        
+
         <note priority="1" from="description">The countdown completed</note>
         <note priority="1" from="meaning">countdown done</note>
       <context-group purpose="location"><context context-type="sourcefile">app/countdown/countdown.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit>
@@ -395,7 +399,7 @@
           <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
-        
+
       </trans-unit>
     </body>
   </file>

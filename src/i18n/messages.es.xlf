@@ -118,7 +118,7 @@
         </context-group>
         <note priority="1" from="description">missing letter correct</note>
       </trans-unit>
-      
+
       <trans-unit id="27f2b00978dfba4d628a5251ef054f9172340fc2" datatype="html">
         <source>Hmm. That doesn't look right! Please try again.</source><target state="translated">Hmm. ¡No se ve como la respuesta correcta! Inténtalo de nuevo.</target>
         <context-group purpose="location">
@@ -126,6 +126,10 @@
           <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">missing letter incorrect</note>
+      </trans-unit>
+      <trans-unit id="prefer_not_to_answer">
+        <source>Prefer not to answer</source>
+        <target>Prefiero no contestar</target>
       </trans-unit>
       <trans-unit id="7421cffa236d6445907d4c7e11dc7f32e53a8758" datatype="html">
         <source>
@@ -191,7 +195,7 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      
+
       <trans-unit id="ab4a8f5dc9516f46cc71bd23ca4614a157269882" datatype="html">
         <source>Start Round <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></source><target state="translated">Comenzar ronda <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></target>
         <context-group purpose="location">
@@ -388,7 +392,7 @@
           <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
-        
+
       </trans-unit>
     </body>
   </file>

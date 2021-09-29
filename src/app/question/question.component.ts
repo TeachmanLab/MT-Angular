@@ -29,7 +29,7 @@ export class QuestionComponent implements OnInit {
   firstReactionTime = 0;
   endTime: number;
 
-  prefer_not_to_answer = $localize`Prefer not to answer`;
+  prefer_not_to_answer = $localize`:@@prefer_not_to_answer:Prefer not to answer`;
 
   @Input()
   isStory = false;
