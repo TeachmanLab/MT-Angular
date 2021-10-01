@@ -62,7 +62,7 @@
               {
                 "type": "Paragraph",
                 "stimulusName": "readiness_p5",
-                "content": "Haz clic en el botón \"Comenzar\" y reproduce esta situación en tu mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegura de que el sonido de tu dispositivo no esté silenciado.\n"
+                "content": "Haz clic en el botón \"Comenzar\" y reproduce esta situación en tu mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegurate de que el sonido de tu dispositivo no esté silenciado.\n"
               },
               {
                 "type": "Countdown",
