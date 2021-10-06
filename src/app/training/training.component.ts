@@ -113,9 +113,20 @@ export class TrainingComponent implements OnInit {
         this.createScenarioRoundIndex = 3;
       }
     } else if (study.conditioning === 'SPANISH') {
-        this.dichosIndexes = [10, 20, 30];
+      this.dichosIndexes = [10, 20, 30];
+      this.psychoedRoundIndex = -1;
+      this.createScenarioRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 3;
     } else if (study.conditioning === 'SPANISH_FLUENT') {
       this.dichosIndexes = [10, 20, 30];
+      this.psychoedRoundIndex = -1;
+      this.createScenarioRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 3;
+    } else if (study.conditioning === 'ENGLISH') {
+      this.dichosIndexes = [10, 20, 30];
+      this.psychoedRoundIndex = -1;
+      this.createScenarioRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 3;
     } else if (study.conditioning === 'TRAINING_30') {
       this.totalRounds = 3;
       this.flexibleThinkingRoundIndex = 2;
@@ -131,11 +142,11 @@ export class TrainingComponent implements OnInit {
     }
 
     if (testing) {
-      this.scenariosPerRound = 3;
-      this.flexibleThinkingRoundIndex = 1;
-      this.totalRounds = 2;
-      this.readinessScenarioIndex = 1;
+      this.scenariosPerRound = 1;
+      this.totalRounds = 4;
       this.lemonExerciseCompleted = true;
+      this.createScenarioRoundIndex = -1;
+      this.flexibleThinkingRoundIndex = -1;
     }
     if (testing && study.conditioning === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
@@ -341,7 +352,9 @@ export class TrainingComponent implements OnInit {
 
   dichosComplete() {
     this.state = this.states.TRAINING;
-    this.nextTraining();
+    this.dichos.shift();  // Remove the item, so we use the next one, next time.
+    console.log(this.dichos);
+    this.state = this.states.DICHOS;
   }
 
   flexibleComplete() {
@@ -456,8 +469,8 @@ export class TrainingComponent implements OnInit {
         map(([url, paramMap, queryParamMap]) => {
           const sessionIndex = +(paramMap.get('session') || 1) ;
           const study = {
-          name: 'KAISER',
-          conditioning: 'NO_INCENTIVE',
+          name: 'SPANISH',
+          conditioning: 'SPANISH',
           currentSession: {index: sessionIndex, name: 'firstSession',
             currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}},
           currentSessionIndex: sessionIndex

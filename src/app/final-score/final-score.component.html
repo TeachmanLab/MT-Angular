@@ -37,17 +37,19 @@
        fxLayoutGap.xs="0"
        *ngIf="totalScore > 0">
 
-    <ngx-gauge [type]="'full'"
-               [min]="0"
-               [max]="rounds.length * 10"
-               [value]="totalScore"
-               [label]=""
-               [style]="'round'"
-               [size]="200"
-               [thick]="20"
-               [foregroundColor]="'rgba(0, 0, 136, 1)'"
-               [append]="'/' + rounds.length * 10">
-    </ngx-gauge>
+    <div class="gauge">
+      <ngx-gauge [type]="'full'"
+                 [min]="0"
+                 [max]="rounds.length * 10"
+                 [value]="totalScore"
+                 [label]=""
+                 [style]="'round'"
+                 [size]="200"
+                 [thick]="20"
+                 [foregroundColor]="'rgba(0, 0, 136, 1)'"
+                 [append]="'/' + rounds.length * 10">
+      </ngx-gauge>
+    </div>
     <br/>
     <br/>
     <div class="description">
