@@ -80,8 +80,6 @@ export class TrainingComponent implements OnInit {
     ).subscribe(([url, paramMap, queryParamMap]) => {
       const testing = (queryParamMap.get('testing') === 'true' || false);
       this.study.subscribe(study => {
-        console.log('Study is:', study);
-        console.log('Lemon Complete?', this.lemonExerciseCompleted);
         this.setupCondition(study, testing);
         this.loadIntro(study.currentSession.index - 1, study.conditioning);
         this.loadReadinessRulers();
@@ -96,7 +94,6 @@ export class TrainingComponent implements OnInit {
         this.loadPsyched(study);
         this.loadCreateScenario();
         if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
-          console.log('Setting state to lemon.');
           this.state = this.states.LEMON;
         } else if (study.currentSession.name !== 'firstSession' && !this.imageryPrimeCompleted) {
           this.state = this.states.IMAGERY;
@@ -165,11 +162,8 @@ export class TrainingComponent implements OnInit {
   }
 
   scenariosToRounds(scenarios, study: Study) {
-    console.log('scenarios to rounds');
     let index = 0;
     scenarios = scenarios.slice(0, this.totalRounds * this.scenariosPerRound);
-    console.log('Total Rounds:', this.totalRounds);
-    console.log('Total Scenarios: ', scenarios.length);
     this.increment = Math.floor(scenarios.length / this.totalRounds);
     this.rounds = [];
     let round = new Round();
@@ -219,10 +213,11 @@ export class TrainingComponent implements OnInit {
         return;
       } else {
         const lastProgress = progress[progress.length - 1];
-        this.scenarioIndex = lastProgress.stepIndex;
         this.state = TrainingState.TRAINING;
         this.stepIndex = lastProgress.stepIndex;
         let eventIndex = 0;
+
+        this.scenarioIndex = 0;
         for (const eventRecord of progress) {
           const scenario = this.findScenarioByName(scenarios, eventRecord.stimulusName);
           if (!scenario) {
@@ -246,8 +241,16 @@ export class TrainingComponent implements OnInit {
           }
           eventIndex++;
         }
+
+        for (const s of scenarios) {
+          if (s.status === 'complete' || s.status === 'error' || s.status === 'active') {
+            this.scenarioIndex ++;
+          }
+        }
+
         this.scenariosToRounds(scenarios, study);
       }
+      console.log('The Scenario Index is ' + this.scenarioIndex);
     }, error1 => {
       console.log('Backend not responding, loading the scenarios without progress.');
       this.scenariosToRounds(scenarios, study);
@@ -353,8 +356,7 @@ export class TrainingComponent implements OnInit {
   dichosComplete() {
     this.state = this.states.TRAINING;
     this.dichos.shift();  // Remove the item, so we use the next one, next time.
-    console.log(this.dichos);
-    this.state = this.states.DICHOS;
+    this.nextTraining();
   }
 
   flexibleComplete() {
