@@ -109,18 +109,17 @@ export class TrainingComponent implements OnInit {
       if (study.currentSession.index >= 2) { // Only turn on the create scenario part in sessions 3, and 4
         this.createScenarioRoundIndex = 3;
       }
-    } else if (study.conditioning === 'SPANISH') {
+    } else if (study.conditioning === 'SPANISH_DOMINANT') {
       this.dichosIndexes = [10, 20, 30];
       this.psychoedRoundIndex = -1;
       this.createScenarioRoundIndex = 3;
       this.flexibleThinkingRoundIndex = 3;
-    } else if (study.conditioning === 'SPANISH_FLUENT') {
+    } else if (study.conditioning === 'SPANISH_BILINGUAL') {
       this.dichosIndexes = [10, 20, 30];
       this.psychoedRoundIndex = -1;
       this.createScenarioRoundIndex = 3;
       this.flexibleThinkingRoundIndex = 3;
-    } else if (study.conditioning === 'ENGLISH') {
-      this.dichosIndexes = [10, 20, 30];
+    } else if (study.conditioning === 'ENGLISH_BILINGUAL') {
       this.psychoedRoundIndex = -1;
       this.createScenarioRoundIndex = 3;
       this.flexibleThinkingRoundIndex = 3;
@@ -472,7 +471,7 @@ export class TrainingComponent implements OnInit {
           const sessionIndex = +(paramMap.get('session') || 1) ;
           const study = {
           name: 'SPANISH',
-          conditioning: 'SPANISH',
+          conditioning: 'SPANISH_DOMINANT',
           currentSession: {index: sessionIndex, name: 'firstSession',
             currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}},
           currentSessionIndex: sessionIndex
