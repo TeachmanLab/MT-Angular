@@ -212,11 +212,10 @@ export class TrainingComponent implements OnInit {
         return;
       } else {
         const lastProgress = progress[progress.length - 1];
+        this.scenarioIndex = lastProgress.stepIndex;
         this.state = TrainingState.TRAINING;
         this.stepIndex = lastProgress.stepIndex;
         let eventIndex = 0;
-
-        this.scenarioIndex = 0;
         for (const eventRecord of progress) {
           const scenario = this.findScenarioByName(scenarios, eventRecord.stimulusName);
           if (!scenario) {
@@ -240,13 +239,6 @@ export class TrainingComponent implements OnInit {
           }
           eventIndex++;
         }
-
-        for (const s of scenarios) {
-          if (s.status === 'complete' || s.status === 'error' || s.status === 'active') {
-            this.scenarioIndex ++;
-          }
-        }
-
         this.scenariosToRounds(scenarios, study);
       }
       console.log('The Scenario Index is ' + this.scenarioIndex);
@@ -420,9 +412,9 @@ export class TrainingComponent implements OnInit {
     if (this.dichosIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
       this.dichosIndexes.splice( this.dichosIndexes.indexOf(this.scenarioIndex - 1), 1 );
       this.state = this.states.DICHOS;
-      this.stepIndex--;
       return;
     }
+    this.stepIndex++;
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
