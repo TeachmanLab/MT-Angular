@@ -1,0 +1,39 @@
+[
+  {
+    "session": "",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "title": "measure",
+        "pages": [
+          {
+            "auto_continue": true,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Chequeo de vividez"
+              },
+              {
+                "type": "Question",
+                "stimulusName": "vividness_check",
+                "question": "¿Qué tan vívidamente imaginaste el escenario que acabas de leer (como si estuvieras realmente allí)?",
+                "options": [
+                  "Para nada",
+                  "Ligeramente",
+                  "Algo",
+                  "Principalmente",
+                  "Mucho"
+                ],
+                "preferNotToAnswer":true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

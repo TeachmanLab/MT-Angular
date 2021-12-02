@@ -1,0 +1,166 @@
+[
+  {
+    "session": "imageryPrime",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "Use Your Imagination",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "Paragraph",
+                "stimulusName": "pre_prime_instructions1",
+                "content": "In this exercise, please think of an UPCOMING situation that you expect will make you feel anxious, worried, or scared."
+              },
+              { "type": "Paragraph",
+              "stimulusName": "pre_prime_instructions2",
+              "content": "Pick a situation that you worry might go badly, or that you expect will evoke symptoms related to anxiety (e.g., racing heart, sweating). Any situation that will make you feel quite anxious or scared will work, as long as it is a situation that you’re likely to actually encounter."
+              }
+            ]
+          },
+          { "auto_continue": true,
+            "title": "Use Your Imagination",
+            "elements": [
+                {
+                "type": "Header",
+                "stimulusName": "pre_prime_situation",
+                "content": "Please describe the situation in a few words:"
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "pre_prime_situation",
+                "question": "Please describe the situation in a few words.",
+                "maxCharacters": 100
+              }
+            ]
+          },
+          {
+            "title": "Use Your Imagination",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "pre_prime_header",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "BulletList",
+                "stimulusName": "pre_prime_instructions3",
+                "title": "Please imagine the situation as vividly as possible (i.e., so that it feels very real).",
+                "bullets": [
+                  "Try to imagine you are actually in the situation.",
+                  "Play out the specific parts of the situation in your head.",
+                  "Try to imagine using all your senses while you think about this situation. Think about the things you would see, hear, and smell if you were really in that situation.",
+                  "Think about the kinds of things you would think or feel if you were actually there."
+                ]
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "pre_prime_instructions4",
+                "content": "Please click the \"Begin\" button below and play this situation in your head for the next 20 seconds. We will tell you when the 20 seconds are up–make sure the sound on your device is not muted."
+              },
+              {
+                "type": "Countdown",
+                "stimulusName": "pre_prime_timer",
+                "delayInSeconds":20,
+                "content": "We will tell you when the 20 seconds are up."
+              }
+            ]
+          },
+          {
+            "title": "Use Your Imagination",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "pre_prime_header",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "Header",
+                "stimulusName": "pre_prime_q1_description",
+                "content": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
+              },
+              {
+                "type": "Slider",
+                "stimulusName": "pre_prime_q1",
+                "min": 0,
+                "max": 100
+              }
+            ]
+          },
+          { "auto_continue": true,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "pre_prime_header",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "Question",
+                "stimulusName": "pre_prime_q2",
+                "question": "How vividly did you imagine the situation?",
+                "options": [
+                  "Not at all vivid",
+                  "Somewhat vivid",
+                  "Moderately vivid",
+                  "Very vivid",
+                  "Totally vivid"
+                ],
+                "preferNotToAnswer":true
+              }
+              ]
+              },
+              { "auto_continue": true,
+                "elements": [
+                  {
+                    "type": "LargeHeader",
+                    "stimulusName": "pre_prime_header",
+                    "content": "Use Your Imagination"
+                  },
+              {
+                "type": "Question",
+                "stimulusName": "pre_prime_q3",
+                "question": "How likely is it that this situation or task will turn out well versus turn out badly?",
+                "options": [
+                  "Very likely to turn out well",
+                  "Somewhat likely to turn out well",
+                  "Neutral",
+                  "Somewhat likely to turn out badly",
+                  "Very likely to turn out badly"
+                ],
+                "preferNotToAnswer":true
+              }
+                ]
+              },
+              {"auto_continue": true,
+                "elements": [
+                  {
+                    "type": "LargeHeader",
+                    "stimulusName": "pre_prime_header",
+                    "content": "Use Your Imagination"
+                  },
+                {
+                  "type": "Question",
+                  "stimulusName": "pre_prime_q4",
+                  "question": "If this situation did turn out badly, how well or badly would you be able to handle it?",
+                  "options": [
+                    "Very well",
+                    "Somewhat well",
+                    "Neutral",
+                    "Somewhat badly",
+                    "Very badly"
+                  ],
+                  "preferNotToAnswer":true
+                }
+                  ]
+              }
+            ]
+          }
+
+        ]
+      }
+    ]
+

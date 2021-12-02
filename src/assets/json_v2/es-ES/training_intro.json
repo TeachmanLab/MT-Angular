@@ -1,0 +1,84 @@
+[
+  {
+    "session": "firstSession",
+    "title": "cbm_instructions",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "title": "page",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Sesión de entrenamiento 1"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "Paragraph",
+                "content": "¡Ahora estás listo para la primera sesión de entrenamiento!"
+              },
+              {
+                "type": "BulletList",
+                "title": "Para cada historia:",
+                "bullets": [
+                  "Intenta imaginarte realmente en la situación descrita. ¡Usa la imagen para ayudarte!",
+                  "Trata de imaginarte respondiendo de la manera que describe la situación, incluso si usualmente reaccionas de una manera diferente.",
+                  "Al final de la historia, haz clic en la ficha de la letra faltante para completar la palabra. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Responde a una pregunta sobre la historia. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Hay 40 historias cortas en esta sesión y 40 puntos en total. ¡Intenta obtener una puntuación perfecta!"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session": "secondSession",
+    "title": "cbm_instructions",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "title": "page",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Sesión de entrenamiento 2"
+              },
+              {
+                "type": "Paragraph",
+                "content": "¡Ahora estás listo para la segunda sesión de entrenamiento!"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/images/session-indicators/progress_bar.png"
+              },
+              {
+                "type": "BulletList",
+                "title": "Para cada historia:",
+                "bullets": [
+                  "Intenta imaginarte realmente en la situación descrita. ¡Usa la imagen para ayudarte!",
+                  "Trata de imaginarte respondiendo de la manera que describe la situación, incluso si usualmente reaccionas de una manera diferente.",
+                  "Al final de la historia, haz clic en la ficha de la letra faltante para completar la palabra. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Responde a una pregunta sobre la historia. ¡Responde correctamente en tu primer intento para recibir medio punto!",
+                  "Hay 40 historias cortas en esta sesión y 40 puntos en total. ¡Intenta obtener una puntuación perfecta!"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

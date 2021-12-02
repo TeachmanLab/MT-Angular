@@ -1,0 +1,166 @@
+[
+  {
+    "session": "",
+    "title": "anxious_imagery_prime",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "title": "page",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "Paragraph",
+                "content": "In this exercise, please think of an UPCOMING situation that you expect will make you feel anxious, worried, or scared."
+              },
+              {
+                "type": "Paragraph",
+                "content": "Pick a situation that you worry might go badly, or that you expect will evoke symptoms related to anxiety (e.g., racing heart, sweating). Any situation that will make you feel quite anxious or scared will work, as long as it is a situation that you’re likely to actually encounter."
+              }
+            ]
+          }
+        ]
+      },
+          { "title": "measure",
+            "pages": [
+              {
+                "auto_continue": false,
+                "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
+                {
+                "type": "Header",
+                "content": "Please describe the situation in a few words:"
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "anxiety_prime_situation",
+                "question": "Please describe the situation in a few words.",
+                "maxCharacters": 100
+              }
+            ]
+          },
+          {
+            "title": "page",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "BulletList",
+                "title": "Please imagine the situation as vividly as possible (i.e., so that it feels very real).",
+                "bullets": [
+                  "Try to imagine you are actually in the situation.",
+                  "Play out the specific parts of the situation in your head.",
+                  "Try to imagine using all your senses while you think about this situation. Think about the things you would see, hear, and smell if you were really in that situation.",
+                  "Think about the kinds of things you would think or feel if you were actually there."
+                ]
+              },
+              {
+                "type": "Paragraph",
+                "content": "Please click the \"Begin\" button below and play this situation in your head for the next 20 seconds. We will tell you when the 20 seconds are up–make sure the sound on your device is not muted."
+              },
+              {
+                "type": "Countdown",
+                "delayInSeconds":20,
+                "content": "We will tell you when the 20 seconds are up."
+              }
+            ]
+          },
+              {
+                "title": "measure",
+                "pages": [
+                  {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "Header",
+                "question": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
+              },
+              {
+                "type": "Slider",
+                "stimulusName": "anxiety_prime_feel",
+                "min": 0,
+                "max": 100
+              }
+            ]
+          },
+          { "auto_continue": true,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
+              {
+                "type": "Question",
+                "stimulusName": "anxiety_prime_feel",
+                "question": "How vividly did you imagine the situation?",
+                "options": [
+                  "Not at all vivid",
+                  "Somewhat vivid",
+                  "Moderately vivid",
+                  "Very vivid",
+                  "Totally vivid"
+                ],
+                "preferNotToAnswer":true
+              }
+              ]
+              },
+              { "auto_continue": true,
+                "elements": [
+                  {
+                    "type": "LargeHeader",
+                    "content": "Use Your Imagination"
+                  },
+              {
+                "type": "Question",
+                "stimulusName": "anxiety_prime_likely",
+                "question": "How likely is it that this situation or task will turn out well versus turn out badly?",
+                "options": [
+                  "Very likely to turn out well",
+                  "Somewhat likely to turn out well",
+                  "Neutral",
+                  "Somewhat likely to turn out badly",
+                  "Very likely to turn out badly"
+                ],
+                "preferNotToAnswer":true
+              }
+                ]
+              },
+              {"auto_continue": true,
+                "elements": [
+                  {
+                    "type": "LargeHeader",
+                    "content": "Use Your Imagination"
+                  },
+                {
+                  "type": "Question",
+                  "stimulusName": "anxiety_prime_handle",
+                  "question": "If this situation did turn out badly, how well or badly would you be able to handle it?",
+                  "options": [
+                    "Very well",
+                    "Somewhat well",
+                    "Neutral",
+                    "Somewhat badly",
+                    "Very badly"
+                  ],
+                  "preferNotToAnswer":true
+                }
+                  ]
+              }
+            ]
+          }
+        ]
+      }
+  ]
+

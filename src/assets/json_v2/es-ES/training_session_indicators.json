@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Paso 1",
+    "subTitle": "Imagínate en una situación",
+    "sessionIndicator": "training1",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": []
+  },
+  {
+    "title": "Paso 2",
+    "subTitle": "Haz clic en la ficha de la letra correcta para llenar una palabra incompleta",
+    "sessionIndicator": "training2",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": []
+  },
+  {
+    "title": "Paso 3",
+    "subTitle": "Responde a una pregunta sobre la situación",
+    "sessionIndicator": "training3",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": []
+  },
+  {
+    "title": "Paso 4",
+    "subTitle": "¡Obtén la respuesta correcta o vuelve a intentar!",
+    "sessionIndicator": "training4",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": []
+  },
+  {
+    "title": "Paso 5",
+    "subTitle": "¡Maximiza el puntaje al seleccionar las opciones correctas en el primer intento!",
+    "sessionIndicator": "training5",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": []
+  }
+]

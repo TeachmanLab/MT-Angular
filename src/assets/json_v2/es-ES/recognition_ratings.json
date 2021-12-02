@@ -1,0 +1,35 @@
+[
+  {
+    "session": "",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Recognition Ratings",
+    "study": "Spanish",
+    "steps": [
+      {
+        "title": "page",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Parte 1: Completar historias cortas"
+              },
+              {
+                "type": "Paragraph",
+                "content": "En este ejercicio breve, leerás varias historias cortas."
+              },
+              {
+                "type": "BulletList",
+                "bullets": ["Por favor, lee cada una con atención e intenta imaginarte a tí mismo en la situación",
+                  "La última palabra de cada historia está incompleta. Haz clic en la letra faltante para completar la palabra",
+                  "Después de completar correctamente la palabra, se te preguntará sobre la historia. Responde a la pregunta basándote en la información de la historia"
+                ]
+              }
+            ]
+          }
+              ]
+            }
+          ]
+      }
+    ]
