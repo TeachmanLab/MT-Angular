@@ -266,7 +266,7 @@
         <note priority="1" from="description">high score message at round end</note>
       </trans-unit>
       <trans-unit id="9e3c4143691971703e8e42833a49575985b25301" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{session.title}}"/>: Complete!</source>
+        <source><x id="INTERPOLATION" equiv-text>Training Session: Complete!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/final-score/final-score.component.html</context>
           <context context-type="linenumber">10</context>

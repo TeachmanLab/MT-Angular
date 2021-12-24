@@ -1,10 +1,10 @@
 [
   {
-    "session": "",
-    "title": "anxious_imagery_prime",
+    "session": "imageryPrime",
+    "title": "",
     "subTitle": "",
     "conditioning": "Training",
-    "study": "Spanish",
+    "study": "Calm Thinking",
     "steps": [
       {
         "title": "Usa tu imaginación",
@@ -13,10 +13,12 @@
             "elements": [
               {
                 "type": "Paragraph",
+                "stimulusName": "readiness_p1",
                 "content": "En este ejercicio, piensa en una situación que esperas que te hará sentir ansioso, preocupado o asustado en el futuro cercano."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "readiness_p1",
                 "content": "Elige una situación que te preocupe que vaya a salir mal o que esperas que evoque síntomas relacionados con la ansiedad (e.j., palpitaciones cardíacas o sudoración). Cualquier situación que te haga sentir ansioso o asustado funcionará, siempre y cuando sea una situación a la que probablemente te enfrentes."
               }
             ]
@@ -27,6 +29,7 @@
             "elements": [
               {
                 "type": "Header",
+                "stimulusName": "readiness_heading",
                 "content": "Describa la situación en pocas palabras:"
               },
               {
@@ -42,10 +45,12 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "use1",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "readiness_p3",
                 "title": "Imagina la situación de la manera más vívida posible (para que se sienta muy real).",
                 "bullets": [
                   "Trata de imaginar que realmente estás en la situación.",
@@ -56,10 +61,12 @@
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "readiness_p5",
                 "content": "Haz clic en el botón \"Comenzar\" y reproduce esta situación en tu mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegurate de que el sonido de tu dispositivo no esté silenciado.\n"
               },
               {
                 "type": "Countdown",
+                "stimulusName": "readiness_timer",
                 "delayInSeconds": 20,
                 "content": "Te diremos cuando pasen los 20 segundos."
               }
@@ -70,10 +77,12 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "use2",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "Header",
+                "stimulusName": "readiness_heading",
                 "content": "¿Qué tan ansioso te sentiste (en el nivel más alto de ansiedad) al completar la tarea de imaginación vívida? Haz clic en la barra para ver el deslizador."
               },
               {
@@ -89,6 +98,7 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "use3",
                 "content": "Usa tu imaginación"
               },
               {
@@ -111,6 +121,7 @@
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "use4",
                 "content": "Usa tu imaginación"
               },
               {

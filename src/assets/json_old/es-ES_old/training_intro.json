@@ -1,30 +1,29 @@
 [
   {
     "session": "firstSession",
-    "title": "cbm_instructions",
-    "subTitle": "",
+    "title": "Sesión de entrenamiento 1",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
-    "study": "Spanish",
+    "study": "Calm Thinking",
     "steps": [
       {
-        "title": "page",
+        "title": "Sesión de entrenamiento 1",
         "pages": [
           {
             "elements": [
               {
-                "type": "LargeHeader",
-                "content": "Sesión de entrenamiento 1"
-              },
-              {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "¡Ahora estás listo para la primera sesión de entrenamiento!"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "Para cada historia:",
                 "bullets": [
                   "Intenta imaginarte realmente en la situación descrita. ¡Usa la imagen para ayudarte!",
@@ -42,30 +41,29 @@
   },
   {
     "session": "secondSession",
-    "title": "cbm_instructions",
-    "subTitle": "",
+    "title": "Sesión de entrenamiento 2",
+    "subTitle": "Training Stories",
     "conditioning": "Training",
-    "study": "Spanish",
+    "study": "Calm Thinking",
     "steps": [
       {
-        "title": "page",
+        "title": "Sesión de entrenamiento 2",
         "pages": [
           {
             "elements": [
               {
-                "type": "LargeHeader",
-                "content": "Sesión de entrenamiento 2"
-              },
-              {
                 "type": "Paragraph",
+                "stimulusName": "intro",
                 "content": "¡Ahora estás listo para la segunda sesión de entrenamiento!"
               },
               {
                 "type": "Image",
+                "stimulusName": "intro",
                 "content": "./assets/images/session-indicators/progress_bar.png"
               },
               {
                 "type": "BulletList",
+                "stimulusName": "intro",
                 "title": "Para cada historia:",
                 "bullets": [
                   "Intenta imaginarte realmente en la situación descrita. ¡Usa la imagen para ayudarte!",

@@ -1,91 +1,90 @@
 [
   {
-    "session": "",
-    "title": "create_scenario",
+    "session": "create_scenario",
+    "title": "",
+    "subTitle": "",
     "conditioning": "Training",
-    "study": "Spanish",
+    "study": "Calm Thinking",
     "steps": [
       {
+        "title": "",
         "pages": [
           {
-            "title": "page",
             "auto_continue": false,
             "elements": [
               {
                 "type": "LargeHeader",
-                "content": "Sesión de entrenamiento: Últimos ejercicios"
+                "stimulusName": "intro",
+                "content": "Sesión de Entrenamiento: Últimos Ejercicios"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "intro_p1",
                 "content": "¡Ya casi terminas la sesión de entrenamiento! Hay dos ejercicios finales para completar: "
               },
               {
                 "type": "BulletList",
+                "stimulusName": "create_scenario_p7",
                 "bullets": [
                   "Escribe tu propio escenario",
-                  "Pensamiento rápido"
+                  "Pensamiento Rápido"
                 ]
               }
             ]
           },
           {
-            "title": "page",
             "auto_continue": false,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "intro",
                 "content": "Ejercicio: Escribe tu propio escenario"
               },
-              {
-                "type": "Paragraph",
+              { "type": "Paragraph",
+                "stimulusName": "create_scenario_p1",
                 "content": "En este ejercicio, ayuda al equipo de MindTrails a crear nuevos escenarios de entrenamiento que podrían ser incluidos en versiones futuras de nuestro programa para ayudar a otros participantes."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p1",
                 "content": "Piensa en una situación que te cause ansiedad y que te haya ocurrido en el pasado, o que te preocupa que suceda en el futuro. Escribe tu propio escenario de entrenamiento basado en esa situación, asegurándote de incluir un final positivo o no amenazante en la última oración del escenario."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p3",
                 "content": "Ten en cuenta que cada historia debe tener 3 oraciones \u2014 lo suficiente para describir tu situación de tal manera de que no esté claro si terminará bien o mal hasta el final de la historia."
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p4",
                 "content": "Nota: No le des clic al botón 'Volver Atrás’' en tu navegador web mientras estés haciendo el ejercicio ya que perderás todo tu trabajo."
               }
             ]
           },
           {
-            "title": "page",
             "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "intro",
                 "content": "Ejercicio: Escribe tu propio escenario"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p4",
                 "content": "¿No estás seguro de qué escribir? Ve a continuación un ejemplo. Luego intenta pensar en tu propia situación desafiante sobre la que escribir."
               },
               {
                 "type": "ThoughtBubble",
+                "stimulusName": "create_scenario_p5",
                 "thought": "Le envié un correo electrónico a un amigo preguntándole si quiere ir a tomar un café, pero nunca respondió. Me pregunto si está enojado conmigo. Pensando en la última vez que me reuní con este amigo, recuerdo que no revisa su correo electrónico con frecuencia y me siento ... aliviado.",
                 "followup": [
                   "Observa que la afirmación \"Me pregunto si está enojado conmigo\" genera incertidumbre y que la última palabra 'aliviado' resuelve esta incertidumbre de una manera no amenazante."
                 ]
-              }
-            ]
-          },
-          {
-            "title": "measure",
-            "elements": [
-              {
-              "type": "LargeHeader",
-              "content": "Ejercicio: Escribe tu propio escenario"
               },
               {
                 "type": "FillInBlank",
-                "stimulusName": "create_scenario_write",
-                "question": "Your Scenario:",
+                "stimulusName": "new_scenario",
                 "placeholder": "Tu escenario:",
                 "maxCharacters": 1000,
                 "minCharacters": 50
@@ -93,24 +92,27 @@
             ]
           },
           {
-            "title": "page",
             "auto_continue": false,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "intro",
                 "content": "Ejercicio: Escribe tu propio escenario"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p6",
                 "content": "Ahora, en la siguiente página, enumera todas las razones que puedas pensar por las que es probable que ocurra para ti el final del escenario que creaste. Por ejemplo, ¿por qué crees que podrás manejar la situación o qué evidencia hay que sugiere que la situación resultará positiva?"
               },
               {
                 "type": "ThoughtBubble",
+                "stimulusName": "create_scenario_p5",
                 "thought": "Le envío un correo electrónico a un amigo preguntándole si quiere ir a tomar un café, pero nunca responde. Me pregunto si está enojado conmigo. Pensando en la última vez que me reuní con este amigo, recuerdo que no revisa su correo electrónico con frecuencia y me siento ... aliviado.",
                 "skip_continue": true
               },
               {
                 "type": "BulletList",
+                "stimulusName": "create_scenario_p7",
                 "title": "Ejemplos de Razones:",
                 "bullets": [
                   "Este amigo me ha dicho que le gusta salir conmigo, por lo que probablemente no me ignoraría a propósito",
@@ -120,40 +122,33 @@
                   "Si mi amigo estuviera enojado conmigo, probablemente diría algo en lugar de simplemente ignorarme. En el pasado, siempre me ha dicho si está enojado"
                 ]
               }
-            ]
-          },
+              ]
+              },
           {
-            "title": "page",
             "auto_continue": false,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "create_scenario_header",
                 "content": "Ejercicio: Escribe tu propio escenario"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p6",
                 "content": "En el escenario que creaste, ¿por qué podría haber ocurrido este final positivo o no amenazante?"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "create_scenario_p7",
                 "content": "Enumera tus razones en la caja de texto a continuación. Pulsa el botón “Enviar” en tu pantalla o la tecla de retorno en tu teclado para agregar otra entrada."
-              }
-            ]
-          },
-          {
-            "title": "measure",
-            "elements": [
-              {
-              "type": "LargeHeader",
-              "content": "Ejercicio: Escribe tu propio escenario"
               },
               {
                 "type": "MultiEntry",
-                "stimulusName": "create_scenario_reason",
-                "fillInBlank": {
+                "stimulusName": "training_create_explanations",
+                "fillInBlank":
+                {
                   "type": "FillInBlank",
-                  "stimulusName": "create_scenario_reason",
-                  "question": "Add a Reason:",
+                  "stimulusName": "training_create_explanation",
                   "placeholder": "Agrega una razón:",
                   "submitButtonText": "Enviar",
                   "maxCharacters": 100,
@@ -166,5 +161,5 @@
       }
     ]
   }
-  ]
+]
 

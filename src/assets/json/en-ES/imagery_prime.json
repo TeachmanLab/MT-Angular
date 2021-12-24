@@ -1,54 +1,58 @@
 [
   {
-    "session": "imageryPrime",
-    "title": "",
-    "subTitle": "",
+    "session": "",
+    "title": "anxious_imagery_prime",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
-        "title": "Use Your Imagination",
         "pages": [
           {
+            "title": "page",
             "elements": [
               {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
+              {
                 "type": "Paragraph",
-                "stimulusName": "pre_prime_instructions1",
                 "content": "In this exercise, please think of an UPCOMING situation that you expect will make you feel anxious, worried, or scared."
               },
-              { "type": "Paragraph",
-              "stimulusName": "pre_prime_instructions2",
-              "content": "Pick a situation that you worry might go badly, or that you expect will evoke symptoms related to anxiety (e.g., racing heart, sweating). Any situation that will make you feel quite anxious or scared will work, as long as it is a situation that you’re likely to actually encounter."
+              {
+                "type": "Paragraph",
+                "content": "Pick a situation that you worry might go badly, or that you expect will evoke symptoms related to anxiety (e.g., racing heart, sweating). Any situation that will make you feel quite anxious or scared will work, as long as it is a situation that you’re likely to actually encounter."
               }
             ]
           },
-          { "auto_continue": true,
-            "title": "Use Your Imagination",
-            "elements": [
+          {
+            "title": "measure",
+                "auto_continue": false,
+                "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Use Your Imagination"
+              },
                 {
                 "type": "Header",
-                "stimulusName": "pre_prime_situation",
                 "content": "Please describe the situation in a few words:"
               },
               {
                 "type": "FillInBlank",
-                "stimulusName": "pre_prime_situation",
+                "stimulusName": "anxiety_prime_situation",
                 "question": "Please describe the situation in a few words.",
                 "maxCharacters": 100
               }
             ]
           },
           {
-            "title": "Use Your Imagination",
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "pre_prime_header",
                 "content": "Use Your Imagination"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "pre_prime_instructions3",
                 "title": "Please imagine the situation as vividly as possible (i.e., so that it feels very real).",
                 "bullets": [
                   "Try to imagine you are actually in the situation.",
@@ -59,48 +63,44 @@
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "pre_prime_instructions4",
                 "content": "Please click the \"Begin\" button below and play this situation in your head for the next 20 seconds. We will tell you when the 20 seconds are up–make sure the sound on your device is not muted."
               },
               {
                 "type": "Countdown",
-                "stimulusName": "pre_prime_timer",
                 "delayInSeconds":20,
                 "content": "We will tell you when the 20 seconds are up."
               }
             ]
           },
-          {
-            "title": "Use Your Imagination",
-            "elements": [
               {
+                "title": "measure",
+                "elements": [
+                  {
                 "type": "LargeHeader",
-                "stimulusName": "pre_prime_header",
                 "content": "Use Your Imagination"
               },
               {
                 "type": "Header",
-                "stimulusName": "pre_prime_q1_description",
-                "content": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
+                "question": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
               },
               {
                 "type": "Slider",
-                "stimulusName": "pre_prime_q1",
+                "stimulusName": "anxiety_prime_feel",
                 "min": 0,
                 "max": 100
               }
             ]
           },
-          { "auto_continue": true,
+          { "title": "measure",
+            "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "pre_prime_header",
                 "content": "Use Your Imagination"
               },
               {
                 "type": "Question",
-                "stimulusName": "pre_prime_q2",
+                "stimulusName": "anxiety_prime_vividly",
                 "question": "How vividly did you imagine the situation?",
                 "options": [
                   "Not at all vivid",
@@ -113,16 +113,16 @@
               }
               ]
               },
-              { "auto_continue": true,
+              { "title": "measure",
+                "auto_continue": true,
                 "elements": [
                   {
                     "type": "LargeHeader",
-                    "stimulusName": "pre_prime_header",
                     "content": "Use Your Imagination"
                   },
               {
                 "type": "Question",
-                "stimulusName": "pre_prime_q3",
+                "stimulusName": "anxiety_prime_likely",
                 "question": "How likely is it that this situation or task will turn out well versus turn out badly?",
                 "options": [
                   "Very likely to turn out well",
@@ -135,16 +135,16 @@
               }
                 ]
               },
-              {"auto_continue": true,
+          {"title": "measure",
+          "auto_continue": true,
                 "elements": [
                   {
                     "type": "LargeHeader",
-                    "stimulusName": "pre_prime_header",
                     "content": "Use Your Imagination"
                   },
                 {
                   "type": "Question",
-                  "stimulusName": "pre_prime_q4",
+                  "stimulusName": "anxiety_prime_handle",
                   "question": "If this situation did turn out badly, how well or badly would you be able to handle it?",
                   "options": [
                     "Very well",
@@ -159,8 +159,7 @@
               }
             ]
           }
-
         ]
       }
-    ]
+  ]
 

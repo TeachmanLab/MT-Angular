@@ -1,24 +1,25 @@
 [
   {
-    "session": "",
+    "session": "vividness",
     "title": "",
     "subTitle": "",
     "conditioning": "Training",
-    "study": "Spanish",
+    "study": "Calm Thinking",
     "steps": [
       {
-        "title": "measure",
+        "title": "",
         "pages": [
           {
             "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "vividHeader",
                 "content": "Chequeo de vividez"
               },
               {
                 "type": "Question",
-                "stimulusName": "vividness_check",
+                "stimulusName": "vividness",
                 "question": "¿Qué tan vívidamente imaginaste el escenario que acabas de leer (como si estuvieras realmente allí)?",
                 "options": [
                   "Para nada",

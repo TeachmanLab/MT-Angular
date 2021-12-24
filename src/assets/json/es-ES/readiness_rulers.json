@@ -1,62 +1,100 @@
 [
   {
-    "session": "readinessRulers",
-    "title": "",
-    "subTitle": "",
+    "session": "",
+    "title": "readiness_rulers",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
-        "title": "",
         "pages": [
           {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "readinessHeader",
                 "content": "Cómo funciona MindTrails"
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_rulers_p1",
                 "content": "Como has visto en el entrenamiento hasta ahora, estás leyendo muchas historias cortas que pudieran producir ansiedad."
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_rulers_p1",
                 "content": "El programa MindTrails está diseñado para cambiar los estilos de pensamiento ansiosos. Al imaginarte realmente en estas situaciones y luego completando la última palabra de la historia de una manera que usualmente -- pero no siempre -- asigna un final positivo a la historia, se te está desafiando a pensar sobre situaciones potencialmente amenazadoras de maneras nuevas."
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_rulers_p3",
                 "content": "Este programa presentará muchas historias diferentes y te dará mucha práctica imaginándote a ti mismo respondiendo de maneras que pueden ser diferentes a las que normalmente responderías. Esta práctica está diseñada para fomentar un pensamiento más flexible y ayudarte a romper el hábito del pensamiento negativo o catastrófico."
               }
             ]
           },
-            {
-              "elements": [
-                {
-                  "type": "LargeHeader",
-                  "stimulusName": "readinessHeader",
-                  "content": "Cómo funciona MindTrails"
-                },
-                {
-                  "type": "Question",
-                  "stimulusName": "readiness_rulers",
-                  "question": "Según lo que has visto del programa y la descripción de sus objetivos, ¿qué tan seguro estás de que este programa reducirá tu ansiedad?",
-                  "options": [
-                    "Para nada",
-                    "Ligeramente",
-                    "Algo",
-                    "Principalmente",
-                    "Mucho"
-                  ],
-                  "preferNotToAnswer": true
-                }
-                  ]
-                }
-              ]
-            }
-          ]
+          {
+            "title": "page",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Cómo funciona MindTrails"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Now that you have some experience with MindTrails, we encourage you to view our short videos by MindTrails team members. These 1-minute videos address some common questions about the training and provide tips about using the program most effectively."
+              },
+              {
+                "type": "BulletList",
+                "title": "Topics include:",
+                "bullets": [
+                  "Why all the stories do not end positively",
+                  "Why it’s important to really imagine yourself in the stories, and how to do that",
+                  "Why repetition is involved in the training",
+                  "How training can shift your experiences in the real world"
+                ]
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/SNrXoTFFeok"
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/hhFjs0rIGRg"
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/mktHMDGfzu8"
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/IFlj72zBzYY"
+              },
+              {
+                "type": "Paragraph",
+                "content": "You can also view these videos at any time by navigating to the About page on the menu bar outside of the training session sections."
+              }
+            ]
+          },
+          {
+            "title": "measure",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Cómo funciona MindTrails"
+              },
+              {
+                "type": "Question",
+                "stimulusName": "readiness_rulers_followup",
+                "question": "Según lo que has visto del programa y la descripción de sus objetivos, ¿qué tan seguro estás de que este programa reducirá tu ansiedad?",
+                "options": [
+                  "Para nada",
+                  "Ligeramente",
+                  "Algo",
+                  "Principalmente",
+                  "Mucho"
+                ],
+                "preferNotToAnswer": true
+              }
+            ]
+          }
+        ]
       }
     ]
+  }
+  ]

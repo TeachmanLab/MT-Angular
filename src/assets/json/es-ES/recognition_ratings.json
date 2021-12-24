@@ -1,38 +1,35 @@
 [
   {
-    "session": "Recognition Ratings",
-    "title": "Completing Short Stories",
-    "subTitle": "",
-    "conditioning": "Recognition Ratings",
-    "study": "Calm Thinking",
+    "session": "",
+    "title": "recognition_ratings",
+    "conditioning": "",
+    "study": "Spanish",
     "steps": [
       {
-        "title": "",
         "pages": [
           {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "readinessHeader",
                 "content": "Parte 1: Completar historias cortas"
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "recognitionRatingsIntro",
                 "content": "En este ejercicio breve, leerás varias historias cortas."
               },
               {
                 "type": "BulletList",
-                "stimulusName": "intro",
-                "bullets": ["Por favor, lee cada una con atención e intenta imaginarte a tí mismo en la situación",
+                "bullets": [
+                  "Por favor, lee cada una con atención e intenta imaginarte a tí mismo en la situación",
                   "La última palabra de cada historia está incompleta. Haz clic en la letra faltante para completar la palabra",
                   "Después de completar correctamente la palabra, se te preguntará sobre la historia. Responde a la pregunta basándote en la información de la historia"
                 ]
               }
             ]
           }
-              ]
-            }
-          ]
+        ]
       }
     ]
+  }
+  ]

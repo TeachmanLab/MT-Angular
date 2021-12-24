@@ -1,215 +1,192 @@
 [
   {
-    "session": "lemonExercise",
-    "title": "Training Session 1",
-    "subTitle": "Training Stories",
+    "session": "",
+    "title": "lemon_exercise",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
         "pages": [
           {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "intro1",
                 "content": "El programa de MindTrails"
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
                 "content": "El objetivo de MindTrails es reducir tu pensamiento ansioso al cambiar la manera en la que tú interpretas la información. En cada sesión, practicarás respondiendo a situaciones de maneras diferentes al leer cuentos breves y completar fragmentos de palabras eligiendo una o más letras faltantes de la palabra."
-
-
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
                 "content": "No te preocupes si no usas mucho las intervenciones en línea - las tareas no están diseñadas para ser complicadas o demasiado difíciles. El programa puede sentirse un poco repetitivo, pero la repetición te ayuda a desarrollar nuevas formas de pensar."
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "intro",
                 "content": "Este es un programa experimental que todavía está en la fase de prueba, pero investigaciones anteriores sugieren que este programa puede reducir el pensamiento ansioso tanto como lo hace la terapia para algunas personas. Queremos aprender si te puede resultar útil."
               }
             ]
           },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "intro2",
-                "content": "Ejercicios antes del entrenamiento"
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "intro",
-                "content": "Ya que el programa de MindTrails requiere que te imagines a ti mismo en diferentes situaciones, creemos que imaginándote vívidamente en estas situaciones es importante para que el programa sea efectivo. Antes de comenzar el entrenamiento, queremos que completes dos ejercicios cortos para practicar la imaginación vívida:"
-              },
-              {
-                "type": "BulletList",
-                "stimulusName": "intro",
-                "bullets": [
-                  "El ejercicio del limón",
-                  "Usa tu imaginación"
-                ]
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le1",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le1",
-                "content": "El objetivo de este ejercicio es demostrar qué es el pensamiento basado en la imaginación. Imaginarás lo que es ver, tocar y oler un limón. Por favor imagínatelo como si verdaderamente lo estuvieras viviendo."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le2",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le2",
-                "content": "./assets/training_images/lemon/example.png"
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le2",
-                "content": "En este ejercicio, y durante todo el programa de entrenamiento, por favor recuerda imaginarte lo que está sucediendo a través de tus propios ojos, similar a la imagen de la izquierda. Esto es más efectivo que ver la situación como un observador externo, como la imagen de la derecha."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le3",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le3",
-                "content": "./assets/training_images/lemon/lemon_1.JPG",
-                "caption": "Toma unos segundos para imaginarte esto."
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le3",
-                "content": "Listo ... ¡comencemos! Imagina que tienes el limón en tu mano derecha y puedes sentir su forma y peso."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le4",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le4",
-                "content": "./assets/training_images/lemon/lemon_2.JPG",
-                "caption": "Toma unos segundos para imaginarte esto."
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le4",
-                "content": "Ahora imagina que le estás reflejando una luz al limón y puedes ver la textura cerosa y grumosa de la piel amarilla."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le5",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le5",
-                "content": "./assets/training_images/lemon/lemon_3.JPG",
-                "caption": "Toma unos segundos para imaginarte esto."
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le5",
-                "content": "Ahora imagina que le rascas la piel con la uña, luego lo acercas a tu nariz y puedes oler el jugo fresco de su piel."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le6",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le6",
-                "content": "./assets/training_images/lemon/lemon_4.JPG",
-                "caption": "Toma unos segundos para imaginarte esto."
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le6",
-                "content": "Ahora imagina que cortas el limón a la mitad y levantas una mitad para verla más de cerca. Puedes ver la piel jugosa en forma de segmentos que parecen una rueda de carreta."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le7",
-                "content": "El ejercicio del limón"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le7",
-                "content": "./assets/training_images/lemon/lemon_5.JPG",
-                "caption": "Toma unos segundos para imaginarte esto."
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le7",
-                "content": "Ahora imagina que exprimes el limón y un poco de jugo te cae directamente en tus ojos. Pica y duele, haciendo que tus ojos se llenen de lágrimas."
-              }
-            ]
-          },
-          {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "stimulusName": "le8",
-                "content": "El ejercicio del limón: ¡Completado!"
-              },
-              {
-                "type": "Image",
-                "stimulusName": "le8",
-                "content": "./assets/training_images/lemon/lemon_6.png"
-              },
-              {
-                "type": "Paragraph",
-                "stimulusName": "le8",
-                "content": "¡Ese fue el ejercicio del limón! No te preocupes si no sentiste fuertemente todas las sensaciones. Eso es completamente normal."
-              }
-            ]
-          }
+        {
+          "title": "page",
+          "elements": [
+                {
+                  "type": "LargeHeader",
+                  "content": "Ejercicios antes del entrenamiento"
+                },
+                {
+                  "type": "Paragraph",
+                  "content": "Ya que el programa de MindTrails requiere que te imagines a ti mismo en diferentes situaciones, creemos que imaginándote vívidamente en estas situaciones es importante para que el programa sea efectivo. Antes de comenzar el entrenamiento, queremos que completes dos ejercicios cortos para practicar la imaginación vívida:"
+                },
+                {
+                  "type": "BulletList",
+                  "bullets": [
+                    "El ejercicio del limón",
+                    "Usa tu imaginación"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "page",
+                  "elements": [
+                    {
+                      "type": "LargeHeader",
+                      "content": "El ejercicio del limón"
+                    },
+                    {
+                      "type": "Paragraph",
+                      "content": "El objetivo de este ejercicio es demostrar qué es el pensamiento basado en la imaginación. Imaginarás lo que es ver, tocar y oler un limón. Por favor imagínatelo como si verdaderamente lo estuvieras viviendo."
+                    }
+                  ]
+                },
+                {
+                  "title": "page",
+                      "elements": [
+                        {
+                          "type": "LargeHeader",
+                          "content": "El ejercicio del limón"
+                        },
+                        {
+                          "type": "Image",
+                          "content": "./assets/training_images/lemon/example.png"
+                        },
+                        {
+                          "type": "Paragraph",
+                          "content": "En este ejercicio, y durante todo el programa de entrenamiento, por favor recuerda imaginarte lo que está sucediendo a través de tus propios ojos, similar a la imagen de la izquierda. Esto es más efectivo que ver la situación como un observador externo, como la imagen de la derecha."
+                        }
+                      ]
+                    },
+                {
+                  "title": "page",
+                      "elements": [
+                        {
+                          "type": "LargeHeader",
+                          "content": "El ejercicio del limón"
+                        },
+                        {
+                          "type": "Image",
+                          "content": "./assets/training_images/lemon/lemon_1.JPG",
+                          "caption": "Toma unos segundos para imaginarte esto."
+                        },
+                        {
+                          "type": "Paragraph",
+                          "content": "Listo ... ¡comencemos! Imagina que tienes el limón en tu mano derecha y puedes sentir su forma y peso."
+                        }
+                      ]
+                    },
+                {
+                  "title": "page",
+                      "elements": [
+                        {
+                          "type": "LargeHeader",
+                          "content": "El ejercicio del limón"
+                        },
+                        {
+                          "type": "Image",
+                          "content": "./assets/training_images/lemon/lemon_2.JPG",
+                          "caption": "Toma unos segundos para imaginarte esto."
+                        },
+                        {
+                          "type": "Paragraph",
+                          "content": "Ahora imagina que le estás reflejando una luz al limón y puedes ver la textura cerosa y grumosa de la piel amarilla."
+                        }
+                      ]
+                    },
+                {
+                  "title": "page",
+                      "elements": [
+                        {
+                          "type": "LargeHeader",
+                          "content": "El ejercicio del limón"
+                        },
+                        {
+                          "type": "Image",
+                          "content": "./assets/training_images/lemon/lemon_3.JPG",
+                          "caption": "Toma unos segundos para imaginarte esto."
+                        },
+                        {
+                          "type": "Paragraph",
+                          "content": "Ahora imagina que le rascas la piel con la uña, luego lo acercas a tu nariz y puedes oler el jugo fresco de su piel."
+                        }
+                      ]
+                    },
+                {
+                  "title": "page",
+                      "elements": [
+                        {
+                          "type": "LargeHeader",
+                          "content": "El ejercicio del limón"
+                        },
+                        {
+                          "type": "Image",
+                          "content": "./assets/training_images/lemon/lemon_4.JPG",
+                          "caption": "Toma unos segundos para imaginarte esto."
+                        },
+                        {
+                          "type": "Paragraph",
+                          "content": "Ahora imagina que cortas el limón a la mitad y levantas una mitad para verla más de cerca. Puedes ver la piel jugosa en forma de segmentos que parecen una rueda de carreta."
+                        }
+                      ]
+                    },
+                {
+                  "title": "page",
+                      "elements": [
+                        {
+                          "type": "LargeHeader",
+                          "content": "El ejercicio del limón"
+                        },
+                        {
+                          "type": "Image",
+                          "content": "./assets/training_images/lemon/lemon_5.JPG",
+                          "caption": "Toma unos segundos para imaginarte esto."
+                        },
+                        {
+                          "type": "Paragraph",
+                          "content": "Ahora imagina que exprimes el limón y un poco de jugo te cae directamente en tus ojos. Pica y duele, haciendo que tus ojos se llenen de lágrimas."
+                        }
+                      ]
+                    },
+                {
+                  "title": "page",
+                  "elements": [
+                    {
+                      "type": "LargeHeader",
+                      "content": "El ejercicio del limón: ¡Completado!"
+                    },
+                    {
+                      "type": "Image",
+                      "content": "./assets/training_images/lemon/lemon_6.png"
+                    },
+                    {
+                      "type": "Paragraph",
+                      "content": "¡Ese fue el ejercicio del limón! No te preocupes si no sentiste fuertemente todas las sensaciones. Eso es completamente normal."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
         ]
-      }
-    ]
-  }
-]

@@ -1,58 +1,55 @@
 [
   {
-    "session": "",
+    "session": "flexible_thinking",
     "title": "",
     "subTitle": "",
     "conditioning": "Training",
-    "study": "Spanish",
+    "study": "Calm Thinking",
     "steps": [
       {
-        "title": "page",
         "pages": [
           {
             "auto_continue": false,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "create_scenario_header",
                 "content": "Ejercicio: Pensamiento Rápido"
               },
               {
                 "type": "Paragraph",
+                "stimulusName": "flex_thinking_p1",
                 "content": "En la siguiente página, se te presentará un evento con un resultado incierto. A continuación se muestra un ejemplo:"
               },
-              {
-                "type": "Header",
+              { "type":  "Header",
+                "stimulusName":  "flex_thinking_note_p1",
                 "content": "Evento: Recibes una llamada de tu jefe y te dice que se quiere juntar contigo mañana. "
               },
-              {
-                "type": "Paragraph",
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p2",
                 "content": "En los campos de texto, enlista tantas explicaciones diferentes como te sea posible para describir por qué pudo haber ocurrido el evento presentado. Se iniciarán los 60 segundos de tiempo cuando pases a la siguiente página. Tus respuestas pueden constar de unas pocas palabras; no es necesario escribir oraciones completas."
               },
-              {
-                "type": "Paragraph",
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p3",
                 "content": "Para agregar un campo de texto adicional, haz clic en el botón 'Enviar' que aparece en tu pantalla o presiona la tecla de Retorno en tu teclado."
               },
-              {
-                "type": "Paragraph",
+              { "type":  "Paragraph",
+                "stimulusName":  "flex_thinking_p4",
                 "content": "¡Trata y piensa en tantas explicaciones como puedas en 60 segundos!"
               }
             ]
-          }
-        ]
-      },
-      {
-        "title": "measure",
-        "pages": [
+          },
           {
             "auto_continue": false,
             "elements": [
               {
                 "type": "LargeHeader",
+                "stimulusName": "create_scenario_header",
                 "content": "Ejercicio: Pensamiento Rápido"
               },
               {
                 "type": "RandomNonPreviousStatement",
-                "stimulusName": "flexible_thinking_scenario",
+                "stimulusName": "flex_random_scenario",
                 "options": [
                   "Evento: Inmediatamente después de hacer una presentación, la audiencia se queda callada",
                   "Evento: Notas que tu corazón late más rápido de lo normal",
@@ -60,28 +57,24 @@
                   "Evento: No has escuchado de un amigo durante 2 semanas y normalmente hablas semanalmente",
                   "Evento: Hace un mes aplicaste a un trabajo y aún no te han contactado para una entrevista"
                 ]
-              }
-            ]
-          },
-          {
-            "type": "MultiEntry",
-            "title": "Tus explicaciones:",
-            "stimulusName": "flexible_thinking_explanation",
-            "fillInBlank": {
-              "type": "FillInBlank",
-              "stimulusName": "flexible_thinking_explanation",
-              "question": "Add an Explanation:",
-              "placeholder": "Agrega una explicación:",
-              "submitButtonText": "Enviar",
-              "maxCharacters": 100,
-              "compact": true
-            }
-          },
-          {
-            "title": "page",
-            "pages": [
+              },
+              {
+                "type": "MultiEntry",
+                "title": "Tus explicaciones:",
+                "stimulusName": "flex_thinking_explanations",
+                "fillInBlank":
+                  {
+                    "type": "FillInBlank",
+                    "stimulusName": "flex_thinking_explanation",
+                    "placeholder": "Agrega una explicación:",
+                    "submitButtonText": "Enviar",
+                    "maxCharacters": 100,
+                    "compact": true
+                  }
+              },
               {
                 "type": "Countdown",
+                "stimulusName": "readiness_timer",
                 "delayInSeconds": 60,
                 "autoStart": true,
                 "content": "Tienes 60 segundos para completar tantas explicaciones como sea posible."
@@ -92,5 +85,5 @@
       }
     ]
   }
-  ]
+]
 
