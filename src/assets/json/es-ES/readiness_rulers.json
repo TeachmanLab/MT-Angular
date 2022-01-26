@@ -37,37 +37,37 @@
               },
               {
                 "type": "Paragraph",
-                "content": "Now that you have some experience with MindTrails, we encourage you to view our short videos by MindTrails team members. These 1-minute videos address some common questions about the training and provide tips about using the program most effectively."
+                "content": "Ahora que tienes algo de experiencia con MindTrails, te recomendamos que veas nuestros videos breves de un minuto en donde miembros del equipo de MindTrails contestan algunas preguntas comunes sobre el entrenamiento y brindan consejos para que uses el programa de manera más efectiva. Estos videos están en inglés con subtítulos en español."
               },
               {
                 "type": "BulletList",
-                "title": "Topics include:",
+                "title": "Los temas incluyen:",
                 "bullets": [
-                  "Why all the stories do not end positively",
-                  "Why it’s important to really imagine yourself in the stories, and how to do that",
-                  "Why repetition is involved in the training",
-                  "How training can shift your experiences in the real world"
+                  "¿Por qué MindTrails no acaba todas sus historias con un final positivo?",
+                  "¿Por qué es importante imagínarte realmente a ti mismo en las historias de MindTrails y cómo hacerlo?",
+                  "¿Por qué MindTrails implica repetición?",
+                  "¿Cómo puede el entrenamiento de MindTrails cambiar tus experiencias en el mundo real?"
                 ]
               },
               {
                 "type": "Video",
-                "content": "https://youtu.be/SNrXoTFFeok"
+                "content": "https://youtu.be/SNrXoTFFeok?cc_load_policy=1"
               },
               {
                 "type": "Video",
-                "content": "https://youtu.be/hhFjs0rIGRg"
+                "content": "https://youtu.be/hhFjs0rIGRg?cc_load_policy=1"
               },
               {
                 "type": "Video",
-                "content": "https://youtu.be/mktHMDGfzu8"
+                "content": "https://youtu.be/mktHMDGfzu8?cc_load_policy=1"
               },
               {
                 "type": "Video",
-                "content": "https://youtu.be/IFlj72zBzYY"
+                "content": "https://youtu.be/IFlj72zBzYY?cc_load_policy=1"
               },
               {
                 "type": "Paragraph",
-                "content": "You can also view these videos at any time by navigating to the About page on the menu bar outside of the training session sections."
+                "content": "También puedes ver estos videos en cualquier momento navegando a la página “Sobre MindTrails” en la barra de menú ubicada afuera de las secciones de la sesión de entrenamiento."
               }
             ]
           },
