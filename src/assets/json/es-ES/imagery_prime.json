@@ -34,12 +34,12 @@
               },
               {
                 "type": "Header",
-                "content": "Describa la situación en pocas palabras:"
+                "content": "Describe la situación en pocas palabras:"
               },
               {
                 "type": "FillInBlank",
                 "stimulusName": "anxiety_prime_situation",
-                "question": "Describa la situación en pocas palabras.",
+                "question": "Describe la situación en pocas palabras.",
                 "maxCharacters": 100
               }
             ]
@@ -110,7 +110,7 @@
               },
               {
                 "type": "Question",
-                "stimulusName": "anxiety_prime_vividly",
+                "stimulusName": "anxiety_prime_vivid",
                 "question": "¿Qué tan vívidamente imaginaste la situación?",
                 "options": [
                   "Para nada vívida",

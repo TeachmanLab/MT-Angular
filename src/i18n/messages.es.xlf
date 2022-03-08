@@ -259,7 +259,7 @@
           <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">high score message at round end</note>
-      </trans-unit><trans-unit id="9e3c4143691971703e8e42833a49575985b25301" datatype="html">
+      </trans-unit><trans-unit id="e337b639d9404de303e756cd27ffdd9555af6304" datatype="html">
         <source>Training Session: Complete!</source>
       <target state="translated">Sesión de entrenamiento: Completado!</target>
         <context-group purpose="location">
