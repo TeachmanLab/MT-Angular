@@ -18,7 +18,7 @@ Copy the files in ./dist/training-prototype up to the web server and placement i
 
 ## Adding to MindTrails
 
-Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/angular/`
+Run `ng build --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
 Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/angular
 Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular`
 
