@@ -1,23 +1,26 @@
 [
   {
     "session": "",
-    "title": "Dichos",
+    "title": "dichos",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
         "pages": [
           {
+            "title": "page",
             "auto_continue": false,
             "elements": [
               {
+                "type": "LargeHeader",
+                "content": "Dichos"
+              },
+              {
                 "type": "Image",
-                "stimulusName": "dicho1",
                 "content": "./assets/training_images/dichos/dicho1.jpeg"
               },
               {
                 "type": "CenterHeader",
-                "stimulusName": "dichoText1",
                 "content": "Un consejo: Recuerda tratar de imaginar vívidamente los escenarios."
               }
             ]
@@ -28,23 +31,26 @@
   },
   {
     "session": "",
-    "title": "Dichos",
+    "title": "dichos",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
         "pages": [
           {
+            "title": "page",
             "auto_continue": false,
             "elements": [
               {
+                "type": "LargeHeader",
+                "content": "Dichos"
+              },
+              {
                 "type": "Image",
-                "stimulusName": "dicho2",
                 "content": "./assets/training_images/dichos/dicho2.jpeg"
               },
               {
                 "type": "CenterHeader",
-                "stimulusName": "dichoText2",
                 "content": "Un consejo: Trata de imaginarte diferentes formas de responder a cada escenario."
               }
             ]
@@ -55,23 +61,26 @@
   },
   {
     "session": "",
-    "title": "Dichos",
+    "title": "dichos",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
         "pages": [
           {
+            "title": "page",
             "auto_continue": false,
             "elements": [
               {
+                "type": "LargeHeader",
+                "content": "Dichos"
+              },
+              {
                 "type": "Image",
-                "stimulusName": "dicho3",
                 "content": "./assets/training_images/dichos/dicho3.jpeg"
               },
               {
                 "type": "CenterHeader",
-                "stimulusName": "dichoText3",
                 "content": "Al igual que con cualquier habilidad nueva, la práctica constante te ayudará a pensar de manera más flexible."
               }
             ]
@@ -80,86 +89,90 @@
       }
     ]
   },
+  {
+    "session": "",
+    "title": "dichos",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
       {
-        "session": "",
-        "title": "Dichos",
-        "conditioning": "Training",
-        "study": "Calm Thinking",
-        "steps": [
+        "title": "page",
+        "auto_continue": false,
+        "elements": [
           {
-            "pages": [
-              {
-                "auto_continue": false,
-                "elements": [
-                  {
-                    "type": "Image",
-                    "stimulusName": "dicho4",
-                    "content": "./assets/training_images/dichos/dicho4.jpeg"
-                  },
-                  {
-                    "type": "CenterHeader",
-                    "stimulusName": "dichoText4",
-                    "content": "Tómate un momento para considerar las razones importantes para cambiar tu pensamiento ansioso."
-                  }
-                ]
-              }
-            ]
+            "type": "LargeHeader",
+            "content": "Dichos"
+          },
+          {
+            "type": "Image",
+            "content": "./assets/training_images/dichos/dicho4.jpeg"
+          },
+          {
+            "type": "CenterHeader",
+            "content": "Tómate un momento para considerar las razones importantes para cambiar tu pensamiento ansioso."
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "session": "",
+    "title": "dichos",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
       {
-        "session": "",
-        "title": "Dichos",
-        "conditioning": "Training",
-        "study": "Calm Thinking",
-        "steps": [
+        "pages": [
           {
-            "pages": [
+            "title": "page",
+            "auto_continue": false,
+            "elements": [
               {
-                "auto_continue": false,
-                "elements": [
-                  {
-                    "type": "Image",
-                    "stimulusName": "dicho5",
-                    "content": "./assets/training_images/dichos/dicho5.jpeg"
-                  },
-                  {
-                    "type": "CenterHeader",
-                    "stimulusName": "dichoText5",
-                    "content": "Recuerda: Está bien cometer errores. Trata de dar lo mejor."
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "session": "",
-        "title": "Dichos",
-        "conditioning": "Training",
-        "study": "Calm Thinking",
-        "steps": [
-          {
-            "pages": [
+                "type": "LargeHeader",
+                "content": "Dichos"
+              },
               {
-                "auto_continue": false,
-                "elements": [
-                  {
-                    "type": "Image",
-                    "stimulusName": "dicho6",
-                    "content": "./assets/training_images/dichos/dicho6.jpeg"
-                  },
-                  {
-                    "type": "CenterHeader",
-                    "stimulusName": "dichoText6",
-                    "content": "Un consejo: recuerda, cuando te sientas ansioso la sensación no durará para siempre."
-                  }
-                ]
+                "type": "Image",
+                "content": "./assets/training_images/dichos/dicho5.jpeg"
+              },
+              {
+                "type": "CenterHeader",
+                "content": "Recuerda: Está bien cometer errores. Trata de dar lo mejor."
               }
             ]
           }
         ]
       }
-  ]
-
+    ]
+  },
+  {
+    "session": "",
+    "title": "dichos",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "pages": [
+          {
+            "title": "page",
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Dichos"
+              },
+              {
+                "type": "Image",
+                "content": "./assets/training_images/dichos/dicho6.jpeg"
+              },
+              {
+                "type": "CenterHeader",
+                "content": "Un consejo: recuerda, cuando te sientas ansioso la sensación no durará para siempre."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
