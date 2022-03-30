@@ -87,6 +87,7 @@
               },
               {
                 "type": "Image",
+                "content": "./assets/training_images/lemon/lemon_1.JPG",
                 "caption": "Please take a few seconds to imagine this."
               },
               {
@@ -95,10 +96,8 @@
               }
             ]
           },
-      {
-        "title": "page",
-        "pages": [
           {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
@@ -114,34 +113,27 @@
                 "content": "Now imagine you are shining a light on the lemon, and you can see the waxy and lumpy texture of the yellow skin."
               }
             ]
-          }
-        ]
-      },
-      {
-        "title": "page",
-        "pages": [
+          },
           {
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "content": "The Lemon Exercise"
-              },
-              {
-                "type": "Image",
-                "caption": "Please take a few seconds to imagine this."
-              },
-              {
-                "type": "Paragraph",
-                "content": "Now imagine that you scratch the skin with your fingernail, then you bring the lemon up to your nose, and you can smell the fresh zesty juice from the skin."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "page",
-        "pages": [
+          "title": "page",
+          "elements": [
+            {
+              "type": "LargeHeader",
+              "content": "The Lemon Exercise"
+            },
+            {
+              "type": "Image",
+              "content": "./assets/training_images/lemon/lemon_3.JPG",
+              "caption": "Please take a few seconds to imagine this."
+            },
+            {
+              "type": "Paragraph",
+              "content": "Now imagine that you scratch the skin with your fingernail, then you bring the lemon up to your nose, and you can smell the fresh zesty juice from the skin."
+            }
+          ]
+          },
           {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
@@ -155,26 +147,6 @@
               {
                 "type": "Paragraph",
                 "content": "Now imagine that you cut the lemon in half, and you bring one half of it up for a closer look. You can see the juicy flesh in the shape of segments that look like a wagon wheel."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "page",
-            "elements": [
-              {
-                "type": "LargeHeader",
-                "content": "The Lemon Exercise"
-              },
-              {
-                "type": "Image",
-                "content": "./assets/training_images/lemon/lemon_5.JPG",
-                "caption": "Please take a few seconds to imagine this."
-              },
-              {
-                "type": "Paragraph",
-                "content": "Now imagine that you squeeze the lemon and some of the juice squirts right into your eyes, and it is really stinging, making your eyes water."
               }
             ]
           },
