@@ -9,7 +9,7 @@
         "pages": [
           {
             "title": "page",
-            "auto_continue": false,
+            "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
@@ -39,7 +39,7 @@
         "pages": [
           {
             "title": "page",
-            "auto_continue": false,
+            "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
@@ -69,7 +69,7 @@
         "pages": [
           {
             "title": "page",
-            "auto_continue": false,
+            "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
@@ -97,7 +97,7 @@
     "steps": [
       {
         "title": "page",
-        "auto_continue": false,
+        "auto_continue": true,
         "elements": [
           {
             "type": "LargeHeader",
@@ -125,7 +125,7 @@
         "pages": [
           {
             "title": "page",
-            "auto_continue": false,
+            "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",
@@ -155,7 +155,7 @@
         "pages": [
           {
             "title": "page",
-            "auto_continue": false,
+            "auto_continue": true,
             "elements": [
               {
                 "type": "LargeHeader",

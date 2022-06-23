@@ -95,10 +95,8 @@
               }
             ]
           },
-      {
-        "title": "page",
-        "pages": [
           {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
@@ -114,14 +112,10 @@
                 "content": "Now imagine you are shining a light on the lemon, and you can see the waxy and lumpy texture of the yellow skin."
               }
             ]
-          }
-        ]
-      },
+          },
       {
         "title": "page",
-        "pages": [
-          {
-            "elements": [
+        "elements": [
               {
                 "type": "LargeHeader",
                 "content": "The Lemon Exercise"
@@ -135,13 +129,9 @@
                 "content": "Now imagine that you scratch the skin with your fingernail, then you bring the lemon up to your nose, and you can smell the fresh zesty juice from the skin."
               }
             ]
-          }
-        ]
-      },
-      {
-        "title": "page",
-        "pages": [
-          {
+          },
+  {
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
@@ -157,13 +147,11 @@
                 "content": "Now imagine that you cut the lemon in half, and you bring one half of it up for a closer look. You can see the juicy flesh in the shape of segments that look like a wagon wheel."
               }
             ]
-          }
-        ]
-      },
+          },
+  {
+    "title": "page",
+    "elements": [
       {
-        "title": "page",
-            "elements": [
-              {
                 "type": "LargeHeader",
                 "content": "The Lemon Exercise"
               },
@@ -194,12 +182,12 @@
                 "content": "That was the Lemon Exercise! Don't worry if you didn't experience all of the sensations strongly. This is completely normal."
               }
             ]
-          }
+      }
         ]
       }
     ]
   }
-  ]
+]
 
 
 

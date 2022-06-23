@@ -81,7 +81,7 @@
               },
               {
                 "type": "Header",
-                "question": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
+                "content": "How anxious did you feel (at the highest level of anxiety) as you completed the imagery task? Press on the bar to see the slider."
               },
               {
                 "type": "Slider",
