@@ -140,6 +140,7 @@ export class TrainingComponent implements OnInit {
     if (testing) {
       this.scenariosPerRound = 1;
       this.totalRounds = 4;
+      this.imageryPrimeCompleted = true;
       this.lemonExerciseCompleted = true;
       this.createScenarioRoundIndex = -1;
       this.flexibleThinkingRoundIndex = -1;

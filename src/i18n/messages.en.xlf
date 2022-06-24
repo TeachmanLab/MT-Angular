@@ -256,7 +256,7 @@
         </context-group>
         <note priority="1" from="description">high score message at round end</note>
       </trans-unit><trans-unit id="e337b639d9404de303e756cd27ffdd9555af6304" datatype="html">
-        <source><equiv-text="Training Session: Complete!"/></source><target state="final">"Training Session: Complete!"</target>
+        <source>Training Session: Complete!</source><target state="final">"Training Session: Complete!"</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/final-score/final-score.component.html</context>
           <context context-type="linenumber">10</context>
@@ -385,7 +385,7 @@
         </context-group>
         <note priority="1" from="description">prefer not to answer</note>
       </trans-unit><trans-unit id="33dc872e0dbaf189fc4577f83e20fa4bcba2757a" datatype="html">
-        <source>Story</source><target state="final">Story</target>
+        <source>Story</source><target state="final"> Story</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
           <context context-type="linenumber">12</context>
