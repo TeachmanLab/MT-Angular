@@ -19,8 +19,8 @@ Copy the files in ./dist/training-prototype up to the web server and placement i
 ## Adding to MindTrails
 
 Run `ng build --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
-Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/angular
-Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular`
+Copy ./dist/training-prototype to [MindTrails Checkout]/spanish/src/main/resources/static/angular
+Something like `cp -r dist/training-prototype ~/code/MindTrails/spanish/src/main/resources/static/angular`
 
 ## Localization
 This app can be built for both English and Spanish.  If you want to run locally and see the Spanish version of the site use:

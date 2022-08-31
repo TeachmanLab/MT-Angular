@@ -2,15 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="96a4535d6ae9894a9cb374e24f2ed39bc326b525" datatype="html">
-        <source>Welcome to Mindtrails Training</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <note priority="1" from="description">Message at top of all pages</note>
-        <note priority="1" from="meaning">welcome message</note>
-      </trans-unit>
       <trans-unit id="a183f55921a00cde827aa0db27a0009f748b55cf" datatype="html">
         <source>Module Complete!</source>
         <context-group purpose="location">
