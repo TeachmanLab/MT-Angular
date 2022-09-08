@@ -1,56 +1,58 @@
 [
   {
-    "session": "imageryPrime",
-    "title": "",
-    "subTitle": "",
+    "session": "",
+    "title": "anxious_imagery_prime",
     "conditioning": "Training",
-    "study": "Calm Thinking",
+    "study": "Spanish",
     "steps": [
       {
-        "title": "Usa tu imaginación",
         "pages": [
           {
+            "title": "page",
             "elements": [
               {
-                "type": "Paragraph",
-                "stimulusName": "readiness_p1",
-                "content": "En este ejercicio, piensa en una situación PRÓXIMA que esperas que te haga sentir ansioso, preocupado o asustado."
+                "type": "LargeHeader",
+                "content": "Usa tu imaginación"
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_p1",
+                "content": "En este ejercicio, piensa en una situación que esperas que te hará sentir ansioso, preocupado o asustado en el futuro cercano."
+              },
+              {
+                "type": "Paragraph",
                 "content": "Elige una situación que te preocupe que vaya a salir mal o que esperas que evoque síntomas relacionados con la ansiedad (e.j., palpitaciones cardíacas o sudoración). Cualquier situación que te haga sentir ansioso o asustado funcionará, siempre y cuando sea una situación a la que probablemente te enfrentes."
               }
             ]
           },
           {
             "auto_continue": true,
-            "title": "Usa tu imaginación",
+            "title": "measure",
             "elements": [
               {
+                "type": "LargeHeader",
+                "content": "Usa tu imaginación"
+              },
+              {
                 "type": "Header",
-                "stimulusName": "readiness_heading",
-                "content": "Describa la situación en pocas palabras:"
+                "content": "Describe la situación en pocas palabras:"
               },
               {
                 "type": "FillInBlank",
-                "stimulusName": "readiness_situation",
-                "question": "Describa la situación en pocas palabras.",
+                "stimulusName": "anxiety_prime_situation",
+                "question": "Describe la situación en pocas palabras.",
                 "maxCharacters": 100
               }
             ]
           },
           {
-            "title": "Usa tu imaginación",
+            "title": "page",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use1",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "BulletList",
-                "stimulusName": "readiness_p3",
                 "title": "Imagina la situación de la manera más vívida posible (para que se sienta muy real).",
                 "bullets": [
                   "Trata de imaginar que realmente estás en la situación.",
@@ -58,36 +60,41 @@
                   "Intenta imaginar usando todos tus sentidos mientras piensas en esta situación. Piensa en las cosas que verías, oirías y olerías si realmente estuvieras en esa situación.",
                   "Piensa en el tipo de cosas que pensarías o sentirías si estuvieras allí."
                 ]
+              }
+            ]
+          },
+          {
+            "title": "page",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Usa tu imaginación"
               },
               {
                 "type": "Paragraph",
-                "stimulusName": "readiness_p5",
-                "content": "Haz clic en el botón \"Comenzar\" y reproduce esta situación en tu mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegura de que el sonido de tu dispositivo no esté silenciado.\n"
+                "content": "Haz clic en el botón \"Comenzar\" y reproduce esta situación en tu mente durante los próximos 20 segundos. Te diremos cuando pasen los 20 segundos. Asegurate de que el sonido de tu dispositivo no esté silenciado.\n"
               },
               {
                 "type": "Countdown",
-                "stimulusName": "readiness_timer",
                 "delayInSeconds": 20,
                 "content": "Te diremos cuando pasen los 20 segundos."
               }
             ]
           },
           {
-            "title": "Usa tu imaginación",
+            "title": "measure",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use2",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "Header",
-                "stimulusName": "readiness_heading",
-                "content": "¿Qué tan ansioso te sentiste (en el nivel más alto de ansiedad) al completar la tarea de imaginería? Haz clic en la barra para ver el deslizador."
+                "content": "¿Qué tan ansioso te sentiste (en el nivel más alto de ansiedad) al completar la tarea de imaginación vívida? Haz clic en la barra para ver el deslizador."
               },
               {
                 "type": "Slider",
-                "stimulusName": "readiness_anxiety_question",
+                "stimulusName": "anxiety_prime_feel",
                 "min": 0,
                 "max": 100
               }
@@ -95,15 +102,15 @@
           },
           {
             "auto_continue": true,
+            "title": "measure",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use3",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "Question",
-                "stimulusName": "readiness_vivid_question",
+                "stimulusName": "anxiety_prime_vivid",
                 "question": "¿Qué tan vívidamente imaginaste la situación?",
                 "options": [
                   "Para nada vívida",
@@ -118,15 +125,15 @@
           },
           {
             "auto_continue": true,
+            "title": "measure",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use4",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "Question",
-                "stimulusName": "readiness_badly_question",
+                "stimulusName": "anxiety_prime_likely",
                 "question": "¿Qué tan probable es que esta situación o tarea salga bien o mal?",
                 "options": [
                   "Muy probable que salga bien",
@@ -141,15 +148,15 @@
           },
           {
             "auto_continue": true,
+            "title": "measure",
             "elements": [
               {
                 "type": "LargeHeader",
-                "stimulusName": "use5",
                 "content": "Usa tu imaginación"
               },
               {
                 "type": "Question",
-                "stimulusName": "readiness_manageable_question",
+                "stimulusName": "anxiety_prime_handle",
                 "question": "Si esta situación saliera mal, ¿qué tan bien o mal serías capaz de manejarla?",
                 "options": [
                   "Muy bien",
@@ -166,4 +173,5 @@
       }
     ]
   }
-]
+  ]
+

@@ -12,7 +12,8 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "es-ES": "src/i18n/messages.es.xlf"
+          "es-ES": "src/i18n/messages.es.xlf",
+          "en-ES": "src/i18n/messages.en.xlf"
         }
       },
       "architect": {
@@ -88,6 +89,27 @@
               "vendorChunk": false,
               "buildOptimizer": true
             },
+            "spanish-en": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.spanish.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "localize": [
+                "en-ES"
+              ],
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+
             "kaiser": {
               "fileReplacements": [
                 {
@@ -118,6 +140,9 @@
             },
             "es": {
               "browserTarget": "training-prototype:build:es"
+            },
+            "spanish-en": {
+              "browserTarget": "training-prototype:build:spanish-en"
             }
           }
         },

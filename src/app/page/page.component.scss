@@ -10,6 +10,11 @@ div {
   padding: 0px;
 }
 
+h2.center {
+  margin: auto;
+  text-align: center;
+}
+
 .reference {
   clear: both;
   font-size: smaller;
@@ -35,6 +40,7 @@ div {
   img {
     display:block;
     margin:auto;
+    max-width: 100%;
   }
 
   .caption {

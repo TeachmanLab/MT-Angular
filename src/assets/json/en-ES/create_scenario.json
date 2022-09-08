@@ -1,0 +1,170 @@
+[
+  {
+    "session": "",
+    "title": "create_scenario",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "pages": [
+          {
+            "title": "page",
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Training Session: Final Exercises"
+              },
+              {
+                "type": "Paragraph",
+                "content": "You’re almost finished with the training session! There are two final exercises to complete:"
+              },
+              {
+                "type": "BulletList",
+                "bullets": [
+                  "Write Your Own Scenario",
+                  "Quick Thinking"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "page",
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Exercise: Write Your Own Scenario"
+              },
+              {
+                "type": "Paragraph",
+                "content": "In this exercise, help the MindTrails team come up with new training scenarios that may be included in our future program to help other participants!"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Think about a situation that makes you anxious that has occurred for you in the past, or that you worry will happen in the future. Please write your own training scenario based on this situation, making sure to include a positive or non-threatening ending in the final sentence of the scenario."
+              },
+              {
+                "type": "Paragraph",
+                "content": "Keep in mind each story should be 3 sentences \u2014 just enough to set up your challenging situation where it is unclear whether it will end well or end badly until the very end of the story."
+              },
+              {
+                "type": "Paragraph",
+                "content": "Note: Please do not press the 'Back' button in your web browser as you complete the exercise, as you will lose your work."
+              }
+            ]
+          },
+          {
+            "title": "page",
+            "auto_continue": true,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Exercise: Write Your Own Scenario"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Not sure what to write? See below for an example. Then try thinking of your own challenging situation to write about. "
+              },
+              {
+                "type": "ThoughtBubble",
+                "thought": "I send an email message to a friend asking them to grab coffee, but they never respond. I wonder if they are mad at me. Thinking back on the last time I got together with this friend, I remember they don’t check email often and I feel ... relieved.",
+                "followup": [
+                  "Notice that the statement, \"I wonder if they are mad at me\" creates uncertainty.  And that the final word 'relieved' resolves this in a non-threatening way."
+                ]
+              }
+            ]
+          },
+          {
+            "title": "measure",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Ejercicio: Escribe tu propio escenario"
+              },
+              {
+                "type": "FillInBlank",
+                "stimulusName": "create_scenario_write",
+                "question": "Your Scenario:",
+                "placeholder": "Your Scenario:",
+                "maxCharacters": 1000,
+                "minCharacters": 50
+              }
+            ]
+          },
+          {
+            "title": "page",
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Exercise: Write Your Own Scenario"
+              },
+              {
+                "type": "Paragraph",
+                "content": "Now, on the next page, list as many reasons as you can think of for why the ending in the scenario you created could be likely to occur for you. For example, why do you think you will be able to handle the situation, or what evidence is there to suggest that the situation will turn out positively?"
+              },
+              {
+                "type": "ThoughtBubble",
+                "thought": "I send an email message to a friend asking them to grab coffee, but they never respond. I wonder if they are mad at me. Thinking back on the last time I got together with this friend, I remember they don’t check email often and I feel ... relieved.",
+                "skip_continue": true
+              },
+              {
+                "type": "BulletList",
+                "title": "Sample Reasons:",
+                "bullets": [
+                  "This friend has told me that they like hanging out with me so they probably wouldn’t ignore me on purpose.",
+                  "I didn’t get into an argument with this person recently so it’s unlikely that they are mad at me.",
+                  "A lot of times people send email messages to me that I forget to respond to, and it doesn’t mean that I am mad at them.",
+                  "My friend could be busy and hasn’t read my message yet.",
+                  "If my friend was mad at me, they probably would say something rather than just ignoring me. In the past, they have always told me if they were upset."
+                ]
+              }
+            ]
+          },
+          {
+            "title": "page",
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Exercise: Write Your Own Scenario"
+              },
+              {
+                "type": "Paragraph",
+                "content": "In the scenario you created, why might this positive or non-threatening ending have occurred?"
+              },
+              {
+                "type": "Paragraph",
+                "content": "List your reasons in the text entry below. Press the Submit button on your screen or the Return key on your keyboard to add another entry."
+              }
+            ]
+          },
+          {
+            "title": "measure",
+            "elements": [
+              {
+              "type": "LargeHeader",
+              "content": "Ejercicio: Escribe tu propio escenario"
+              },
+              {
+                "type": "MultiEntry",
+                "stimulusName": "create_scenario_reason",
+                "fillInBlank": {
+                  "type": "FillInBlank",
+                  "stimulusName": "create_scenario_reason",
+                  "question": "Add a Reason:",
+                  "placeholder": "Add a Reason:",
+                  "submitButtonText": "Submit",
+                  "maxCharacters": 100,
+                  "compact": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  ]
+

@@ -53,6 +53,7 @@ import { MentorHubComponent } from './mentor-hub/mentor-hub.component';
 import {MentorHubService} from './mentorhub.service';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {GoogleAnalyticsService} from './google-analytics.service';
+import '@angular/localize/init';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

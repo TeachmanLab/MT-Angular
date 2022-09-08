@@ -1,0 +1,96 @@
+[
+  {
+    "session": "",
+    "title": "flexible_thinking",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "title": "page",
+        "pages": [
+          {
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Exercise: Quick Thinking"
+              },
+              {
+                "type": "Paragraph",
+                "content": "On the next page, an event with an uncertain outcome will be presented. An example is shown below:"
+              },
+              {
+                "type": "Header",
+                "content": "Event: You receive a call from your boss that they want to meet with you tomorrow."
+              },
+              {
+                "type": "Paragraph",
+                "content": "In the text fields, list as many different explanations as possible to explain why the event presented might have occurred. A 60 second timer will start when you proceed to the next page. Your responses may consist of a few words; you don’t need to write full sentences."
+              },
+              {
+                "type": "Paragraph",
+                "content": "To add an additional text field, press the 'Submit' button on your screen or the Return key on your keyboard."
+              },
+              {
+                "type": "Paragraph",
+                "content": "Try and think of as many explanations as you can in 60 seconds!"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "measure",
+        "pages": [
+          {
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "Exercise: Quick Thinking"
+              },
+              {
+                "type": "RandomNonPreviousStatement",
+                "stimulusName": "flexible_thinking_scenario",
+                "options": [
+                  "Event: Immediately after you do a presentation, the audience is quiet.",
+                  "Event: You notice your heart beating more rapidly than usual.",
+                  "Event: You hear a noise in your kitchen but didn’t think anyone else was home.",
+                  "Event: You haven’t heard from a friend for 2 weeks and you usually talk weekly.",
+                  "Event: You applied for a job 1 month ago and haven’t yet been contacted for an interview."
+                ]
+              },
+              {
+                "type": "MultiEntry",
+                "title": "Your Explanations:",
+                "stimulusName": "flexible_thinking_explanation",
+                "fillInBlank": {
+                  "type": "FillInBlank",
+                  "stimulusName": "flexible_thinking_explanation",
+                  "question": "Add an Explanation:",
+                  "placeholder": "Add an explanation:",
+                  "submitButtonText": "Submit",
+                  "maxCharacters": 100,
+                  "compact": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+              {
+                "title": "page",
+                "pages": [
+                  {
+                "type": "Countdown",
+                "delayInSeconds": 60,
+                "autoStart": true,
+                "content": "You have 60 seconds to complete as many explanations as possible."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+

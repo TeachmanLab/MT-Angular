@@ -2,6 +2,7 @@
 <div *ngFor="let el of visibleElements">
   <h1 *ngIf="el.type === 'LargeHeader'">{{el.content}}</h1>
   <h2 *ngIf="el.type === 'Header'">{{el.content}}</h2>
+  <h2 class="center" *ngIf="el.type === 'CenterHeader'">{{el.content}}</h2>
   <p *ngIf="el.type === 'Paragraph'">{{el.content}}</p>
   <a *ngIf="el.type === 'Link'" href="{{el.link}}" target="{{el.target}}">{{el.content}}</a>
   <div *ngIf="el.type === 'References'">
@@ -14,7 +15,6 @@
       <img  [src]="el.content">
     </a>
     <img *ngIf="!(el.link)" [src]="el.content">
-
       <p fxLayoutAlign="center" class="caption">{{el.caption}}</p>
   </div>
   <div class="slider" *ngIf="el.type === 'Slider'">

@@ -55,6 +55,18 @@
       ></app-step>
     </mat-card-content>
   </mat-card>
+  <mat-card class="readiness" *ngIf="state === states.DICHOS">
+    <mat-card-content>
+      <app-step
+        [session]="currentSession"
+        [step]="dichos[0].steps[0]"
+        [stepIndex]="this.stepIndex"
+        [sessionIndex]="this.sessionIndex"
+        (done)="dichosComplete()"
+        [previousEnabled]="false"
+      ></app-step>
+    </mat-card-content>
+  </mat-card>
   <mat-card class="readiness" *ngIf="state === states.VIVIDNESS">
     <mat-card-content>
       <app-step
@@ -98,7 +110,7 @@
  <div *ngIf="state === states.TRAINING">
   <mat-card class="training">
     <mat-card-content *ngIf="round">
-        <div i18n="round x of y" class="round-header">Round {{roundIndex+ 1}} of {{totalRounds}}</div>
+      <div class="round-header"> <span i18n>Round</span> {{roundIndex+ 1}} <span i18n>of</span> {{totalRounds}}</div>
         <div class="progress">
           <app-progress-bar [items]="round.scenarios"></app-progress-bar>
         </div>

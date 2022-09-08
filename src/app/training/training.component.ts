@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 
 enum TrainingState {
   'LEMON', 'IMAGERY', 'INTRO', 'TRAINING', 'PSYCHOED', 'PSYCHOED_FOLLOWUP',
-  'VIVIDNESS', 'READINESS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
+  'VIVIDNESS', 'READINESS', 'DICHOS', 'CREATE', 'FLEXIBLE_THINKING', 'SUMMARY', 'FINAL_SUMMARY'
 }
 
 @Component({
@@ -28,6 +28,8 @@ export class TrainingComponent implements OnInit {
   readinessRulers: Session[] = [];
   vividness: Session[] = [];
   vividIndexes = [1, 2, 20, 40];
+  dichos: Session[] = [];
+  dichosIndexes = [10, 20, 30];
   psychoed: Session[] = [];
   psychoedFollowup: Session[] = [];
   psychoedSession: Session;
@@ -78,12 +80,11 @@ export class TrainingComponent implements OnInit {
     ).subscribe(([url, paramMap, queryParamMap]) => {
       const testing = (queryParamMap.get('testing') === 'true' || false);
       this.study.subscribe(study => {
-        console.log('Study is:', study);
-        console.log('Lemon Complete?', this.lemonExerciseCompleted);
         this.setupCondition(study, testing);
         this.loadIntro(study.currentSession.index - 1, study.conditioning);
         this.loadReadinessRulers();
         this.loadVividness();
+        this.loadDichos();
         this.loadFlexibleThinking();
         this.loadImageryPrime();
         this.loadTraining(study);
@@ -93,7 +94,6 @@ export class TrainingComponent implements OnInit {
         this.loadPsyched(study);
         this.loadCreateScenario();
         if (study.currentSession.name === 'firstSession' && !this.lemonExerciseCompleted) {
-          console.log('Setting state to lemon.');
           this.state = this.states.LEMON;
         } else if (study.currentSession.name !== 'firstSession' && !this.imageryPrimeCompleted) {
           this.state = this.states.IMAGERY;
@@ -109,6 +109,20 @@ export class TrainingComponent implements OnInit {
       if (study.currentSession.index >= 2) { // Only turn on the create scenario part in sessions 3, and 4
         this.createScenarioRoundIndex = 3;
       }
+    } else if (study.conditioning === 'SPANISH_DOMINANT') {
+      this.dichosIndexes = [10, 20, 30];
+      this.psychoedRoundIndex = -1;
+      this.createScenarioRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 3;
+    } else if (study.conditioning === 'SPANISH_BILINGUAL') {
+      this.dichosIndexes = [10, 20, 30];
+      this.psychoedRoundIndex = -1;
+      this.createScenarioRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 3;
+    } else if (study.conditioning === 'ENGLISH_BILINGUAL') {
+      this.psychoedRoundIndex = -1;
+      this.createScenarioRoundIndex = 3;
+      this.flexibleThinkingRoundIndex = 3;
     } else if (study.conditioning === 'TRAINING_30') {
       this.totalRounds = 3;
       this.flexibleThinkingRoundIndex = 2;
@@ -124,11 +138,12 @@ export class TrainingComponent implements OnInit {
     }
 
     if (testing) {
-      this.scenariosPerRound = 3;
-      this.flexibleThinkingRoundIndex = 1;
-      this.totalRounds = 2;
-      this.readinessScenarioIndex = 1;
+      this.scenariosPerRound = 1;
+      this.totalRounds = 4;
+      this.imageryPrimeCompleted = true;
       this.lemonExerciseCompleted = true;
+      this.createScenarioRoundIndex = -1;
+      this.flexibleThinkingRoundIndex = -1;
     }
     if (testing && study.conditioning === 'TRAINING_CREATE') {
       this.state = this.states.CREATE;
@@ -142,15 +157,13 @@ export class TrainingComponent implements OnInit {
       this.psychoedSession != null &&
       this.readinessRulers.length > 0 &&
       this.vividness.length > 0 &&
+      this.dichos.length > 0 &&
       this.imageryPrime.length > 0;
   }
 
   scenariosToRounds(scenarios, study: Study) {
-    console.log('scenarios to rounds');
     let index = 0;
     scenarios = scenarios.slice(0, this.totalRounds * this.scenariosPerRound);
-    console.log('Total Rounds:', this.totalRounds);
-    console.log('Total Scenarios: ', scenarios.length);
     this.increment = Math.floor(scenarios.length / this.totalRounds);
     this.rounds = [];
     let round = new Round();
@@ -229,6 +242,7 @@ export class TrainingComponent implements OnInit {
         }
         this.scenariosToRounds(scenarios, study);
       }
+      console.log('The Scenario Index is ' + this.scenarioIndex);
     }, error1 => {
       console.log('Backend not responding, loading the scenarios without progress.');
       this.scenariosToRounds(scenarios, study);
@@ -271,6 +285,13 @@ export class TrainingComponent implements OnInit {
   loadVividness() {
     this.api.getVividness().subscribe(sessions => {
       this.vividness = sessions;
+    });
+  }
+
+  loadDichos() {
+    this.api.getDichos().subscribe(sessions => {
+      this.dichos = sessions;
+      console.log(this.dichos);
     });
   }
 
@@ -321,6 +342,12 @@ export class TrainingComponent implements OnInit {
 
   vividnessComplete() {
     this.state = this.states.TRAINING;
+    this.nextTraining();
+  }
+
+  dichosComplete() {
+    this.state = this.states.TRAINING;
+    this.dichos.shift();  // Remove the item, so we use the next one, next time.
     this.nextTraining();
   }
 
@@ -383,6 +410,12 @@ export class TrainingComponent implements OnInit {
       this.stepIndex--;
       return;
     }
+    if (this.dichosIndexes.indexOf(this.scenarioIndex - 1) >= 0) {
+      this.dichosIndexes.splice( this.dichosIndexes.indexOf(this.scenarioIndex - 1), 1 );
+      this.state = this.states.DICHOS;
+      return;
+    }
+    this.stepIndex++;
     if (!this.round) {
       this.round = this.rounds[this.roundIndex];
       const index = this.scenarioIndex - (this.increment * this.roundIndex) - 2;
@@ -430,8 +463,8 @@ export class TrainingComponent implements OnInit {
         map(([url, paramMap, queryParamMap]) => {
           const sessionIndex = +(paramMap.get('session') || 1) ;
           const study = {
-          name: 'KAISER',
-          conditioning: 'NO_INCENTIVE',
+          name: 'SPANISH',
+          conditioning: 'SPANISH_DOMINANT',
           currentSession: {index: sessionIndex, name: 'firstSession',
             currentTask: {name: 'unknown', displayName: 'unknown', type: 'unknown'}},
           currentSessionIndex: sessionIndex

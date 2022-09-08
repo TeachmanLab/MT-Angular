@@ -1,0 +1,40 @@
+[
+  {
+    "session": "vividness",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "title": "",
+        "pages": [
+          {
+            "auto_continue": true,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "vividHeader",
+                "content": "Chequeo de vividez"
+              },
+              {
+                "type": "Question",
+                "stimulusName": "vividness",
+                "question": "¿Qué tan vívidamente imaginaste el escenario que acabas de leer (como si estuvieras realmente allí)?",
+                "options": [
+                  "Para nada",
+                  "Ligeramente",
+                  "Algo",
+                  "Principalmente",
+                  "Mucho"
+                ],
+                "preferNotToAnswer":true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

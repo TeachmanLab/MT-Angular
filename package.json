@@ -4,12 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "start-es": "ng serve --configuration=es",
+    "start-es": "ng serve --configuration=es --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "extract-i18n": "ng xi18n training-prototype --i18n-format xlf --output-path i18n --i18n-locale en && ng run training-prototype:xliffmerge"
+    "extract-i18n": "ng xi18n training-prototype --i18n-format xlf --output-path src/i18n --i18n-locale en && ng run training-prototype:xliffmerge"
   },
   "private": true,
   "dependencies": {

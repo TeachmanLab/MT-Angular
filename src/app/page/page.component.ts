@@ -79,18 +79,21 @@ export class PageComponent implements OnChanges {
     this.numElements = this.page.elements.length;
     this.visibleElements = [];
     this.visibleElements.push(this.page.elements[this.elementIndex]);
+    console.log('Total Elements', this.numElements);
     this.markStaticComponentsComplete();
   }
 
   markStaticComponentsComplete() {
     for (const element of this.page.elements) {
-      if (['Paragraph', 'References', 'Image', 'LargeHeader', 'Header', 'Caption', 'Link', 'Video', 'BulletList'].includes(element.type)) {
+      if (['Paragraph', 'References', 'Image', 'LargeHeader', 'Header', 'CenterHeader', 'Link', 'Video'].
+      includes(element.type)) {
         this.divCompleted();
       }
     }
   }
 
   divCompleted(correct= true) {
+    console.log('Div Completed:', this.page.elements[this.elementIndex]);
     if (!correct) {
       this.correct = false;
     }

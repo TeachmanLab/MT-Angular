@@ -68,6 +68,10 @@ export class ApiService {
     return this.getJsonFile('vividness.json');
   }
 
+  public getDichos(): Observable<Session[]> {
+    return this.getJsonFile('dichos.json');
+  }
+
   public getFlexibleThinking(): Observable<Session[]> {
     return this.getJsonFile('flexible_thinking.json');
   }

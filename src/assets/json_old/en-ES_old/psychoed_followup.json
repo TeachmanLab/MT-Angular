@@ -1,0 +1,31 @@
+[
+  {
+    "session": "psyched_followup",
+    "title": "",
+    "subTitle": "",
+    "conditioning": "Training",
+    "study": "Calm Thinking",
+    "steps": [
+      {
+        "pages": [
+          {
+            "auto_continue": false,
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "stimulusName": "intro1",
+                "content": "Section Complete!"
+              },
+              {
+                "type": "Paragraph",
+                "stimulusName": "psychoed_folloup",
+                "content": "Thanks for learning a bit more about how anxiety works! Now you'll complete the second half of training based on the short stories."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

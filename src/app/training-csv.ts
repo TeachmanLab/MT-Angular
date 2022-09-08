@@ -56,6 +56,10 @@ export class TrainingCSV {
         // Add a picture if one exists.
         if (currentLine[14] === 'picture') {
           image = `assets/training_images/${sessionName}/${currentLine[1]}.jpeg`;
+        } else if (currentLine[14] === 'picture-es') {
+            image = `assets/training_images/${sessionName}/spanish/${currentLine[1]}.jpeg`;
+        } else if (currentLine[14] === 'picture-es_ES') {
+          image = `assets/training_images/${sessionName}/spanish/es/${currentLine[1]}.jpeg`;
         } else {
           image = null;
         }

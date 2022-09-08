@@ -1,0 +1,100 @@
+[
+  {
+    "session": "",
+    "title": "readiness_rulers",
+    "conditioning": "Training",
+    "study": "Spanish",
+    "steps": [
+      {
+        "pages": [
+          {
+            "title": "page",
+            "elements": [
+              {
+                "type": "LargeHeader",
+                "content": "How MindTrails Works"
+              },
+              {
+                "type": "Paragraph",
+                "content": "As you have seen in the training so far, you are being asked to read lots of brief stories that are potentially anxiety-provoking."
+              },
+              {
+                "type": "Paragraph",
+                "content": "The MindTrails program is designed to shift anxious thinking styles. By really imagining yourself in these situations and then completing the last word of the story in a way that frequently–but not always–assigns a positive ending to the story, you are being challenged to think about potentially threatening situations in new ways."
+              },
+              {
+                "type": "Paragraph",
+                "content": "This program will present many different stories and give you lots of practice imagining yourself responding in ways that may be different than you would typically respond. This practice is intended to encourage more flexible thinking and help you break the habit of negative or catastrophic thinking."
+              }
+            ]
+          },
+          {
+            "title": "page",
+                "elements": [
+                  {
+                    "type": "LargeHeader",
+                    "content": "How MindTrails Works"
+                  },
+                  {
+                    "type": "Paragraph",
+                    "content": "Now that you have some experience with MindTrails, we encourage you to view our short videos by MindTrails team members. These 1-minute videos address some common questions about the training and provide tips about using the program most effectively."
+                  },
+                  {
+                    "type": "BulletList",
+                    "title": "Topics include:",
+                    "bullets": [
+                      "Why all the stories do not end positively",
+                      "Why it’s important to really imagine yourself in the stories, and how to do that",
+                      "Why repetition is involved in the training",
+                      "How training can shift your experiences in the real world"
+                    ]
+                  },
+              {
+                "type": "Video",
+                "content":"https://youtu.be/SNrXoTFFeok"
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/hhFjs0rIGRg"
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/mktHMDGfzu8"
+              },
+              {
+                "type": "Video",
+                "content": "https://youtu.be/IFlj72zBzYY"
+              },
+              {
+                "type": "Paragraph",
+                "content": "You can also view these videos at any time by navigating to the About page on the menu bar outside of the training session sections."
+              }
+            ]
+          },
+          {
+            "title": "measure",
+                "elements": [
+                  {
+                    "type": "LargeHeader",
+                    "content": "How MindTrails Works"
+                  },
+                  {
+                    "type": "Question",
+                    "stimulusName": "readiness_rulers_followup",
+                    "question": "Based on what you’ve seen of the program and the description of its goals, how confident are you that this program will reduce your anxiety?",
+                    "options": [
+                      "Not at all",
+                      "Slightly",
+                      "Somewhat",
+                      "Mostly",
+                      "Very"
+                    ],
+                    "preferNotToAnswer": true
+                  }
+                ]
+              }
+            ]
+          }
+              ]
+            }
+          ]

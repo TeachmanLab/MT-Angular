@@ -2,15 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="96a4535d6ae9894a9cb374e24f2ed39bc326b525" datatype="html">
-        <source>Welcome to Mindtrails Training</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <note priority="1" from="description">Message at top of all pages</note>
-        <note priority="1" from="meaning">welcome message</note>
-      </trans-unit>
       <trans-unit id="a183f55921a00cde827aa0db27a0009f748b55cf" datatype="html">
         <source>Module Complete!</source>
         <context-group purpose="location">
@@ -182,13 +173,23 @@
         </context-group>
         <note priority="1" from="description">next</note>
       </trans-unit>
-      <trans-unit id="0f90559c85873eaafc4dd25adcf9b337ea9b3f34" datatype="html">
-        <source>Round <x id="INTERPOLATION" equiv-text="{{roundIndex+ 1}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalRounds}}"/></source>
+      <trans-unit id="a2584fb842d9a5e2fd2e93ec55ef31d3671d68b7" datatype="html">
+        <source>Round</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/training/training.component.html</context>
           <context context-type="linenumber">101</context>
         </context-group>
-        <note priority="1" from="description">round x of y</note>
+      </trans-unit>
+      <trans-unit id="169eed2bc3e08e1bea977bcc5d799379f6b8a758" datatype="html">
+        <source>of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="ab4a8f5dc9516f46cc71bd23ca4614a157269882" datatype="html">
         <source>Start Round <x id="INTERPOLATION" equiv-text="{{roundIndex+2}}"/></source>
@@ -255,8 +256,8 @@
         </context-group>
         <note priority="1" from="description">high score message at round end</note>
       </trans-unit>
-      <trans-unit id="9e3c4143691971703e8e42833a49575985b25301" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{session.title}}"/>: Complete!</source>
+      <trans-unit id="e337b639d9404de303e756cd27ffdd9555af6304" datatype="html">
+        <source>"Training Session: Complete!"</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/final-score/final-score.component.html</context>
           <context context-type="linenumber">10</context>
@@ -368,6 +369,9 @@
         </context-group>
         <note priority="1" from="description">slider totally anxious</note>
       </trans-unit>
+      <trans-unit id="prefer_not_to_answer">
+        <source>Prefer not to answer</source>
+      </trans-unit>
       <trans-unit id="5b1cdec4a661b7ad366b859d8e15c10feda010d2" datatype="html">
         <source>
     <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
@@ -379,6 +383,13 @@
           <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">prefer not to answer</note>
+      </trans-unit>
+      <trans-unit id="33dc872e0dbaf189fc4577f83e20fa4bcba2757a" datatype="html">
+        <source>Story</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/recognition-ratings/recognition-ratings.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

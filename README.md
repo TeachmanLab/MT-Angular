@@ -18,9 +18,9 @@ Copy the files in ./dist/training-prototype up to the web server and placement i
 
 ## Adding to MindTrails
 
-Run `ng build --prod --build-optimizer --output-hashing none --base-href=/calm/angular/`
-Copy ./dist/training-prototype to [MindTrails Checkout]/r01/src/main/resources/static/angular
-Something like `cp -r dist/training-prototype ~/code/MindTrails/r01/src/main/resources/static/angular`
+Run `ng build --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
+Copy ./dist/training-prototype to [MindTrails Checkout]/spanish/src/main/resources/static/angular
+Something like `cp -r dist/training-prototype ~/code/MindTrails/spanish/src/main/resources/static/angular`
 
 ## Localization
 This app can be built for both English and Spanish.  If you want to run locally and see the Spanish version of the site use:
@@ -40,16 +40,22 @@ editor like [PoEdit](https://poeditor.com/) make the updates, and save them.
 We may be running multiple studies with difference settings at the same time, for this reason
 we provide a mechanism for doing custom builds, for instance, in Kaiser you would do:
 
+## Kaiser example
 `ng build --configuration kaiser --build-optimizer --output-hashing none --base-href=/kaiser/angular/`
 `cp -r dist/training-prototype/en-US ~/code/MindTrails/kaiser/src/main/resources/static/angular`
 
 A complete build of spanish for deployment like:
 (NOTE:  For spanish we will need to build both an engish version and an spanish version, follow the 'Adding to Mindtrails'
 section above for building in english. then do the following to create the spanish language version.)
+
+## Spanish Version
+
 `ng build --configuration spanish --build-optimizer --output-hashing none --base-href=/spanish/angular/`
-`cp -r dist/training-prototype/es-ES ~/code/MindTrails/spanish/src/main/resources/static/angular-es`
-`ng build --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
-`cp -r dist/training-prototype/en-US ~/code/MindTrails/spanish/src/main/resources/static/angular`
+`cp -r dist/training-prototype/es-ES/ ~/code/MindTrails/spanish/src/main/resources/static/angular-es`
+
+## Spanish-EN version
+`ng build --configuration spanish-en --prod --build-optimizer --output-hashing none --base-href=/spanish/angular/`
+`cp -r dist/training-prototype/en-ES/ ~/code/MindTrails/spanish/src/main/resources/static/angular`
 
 
 ## Code scaffolding
