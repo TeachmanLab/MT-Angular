@@ -80,7 +80,7 @@
             "elements": [
               {
                 "type": "LargeHeader",
-                "content": "Ejercicio: Escribe tu propio escenario"
+                "content": "Exercise: Write your own scenario"
               },
               {
                 "type": "FillInBlank",
@@ -145,7 +145,7 @@
             "elements": [
               {
               "type": "LargeHeader",
-              "content": "Ejercicio: Escribe tu propio escenario"
+              "content": "Exercise: Write your own scenario"
               },
               {
                 "type": "MultiEntry",
